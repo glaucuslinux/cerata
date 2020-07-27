@@ -8,7 +8,7 @@ prepare() {
   cd $TSRC/$nom &&
  
   $RSYNC $SRCD/gmp/gmp-6.2.0/ gmp --delete &&
-  $RSYNC $SRCD/mpfr/mpfr-4.0.2/ mpfr --delete &&
+  $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete &&
   $RSYNC $SRCD/mpc/mpc-1.1.0/ mpc --delete &&
   $RSYNC $SRCD/isl/isl-0.22.1/ isl --delete &&
 
@@ -17,8 +17,6 @@ prepare() {
   $SCRD/gnu sub . &&
 
   $GPARCH &&
-
-  $SCRD/patch 1 $nom upstream Enable-CET-in-cross-compiler-if-possible &&
 
   $MKDIR $TBLD/$nom &&
   cd $TBLD/$nom
