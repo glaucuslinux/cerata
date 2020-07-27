@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=binutils
-ver=2.34
+ver=2.35
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.lz
-sum=f4aadea1afa85d9ceb7be377afab9270a42ab0fd1fae86a7c69510b80de1aaac76f15cfb8730f9d233466a89fd020ab7e6e705e754c6b40f5fe2d16a5214562e
+sum=5ad795fab0803be83b53aa955fd5414c8408b4cf2a66eba2f8688298312934b4b1b0cbe9cf887d86de77f88adf1333d85fc9f6ab4a530e85a09b9b2dbf6aaf3f
 lic='BSL-1.0 GPL-2.0-only GPL-3.0-only GPL-3.0-or-later LGPL-2.0-only
 LGPL-2.1-only LGPL-3.0-only'
