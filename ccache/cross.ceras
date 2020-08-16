@@ -38,5 +38,5 @@ install() {
   $LN $nom $TOOL/bin/$nom/$TGT-cpp &&
   $LN $nom $TOOL/bin/$nom/$TGT-g++ &&
   $LN $nom $TOOL/bin/$nom/$TGT-gcc &&
-  $LN $nom $TOOL/bin/$nom/$TGT-gcc-10.1.0
+  $LN $nom $TOOL/bin/$nom/$TGT-gcc-10.2.0
 }
