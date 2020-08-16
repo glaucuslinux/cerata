@@ -38,5 +38,5 @@ install() {
   $LN $nom $TLCD/bin/$nom/cpp &&
   $LN $nom $TLCD/bin/$nom/g++ &&
   $LN $nom $TLCD/bin/$nom/gcc &&
-  $LN $nom $TLCD/bin/$nom/gcc-10.1.0
+  $LN $nom $TLCD/bin/$nom/gcc-10.2.0
 }

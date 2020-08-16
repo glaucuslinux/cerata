@@ -41,7 +41,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/cpp &&
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/g++ &&
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc &&
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc-10.1.0 &&
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc-10.2.0 &&
 
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-c++ &&
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-c89 &&
@@ -49,5 +49,5 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-cc &&
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-g++ &&
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-gcc &&
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-gcc-10.1.0
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-gcc-10.2.0
 }
