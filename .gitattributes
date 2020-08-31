@@ -1,0 +1,8 @@
+# This is for file with the .ceras extension
+*.ceras linguist-language=Shell
+
+# This is for the ceras files, using "ceras" only wont work as it's not an
+# extenson here but a filename, so we have to add a path "*/ceras"
+*/ceras linguist-language=Shell
+
+elfutils/error.h linguist-language=C
