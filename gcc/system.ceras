@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  $SCRD/gnu guess . &&
-  $SCRD/gnu rpath . &&
-  $SCRD/gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu rpath .
+  rad_behave_gnu sub .
 
-  $SCRD/patch 0 $nom glaucus 0002-adjust-system-paths-for-$ARCH &&
+  rad_behave_patch 0 $nom glaucus 0002-adjust-system-paths-for-$ARCH
 
-  $GPARCH &&
+  $GPARCH
 
-  $MKDIR $SBLD/$nom &&
+  $MKDIR $SBLD/$nom
   cd $SBLD/$nom
-} &&
+}
 
 configure() {
   CFLAGS="$CFLAGSNOLTO" \
@@ -45,42 +45,42 @@ configure() {
     --with-zstd \
     --without-included-gettext \
     --with-system-zlib \
-    --with-linker-hash-style=gnu &&
+    --with-linker-hash-style=gnu
 
   $MAKE \
     configure-host
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install-strip &&
+    install-strip
 
-  $LN g++ $SCER/$nom/sac/usr/bin/c++ &&
+  $LN g++ $SCER/$nom/sac/usr/bin/c++
 
-  $RSYNC $CERD/$nom/c89 $SCER/$nom/sac/usr/bin &&
-  $RSYNC $CERD/$nom/c99 $SCER/$nom/sac/usr/bin &&
+  $RSYNC $CERD/$nom/c89 $SCER/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/c99 $SCER/$nom/sac/usr/bin
 
-  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c89 &&
-  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c99 &&
+  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c89
+  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c99
   
-  $LN $nom $SCER/$nom/sac/usr/bin/cc &&
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom-$ver &&
+  $LN $nom $SCER/$nom/sac/usr/bin/cc
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom-$ver
 
-  $LN $TUPL-g++ $SCER/$nom/sac/usr/bin/$TUPL-c++ &&
+  $LN $TUPL-g++ $SCER/$nom/sac/usr/bin/$TUPL-c++
 
-  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-cc &&
-  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-$nom-$ver &&
+  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-cc
+  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-$nom-$ver
   
-  $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins &&
-  $LN ../../lib/$nom/$TUPL/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins &&
+  $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
+  $LN ../../lib/$nom/$TUPL/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
   
-  $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp &&
+  $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp
 
-  $MKDIR $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib &&
+  $MKDIR $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
   $MV $SCER/$nom/sac/usr/lib/libstdc++.so.6.0.28-gdb.py $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
 }
