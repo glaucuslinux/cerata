@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete &&
   cd $XSRC/$nom &&
 
-  $SCRD/gnu guess build-aux &&
-  $SCRD/gnu rpath build-aux &&
-  $SCRD/gnu sub build-aux &&
+  rad_behave_gnu guess build-aux &&
+  rad_behave_gnu rpath build-aux &&
+  rad_behave_gnu sub build-aux &&
 
   $MKDIR $XBLD/$nom &&
   cd $XBLD/$nom

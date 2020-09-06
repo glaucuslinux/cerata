@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
   cd $CSRC/$nom &&
 
-  $SCRD/gnu guess . &&
-  $SCRD/gnu rpath . &&
-  $SCRD/gnu sub . &&
+  rad_behave_gnu guess . &&
+  rad_behave_gnu rpath . &&
+  rad_behave_gnu sub . &&
 
   $MKDIR $CBLD/$nom &&
   cd $CBLD/$nom

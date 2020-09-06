@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
   cd $CSRC/$nom &&
 
-  $SCRD/gnu guess build-aux &&
-  $SCRD/gnu sub build-aux &&
+  rad_behave_gnu guess build-aux &&
+  rad_behave_gnu sub build-aux &&
 
   $SCRD/$nom 1 $nom upstream 0001-Avoid-set_file_attributes-sign-conversion-warnings &&
   $SCRD/$nom 1 $nom upstream 0002-Test-suite-compatibility-fixes &&
