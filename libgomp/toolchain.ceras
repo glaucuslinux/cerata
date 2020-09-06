@@ -5,16 +5,16 @@
 
 prepare() {
   cd $TBLD/gcc
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   $MAKE \
     all-target-$nom
-} &&
+}
 
 install() {
   $MAKE \
