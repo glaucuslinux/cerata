@@ -5,7 +5,7 @@
 
 prepare() {
   cd $TSRC/$nom
-} &&
+}
 
 configure() {
   ARCH=$MARCH \
@@ -16,16 +16,16 @@ configure() {
     --prefix=/usr \
     --disable-wrapper \
     --disable-static
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$CRSD \
-    install-libs install-tools &&
+    install-libs install-tools
 
   $LN libc.so $CRSD/usr/lib/ld-$nom-$MARCH.so.1
 }
