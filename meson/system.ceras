@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   python3 setup.py \
     build
-} &&
+}
 
 install() {
   python3 setup.py \
@@ -23,7 +23,7 @@ install() {
     --root=$SCER/$nom/sac \
     --optimize=2 \
     --force \
-    --skip-build &&
+    --skip-build
 
   $RSYNC $CERD/$nom/glaucus-$nom $SCER/$nom/sac/usr/bin
 }
