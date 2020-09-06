@@ -9,7 +9,7 @@ prepare() {
  
   $RSYNC $SRCD/gmp/gmp-6.2.0/ gmp --delete
   $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete
-  $RSYNC $SRCD/mpc/mpc-1.1.0/ mpc --delete
+  $RSYNC $SRCD/mpc/mpc-1.2.0/ mpc --delete
   $RSYNC $SRCD/isl/isl-0.22.1/ isl --delete
 
   rad_behave_gnu guess .
