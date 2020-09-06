@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete &&
-  cd $TSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
 
-  $SCRD/gnu guess . &&
-  $SCRD/gnu rpath . &&
-  $SCRD/gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu rpath .
+  rad_behave_gnu sub .
 
-  $MKDIR $TBLD/$nom &&
+  $MKDIR $TBLD/$nom
   cd $TBLD/$nom
-} &&
+}
 
 configure() {
   $TSRC/$nom/configure \
@@ -37,35 +37,35 @@ configure() {
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-included-gettext \
     --with-system-zlib \
-    --disable-multilib &&
+    --disable-multilib
 
   $MAKE \
     configure-host
-} &&
+}
 
 build() {
   $MAKE \
     all-binutils \
     all-gas \
     all-ld
-} &&
+}
 
 install() {
   $MAKE \
     install-strip-binutils \
     install-strip-gas \
-    install-strip-ld &&
+    install-strip-ld
 
-  $LN $TGT-ld.bfd $TLCD/bin/$TGT-ld &&
+  $LN $TGT-ld.bfd $TLCD/bin/$TGT-ld
 
-  $LN ../../bin/$TGT-ar $TLCD/$TGT/bin/ar &&
-  $LN ../../bin/$TGT-as $TLCD/$TGT/bin/as &&
-  $LN ../../bin/$TGT-ld $TLCD/$TGT/bin/ld &&
-  $LN ../../bin/$TGT-ld.bfd $TLCD/$TGT/bin/ld.bfd &&
-  $LN ../../bin/$TGT-nm $TLCD/$TGT/bin/nm &&
-  $LN ../../bin/$TGT-objcopy $TLCD/$TGT/bin/objcopy &&
-  $LN ../../bin/$TGT-objdump $TLCD/$TGT/bin/objdump &&
-  $LN ../../bin/$TGT-ranlib $TLCD/$TGT/bin/ranlib &&
-  $LN ../../bin/$TGT-readelf $TLCD/$TGT/bin/readelf &&
+  $LN ../../bin/$TGT-ar $TLCD/$TGT/bin/ar
+  $LN ../../bin/$TGT-as $TLCD/$TGT/bin/as
+  $LN ../../bin/$TGT-ld $TLCD/$TGT/bin/ld
+  $LN ../../bin/$TGT-ld.bfd $TLCD/$TGT/bin/ld.bfd
+  $LN ../../bin/$TGT-nm $TLCD/$TGT/bin/nm
+  $LN ../../bin/$TGT-objcopy $TLCD/$TGT/bin/objcopy
+  $LN ../../bin/$TGT-objdump $TLCD/$TGT/bin/objdump
+  $LN ../../bin/$TGT-ranlib $TLCD/$TGT/bin/ranlib
+  $LN ../../bin/$TGT-readelf $TLCD/$TGT/bin/readelf
   $LN ../../bin/$TGT-strip $TLCD/$TGT/bin/strip
 }
