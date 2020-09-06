@@ -5,6 +5,6 @@
 
 nom=util-linux
 ver=2.36
-url=https://cdn.kernel.org/pub/linux/utils/$nom/v2.35/$nom-$ver.tar.xz
+url=http://cdn.kernel.org/pub/linux/utils/$nom/v$ver/$nom-$ver.tar.xz
 sum=cbb4975da8d99a1edd45514171d59ea7b019ce0f77a81e88b447a733f725e91c53540d9dc78bc626dc011dca129b8b150aaf9e64ccf62a4202ae816581acf4fd
 lic='BSD-3-Clause BSD-4-Clause-UC GPL-2.0-only ISC LGPL-2.1-only'
