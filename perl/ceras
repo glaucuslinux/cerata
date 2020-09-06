@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=perl
-ver=5.32
+ver=5.32.0
 url=https://www.cpan.org/src/5.0/$nom-$ver.tar.xz
 sum=1540247415893bbd94dfeede7b4fba6052688dc0bf27ced817f448246fcdc6e9a6486abc34577dec5b00bf02ed607b2d24ccd4977c3b3c51e8e6edfc0b81c760
 lic='Artistic-1.0-Perl Artistic-2.0 BSD-3-Clause GPL-1.0-only GPL-1.0-or-later
