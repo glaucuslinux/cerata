@@ -5,6 +5,6 @@
 
 nom=xz
 ver=5.2.5
-url=https://tukaani.org/$nom/$nom-$ver.tar.$nom
-sum=59266068a51cb616eb31b67cd8f07ffeb2288d1391c61665ae2ec6814465afac80fec69248f6a2f2db45b44475af001296a99af6a32287226a9c41419173ccbb
+url=https://tukaani.org/$nom/$nom-$ver.tar.zst
+sum=d2c5b18f5e925586acc48292edfb527c8c4e6fa2869f3f384e717e96d258655bc693adb4f7074ab3e037a5faad10b4e5992e0c40b0b55b05ff820327445a00fa
 lic='CC-PDDC GPL-2.0-only GPL-3.0-only LGPL-2.1-only'
