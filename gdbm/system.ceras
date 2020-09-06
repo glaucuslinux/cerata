@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
   cd $SSRC/$nom &&
 
-  $SCRD/gnu guess build-aux &&
-  $SCRD/gnu rpath build-aux &&
-  $SCRD/gnu sub build-aux &&
+  rad_behave_gnu guess build-aux &&
+  rad_behave_gnu rpath build-aux &&
+  rad_behave_gnu sub build-aux &&
 
   $SCRD/patch 0 $nom lfs 0001-fix-no-common &&
 

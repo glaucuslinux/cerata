@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
   cd $SSRC/$nom &&
 
-  $SCRD/gnu guess config &&
-  $SCRD/gnu rpath config &&
-  $SCRD/gnu sub config &&
+  rad_behave_gnu guess config &&
+  rad_behave_gnu rpath config &&
+  rad_behave_gnu sub config &&
 
   $SCRD/patch 1 $nom lfs $nom-$ver-backspace-1
 } &&

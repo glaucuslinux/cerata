@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
   cd $SSRC/$nom &&
 
-  $SCRD/gnu guess lib &&
-  $SCRD/gnu sub lib &&
+  rad_behave_gnu guess lib &&
+  rad_behave_gnu sub lib &&
 
   $MKDIR $SBLD/$nom &&
   cd $SBLD/$nom

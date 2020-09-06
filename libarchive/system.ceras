@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
   cd $SSRC/$nom &&
 
-  $SCRD/gnu guess build/autoconf &&
-  $SCRD/gnu rpath build/autoconf &&
-  $SCRD/gnu sub build/autoconf &&
+  rad_behave_gnu guess build/autoconf &&
+  rad_behave_gnu rpath build/autoconf &&
+  rad_behave_gnu sub build/autoconf &&
 
   $SCRD/patch 0 $nom void filter-xz-enable-threads
 } &&
