@@ -13,7 +13,7 @@ prepare() {
   $RSYNC $CERD/elfutils/error.h lib
   $RSYNC $CERD/elfutils/error.h src
 
-  $SCRD/patch 0 elfutils void musl-cdefs
+  rad_behave_patch 0 elfutils void musl-cdefs
 }
 
 configure() {

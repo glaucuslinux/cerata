@@ -11,7 +11,7 @@ prepare() {
   rad_behave_gnu rpath build/autoconf
   rad_behave_gnu sub build/autoconf
 
-  $SCRD/patch 0 $nom void filter-xz-enable-threads
+  rad_behave_patch 0 $nom void filter-xz-enable-threads
 }
 
 configure() {

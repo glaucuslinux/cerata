@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete
   cd $CSRC/$nom
 
-  $SCRD/patch 0 $nom upstream 0001-fix-libedit-fno-common
+  rad_behave_patch 0 $nom upstream 0001-fix-libedit-fno-common
 }
 
 configure() {

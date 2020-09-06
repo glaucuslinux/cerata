@@ -11,11 +11,11 @@ prepare() {
   rad_behave_gnu rpath config
   rad_behave_gnu sub config
 
-  $SCRD/patch 1 $nom lfs $nom-$ver-backspace-1
+  rad_behave_patch 1 $nom lfs $nom-$ver-backspace-1
 }
 
 configure() {
-  $SCRD/patch 1 $nom lfs remove-resizecons
+  rad_behave_patch 1 $nom lfs remove-resizecons
 
   $AUTORECONF
 

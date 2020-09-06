@@ -11,12 +11,12 @@ prepare() {
   rad_behave_gnu rpath .
   rad_behave_gnu sub .
 
-  $SCRD/patch 0 $nom glaucus 0001-customize-login-defaults
-  $SCRD/patch 0 $nom glaucus 0002-customize-useradd
+  rad_behave_patch 0 $nom glaucus 0001-customize-login-defaults
+  rad_behave_patch 0 $nom glaucus 0002-customize-useradd
 }
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0003-fix-installation-paths
+  rad_behave_patch 0 $nom glaucus 0003-fix-installation-paths
 
   sed 's/groups$(EXEEXT) //' \
     -i src/Makefile.in

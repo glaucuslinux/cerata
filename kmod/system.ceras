@@ -10,8 +10,8 @@ prepare() {
   rad_behave_gnu guess build-aux
   rad_behave_gnu sub build-aux
 
-  $SCRD/patch 1 $nom arch 0002-add-zstd-compressed-module-support
-  $SCRD/patch 0 $nom void strndupa
+  rad_behave_patch 1 $nom arch 0002-add-zstd-compressed-module-support
+  rad_behave_patch 0 $nom void strndupa
 }
 
 configure() {
