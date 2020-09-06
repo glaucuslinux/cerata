@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $SCRD/patch 0 $nom glaucus 0001-remove-sbin
+  rad_behave_patch 0 $nom glaucus 0001-remove-sbin
 }
 
 configure() {
-  $SCRD/patch 0 $nom lfs 0001-remove-arpd-and-two-modules
+  rad_behave_patch 0 $nom lfs 0001-remove-arpd-and-two-modules
 
   ./configure
 }

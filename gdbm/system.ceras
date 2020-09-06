@@ -11,7 +11,7 @@ prepare() {
   rad_behave_gnu rpath build-aux
   rad_behave_gnu sub build-aux
 
-  $SCRD/patch 0 $nom lfs 0001-fix-no-common
+  rad_behave_patch 0 $nom lfs 0001-fix-no-common
 
   $MKDIR $SBLD/$nom
   cd $SBLD/$nom

@@ -11,7 +11,7 @@ prepare() {
   rad_behave_gnu rpath build-aux
   rad_behave_gnu sub build-aux
 
-  $SCRD/patch 1 $nom clear 0001-Lower-test-timeout
+  rad_behave_patch 1 $nom clear 0001-Lower-test-timeout
 }
 
 configure() {

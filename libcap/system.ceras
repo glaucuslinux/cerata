@@ -9,8 +9,8 @@ prepare() {
 }
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0001-remove-static
-  $SCRD/patch 0 $nom void disable-tests
+  rad_behave_patch 0 $nom glaucus 0001-remove-static
+  rad_behave_patch 0 $nom void disable-tests
 }
 
 build() {

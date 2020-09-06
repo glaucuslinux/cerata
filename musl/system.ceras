@@ -18,7 +18,7 @@ configure() {
 
   $RSYNC $SRCD/$nom/$nom-$ver/Makefile .
 
-  $SCRD/patch 0 $nom glaucus 0001-remove-libdir
+  rad_behave_patch 0 $nom glaucus 0001-remove-libdir
 }
 
 build() {

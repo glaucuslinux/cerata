@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0001-netbsd-curses-compatibility
+  rad_behave_patch 0 $nom glaucus 0001-netbsd-curses-compatibility
 
   ./configure \
     --prefix=/usr \

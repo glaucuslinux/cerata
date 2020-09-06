@@ -11,7 +11,7 @@ prepare() {
   rad_behave_gnu rpath .
   rad_behave_gnu sub .
 
-  $SCRD/patch 1 $nom adelie use-utmpx
+  rad_behave_patch 1 $nom adelie use-utmpx
 }
 
 configure() {

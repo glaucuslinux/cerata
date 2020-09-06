@@ -10,7 +10,7 @@ prepare() {
   rad_behave_gnu guess .
   rad_behave_gnu sub .
 
-  $SCRD/patch 1 $nom clear 0001-Fix-$nom-path-for-linux
+  rad_behave_patch 1 $nom clear 0001-Fix-$nom-path-for-linux
 }
 
 configure() {
