@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
-  cd $CSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete
+  cd $CSRC/$nom
 
   $SCRD/patch 0 $nom upstream 0001-fix-libedit-fno-common
-} &&
+}
 
 configure() {
   ./configure \
@@ -16,15 +16,15 @@ configure() {
     --prefix=$TLCD \
     --disable-static \
     --with-libedit
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
-    install-strip &&
+    install-strip
 
   $LN $nom $TLCD/bin/sh
 }

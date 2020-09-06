@@ -4,34 +4,34 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0001-netbsd-curses-compatibility &&
+  $SCRD/patch 0 $nom glaucus 0001-netbsd-curses-compatibility
 
   ./configure \
     --prefix=/usr \
     --bindir=/usr/bin \
-    --mandir=/usr/share/man &&
+    --mandir=/usr/share/man
 
   sed "s/CFLAGS = .*/CFLAGS = $CFLAGS -DVI -w -D_GNU_SOURCE/" \
     -i Makefile
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install &&
+    install
 
-  $LN $nom $SCER/$nom/sac/usr/bin/ksh &&
-  $LN $nom $SCER/$nom/sac/usr/bin/rksh &&
+  $LN $nom $SCER/$nom/sac/usr/bin/ksh
+  $LN $nom $SCER/$nom/sac/usr/bin/rksh
 
-  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/ksh.1 &&
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/ksh.1
   $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/rksh.1
 }

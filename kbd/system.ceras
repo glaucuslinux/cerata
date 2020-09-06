@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess config &&
-  rad_behave_gnu rpath config &&
-  rad_behave_gnu sub config &&
+  rad_behave_gnu guess config
+  rad_behave_gnu rpath config
+  rad_behave_gnu sub config
 
   $SCRD/patch 1 $nom lfs $nom-$ver-backspace-1
-} &&
+}
 
 configure() {
-  $SCRD/patch 1 $nom lfs remove-resizecons &&
+  $SCRD/patch 1 $nom lfs remove-resizecons
 
-  $AUTORECONF &&
+  $AUTORECONF
 
   ./configure \
     --prefix=/usr \
@@ -26,11 +26,11 @@ configure() {
     --disable-rpath \
     --disable-vlock \
     --disable-tests
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

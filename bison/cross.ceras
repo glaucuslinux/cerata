@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete &&
-  cd $XSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
-  rad_behave_gnu guess build-aux &&
-  rad_behave_gnu rpath build-aux &&
-  rad_behave_gnu sub build-aux &&
+  rad_behave_gnu guess build-aux
+  rad_behave_gnu rpath build-aux
+  rad_behave_gnu sub build-aux
 
-  $MKDIR $XBLD/$nom &&
+  $MKDIR $XBLD/$nom
   cd $XBLD/$nom
-} &&
+}
 
 configure() {
   $XSRC/$nom/configure \
@@ -23,11 +23,11 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

@@ -5,19 +5,19 @@
 
 prepare() {
   :
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   :
-} &&
+}
 
 install() {
-  $RSYNC $SRCD/$nom/etc $XCER/$nom/sac --delete &&
-  $RSYNC $SRCD/$nom/usr $XCER/$nom/sac --delete &&
+  $RSYNC $SRCD/$nom/etc $XCER/$nom/sac --delete
+  $RSYNC $SRCD/$nom/usr $XCER/$nom/sac --delete
 
   $MKDIR $XCER/$nom/sac/etc/s6/run-image/utmps
   

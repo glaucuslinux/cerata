@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
-  cd $CSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete
+  cd $CSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
   
-  rad_behave_gnu guess scripts &&
-  rad_behave_gnu sub scripts &&
+  rad_behave_gnu guess scripts
+  rad_behave_gnu sub scripts
 
-  $MKDIR $CBLD/$nom &&
+  $MKDIR $CBLD/$nom
   cd $CBLD/$nom
-} &&
+}
 
 configure() {
   $CSRC/$nom/configure \
@@ -23,21 +23,21 @@ configure() {
     --sysconfdir=$TLCD/etc \
     --localstatedir=$TLCD/var \
     --disable-static \
-    --enable-nc &&
+    --enable-nc
 
   sed 's/tests //' \
     -i Makefile
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
-    install-strip &&
+    install-strip
 
-  $CHMOD 0755 $TLCD/lib/libcrypto.so.46.0.1 &&
-  $CHMOD 0755 $TLCD/lib/libssl.so.48.0.1 &&
+  $CHMOD 0755 $TLCD/lib/libcrypto.so.46.0.1
+  $CHMOD 0755 $TLCD/lib/libssl.so.48.0.1
   $CHMOD 0755 $TLCD/lib/libtls.so.20.0.1
 }

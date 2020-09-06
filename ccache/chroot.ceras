@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
-  cd $CSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete
+  cd $CSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
 
-  $MKDIR $CBLD/$nom &&
+  $MKDIR $CBLD/$nom
   cd $CBLD/$nom
-} &&
+}
 
 configure() {
   $CSRC/$nom/configure \
@@ -21,22 +21,22 @@ configure() {
     --bindir=$TLCD/bin/$nom \
     --disable-man \
     --without-bundled-zlib
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
-    install &&
+    install
 
-  $LN $nom $TLCD/bin/$nom/c++ &&
-  $LN $nom $TLCD/bin/$nom/c89 &&
-  $LN $nom $TLCD/bin/$nom/c99 &&
-  $LN $nom $TLCD/bin/$nom/cc &&
-  $LN $nom $TLCD/bin/$nom/cpp &&
-  $LN $nom $TLCD/bin/$nom/g++ &&
-  $LN $nom $TLCD/bin/$nom/gcc &&
+  $LN $nom $TLCD/bin/$nom/c++
+  $LN $nom $TLCD/bin/$nom/c89
+  $LN $nom $TLCD/bin/$nom/c99
+  $LN $nom $TLCD/bin/$nom/cc
+  $LN $nom $TLCD/bin/$nom/cpp
+  $LN $nom $TLCD/bin/$nom/g++
+  $LN $nom $TLCD/bin/$nom/gcc
   $LN $nom $TLCD/bin/$nom/gcc-10.2.0
 }

@@ -4,23 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     PREFIX=/usr \
     DESTDIR=$SCER/$nom/sac \
-    install &&
+    install
 
   $LN samu $SCER/$nom/sac/usr/bin/ninja
 }

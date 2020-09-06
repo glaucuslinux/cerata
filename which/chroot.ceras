@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $CBLD/$nom &&
+  $MKDIR $CBLD/$nom
   cd $CBLD/$nom
-} &&
+}
 
 configure() {
   $SRCD/$nom/$nom-$ver/configure \
     --host=$TUPL \
     --prefix=$TLCD \
     --disable-iberty
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

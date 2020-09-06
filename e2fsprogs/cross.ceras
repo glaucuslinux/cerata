@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete &&
-  cd $XSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
-  rad_behave_gnu guess config &&
-  rad_behave_gnu rpath config &&
-  rad_behave_gnu sub config &&
+  rad_behave_gnu guess config
+  rad_behave_gnu rpath config
+  rad_behave_gnu sub config
 
-  $MKDIR $XBLD/$nom &&
+  $MKDIR $XBLD/$nom
   cd $XBLD/$nom
-} &&
+}
 
 configure() {
   $XSRC/$nom/configure \
@@ -34,20 +34,20 @@ configure() {
     --disable-rpath \
     --enable-lto \
     --without-included-gettext
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$XCER/$nom/sac \
-    install-strip &&
+    install-strip
   
   $MAKE \
     DESTDIR=$XCER/$nom/sac \
-    install-libs &&
+    install-libs
 
   find $XCER/$nom/sac/usr/lib -name *.a -type f -exec $CHMOD u+w {} \;
 }

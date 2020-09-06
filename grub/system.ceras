@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess build-aux &&
-  rad_behave_gnu rpath build-aux &&
-  rad_behave_gnu sub build-aux &&
+  rad_behave_gnu guess build-aux
+  rad_behave_gnu rpath build-aux
+  rad_behave_gnu sub build-aux
 
   $SCRD/patch 1 $nom clear 0001-Lower-test-timeout
-} &&
+}
 
 configure() {
-  $AUTORECONF &&
+  $AUTORECONF
 
   CFLAGS="$($SCRD/classify species atlanticus "$CFLAGSNOLTONOOPENMPNOPLT" "$CFLAGSNOLTO")" \
   LDFLAGS="$($SCRD/classify species atlanticus "$LDFLAGSNOOPENMP" "$LDFLAGS")" \
@@ -34,11 +34,11 @@ configure() {
     --enable-libzfs \
     --disable-werror \
     --without-included-regex
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

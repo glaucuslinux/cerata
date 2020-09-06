@@ -4,23 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess build-aux &&
-  rad_behave_gnu sub build-aux &&
+  rad_behave_gnu guess build-aux
+  rad_behave_gnu sub build-aux
 
   $SCRD/patch 0 $nom lfs 0001-fix-perl-bug
-} &&
+}
 
 configure() {
   ./configure \
     --prefix=/usr
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

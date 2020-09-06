@@ -4,21 +4,21 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $SCRD/patch 0 $nom glaucus 0001-remove-sbin
-} &&
+}
 
 configure() {
-  $SCRD/patch 0 $nom lfs 0001-remove-arpd-and-two-modules &&
+  $SCRD/patch 0 $nom lfs 0001-remove-arpd-and-two-modules
 
   ./configure
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

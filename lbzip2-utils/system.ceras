@@ -4,32 +4,32 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $SSRC --delete &&
+  $RSYNC $SRCD/$nom $SSRC --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
-  $AUTORECONF &&
+  $AUTORECONF
 
   ./configure \
     --prefix=/usr
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install-strip &&
+    install-strip
 
-  $LN lbzcmp $SCER/$nom/sac/usr/bin/bzcmp &&
-  $LN lbzdiff $SCER/$nom/sac/usr/bin/bzdiff &&
-  $LN lbzegrep $SCER/$nom/sac/usr/bin/bzegrep &&
-  $LN lbzfgrep $SCER/$nom/sac/usr/bin/bzfgrep &&
-  $LN lbzgrep $SCER/$nom/sac/usr/bin/bzgrep &&
-  $LN lbzrecover $SCER/$nom/sac/usr/bin/bzip2recover &&
-  $LN lbzless $SCER/$nom/sac/usr/bin/bzless &&
+  $LN lbzcmp $SCER/$nom/sac/usr/bin/bzcmp
+  $LN lbzdiff $SCER/$nom/sac/usr/bin/bzdiff
+  $LN lbzegrep $SCER/$nom/sac/usr/bin/bzegrep
+  $LN lbzfgrep $SCER/$nom/sac/usr/bin/bzfgrep
+  $LN lbzgrep $SCER/$nom/sac/usr/bin/bzgrep
+  $LN lbzrecover $SCER/$nom/sac/usr/bin/bzip2recover
+  $LN lbzless $SCER/$nom/sac/usr/bin/bzless
   $LN lbzmore $SCER/$nom/sac/usr/bin/bzmore
 }

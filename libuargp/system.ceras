@@ -4,17 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $SSRC --delete &&
+  $RSYNC $SRCD/$nom $SSRC --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

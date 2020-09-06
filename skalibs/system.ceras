@@ -4,12 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0001-use-gnu-hash-style &&
+  $SCRD/patch 0 $nom glaucus 0001-use-gnu-hash-style
 
   ./configure \
     --host=$XTGT \
@@ -20,16 +20,16 @@ configure() {
     --disable-static \
     --disable-all-pic \
     --disable-ipv6 \
-    --with-sysdep-devurandom=yes &&
+    --with-sysdep-devurandom=yes
 
   sed "s/CFLAGS := .*/CFLAGS := $CFLAGS -fno-stack-protector/" \
     -i config.mak
-} &&
+}
 
 build() {
   $MAKE \
     strip
-} &&
+}
 
 install() {
   $MAKE \

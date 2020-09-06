@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-s$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-s$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $MKDIR $SBLD/$nom
-} &&
+}
 
 configure() {
   glaucus-meson \
@@ -21,19 +21,19 @@ configure() {
     -DNO_SETCAP_OR_SUID=true \
     -DUSE_GETTEXT=false \
     $SBLD/$nom
-} &&
+}
 
 build() {
   samu \
     -C $SBLD/$nom
-} &&
+}
 
 install() {
   DESTDIR=$SCER/$nom/sac \
   samu \
     -C $SBLD/$nom \
-    install &&
+    install
 
-  $LN ping $SCER/$nom/sac/usr/bin/ping6 &&
+  $LN ping $SCER/$nom/sac/usr/bin/ping6
   $LN tracepath $SCER/$nom/sac/usr/bin/tracepath6
 }

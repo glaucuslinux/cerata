@@ -4,17 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom/ $XSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom/ $XSRC/$nom --delete
   cd $XSRC/$nom
-} &&
+}
 
 configure() {
   $SCRD/patch 0 $nom glaucus remove-O2
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
