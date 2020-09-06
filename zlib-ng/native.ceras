@@ -4,19 +4,19 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $NBLD/$nom &&
+  $MKDIR $NBLD/$nom
   cd $NBLD/$nom
-} &&
+}
 
 configure() {
   $SRCD/$nom/configure \
     --prefix=$TOOL \
     --zlib-compat
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

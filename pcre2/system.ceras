@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
 
-  $MKDIR $SBLD/$nom &&
+  $MKDIR $SBLD/$nom
   cd $SBLD/$nom
-} &&
+}
 
 configure() {
   $SSRC/$nom/configure \
@@ -23,11 +23,11 @@ configure() {
     --enable-jit \
     --enable-pcre2grep-libz \
     --enable-pcre2test-libedit
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

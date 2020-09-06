@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/elfutils/elfutils-$ver/ $SSRC/elfutils --delete &&
-  cd $SSRC/elfutils &&
+  $RSYNC $SRCD/elfutils/elfutils-$ver/ $SSRC/elfutils --delete
+  cd $SSRC/elfutils
 
-  rad_behave_gnu guess config &&
-  rad_behave_gnu sub config &&
+  rad_behave_gnu guess config
+  rad_behave_gnu sub config
 
-  $RSYNC $CERD/elfutils/error.h lib &&
-  $RSYNC $CERD/elfutils/error.h src &&
+  $RSYNC $CERD/elfutils/error.h lib
+  $RSYNC $CERD/elfutils/error.h src
 
   $SCRD/patch 0 elfutils void musl-cdefs
-} &&
+}
 
 configure() {
-  $AUTORECONF &&
+  $AUTORECONF
 
   CFLAGS="$CFLAGS -Wno-error" \
   ./configure \
@@ -28,15 +28,15 @@ configure() {
     --disable-symbol-versioning \
     --disable-nls \
     --disable-debuginfod
-} &&
+}
 
 build() {
   $MAKE \
-    -C lib &&
+    -C lib
 
   $MAKE \
     -C libelf
-} &&
+}
 
 install() {
   $MAKE \

@@ -4,9 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
   ./configure \
@@ -15,16 +15,16 @@ configure() {
     --disable-nls \
     --with-compiledby=glaucus \
     --without-x
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install &&
+    install
 
   $LN $nom $SCER/$nom/sac/usr/bin/vi
 }

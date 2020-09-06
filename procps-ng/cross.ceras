@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete &&
-  cd $XSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu rpath . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu rpath .
+  rad_behave_gnu sub .
 
   $SCRD/patch 1 $nom adelie use-utmpx
-} &&
+}
 
 configure() {
-  $AUTORECONF &&
+  $AUTORECONF
 
   LIBS='-lutmps -lskarnet' \
   ac_cv_func_malloc_0_nonnull=yes \
@@ -33,11 +33,11 @@ configure() {
     --disable-modern-top \
     --disable-whining \
     --without-systemd
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

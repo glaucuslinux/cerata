@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-} &&
+}
 
 configure() {
-  $SCRD/patch 0 $nom glaucus 0001-remove-static &&
+  $SCRD/patch 0 $nom glaucus 0001-remove-static
   $SCRD/patch 0 $nom void disable-tests
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
@@ -24,7 +24,7 @@ install() {
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    install &&
+    install
 
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/$nom.so.$ver
 }

@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete &&
-  cd $CSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $CSRC/$nom --delete
+  cd $CSRC/$nom
 
-  rad_behave_gnu guess build-aux &&
-  rad_behave_gnu rpath build-aux &&
-  rad_behave_gnu sub build-aux &&
+  rad_behave_gnu guess build-aux
+  rad_behave_gnu rpath build-aux
+  rad_behave_gnu sub build-aux
 
-  $MKDIR $CBLD/$nom &&
+  $MKDIR $CBLD/$nom
   cd $CBLD/$nom
-} &&
+}
 
 configure() {
   $CSRC/$nom/configure \
@@ -27,11 +27,11 @@ configure() {
     --without-selinux \
     --with-packager=glaucus \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \

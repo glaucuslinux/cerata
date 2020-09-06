@@ -4,27 +4,27 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom &&
+  $MKDIR $XBLD/$nom
 
-  cd $SRCD/linux/linux-$ver &&
+  cd $SRCD/linux/linux-$ver
 
   $MAKE \
     ARCH=$LARCH \
-    mrproper &&
+    mrproper
 
   $MAKE \
     O=$XBLD/$nom \
     ARCH=$LARCH \
     headers_check
-} &&
+}
 
 configure() {
   :
-} &&
+}
 
 build() {
   :
-} &&
+}
 
 install() {
   $MAKE \

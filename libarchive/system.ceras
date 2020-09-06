@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess build/autoconf &&
-  rad_behave_gnu rpath build/autoconf &&
-  rad_behave_gnu sub build/autoconf &&
+  rad_behave_gnu guess build/autoconf
+  rad_behave_gnu rpath build/autoconf
+  rad_behave_gnu sub build/autoconf
 
   $SCRD/patch 0 $nom void filter-xz-enable-threads
-} &&
+}
 
 configure() {
   ./configure \
@@ -24,17 +24,17 @@ configure() {
     --without-cng \
     --without-nettle \
     --without-xml2
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install-strip &&
+    install-strip
 
-  $LN bsdcpio $SCER/$nom/sac/usr/bin/cpio &&
+  $LN bsdcpio $SCER/$nom/sac/usr/bin/cpio
   $LN bsdtar $SCER/$nom/sac/usr/bin/tar
 }

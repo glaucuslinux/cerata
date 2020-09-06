@@ -4,33 +4,33 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
 
-  $MKDIR $SBLD/$nom &&
-  cd $SBLD/$nom &&
+  $MKDIR $SBLD/$nom
+  cd $SBLD/$nom
   
   $RSYNC $SSRC/$nom/man . --delete
-} &&
+}
 
 configure() {
   $SSRC/$nom/configure \
     --prefix=/usr \
     --without-man2html \
     --without-builtin-regex
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install &&
+    install
 
   $LN $nom $SCER/$nom/sac/usr/bin/awk
 }

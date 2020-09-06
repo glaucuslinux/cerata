@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
+  cd $SSRC/$nom &&
+
+  rad_behave_gnu guess conftools &&
+  rad_behave_gnu sub conftools &&
+
+  $MKDIR $SBLD/$nom &&
+  cd $SBLD/$nom
+} &&
+
+configure() {
+  $SSRC/$nom/configure \
+    --prefix=/usr \
+    --disable-static \
+    --without-examples \
+    --without-tests \
+    --without-docbook
+} &&
+
+build() {
+  $MAKE
+} &&
+
+install() {
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    install-strip
+}

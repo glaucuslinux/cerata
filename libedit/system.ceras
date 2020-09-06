@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete &&
-  cd $SSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  rad_behave_gnu guess . &&
-  rad_behave_gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
 
-  $MKDIR $SBLD/$nom &&
+  $MKDIR $SBLD/$nom
   cd $SBLD/$nom
-} &&
+}
 
 configure() {
   CFLAGS="$CFLAGS -D__STDC_ISO_10646__" \
@@ -20,23 +20,23 @@ configure() {
     --prefix=/usr \
     --disable-static \
     --disable-examples
-} &&
+}
 
 build() {
   $MAKE
-} &&
+}
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install-strip &&
+    install-strip
 
-  $MKDIR $SCER/$nom/sac/usr/include/readline &&
+  $MKDIR $SCER/$nom/sac/usr/include/readline
   
-  touch $SCER/$nom/sac/usr/include/readline/history.h &&
-  touch $SCER/$nom/sac/usr/include/readline/tilde.h &&
+  touch $SCER/$nom/sac/usr/include/readline/history.h
+  touch $SCER/$nom/sac/usr/include/readline/tilde.h
 
-  $LN ../editline/readline.h $SCER/$nom/sac/usr/include/readline/readline.h &&
+  $LN ../editline/readline.h $SCER/$nom/sac/usr/include/readline/readline.h
   
   $LN $nom.so $SCER/$nom/sac/usr/lib/libreadline.so
 }
