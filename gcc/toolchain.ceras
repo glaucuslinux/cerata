@@ -4,23 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete &&
-  cd $TSRC/$nom &&
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
  
-  $RSYNC $SRCD/gmp/gmp-6.2.0/ gmp --delete &&
-  $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete &&
-  $RSYNC $SRCD/mpc/mpc-1.1.0/ mpc --delete &&
-  $RSYNC $SRCD/isl/isl-0.22.1/ isl --delete &&
+  $RSYNC $SRCD/gmp/gmp-6.2.0/ gmp --delete
+  $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete
+  $RSYNC $SRCD/mpc/mpc-1.1.0/ mpc --delete
+  $RSYNC $SRCD/isl/isl-0.22.1/ isl --delete
 
-  $SCRD/gnu guess . &&
-  $SCRD/gnu rpath . &&
-  $SCRD/gnu sub . &&
+  rad_behave_gnu guess .
+  rad_behave_gnu rpath .
+  rad_behave_gnu sub .
 
-  $GPARCH &&
+  $GPARCH
 
-  $MKDIR $TBLD/$nom &&
+  $MKDIR $TBLD/$nom
   cd $TBLD/$nom
-} &&
+}
 
 configure() {
   $TSRC/$nom/configure \
@@ -50,15 +50,15 @@ configure() {
     --with-zstd \
     --without-included-gettext \
     --with-system-zlib \
-    --with-linker-hash-style=gnu &&
+    --with-linker-hash-style=gnu
 
   $MAKE \
     configure-host
-} &&
+}
 
 build() {
   $MAKE \
-    all-$nom &&
+    all-$nom
 
   CFLAGS='-g0 -O0' \
   CXXFLAGS='-g0 -O0' \
@@ -66,23 +66,23 @@ build() {
   $MAKE \
     enable_shared=no \
     all-target-lib$nom
-} &&
+}
 
 install() {
   $MAKE \
     install-strip-$nom \
-    install-strip-target-lib$nom &&
+    install-strip-target-lib$nom
 
-  $LN $TGT-g++ $TLCD/bin/$TGT-c++ &&
+  $LN $TGT-g++ $TLCD/bin/$TGT-c++
 
-  $RSYNC $CERD/$nom/c89 $TLCD/bin/$TGT-c89 &&
-  $RSYNC $CERD/$nom/c99 $TLCD/bin/$TGT-c99 &&
+  $RSYNC $CERD/$nom/c89 $TLCD/bin/$TGT-c89
+  $RSYNC $CERD/$nom/c99 $TLCD/bin/$TGT-c99
 
   sed s/$nom/$TGT-$nom/ \
-    -i $TLCD/bin/$TGT-c89 &&
+    -i $TLCD/bin/$TGT-c89
   sed s/$nom/$TGT-$nom/ \
-    -i $TLCD/bin/$TGT-c99 &&
+    -i $TLCD/bin/$TGT-c99
 
-  $LN $TGT-$nom $TLCD/bin/$TGT-cc &&
+  $LN $TGT-$nom $TLCD/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/bin/$TGT-$nom-$ver
 }

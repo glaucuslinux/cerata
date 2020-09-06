@@ -1,4 +1,4 @@
-#!/usr/bin/dash -e
+#!/bin/sh -e
 
 # Copyright (c) 2018-2020, Firas Khalil Khana
 # Distributed under the terms of the ISC License
@@ -7,7 +7,7 @@ f=-std=c89
 
 for i; do
   case $i in
-    -ansi|-std=c89|-std=iso9899:1990) f= ;;
+    -ansi | -std=c89 | -std=iso9899:1990) f= ;;
     -std=*) printf "c89 called with non ANSI/ISO C option $i\n" >&2 && exit 1 ;;
   esac
 done
