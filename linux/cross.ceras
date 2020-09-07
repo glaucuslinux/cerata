@@ -13,8 +13,6 @@ prepare() {
   $MAKE \
     ARCH=$LARCH \
     mrproper
-
-  rad_behave_patch 0 $nom glaucus 0001-libarchive-bsdtar-compatibility
 }
 
 configure() {
