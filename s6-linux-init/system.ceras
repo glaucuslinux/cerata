@@ -22,8 +22,7 @@ configure() {
     --enable-shared \
     --disable-static \
     --disable-allstatic \
-    --disable-all-pic \
-    --enable-utmps
+    --disable-all-pic
 
   sed "s/CFLAGS := .*/CFLAGS := $CFLAGSFAT -fno-stack-protector/" \
     -i config.mak

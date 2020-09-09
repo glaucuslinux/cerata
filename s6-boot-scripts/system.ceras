@@ -19,7 +19,5 @@ install() {
   $RSYNC $SRCD/$nom/etc $SCER/$nom/sac --delete
   $RSYNC $SRCD/$nom/usr $SCER/$nom/sac --delete
 
-  $MKDIR $SCER/$nom/sac/etc/s6/run-image/utmps
-  
   #s6-rc-compile $SCER/$nom/sac/etc/s6/compiled $SCER/$nom/sac/etc/s6/source
 }

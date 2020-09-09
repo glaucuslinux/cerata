@@ -35,6 +35,4 @@ install() {
   $RSYNC $CERD/$nom/ldconfig /usr/bin
 
   $LN ../lib/ld-$nom-$MARCH.so.1 /usr/bin/ldd
-
-  $RM /usr/include/utmpx.h
 }

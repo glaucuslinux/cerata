@@ -22,6 +22,4 @@ install() {
     prefix=/usr \
     DESTDIR=$CRSD \
     install-headers
-
-  $RM $CRSD/usr/include/utmpx.h
 }
