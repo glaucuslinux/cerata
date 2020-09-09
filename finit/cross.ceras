@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
+}
+
+configure() {
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr \
+    --enable-progress \
+    --disable-doc \
+    --disable-contrib \
+    --with-hostname=glaucus \
+    --with-random-seed=/var/lib/urandom/seed
+}
+
+build() {
+  $MAKE
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$XCER/$nom/sac \
+    install-strip
+}
