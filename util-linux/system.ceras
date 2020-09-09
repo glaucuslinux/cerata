@@ -18,7 +18,6 @@ prepare() {
 }
 
 configure() {
-  LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   $SSRC/$nom/configure \
     --build=$XBLD \
