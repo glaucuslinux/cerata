@@ -19,6 +19,7 @@ configure() {
     --enable-progress \
     --disable-doc \
     --disable-contrib \
+    --with-heading="glaucus $SPCS $ARCH" \
     --with-hostname=glaucus \
     --with-random-seed=/var/lib/urandom/seed
 }
@@ -31,4 +32,6 @@ install() {
   $MAKE \
     DESTDIR=$XCER/$nom/sac \
     install-strip
+
+  $LN $nom $XCER/$nom/sac/usr/bin/init
 }
