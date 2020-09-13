@@ -10,7 +10,7 @@ prepare() {
   rad_behave_gnu guess .
   rad_behave_gnu sub .
 
-  rad_behave_patch 0 $nom upstream 0001-skip-unknown-signals
+  rad_behave_patch 0 $nom troglobit 0001-skip-unknown-signals
 }
 
 configure() {
