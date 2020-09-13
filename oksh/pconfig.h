@@ -6,7 +6,6 @@
 #define HAVE_SETRESUID
 #define HAVE_SIG_T
 #define HAVE_ST_MTIM
-#define HAVE_ST_MTIMESPEC
 #define HAVE_STRLCAT
 #define HAVE_STRLCPY
 #define HAVE_TIMERADD
