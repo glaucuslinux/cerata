@@ -9,6 +9,8 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
+
+  rad_behave_patch 0 $nom upstream 0001-skip-unknown-signals
 }
 
 configure() {
@@ -16,6 +18,7 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
+    --sbindir=/usr/bin \
     --enable-progress \
     --disable-doc \
     --disable-contrib \
