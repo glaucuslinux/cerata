@@ -9,21 +9,18 @@ prepare() {
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus 0001-netbsd-curses-compatibility
-
-  CC=gcc \
   ./configure \
     --prefix=/usr \
-    --bindir=/usr/bin \
-    --mandir=/usr/share/man
+    --no-thanks
 
-  sed "s/CFLAGS = .*/CFLAGS = $CFLAGS -DVI -w -D_GNU_SOURCE/" \
+  sed '/${PROG}: ${OBJS}/!b;n;s/$/ -lterminfo/' \
     -i Makefile
+
+  $RSYNC $CERD/$nom/pconfig.h .
 }
 
 build() {
-  $MAKE \
-    CC=$CC
+  $MAKE
 }
 
 install() {
