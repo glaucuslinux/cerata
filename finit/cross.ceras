@@ -24,6 +24,7 @@ configure() {
     --disable-doc \
     --disable-contrib \
     --with-heading="glaucus $SPCS $ARCH" \
+    --with-fifo=/var/run/initctl \
     --with-hostname=glaucus \
     --with-random-seed=/var/lib/urandom/seed
 }
