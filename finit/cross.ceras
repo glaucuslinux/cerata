@@ -20,7 +20,6 @@ configure() {
     --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
-    --enable-fallback-shell \
     --enable-auto-reload \
     --enable-progress \
     --disable-doc \
