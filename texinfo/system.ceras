@@ -14,13 +14,10 @@ prepare() {
   rad_behave_gnu guess tp/Texinfo/XS
   rad_behave_gnu rpath tp/Texinfo/XS
   rad_behave_gnu sub tp/Texinfo/XS
-
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --enable-threads=posix \
     --disable-rpath \

@@ -9,14 +9,11 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
-
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
 }
 
 configure() {
   CFLAGS="$CFLAGSNOCOMMON" \
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \

@@ -9,13 +9,10 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
-
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --disable-static \
     --disable-docs \
