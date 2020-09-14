@@ -17,13 +17,10 @@ prepare() {
   rad_behave_gnu sub .
 
   $GPARCH
-
-  $MKDIR $TBLD/$nom
-  cd $TBLD/$nom
 }
 
 configure() {
-  $TSRC/$nom/configure \
+  ./configure \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \

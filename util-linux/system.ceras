@@ -11,15 +11,12 @@ prepare() {
   rad_behave_gnu rpath config
   rad_behave_gnu sub config
 
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
-
   $MKDIR $SCER/$nom/sac/var/lib/hwclock
 }
 
 configure() {
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
-  $SSRC/$nom/configure \
+  ./configure \
     --build=$XBLD \
     --host=$XTGT \
     --prefix=/usr \

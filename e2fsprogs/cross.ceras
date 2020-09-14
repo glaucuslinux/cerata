@@ -10,13 +10,10 @@ prepare() {
   rad_behave_gnu guess config
   rad_behave_gnu rpath config
   rad_behave_gnu sub config
-
-  $MKDIR $XBLD/$nom
-  cd $XBLD/$nom
 }
 
 configure() {
-  $XSRC/$nom/configure \
+  ./configure \
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \

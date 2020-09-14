@@ -9,15 +9,10 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
-
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
-  
-  $RSYNC $SSRC/$nom/man . --delete
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --without-man2html \
     --without-builtin-regex

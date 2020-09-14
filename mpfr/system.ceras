@@ -9,14 +9,11 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
-
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
 }
 
 configure() {
   CFLAGS="$($SCRD/classify species atlanticus "$CFLAGSFINITE" "$CFLAGS")" \
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --enable-thread-safe \
     --enable-shared-cache \
