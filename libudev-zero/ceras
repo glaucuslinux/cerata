@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=libudev-zero
+ver=0.4.3
+url=https://github.com/illiliti/$nom/archive/$ver.tar.gz
+sum=085dfa54d92fa15be070f74e95d971b746ac93ee9251788033343dafb12b71324a1116660f73263c59a0eab13c6b482e9858244c6d8579d21a6098acf859eb19
+lic=ISC
