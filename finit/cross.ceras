@@ -20,6 +20,7 @@ configure() {
     --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
+    --enable-auto-reload \
     --enable-progress \
     --disable-doc \
     --disable-contrib \
