@@ -10,10 +10,13 @@ prepare() {
   rad_behave_gnu guess .
   rad_behave_gnu rpath .
   rad_behave_gnu sub .
+
+  $MKDIR $TBLD/$nom
+  cd $TBLD/$nom
 }
 
 configure() {
-  ./configure \
+  $TSRC/$nom/configure \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
