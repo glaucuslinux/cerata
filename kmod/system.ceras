@@ -11,7 +11,6 @@ prepare() {
   rad_behave_gnu sub build-aux
 
   rad_behave_patch 1 $nom arch 0002-add-zstd-compressed-module-support
-  rad_behave_patch 0 $nom void strndupa
 }
 
 configure() {
