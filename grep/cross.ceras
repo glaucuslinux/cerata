@@ -16,7 +16,7 @@ prepare() {
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  $XSRC/$nom/configure \
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
