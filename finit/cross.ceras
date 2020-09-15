@@ -20,6 +20,8 @@ configure() {
     --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
     --enable-auto-reload \
     --enable-progress \
     --disable-doc \
@@ -40,4 +42,7 @@ install() {
     install-strip
 
   $LN $nom $XCER/$nom/sac/usr/bin/init
+
+  $MKDIR $XCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/$nom.conf $XCER/$nom/sac/etc
 }
