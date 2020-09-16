@@ -12,13 +12,8 @@ configure() {
   $SRCD/$nom/$nom-$ver/configure \
     CFLAGS="$($SCRD/classify species atlanticus "$CFLAGSNOFPMATHNOLTO" "$CFLAGSNOLTO")" \
     --prefix=/usr \
-    --syslibdir=/usr/lib \
     --disable-wrapper \
     --disable-static
-
-  $RSYNC $SRCD/$nom/$nom-$ver/Makefile .
-
-  rad_behave_patch 0 $nom glaucus 0001-remove-libdir
 }
 
 build() {
@@ -29,10 +24,11 @@ install() {
   $MAKE \
     install
 
-  $RSYNC $CERD/$nom/ld-$nom.path.system /etc/ld-$nom-$MARCH.path
+  $RSYNC $CERD/$nom/ld-$nom.path /etc/ld-$nom-$MARCH.path
   $CHOWN 0:0 /etc/ld-$nom-$MARCH.path
 
   $RSYNC $CERD/$nom/ldconfig /usr/bin
-
   $LN ../lib/ld-$nom-$MARCH.so.1 /usr/bin/ldd
+
+  $LN libc.so /usr/lib/ld-$nom-$MARCH.so.1
 }
