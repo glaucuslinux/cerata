@@ -1,0 +1,11 @@
+--- Makefile
++++ Makefile
+@@ -114,7 +114,7 @@
+ ZDUMPDIR = $(BINDIR)
+ 
+ # The "zic" command goes in:
+-ZICDIR = $(TOPDIR)/$(USRDIR)/sbin
++ZICDIR = $(TOPDIR)/$(USRDIR)/bin
+ 
+ # Manual pages go in subdirectories of. . .
+ MANDIR = $(TOPDIR)/$(USRSHAREDIR)/man
