@@ -6,4 +6,5 @@
 nom=radula
 ver=git
 url=https://github.com/glaucuslinux/$nom
+cys='curl git libarchive'
 lic=ISC
