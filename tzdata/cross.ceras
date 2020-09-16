@@ -1,0 +1,24 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom $XSRC --delete
+  cd $XSRC/$nom
+
+  rad_behave_patch 0 $nom glaucus 0001-remove-sbin
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+install() {
+  $MKDIR $XCER/$nom/sac/usr/share/zoneinfo/posix
+  $MKDIR $XCER/$nom/sac/usr/share/zoneinfo/right
+}
