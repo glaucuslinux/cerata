@@ -1,0 +1,26 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+install() {
+  $MKDIR $XCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/$nom.conf $XCER/$nom/sac/etc
+  $LN $nom.conf $XCER/$nom/sac/etc/rad.conf
+
+  $MKDIR $XCER/$nom/sac/usr/bin
+  $RSYNC $SRCD/$nom/$nom $XCER/$nom/sac/usr/bin
+  $LN $nom $XCER/$nom/sac/usr/bin/rad
+}
