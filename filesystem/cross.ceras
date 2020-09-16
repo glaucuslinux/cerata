@@ -24,6 +24,8 @@ install() {
   $LN ../run/shm $XCER/$nom/sac/dev/shm
 
   $RSYNC $CERD/$nom/etc $XCER/$nom/sac
+  
+  $MKDIR $XCER/$nom/sac/home
 
   $LN usr/lib $XCER/$nom/sac/lib
 
