@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=lzlib
+ver=1.12-rc2
+url=http://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
+sum=54c8a3d2b0d656eece1154aead9d76bf9a0672414a605fe73af1d1fe4c9d768c8082a6501c636e6a4642a05d1c694debd2e5c9cc132a66f7b63cbf4f78baff3f
+lic=BSD-2-Clause
