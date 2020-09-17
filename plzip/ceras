@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=plzip
+ver=1.9-rc2
+url=http://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
+sum=be3befda6872ac68cf4e475b7d002492b2a3a9e97480e45a14e93247c2522a9afac2037c1c3f1957391841382a5314e1a9bc202e99d91e01fd26b43f6b5092bb
+lic=GPL-2.0-or-later
