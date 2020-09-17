@@ -21,8 +21,6 @@ configure() {
     --prefix=/usr \
     --disable-static \
     --disable-rpath \
-    --enable-xattr \
-    --enable-acl \
     --without-nettle \
     --without-xml2
 }
