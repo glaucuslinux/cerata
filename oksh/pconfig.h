@@ -1,4 +1,4 @@
-#define __dead __attribute__((__noreturn__))
+#define __dead _Noreturn
 #define HAVE_ASPRINTF
 #define HAVE_CONFSTR
 #define HAVE_CURSES
