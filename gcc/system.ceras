@@ -11,8 +11,6 @@ prepare() {
   rad_behave_gnu rpath .
   rad_behave_gnu sub .
 
-  rad_behave_patch 0 $nom glaucus 0002-adjust-system-paths-for-$ARCH
-
   $GPARCH
 
   $MKDIR $SBLD/$nom
@@ -21,7 +19,7 @@ prepare() {
 
 configure() {
   CFLAGS="$CFLAGSNOLTO" \
-  CXXFLAGS="$($SCRD/classify species bennettae "$CFLAGSNOLTO" "$CFLAGSNOIPANOLTO")" \
+  CXXFLAGS="$([ $species = bennettae ] && printf -- "$CFLAGSNOLTO" || printf -- "$CFLAGSNOIPANOLTO")" \
   $SSRC/$nom/configure \
     --prefix=/usr \
     --libexecdir=/usr/lib \

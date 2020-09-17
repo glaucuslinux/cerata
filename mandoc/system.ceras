@@ -15,7 +15,7 @@ configure() {
 OSNAME=glaucus
 PREFIX=/usr
 AR=$AR
-CFLAGS='$($SCRD/classify species atlanticus "$CFLAGSFATNOCOMMON" "$CFLAGSFAT")'" > configure.local
+CFLAGS='$( [ $species = atlanticus ] && printf -- "$CFLAGSFATNOCOMMON" || printf -- "$CFLAGSFAT")'" > configure.local
 
   ./configure
   
