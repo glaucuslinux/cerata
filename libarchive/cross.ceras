@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   rad_behave_gnu guess build/autoconf
   rad_behave_gnu rpath build/autoconf
@@ -16,6 +16,8 @@ prepare() {
 
 configure() {
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --disable-static \
     --disable-rpath \
@@ -31,9 +33,9 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$XCER/$nom/sac \
     install-strip
 
-  $LN bsdcpio $SCER/$nom/sac/usr/bin/cpio
-  $LN bsdtar $SCER/$nom/sac/usr/bin/tar
+  $LN bsdcpio $XCER/$nom/sac/usr/bin/cpio
+  $LN bsdtar $XCER/$nom/sac/usr/bin/tar
 }
