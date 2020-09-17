@@ -20,6 +20,10 @@ configure() {
 
 build() {
   $MAKE
+
+  $TGT-gcc $CFLAGS $CERD/$nom/getconf.c -o $CRSD/usr/bin/getconf
+  $TGT-gcc $CFLAGS $CERD/$nom/getent.c -o $CRSD/usr/bin/getent
+  $TGT-gcc $CFLAGS $CERD/$nom/iconv.c -o $CRSD/usr/bin/iconv
 }
 
 install() {
