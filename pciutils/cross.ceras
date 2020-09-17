@@ -1,0 +1,45 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    HOST=$TGT \
+    CROSS_COMPILE=$TGT- \
+    ZLIB=no \
+    SHARED=yes \
+    LIBKMOD=yes \
+    PREFIX=/usr \
+    SBINDIR=/usr/bin \
+    SHAREDIR=/usr/share/hwdata \
+    MANDIR=/usr/share/man
+}
+
+install() {
+  $MAKE \
+    HOST=$TGT \
+    CROSS_COMPILE=$TGT- \
+    ZLIB=no \
+    SHARED=yes \
+    LIBKMOD=yes \
+    PREFIX=/usr \
+    SBINDIR=/usr/bin \
+    SHAREDIR=/usr/share/hwdata \
+    MANDIR=/usr/share/man \
+    DESTDIR=$XCER/$nom/sac \
+    install install-lib
+
+  $RM $XCER/$nom/sac/usr/bin/update-pciids
+  $RM $XCER/$nom/sac/usr/share/hwdata
+  $RM $XCER/$nom/sac/usr/share/man/man8/update-pciids.8
+}
