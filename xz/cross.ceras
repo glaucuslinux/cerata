@@ -1,0 +1,38 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  rad_behave_patch 1 $nom clear default-threading
+  rad_behave_patch 1 $nom clear io-size
+  rad_behave_patch 1 $nom clear speedup
+  rad_behave_patch 2 $nom clear add-pgo
+}
+
+configure() {
+  $AUTORECONF
+
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr \
+    --disable-doc \
+    --disable-static \
+    --disable-nls \
+    --disable-rpath
+}
+
+build() {
+  $MAKE \
+    pgo-build
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$XCER/$nom/sac \
+    install-strip
+}

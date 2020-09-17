@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  rad_behave_patch 1 $nom clear multi-thread-default
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    HAVE_PTHREAD=1 \
+    ZSTD_LEGACY_SUPPORT=0 \
+    HAVE_ZLIB=1 \
+    HAVE_LZMA=1 \
+    HAVE_LZ4=1 \
+    BACKTRACE=0
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$XCER/$nom/sac \
+    PREFIX=/usr \
+    install
+
+  $RM $XCER/$nom/sac/usr/lib/lib$nom.a
+}

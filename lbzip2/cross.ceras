@@ -1,0 +1,33 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  rad_behave_gnu guess build-aux
+  rad_behave_gnu sub build-aux
+}
+
+configure() {
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr
+}
+
+build() {
+  $MAKE
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$XCER/$nom/sac \
+    install-strip
+
+  $LN $nom $XCER/$nom/sac/usr/bin/bunzip2
+  $LN $nom $XCER/$nom/sac/usr/bin/bzcat
+  $LN $nom $XCER/$nom/sac/usr/bin/bzip2
+}
