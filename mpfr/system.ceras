@@ -12,7 +12,7 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$($SCRD/classify species atlanticus "$CFLAGSFINITE" "$CFLAGS")" \
+  CFLAGS="$([ $species = atlanticus ] && printf -- "$CFLAGSFINITE" || printf -- "$CFLAGS")" \
   ./configure \
     --prefix=/usr \
     --enable-thread-safe \

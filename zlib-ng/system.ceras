@@ -9,10 +9,11 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$($SCRD/classify species atlanticus "$CFLAGSNOCOMMON" "$CFLAGS")" \
+  CFLAGS="$([ $species = atlanticus ] && printf -- "$CFLAGSNOCOMMON" || printf -- "$CFLAGS")" \
   $SRCD/$nom/configure \
     --prefix=/usr \
-    --zlib-compat
+    --zlib-compat \
+    --native
 }
 
 build() {
