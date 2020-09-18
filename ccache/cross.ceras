@@ -16,6 +16,7 @@ configure() {
     --target=$TGT \
     --prefix=$TLCD \
     --bindir=$TLCD/bin/$nom \
+    --sysconfdir=$TLCD/etc \
     --disable-man \
     --without-bundled-zlib
 }
