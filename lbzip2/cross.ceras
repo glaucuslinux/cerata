@@ -30,4 +30,5 @@ install() {
   $LN $nom $XCER/$nom/sac/usr/bin/bunzip2
   $LN $nom $XCER/$nom/sac/usr/bin/bzcat
   $LN $nom $XCER/$nom/sac/usr/bin/bzip2
+  $LN $nom $XCER/$nom/sac/usr/bin/pbzip2
 }
