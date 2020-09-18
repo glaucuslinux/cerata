@@ -9,7 +9,8 @@ prepare() {
 }
 
 configure() {
-  sed -e "s/CFLAGS=.*/CFLAGS=$CFLAGS/" \
+  sed -e "s/CC=.*/CC=$CC/" \
+    -e "s/CFLAGS=.*/CFLAGS=$CFLAGS/" \
     -e "s/LDFLAGS=/&$LDFLAGS/" \
     -i Makefile
 }
@@ -21,7 +22,6 @@ build() {
 install() {
   $MKDIR $XCER/$nom/sac/usr/bin
   $RSYNC $nom $XCER/$nom/sac/usr/bin
-
   $LN $nom $XCER/$nom/sac/usr/bin/gunzip
   $LN $nom $XCER/$nom/sac/usr/bin/gzcat
   $LN $nom $XCER/$nom/sac/usr/bin/gzip
