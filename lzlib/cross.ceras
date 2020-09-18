@@ -12,7 +12,9 @@ configure() {
   ./configure \
     --prefix=/usr \
     --disable-static \
-    --enable-shared
+    --enable-shared \
+    CC=$CC \
+    CFLAGS="$CFLAGS"
 }
 
 build() {
