@@ -15,6 +15,7 @@ configure() {
   ./configure \
     --prefix=/usr \
     --bindir=/usr/bin/$nom \
+    --sysconfdir=/etc \
     --disable-man \
     --without-bundled-zlib
 }
