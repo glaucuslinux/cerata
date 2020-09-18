@@ -10,7 +10,6 @@ prepare() {
   rad_behave_patch 1 $nom clear default-threading
   rad_behave_patch 1 $nom clear io-size
   rad_behave_patch 1 $nom clear speedup
-  rad_behave_patch 2 $nom clear add-pgo
 }
 
 configure() {
@@ -27,8 +26,7 @@ configure() {
 }
 
 build() {
-  $MAKE \
-    pgo-build
+  $MAKE
 }
 
 install() {
