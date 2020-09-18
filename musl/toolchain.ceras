@@ -20,10 +20,6 @@ configure() {
 
 build() {
   $MAKE
-
-  $TGT-gcc $CERD/$nom/getconf.c -o getconf
-  $TGT-gcc $CERD/$nom/getent.c -o getent
-  $TGT-gcc $CERD/$nom/iconv.c -o iconv
 }
 
 install() {
@@ -37,10 +33,6 @@ install() {
   $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-$MARCH.path
 
   $MKDIR $CRSD/usr/bin
-  $RSYNC $TSRC/$nom/getconf $CRSD/usr/bin
-  $RSYNC $TSRC/$nom/getent $CRSD/usr/bin
-  $RSYNC $TSRC/$nom/iconv $CRSD/usr/bin
-  $RSYNC $CERD/$nom/ldconfig $CRSD/usr/bin
   $LN ../lib/ld-$nom-$MARCH.so.1 $CRSD/usr/bin/ldd
 
   $LN libc.so $CRSD/usr/lib/ld-$nom-$MARCH.so.1
