@@ -69,22 +69,19 @@ configure() {
   $MAKE \
     O=$SBLD/$nom \
     ARCH=$LARCH \
-    CROSS_COMPILE=$XTGT- \
     ${LCARCH}defconfig
 }
 
 build() {
   $MAKE \
     O=$SBLD/$nom \
-    ARCH=$LARCH \
-    CROSS_COMPILE=$XTGT-
+    ARCH=$LARCH
 }
 
 install() {
   $MAKE \
     O=$SBLD/$nom \
     ARCH=$LARCH \
-    CROSS_COMPILE=$XTGT- \
     INSTALL_MOD_PATH=$SCER/$nom/sac/usr \
     modules_install
 
