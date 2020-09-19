@@ -9,21 +9,35 @@ prepare() {
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus 0001-remove-static
-  rad_behave_patch 0 $nom void disable-tests
+  :
 }
 
 build() {
-  $MAKE
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    lib=lib \
+    prefix=/usr \
+    SBINDIR=/usr/bin \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
+    BUILD_GPERF=no \
+    PAM_CAP=no \
+    DYNAMIC=yes \
+    GOLANG=no
 }
 
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
+    lib=lib \
     prefix=/usr \
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
+    BUILD_GPERF=no \
+    PAM_CAP=no \
+    DYNAMIC=yes \
+    GOLANG=no
     install
 
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/$nom.so.$ver
