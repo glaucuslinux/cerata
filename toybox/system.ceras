@@ -56,7 +56,6 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/iconv
   $LN $nom $SCER/$nom/sac/usr/bin/id
   $LN $nom $SCER/$nom/sac/usr/bin/install
-  $LN $nom $SCER/$nom/sac/usr/bin/iotop
   $LN $nom $SCER/$nom/sac/usr/bin/link
   $LN $nom $SCER/$nom/sac/usr/bin/ln
   $LN $nom $SCER/$nom/sac/usr/bin/logname
@@ -91,6 +90,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/sort
   $LN $nom $SCER/$nom/sac/usr/bin/split
   $LN $nom $SCER/$nom/sac/usr/bin/stat
+  $LN $nom $SCER/$nom/sac/usr/bin/stty
   $LN $nom $SCER/$nom/sac/usr/bin/sync
   $LN $nom $SCER/$nom/sac/usr/bin/tac
   $LN $nom $SCER/$nom/sac/usr/bin/tail
