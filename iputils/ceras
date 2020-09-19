@@ -7,4 +7,5 @@ nom=iputils
 ver=20200821
 url=https://github.com/$nom/$nom/archive/s$ver.tar.gz
 sum=4a57c3637cdd9aab2600682774e27370716cbdf1c7ac8ae61bf86c21c08701a5b697792df4aa95309b196eaa74f3cb6b2836a40f04da0e602156e982ac99d8c9
+cnt='libcap meson samu'
 lic='BSD-3-Clause GPL-2.0-or-later'

@@ -4,13 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $MKDIR $XBLD/$nom
 
   cd $SRCD/$nom/$nom-s$ver
 }
 
 configure() {
-  glaucus-meson \
+  meson setup \
+    --prefix /usr \
+    --libexecdir lib \
+    --sbindir bin \
+    --buildtype release \
+    --optimization 3 \
+    --stdsplit \
+    --strip \
+    --wrap-mode nodownload \
+    -Db_lto=true \
+    -Db_pie=true \
     -DUSE_IDN=false \
     -DBUILD_RARPD=true \
     -DBUILD_TRACEROUTE6=true \
@@ -19,20 +29,20 @@ configure() {
     -DBUILD_MANS=false \
     -DNO_SETCAP_OR_SUID=true \
     -DUSE_GETTEXT=false \
-    $SBLD/$nom
+    $XBLD/$nom
 }
 
 build() {
-  samu \
-    -C $SBLD/$nom
+  ninja \
+    -C $XBLD/$nom
 }
 
 install() {
-  DESTDIR=$SCER/$nom/sac \
-  samu \
-    -C $SBLD/$nom \
+  DESTDIR=$XCER/$nom/sac \
+  ninja \
+    -C $XBLD/$nom \
     install
 
-  $LN ping $SCER/$nom/sac/usr/bin/ping6
-  $LN tracepath $SCER/$nom/sac/usr/bin/tracepath6
+  $LN ping $XCER/$nom/sac/usr/bin/ping6
+  $LN tracepath $XCER/$nom/sac/usr/bin/tracepath6
 }
