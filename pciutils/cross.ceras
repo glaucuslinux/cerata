@@ -15,6 +15,7 @@ configure() {
 build() {
   $MAKE \
     HOST=$TGT \
+    CROSS_COMPILE=$TGT- \
     ZLIB=no \
     SHARED=yes \
     LIBKMOD=yes \
@@ -27,6 +28,7 @@ build() {
 install() {
   $MAKE \
     HOST=$TGT \
+    CROSS_COMPILE=$TGT- \
     ZLIB=no \
     SHARED=yes \
     LIBKMOD=yes \
