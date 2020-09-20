@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=musl-obstack
-ver=1.2
+ver=1.2.1
 url=https://github.com/void-linux/$nom/archive/v$ver.tar.gz
-sum=73d9846f37dc68943a6ac6da8030870097af510cfdd8f68eb87e6fa8d572f9dec7e600be349af5a5a93a4b0330ca746e344e3eeaa2289a7fe648568a47d2a987
+sum=91e05c413356f4cfd26ffc87a08199f5571e06e75629dde55a57431d4a510be239a7a1d226557f92ab9615408a3e2d5c8303f80bb94780f927c2829ec3e6fe8c
 lic=GPL-2.0-only
