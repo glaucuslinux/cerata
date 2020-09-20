@@ -1,0 +1,128 @@
+--- go/Makefile
++++ go/Makefile
+@@ -70,21 +70,6 @@
+ 	CGO_ENABLED="1" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH=$(GOPATH) $(GO) build -o $@-cgo $<
+ endif
+ 
+-test: all ../progs/capsh
+-	CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/psx
+-	CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/cap
+-	LD_LIBRARY_PATH=../libcap ./compare-cap
+-	./try-launching
+-ifeq ($(CGO_REQUIRED),0)
+-	./try-launching-cgo
+-endif
+-
+-sudotest: test
+-	sudo ./try-launching
+-ifeq ($(CGO_REQUIRED),0)
+-	sudo ./try-launching-cgo
+-endif
+-
+ install: all
+ 	rm -rf $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx
+ 	mkdir -p $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx/include/sys
+--- kdebug/Makefile
++++ kdebug/Makefile
+@@ -1,9 +1,6 @@
+ topdir=$(shell pwd)/..
+ include ../Make.Rules
+ 
+-test:
+-	./test-kernel.sh
+-
+ all:
+ 	@echo cd to kdebug to test a kernel build
+ 
+--- libcap/Makefile
++++ libcap/Makefile
+@@ -87,12 +87,6 @@
+ cap_text.o: cap_text.c $(USE_GPERF_OUTPUT) $(INCLS)
+ 	$(CC) $(CFLAGS) $(IPATH) $(INCLUDE_GPERF_OUTPUT) -c $< -o $@
+ 
+-cap_test: cap_test.c libcap.h
+-	$(CC) $(CFLAGS) $(IPATH) $< -o $@
+-
+-test: cap_test
+-	./cap_test
+-
+ install: install-shared install-static
+ 
+ install-common: pcs
+@@ -120,5 +114,5 @@
+ 	$(LOCALCLEAN)
+ 	rm -f $(CAPOBJS) $(LIBNAME)* $(STACAPLIBNAME) libcap.pc libpsx.pc
+ 	rm -f $(PSXOBJS) $(STAPSXLIBNAME)
+-	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT) cap_test
++	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT)
+ 	cd include/sys && $(LOCALCLEAN)
+--- Makefile
++++ Makefile
+@@ -17,10 +17,8 @@
+ 	$(MAKE) -C go $@
+ 	rm -f cap/go.sum
+ endif
+-	$(MAKE) -C tests $@
+ 	$(MAKE) -C progs $@
+ 	$(MAKE) -C doc $@
+-	$(MAKE) -C kdebug $@
+ 
+ all-here:
+ 
+@@ -40,42 +38,3 @@
+ 
+ release: distclean
+ 	cd .. && ln -s libcap libcap-$(VERSION).$(MINOR) && tar cvf libcap-$(VERSION).$(MINOR).tar --exclude patches libcap-$(VERSION).$(MINOR)/* && rm libcap-$(VERSION).$(MINOR)
+-
+-test: all
+-	make -C libcap $@
+-	make -C tests $@
+-ifneq ($(PAM_CAP),no)
+-	$(MAKE) -C pam_cap $@
+-endif
+-ifeq ($(GOLANG),yes)
+-	make -C go $@
+-endif
+-	make -C progs $@
+-
+-sudotest: all
+-	make -C tests $@
+-ifneq ($(PAM_CAP),no)
+-	$(MAKE) -C pam_cap $@
+-endif
+-ifeq ($(GOLANG),yes)
+-	make -C go $@
+-endif
+-	make -C progs $@
+-
+-distcheck:
+-	./distcheck.sh
+-	make CC=/usr/local/musl/bin/musl-gcc clean all test sudotest
+-	make clean all test sudotest
+-	make distclean
+-
+-morganrelease: distcheck
+-	@echo "sign the main library tag twice: older DSA key; and newer RSA (kernel.org) key"
+-	git tag -u D41A6DF2 -s libcap-$(VERSION).$(MINOR) -m "This is libcap-$(VERSION).$(MINOR)"
+-	git tag -u E2CCF3F4 -s libcap-korg-$(VERSION).$(MINOR) -m "This is libcap-$(VERSION).$(MINOR)"
+-	@echo "The following are for the Go module tracking."
+-	git tag -u D41A6DF2 -s v$(GOMAJOR).$(VERSION).$(MINOR) -m "This is the version tag for the 'libcap' Go base directory associated with libcap-$(VERSION).$(MINOR)."
+-	git tag -u D41A6DF2 -s psx/v$(GOMAJOR).$(VERSION).$(MINOR) -m "This is the version tag for the 'psx' Go package associated with libcap-$(VERSION).$(MINOR)."
+-	git tag -u D41A6DF2 -s cap/v$(GOMAJOR).$(VERSION).$(MINOR) -m "This is the version tag for the 'cap' Go package associated with libcap-$(VERSION).$(MINOR)."
+-	make release
+-	@echo "sign the tar file using korg key"
+-	cd .. && gpg -sba -u E2CCF3F4 libcap-$(VERSION).$(MINOR).tar
+--- progs/Makefile
++++ progs/Makefile
+@@ -34,11 +34,6 @@
+ 	$(FAKEROOT)$(SBINDIR)/setcap cap_setfcap=i $(FAKEROOT)$(SBINDIR)/setcap
+ endif
+ 
+-test: $(PROGS)
+-
+-sudotest: test
+-	sudo ./quicktest.sh
+-
+ clean:
+ 	$(LOCALCLEAN)
+ 	rm -f *.o $(BUILD) tcapsh ping hack.sh compare-cap
