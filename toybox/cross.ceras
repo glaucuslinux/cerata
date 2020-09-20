@@ -13,10 +13,12 @@ prepare() {
 configure() {
   $RSYNC $CERD/$nom/system.config .config
 
+  CROSS_COMPILE= \
   scripts/genconfig.sh
 }
 
 build() {
+  CROSS_COMPILE= \
   CFLAGS="$CFLAGSNOCOMMONNOLTO" \
   LDFLAGS="$LDFLAGSNORELRO" \
   $MAKE
