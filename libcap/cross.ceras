@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  :
+  rad_behave_patch 0 $nom glaucus 0001-disable-all-tests
 }
 
 build() {
@@ -20,7 +20,6 @@ build() {
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    CROSS_COMPILE=$TGT- \
     BUILD_CC=$HOSTCC \
     BUILD_GPERF=no \
     PAM_CAP=no \
@@ -36,12 +35,11 @@ install() {
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    CROSS_COMPILE=$TGT- \
     BUILD_CC=$HOSTCC \
     BUILD_GPERF=no \
     PAM_CAP=no \
     DYNAMIC=yes \
-    GOLANG=no
+    GOLANG=no \
     install
 
   $CHMOD 0755 $XCER/$nom/sac/usr/lib/$nom.so.$ver
