@@ -18,9 +18,7 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/usr/bin
-  $RSYNC $nom $XCER/$nom/sac/usr/bin/$nom
-
-  $LN $nom $XCER/$nom/sac/usr/bin/ksh
-  $LN $nom $XCER/$nom/sac/usr/bin/rksh
+  $RSYNC $nom $CRSD/usr/bin
+  $LN $nom $CRSD/usr/bin/ksh
+  $LN $nom $CRSD/usr/bin/rksh
 }

@@ -30,11 +30,9 @@ install() {
   $MAKE \
     O=$XBLD/$nom \
     ARCH=$LARCH \
-    INSTALL_MOD_PATH=$XCER/$nom/sac/usr \
+    INSTALL_MOD_PATH=$CRSD/usr \
     modules_install
 
-  $MKDIR $XCER/$nom/sac/boot
-
-  $RSYNC $XBLD/$nom/$LIARCH $XCER/$nom/sac/boot/vmlinuz
-  $RSYNC $XBLD/$nom/System.map $XCER/$nom/sac/boot
+  $RSYNC $XBLD/$nom/$LIARCH $CRSD/boot/vmlinuz
+  $RSYNC $XBLD/$nom/System.map $CRSD/boot
 }

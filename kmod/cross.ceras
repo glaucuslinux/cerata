@@ -27,21 +27,21 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $MKDIR $XCER/$nom/sac/etc/depmod.d
-  $MKDIR $XCER/$nom/sac/etc/modprobe.d
+  $MKDIR $CRSD/etc/depmod.d
+  $MKDIR $CRSD/etc/modprobe.d
 
-  $LN $nom $XCER/$nom/sac/usr/bin/depmod
-  $LN $nom $XCER/$nom/sac/usr/bin/insmod
-  $LN $nom $XCER/$nom/sac/usr/bin/lsmod
-  $LN $nom $XCER/$nom/sac/usr/bin/modinfo
-  $LN $nom $XCER/$nom/sac/usr/bin/modprobe
-  $LN $nom $XCER/$nom/sac/usr/bin/rmmod
+  $LN $nom $CRSD/usr/bin/depmod
+  $LN $nom $CRSD/usr/bin/insmod
+  $LN $nom $CRSD/usr/bin/lsmod
+  $LN $nom $CRSD/usr/bin/modinfo
+  $LN $nom $CRSD/usr/bin/modprobe
+  $LN $nom $CRSD/usr/bin/rmmod
 
-  $MKDIR $XCER/$nom/sac/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/depmod-search.conf $XCER/$nom/sac/usr/lib/depmod.d/search.conf
+  $MKDIR $CRSD/usr/lib/depmod.d
+  $RSYNC $CERD/$nom/depmod-search.conf $CRSD/usr/lib/depmod.d/search.conf
 
-  $MKDIR $XCER/$nom/sac/usr/lib/modprobe.d
+  $MKDIR $CRSD/usr/lib/modprobe.d
 }

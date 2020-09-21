@@ -24,11 +24,11 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $XCER/$nom/sac/usr/bin/bunzip2
-  $LN $nom $XCER/$nom/sac/usr/bin/bzcat
-  $LN $nom $XCER/$nom/sac/usr/bin/bzip2
-  $LN $nom $XCER/$nom/sac/usr/bin/pbzip2
+  $LN $nom $CRSD/usr/bin/bunzip2
+  $LN $nom $CRSD/usr/bin/bzcat
+  $LN $nom $CRSD/usr/bin/bzip2
+  $LN $nom $CRSD/usr/bin/pbzip2
 }

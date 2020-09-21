@@ -19,6 +19,6 @@ build() {
 install() {
   $MAKE \
     BINDIR=/usr/bin \
-    BASEDIR=$XCER/$nom/sac \
+    BASEDIR=$CRSD \
     install
 }

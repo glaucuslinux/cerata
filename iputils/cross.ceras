@@ -38,11 +38,11 @@ build() {
 }
 
 install() {
-  DESTDIR=$XCER/$nom/sac \
+  DESTDIR=$CRSD \
   ninja \
     -C $XBLD/$nom \
     install
 
-  $LN ping $XCER/$nom/sac/usr/bin/ping6
-  $LN tracepath $XCER/$nom/sac/usr/bin/tracepath6
+  $LN ping $CRSD/usr/bin/ping6
+  $LN tracepath $CRSD/usr/bin/tracepath6
 }

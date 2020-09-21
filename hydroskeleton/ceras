@@ -3,8 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=radula
-ver=git
-url=https://github.com/glaucuslinux/$nom
-cys='curl git rsync libarchive'
+nom=hydroskeleton
+cys='cerata iana-etc'
 lic=ISC

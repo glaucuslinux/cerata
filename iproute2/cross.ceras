@@ -23,6 +23,6 @@ build() {
 install() {
   $MAKE \
     SBINDIR=/usr/bin \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 }

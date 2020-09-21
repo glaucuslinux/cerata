@@ -23,11 +23,11 @@ build() {
 install() {
   $MAKE \
     PREFIX=/usr \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-dynamic
 
-  $LN tic $XCER/$nom/sac/usr/bin/captoinfo
-  $LN tic $XCER/$nom/sac/usr/bin/infotocap
+  $LN tic $CRSD/usr/bin/captoinfo
+  $LN tic $CRSD/usr/bin/infotocap
 
-  $LN libterminfo.so $XCER/$nom/sac/usr/lib/libtinfo.so
+  $LN libterminfo.so $CRSD/usr/lib/libtinfo.so
 }

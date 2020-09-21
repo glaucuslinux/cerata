@@ -25,12 +25,12 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 
-  $LN $nom $XCER/$nom/sac/usr/bin/ksh
-  $LN $nom $XCER/$nom/sac/usr/bin/rksh
+  $LN $nom $CRSD/usr/bin/ksh
+  $LN $nom $CRSD/usr/bin/rksh
 
-  $LN $nom.1 $XCER/$nom/sac/usr/share/man/man1/ksh.1
-  $LN $nom.1 $XCER/$nom/sac/usr/share/man/man1/rksh.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/ksh.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/rksh.1
 }

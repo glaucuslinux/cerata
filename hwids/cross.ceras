@@ -16,8 +16,8 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/pci.ids $XCER/$nom/sac/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/sdio.ids $XCER/$nom/sac/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/usb.ids $XCER/$nom/sac/usr/share/hwdata
+  $MKDIR $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$nom-$ver/pci.ids $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$nom-$ver/sdio.ids $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$nom-$ver/usb.ids $CRSD/usr/share/hwdata
 }

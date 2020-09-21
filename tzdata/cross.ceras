@@ -19,6 +19,6 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/usr/share/zoneinfo/posix
-  $MKDIR $XCER/$nom/sac/usr/share/zoneinfo/right
+  $MKDIR $CRSD/usr/share/zoneinfo/posix
+  $MKDIR $CRSD/usr/share/zoneinfo/right
 }

@@ -7,4 +7,5 @@ nom=iana-etc
 ver=20200910
 url=https://github.com/Mic92/$nom/releases/download/$ver/$nom-$ver.tar.gz
 sum=e5fd6ade2459bb07285282f10c608be46f6b4518fdd8923f3f3926600a3e7239a5de22f2759769e408b415870e360cfeb051bda905df64def06079b8d7ab21f8
+cnt=hydroskeleton
 lic=MIT

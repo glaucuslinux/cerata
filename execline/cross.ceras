@@ -34,8 +34,8 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 
-  $LN ${nom}b $XCER/$nom/sac/usr/bin/$nom
+  $LN ${nom}b $CRSD/usr/bin/$nom
 }

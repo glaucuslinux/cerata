@@ -26,9 +26,9 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     PREFIX=/usr \
     install
 
-  $RM $XCER/$nom/sac/usr/lib/lib$nom.a
+  $RM $CRSD/usr/lib/lib$nom.a
 }

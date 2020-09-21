@@ -3,6 +3,18 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=filesystem
-cys=iana-etc
-lic=ISC
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+install() {
+  $RSYNC $CERD $CRSD/usr/cerata --exclude .git .gitattributes LICENSE README.md
+}

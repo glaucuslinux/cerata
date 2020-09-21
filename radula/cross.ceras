@@ -16,11 +16,9 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/etc
-  $RSYNC $CERD/$nom/$nom.conf $XCER/$nom/sac/etc
-  $LN $nom.conf $XCER/$nom/sac/etc/rad.conf
+  $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
+  $LN $nom.conf $CRSD/etc/rad.conf
 
-  $MKDIR $XCER/$nom/sac/usr/bin
-  $RSYNC $SRCD/$nom/$nom $XCER/$nom/sac/usr/bin
-  $LN $nom $XCER/$nom/sac/usr/bin/rad
+  $RSYNC $SRCD/$nom/$nom $CRSD/usr/bin
+  $LN $nom $CRSD/usr/bin/rad
 }

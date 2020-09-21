@@ -16,8 +16,8 @@ build() {
 }
 
 install() {
-  $RSYNC $SRCD/$nom/etc $XCER/$nom/sac --delete
-  $RSYNC $SRCD/$nom/usr $XCER/$nom/sac --delete
+  $RSYNC $SRCD/$nom/etc $CRSD
+  $RSYNC $SRCD/$nom/usr $CRSD
 
-  #s6-rc-compile $XCER/$nom/sac/etc/s6/compiled $XCER/$nom/sac/etc/s6/source
+  #s6-rc-compile $CRSD/etc/s6/compiled $CRSD/etc/s6/source
 }

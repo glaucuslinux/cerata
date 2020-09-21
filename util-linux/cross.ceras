@@ -11,7 +11,7 @@ prepare() {
   rad_behave_gnu rpath config
   rad_behave_gnu sub config
 
-  $MKDIR $XCER/$nom/sac/var/lib/hwclock
+  $MKDIR $CRSD/var/lib/hwclock
 }
 
 configure() {
@@ -52,6 +52,6 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 }

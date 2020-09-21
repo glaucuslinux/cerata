@@ -20,14 +20,12 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/usr/bin
-  $RSYNC $nom $XCER/$nom/sac/usr/bin
-  $LN $nom $XCER/$nom/sac/usr/bin/gunzip
-  $LN $nom $XCER/$nom/sac/usr/bin/gzcat
-  $LN $nom $XCER/$nom/sac/usr/bin/gzip
-  $LN $nom $XCER/$nom/sac/usr/bin/unpigz
-  $LN $nom $XCER/$nom/sac/usr/bin/zcat
+  $RSYNC $nom $CRSD/usr/bin
+  $LN $nom $CRSD/usr/bin/gunzip
+  $LN $nom $CRSD/usr/bin/gzcat
+  $LN $nom $CRSD/usr/bin/gzip
+  $LN $nom $CRSD/usr/bin/unpigz
+  $LN $nom $CRSD/usr/bin/zcat
 
-  $MKDIR $XCER/$nom/sac/usr/share/man/man1
-  $RSYNC $nom.1 $XCER/$nom/sac/usr/share/man/man1
+  $RSYNC $nom.1 $CRSD/usr/share/man/man1
 }

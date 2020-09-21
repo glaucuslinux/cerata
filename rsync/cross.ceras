@@ -7,9 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_gnu guess build-aux
-  rad_behave_gnu rpath build-aux
-  rad_behave_gnu sub build-aux
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
 }
 
 configure() {
@@ -17,9 +16,9 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
-    --disable-static \
-    --disable-nls \
-    --disable-rpath
+    --disable-debug \
+    --without-included-popt \
+    --without-included-zlib
 }
 
 build() {
