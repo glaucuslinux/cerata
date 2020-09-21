@@ -19,9 +19,8 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/usr/bin
-  $RSYNC $XBLD/$nom/getconf $XCER/$nom/sac/usr/bin
-  $RSYNC $XBLD/$nom/getent $XCER/$nom/sac/usr/bin
-  $RSYNC $XBLD/$nom/iconv $XCER/$nom/sac/usr/bin
-  $RSYNC $CERD/musl/ldconfig $XCER/$nom/sac/usr/bin
+  $RSYNC $XBLD/$nom/getconf $CRSD/usr/bin
+  $RSYNC $XBLD/$nom/getent $CRSD/usr/bin
+  $RSYNC $XBLD/$nom/iconv $CRSD/usr/bin
+  $RSYNC $CERD/musl/ldconfig $CRSD/usr/bin
 }

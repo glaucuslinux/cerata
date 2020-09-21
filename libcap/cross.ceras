@@ -14,7 +14,7 @@ configure() {
 
 build() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \
     SBINDIR=/usr/bin \
@@ -29,7 +29,7 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \
     SBINDIR=/usr/bin \
@@ -42,5 +42,5 @@ install() {
     GOLANG=no \
     install
 
-  $CHMOD 0755 $XCER/$nom/sac/usr/lib/$nom.so.$ver
+  $CHMOD 0755 $CRSD/usr/lib/$nom.so.$ver
 }

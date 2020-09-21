@@ -33,10 +33,10 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $CHMOD 0755 $XCER/$nom/sac/usr/lib/libcrypto.so.46.0.1
-  $CHMOD 0755 $XCER/$nom/sac/usr/lib/libssl.so.48.0.1
-  $CHMOD 0755 $XCER/$nom/sac/usr/lib/libtls.so.20.0.1
+  $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.46.0.1
+  $CHMOD 0755 $CRSD/usr/lib/libssl.so.48.0.1
+  $CHMOD 0755 $CRSD/usr/lib/libtls.so.20.0.1
 }

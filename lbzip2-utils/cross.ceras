@@ -23,15 +23,15 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN lbzcmp $XCER/$nom/sac/usr/bin/bzcmp
-  $LN lbzdiff $XCER/$nom/sac/usr/bin/bzdiff
-  $LN lbzegrep $XCER/$nom/sac/usr/bin/bzegrep
-  $LN lbzfgrep $XCER/$nom/sac/usr/bin/bzfgrep
-  $LN lbzgrep $XCER/$nom/sac/usr/bin/bzgrep
-  $LN lbzrecover $XCER/$nom/sac/usr/bin/bzip2recover
-  $LN lbzless $XCER/$nom/sac/usr/bin/bzless
-  $LN lbzmore $XCER/$nom/sac/usr/bin/bzmore
+  $LN lbzcmp $CRSD/usr/bin/bzcmp
+  $LN lbzdiff $CRSD/usr/bin/bzdiff
+  $LN lbzegrep $CRSD/usr/bin/bzegrep
+  $LN lbzfgrep $CRSD/usr/bin/bzfgrep
+  $LN lbzgrep $CRSD/usr/bin/bzgrep
+  $LN lbzrecover $CRSD/usr/bin/bzip2recover
+  $LN lbzless $CRSD/usr/bin/bzless
+  $LN lbzmore $CRSD/usr/bin/bzmore
 }

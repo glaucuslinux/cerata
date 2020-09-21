@@ -31,9 +31,9 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN bsdcpio $XCER/$nom/sac/usr/bin/cpio
-  $LN bsdtar $XCER/$nom/sac/usr/bin/tar
+  $LN bsdcpio $CRSD/usr/bin/cpio
+  $LN bsdtar $CRSD/usr/bin/tar
 }

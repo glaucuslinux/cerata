@@ -38,11 +38,10 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $XCER/$nom/sac/usr/bin/init
+  $LN $nom $CRSD/usr/bin/init
 
-  $MKDIR $XCER/$nom/sac/etc
-  $RSYNC $CERD/$nom/$nom.conf $XCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
 }

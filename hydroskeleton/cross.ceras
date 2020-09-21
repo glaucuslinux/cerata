@@ -1,0 +1,56 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+install() {
+  $MKDIR $CRSD/boot
+
+  $LN usr/bin $CRSD/bin
+
+  $MKDIR $CRSD/dev/pts
+  $LN ../run/shm $CRSD/dev/shm
+
+  $RSYNC $CERD/$nom/etc $CRSD
+
+  $MKDIR $CRSD/home
+
+  $LN usr/lib $CRSD/lib
+
+  $MKDIR $CRSD/mnt
+  $MKDIR $CRSD/proc
+
+  $MKDIR -m 0750 $CRSD/root
+
+  $MKDIR $CRSD/run/lock
+  $MKDIR -m 1777 $CRSD/run/tmp
+  $MKDIR -m 1733 $CRSD/run/tmp/.ICE-unix
+  $MKDIR -m 1733 $CRSD/run/tmp/.X11-unix
+
+  $MKDIR $CRSD/sys
+
+  $LN run/tmp $CRSD/tmp
+
+  $MKDIR $CRSD/usr/bin
+  $MKDIR $CRSD/usr/cerata
+  $MKDIR $CRSD/usr/include
+  $MKDIR $CRSD/usr/lib
+  $MKDIR $CRSD/usr/share
+
+  $MKDIR $CRSD/var/lib/urandom
+  $LN ../run/lock $CRSD/var/lock
+  $MKDIR $CRSD/var/log
+  $LN ../run $CRSD/var/run
+}

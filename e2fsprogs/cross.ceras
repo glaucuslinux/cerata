@@ -42,12 +42,15 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
-  
+
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-libs
 
-  find $XCER/$nom/sac/usr/lib -name *.a -type f -exec $CHMOD u+w {} \;
+  $CHMOD u+w $CRSD/usr/lib/libcom_err.a
+  $CHMOD u+w $CRSD/usr/lib/libe2p.a
+  $CHMOD u+w $CRSD/usr/lib/libext2fs.a
+  $CHMOD u+w $CRSD/usr/lib/libss.a
 }

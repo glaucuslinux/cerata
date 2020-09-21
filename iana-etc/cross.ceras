@@ -16,7 +16,6 @@ build() {
 }
 
 install() {
-  $MKDIR $XCER/$nom/sac/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/protocols $XCER/$nom/sac/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/services $XCER/$nom/sac/etc
+  $RSYNC $SRCD/$nom/$nom-$ver/protocols $CRSD/etc
+  $RSYNC $SRCD/$nom/$nom-$ver/services $CRSD/etc
 }

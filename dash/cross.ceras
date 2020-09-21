@@ -22,8 +22,8 @@ build() {
 
 install() {
   $MAKE \
-    DESTDIR=$XCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $XCER/$nom/sac/usr/bin/sh
+  $LN $nom $CRSD/usr/bin/sh
 }
