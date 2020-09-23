@@ -15,10 +15,10 @@ configure() {
 OSNAME=glaucus
 PREFIX=/usr
 AR=$AR
-CFLAGS='$( [ $species = atlanticus ] && printf -- "$CFLAGSFATNOCOMMON" || printf -- "$CFLAGSFAT")'" > configure.local
+CFLAGS='$(if [ $species = atlanticus ]; then printf -- "$CFLAGSFATNOCOMMON"; else printf -- "$CFLAGSFAT"; fi)'" > configure.local
 
   ./configure
-  
+
   sed -e 's/BINDIR\t\t= \/usr\/local\/bin/BINDIR\t\t= \/usr\/bin/' \
     -e '/SBINDIR/d' \
     -e '/BIN_FROM_SBIN/d' \

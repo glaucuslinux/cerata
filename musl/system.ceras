@@ -10,7 +10,7 @@ prepare() {
 
 configure() {
   $SRCD/$nom/$nom-$ver/configure \
-    CFLAGS="$([ $species = atlanticus ] && printf -- "$CFLAGSNOFPMATHNOLTO" || printf -- "$CFLAGSNOLTO")" \
+    CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOFPMATHNOLTO"; else printf -- "$CFLAGSNOLTO"; fi)" \
     --prefix=/usr \
     --disable-wrapper \
     --disable-static

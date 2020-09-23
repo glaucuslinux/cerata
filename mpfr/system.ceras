@@ -12,7 +12,7 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$([ $species = atlanticus ] && printf -- "$CFLAGSFINITE" || printf -- "$CFLAGS")" \
+  CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSFINITE"; else printf -- "$CFLAGS"; fi)" \
   ./configure \
     --prefix=/usr \
     --enable-thread-safe \

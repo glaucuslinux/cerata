@@ -17,8 +17,8 @@ prepare() {
 configure() {
   $AUTORECONF
 
-  CFLAGS="$([ $species = atlanticus ] && printf -- "$CFLAGSNOLTONOOPENMPNOPLT" || printf -- "$CFLAGSNOLTO")" \
-  LDFLAGS="$([ $species = atlanticus ] && printf -- "$LDFLAGSNOOPENMP" || printf -- "$LDFLAGS")" \
+  CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOLTONOOPENMPNOPLT"; else printf -- "$CFLAGSNOLTO"; fi)" \
+  LDFLAGS="$(if [ $species = atlanticus ]; then printf -- "$LDFLAGSNOOPENMP"; else printf -- "$LDFLAGS"; fi)" \
   ./configure \
     --prefix=/usr \
     --sbindir=/usr/bin \
