@@ -10,6 +10,7 @@ prepare() {
 
 configure() {
   $SRCD/$nom/$nom-$ver/configure \
+    --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
     --disable-static \
