@@ -44,7 +44,6 @@ install() {
   $LN run/tmp $CRSD/tmp
 
   $MKDIR $CRSD/usr/bin
-  $MKDIR $CRSD/usr/cerata
   $MKDIR $CRSD/usr/include
   $MKDIR $CRSD/usr/lib
   $MKDIR $CRSD/usr/share
