@@ -10,7 +10,6 @@ prepare() {
 
 configure() {
   PREFIX=/usr \
-  DESTDIR=$SCER/$nom/sac \
   ./configure.sh \
     -G \
     -M \
@@ -23,5 +22,6 @@ build() {
 
 install() {
   $MAKE \
+    DESTDIR=$SCER/$nom/sac \
     install
 }
