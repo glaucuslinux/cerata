@@ -10,7 +10,7 @@ prepare() {
 
 configure() {
   CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOCOMMON"; else printf -- "$CFLAGS"; fi)" \
-  $SRCD/$nom/configure \
+  $SRCD/$nom/$nom-$ver/configure \
     --prefix=/usr \
     --zlib-compat
 }
