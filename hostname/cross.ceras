@@ -9,7 +9,8 @@ prepare() {
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus remove-O2
+  rad_behave_patch 0 $nom glaucus 0001-remove-O2
+  rad_behave_patch 0 $nom glaucus 0002-remove-ownership-change
 }
 
 build() {
