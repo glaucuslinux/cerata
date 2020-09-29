@@ -13,14 +13,14 @@ configure() {
 }
 
 build() {
-  $CC $CFLAGS $CERD/musl/getconf.c -o getconf
-  $CC $CFLAGS $CERD/musl/getent.c -o getent
-  $CC $CFLAGS $CERD/musl/iconv.c -o iconv
+  $CC $CFLAGS $LDFLAGS $CERD/musl/getconf.c -o getconf
+  $CC $CFLAGS $LDFLAGS $CERD/musl/getent.c -o getent
+  $CC $CFLAGS $LDFLAGS $CERD/musl/iconv.c -o iconv
 }
 
 install() {
-  $RSYNC $XBLD/$nom/getconf $CRSD/usr/bin
-  $RSYNC $XBLD/$nom/getent $CRSD/usr/bin
-  $RSYNC $XBLD/$nom/iconv $CRSD/usr/bin
+  $RSYNC getconf $CRSD/usr/bin
+  $RSYNC getent $CRSD/usr/bin
+  $RSYNC iconv $CRSD/usr/bin
   $RSYNC $CERD/musl/ldconfig $CRSD/usr/bin
 }
