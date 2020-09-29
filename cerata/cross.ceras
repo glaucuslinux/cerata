@@ -16,5 +16,5 @@ build() {
 }
 
 install() {
-  $RSYNC $CERD $CRSD/usr/cerata --exclude .git .gitattributes LICENSE README.md
+  $RSYNC $CERD $CRSD/usr --exclude .git --exclude .gitattributes --exclude LICENSE --exclude README.md
 }
