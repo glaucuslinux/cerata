@@ -17,6 +17,8 @@ configure() {
     --host=$TGT \
     --prefix=/usr \
     --disable-debug \
+    --disable-simd \
+    --disable-xxhash \
     --without-included-popt \
     --without-included-zlib
 }
