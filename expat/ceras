@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=expat
-ver=2.2.9
-url=https://github.com/lib$nom/lib$nom/releases/download/R_2_2_9/$nom-$ver.tar.lz
-sum=514ff2ef3c93af0b1715b7a08732db33c13a113c4c72422716a22ee26c09235deed71ec55510cee24c33bcd6b2347602bd71ce70a432d5583fb63765ff9e0e09
+ver=2.2.10
+url=https://github.com/lib$nom/lib$nom/releases/download/R_2_2_10/$nom-$ver.tar.lz
+sum=716e033017a3794c857a500de517d21cdb2f85cef2d8885c4d33beeec7b222f3c3747f349e768f30e5546a2f62027c6026cd4b462165302ee6c9cbfa72018399
 lic=MIT
