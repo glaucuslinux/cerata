@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=linux
-ver=5.8.7
+ver=5.9.10
 url=https://cdn.kernel.org/pub/$nom/kernel/v5.x/$nom-$ver.tar.xz
-sum=f529143fad82d0ab36a6f0f2b3ff1e00be12c53bdee7248b371206de0668f21b944d50cefc196b3ac684fdf99b7feb81436fd173b7e82a9c44553ff126e8a84c
+sum=f3f5195508affa84ccac30621c852b0dec42a227e2a3677a31b6fafcffdcf34964bf43cc96b08698faf319a1eead54f26638d7c70c20df31592e1c00ff00ae06
 lic=GPL-2.0-only
