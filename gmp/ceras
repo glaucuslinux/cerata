@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=gmp
-ver=6.2.0
+ver=6.2.1
 url=https://${nom}lib.org/download/$nom/$nom-$ver.tar.zst
-sum=58a2e3265befb000c0614d9dc6420ddc15b5b78cd9989b8e5d7dc6e6d59e87de4b1c093ccf7245dd496ad216de43675df23fc16ee7e2cac006d1a801bfe71f29
+sum=1dfd3a5cd9afa2db2f2e491b0df045e3c15863e61f4efc7b93c5b32bdfefe572b25bb7621df4075bf8427274d438df194629f5169250a058dadaeaaec599291b
 lic='GPL-3.0-only LGPL-3.0-only'
