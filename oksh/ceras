@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=oksh
-ver=6.7.1
+ver=6.8.1
 url=https://github.com/ibara/$nom/releases/download/$nom-$ver/$nom-$ver.tar.gz
-sum=dd5ee8603e0fdb00aeb4c8be0f4ce35b723a6a4d924dc66effcbbaf6c94eb09110129ee7c4eaea11f5b448dfa5c484d1683504d1a5ee9ae5cbd76e55a17e2e8e
+sum=3c1a77dbc5c15b1eeade860a8bfdb0fffe2d0cf5798c6ffef4f36a4a77f9686755345427ebaedc451242005bc88cac9699a97e4e428aee17cf7ee2535e4baa54
 lic=PD
