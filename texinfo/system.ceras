@@ -10,7 +10,7 @@ prepare() {
   rad_behave_gnu guess build-aux
   rad_behave_gnu rpath build-aux
   rad_behave_gnu sub build-aux
-  
+
   rad_behave_gnu guess tp/Texinfo/XS
   rad_behave_gnu rpath tp/Texinfo/XS
   rad_behave_gnu sub tp/Texinfo/XS

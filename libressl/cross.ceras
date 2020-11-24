@@ -9,7 +9,7 @@ prepare() {
 
   rad_behave_gnu guess .
   rad_behave_gnu sub .
-  
+
   rad_behave_gnu guess scripts
   rad_behave_gnu sub scripts
 }
