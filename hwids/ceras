@@ -5,6 +5,6 @@
 
 nom=hwids
 ver=20200813.1
-url=https://github.com/gentoo/$nom/archive/$nom-$ver.tar.gz
-sum=5ba15067969fa19d3218f523c1a0186568841466de4d18c563b5f09202ab7185c4df02b962f70eb6d3e99915caad8a743fc6c6349f49b666db742f9ced8053fc
+url=https://gitweb.gentoo.org/proj/$nom.git/snapshot/$nom-$ver.tar.bz2
+sum=bfed921ef7630f1571ba7a4797adb6c8fafc2d3c6245db97d3cc23cacc600d6277c1126fa682a5656f0529689931c2747c26b499d5c31614d28b3751b1910af9
 lic='BSD-3-Clause GPL-2.0-or-later'
