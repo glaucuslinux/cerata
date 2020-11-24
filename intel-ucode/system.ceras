@@ -6,8 +6,6 @@
 prepare() {
   $RSYNC $SRCD/$nom/Intel-Linux-Processor-Microcode-Data-Files-microcode-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-
-  $RSYNC $CERD/$nom/06-55-04 $SSRC/$nom
 }
 
 configure() {
@@ -23,6 +21,5 @@ build() {
 
 install() {
   $MKDIR $SCER/$nom/sac/boot
-
   $RSYNC $nom.img $SCER/$nom/sac/boot
 }
