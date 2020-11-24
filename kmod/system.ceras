@@ -48,6 +48,6 @@ install() {
 
   $MKDIR $SCER/$nom/sac/usr/lib/depmod.d
   $RSYNC $CERD/$nom/depmod-search.conf $SCER/$nom/sac/usr/lib/depmod.d/search.conf
-  
+
   $MKDIR $SCER/$nom/sac/usr/lib/modprobe.d
 }
