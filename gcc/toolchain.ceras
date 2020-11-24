@@ -6,11 +6,11 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
- 
-  $RSYNC $SRCD/gmp/gmp-6.2.0/ gmp --delete
+
+  $RSYNC $SRCD/gmp/gmp-6.2.1/ gmp --delete
   $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete
-  $RSYNC $SRCD/mpc/mpc-1.2.0/ mpc --delete
-  $RSYNC $SRCD/isl/isl-0.22.1/ isl --delete
+  $RSYNC $SRCD/mpc/mpc-1.2.1/ mpc --delete
+  $RSYNC $SRCD/isl/isl-0.23/ isl --delete
 
   rad_behave_gnu guess .
   rad_behave_gnu rpath .
