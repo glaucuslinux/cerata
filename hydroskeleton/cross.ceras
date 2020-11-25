@@ -30,6 +30,7 @@ install() {
   $LN usr/lib $CRSD/lib
 
   $MKDIR $CRSD/mnt
+
   $MKDIR $CRSD/proc
 
   $MKDIR -m 0750 $CRSD/root
