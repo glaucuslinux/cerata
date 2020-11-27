@@ -31,4 +31,9 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $MKDIR $SCER/$nom/sac/usr/include/$nom
+  $LN ../dbm.h $SCER/$nom/sac/usr/include/$nom/dbm.h
+  $LN ../$nom.h $SCER/$nom/sac/usr/include/$nom/$nom.h
+  $LN ../ndbm.h $SCER/$nom/sac/usr/include/$nom/ndbm.h
 }
