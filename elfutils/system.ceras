@@ -14,16 +14,11 @@ prepare() {
   $RSYNC $CERD/$nom/error.h src
 
   rad_behave_patch 0 $nom void fix-aarch64_fregs
-  rad_behave_patch 0 $nom void fix-uninitialized
-  rad_behave_patch 0 $nom void musl-cdefs
-  rad_behave_patch 0 $nom void musl-fts-obstack
-
-  rad_behave_patch 0 $nom glaucus 0001-musl-fts-obstack-$ver
-
+  rad_behave_patch 0 $nom void fts-obstack
+  rad_behave_patch 0 $nom void musl-asm_ptrace_h
   rad_behave_patch 0 $nom void musl-macros
   rad_behave_patch 0 $nom void musl-qsort_r
   rad_behave_patch 0 $nom void musl-strerror_r
-  rad_behave_patch 0 $nom void musl-strndupa
 }
 
 configure() {
@@ -37,6 +32,7 @@ configure() {
     --enable-deterministic-archives \
     --disable-symbol-versioning \
     --disable-nls \
+    --disable-libdebuginfod \
     --disable-debuginfod
 }
 
