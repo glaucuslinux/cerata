@@ -4,12 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  rad_behave_patch 1 $nom upstream CVE-2020-28928
 }
 
 configure() {
-  $SRCD/$nom/$nom-$ver/configure \
+  ./configure \
     CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOFPMATHNOLTO"; else printf -- "$CFLAGSNOLTO"; fi)" \
     --prefix=/usr \
     --disable-wrapper \
@@ -27,7 +29,6 @@ install() {
   $RSYNC $CERD/$nom/ld-$nom.path /etc/ld-$nom-$MARCH.path
   $CHOWN 0:0 /etc/ld-$nom-$MARCH.path
 
-  $RSYNC $CERD/$nom/ldconfig /usr/bin
   $LN ../lib/ld-$nom-$MARCH.so.1 /usr/bin/ldd
 
   $LN libc.so /usr/lib/ld-$nom-$MARCH.so.1
