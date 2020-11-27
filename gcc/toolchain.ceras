@@ -43,6 +43,7 @@ configure() {
     --disable-nls \
     --disable-rpath \
     --enable-libstdcxx-time=rt \
+    --disable-libstdcxx-visibility \
     --disable-initfini-array \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH" \
