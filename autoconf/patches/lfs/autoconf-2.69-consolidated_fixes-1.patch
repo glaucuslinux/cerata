@@ -1,0 +1,95 @@
+Submitted By: Bruce Dubbs <bdubbs at linuxfromscratch dot org>
+Date: 2020-09-27
+Initial Package Version: autoconf-2.69
+Upstream Status: Unknown
+Origin: https://github.com/archlinux/svntogit-packages/tree/packages/autoconf/trunk
+Description: Fixes for current perl, libtool, and bash dependencies.
+
+diff -Naur autoconf-2.69/bin/autoscan.in autoconf-2.69.new/bin/autoscan.in
+--- autoconf-2.69/bin/autoscan.in	2012-04-24 21:37:26.000000000 -0500
++++ autoconf-2.69.new/bin/autoscan.in	2020-09-27 14:19:34.363359383 -0500
+@@ -358,7 +358,7 @@
+     {
+       # Strip out comments and variable references.
+       s/#.*//;
+-      s/\${[^\}]*}//g;
++      s/\$i\{[^\}]*}//g;
+       s/@[^@]*@//g;
+ 
+       # Tokens in the code.
+diff -Naur autoconf-2.69/tests/foreign.at autoconf-2.69.new/tests/foreign.at
+--- autoconf-2.69/tests/foreign.at	2012-03-07 11:35:26.000000000 -0600
++++ autoconf-2.69.new/tests/foreign.at	2020-09-27 14:22:04.861068523 -0500
+@@ -57,7 +57,7 @@
+ # Make sure at-path contains something valid, and let the test suite
+ # display it when verbose.  And fail, skipping would too easily hide
+ # problems.
+-AT_CHECK([sed -n ["s,^.*\`\\(/[^']*\\)'.*,\\1,p"] stdout], [0], [stdout])
++AT_CHECK([sed -n ["s,^[^']*[\`']\\(/[^']*\\)'.*,\\1,p"] stdout], [0], [stdout])
+ AT_CHECK([test -f "`sed -n 1p stdout`"])
+ 
+ # Older libtoolize installed everything but install-sh...
+diff -Naur autoconf-2.69/tests/local.at autoconf-2.69.new/tests/local.at
+--- autoconf-2.69/tests/local.at	2012-04-24 15:44:15.000000000 -0500
++++ autoconf-2.69.new/tests/local.at	2020-09-27 14:24:43.837930548 -0500
+@@ -324,7 +324,7 @@
+       [AWK|LEX|LEXLIB|LEX_OUTPUT_ROOT|LN_S|M4|MKDIR_P|RANLIB|SET_MAKE|YACC],
+       [GREP|[EF]GREP|SED],
+       [[_@]|.[*#?$].],
+-      [argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS]))=' \
++      [argv|ARGC|LINENO|BASH_ARGC|BASH_ARGV|OLDPWD|PIPESTATUS|RANDOM|SECONDS]))=' \
+      $act_file ||
+        test $? -eq 1 || echo failed >&2
+     ) 2>stderr-$act_file |
+@@ -381,6 +381,9 @@
+ 	/'\'\\\$\''=/ d
+ 	/^argv=/ d
+ 	/^ARGC=/ d
++   /^BASH_ARGC=/ d
++	/^BASH_ARGV=/ d
++	/^LINENO=/ d
+ 	' $act_file >at_config_vars-$act_file
+ done
+ AT_CMP([at_config_vars-$1], [at_config_vars-$2])[]dnl
+diff -Naur autoconf-2.69/tests/m4sh.at autoconf-2.69.new/tests/m4sh.at
+--- autoconf-2.69/tests/m4sh.at	2012-03-07 11:35:26.000000000 -0600
++++ autoconf-2.69.new/tests/m4sh.at	2020-09-27 14:25:52.990175565 -0500
+@@ -254,7 +254,7 @@
+ # `_oline_', once processed and ran, produces our reference.
+ # We check that we find ourselves by looking at a string which is
+ # available only in the original script: `_oline_'.
+-AT_DATA_LINENO([reference], [false], [__OLINE__], [_oline__])
++AT_DATA_LINENO([reference], [true], [__OLINE__], [_oline__])
+ AT_CHECK([./reference], 0, [stdout])
+ 
+ # The reference:
+@@ -264,7 +264,7 @@
+ # Be sure to be out of the PATH.
+ AT_CHECK([mkdir test || exit 77])
+ 
+-AT_DATA_LINENO([test/test-1], [false], [__LINENO__], [LINENO])
++AT_DATA_LINENO([test/test-1], [true], [__LINENO__], [LINENO])
+ AT_CHECK([./test/test-1],                          0, [expout])
+ AT_CHECK([(PATH=test$PATH_SEPARATOR$PATH; export PATH; exec test-1)],
+ 						   0, [expout])
+diff -Naur autoconf-2.69/tests/tools.at autoconf-2.69.new/tests/tools.at
+--- autoconf-2.69/tests/tools.at	2012-04-24 21:37:26.000000000 -0500
++++ autoconf-2.69.new/tests/tools.at	2020-09-27 14:21:03.852970268 -0500
+@@ -156,7 +156,7 @@
+   outfile="$file out "
+   dir=`func_sanitize_dir_name " dir $funny"`
+   cachedir=" cache$dir"
+-  TMPDIR=" tmp$dir"
++  TMPDIR="./ tmp$dir"
+   export TMPDIR
+ 
+   # skip if we cannot create such a file or directory
+@@ -1290,7 +1290,7 @@
+   funny=`func_sanitize_file_name "$funny"`
+   file=" file $funny"
+   dir=`func_sanitize_dir_name " dir $funny"`
+-  TMPDIR=" tmp$dir"
++  TMPDIR="./ tmp$dir"
+   export TMPDIR
+ 
+   # skip if we cannot create such a file or directory

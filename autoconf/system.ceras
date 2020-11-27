@@ -10,7 +10,7 @@ prepare() {
   rad_behave_gnu guess build-aux
   rad_behave_gnu sub build-aux
 
-  rad_behave_patch 0 $nom lfs 0001-fix-perl-bug
+  rad_behave_patch 0 $nom lfs autoconf-2.69-consolidated_fixes-1
 }
 
 configure() {
