@@ -37,6 +37,7 @@ configure() {
     --disable-nls \
     --disable-rpath \
     --enable-libstdcxx-time=rt \
+    --disable-libstdcxx-visibility \
     --disable-initfini-array \
     --with-pkgversion="glaucus $species $ARCH" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
