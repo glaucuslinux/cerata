@@ -12,8 +12,6 @@ prepare() {
 
   $RSYNC $CERD/elfutils/error.h lib
   $RSYNC $CERD/elfutils/error.h src
-
-  rad_behave_patch 0 elfutils void musl-cdefs
 }
 
 configure() {
@@ -27,6 +25,7 @@ configure() {
     --enable-deterministic-archives \
     --disable-symbol-versioning \
     --disable-nls \
+    --disable-libdebuginfod \
     --disable-debuginfod
 }
 
