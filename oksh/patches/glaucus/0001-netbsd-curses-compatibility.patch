@@ -11,7 +11,7 @@
    if [ $? -eq 0 ] ; then
      rm -f conftest conftest.o conftest.c
      return 0
-@@ -963,7 +963,7 @@
+@@ -987,7 +987,7 @@
  if [ $curses -eq 1 ] ; then
    cursescheck
    if [ $? -eq 0 ] ; then
