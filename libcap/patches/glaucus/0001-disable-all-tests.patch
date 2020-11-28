@@ -1,61 +1,3 @@
---- go/Makefile
-+++ go/Makefile
-@@ -70,21 +70,6 @@
- 	CGO_ENABLED="1" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH=$(GOPATH) $(GO) build -o $@-cgo $<
- endif
- 
--test: all ../progs/capsh
--	CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/psx
--	CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/cap
--	LD_LIBRARY_PATH=../libcap ./compare-cap
--	./try-launching
--ifeq ($(CGO_REQUIRED),0)
--	./try-launching-cgo
--endif
--
--sudotest: test
--	sudo ./try-launching
--ifeq ($(CGO_REQUIRED),0)
--	sudo ./try-launching-cgo
--endif
--
- install: all
- 	rm -rf $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx
- 	mkdir -p $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx/include/sys
---- kdebug/Makefile
-+++ kdebug/Makefile
-@@ -1,9 +1,6 @@
- topdir=$(shell pwd)/..
- include ../Make.Rules
- 
--test:
--	./test-kernel.sh
--
- all:
- 	@echo cd to kdebug to test a kernel build
- 
---- libcap/Makefile
-+++ libcap/Makefile
-@@ -87,12 +87,6 @@
- cap_text.o: cap_text.c $(USE_GPERF_OUTPUT) $(INCLS)
- 	$(CC) $(CFLAGS) $(IPATH) $(INCLUDE_GPERF_OUTPUT) -c $< -o $@
- 
--cap_test: cap_test.c libcap.h
--	$(CC) $(CFLAGS) $(IPATH) $< -o $@
--
--test: cap_test
--	./cap_test
--
- install: install-shared install-static
- 
- install-common: pcs
-@@ -120,5 +114,5 @@
- 	$(LOCALCLEAN)
- 	rm -f $(CAPOBJS) $(LIBNAME)* $(STACAPLIBNAME) libcap.pc libpsx.pc
- 	rm -f $(PSXOBJS) $(STAPSXLIBNAME)
--	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT) cap_test
-+	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT)
- 	cd include/sys && $(LOCALCLEAN)
 --- Makefile
 +++ Makefile
 @@ -17,10 +17,8 @@
@@ -69,7 +11,7 @@
  
  all-here:
  
-@@ -40,42 +38,3 @@
+@@ -40,51 +38,3 @@
  
  release: distclean
  	cd .. && ln -s libcap libcap-$(VERSION).$(MINOR) && tar cvf libcap-$(VERSION).$(MINOR).tar --exclude patches libcap-$(VERSION).$(MINOR)/* && rm libcap-$(VERSION).$(MINOR)
@@ -97,9 +39,17 @@
 -
 -distcheck:
 -	./distcheck.sh
+-	make DYNAMIC=yes clean all test sudotest
 -	make CC=/usr/local/musl/bin/musl-gcc clean all test sudotest
 -	make clean all test sudotest
 -	make distclean
+-
+-morgangodoc:
+-	@echo "Now the release is made, you want to remember to run:"
+-	@echo
+-	@echo "GOPROXY=https://proxy.golang.org GO111MODULE=on go get kernel.org/pub/linux/libs/security/libcap/cap@v$(GOMAJOR).$(VERSION).$(MINOR)"
+-	@echo
+-	@echo "This will cause a go.dev documentation update."
 -
 -morganrelease: distcheck
 -	@echo "sign the main library tag twice: older DSA key; and newer RSA (kernel.org) key"
@@ -112,17 +62,79 @@
 -	make release
 -	@echo "sign the tar file using korg key"
 -	cd .. && gpg -sba -u E2CCF3F4 libcap-$(VERSION).$(MINOR).tar
+-	make morgangodoc
+--- go/Makefile
++++ go/Makefile
+@@ -70,21 +70,6 @@
+ 	GO111MODULE=off CGO_ENABLED="1" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH=$(GOPATH) $(GO) build -o $@-cgo $<
+ endif
+ 
+-test: all
+-	GO111MODULE=off CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/psx
+-	GO111MODULE=off CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/cap
+-	LD_LIBRARY_PATH=../libcap ./compare-cap
+-
+-sudotest: test ../progs/tcapsh-static
+-	./try-launching
+-ifeq ($(CGO_REQUIRED),0)
+-	./try-launching-cgo
+-endif
+-	sudo ./try-launching
+-ifeq ($(CGO_REQUIRED),0)
+-	sudo ./try-launching-cgo
+-endif
+-
+ install: all
+ 	rm -rf $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx
+ 	mkdir -p $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx/include/sys
+--- kdebug/Makefile
++++ kdebug/Makefile
+@@ -1,9 +1,6 @@
+ topdir=$(shell pwd)/..
+ include ../Make.Rules
+ 
+-test:
+-	./test-kernel.sh
+-
+ all:
+ 	@echo cd to kdebug to test a kernel build
+ 
+--- libcap/Makefile
++++ libcap/Makefile
+@@ -110,12 +110,6 @@
+ cap_text.o: cap_text.c $(USE_GPERF_OUTPUT) $(INCLS)
+ 	$(CC) $(CFLAGS) $(IPATH) $(INCLUDE_GPERF_OUTPUT) -c $< -o $@
+ 
+-cap_test: cap_test.c libcap.h
+-	$(CC) $(CFLAGS) $(IPATH) $< -o $@
+-
+-test: cap_test
+-	./cap_test
+-
+ install: install-static
+ ifeq ($(SHARED),yes)
+ 	make install-shared
+@@ -180,5 +174,5 @@
+ 	$(LOCALCLEAN)
+ 	rm -f $(CAPOBJS) $(CAPLIBNAME)* $(STACAPLIBNAME) libcap.pc
+ 	rm -f $(PSXOBJS) $(PSXLIBNAME)* $(STAPSXLIBNAME) libpsx.pc
+-	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT) cap_test
++	rm -f cap_names.h cap_names.list.h _makenames $(GPERF_OUTPUT)
+ 	cd include/sys && $(LOCALCLEAN)
 --- progs/Makefile
 +++ progs/Makefile
-@@ -34,11 +34,6 @@
+@@ -39,14 +39,6 @@
  	$(FAKEROOT)$(SBINDIR)/setcap cap_setfcap=i $(FAKEROOT)$(SBINDIR)/setcap
  endif
  
 -test: $(PROGS)
 -
--sudotest: test
--	sudo ./quicktest.sh
+-tcapsh-static: capsh.c $(DEPS)
+-	$(CC) $(IPATH) $(CAPSH_SHELL) $(CFLAGS) -o $@ $< $(LIBCAPLIB) $(LDFLAGS) --static
+-
+-sudotest: test tcapsh-static
+-	sudo $(LDPATH) ./quicktest.sh
 -
  clean:
  	$(LOCALCLEAN)
- 	rm -f *.o $(BUILD) tcapsh ping hack.sh compare-cap
+ 	rm -f *.o $(BUILD) tcapsh* privileged ping hack.sh compare-cap
