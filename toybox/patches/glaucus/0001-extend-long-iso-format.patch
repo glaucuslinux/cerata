@@ -1,6 +1,6 @@
 --- toys/posix/ls.c
 +++ toys/posix/ls.c
-@@ -484,7 +484,7 @@
+@@ -445,7 +445,7 @@
  
        // print time, always in --time-style=long-iso
        tm = localtime(&(st->st_mtime));
