@@ -11,6 +11,7 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --enable-lto \
     --no-thanks
 
   sed '/${PROG}: ${OBJS}/!b;n;s/$/ -lterminfo/' \
