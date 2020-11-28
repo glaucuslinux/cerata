@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=cmake
+ver=3.19.1
+url=https://$nom.org/files/v3.19/$nom-$ver.tar.gz
+sum=1a1c9a8546c80f8602babffc7fd398cea5d9163512ef74333f87e26a97ca35358bd0e90423768cfc971ebfed185e19d775737e557e0e982403b77a2ccbcd063a
+lic='0BSD BSD-2-Clause BSD-3-Clause bzip2-1.0.6 GPL-2.0-only MIT Zlib'
