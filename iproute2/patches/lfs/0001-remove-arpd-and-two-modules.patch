@@ -8,7 +8,7 @@
  KERNEL_INCLUDE?=/usr/include
  BASH_COMPDIR?=$(DATADIR)/bash-completion/completions
  
-@@ -84,7 +83,6 @@
+@@ -86,7 +85,6 @@
  install: all
  	install -m 0755 -d $(DESTDIR)$(SBINDIR)
  	install -m 0755 -d $(DESTDIR)$(CONFDIR)
@@ -90,7 +90,7 @@
 -This is the mode in which arpd normally is supposed to work. It is not the default to prevent occasional enabling of too aggressive a mode.
 --- tc/Makefile
 +++ tc/Makefile
-@@ -90,7 +90,7 @@
+@@ -91,7 +91,7 @@
  ifneq ($(TC_CONFIG_NO_XT),y)
    ifeq ($(TC_CONFIG_XT),y)
      TCSO += m_xt.so
@@ -99,7 +99,7 @@
      ifeq ($(TC_CONFIG_IPSET),y)
        TCMODULES += em_ipset.o
      endif
-@@ -102,7 +102,7 @@
+@@ -103,7 +103,7 @@
          CFLAGS += -DTC_CONFIG_XT_H
          TCSO += m_xt_old.so
        else
@@ -108,7 +108,7 @@
        endif
      endif
    endif
-@@ -173,7 +173,7 @@
+@@ -175,7 +175,7 @@
  
  em_ipset.o: CFLAGS += $$($(PKG_CONFIG) xtables --cflags)
  
