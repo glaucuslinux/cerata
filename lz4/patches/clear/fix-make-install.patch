@@ -1,8 +1,6 @@
-diff --git a/programs/Makefile b/programs/Makefile
-index 4994551..8fce74e 100644
---- a/programs/Makefile
-+++ b/programs/Makefile
-@@ -149,9 +149,9 @@ install: lz4
+--- programs/Makefile
++++ programs/Makefile
+@@ -163,9 +163,9 @@
  	@echo Installing binaries
  	@$(INSTALL_DIR) $(DESTDIR)$(bindir)/ $(DESTDIR)$(man1dir)/
  	@$(INSTALL_PROGRAM) lz4$(EXT) $(DESTDIR)$(bindir)/lz4$(EXT)
