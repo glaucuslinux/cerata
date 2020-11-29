@@ -51,6 +51,7 @@ install() {
   $LN $nom $CRSD/usr/bin/false
   $LN $nom $CRSD/usr/bin/fmt
   $LN $nom $CRSD/usr/bin/fold
+  $LN $nom $CRSD/usr/bin/getconf
   $LN $nom $CRSD/usr/bin/groups
   $LN $nom $CRSD/usr/bin/head
   $LN $nom $CRSD/usr/bin/hostid
