@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  rad_behave_patch 1 $nom upstream CVE-2020-28928
+  rad_behave_patch 1 musl upstream CVE-2020-28928
 }
 
 configure() {
