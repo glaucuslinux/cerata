@@ -8,7 +8,7 @@
  INACTIVE=-1
  EXPIRE=
 -SHELL=/bin/bash
-+SHELL=/usr/bin/ksh
++SHELL=/usr/bin/oksh
  SKEL=/etc/skel
 -CREATE_MAIL_SPOOL=yes
 +CREATE_MAIL_SPOOL=no

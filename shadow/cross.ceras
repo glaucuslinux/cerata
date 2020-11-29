@@ -18,10 +18,7 @@ prepare() {
 configure() {
   rad_behave_patch 0 $nom glaucus 0003-fix-installation-paths
 
-  sed 's/groups$(EXEEXT) //' \
-    -i src/Makefile.in
-
-  find man -name Makefile.in -exec sed 's/groups\.1 / /' -i {} \;
+  rad_behave_patch 0 $nom lfs 0001-disable-groups
 
   ./configure \
     --build=$BLD \
