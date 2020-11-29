@@ -1,0 +1,15 @@
+NAME=glaucus
+VERSION=atlanticus
+ID=glaucus
+ID_LIKE='glaucus glaucuslinux'
+VERSION_CODENAME=atlanticus
+VERSION_ID=29112020
+PRETTY_NAME='glaucus atlanticus x86-64'
+ANSI_COLOR=0;34
+HOME_URL=https://www.glaucuslinux.org/
+DOCUMENTATION_URL=https://wiki.glaucuslinux.org/
+SUPPORT_URL=https://github.com/glaucuslinux/glaucus
+BUG_REPORT_URL=https://github.com/glaucuslinux/glaucus/issues
+VARIANT=atlanticus
+VARIANT_ID=atlanticus
+LOGO=glaucus-logo
