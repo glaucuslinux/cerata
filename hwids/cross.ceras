@@ -17,7 +17,7 @@ build() {
 
 install() {
   $MKDIR $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/pci.ids $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/sdio.ids $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/usb.ids $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$ver/pci.ids $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$ver/sdio.ids $CRSD/usr/share/hwdata
+  $RSYNC $SRCD/$nom/$nom-$ver/usb.ids $CRSD/usr/share/hwdata
 }
