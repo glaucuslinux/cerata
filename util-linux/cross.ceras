@@ -54,4 +54,10 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $RM $CRSD/usr/lib/libblkid.la
+  $RM $CRSD/usr/lib/libfdisk.la
+  $RM $CRSD/usr/lib/libmount.la
+  $RM $CRSD/usr/lib/libsmartcols.la
+  $RM $CRSD/usr/lib/libuuid.la
 }
