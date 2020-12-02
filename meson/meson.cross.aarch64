@@ -2,7 +2,7 @@
 ar = 'aarch64-glaucus-linux-musl-gcc-ar'
 as = 'aarch64-glaucus-linux-musl-as'
 c = 'aarch64-glaucus-linux-musl-gcc'
-c_ld = 'aarch64-glaucus-linux-musl-ld.bfd'
+c_ld = 'bfd'
 cpp = 'aarch64-glaucus-linux-musl-g++'
 cpp_ld = 'aarch64-glaucus-linux-musl-ld.bfd'
 ld = 'aarch64-glaucus-linux-musl-ld.bfd'
