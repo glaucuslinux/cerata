@@ -17,8 +17,7 @@ configure() {
     --host=$TGT \
     --prefix=/usr \
     --sysconfdir=/etc \
-    --disable-manpages \
-    --without-bashcompletiondir
+    --disable-manpages
 }
 
 build() {
