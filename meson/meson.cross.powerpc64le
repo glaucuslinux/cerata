@@ -2,7 +2,7 @@
 ar = 'powerpc64le-glaucus-linux-musl-gcc-ar'
 as = 'powerpc64le-glaucus-linux-musl-as'
 c = 'powerpc64le-glaucus-linux-musl-gcc'
-c_ld = 'powerpc64le-glaucus-linux-musl-ld.bfd'
+c_ld = 'bfd'
 cpp = 'powerpc64le-glaucus-linux-musl-g++'
 cpp_ld = 'powerpc64le-glaucus-linux-musl-ld.bfd'
 ld = 'powerpc64le-glaucus-linux-musl-ld.bfd'

@@ -2,7 +2,7 @@
 ar = 'i686-glaucus-linux-musl-gcc-ar'
 as = 'i686-glaucus-linux-musl-as'
 c = 'i686-glaucus-linux-musl-gcc'
-c_ld = 'i686-glaucus-linux-musl-ld.bfd'
+c_ld = 'bfd'
 cpp = 'i686-glaucus-linux-musl-g++'
 cpp_ld = 'i686-glaucus-linux-musl-ld.bfd'
 ld = 'i686-glaucus-linux-musl-ld.bfd'

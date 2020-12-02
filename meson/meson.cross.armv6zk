@@ -2,7 +2,7 @@
 ar = 'armv6zk-glaucus-linux-musleabihf-gcc-ar'
 as = 'armv6zk-glaucus-linux-musleabihf-as'
 c = 'armv6zk-glaucus-linux-musleabihf-gcc'
-c_ld = 'armv6zk-glaucus-linux-musleabihf-ld.bfd'
+c_ld = 'bfd'
 cpp = 'armv6zk-glaucus-linux-musleabihf-g++'
 cpp_ld = 'armv6zk-glaucus-linux-musleabihf-ld.bfd'
 ld = 'armv6zk-glaucus-linux-musleabihf-ld.bfd'
