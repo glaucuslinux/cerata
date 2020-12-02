@@ -10,17 +10,8 @@ prepare() {
 }
 
 configure() {
-  meson setup \
-    --prefix /usr \
-    --libexecdir lib \
-    --sbindir bin \
-    --buildtype release \
-    --optimization 3 \
-    --stdsplit \
-    --strip \
-    --wrap-mode nodownload \
-    -Db_lto=true \
-    -Db_pie=true \
+  $CERD/meson/glaucus-meson \
+    --cross-file $CERD/meson/meson.cross.$ARCH \
     -DUSE_IDN=false \
     -DBUILD_RARPD=true \
     -DBUILD_TRACEROUTE6=true \
@@ -33,13 +24,13 @@ configure() {
 }
 
 build() {
-  ninja \
+  samu \
     -C $XBLD/$nom
 }
 
 install() {
   DESTDIR=$CRSD \
-  ninja \
+  samu \
     -C $XBLD/$nom \
     install
 
