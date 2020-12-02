@@ -13,5 +13,4 @@ exec meson setup \
   --strip \
   --wrap-mode nodownload \
   -Db_lto=true \
-  -Db_pie=true \
   $@
