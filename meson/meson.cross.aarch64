@@ -1,0 +1,22 @@
+[binaries]
+ar = 'aarch64-glaucus-linux-musl-gcc-ar'
+as = 'aarch64-glaucus-linux-musl-as'
+c = 'aarch64-glaucus-linux-musl-gcc'
+c_ld = 'aarch64-glaucus-linux-musl-ld.bfd'
+cpp = 'aarch64-glaucus-linux-musl-g++'
+cpp_ld = 'aarch64-glaucus-linux-musl-ld.bfd'
+ld = 'aarch64-glaucus-linux-musl-ld.bfd'
+nm = 'aarch64-glaucus-linux-musl-gcc-nm'
+objcopy = 'aarch64-glaucus-linux-musl-objcopy'
+objdump = 'aarch64-glaucus-linux-musl-objdump'
+ranlib = 'aarch64-glaucus-linux-musl-gcc-ranlib'
+readelf = 'aarch64-glaucus-linux-musl-readelf'
+size = 'aarch64-glaucus-linux-musl-size'
+strings = 'aarch64-glaucus-linux-musl-strings'
+strip = 'aarch64-glaucus-linux-musl-strip'
+
+[host_machine]
+cpu = 'aarch64'
+cpu_family = 'aarch64'
+system = 'linux'
+endian = 'little'
