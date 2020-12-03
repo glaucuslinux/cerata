@@ -31,4 +31,11 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $MV $SCER/$nom/sac/usr/lib/udev/ata_id $CRSD/usr/bin
+  $MV $SCER/$nom/sac/usr/lib/udev/cdrom_id $CRSD/usr/bin
+  $MV $SCER/$nom/sac/usr/lib/udev/collect $CRSD/usr/bin
+  $MV $SCER/$nom/sac/usr/lib/udev/mtd_probe $CRSD/usr/bin
+  $MV $SCER/$nom/sac/usr/lib/udev/scsi_id $CRSD/usr/bin
+  $MV $SCER/$nom/sac/usr/lib/udev/v4l_id $CRSD/usr/bin
 }
