@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_patch 1 $nom clear multi-thread-default
+  rad_behave_patch 0 $nom glaucus 0001-multi-thread-default
 }
 
 configure() {
