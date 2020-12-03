@@ -33,4 +33,6 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $MV $SCER/$nom/sac/usr/lib/$nom/frcode $SCER/$nom/sac/usr/bin
 }
