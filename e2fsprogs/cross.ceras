@@ -49,6 +49,8 @@ install() {
     DESTDIR=$CRSD \
     install-libs
 
+  $MV $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
+
   $CHMOD u+w $CRSD/usr/lib/libcom_err.a
   $CHMOD u+w $CRSD/usr/lib/libe2p.a
   $CHMOD u+w $CRSD/usr/lib/libext2fs.a
