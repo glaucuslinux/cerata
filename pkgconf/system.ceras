@@ -18,7 +18,7 @@ configure() {
     --sysconfdir=/etc \
     --localstatedir=/var \
     --disable-static \
-    --with-pkg-config-dir=/usr/lib/pkgconfig:/usr/share/pkgconfig
+    --with-pkg-config-dir=/usr/lib/pkgconfig
 }
 
 build() {
