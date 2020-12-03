@@ -49,5 +49,10 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-libs
 
-  find $SCER/$nom/sac/usr/lib -name *.a -type f -exec $CHMOD u+w {} \;
+  $MV $SCER/$nom/sac/usr/lib/e2initrd_helper $SCER/$nom/sac/usr/bin
+
+  $CHMOD u+w $SCER/$nom/sac/usr/lib/libcom_err.a
+  $CHMOD u+w $SCER/$nom/sac/usr/lib/libe2p.a
+  $CHMOD u+w $SCER/$nom/sac/usr/lib/libext2fs.a
+  $CHMOD u+w $SCER/$nom/sac/usr/lib/libss.a
 }
