@@ -40,4 +40,6 @@ install() {
   $MV $CRSD/usr/lib/udev/v4l_id $CRSD/usr/bin
 
   $RM $CRSD/usr/lib/libudev.la
+
+  $MV $CRSD/usr/share/pkgconfig/udev.pc $CRSD/usr/lib/pkgconfig
 }
