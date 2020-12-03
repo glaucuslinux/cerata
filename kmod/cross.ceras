@@ -42,7 +42,7 @@ install() {
   $MKDIR $CRSD/usr/lib/depmod.d
   $RSYNC $CERD/$nom/depmod-search.conf $CRSD/usr/lib/depmod.d/search.conf
 
-  $RM $CRSD/usr/lib/libkmod.la
+  $RM $CRSD/usr/lib/lib$nom.la
 
   $MKDIR $CRSD/usr/lib/modprobe.d
 }
