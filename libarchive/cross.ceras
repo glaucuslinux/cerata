@@ -37,5 +37,5 @@ install() {
   $LN bsdcpio $CRSD/usr/bin/cpio
   $LN bsdtar $CRSD/usr/bin/tar
 
-  $RM $CRSD/usr/lib/libarchive.la
+  $RM $CRSD/usr/lib/$nom.la
 }
