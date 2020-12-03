@@ -5,7 +5,7 @@
 
 nom=radula
 ver=git
-cmt=cfdc600
+cmt=b3bf0c6
 url=https://github.com/glaucuslinux/$nom
 cys='bc curl git rsync libarchive'
 lic=ISC
