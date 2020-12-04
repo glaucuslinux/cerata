@@ -7,5 +7,5 @@ nom=radula
 ver=git
 cmt=b3bf0c6
 url=https://github.com/glaucuslinux/$nom
-cys='curl git rsync libarchive'
+cys='curl git libarchive rsync toybox'
 lic=ISC
