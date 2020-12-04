@@ -7,5 +7,5 @@ nom=libarchive
 ver=3.5.0
 url=https://www.$nom.org/downloads/$nom-$ver.tar.xz
 sum=bf7d3b56e6f24c16432372393a984166bc0adb41bc841fd387398a709d5750dfdad889bcb58c98cffb193aab47be7ade29060c46a1140ccd62457e49eaf90a31
-cnt='make attr acl'
+cnt='acl attr make'
 lic=BSD-2-Clause
