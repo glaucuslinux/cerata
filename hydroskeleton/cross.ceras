@@ -24,6 +24,13 @@ install() {
   $LN ../run/shm $CRSD/dev/shm
 
   $RSYNC $CERD/$nom/etc $CRSD
+  sed -e "s/^VERSION=/&$species/" \
+    -e "s/^VERSION_CODENAME=/&$species/" \
+    -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $species $genome'/" \
+    -e "s/^VARIANT=/&$species/" \
+    -e "s/^VARIANT_ID=/&$species/" \
+    -i $CRSD/etc/os-release
 
   $MKDIR $CRSD/home
 
