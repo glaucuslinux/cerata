@@ -33,7 +33,6 @@ configure() {
 
 build() {
   MAKE="$MAKE -j1" \
-  BUILD_CC=$HOSTCC \
   $MAKE
 }
 
