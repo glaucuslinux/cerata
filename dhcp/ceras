@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2020, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=dhcp
+ver=4.4.2
+url=https://downloads.isc.org/isc/$nom/$ver/$nom-$ver.tar.gz
+sum=c3dee2cf6e4b43d519d4bc89e9b8b12a6e3747d8c4edc0f83d4a88355a483b91a5f7d2353a3c0a2f37f88704fd2f64478ac5161ca72b10c42cebcb92907afa40
+lic=MPL-2.0
