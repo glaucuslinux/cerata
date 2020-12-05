@@ -32,7 +32,7 @@ configure() {
 }
 
 build() {
-  MAKE="$MAKE -j1" \
+  MAKEFLAGS="$MAKEFLAGS -j1" \
   $MAKE
 }
 
