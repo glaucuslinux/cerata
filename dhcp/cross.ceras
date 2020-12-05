@@ -4,17 +4,46 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  rad_behave_gnu guess .
+  rad_behave_gnu sub .
+
+  rad_behave_patch 1 $nom gentoo $nom-$ver-fno-common
 }
 
 configure() {
-  :
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --enable-${nom}v4o6 \
+    --enable-paranoia \
+    --enable-binary-leases \
+    --with-srv-lease-file=/var/lib/$nom/${nom}d.leases \
+    --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
+    --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
+    --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases \
+    --with-randomdev
 }
 
 build() {
-  :
+  MAKE="$MAKE -j1" \
+  BUILD_CC=$HOSTCC \
+  $MAKE
 }
 
 install() {
-  :
+  $MAKE \
+    DESTDIR=$CRSD \
+    install-strip
+
+  $MV $CRSD/etc/dhclient.conf.example $CRSD/etc/dhclient.conf
+  $RSYNC doc/examples/dhclient-${nom}v6.conf $CRSD/etc/dhclient6.conf
+  $MV $CRSD/etc/${nom}d.conf.example $CRSD/etc/${nom}d.conf
+  $RSYNC doc/examples/${nom}d-${nom}v6.conf $CRSD/etc/${nom}d6.conf
 }
