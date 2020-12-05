@@ -20,7 +20,6 @@ build() {
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    BUILD_CC=$HOSTCC \
     BUILD_GPERF=no \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -35,7 +34,6 @@ install() {
     SBINDIR=/usr/bin \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    BUILD_CC=$HOSTCC \
     BUILD_GPERF=no \
     PAM_CAP=no \
     DYNAMIC=yes \
