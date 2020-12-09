@@ -17,6 +17,10 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
     --disable-static \
     --disable-nls \
     --disable-rpath
@@ -26,7 +30,7 @@ build() {
   $MAKE
 }
 
-test() {
+check() {
   :
 }
 

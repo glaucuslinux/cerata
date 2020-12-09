@@ -19,7 +19,7 @@ build() {
     --mini-earlyfw
 }
 
-test() {
+check() {
   :
 }
 

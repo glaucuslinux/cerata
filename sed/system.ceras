@@ -28,7 +28,7 @@ build() {
   $MAKE
 }
 
-test() {
+check() {
   :
 }
 

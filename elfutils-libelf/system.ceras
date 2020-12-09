@@ -37,7 +37,7 @@ build() {
     -C libelf
 }
 
-test() {
+check() {
   :
 }
 

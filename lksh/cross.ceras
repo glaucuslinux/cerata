@@ -19,7 +19,7 @@ build() {
     -r
 }
 
-test() {
+check() {
   :
 }
 
