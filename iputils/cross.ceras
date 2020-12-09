@@ -28,7 +28,7 @@ build() {
     -C $XBLD/$nom
 }
 
-test() {
+check() {
   :
 }
 

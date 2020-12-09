@@ -50,7 +50,7 @@ build() {
     all-ld
 }
 
-test() {
+check() {
   :
 }
 

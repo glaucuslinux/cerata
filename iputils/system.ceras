@@ -27,7 +27,7 @@ build() {
     -C $SBLD/$nom
 }
 
-test() {
+check() {
   :
 }
 

@@ -19,7 +19,7 @@ build() {
     all-target-$nom
 }
 
-test() {
+check() {
   :
 }
 

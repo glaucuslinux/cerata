@@ -78,7 +78,7 @@ build() {
     ARCH=$LARCH
 }
 
-test() {
+check() {
   :
 }
 
