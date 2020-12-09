@@ -32,8 +32,12 @@ configure() {
 }
 
 build() {
-  MAKEFLAGS="$MAKEFLAGS -j1" \
+  MAKEFLAGS='-j1 V=1' \
   $MAKE
+}
+
+check() {
+  :
 }
 
 install() {

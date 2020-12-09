@@ -28,6 +28,10 @@ build() {
     -C $XBLD/$nom
 }
 
+check() {
+  :
+}
+
 install() {
   DESTDIR=$CRSD \
   samu \

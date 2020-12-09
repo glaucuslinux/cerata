@@ -18,6 +18,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $MKDIR $CRSD/usr/share/zoneinfo/posix
   $MKDIR $CRSD/usr/share/zoneinfo/right

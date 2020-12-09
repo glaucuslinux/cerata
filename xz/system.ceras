@@ -29,6 +29,10 @@ build() {
     pgo-build
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \

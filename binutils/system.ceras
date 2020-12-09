@@ -45,6 +45,10 @@ build() {
     tooldir=/usr
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     tooldir=/usr \

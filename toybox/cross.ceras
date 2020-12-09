@@ -24,6 +24,10 @@ build() {
   $MAKE
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $nom $CRSD/usr/bin
 

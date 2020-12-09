@@ -26,6 +26,10 @@ build() {
     ARCH=$LARCH
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     O=$XBLD/$nom \

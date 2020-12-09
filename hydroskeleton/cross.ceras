@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $MKDIR $CRSD/boot
 

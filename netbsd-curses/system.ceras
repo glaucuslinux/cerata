@@ -20,6 +20,10 @@ build() {
     all-dynamic
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     PREFIX=/usr \

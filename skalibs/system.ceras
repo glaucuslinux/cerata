@@ -31,6 +31,10 @@ build() {
     strip
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \

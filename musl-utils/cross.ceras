@@ -16,6 +16,10 @@ build() {
   $CC $CFLAGS $LDFLAGS $CERD/musl/getent.c -o getent
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC getent $CRSD/usr/bin
   $RSYNC $CERD/musl/ldconfig $CRSD/usr/bin

@@ -26,6 +26,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     O=$SBLD/$nom \

@@ -20,6 +20,10 @@ build() {
     BUILD_STATIC=no
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     BUILD_STATIC=no \

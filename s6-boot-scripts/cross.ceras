@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $SRCD/$nom/etc $CRSD
   $RSYNC $SRCD/$nom/usr $CRSD

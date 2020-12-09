@@ -17,6 +17,10 @@ build() {
     build
 }
 
+check() {
+  :
+}
+
 install() {
   python3 setup.py \
     install \

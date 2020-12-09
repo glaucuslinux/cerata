@@ -25,6 +25,10 @@ build() {
     MANDIR=/usr/share/man
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     HOST=$TGT \

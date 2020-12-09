@@ -19,6 +19,10 @@ build() {
   $MAKE
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     DESTDIR=$CRSD \

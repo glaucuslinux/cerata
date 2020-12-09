@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
   sed -e "s/^genome=/&$genome/" \
