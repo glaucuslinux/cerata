@@ -32,7 +32,7 @@ build() {
   $MAKE
 }
 
-check() {
+test() {
   :
 }
 

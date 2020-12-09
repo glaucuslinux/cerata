@@ -20,7 +20,7 @@ build() {
     all-dynamic
 }
 
-check() {
+test() {
   :
 }
 

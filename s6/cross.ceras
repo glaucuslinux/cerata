@@ -32,7 +32,7 @@ build() {
     strip
 }
 
-check() {
+test() {
   :
 }
 
