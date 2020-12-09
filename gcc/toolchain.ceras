@@ -69,7 +69,7 @@ build() {
     all-target-lib$nom
 }
 
-check() {
+test() {
   :
 }
 

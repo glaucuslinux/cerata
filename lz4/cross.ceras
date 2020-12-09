@@ -20,7 +20,7 @@ build() {
     BUILD_STATIC=no
 }
 
-check() {
+test() {
   :
 }
 

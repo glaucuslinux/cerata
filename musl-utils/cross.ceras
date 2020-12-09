@@ -16,7 +16,7 @@ build() {
   $CC $CFLAGS $LDFLAGS $CERD/musl/getent.c -o getent
 }
 
-check() {
+test() {
   :
 }
 

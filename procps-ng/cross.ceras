@@ -34,7 +34,7 @@ build() {
   $MAKE
 }
 
-check() {
+test() {
   :
 }
 

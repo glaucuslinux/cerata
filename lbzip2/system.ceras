@@ -20,7 +20,7 @@ build() {
   $MAKE
 }
 
-check() {
+test() {
   :
 }
 

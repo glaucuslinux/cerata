@@ -19,7 +19,7 @@ build() {
     PREFIX=/usr
 }
 
-check() {
+test() {
   :
 }
 
