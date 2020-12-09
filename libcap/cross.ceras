@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus 0001-disable-all-tests
+  radula_behave_patch 0 $nom glaucus 0001-disable-all-tests
 }
 
 build() {

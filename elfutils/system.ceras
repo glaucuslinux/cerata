@@ -7,18 +7,18 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_gnu guess config
-  rad_behave_gnu sub config
+  radula_behave_gnu guess config
+  radula_behave_gnu sub config
 
   $RSYNC $CERD/$nom/error.h lib
   $RSYNC $CERD/$nom/error.h src
 
-  rad_behave_patch 0 $nom void fix-aarch64_fregs
-  rad_behave_patch 0 $nom void fts-obstack
-  rad_behave_patch 0 $nom void musl-asm_ptrace_h
-  rad_behave_patch 0 $nom void musl-macros
-  rad_behave_patch 0 $nom void musl-qsort_r
-  rad_behave_patch 0 $nom void musl-strerror_r
+  radula_behave_patch 0 $nom void fix-aarch64_fregs
+  radula_behave_patch 0 $nom void fts-obstack
+  radula_behave_patch 0 $nom void musl-asm_ptrace_h
+  radula_behave_patch 0 $nom void musl-macros
+  radula_behave_patch 0 $nom void musl-qsort_r
+  radula_behave_patch 0 $nom void musl-strerror_r
 }
 
 configure() {

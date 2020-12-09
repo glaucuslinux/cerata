@@ -7,10 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_patch 1 $nom clear default-threading
-  rad_behave_patch 1 $nom clear io-size
-  rad_behave_patch 1 $nom clear speedup
-  rad_behave_patch 2 $nom clear add-pgo
+  radula_behave_patch 1 $nom clear default-threading
+  radula_behave_patch 1 $nom clear io-size
+  radula_behave_patch 1 $nom clear speedup
+  radula_behave_patch 2 $nom clear add-pgo
 }
 
 configure() {

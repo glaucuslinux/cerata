@@ -7,18 +7,18 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_gnu guess .
-  rad_behave_gnu rpath .
-  rad_behave_gnu sub .
+  radula_behave_gnu guess .
+  radula_behave_gnu rpath .
+  radula_behave_gnu sub .
 
-  rad_behave_patch 0 $nom glaucus 0001-customize-login-defaults
-  rad_behave_patch 0 $nom glaucus 0002-customize-useradd
+  radula_behave_patch 0 $nom glaucus 0001-customize-login-defaults
+  radula_behave_patch 0 $nom glaucus 0002-customize-useradd
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus 0003-fix-installation-paths
+  radula_behave_patch 0 $nom glaucus 0003-fix-installation-paths
 
-  rad_behave_patch 0 $nom lfs 0001-disable-groups
+  radula_behave_patch 0 $nom lfs 0001-disable-groups
 
   ./configure \
     --build=$BLD \

@@ -7,10 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_gnu guess .
-  rad_behave_gnu sub .
+  radula_behave_gnu guess .
+  radula_behave_gnu sub .
 
-  rad_behave_patch 0 $nom troglobit 0001-skip-unknown-signals
+  radula_behave_patch 0 $nom troglobit 0001-skip-unknown-signals
 }
 
 configure() {

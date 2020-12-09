@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_gnu guess support
-  rad_behave_gnu rpath support
-  rad_behave_gnu sub support
+  radula_behave_gnu guess support
+  radula_behave_gnu rpath support
+  radula_behave_gnu sub support
 }
 
 configure() {

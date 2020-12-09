@@ -7,32 +7,32 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_gnu guess build-aux
-  rad_behave_gnu sub build-aux
+  radula_behave_gnu guess build-aux
+  radula_behave_gnu sub build-aux
 
-  rad_behave_patch 1 $nom upstream 0001-Avoid-set_file_attributes-sign-conversion-warnings
-  rad_behave_patch 1 $nom upstream 0002-Test-suite-compatibility-fixes
-  rad_behave_patch 1 $nom upstream 0003-Test-suite-fix-Korn-shell-incompatibility
-  rad_behave_patch 1 $nom upstream 0004-Fix-segfault-with-mangled-rename-$nom
-  rad_behave_patch 1 $nom upstream 0005-Allow-input-files-to-be-missing-for-ed-style-${nom}es
-  rad_behave_patch 1 $nom upstream 0006-Fix-arbitrary-command-execution-in-ed-style-${nom}es-
-  rad_behave_patch 1 $nom upstream 0007-Invoke-ed-directly-instead-of-using-the-shell
-  rad_behave_patch 1 $nom upstream 0011-Fix-check-of-return-value-of-fwrite
-  rad_behave_patch 1 $nom upstream 0012-Fix-ed-style-test-failure
+  radula_behave_patch 1 $nom upstream 0001-Avoid-set_file_attributes-sign-conversion-warnings
+  radula_behave_patch 1 $nom upstream 0002-Test-suite-compatibility-fixes
+  radula_behave_patch 1 $nom upstream 0003-Test-suite-fix-Korn-shell-incompatibility
+  radula_behave_patch 1 $nom upstream 0004-Fix-segfault-with-mangled-rename-$nom
+  radula_behave_patch 1 $nom upstream 0005-Allow-input-files-to-be-missing-for-ed-style-${nom}es
+  radula_behave_patch 1 $nom upstream 0006-Fix-arbitrary-command-execution-in-ed-style-${nom}es-
+  radula_behave_patch 1 $nom upstream 0007-Invoke-ed-directly-instead-of-using-the-shell
+  radula_behave_patch 1 $nom upstream 0011-Fix-check-of-return-value-of-fwrite
+  radula_behave_patch 1 $nom upstream 0012-Fix-ed-style-test-failure
 
-  rad_behave_patch 1 $nom gentoo $nom-2.7.6-CVE-2018-1000156-fix1
+  radula_behave_patch 1 $nom gentoo $nom-2.7.6-CVE-2018-1000156-fix1
 
-  rad_behave_patch 1 $nom upstream 0015-Don-t-leak-temporary-file-on-failed-multi-file-ed-st
-  rad_behave_patch 1 $nom upstream 0016-Make-the-debug-2-output-more-useful
-  rad_behave_patch 1 $nom upstream 0017-Fix-swapping-fake-lines-in-pch_swap
-  rad_behave_patch 1 $nom upstream 0018-Improve-support-for-memory-leak-detection
-  rad_behave_patch 1 $nom upstream 0019-Skip-ed-test-when-the-ed-utility-is-not-installed
-  rad_behave_patch 1 $nom upstream 0020-Abort-when-cleaning-up-fails
-  rad_behave_patch 1 $nom upstream 0021-Don-t-crash-when-RLIMIT_NOFILE-is-set-to-RLIM_INFINI
-  rad_behave_patch 1 $nom upstream 0022-Don-t-follow-symlinks-unless-follow-symlinks-is-give
-  rad_behave_patch 1 $nom upstream 0023-Avoid-invalid-memory-access-in-context-format-diffs
-  rad_behave_patch 1 $nom upstream 0024-Fix-failed-assertion-outstate-after_newline
-  rad_behave_patch 1 $nom upstream 0025-Add-missing-section-tests-to-context-format-test-cas
+  radula_behave_patch 1 $nom upstream 0015-Don-t-leak-temporary-file-on-failed-multi-file-ed-st
+  radula_behave_patch 1 $nom upstream 0016-Make-the-debug-2-output-more-useful
+  radula_behave_patch 1 $nom upstream 0017-Fix-swapping-fake-lines-in-pch_swap
+  radula_behave_patch 1 $nom upstream 0018-Improve-support-for-memory-leak-detection
+  radula_behave_patch 1 $nom upstream 0019-Skip-ed-test-when-the-ed-utility-is-not-installed
+  radula_behave_patch 1 $nom upstream 0020-Abort-when-cleaning-up-fails
+  radula_behave_patch 1 $nom upstream 0021-Don-t-crash-when-RLIMIT_NOFILE-is-set-to-RLIM_INFINI
+  radula_behave_patch 1 $nom upstream 0022-Don-t-follow-symlinks-unless-follow-symlinks-is-give
+  radula_behave_patch 1 $nom upstream 0023-Avoid-invalid-memory-access-in-context-format-diffs
+  radula_behave_patch 1 $nom upstream 0024-Fix-failed-assertion-outstate-after_newline
+  radula_behave_patch 1 $nom upstream 0025-Add-missing-section-tests-to-context-format-test-cas
 }
 
 configure() {

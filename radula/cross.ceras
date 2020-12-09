@@ -17,12 +17,10 @@ build() {
 
 install() {
   $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
-  $LN $nom.conf $CRSD/etc/rad.conf
   sed -e "s/^genome=/&$genome/" \
     -e "s/^init=/&$init/" \
     -e "s/^species=/&$species/" \
     -i $CRSD/etc/$nom.conf
 
   $RSYNC $SRCD/$nom/$nom $CRSD/usr/bin
-  $LN $nom $CRSD/usr/bin/rad
 }

@@ -17,8 +17,6 @@ build() {
 
 install() {
   $RSYNC $CERD/$nom/$nom.conf /etc
-  $LN $nom.conf /etc/rad.conf
 
   $RSYNC $SRCD/$nom/$nom /usr/bin
-  $LN $nom /usr/bin/rad
 }
