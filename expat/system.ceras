@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_gnu guess conftools
-  rad_behave_gnu sub conftools
+  radula_behave_gnu guess conftools
+  radula_behave_gnu sub conftools
 }
 
 configure() {

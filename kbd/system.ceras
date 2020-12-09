@@ -7,15 +7,15 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_gnu guess config
-  rad_behave_gnu rpath config
-  rad_behave_gnu sub config
+  radula_behave_gnu guess config
+  radula_behave_gnu rpath config
+  radula_behave_gnu sub config
 
-  rad_behave_patch 1 $nom lfs $nom-$ver-backspace-1
+  radula_behave_patch 1 $nom lfs $nom-$ver-backspace-1
 }
 
 configure() {
-  rad_behave_patch 1 $nom lfs remove-resizecons
+  radula_behave_patch 1 $nom lfs remove-resizecons
 
   $AUTORECONF
 

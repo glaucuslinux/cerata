@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_patch 1 $nom sabotage 0001-mac-compat-don-t-redefine-__dead
+  radula_behave_patch 1 $nom sabotage 0001-mac-compat-don-t-redefine-__dead
 }
 
 configure() {
-  rad_behave_patch 0 $nom glaucus 0001-optimize-more
+  radula_behave_patch 0 $nom glaucus 0001-optimize-more
 }
 
 build() {

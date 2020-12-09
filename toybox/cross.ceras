@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_patch 0 $nom glaucus 0001-extend-long-iso-format
+  radula_behave_patch 0 $nom glaucus 0001-extend-long-iso-format
 }
 
 configure() {

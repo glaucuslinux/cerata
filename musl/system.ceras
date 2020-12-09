@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  rad_behave_patch 1 $nom upstream CVE-2020-28928
+  radula_behave_patch 1 $nom upstream CVE-2020-28928
 }
 
 configure() {

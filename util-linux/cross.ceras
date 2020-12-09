@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  rad_behave_gnu guess config
-  rad_behave_gnu rpath config
-  rad_behave_gnu sub config
+  radula_behave_gnu guess config
+  radula_behave_gnu rpath config
+  radula_behave_gnu sub config
 
   $MKDIR $CRSD/var/lib/hwclock
 }
