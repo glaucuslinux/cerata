@@ -19,6 +19,10 @@ build() {
     --mini-earlyfw
 }
 
+check() {
+  :
+}
+
 install() {
   $MKDIR $SCER/$nom/sac/boot
   $RSYNC $nom.img $SCER/$nom/sac/boot

@@ -69,6 +69,10 @@ build() {
     all-target-lib$nom
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     install-strip-$nom \

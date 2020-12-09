@@ -17,6 +17,10 @@ build() {
     -r
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $nom $CRSD/usr/bin
   $LN $nom $CRSD/usr/bin/ksh

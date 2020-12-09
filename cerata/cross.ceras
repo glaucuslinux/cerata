@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $CERD $CRSD/usr --exclude .git --exclude .gitattributes --exclude LICENSE --exclude README.md
 }

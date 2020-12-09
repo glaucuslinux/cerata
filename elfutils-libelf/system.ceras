@@ -37,6 +37,10 @@ build() {
     -C libelf
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     -C libelf \

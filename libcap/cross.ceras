@@ -26,6 +26,10 @@ build() {
     GOLANG=no
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     DESTDIR=$CRSD \

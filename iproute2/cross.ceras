@@ -20,6 +20,10 @@ build() {
   $MAKE
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     SBINDIR=/usr/bin \

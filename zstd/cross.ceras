@@ -24,6 +24,10 @@ build() {
     BACKTRACE=0
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     DESTDIR=$CRSD \

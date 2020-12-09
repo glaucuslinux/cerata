@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $SRCD/$nom/etc $SCER/$nom/sac --delete
   $RSYNC $SRCD/$nom/usr $SCER/$nom/sac --delete

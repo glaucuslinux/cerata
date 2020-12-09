@@ -50,6 +50,10 @@ build() {
     all-ld
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     install-strip-binutils \

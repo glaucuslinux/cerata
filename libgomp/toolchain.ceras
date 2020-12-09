@@ -16,6 +16,10 @@ build() {
     all-target-$nom
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     install-strip-target-$nom

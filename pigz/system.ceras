@@ -18,6 +18,10 @@ build() {
   $MAKE
 }
 
+check() {
+  :
+}
+
 install() {
   $MKDIR $SCER/$nom/sac/usr/bin
   $RSYNC $nom $SCER/$nom/sac/usr/bin

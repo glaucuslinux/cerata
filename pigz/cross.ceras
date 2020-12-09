@@ -19,6 +19,10 @@ build() {
   $MAKE
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC $nom $CRSD/usr/bin
   $LN $nom $CRSD/usr/bin/gunzip

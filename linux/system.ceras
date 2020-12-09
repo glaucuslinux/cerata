@@ -78,6 +78,10 @@ build() {
     ARCH=$LARCH
 }
 
+check() {
+  :
+}
+
 install() {
   $MAKE \
     O=$SBLD/$nom \

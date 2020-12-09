@@ -24,6 +24,10 @@ build() {
   $nom
 }
 
+check() {
+  :
+}
+
 install() {
   $nom \
     DESTDIR=$SCER/$nom/sac \

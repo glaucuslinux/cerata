@@ -15,6 +15,10 @@ build() {
   :
 }
 
+check() {
+  :
+}
+
 install() {
   $MKDIR $CRSD/usr/share/hwdata
   $RSYNC $SRCD/$nom/$nom-$ver/pci.ids $CRSD/usr/share/hwdata

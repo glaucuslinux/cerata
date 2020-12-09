@@ -27,6 +27,10 @@ build() {
     -C $SBLD/$nom
 }
 
+check() {
+  :
+}
+
 install() {
   DESTDIR=$SCER/$nom/sac \
   samu \
