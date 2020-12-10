@@ -10,7 +10,6 @@ prepare() {
 
 configure() {
   $SRCD/$nom/$nom-$ver/configure \
-    --host=$XTGT \
     --prefix=/usr \
     --disable-static \
     --with-libedit

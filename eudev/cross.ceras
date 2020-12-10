@@ -47,5 +47,5 @@ install() {
 
   $RM $CRSD/usr/lib/libudev.la
 
-  $MV $CRSD/usr/share/pkgconfig/udev.pc $CRSD/usr/lib/pkgconfig
+  $MV $CRSD/usr/share/pkgconfig/udev.pc $PKG_CONFIG_LIBDIR
 }

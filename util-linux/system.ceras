@@ -17,8 +17,6 @@ prepare() {
 configure() {
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   ./configure \
-    --build=$XBLD \
-    --host=$XTGT \
     --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \

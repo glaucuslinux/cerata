@@ -24,8 +24,6 @@ configure() {
   find man -name Makefile.in -exec sed 's/groups\.1 / /' -i {} \;
 
   ./configure \
-    --build=$XBLD \
-    --host=$XTGT \
     --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
