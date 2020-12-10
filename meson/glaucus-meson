@@ -5,7 +5,7 @@
 
 exec meson setup \
   --prefix /usr \
-  --libexecdir lib \
+  --libexecdir bin \
   --sbindir bin \
   --buildtype release \
   --optimization 3 \

@@ -14,7 +14,7 @@ configure() {
   ./configure \
     --host=$XTGT \
     --prefix=/usr \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/bin \
     --skeldir=/etc/$nom/skel \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \

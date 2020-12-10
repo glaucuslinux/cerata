@@ -19,6 +19,11 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
     --disable-harden-flags \
     --disable-ipv6 \
     --disable-nls \

@@ -17,7 +17,9 @@ configure() {
     --host=$TGT \
     --prefix=/usr \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
     --sysconfdir=/etc \
+    --localstatedir=/var \
     --disable-static \
     --disable-selinux \
     --disable-manpages

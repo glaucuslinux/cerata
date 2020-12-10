@@ -21,7 +21,10 @@ configure() {
     --host=$TGT \
     --prefix=/usr \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
     --enable-symlink-install \
     --enable-elf-shlibs \
     --disable-bsd-shlibs \

@@ -14,7 +14,11 @@ configure() {
   ./configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/var
 }
 
 build() {

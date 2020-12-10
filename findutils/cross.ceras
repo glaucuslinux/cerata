@@ -17,7 +17,9 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
-    --libexecdir=/usr/lib/$nom \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
+    --sysconfdir=/etc \
     --localstatedir=/var/lib/locate \
     --enable-threads=posix \
     --disable-rpath \
@@ -39,6 +41,4 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
-
-  $MV $CRSD/usr/lib/$nom/frcode $CRSD/usr/bin
 }

@@ -22,7 +22,7 @@ configure() {
   CXXFLAGS="$(if [ $species = bennettae ]; then printf -- "$CFLAGSNOLTO"; else printf -- "$CFLAGSNOIPANOLTO"; fi)" \
   $SSRC/$nom/configure \
     --prefix=/usr \
-    --libexecdir=/usr/lib \
+    --libexecdir=/usr/bin \
     --libdir=/usr/lib \
     --disable-multilib \
     --disable-symvers \

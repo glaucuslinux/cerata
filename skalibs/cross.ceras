@@ -14,8 +14,10 @@ configure() {
   ./configure \
     --host=$XTGT \
     --prefix=/usr \
+    --libdir=/usr/lib \
     --datadir=/etc \
     --with-include=$CRSD/usr/include \
+    --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
     --disable-static \
     --disable-all-pic \
