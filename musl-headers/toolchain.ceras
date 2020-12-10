@@ -7,6 +7,8 @@ prepare() {
   $RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
+  radula_behave_patch 1 musl adelie 3001-make-real-lastlog-h
+  radula_behave_patch 1 musl glaucus 0001-fix-paths
   radula_behave_patch 1 musl upstream CVE-2020-28928
 }
 
@@ -28,4 +30,7 @@ install() {
     prefix=/usr \
     DESTDIR=$CRSD \
     install-headers
+
+  $RM $CRSD/usr/include/utmp.h
+  $RM $CRSD/usr/include/utmpx.h
 }
