@@ -14,9 +14,14 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/bin \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
     --with-include=$CRSD/usr/include \
+    --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
@@ -41,5 +46,5 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $LN ${nom}b $CRSD/usr/bin/$nom
+  $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }

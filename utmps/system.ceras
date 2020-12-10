@@ -13,7 +13,11 @@ configure() {
 
   ./configure \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/bin \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
     --with-dynlib=$SYSD/usr/lib \
@@ -40,5 +44,5 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
-  $LN ${nom}b $SCER/$nom/sac/usr/bin/$nom
+  $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
 }
