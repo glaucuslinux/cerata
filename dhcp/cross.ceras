@@ -19,6 +19,7 @@ configure() {
     --host=$TGT \
     --prefix=/usr \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
     --sysconfdir=/etc \
     --localstatedir=/var \
     --enable-${nom}v4o6 \

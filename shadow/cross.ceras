@@ -24,9 +24,11 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
-    --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
     --enable-shared \
     --disable-static \
     --enable-utmpx \

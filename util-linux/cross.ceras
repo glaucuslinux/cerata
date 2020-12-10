@@ -22,7 +22,10 @@ configure() {
     --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/bin \
+    --sysconfdir=/etc \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --disable-static \
     --disable-symvers \

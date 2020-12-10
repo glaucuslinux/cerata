@@ -15,7 +15,7 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/bin \
     --localstatedir=/var/lib/locate \
     --enable-threads=posix \
     --disable-rpath \
