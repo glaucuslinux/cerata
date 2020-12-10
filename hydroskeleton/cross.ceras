@@ -27,14 +27,16 @@ install() {
   $MKDIR $CRSD/dev/pts
   $LN ../run/shm $CRSD/dev/shm
 
-  $RSYNC $CERD/$nom/etc $CRSD
-  sed -e "s/^VERSION=/&$species/" \
-    -e "s/^VERSION_CODENAME=/&$species/" \
-    -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
-    -e "s/^PRETTY_NAME=/&'glaucus $species $genome'/" \
-    -e "s/^VARIANT=/&$species/" \
-    -e "s/^VARIANT_ID=/&$species/" \
-    -i $CRSD/etc/os-release
+  $MKDIR $CRSD/etc
+  $RSYNC $CERD/$nom/fstab $CRSD/etc
+  $RSYNC $CERD/$nom/group $CRSD/etc
+  $RSYNC $CERD/$nom/hostname $CRSD/etc
+  $RSYNC $CERD/$nom/hosts $CRSD/etc
+  $RSYNC $CERD/$nom/issue $CRSD/etc
+  $LN ../usr/lib/os-release $CRSD/etc/os-release
+  $RSYNC $CERD/$nom/passwd $CRSD/etc
+  $RSYNC $CERD/$nom/profile $CRSD/etc
+  $RSYNC $CERD/$nom/shells $CRSD/etc
 
   $MKDIR $CRSD/home
 
@@ -58,6 +60,14 @@ install() {
   $MKDIR $CRSD/usr/bin
   $MKDIR $CRSD/usr/include
   $MKDIR $CRSD/usr/lib
+  $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
+  sed -e "s/^VERSION=/&$species/" \
+    -e "s/^VERSION_CODENAME=/&$species/" \
+    -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $species $genome'/" \
+    -e "s/^VARIANT=/&$species/" \
+    -e "s/^VARIANT_ID=/&$species/" \
+    -i $CRSD/usr/lib/os-release
   $MKDIR $CRSD/usr/share
 
   $MKDIR $CRSD/var/lib/urandom
