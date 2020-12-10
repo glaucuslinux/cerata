@@ -16,8 +16,6 @@ prepare() {
 
 configure() {
   ./configure \
-    --build=$BLD \
-    --host=$TGT \
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \

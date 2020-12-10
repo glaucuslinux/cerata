@@ -12,7 +12,7 @@ configure() {
   radula_behave_patch 0 $nom glaucus 0001-use-gnu-hash-style
 
   ./configure \
-    --host=$XTGT \
+    --host=$TGT \
     --prefix=/usr \
     --libdir=/usr/lib \
     --datadir=/etc \
