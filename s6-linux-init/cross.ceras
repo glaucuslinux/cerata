@@ -14,16 +14,22 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/bin \
     --libdir=/usr/lib \
+    --includedir=/usr/include \
     --skeldir=/etc/s6/skel \
-    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
+    --with-sysdeps=$CRSD/usr/lib \
     --with-include=$CRSD/usr/include \
+    --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
     --disable-allstatic \
-    --disable-all-pic
+    --disable-all-pic \
+    --enable-utmps
 
   sed "s/CFLAGS := .*/CFLAGS := $CFLAGSFAT -fno-stack-protector/" \
     -i config.mak
