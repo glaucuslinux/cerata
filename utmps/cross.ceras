@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  radula_behave_patch 1 $nom alpine 0001-add-stub-utmp.h
 }
 
 configure() {
@@ -19,7 +21,7 @@ configure() {
     --libexecdir=/usr/bin \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
+    --with-sysdeps=$CRSD/usr/lib \
     --with-include=$CRSD/usr/include \
     --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
@@ -45,6 +47,8 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
+
+  $RM $CRSD/usr/include/utmpx.h
 
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }

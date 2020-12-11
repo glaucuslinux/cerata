@@ -14,14 +14,16 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
     --libdir=/usr/lib \
+    --includedir=/usr/include \
     --datadir=/etc \
+    --sysdepdir=/usr/lib \
     --with-include=$CRSD/usr/include \
     --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
     --disable-static \
     --disable-all-pic \
-    --disable-ipv6 \
     --with-sysdep-devurandom=yes
 
   sed "s/CFLAGS := .*/CFLAGS := $CFLAGS -fno-stack-protector/" \
@@ -41,4 +43,6 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
+
+  $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }
