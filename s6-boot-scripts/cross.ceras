@@ -23,5 +23,13 @@ install() {
   $RSYNC $SRCD/$nom/etc $CRSD
   $RSYNC $SRCD/$nom/usr $CRSD
 
-  #s6-rc-compile $CRSD/etc/s6/compiled $CRSD/etc/s6/source
+  $MKDIR $CRSD/etc/s6/current/env
+
+  mkfifo -m 0600 $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
+  mkfifo -m 0600 $CRSD/etc/s6/current/run-image/service/s6-svscan-log/fifo
+
+  $MKDIR -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
+  $MKDIR $CRSD/etc/s6/current/run-image/utmps
+
+  #s6-rc-compile $CRSD/etc/s6/rc/compiled $CRSD/etc/s6/sv
 }

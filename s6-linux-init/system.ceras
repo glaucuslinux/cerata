@@ -14,7 +14,7 @@ configure() {
   ./configure \
     --prefix=/usr \
     --libexecdir=/usr/bin \
-    --skeldir=/etc/$nom/skel \
+    --skeldir=/etc/s6/skel \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
     --with-dynlib=$SYSD/usr/lib \

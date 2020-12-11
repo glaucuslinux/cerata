@@ -23,5 +23,5 @@ install() {
   $RSYNC $SRCD/$nom/etc $SCER/$nom/sac --delete
   $RSYNC $SRCD/$nom/usr $SCER/$nom/sac --delete
 
-  #s6-rc-compile $SCER/$nom/sac/etc/s6/compiled $SCER/$nom/sac/etc/s6/source
+  #s6-rc-compile $SCER/$nom/sac/etc/s6/rc/compiled $SCER/$nom/sac/etc/s6/sv
 }
