@@ -14,9 +14,16 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/bin \
-    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --shebangdir=/usr/bin \
+    --with-sysdeps=$CRSD/usr/lib \
     --with-include=$CRSD/usr/include \
+    --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
