@@ -21,6 +21,7 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --skeldir=/etc/s6/skel \
+    --tmpfsdir=/run \
     --with-sysdeps=$CRSD/usr/lib \
     --with-include=$CRSD/usr/include \
     --with-lib=$CRSD/usr/lib \
