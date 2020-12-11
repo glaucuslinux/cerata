@@ -13,12 +13,15 @@ configure() {
 
   ./configure \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --datadir=/etc \
+    --sysdepdir=/usr/lib \
     --with-include=$SYSD/usr/include \
     --with-dynlib=$SYSD/usr/lib \
     --disable-static \
     --disable-all-pic \
-    --disable-ipv6 \
     --with-sysdep-devurandom=yes
 
   sed "s/CFLAGS := .*/CFLAGS := $CFLAGS -fno-stack-protector/" \
@@ -38,4 +41,7 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install
+
+  $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
+
 }
