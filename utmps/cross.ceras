@@ -31,7 +31,7 @@ configure() {
     --disable-allstatic \
     --disable-all-pic
 
-  sed "s/CFLAGS := .*/CFLAGS := $CFLAGS -fno-stack-protector/" \
+  sed "s/CFLAGS := .*/CFLAGS := $CFLAGSFAT -fno-stack-protector/" \
     -i config.mak
 }
 
@@ -48,8 +48,6 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
-
-  $RM $CRSD/usr/include/utmpx.h
 
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }
