@@ -10,3 +10,4 @@ video:x:8:
 cdrom:x:9:
 input:x:10:
 kvm:x:11:
+s6log:x:983:
