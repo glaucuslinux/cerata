@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=autoconf
-ver=2.69
+ver=2.70
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
-sum=995d3e5a8eb1eb37e2b7fae53c6ec7a9b4df997286b7d643344818f94636756b1bf5ff5ea9155e755cb9461149a853dfbf2886fc6bd7132e5afa9c168e306e9b
+sum=af4af6b8811baa424c00990b368a6cbfb1d598dde9ee08dce2a5fc32cb9517e6e683a59d6852507f6a72d499fc298c4171b6f06962cf3ba40cf1557cfb6069fe
 lic='GFDL-1.3-only GPL-2.0-only GPL-3.0-only'
