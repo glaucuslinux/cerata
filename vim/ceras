@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=vim
-ver=8.2.2034
+ver=8.2.2143
 url=https://github.com/$nom/$nom/archive/v$ver.tar.gz
-sum=e149241ec74888192b9cb9d4d6ce34fa6cb016462dfe79493c3dc52a57689eec72841c998143db7ac704ef9592d4b8600e3cb361b11a7a13166359d294c2bdce
+sum=c43a268714cfcb0db5d5ca6d89fbdeeac46bb4c490c0fedf1d8e33199213d1b1a0b6fb66aaa5f8bcf3ab119aea5ba8b4109b7fe1117365dbb4d57bd0e925e55e
 lic='LGPL-2.1-only MIT Vim'
