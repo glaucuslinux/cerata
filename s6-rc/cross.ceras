@@ -48,5 +48,6 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $RSYNC $CERD/$nom/modules-load $CRSD/usr/bin
   $RSYNC $CERD/$nom/$nom-bundle-update $CRSD/usr/bin
 }
