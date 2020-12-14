@@ -26,7 +26,6 @@ configure() {
     --libexecdir=/usr/bin \
     --sysconfdir=/etc \
     --localstatedir=/var \
-    --runstatedir=/run \
     --libdir=/usr/lib \
     --disable-static \
     --disable-symvers \
