@@ -44,5 +44,6 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $MKDIR $PKG_CONFIG_LIBDIR
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }
