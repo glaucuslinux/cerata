@@ -23,6 +23,8 @@ install() {
   $RSYNC $SRCD/$nom/etc $CRSD
   $RSYNC $SRCD/$nom/usr $CRSD
 
+  $RSYNC $CERD/$nom/s6.conf $CRSD/etc/s6
+
   $MKDIR $CRSD/etc/s6/current/env
 
   mkfifo -m 0600 $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
@@ -34,4 +36,8 @@ install() {
   $CHOWN utmp:utmp $CRSD/etc/s6/current/run-image/utmps
 
   #s6-rc-compile $CRSD/etc/s6/rc/compiled $CRSD/etc/s6/sv
+
+  $RSYNC $CERD/$nom/modules-load $CRSD/usr/bin
+
+  $RSYNC $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8
 }
