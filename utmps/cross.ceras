@@ -49,5 +49,7 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $LN $nom/utmp.h $CRSD/usr/include/utmp.h
+
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }

@@ -24,6 +24,8 @@ install() {
 
   $LN usr/bin $CRSD/bin
 
+  $MKDIR $CRSD/dev
+
   $MKDIR $CRSD/etc
   $RSYNC $CERD/$nom/fstab $CRSD/etc
   $RSYNC $CERD/$nom/group $CRSD/etc
