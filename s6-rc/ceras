@@ -6,7 +6,7 @@
 nom=s6-rc
 ver=0.5.2.0
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
-sum=4f242e1075864b9c21ec4d771283a78730fadf93062aa30620a96c196556735422bc0bb528f14fd3aff45e11e9ee6ac527ba352b434eaf0e807d954115f8baea
+sum=663cddac2b60143703cf9cc33777ead2a283eb9cba53add726849e1c95418fa2729e0d3bc5dafe8879a5ce036f705e344aaf3f7e2f287fbd6c2a68e9dcbb01f5
 cys='execline s6 skalibs'
 cnt='execline make s6 skalibs'
 lic=ISC
