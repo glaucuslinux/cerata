@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=samurai
-ver=1.1
+ver=1.2
 url=https://github.com/michaelforney/$nom/releases/download/$ver/$nom-$ver.tar.gz
-sum=b27302c34d736f483909e57c8b162609eaa4c86571c1167b71a5564b521cc3af2861307a16bb6dca55e80952088989e9526b103160d2ea054d15f4ed85b1cedb
+sum=bbe6a582c34b04f1df53b76c1647aa3e03c4698ebf7591a203935f11ffa05971bbcb86dc1a8c06aeb904cdc741abb08918122810fc47216fed0a6d9f87fd1225
 lic='Apache-2.0 ISC MIT'
