@@ -6,7 +6,7 @@
 nom=s6-linux-init
 ver=1.0.5.1
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
-sum=e5e57ce4b6e6f0d3020a74e4c168bd6218013a9a8dc66b861dccb21dff3a58aa87a2234d9402aaf8764fbbfab12f28fd9d4da6dba09905ee11dc5faeb9530d5e
+sum=c23fff1f5f2433119cbcfceb8e69c2f5542c8377079010891f4147a056d66c23fc08e08ca20ce0236d40386aac187cefd7b38bccb1bd5395d01ef4716c7a7432
 cys='execline s6 skalibs'
 cnt='execline make s6 skalibs'
 lic=ISC
