@@ -26,7 +26,6 @@ install() {
 
   $MKDIR $CRSD/dev
 
-  $MKDIR $CRSD/etc
   $RSYNC $CERD/$nom/fstab $CRSD/etc
   $RSYNC $CERD/$nom/group $CRSD/etc
   $RSYNC $CERD/$nom/hostname $CRSD/etc
@@ -56,9 +55,6 @@ install() {
 
   $LN run/tmp $CRSD/tmp
 
-  $MKDIR $CRSD/usr/bin
-  $MKDIR $CRSD/usr/include
-  $MKDIR $CRSD/usr/lib
   $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
   sed -e "s/^VERSION=/&$species/" \
     -e "s/^VERSION_CODENAME=/&$species/" \
