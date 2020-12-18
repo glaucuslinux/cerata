@@ -15,8 +15,14 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --libexecdir=/usr/bin \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
     --localstatedir=/var/lib/locate \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls \

@@ -13,9 +13,16 @@ configure() {
 
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --libexecdir=/usr/bin \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
+    --with-lib=$SYSD/usr/lib \
     --with-dynlib=$SYSD/usr/lib \
     --enable-shared \
     --disable-static \

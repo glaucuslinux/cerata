@@ -13,10 +13,17 @@ configure() {
 
   ./configure \
     --prefix=/usr \
-    --libexecdir=/usr/bin \
+    --exec-prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --skeldir=/etc/s6/skel \
+    --tmpfsdir=/run \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
+    --with-lib=$SYSD/usr/lib \
     --with-dynlib=$SYSD/usr/lib \
     --enable-shared \
     --disable-static \

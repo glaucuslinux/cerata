@@ -17,7 +17,7 @@ configure() {
     --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
     --bindir=/usr/bin \
-    --libexecdir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --shebangdir=/usr/bin \

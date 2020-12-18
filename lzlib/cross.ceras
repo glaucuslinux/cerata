@@ -11,11 +11,9 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/bin \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --runstatedir=/run \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --includedir=/usr/include \
     --disable-static \
     --enable-shared \
     CC=$CC \
