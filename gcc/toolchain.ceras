@@ -28,7 +28,7 @@ configure() {
     --host=$BLD \
     --target=$TGT \
     --prefix=$TLCD \
-    --libexecdir=$TLCD/lib/$nom \
+    --libexecdir=$TLCD/lib \
     --libdir=$TLCD/lib \
     --disable-multilib \
     --disable-symvers \
