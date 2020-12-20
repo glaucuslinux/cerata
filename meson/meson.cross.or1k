@@ -1,0 +1,22 @@
+[binaries]
+ar = 'or1k-glaucus-linux-musl-gcc-ar'
+as = 'or1k-glaucus-linux-musl-as'
+c = 'or1k-glaucus-linux-musl-gcc'
+c_ld = 'bfd'
+cpp = 'or1k-glaucus-linux-musl-g++'
+cpp_ld = 'bfd'
+ld = 'or1k-glaucus-linux-musl-ld.bfd'
+nm = 'or1k-glaucus-linux-musl-gcc-nm'
+objcopy = 'or1k-glaucus-linux-musl-objcopy'
+objdump = 'or1k-glaucus-linux-musl-objdump'
+ranlib = 'or1k-glaucus-linux-musl-gcc-ranlib'
+readelf = 'or1k-glaucus-linux-musl-readelf'
+size = 'or1k-glaucus-linux-musl-size'
+strings = 'or1k-glaucus-linux-musl-strings'
+strip = 'or1k-glaucus-linux-musl-strip'
+
+[host_machine]
+cpu = 'openrisc'
+cpu_family = 'openrisc'
+system = 'linux'
+endian = 'big'
