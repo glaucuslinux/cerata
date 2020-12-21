@@ -1,0 +1,22 @@
+[binaries]
+ar = 'microblazeel-glaucus-linux-musl-gcc-ar'
+as = 'microblazeel-glaucus-linux-musl-as'
+c = 'microblazeel-glaucus-linux-musl-gcc'
+c_ld = 'bfd'
+cpp = 'microblazeel-glaucus-linux-musl-g++'
+cpp_ld = 'bfd'
+ld = 'microblazeel-glaucus-linux-musl-ld.bfd'
+nm = 'microblazeel-glaucus-linux-musl-gcc-nm'
+objcopy = 'microblazeel-glaucus-linux-musl-objcopy'
+objdump = 'microblazeel-glaucus-linux-musl-objdump'
+ranlib = 'microblazeel-glaucus-linux-musl-gcc-ranlib'
+readelf = 'microblazeel-glaucus-linux-musl-readelf'
+size = 'microblazeel-glaucus-linux-musl-size'
+strings = 'microblazeel-glaucus-linux-musl-strings'
+strip = 'microblazeel-glaucus-linux-musl-strip'
+
+[host_machine]
+cpu = 'microblaze'
+cpu_family = 'microblaze'
+system = 'linux'
+endian = 'little'
