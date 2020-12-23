@@ -10,6 +10,11 @@ prepare() {
   radula_behave_gnu guess support
   radula_behave_gnu rpath support
   radula_behave_gnu sub support
+
+  rad_behave_patch 0 $nom upstream ${nom}51-001
+  rad_behave_patch 0 $nom upstream ${nom}51-002
+  rad_behave_patch 0 $nom upstream ${nom}51-003
+  rad_behave_patch 0 $nom upstream ${nom}51-004
 }
 
 configure() {
