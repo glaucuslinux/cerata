@@ -30,7 +30,6 @@ configure() {
     --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
     --localstatedir=/var \
-    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
