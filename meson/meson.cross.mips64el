@@ -1,0 +1,22 @@
+[binaries]
+ar = 'mips64el-glaucus-linux-musl-gcc-ar'
+as = 'mips64el-glaucus-linux-musl-as'
+c = 'mips64el-glaucus-linux-musl-gcc'
+c_ld = 'bfd'
+cpp = 'mips64el-glaucus-linux-musl-g++'
+cpp_ld = 'bfd'
+ld = 'mips64el-glaucus-linux-musl-ld.bfd'
+nm = 'mips64el-glaucus-linux-musl-gcc-nm'
+objcopy = 'mips64el-glaucus-linux-musl-objcopy'
+objdump = 'mips64el-glaucus-linux-musl-objdump'
+ranlib = 'mips64el-glaucus-linux-musl-gcc-ranlib'
+readelf = 'mips64el-glaucus-linux-musl-readelf'
+size = 'mips64el-glaucus-linux-musl-size'
+strings = 'mips64el-glaucus-linux-musl-strings'
+strip = 'mips64el-glaucus-linux-musl-strip'
+
+[host_machine]
+cpu = 'mips64el'
+cpu_family = 'mips64'
+system = 'linux'
+endian = 'little'
