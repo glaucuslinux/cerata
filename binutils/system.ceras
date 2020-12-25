@@ -25,7 +25,7 @@ configure() {
     --sysconfdir=/etc \
     --localstatedir=/var \
     --libdir=/usr/lib \
-    --includedir=/usr/include
+    --includedir=/usr/include \
     --enable-deterministic-archives \
     --disable-compressed-debug-sections \
     --enable-new-dtags \
