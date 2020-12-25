@@ -6,19 +6,10 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
-
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
 }
 
 configure() {
-  ./configure \
-    --target=$TGT \
-    --prefix=$TLCD \
-    --bindir=$TLCD/bin/$nom \
-    --sysconfdir=$TLCD/etc \
-    --disable-man \
-    --without-bundled-zlib
+  :
 }
 
 build() {

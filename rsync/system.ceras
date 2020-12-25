@@ -14,6 +14,15 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-debug \
     --without-included-popt \
     --without-included-zlib

@@ -10,15 +10,24 @@ prepare() {
   radula_behave_gnu guess .
   radula_behave_gnu rpath .
   radula_behave_gnu sub .
+
+  radula_behave_patch 1 $nom adelie use-utmpx
 }
 
 configure() {
-  #ac_cv_func_malloc_0_nonnull=yes \
-  #ac_cv_func_realloc_0_nonnull=yes \
+  $AUTORECONF
+
+  LIBS='-lutmps -lskarnet' \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-static \
     --disable-nls \
     --disable-rpath \

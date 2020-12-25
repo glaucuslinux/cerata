@@ -8,6 +8,7 @@ prepare() {
   cd $SSRC/$nom
 
   radula_behave_gnu guess .
+  radula_behave_gnu rpath .
   radula_behave_gnu sub .
 
   $MKDIR $SBLD/$nom
@@ -17,7 +18,14 @@ prepare() {
 configure() {
   $SSRC/$nom/configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
     --libdir=/usr/lib \
+    --includedir=/usr/include
     --enable-deterministic-archives \
     --disable-compressed-debug-sections \
     --enable-new-dtags \

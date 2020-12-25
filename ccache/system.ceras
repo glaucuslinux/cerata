@@ -6,18 +6,10 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --bindir=/usr/bin/$nom \
-    --sysconfdir=/etc \
-    --disable-man \
-    --without-bundled-zlib
+  :
 }
 
 build() {

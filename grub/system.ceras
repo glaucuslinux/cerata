@@ -21,8 +21,15 @@ configure() {
   LDFLAGS="$(if [ $species = atlanticus ]; then printf -- "$LDFLAGSNOOPENMP"; else printf -- "$LDFLAGS"; fi)" \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-threads=posix \
     --disable-nls \
     --disable-rpath \

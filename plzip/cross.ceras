@@ -11,6 +11,8 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     CXX=$CXX \
     CXXFLAGS="$CXXFLAGS"
 }
