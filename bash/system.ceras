@@ -27,7 +27,7 @@ configure() {
     --sysconfdir=/etc \
     --localstatedir=/var \
     --libdir=/usr/lib \
-    --includedir=/usr/include
+    --includedir=/usr/include \
     --enable-multibyte \
     --disable-nls \
     --disable-rpath \
