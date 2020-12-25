@@ -1,5 +1,14 @@
 --- Makefile
 +++ Makefile
+@@ -8,7 +8,7 @@
+ # flags
+ #
+ 
+-all install clean kdebug: %: %-here
++all install clean: %: %-here
+ 	$(MAKE) -C libcap $@
+ ifneq ($(PAM_CAP),no)
+ 	$(MAKE) -C pam_cap $@
 @@ -17,10 +17,8 @@
  	$(MAKE) -C go $@
  	rm -f cap/go.sum
@@ -65,16 +74,23 @@
 -	make morgangodoc
 --- go/Makefile
 +++ go/Makefile
-@@ -70,21 +70,6 @@
- 	GO111MODULE=off CGO_ENABLED="1" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH=$(GOPATH) $(GO) build -o $@-cgo $<
- endif
+@@ -86,29 +86,6 @@
+ b210613: b210613.go $(CAPGOPACKAGE)
+ 	GO111MODULE=off CGO_ENABLED="$(CGO_REQUIRED)" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" CGO_CFLAGS="$(CGO_CFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" GOPATH=$(GOPATH) $(GO) build $<
  
 -test: all
--	GO111MODULE=off CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/psx
--	GO111MODULE=off CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/cap
+-	GO111MODULE=off CGO_ENABLED="$(CGO_REQUIRED)" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/psx
+-	GO111MODULE=off CGO_ENABLED="$(CGO_REQUIRED)" CGO_LDFLAGS_ALLOW="$(CGO_LDFLAGS_ALLOW)" GOPATH="$(GOPATH)" $(GO) test $(IMPORTDIR)/cap
 -	LD_LIBRARY_PATH=../libcap ./compare-cap
+-	./psx-signals
+-	./setid --caps=false
+-	./gowns -- -c "echo gowns runs"
 -
--sudotest: test ../progs/tcapsh-static
+-# Note, the user namespace doesn't require sudo, but I wanted to avoid
+-# requiring that the hosting kernel supports user namespaces for the
+-# regular test case.
+-sudotest: test ../progs/tcapsh-static b210613
+-	./gowns --ns -- -c "echo gowns runs with user namespace"
 -	./try-launching
 -ifeq ($(CGO_REQUIRED),0)
 -	./try-launching-cgo
@@ -83,10 +99,11 @@
 -ifeq ($(CGO_REQUIRED),0)
 -	sudo ./try-launching-cgo
 -endif
+-	sudo ../progs/tcapsh-static --cap-uid=$$(id -u) --caps="cap_setpcap=ep" --iab="^cap_setpcap" -- -c ./b210613
 -
  install: all
  	rm -rf $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx
- 	mkdir -p $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx/include/sys
+ 	mkdir -p $(FAKEROOT)$(GOPKGDIR)/$(IMPORTDIR)/psx
 --- kdebug/Makefile
 +++ kdebug/Makefile
 @@ -1,9 +1,6 @@
