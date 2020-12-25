@@ -18,8 +18,15 @@ prepare() {
 configure() {
   $SSRC/$nom/configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-symlink-install \
     --enable-elf-shlibs \
     --disable-bsd-shlibs \

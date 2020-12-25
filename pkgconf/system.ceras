@@ -15,8 +15,15 @@ configure() {
   CFLAGS="$CFLAGSNOCOMMON" \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
     --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-static \
     --with-pkg-config-dir=/usr/lib/pkgconfig
 }

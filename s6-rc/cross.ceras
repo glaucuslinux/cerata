@@ -21,7 +21,7 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --livedir=/run/$nom \
-    --with-sysdeps=$CRSD/usr/lib \
+    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
     --with-include=$CRSD/usr/include \
     --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \

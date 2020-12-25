@@ -20,7 +20,7 @@ configure() {
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
-    --localstatedir=/var/lib/locate \
+    --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-threads=posix \
@@ -43,6 +43,4 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
-
-  $MV $SCER/$nom/sac/usr/lib/$nom/frcode $SCER/$nom/sac/usr/bin
 }

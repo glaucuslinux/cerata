@@ -7,6 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
+  radula_behave_gnu guess build-aux
+  radula_behave_gnu rpath build-aux
+  radula_behave_gnu sub build-aux
+
   radula_behave_patch 1 $nom clear default-threading
   radula_behave_patch 1 $nom clear io-size
   radula_behave_patch 1 $nom clear speedup
@@ -18,6 +22,14 @@ configure() {
 
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-doc \
     --disable-static \
     --disable-nls \

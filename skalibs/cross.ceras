@@ -18,7 +18,7 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --datadir=/etc \
-    --sysdepdir=/usr/lib \
+    --sysdepdir=/usr/lib/$nom/sysdeps \
     --with-include=$CRSD/usr/include \
     --with-lib=$CRSD/usr/lib \
     --with-dynlib=$CRSD/usr/lib \

@@ -9,11 +9,23 @@ prepare() {
 
   radula_behave_gnu guess .
   radula_behave_gnu sub .
+
+  radula_behave_gnu guess interface
+  radula_behave_gnu sub interface
 }
 
 configure() {
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-static \
     $CARCH
 }

@@ -17,6 +17,14 @@ configure() {
   ax_cv_c_float_words_bigendian=no \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-shared \
     --enable-optimizations \
     --disable-ipv6 \
@@ -42,5 +50,5 @@ install() {
     install
 
   $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
-  $LN pip3.8 $SCER/$nom/sac/usr/bin/pip3
+  $LN pip3.9 $SCER/$nom/sac/usr/bin/pip3
 }

@@ -15,13 +15,18 @@ prepare() {
 }
 
 configure() {
+  LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
     --localstatedir=/var \
     --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-static \
     --disable-symvers \
     --disable-nls \

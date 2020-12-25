@@ -6,12 +6,18 @@
 prepare() {
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
+
+  radula_behave_gnu sub tools
 }
 
 configure() {
   CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOCOMMON"; else printf -- "$CFLAGS"; fi)" \
   $SRCD/$nom/$nom-$ver/configure \
     --prefix=/usr \
+    --eprefix=/usr \
+    --libdir=/usr/lib \
+    --sharedlibdir=/usr/lib \
+    --includedir=/usr/include \
     --zlib-compat
 }
 

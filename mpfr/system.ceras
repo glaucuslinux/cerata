@@ -15,6 +15,15 @@ configure() {
   CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSFINITE"; else printf -- "$CFLAGS"; fi)" \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-thread-safe \
     --enable-shared-cache \
     --disable-static \

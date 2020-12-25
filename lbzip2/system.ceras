@@ -13,7 +13,15 @@ prepare() {
 
 configure() {
   ./configure \
-    --prefix=/usr
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include
 }
 
 build() {

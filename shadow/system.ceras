@@ -17,17 +17,20 @@ prepare() {
 
 configure() {
   radula_behave_patch 0 $nom glaucus 0003-fix-installation-paths
+  radula_behave_patch 0 $nom lfs 0001-disable-groups
 
-  sed 's/groups$(EXEEXT) //' \
-    -i src/Makefile.in
-
-  find man -name Makefile.in -exec sed 's/groups\.1 / /' -i {} \;
-
+  LIBS='-lutmps -lskarnet' \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --enable-shared \
     --disable-static \
     --enable-utmpx \

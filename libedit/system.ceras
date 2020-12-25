@@ -15,6 +15,14 @@ configure() {
   CFLAGS="$CFLAGS -D__STDC_ISO_10646__" \
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
     --disable-static \
     --disable-examples
 }
