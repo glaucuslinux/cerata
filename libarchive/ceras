@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=libarchive
-ver=3.5.0
+ver=3.5.1
 url=https://www.$nom.org/downloads/$nom-$ver.tar.xz
-sum=bf7d3b56e6f24c16432372393a984166bc0adb41bc841fd387398a709d5750dfdad889bcb58c98cffb193aab47be7ade29060c46a1140ccd62457e49eaf90a31
+sum=04ad3e98e840fee19eb4c2652f29eccef1cffc071fd5c6a6feb358fea6048699281c7baacbb9ca8f823b1bfaaef6d4c87d9cf6a8b0c28aab53b75b2d259b2045
 cnt='acl attr make'
 lic=BSD-2-Clause
