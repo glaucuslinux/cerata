@@ -29,7 +29,8 @@ check() {
 install() {
   $MAKE \
     DESTDIR=$CRSD \
-    install-libs install-tools
+    install-libs \
+    install-tools
 
   $RM $CRSD/lib
 
