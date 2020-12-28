@@ -20,9 +20,9 @@ check() {
 }
 
 install() {
-  $MKDIR $CRSD/boot
-
   $LN usr/bin $CRSD/bin
+
+  $MKDIR $CRSD/boot
 
   $MKDIR $CRSD/dev
 
@@ -48,8 +48,6 @@ install() {
 
   $MKDIR $CRSD/run/lock
   $MKDIR -m 1777 $CRSD/run/tmp
-  $MKDIR -m 1733 $CRSD/run/tmp/.ICE-unix
-  $MKDIR -m 1733 $CRSD/run/tmp/.X11-unix
 
   $MKDIR $CRSD/sys
 
