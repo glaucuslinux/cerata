@@ -10,9 +10,13 @@ prepare() {
   radula_behave_gnu guess admin
   radula_behave_gnu rpath admin
   radula_behave_gnu sub admin
+
+  $MV doc/$nom.db.5 doc/locate.db.5
 }
 
 configure() {
+  radula_behave_patch 0 $nom glaucus 0001-fix-man-page-install
+
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -20,17 +24,19 @@ configure() {
     --exec-prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/lib \
     --sysconfdir=/etc \
     --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --program-prefix=m \
     --disable-nls \
     --disable-rpath
 }
 
 build() {
-  $MAKE
+  $MAKE \
+    groupname=locate
 }
 
 check() {
@@ -41,4 +47,17 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $LN $nom $CRSD/usr/bin/locate
+  $LN $nom $CRSD/usr/bin/slocate
+  $LN mupdatedb $CRSD/usr/bin/updatedb
+
+  $LN $nom.1 $CRSD/usr/share/man/man1/locate.1
+  $LN ../man8/mupdatedb.8 $CRSD/usr/share/man/man1/mupdatedb.1
+  $LN ../man8/mupdatedb.8 $CRSD/usr/share/man/man1/updatedb.1
+
+  $LN $nom.db.5 $CRSD/usr/share/man/man5/locate.db.5
+  $LN mupdatedb.conf.5 $CRSD/usr/share/man/man5/updatedb.conf.5
+
+  $LN $nom $CRSD/var/lib/locate
 }
