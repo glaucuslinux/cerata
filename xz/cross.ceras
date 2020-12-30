@@ -28,6 +28,7 @@ configure() {
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/$nom \
     --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
     --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
