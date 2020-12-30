@@ -12,10 +12,14 @@ prepare() {
   radula_behave_gnu sub admin
 
   $MV doc/$nom.db.5 doc/locate.db.5
+
+  radula_behave_patch 0 $nom glaucus 0001-suggest-running-mupdatedb
+
+  [ $genome = aarch64 ] && radula_behave_patch 1 $nom void musl_paths-h
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-fix-man-page-install
+  radula_behave_patch 0 $nom glaucus 0002-fix-group-and-man-page
 
   ./configure \
     --build=$BLD \
@@ -26,7 +30,8 @@ configure() {
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
     --sysconfdir=/etc \
-    --localstatedir=/var \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var/lib \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --program-prefix=m \
@@ -35,8 +40,7 @@ configure() {
 }
 
 build() {
-  $MAKE \
-    groupname=locate
+  $MAKE
 }
 
 check() {
@@ -47,6 +51,8 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $RSYNC $CERD/$nom/updatedb.conf $CRSD/etc
 
   $LN $nom $CRSD/usr/bin/locate
   $LN $nom $CRSD/usr/bin/slocate
