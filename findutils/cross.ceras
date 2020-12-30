@@ -13,6 +13,8 @@ prepare() {
 }
 
 configure() {
+  radula_behave_patch 0 $nom glaucus 0001-disable-locate-updatedb-and-frcode
+
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -34,6 +36,10 @@ configure() {
 }
 
 build() {
+  $MAKE \
+    -C locate \
+    dblocation.texi
+
   $MAKE
 }
 

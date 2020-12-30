@@ -1,0 +1,11 @@
+--- Makefile.in
++++ Makefile.in
+@@ -524,7 +524,7 @@
+ 
+ CONF_CPPFLAGS = -DUPDATEDB_CONF='"$(updatedb_conf)"'
+ SUBDIRS = gnulib/lib po
+-dist_man_MANS = doc/mlocate.db.5
++dist_man_MANS = doc/locate.db.5
+ man_MANS = doc/locate.1 doc/updatedb.conf.5 doc/updatedb.8
+ noinst_LIBRARIES = src/liblib.a
+ CLEANFILES = $(man_MANS)
