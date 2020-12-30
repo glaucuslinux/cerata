@@ -1,5 +1,14 @@
 --- Makefile.in
 +++ Makefile.in
+@@ -514,7 +514,7 @@
+ top_srcdir = @top_srcdir@
+ dbdir = $(localstatedir)/mlocate
+ dbfile = $(dbdir)/mlocate.db
+-groupname = mlocate
++groupname = locate
+ updatedb_conf = $(sysconfdir)/updatedb.conf
+ # autopoint puts its m4 files to the first directory
+ ACLOCAL_AMFLAGS = -I m4 -I gnulib/m4
 @@ -524,7 +524,7 @@
  
  CONF_CPPFLAGS = -DUPDATEDB_CONF='"$(updatedb_conf)"'
