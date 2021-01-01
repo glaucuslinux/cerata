@@ -24,11 +24,19 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-darwin \
+    --disable-smack \
     --disable-selinux \
+    --disable-xsmp \
+    --disable-xsmp-interact \
     --enable-cscope \
+    --disable-netbeans \
     --enable-terminal \
     --enable-multibyte \
     --disable-gui \
+    --disable-canberra \
+    --disable-acl \
+    --disable-gpm \
+    --disable-sysmouse \
     --disable-nls \
     --with-modified-by=glaucus \
     --with-compiledby=glaucus \
