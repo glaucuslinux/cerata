@@ -30,6 +30,7 @@ configure() {
     --enable-pcre2-32 \
     $(if [ $genome != riscv64 ] && [ $genome != s390x ];then printf -- --enable-jit; fi) \
     --enable-pcre2grep-libz \
+    --enable-pcre2grep-libbz2 \
     --enable-pcre2test-libedit
 }
 
