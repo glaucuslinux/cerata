@@ -49,4 +49,6 @@ install() {
   $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
   $LN $nom.so $CRSD/usr/lib/libreadline.so
+
+  $LN $nom.pc $PKG_CONFIG_LIBEDIR/readline.pc
 }

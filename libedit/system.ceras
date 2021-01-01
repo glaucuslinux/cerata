@@ -47,4 +47,6 @@ install() {
   $LN ../editline/readline.h $SCER/$nom/sac/usr/include/readline/readline.h
 
   $LN $nom.so $SCER/$nom/sac/usr/lib/libreadline.so
+
+  $LN $nom.pc $SCER/$nom/sac/usr/lib/pkgconfig/readline.pc
 }
