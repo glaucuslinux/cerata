@@ -1,0 +1,11 @@
+--- test/attr.test
++++ test/attr.test
+@@ -11,7 +11,7 @@
+ 
+ 	$ touch f
+ 	$ setfattr -n user -v value f
+-	> setfattr: f: Operation not supported
++	> setfattr: f: Not supported
+ 	
+ 	$ setfattr -n user. -v value f
+ 	> setfattr: f: Invalid argument
