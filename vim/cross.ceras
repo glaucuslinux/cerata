@@ -34,7 +34,6 @@ configure() {
     --enable-multibyte \
     --disable-gui \
     --disable-canberra \
-    --disable-acl \
     --disable-gpm \
     --disable-sysmouse \
     --disable-nls \
