@@ -62,4 +62,7 @@ install() {
   $LN lbzless.1 $CRSD/usr/share/man/man1/bzless.1
   $LN lbzmerge.1 $CRSD/usr/share/man/man1/bzmerge.1
   $LN lbzmore.1 $CRSD/usr/share/man/man1/bzmore.1
+  $LN lbzdiff.1 $CRSD/usr/share/man/man1/lbzcmp.1
+  $LN lbzgrep.1 $CRSD/usr/share/man/man1/lbzegrep.1
+  $LN lbzgrep.1 $CRSD/usr/share/man/man1/lbzfgrep.1
 }
