@@ -38,8 +38,14 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $LN $nom $SCER/$nom/sac/usr/bin/bunzip2
-  $LN $nom $SCER/$nom/sac/usr/bin/bzcat
+  $LN lbunzip2 $SCER/$nom/sac/usr/bin/bunzip2
+  $LN lbzcat $SCER/$nom/sac/usr/bin/bzcat
   $LN $nom $SCER/$nom/sac/usr/bin/bzip2
   $LN $nom $SCER/$nom/sac/usr/bin/pbzip2
+
+  $LN lbunzip2.1 $SCER/$nom/sac/usr/share/man/man1/bunzip2.1
+  $LN lbzcat.1 $SCER/$nom/sac/usr/share/man/man1/bzcat.1
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/bzip2.1
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/lbzcat.1
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/lbunzip2.1
 }

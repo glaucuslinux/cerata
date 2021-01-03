@@ -40,8 +40,14 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/bunzip2
-  $LN $nom $CRSD/usr/bin/bzcat
+  $LN lbunzip2 $CRSD/usr/bin/bunzip2
+  $LN lbzcat $CRSD/usr/bin/bzcat
   $LN $nom $CRSD/usr/bin/bzip2
   $LN $nom $CRSD/usr/bin/pbzip2
+
+  $LN lbunzip2.1 $CRSD/usr/share/man/man1/bunzip2.1
+  $LN lbzcat.1 $CRSD/usr/share/man/man1/bzcat.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/bzip2.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/lbunzip2.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/lbzcat.1
 }
