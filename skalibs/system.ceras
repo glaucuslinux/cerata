@@ -42,6 +42,6 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
+  $MKDIR $SCER/$nom/sac/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
-
 }
