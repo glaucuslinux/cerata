@@ -4,9 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=s6-linux-init
-ver=1.0.5.1
+ver=1.0.6.0
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
-sum=c23fff1f5f2433119cbcfceb8e69c2f5542c8377079010891f4147a056d66c23fc08e08ca20ce0236d40386aac187cefd7b38bccb1bd5395d01ef4716c7a7432
+sum=9312a7719bd1d10c2846aab996a88b7e55b3a805cbae8f270983ded2707f05bfb76cff211e0a4aee76ec62ed0a23d956fcf56daebf8b2decc499c375c768446d
 cys='execline s6 skalibs'
 cnt='execline make s6 skalibs'
 lic=ISC
