@@ -9,7 +9,6 @@ prepare() {
 
   radula_behave_patch 1 musl adelie 3001-make-real-lastlog-h
   radula_behave_patch 0 musl glaucus 0001-fix-paths
-  radula_behave_patch 1 musl upstream CVE-2020-28928
   radula_behave_patch 0 musl void mo_lookup
 }
 
