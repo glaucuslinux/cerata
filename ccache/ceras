@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=ccache
-ver=4.1
+ver=4.2
 url=https://github.com/$nom/$nom/releases/download/v$ver/$nom-$ver.tar.xz
-sum=e80075eeea3fef8215de0a793e02381bfb59d7e74237fa34a49306047c60f0de0e678396ad3a9e5d86d3ad2aa21bbe29c7f0055f06b3ba2470f6895ce2eedd7b
+sum=b7e5823a0705b9a1100c959281170dcd682228b585c329821337ef57d5b5cf47d6f3d644a6d5a3675a32a02730559f8fe6d84d11f01847f47b77c0893d1d1fbe
 lic=GPL-3.0-or-later
