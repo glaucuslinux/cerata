@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=libuev
-ver=2.3.1
+ver=2.3.2
 url=https://github.com/troglobit/$nom/releases/download/v$ver/$nom-$ver.tar.xz
-sum=bd463604a89f5bd3e749375f450b376ed1d57b1195b69a5bcfd247fe92c4d42d245bbce9a7950f5aa5a13ce75abeeee028073b7d4356b7770d8821aa501113a9
+sum=dccf83ea61dd4841d2b7e1e75b8c46f41607b26aeefd49bc3d594d864408a282c2ff4cf6ff84cf596fe3382c02e53631593f12d5b79afd9f2e57fb9d021b60a8
 lic=MIT
