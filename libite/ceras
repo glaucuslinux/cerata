@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=libite
-ver=2.2.0
+ver=2.3.1
 url=https://github.com/troglobit/$nom/releases/download/v$ver/$nom-$ver.tar.xz
-sum=56b4d21730b1e31f7c70ec16d0983d5c060866d6579fa69c44d1d3d2a539a7b4691adb4964bfac3f8bc04282537e93f53dc2bb5af2efbca637ddc6442db181af
+sum=61e805d6a756a6091a71d30efa34c855a8b29492eaec6006b083da40ca3e0fd8970a43c4d3009986f86728ee1b3d36bc18a506d0c44d28f58e4a20382c98f343
 lic=MIT
