@@ -26,7 +26,9 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
-    --with-pkg-config-dir=/usr/lib/pkgconfig
+    --with-pkg-config-dir=/usr/lib/pkgconfig \
+    --with-system-libdir=/usr/lib \
+    --with-system-includedir=/usr/include
 }
 
 build() {
