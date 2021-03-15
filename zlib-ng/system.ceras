@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOCOMMON"; else printf -- "$CFLAGS"; fi)" \
+  CFLAGS="$CFLAGSNOCOMMON" \
   $SRCD/$nom/configure \
     --prefix=/usr \
     --eprefix=/usr \

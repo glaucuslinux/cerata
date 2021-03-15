@@ -21,8 +21,7 @@ check() {
 
 install() {
   $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
-  sed -e "s/^genome=/&$genome/" \
-    -e "s/^species=/&$species/" \
+  sed "s/^genome=/&$genome/" \
     -i $CRSD/etc/$nom.conf
 
   $RSYNC $SRCD/$nom/$nom $CRSD/usr/bin

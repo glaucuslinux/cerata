@@ -19,7 +19,7 @@ prepare() {
 
 configure() {
   CFLAGS="$CFLAGSNOLTO" \
-  CXXFLAGS="$(if [ $species = bennettae ]; then printf -- "$CFLAGSNOLTO"; else printf -- "$CFLAGSNOIPANOLTO"; fi)" \
+  CXXFLAGS="$CFLAGSNOIPANOLTO" \
   $SSRC/$nom/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -46,7 +46,7 @@ configure() {
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
     --disable-initfini-array \
-    --with-pkgversion="glaucus $species $ARCH" \
+    --with-pkgversion="glaucus $ARCH" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
     --without-included-gettext \
