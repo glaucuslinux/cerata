@@ -10,7 +10,7 @@ prepare() {
 
 configure() {
   ./configure \
-    CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSNOFPMATHNOLTO"; else printf -- "$CFLAGSNOLTO"; fi)" \
+    CFLAGS="$CFLAGSNOFPMATHNOLTO" \
     --prefix=/usr \
     --exec-prefix=/usr \
     --disable-wrapper \

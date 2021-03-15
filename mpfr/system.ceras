@@ -12,7 +12,7 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$(if [ $species = atlanticus ]; then printf -- "$CFLAGSFINITE"; else printf -- "$CFLAGS"; fi)" \
+  CFLAGS="$CFLAGSFINITE" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
