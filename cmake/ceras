@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=cmake
-ver=3.19.6
+ver=3.19.7
 url=https://$nom.org/files/v3.19/$nom-$ver.tar.gz
-sum=556655c0fd17d5c70d5c1725f49ccad0d8088e6cbb3370d48d5a548d49d0e066d21c69978ed9b49d786fbb8eb79e086e719882245c9261c692b9457ba23b76f9
+sum=6af1fe3ea41906324d4c29f5f982281d92145d086f4a47fa2220b93483bc65d59b1e23f5b51d82305c630690be7c552827bb795560674b03620763e0917bf14a
 lic='0BSD BSD-2-Clause BSD-3-Clause bzip2-1.0.6 GPL-2.0-only MIT Zlib'
