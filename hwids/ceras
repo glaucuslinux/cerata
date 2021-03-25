@@ -7,4 +7,3 @@ nom=hwids
 ver=20201207
 url=https://gitweb.gentoo.org/proj/$nom.git/snapshot/$nom-$ver.tar.bz2
 sum=b65b50554b21f97793d7c7ba20537cfb619501a02e8141d7dfe0f12e36f8f001eefa677baffb7c6639a6abe181f377b96685ba1eb2431798463eb5aa6b32f56f
-lic='BSD-3-Clause GPL-2.0-or-later'

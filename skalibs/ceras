@@ -8,4 +8,3 @@ ver=2.10.0.2
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
 sum=b36b7fefb9df63093f1bd775fe9d2bf7ed588404a99a55b1ecabfc0e3b6eac49989dfb736f7f69a9508e4dfeeb669d48e639964aef5c65c330043c543cd38801
 cnt=make
-lic=ISC

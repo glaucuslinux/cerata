@@ -7,4 +7,3 @@ nom=popt
 ver=1.18
 url=https://fossies.org/linux/misc/$nom-$ver.tar.xz
 sum=628c1ee7d4b7bcfc8188ee30aa78247baf47b96b064a9f98490aed8df1e88b8099b74d5a40397e301e96c050ccb5320512504507127608c73dca3befd49550f9
-lic='MIT X11'

@@ -7,5 +7,3 @@ nom=perl
 ver=5.32.1
 url=https://www.cpan.org/src/5.0/$nom-$ver.tar.xz
 sum=3443c75aea91f0fe3712fee576239f1946d2301b8f7390b690e2f5d070fe71af8f9fa7769e42086c2d33d5f84370f80368fa9350b4f10cc0ac3e6c1f6209d8f9
-lic='Artistic-1.0-Perl Artistic-2.0 BSD-3-Clause GPL-1.0-only GPL-1.0-or-later
-GPL-2.0-only GPL-2.0-or-later MIT bzip2-1.0.6'

@@ -8,4 +8,3 @@ ver=20210317
 url=https://github.com/Mic92/$nom/releases/download/$ver/$nom-$ver.tar.gz
 sum=7c9f98bc0e990e1a2aa1899880011f8b412306e542df5427834fd72feaf3016a9799d95ef220435822db8b67eda12e4216c085f6c51cb34247bd8b715c7401c7
 cnt=hydroskeleton
-lic=MIT

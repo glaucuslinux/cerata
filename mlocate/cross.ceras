@@ -15,7 +15,7 @@ prepare() {
 
   radula_behave_patch 0 $nom glaucus 0001-suggest-running-mupdatedb
 
-  [ $genome = aarch64 ] && radula_behave_patch 1 $nom void musl_paths-h
+  [ $ARCH = aarch64 ] && $PATCH -p1 -i $CERD/$nom/patches/void/musl_paths-h.patch
 }
 
 configure() {

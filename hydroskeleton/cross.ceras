@@ -57,7 +57,7 @@ install() {
   sed -e 's/^VERSION=/&glaucus/' \
     -e 's/^VERSION_CODENAME=/&glaucus/' \
     -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
-    -e "s/^PRETTY_NAME=/&'glaucus $genome'/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $ARCH'/" \
     -e 's/^VARIANT=/&glaucus/' \
     -e 's/^VARIANT_ID=/&glaucus/' \
     -i $CRSD/usr/lib/os-release

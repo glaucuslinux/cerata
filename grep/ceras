@@ -7,4 +7,3 @@ nom=grep
 ver=3.6
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
 sum=8934544a19ded61344d83ff2cab501e86f17f8ae338892e0c36c2d2d8e63c76817840a0071ef5e3fcbca9115eba8a1aae0e4c46b024e75cd9a2e3bd05f933d90
-lic='GPL-3.0-only GPL-3.0-or-later'

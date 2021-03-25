@@ -7,4 +7,3 @@ nom=python
 ver=3.9.2
 url=https://www.$nom.org/ftp/$nom/$ver/Python-$ver.tar.xz
 sum=b204d865e4c974951830008c381678876987da267c37bce3b4e488c07aa744658e57b8dc5d248051d0391f3b580e69877f7772abc0a0de5288349d448ccf0789
-lic=Python-2.0

@@ -7,4 +7,3 @@ nom=gdbm
 ver=1.19
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.gz
 sum=118c5b8cdf74898bfb7c2100302fedf80096be017bf08e80a44486563cad5d93b93567622f2e7c7aceb72f30460504bd0b4ddfccf34df994ed65166e12ecd495
-lic='GPL-3.0-only GPL-3.0-or-later'

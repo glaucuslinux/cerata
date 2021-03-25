@@ -7,4 +7,3 @@ nom=lbzip2-utils
 ver=git
 cmt=16751ef
 url=https://github.com/kjn/$nom
-lic=GPL-3.0-only

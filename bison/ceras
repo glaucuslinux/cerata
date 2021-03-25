@@ -7,4 +7,3 @@ nom=bison
 ver=3.7.6
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.lz
 sum=a3cc02fc81a96d60f1e69b51e84609cdbb9ae680024c66a8d7e0fdfd37406e1f24ecb3d2c8c70502858001d0254f6b8219bbef58f09856b6293ef1cd1a1a1697
-lic='GPL-3.0-only GPL-3.0-or-later'

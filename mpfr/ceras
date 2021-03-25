@@ -7,4 +7,3 @@ nom=mpfr
 ver=4.1.0
 url=https://www.$nom.org/$nom-current/$nom-$ver.tar.xz
 sum=1bd1c349741a6529dfa53af4f0da8d49254b164ece8a46928cdb13a99460285622d57fe6f68cef19c6727b3f9daa25ddb3d7d65c201c8f387e421c7f7bee6273
-lic='GPL-3.0-only GPL-3.0-or-later LGPL-3.0-only LGPL-3.0-or-later'

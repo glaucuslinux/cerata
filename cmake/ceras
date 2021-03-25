@@ -7,4 +7,3 @@ nom=cmake
 ver=3.19.7
 url=https://$nom.org/files/v3.19/$nom-$ver.tar.gz
 sum=6af1fe3ea41906324d4c29f5f982281d92145d086f4a47fa2220b93483bc65d59b1e23f5b51d82305c630690be7c552827bb795560674b03620763e0917bf14a
-lic='0BSD BSD-2-Clause BSD-3-Clause bzip2-1.0.6 GPL-2.0-only MIT Zlib'

@@ -7,4 +7,3 @@ nom=libuev
 ver=2.3.2
 url=https://github.com/troglobit/$nom/releases/download/v$ver/$nom-$ver.tar.xz
 sum=dccf83ea61dd4841d2b7e1e75b8c46f41607b26aeefd49bc3d594d864408a282c2ff4cf6ff84cf596fe3382c02e53631593f12d5b79afd9f2e57fb9d021b60a8
-lic=MIT

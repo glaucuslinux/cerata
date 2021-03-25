@@ -9,4 +9,3 @@ url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
 sum=f8d246897690829fccc6e4a4e1bfbbbacd10d337863dacb6966f62cffc166d61c49db1ac83d51aa023e571a5d62f81cf030fa439eb8e3fe742e427764f18adcf
 cys='execline s6 skalibs'
 cnt='execline make skalibs'
-lic=ISC

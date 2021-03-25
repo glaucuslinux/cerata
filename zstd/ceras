@@ -7,4 +7,3 @@ nom=zstd
 ver=1.4.9
 url=https://github.com/facebook/$nom/releases/download/v$ver/$nom-$ver.tar.zst
 sum=e157cfcac64f5b86b4ddeefa7bfef1f721d3e74467459509794f43630e474976cae29f63a1aac73eca8f047d8b821a8265f8ceb646524fa66887def89629b69c
-lic='BSD-3-Clause GPL-2.0-only'

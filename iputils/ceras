@@ -8,4 +8,3 @@ ver=20210202
 url=https://github.com/$nom/$nom/archive/$ver.tar.gz
 sum=af600fe74e1b78c0da66c378f55eb468d62206aaae1864693f7ec79833c9c0de95843573d1792627695f08ecfcdb4e79c354065daf178d393fcc6ef9a8a5d526
 cnt='libcap meson samu'
-lic='BSD-3-Clause GPL-2.0-or-later'

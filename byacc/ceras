@@ -7,4 +7,3 @@ nom=byacc
 ver=20200910
 url=https://invisible-mirror.net/archives/$nom/$nom-$ver.tgz
 sum=491bbde2d5b0fdf2ad57bec5080112ad7c12ce3830b5e14f2289092aad1addae6edd4698368a9c8d69219a95ae5fa47eb32a95a2625841915297972591bebea3
-lic=Unlicense

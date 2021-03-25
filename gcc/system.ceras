@@ -7,11 +7,15 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu rpath .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
 
-  $GPARCH
+  case $ARCH in
+    aarch64 | x86-64)
+      $PATCH -p0 -i $CERD/gcc/glaucus/patches/0001-pure64-for-$ARCH.patch
+      ;;
+  esac
 
   $MKDIR $SBLD/$nom
   cd $SBLD/$nom

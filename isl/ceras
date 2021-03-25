@@ -7,4 +7,3 @@ nom=isl
 ver=0.23
 url=http://$nom.gforge.inria.fr/$nom-$ver.tar.xz
 sum=da4e7cbd5045d074581d4e1c212acb074a8b2345a96515151b0543cbe2601db6ac2bbd93f9ad6643e98f845b68f438f3882c05b8b90969ae542802a3c78fea20
-lic=MIT

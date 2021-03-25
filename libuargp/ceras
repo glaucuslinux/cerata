@@ -7,4 +7,3 @@ nom=libuargp
 ver=git
 cmt=488eb69
 url=https://github.com/xhebox/$nom
-lic=LGPL-2.1-only

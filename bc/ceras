@@ -7,4 +7,3 @@ nom=bc
 ver=3.3.3
 url=https://github.com/gavinhoward/$nom/releases/download/$ver/$nom-$ver.tar.xz
 sum=dfdd8023453406d9f681e04da7acaad4459e632fded0f2edb2b51607438a27074935af6db4b3580120daf56e6b52283275d0c2c809380caa164957f1901e9dde
-lic=BSD-2-Clause
