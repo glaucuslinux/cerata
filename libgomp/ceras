@@ -7,5 +7,3 @@ nom=libgomp
 ver=10.2.0
 url=https://ftpmirror.gnu.org/gcc/gcc-$ver/gcc-$ver.tar.xz
 sum=42ae38928bd2e8183af445da34220964eb690b675b1892bbeb7cd5bb62be499011ec9a93397dba5e2fb681afadfc6f2767d03b9035b44ba9be807187ae6dc65e
-lic='BSD-3-Clause BSL-1.0 GFDL-1.2-only GFDL-1.3-only GPL-2.0-only GPL-3.0-only
-LGPL-2.1-only LGPL-3.0-only MIT'

@@ -7,4 +7,3 @@ nom=musl-obstack
 ver=1.2.2
 url=https://github.com/void-linux/$nom/archive/v$ver.tar.gz
 sum=61ac90d8878ea620a5bab3ea8be1f8e42d26040475609f5a389a68b2dc0cfb4a10084deb994568392e5671b8ba405e9e78eb7e6313d03afbbcdde82d2e7995b0
-lic=GPL-2.0-only

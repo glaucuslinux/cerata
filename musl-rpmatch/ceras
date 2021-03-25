@@ -7,4 +7,3 @@ nom=musl-rpmatch
 ver=1.0
 url=https://github.com/pullmoll/$nom/archive/v$ver.tar.gz
 sum=9d8fc3be66f23b57793eccf62998d1c0ff8df24d8781d37ee99faf618cdceeda778132df2c75ace2ecd8aa6392bcdf15eaa9ce0acd657401af049ccf61fd5b14
-lic=BSD-3-Clause

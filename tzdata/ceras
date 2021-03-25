@@ -7,4 +7,3 @@ nom=tzdata
 ver=2021a
 url=https://data.iana.org/time-zones/releases/$nom$ver.tar.gz
 sum=7cdd762ec90ce12a30fa36b1d66d1ea82d9fa21e514e2b9c7fcbe2541514ee0fadf30843ff352c65512fb270857b51d1517b45e1232b89c6f954ba9ff1833bb3
-lic='BSD-4-Clause-UC PD'

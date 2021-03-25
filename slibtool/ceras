@@ -7,4 +7,3 @@ nom=slibtool
 ver=0.5.31
 url=https://git.midipix.org/$nom/snapshot/$nom-$ver.tar.xz
 sum=658ea3244c6d1e9bd389ea5c222c29df6ba7acc5d6f2ada7a94dd3ac29ffbb681f377d8887a99861ab2ab484a7d3551e020bac2b92bdb07ad0e9ee96facfc6bd
-lic=MIT

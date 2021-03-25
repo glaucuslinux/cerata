@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu rpath .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/$nom/config.guess .
+  $RSYNC $CERD/$nom/config.rpath .
+  $RSYNC $CERD/$nom/config.sub .
 
   $MKDIR $TBLD/$nom
   cd $TBLD/$nom
@@ -45,7 +45,7 @@ configure() {
 
 build() {
   $MAKE \
-    all-binutils \
+    all-$nom \
     all-gas \
     all-ld
 }
@@ -56,7 +56,7 @@ check() {
 
 install() {
   $MAKE \
-    install-strip-binutils \
+    install-strip-$nom \
     install-strip-gas \
     install-strip-ld
 

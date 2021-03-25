@@ -7,5 +7,3 @@ nom=elfutils-libelf
 ver=0.182
 url=https://sourceware.org/elfutils/ftp/$ver/elfutils-$ver.tar.bz2
 sum=8ab0735bbe11b4383169341bf674ace360038b6ae5239f1d5a991c46260cd4bce545e078735b7de3b8fab132bb5da41f60689ff1b1d7ebccfada117a954a2c81
-lic='GPL-2.0-only GPL-2.0-or-later GPL-3.0-only GPL-3.0-or-later LGPL-3.0-only
-LGPL-3.0-or-later'

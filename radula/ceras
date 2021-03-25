@@ -8,4 +8,3 @@ ver=git
 cmt=3bd813e
 url=https://github.com/glaucuslinux/$nom
 cys='curl git libarchive rsync toybox'
-lic=ISC

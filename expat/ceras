@@ -7,4 +7,3 @@ nom=expat
 ver=2.2.10
 url=https://github.com/lib$nom/lib$nom/releases/download/R_2_2_10/$nom-$ver.tar.lz
 sum=716e033017a3794c857a500de517d21cdb2f85cef2d8885c4d33beeec7b222f3c3747f349e768f30e5546a2f62027c6026cd4b462165302ee6c9cbfa72018399
-lic=MIT

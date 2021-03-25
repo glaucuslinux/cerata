@@ -7,4 +7,3 @@ nom=attr
 ver=2.5.1
 url=https://download.savannah.nongnu.org/releases/$nom/$nom-$ver.tar.xz
 sum=9e5555260189bb6ef2440c76700ebb813ff70582eb63d446823874977307d13dfa3a347dfae619f8866943dfa4b24ccf67dadd7e3ea2637239fdb219be5d2932
-lic='GPL-2.0-only GPL-2.0-or-later LGPL-2.1-only'

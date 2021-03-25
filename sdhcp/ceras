@@ -7,4 +7,3 @@ nom=sdhcp
 ver=git
 cmt=8455fd2
 url=$ver://$ver.2f30.org/$nom
-lic=MIT

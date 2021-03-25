@@ -7,4 +7,3 @@ nom=xz
 ver=5.2.5
 url=https://tukaani.org/$nom/$nom-$ver.tar.zst
 sum=d2c5b18f5e925586acc48292edfb527c8c4e6fa2869f3f384e717e96d258655bc693adb4f7074ab3e037a5faad10b4e5992e0c40b0b55b05ff820327445a00fa
-lic='GPL-2.0-only GPL-3.0-only LGPL-2.1-only PD'

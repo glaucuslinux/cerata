@@ -7,4 +7,3 @@ nom=pcre2
 ver=10.36
 url=https://ftp.pcre.org/pub/pcre/$nom-$ver.tar.bz2
 sum=fc2a920562c80c3d31cedd94028fab55314ae0fb168cac7178f286c344a11fc514939edc3b83b8e0b57c872db4e595fd5530fd1d4b8c779be629553e9ec965a3
-lic=BSD-3-Clause

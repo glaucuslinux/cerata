@@ -7,5 +7,3 @@ nom=binutils
 ver=2.36.1
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.lz
 sum=4c28e2dbc5b5cc99ab1265c8569a63925cf99109296deaa602b9d7d1123dcc1011ffbffb7bb6bb0e5e812176b43153f5a576cc4281e5f2b06e4a1d9db146b609
-lic='BSL-1.0 GPL-2.0-only GPL-3.0-only GPL-3.0-or-later LGPL-2.0-only
-LGPL-2.1-only LGPL-3.0-only'

@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  radula_behave_patch 1 musl adelie 3001-make-real-lastlog-h
-  radula_behave_patch 0 musl glaucus 0001-fix-paths
-  radula_behave_patch 0 musl void mo_lookup
+  $PATCH -p1 -i $CERD/musl/patches/adelie/3001-make-real-lastlog-h.patch
+  $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
+  $PATCH -p0 -i $CERD/musl/patches/void/mo_lookup.patch
 }
 
 configure() {

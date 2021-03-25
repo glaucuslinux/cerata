@@ -7,4 +7,3 @@ nom=pkgconf
 ver=1.7.3
 url=https://distfiles.dereferenced.org/$nom/$nom-$ver.tar.xz
 sum=37b6c4f9f3b93970e35b6970fde22fbbde65e7fa32a5634b3fdfc25cc1f33843582722ad13d9a8e96fd6768406fcbe86bf5feb76996ddd0bb66d6ff91e65f0b6
-lic=ISC

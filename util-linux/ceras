@@ -7,4 +7,3 @@ nom=util-linux
 ver=2.36.2
 url=http://cdn.kernel.org/pub/linux/utils/$nom/v2.36/$nom-$ver.tar.xz
 sum=6ab141f44ca4cb6b600081f10eae17e15d23abd122a37eb3ac6c845513a6a4396dc9dcff30b3032de80116ddde50e27dfbc86f92708c1051f84f0c919194664b
-lic='BSD-3-Clause BSD-4-Clause-UC GPL-2.0-only ISC LGPL-2.1-only'

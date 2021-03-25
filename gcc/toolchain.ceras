@@ -12,11 +12,15 @@ prepare() {
   $RSYNC $SRCD/mpc/mpc-1.2.1/ mpc --delete
   $RSYNC $SRCD/isl/isl-0.23/ isl --delete
 
-  radula_behave_gnu guess .
-  radula_behave_gnu rpath .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
 
-  $GPARCH
+  case $ARCH in
+    aarch64 | x86-64)
+      $PATCH -p0 -i $CERD/$nom/glaucus/patches/0001-pure64-for-$ARCH.patch
+      ;;
+  esac
 
   $MKDIR $TBLD/$nom
   cd $TBLD/$nom
@@ -83,9 +87,9 @@ install() {
   $RSYNC $CERD/$nom/c89 $TLCD/bin/$TGT-c89
   $RSYNC $CERD/$nom/c99 $TLCD/bin/$TGT-c99
 
-  sed s/$nom/$TGT-$nom/ \
+  sed "s/$nom/$TGT-&/" \
     -i $TLCD/bin/$TGT-c89
-  sed s/$nom/$TGT-$nom/ \
+  sed "s/$nom/$TGT-&/" \
     -i $TLCD/bin/$TGT-c99
 
   $LN $TGT-$nom $TLCD/bin/$TGT-cc

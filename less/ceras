@@ -7,4 +7,3 @@ nom=less
 ver=580
 url=http://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
 sum=52ff06854f58b5f41bc49fa13334a1ba11fae9316bb99f877abebbe8eb90226991b1820fcccfa85ab8cdfba87f6872160c1177edb044df2e9dd9c1c7d44e3c13
-lic='BSD-2-Clause GPL-3.0-or-later'

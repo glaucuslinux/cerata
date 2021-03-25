@@ -7,4 +7,3 @@ nom=ccache
 ver=4.2
 url=https://github.com/$nom/$nom/releases/download/v$ver/$nom-$ver.tar.xz
 sum=b7e5823a0705b9a1100c959281170dcd682228b585c329821337ef57d5b5cf47d6f3d644a6d5a3675a32a02730559f8fe6d84d11f01847f47b77c0893d1d1fbe
-lic=GPL-3.0-or-later

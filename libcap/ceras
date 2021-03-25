@@ -7,4 +7,3 @@ nom=libcap
 ver=2.48
 url=https://cdn.kernel.org/pub/linux/libs/security/linux-privs/${nom}2/$nom-$ver.tar.xz
 sum=3cb1e2b026c0f60d6f225c7255944d45023e59fd065b8f832739fc90d33b3347981675de12dd705c4ecbd647a494a17daf39e1d92599bcd1a83306886edadba1
-lic='BSD-2-Clause GPL-2.0-only'

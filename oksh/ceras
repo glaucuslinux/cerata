@@ -7,4 +7,3 @@ nom=oksh
 ver=6.8.1
 url=https://github.com/ibara/$nom/releases/download/$nom-$ver/$nom-$ver.tar.gz
 sum=3c1a77dbc5c15b1eeade860a8bfdb0fffe2d0cf5798c6ffef4f36a4a77f9686755345427ebaedc451242005bc88cac9699a97e4e428aee17cf7ee2535e4baa54
-lic=PD

@@ -7,4 +7,3 @@ nom=zlib-ng
 ver=2.0.1
 url=https://github.com/$nom/$nom/archive/$ver.tar.gz
 sum=c3be0a29e07989353a41a07a4eb037efbc0de5a87f1a4fe338c97c0dc7145225bd1f1039cde4a440be3b54130e297153c5180d69a491b92bc8a69839a8c1a9e3
-lic=Zlib

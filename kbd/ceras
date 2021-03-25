@@ -7,4 +7,3 @@ nom=kbd
 ver=2.4.0
 url=https://cdn.kernel.org/pub/linux/utils/$nom/$nom-$ver.tar.xz
 sum=c3823e40878ed4cb5b90edf753dba37a7fc3189b7b08a2e59a7830cac23a7a7daf31dedef1fcc130698c7508bc2a037c8ab54e749d0cdbf51756e346f2ed5abb
-lic=GPL-2.0-only

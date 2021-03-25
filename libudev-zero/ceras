@@ -7,4 +7,3 @@ nom=libudev-zero
 ver=0.4.5
 url=https://github.com/illiliti/$nom/archive/$ver.tar.gz
 sum=cc63a266284f60ab8b4d91ff9e7bade6df18c632fa867afe4c1b2cc2ec1e92cf40cc7ad0d693bd3c318994bcfcba0e548461061284131090a2ceb4aa268eaf73
-lic=ISC

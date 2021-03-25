@@ -7,4 +7,3 @@ nom=meson
 ver=0.57.1
 url=https://github.com/${nom}build/$nom/releases/download/$ver/$nom-$ver.tar.gz
 sum=815dc2a41d389c3eb798b00bbfb458fde91ce360803a1b9e589d95fb4716d6b88f0e7c04545fa4f60fed82e9866fbf4f2638bf8f5ab15cb73d2ad252284826e9
-lic=Apache-2.0

@@ -7,4 +7,3 @@ nom=help2man
 ver=1.47.16
 url=http://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
 sum=b427e60a9e3d2e805caf1ae84c337b09c7ca6f92b7ff14771f946c4a1bf7adf177df99b9c1c223ad76df99756005ababf5b548ff8e08d4746702ff7f8150b544
-lic=GPL-3.0-only

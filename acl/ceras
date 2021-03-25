@@ -8,4 +8,3 @@ ver=2.3.1
 url=https://download.savannah.nongnu.org/releases/$nom/$nom-$ver.tar.xz
 sum=7d02f05d17305f8587ab485395b00c7fdb8e44c1906d0d04b70a43a3020803e8b2b8c707abb6147f794867dfa87bd51769c2d3e11a3db55ecbd2006a6e6231dc
 cnt=attr
-lic='GPL-2.0-or-later LGPL-2.1-only'
