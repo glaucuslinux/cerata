@@ -20,7 +20,5 @@ check() {
 }
 
 install() {
-  $RSYNC $CERD/$nom/$nom.conf /etc
-
   $RSYNC $SRCD/$nom/$nom /usr/bin
 }
