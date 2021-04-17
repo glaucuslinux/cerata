@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=utmps
-ver=0.1.0.0
+ver=0.1.0.1
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
-sum=f8d246897690829fccc6e4a4e1bfbbbacd10d337863dacb6966f62cffc166d61c49db1ac83d51aa023e571a5d62f81cf030fa439eb8e3fe742e427764f18adcf
+sum=d2907c11b0e12d7619e4a7fc60b3f46dde798aa2c3a641df651d2cfbad023e8ca08f22b6884cfc4b647d1134ce77031bc63775b95a6cc896b10297f9b1402c3e
 cys='execline s6 skalibs'
 cnt='execline make skalibs'
