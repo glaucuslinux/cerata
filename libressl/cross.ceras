@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
 
-  radula_behave_gnu guess scripts
-  radula_behave_gnu sub scripts
+  $RSYNC $CERD/binutils/config.guess scripts
+  $RSYNC $CERD/binutils/config.sub scripts
 }
 
 configure() {
@@ -52,7 +52,7 @@ install() {
   $RM $CRSD/usr/lib/libssl.la
   $RM $CRSD/usr/lib/libtls.la
 
-  $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.46.0.1
-  $CHMOD 0755 $CRSD/usr/lib/libssl.so.48.0.1
-  $CHMOD 0755 $CRSD/usr/lib/libtls.so.20.0.1
+  $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.46.0.2
+  $CHMOD 0755 $CRSD/usr/lib/libssl.so.48.0.2
+  $CHMOD 0755 $CRSD/usr/lib/libtls.so.20.0.3
 }
