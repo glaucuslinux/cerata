@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=less
-ver=581
+ver=583
 url=http://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
-sum=b2892c73fb6e8a5cb5d5c22280c653194d6a1667a7d65a4b972a76038818cce827f1d00f266d6222e65f93fecfe1760d30109e9d2cf1aa6872b476b49eecefd9
+sum=c2a7df74b36c36c6c20c8364c454320297159a7cee68011c0da326837b605fa55b478fb8006c399a3e55a7683f46b70e706ac8ed7285ec2a9ada46f6a0f10e02
