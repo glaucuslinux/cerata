@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
 
-  radula_behave_gnu guess scripts
-  radula_behave_gnu sub scripts
+  $RSYNC $CERD/binutils/config.guess scripts
+  $RSYNC $CERD/binutils/config.sub scripts
 }
 
 configure() {
@@ -46,7 +46,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcrypto.so.46.0.1
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libssl.so.48.0.1
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.20.0.1
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcrypto.so.46.0.2
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libssl.so.48.0.2
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.20.0.3
 }
