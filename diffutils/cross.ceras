@@ -10,6 +10,9 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.rpath build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
+
+  # Disable locale test that fails on musl
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-test-mbrtowc5.sh.patch
 }
 
 configure() {
@@ -38,8 +41,7 @@ build() {
 }
 
 check() {
-  # Disable locale test that fails on musl
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-test-mbrtowc5.sh.patch
+  :
 }
 
 install() {
