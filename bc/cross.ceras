@@ -9,11 +9,14 @@ prepare() {
 }
 
 configure() {
-  PREFIX=/usr \
   ./configure.sh \
-    -G \
-    -M \
-    -N
+    --disable-generated-tests \
+    --disable-man-pages \
+    --disable-nls \
+    --prefix=/usr \
+    --bindir=/usr/bin \
+    --includedir=/usr/include \
+    --libdir=/usr/lib
 }
 
 build() {
