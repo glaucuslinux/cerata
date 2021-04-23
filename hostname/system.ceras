@@ -9,8 +9,8 @@ prepare() {
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-remove-O2
-  radula_behave_patch 0 $nom glaucus 0002-remove-ownership-change
+  $PATCH -p0 -i $CERD/$nom/glaucus/0001-remove-O2.patch
+  $PATCH -p0 -i $CERD/$nom/glaucus/0002-remove-ownership-change.patch
 }
 
 build() {
