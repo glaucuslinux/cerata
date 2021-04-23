@@ -7,12 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu rpath build-aux
-  radula_behave_gnu sub build-aux
-
-  radula_behave_patch 0 $nom adelie 0001-test-runner-musl
-  radula_behave_patch 0 $nom glaucus 0001-escape-left-brace
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 }
 
 configure() {
