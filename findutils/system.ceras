@@ -7,12 +7,15 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu rpath build-aux
-  radula_behave_gnu sub build-aux
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 }
 
 configure() {
+  # Disable locate because we're using mlocate
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
+
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -33,6 +36,11 @@ configure() {
 }
 
 build() {
+  # Disable locate because we're using mlocate
+  $MAKE \
+    -C locate \
+    dblocation.texi
+
   $MAKE
 }
 
