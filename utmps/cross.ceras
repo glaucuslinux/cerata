@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_patch 1 $nom alpine 0001-add-stub-utmp.h
+  $RSYNC $CERD/$nom/utmp.h src/include/$nom
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-use-gnu-hash-style
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 
   ./configure \
     --host=$TGT \
