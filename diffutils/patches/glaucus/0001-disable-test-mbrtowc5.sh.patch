@@ -1,0 +1,72 @@
+--- gnulib-tests/Makefile.in
++++ gnulib-tests/Makefile.in
+@@ -141,7 +141,7 @@
+ 	test-listen$(EXEEXT) test-locale$(EXEEXT) \
+ 	test-localeconv$(EXEEXT) test-lstat$(EXEEXT) \
+ 	test-malloca$(EXEEXT) test-mbrtowc1.sh test-mbrtowc2.sh \
+-	test-mbrtowc3.sh test-mbrtowc4.sh test-mbrtowc5.sh \
++	test-mbrtowc3.sh test-mbrtowc4.sh \
+ 	test-mbrtowc-w32-1.sh test-mbrtowc-w32-2.sh \
+ 	test-mbrtowc-w32-3.sh test-mbrtowc-w32-4.sh \
+ 	test-mbrtowc-w32-5.sh test-mbscasecmp.sh test-mbsinit.sh \
+@@ -2584,7 +2584,7 @@
+ 	test-locale.c test-localeconv.c signature.h macros.h \
+ 	test-lstat.h test-lstat.c signature.h macros.h test-malloca.c \
+ 	test-mbrtowc1.sh test-mbrtowc2.sh test-mbrtowc3.sh \
+-	test-mbrtowc4.sh test-mbrtowc5.sh test-mbrtowc.c \
++	test-mbrtowc4.sh test-mbrtowc.c \
+ 	test-mbrtowc-w32-1.sh test-mbrtowc-w32-2.sh \
+ 	test-mbrtowc-w32-3.sh test-mbrtowc-w32-4.sh \
+ 	test-mbrtowc-w32-5.sh test-mbrtowc-w32.c signature.h macros.h \
+@@ -4372,13 +4372,6 @@
+ 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+ 	--log-file $$b.log --trs-file $$b.trs \
+ 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+-	"$$tst" $(AM_TESTS_FD_REDIRECT)
+-test-mbrtowc5.sh.log: test-mbrtowc5.sh
+-	@p='test-mbrtowc5.sh'; \
+-	b='test-mbrtowc5.sh'; \
+-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+-	--log-file $$b.log --trs-file $$b.trs \
+-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+ 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+ test-mbrtowc-w32-1.sh.log: test-mbrtowc-w32-1.sh
+ 	@p='test-mbrtowc-w32-1.sh'; \
+--- gnulib-tests/gnulib.mk
++++ gnulib-tests/gnulib.mk
+@@ -734,7 +734,6 @@
+ 
+ TESTS += \
+   test-mbrtowc1.sh test-mbrtowc2.sh test-mbrtowc3.sh test-mbrtowc4.sh \
+-  test-mbrtowc5.sh \
+   test-mbrtowc-w32-1.sh test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh \
+   test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh
+ TESTS_ENVIRONMENT += \
+@@ -743,7 +742,7 @@
+   LOCALE_JA='@LOCALE_JA@' \
+   LOCALE_ZH_CN='@LOCALE_ZH_CN@'
+ check_PROGRAMS += test-mbrtowc test-mbrtowc-w32
+-EXTRA_DIST += test-mbrtowc1.sh test-mbrtowc2.sh test-mbrtowc3.sh test-mbrtowc4.sh test-mbrtowc5.sh test-mbrtowc.c test-mbrtowc-w32-1.sh test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh test-mbrtowc-w32.c signature.h macros.h
++EXTRA_DIST += test-mbrtowc1.sh test-mbrtowc2.sh test-mbrtowc3.sh test-mbrtowc4.sh test-mbrtowc.c test-mbrtowc-w32-1.sh test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh test-mbrtowc-w32.c signature.h macros.h
+ 
+ ## end   gnulib module mbrtowc-tests
+ 
+--- gnulib-tests/test-mbrtowc5.sh
++++ gnulib-tests/test-mbrtowc5.sh
+@@ -1,6 +0,0 @@
+-#!/bin/sh
+-# Test whether the POSIX locale has encoding errors.
+-LC_ALL=C \
+-./test-mbrtowc${EXEEXT} 5 || exit
+-LC_ALL=POSIX \
+-./test-mbrtowc${EXEEXT} 5
+--- m4/gnulib-comp.m4
++++ m4/gnulib-comp.m4
+@@ -1881,7 +1881,6 @@
+   tests/test-mbrtowc2.sh
+   tests/test-mbrtowc3.sh
+   tests/test-mbrtowc4.sh
+-  tests/test-mbrtowc5.sh
+   tests/test-mbscasecmp.c
+   tests/test-mbscasecmp.sh
+   tests/test-mbsinit.c
