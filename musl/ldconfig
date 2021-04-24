@@ -122,7 +122,7 @@ shift $((OPTIND-1))
 BANNER="ldconfig ${VERSION} for musl"
 LDSO_CACHE="$ROOT$LDSO_CACHE"
 LDSO_CONF="$ROOT$LDSO_CONF"
-LDSO_PATH="$ROOT/etc/ld-musl-x86_64.path"
+LDSO_PATH="$ROOT/etc/ld-musl.path"
 LDSO_PATH_TMP="$LDSO_PATH.$$"
 
 if $PRINT_VERSION; then
