@@ -30,10 +30,16 @@ install() {
   $RSYNC $CERD/$nom/group $CRSD/etc
   $RSYNC $CERD/$nom/hostname $CRSD/etc
   $RSYNC $CERD/$nom/hosts $CRSD/etc
+  $LN lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/issue $CRSD/etc
+  $RSYNC $CERD/$nom/lsb-release $CRSD/etc
+  sed -e "s/^DISTRIB_RELEASE=/&$(date +%d%m%Y)/" \
+    -e "s/^DISTRIB_DESCRIPTION=/&'glaucus $ARCH $(date +%d%m%Y)'/" \
+    -i $CRSD/etc/lsb-release
   $LN ../usr/lib/os-release $CRSD/etc/os-release
   $RSYNC $CERD/$nom/passwd $CRSD/etc
   $RSYNC $CERD/$nom/profile $CRSD/etc
+  $RSYNC $CERD/$nom/resolv.conf $CRSD/etc
   $RSYNC $CERD/$nom/shells $CRSD/etc
 
   $MKDIR $CRSD/home
@@ -54,8 +60,9 @@ install() {
   $LN run/tmp $CRSD/tmp
 
   $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
-  sed -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
-    -e "s/^PRETTY_NAME=/&'glaucus $ARCH'/" \
+  sed -e "s/^VERSION=/&$(date +%d%m%Y)/" \
+    -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $ARCH $(date +%d%m%Y)'/" \
     -i $CRSD/usr/lib/os-release
   $MKDIR $CRSD/usr/share
 
