@@ -50,7 +50,7 @@ configure() {
     --disable-libstdcxx-visibility \
     --disable-initfini-array \
     --with-sysroot=$CRSD \
-    --with-pkgversion="glaucus $ARCH" \
+    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
     --without-included-gettext \

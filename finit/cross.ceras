@@ -32,7 +32,7 @@ configure() {
     --enable-progress \
     --disable-doc \
     --disable-contrib \
-    --with-heading="glaucus $ARCH" \
+    --with-heading="glaucus $ARCH $(date +%d%m%Y)" \
     --with-fifo=/var/run/initctl \
     --with-hostname=glaucus \
     --with-random-seed=/var/lib/urandom/seed
