@@ -7,19 +7,19 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess admin
-  radula_behave_gnu rpath admin
-  radula_behave_gnu sub admin
+  $RSYNC $CERD/binutils/config.guess admin
+  $RSYNC $CERD/binutils/config.rpath admin
+  $RSYNC $CERD/binutils/config.sub admin
 
   $MV doc/$nom.db.5 doc/locate.db.5
 
-  radula_behave_patch 0 $nom glaucus 0001-suggest-running-mupdatedb
+  $PATCH -p0 -i $CERD/$nom/glaucus/0001-suggest-running-mupdatedb.patch
 
   [ $ARCH = aarch64 ] && $PATCH -p1 -i $CERD/$nom/patches/void/musl_paths-h.patch
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0002-fix-group-and-man-page
+  $PATCH -p0 -i $CERD/$nom/glaucus/0002-fix-group-and-man-page.patch
 
   ./configure \
     --build=$BLD \
