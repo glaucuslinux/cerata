@@ -38,7 +38,7 @@ configure() {
     --disable-rpath \
     --disable-initfini-array \
     --with-lib-path=/usr/lib \
-    --with-pkgversion="glaucus $ARCH" \
+    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-included-gettext \
     --with-system-zlib \
