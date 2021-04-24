@@ -12,7 +12,7 @@ prepare() {
 
 configure() {
   echo "HAVE_WCHAR=1
-OSNAME=glaucus
+OSNAME='glaucus $ARCH $(date +%d%m%Y)'
 PREFIX=/usr
 AR=$AR
 CFLAGS='$CFLAGSFATNOCOMMON'" > configure.local

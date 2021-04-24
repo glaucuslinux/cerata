@@ -32,7 +32,7 @@ configure() {
     --disable-rpath \
     --disable-i18n \
     --without-selinux \
-    --with-packager=glaucus \
+    --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 

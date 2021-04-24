@@ -23,7 +23,8 @@ configure() {
     --includedir=/usr/include \
     --disable-selinux \
     --disable-nls \
-    --with-compiledby=glaucus \
+    --with-modified-by="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-compiledby="glaucus $ARCH $(date +%d%m%Y)" \
     --without-x
 }
 
