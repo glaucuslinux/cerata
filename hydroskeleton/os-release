@@ -1,5 +1,5 @@
 NAME=glaucus
-VERSION=glaucus
+VERSION=
 ID=glaucus
 ID_LIKE='glaucus glaucuslinux'
 VERSION_CODENAME=glaucus
