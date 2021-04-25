@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-remove-O2
+  $PATCH -p0 -i $CERD/$nom/glaucus/0001-remove-O2.patch
 }
 
 build() {
