@@ -13,13 +13,13 @@ prepare() {
 
   $MV doc/$nom.db.5 doc/locate.db.5
 
-  $PATCH -p0 -i $CERD/$nom/glaucus/0001-suggest-running-mupdatedb.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-suggest-running-mupdatedb.patch
 
   [ $ARCH = aarch64 ] && $PATCH -p1 -i $CERD/$nom/patches/void/musl_paths-h.patch
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/glaucus/0002-fix-group-and-man-page.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-group-and-man-page.patch
 
   ./configure \
     --build=$BLD \
