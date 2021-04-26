@@ -9,8 +9,8 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/glaucus/0001-remove-O2.patch
-  $PATCH -p0 -i $CERD/$nom/glaucus/0002-remove-ownership-change.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-O2.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-ownership-change.patch
 }
 
 build() {

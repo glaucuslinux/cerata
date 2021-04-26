@@ -18,7 +18,7 @@ prepare() {
 
   case $ARCH in
     aarch64 | x86-64)
-      $PATCH -p0 -i $CERD/$nom/glaucus/patches/0001-pure64-for-$ARCH.patch
+      $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
       ;;
   esac
 
