@@ -4,12 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $MKDIR $XBLD/$nom
+  cd $XBLD/$nom
 }
 
 configure() {
-  ./configure \
+  # `CC`, `CFLAGS` and `LDFLAGS` have to be specified, otherwise they won't be
+  # read!
+  $SRCD/$nom/$nom-$ver/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -17,7 +19,8 @@ configure() {
     --disable-static \
     --enable-shared \
     CC=$CC \
-    CFLAGS="$CFLAGS"
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS"
 }
 
 build() {
