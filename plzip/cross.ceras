@@ -31,7 +31,10 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Compatibility symlinks
   $LN $nom $CRSD/usr/bin/clzip
   $LN $nom $CRSD/usr/bin/lzip
   $LN $nom $CRSD/usr/bin/pdlzip
+
+  $LN $nom.1 $CRSD/usr/share/man/man1/lzip.1
 }
