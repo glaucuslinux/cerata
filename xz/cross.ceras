@@ -7,13 +7,13 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu rpath build-aux
-  radula_behave_gnu sub build-aux
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 
-  radula_behave_patch 1 $nom clear default-threading
-  radula_behave_patch 1 $nom clear io-size
-  radula_behave_patch 1 $nom clear speedup
+  $PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
+  $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
+  $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
 }
 
 configure() {
