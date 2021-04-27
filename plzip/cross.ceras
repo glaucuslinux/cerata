@@ -14,7 +14,8 @@ configure() {
     --exec-prefix=/usr \
     --bindir=/usr/bin \
     CXX=$CXX \
-    CXXFLAGS="$CXXFLAGS"
+    CXXFLAGS="$CXXFLAGS" \
+    LDFLAGS="$LDFLAGS"
 }
 
 build() {

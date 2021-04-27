@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=plzip
-ver=1.9-rc2
+ver=1.9
 url=http://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
-sum=be3befda6872ac68cf4e475b7d002492b2a3a9e97480e45a14e93247c2522a9afac2037c1c3f1957391841382a5314e1a9bc202e99d91e01fd26b43f6b5092bb
+sum=20c58feff7deee9ed3762a1d937463485493a3340f499dbf5b2c2004eba12722a12a23977914a78dcf179d0bf6a7841a25983cd55b48fc6e55a70dcc9e4722fa
