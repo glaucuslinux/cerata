@@ -7,11 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess build/autoconf
-  radula_behave_gnu rpath build/autoconf
-  radula_behave_gnu sub build/autoconf
+  $RSYNC $CERD/binutils/config.guess build/autoconf
+  $RSYNC $CERD/binutils/config.rpath build/autoconf
+  $RSYNC $CERD/binutils/config.sub build/autoconf
 
-  radula_behave_patch 0 $nom void filter-xz-enable-threads
+  $PATCH -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
 }
 
 configure() {
