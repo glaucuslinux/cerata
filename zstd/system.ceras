@@ -20,6 +20,10 @@ build() {
     HAVE_LZMA=0 \
     HAVE_LZ4=0 \
     BACKTRACE=0
+
+  # Build parallel zstd as well
+  $MAKE \
+    -C contrib/p$nom
 }
 
 check() {
@@ -32,5 +36,13 @@ install() {
     PREFIX=/usr \
     install
 
+  # Install parallel zstd as well
+  $MAKE \
+    DESTDIR=$CRSD \
+    PREFIX=/usr \
+    -C contrib/p$nom \
+    install
+
+  # Manually remove the static library
   $RM $SCER/$nom/sac/usr/lib/lib$nom.a
 }
