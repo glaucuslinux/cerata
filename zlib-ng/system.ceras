@@ -4,13 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/binutils/config.sub tools
 }
 
 configure() {
   CFLAGS="$CFLAGSNOCOMMON" \
-  $SRCD/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --eprefix=/usr \
     --libdir=/usr/lib \
