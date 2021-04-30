@@ -7,11 +7,12 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_patch 1 $nom sabotage 0001-mac-compat-don-t-redefine-__dead
+  $PATCH -p0 -i $CERD/$nom/patches/sabotage/0001-mac-compat-don-t-redefine-__dead.patch
+  $PATCH -p0 -i $CERD/$nom/patches/sabotage/0002-Fix-incorrect-snprintf-overflow-checks.patch
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-optimize-more
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
 }
 
 build() {
