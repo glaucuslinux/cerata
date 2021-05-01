@@ -14,13 +14,12 @@ configure() {
     --enable-lto \
     --no-thanks
 
-  sed '/${PROG}: ${OBJS}/!b;n;s/$/ -lterminfo/' \
-    -i Makefile
-
   $RSYNC $CERD/$nom/pconfig.h .
 }
 
 build() {
+  # netbsd-curses compatibility
+  LIBS=-lterminfo \
   $MAKE
 }
 
