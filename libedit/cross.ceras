@@ -12,7 +12,7 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$CFLAGS -D__STDC_ISO_10646__" \
+  CPPFLAGS=-D__STDC_ISO_10646__ \
   ./configure \
     --build=$BLD \
     --host=$TGT \
