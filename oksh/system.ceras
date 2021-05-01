@@ -9,17 +9,14 @@ prepare() {
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-netbsd-curses-compatibility
-
   ./configure \
     --prefix=/usr \
     --enable-lto
-
-  sed "s/CFLAGS = .*/CFLAGS = $CFLAGS -DVI -w -D_GNU_SOURCE/" \
-    -i Makefile
 }
 
 build() {
+  # netbsd-curses compatibility
+  LIBS=-lterminfo \
   $MAKE
 }
 
