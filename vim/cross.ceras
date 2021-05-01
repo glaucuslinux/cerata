@@ -9,6 +9,14 @@ prepare() {
 }
 
 configure() {
+  ac_cv_sizeof_int=4 \
+  ac_cv_small_wchar_t=no \
+  ${nom}_cv_getcwd_broken=no \
+  ${nom}_cv_memmove_handles_overlap=yes \
+  ${nom}_cv_stat_ignores_slash=yes \
+  ${nom}_cv_terminfo=yes \
+  ${nom}_cv_tgetent=zero \
+  ${nom}_cv_toupper_broken=no \
   $SRCD/$nom/$nom-$ver/configure \
     --build=$BLD \
     --host=$TGT \
@@ -39,7 +47,8 @@ configure() {
     --disable-nls \
     --with-modified-by="glaucus $ARCH $(date +%d%m%Y)" \
     --with-compiledby="glaucus $ARCH $(date +%d%m%Y)" \
-    --without-x
+    --without-x \
+    --with-tlib=ncursesw
 }
 
 build() {
