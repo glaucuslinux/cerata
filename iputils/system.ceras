@@ -6,13 +6,14 @@
 prepare() {
   $MKDIR $SBLD/$nom
 
-  cd $SRCD/$nom/$nom-s$ver
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
   glaucus-meson \
     -DUSE_IDN=false \
     -DBUILD_RARPD=true \
+    -DBUILD_TFTPD=true \
     -DBUILD_TRACEROUTE6=true \
     -DBUILD_NINFOD=false \
     -DNINFOD_MESSAGES=false \
