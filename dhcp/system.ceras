@@ -4,15 +4,43 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-fno-common.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
-  :
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --enable-${nom}v4o6 \
+    --enable-paranoia \
+    --enable-early-chroot \
+    --enable-log-pid \
+    --enable-binary-leases \
+    --with-srv-lease-file=/var/lib/$nom/${nom}d.leases \
+    --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
+    --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
+    --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases \
+    --with-randomdev
 }
 
 build() {
-  :
+  MAKEFLAGS='-j1 V=1' \
+  $MAKE
 }
 
 check() {
@@ -20,5 +48,14 @@ check() {
 }
 
 install() {
-  :
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    install-strip
+
+  $MV $SCER/$nom/sac/etc/dhclient.conf.example $SCER/$nom/sac/etc/dhclient.conf
+  $RSYNC doc/examples/dhclient-${nom}v6.conf $SCER/$nom/sac/etc/dhclient6.conf
+  $MV $SCER/$nom/sac/etc/${nom}d.conf.example $SCER/$nom/sac/etc/${nom}d.conf
+  $RSYNC doc/examples/${nom}d-${nom}v6.conf $SCER/$nom/sac/etc/${nom}d6.conf
+
+  $RSYNC client/scripts/linux $SCER/$nom/sac/usr/bin/dhclient-script
 }

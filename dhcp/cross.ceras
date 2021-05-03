@@ -7,10 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
 
-  radula_behave_patch 1 $nom gentoo $nom-$ver-fno-common
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-fno-common.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
@@ -29,6 +30,8 @@ configure() {
     --includedir=/usr/include \
     --enable-${nom}v4o6 \
     --enable-paranoia \
+    --enable-early-chroot \
+    --enable-log-pid \
     --enable-binary-leases \
     --with-srv-lease-file=/var/lib/$nom/${nom}d.leases \
     --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
@@ -55,4 +58,6 @@ install() {
   $RSYNC doc/examples/dhclient-${nom}v6.conf $CRSD/etc/dhclient6.conf
   $MV $CRSD/etc/${nom}d.conf.example $CRSD/etc/${nom}d.conf
   $RSYNC doc/examples/${nom}d-${nom}v6.conf $CRSD/etc/${nom}d6.conf
+
+  $RSYNC client/scripts/linux $CRSD/usr/bin/dhclient-script
 }
