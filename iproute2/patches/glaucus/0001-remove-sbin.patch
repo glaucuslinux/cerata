@@ -1,3 +1,106 @@
+--- Makefile
++++ Makefile
+@@ -14,7 +14,7 @@
+ 
+ PREFIX?=/usr
+ LIBDIR?=$(PREFIX)/lib
+-SBINDIR?=/sbin
++BINDIR?=/bin
+ CONFDIR?=/etc/iproute2
+ NETNS_RUN_DIR?=/var/run/netns
+ NETNS_ETC_DIR?=/etc/netns
+@@ -84,7 +84,7 @@
+ 	sh configure $(KERNEL_INCLUDE)
+ 
+ install: all
+-	install -m 0755 -d $(DESTDIR)$(SBINDIR)
++	install -m 0755 -d $(DESTDIR)$(BINDIR)
+ 	install -m 0755 -d $(DESTDIR)$(CONFDIR)
+ 	install -m 0755 -d $(DESTDIR)$(ARPDDIR)
+ 	install -m 0755 -d $(DESTDIR)$(HDRDIR)
+--- bridge/Makefile
++++ bridge/Makefile
+@@ -9,7 +9,7 @@
+ 	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+ 
+ install: all
+-	install -m 0755 bridge $(DESTDIR)$(SBINDIR)
++	install -m 0755 bridge $(DESTDIR)$(BINDIR)
+ 
+ clean:
+ 	rm -f $(BROBJ) bridge
+--- dcb/Makefile
++++ dcb/Makefile
+@@ -24,7 +24,7 @@
+ 
+ install: all
+ 	for i in $(TARGETS); \
+-	do install -m 0755 $$i $(DESTDIR)$(SBINDIR); \
++	do install -m 0755 $$i $(DESTDIR)$(BINDIR); \
+ 	done
+ 
+ clean:
+--- devlink/Makefile
++++ devlink/Makefile
+@@ -17,7 +17,7 @@
+ 
+ install: all
+ 	for i in $(TARGETS); \
+-	do install -m 0755 $$i $(DESTDIR)$(SBINDIR); \
++	do install -m 0755 $$i $(DESTDIR)$(BINDIR); \
+ 	done
+ 
+ clean:
+--- doc/actions/ifb-README
++++ doc/actions/ifb-README
+@@ -41,7 +41,7 @@
+ An example, to provide functionality that most people use IMQ for below:
+ 
+ --------
+-export TC="/sbin/tc"
++export TC="/bin/tc"
+ 
+ $TC qdisc add dev ifb0 root handle 1: prio
+ $TC qdisc add dev ifb0 parent 1:1 handle 10: sfq
+--- genl/Makefile
++++ genl/Makefile
+@@ -24,7 +24,7 @@
+ 	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+ 
+ install: all
+-	install -m 0755 genl $(DESTDIR)$(SBINDIR)
++	install -m 0755 genl $(DESTDIR)$(BINDIR)
+ 
+ clean:
+ 	rm -f $(GENLOBJ) $(GENLLIB) genl
+--- ip/Makefile
++++ ip/Makefile
+@@ -30,8 +30,8 @@
+ 	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+ 
+ install: all
+-	install -m 0755 $(TARGETS) $(DESTDIR)$(SBINDIR)
+-	install -m 0755 $(SCRIPTS) $(DESTDIR)$(SBINDIR)
++	install -m 0755 $(TARGETS) $(DESTDIR)$(BINDIR)
++	install -m 0755 $(SCRIPTS) $(DESTDIR)$(BINDIR)
+ 
+ clean:
+ 	rm -f $(ALLOBJ) $(TARGETS)
+--- misc/Makefile
++++ misc/Makefile
+@@ -34,9 +34,9 @@
+ 	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+ 
+ install: all
+-	install -m 0755 $(TARGETS) $(DESTDIR)$(SBINDIR)
+-	ln -sf lnstat $(DESTDIR)$(SBINDIR)/rtstat
+-	ln -sf lnstat $(DESTDIR)$(SBINDIR)/ctstat
++	install -m 0755 $(TARGETS) $(DESTDIR)$(BINDIR)
++	ln -sf lnstat $(DESTDIR)$(BINDIR)/rtstat
++	ln -sf lnstat $(DESTDIR)$(BINDIR)/ctstat
+ 
+ clean:
+ 	rm -f *.o $(TARGETS) ssfilter.c
 --- misc/ss.c
 +++ misc/ss.c
 @@ -1475,7 +1475,7 @@
@@ -9,3 +112,47 @@
  
  	if (!fp)
  		return;
+--- rdma/Makefile
++++ rdma/Makefile
+@@ -19,7 +19,7 @@
+ 
+ install: all
+ 	for i in $(TARGETS); \
+-	do install -m 0755 $$i $(DESTDIR)$(SBINDIR); \
++	do install -m 0755 $$i $(DESTDIR)$(BINDIR); \
+ 	done
+ 
+ clean:
+--- tc/Makefile
++++ tc/Makefile
+@@ -148,7 +148,7 @@
+ 
+ install: all
+ 	mkdir -p $(MODDESTDIR)
+-	install -m 0755 tc $(DESTDIR)$(SBINDIR)
++	install -m 0755 tc $(DESTDIR)$(BINDIR)
+ 	for i in $(TCSO); \
+ 	do install -m 755 $$i $(MODDESTDIR); \
+ 	done
+--- tipc/Makefile
++++ tipc/Makefile
+@@ -23,7 +23,7 @@
+ 
+ install: all
+ 	for i in $(TARGETS); \
+-	do install -m 0755 $$i $(DESTDIR)$(SBINDIR); \
++	do install -m 0755 $$i $(DESTDIR)$(BINDIR); \
+ 	done
+ 
+ clean:
+--- vdpa/Makefile
++++ vdpa/Makefile
+@@ -18,7 +18,7 @@
+ 
+ install: all
+ 	for i in $(TARGETS); \
+-	do install -m 0755 $$i $(DESTDIR)$(SBINDIR); \
++	do install -m 0755 $$i $(DESTDIR)$(BINDIR); \
+ 	done
+ 
+ clean:
