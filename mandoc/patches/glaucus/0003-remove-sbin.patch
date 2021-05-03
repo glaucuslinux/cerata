@@ -1,0 +1,102 @@
+--- Makefile
++++ Makefile
+@@ -403,7 +403,6 @@
+ 
+ base-install: mandoc demandoc soelim
+ 	mkdir -p $(DESTDIR)$(BINDIR)
+-	mkdir -p $(DESTDIR)$(SBINDIR)
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man1
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man5
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man7
+@@ -413,8 +412,7 @@
+ 	cd $(DESTDIR)$(BINDIR) && $(LN) mandoc $(BINM_MAN)
+ 	cd $(DESTDIR)$(BINDIR) && $(LN) mandoc $(BINM_APROPOS)
+ 	cd $(DESTDIR)$(BINDIR) && $(LN) mandoc $(BINM_WHATIS)
+-	cd $(DESTDIR)$(SBINDIR) && \
+-		$(LN) ${BIN_FROM_SBIN}/mandoc $(BINM_MAKEWHATIS)
++	cd $(DESTDIR)$(BINDIR) && $(LN) mandoc $(BINM_MAKEWHATIS)
+ 	$(INSTALL_MAN) mandoc.1 demandoc.1 $(DESTDIR)$(MANDIR)/man1
+ 	$(INSTALL_MAN) soelim.1 $(DESTDIR)$(MANDIR)/man1/$(BINM_SOELIM).1
+ 	$(INSTALL_MAN) man.1 $(DESTDIR)$(MANDIR)/man1/$(BINM_MAN).1
+@@ -448,10 +446,10 @@
+ 	$(INSTALL_DATA) mandoc.css $(DESTDIR)$(HTDOCDIR)
+ 
+ catman-install: mandocd catman
+-	mkdir -p $(DESTDIR)$(SBINDIR)
++	mkdir -p $(DESTDIR)$(BINDIR)
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man8
+-	$(INSTALL_PROGRAM) mandocd $(DESTDIR)$(SBINDIR)
+-	$(INSTALL_PROGRAM) catman $(DESTDIR)$(SBINDIR)/$(BINM_CATMAN)
++	$(INSTALL_PROGRAM) mandocd $(DESTDIR)$(BINDIR)
++	$(INSTALL_PROGRAM) catman $(DESTDIR)$(BINDIR)/$(BINM_CATMAN)
+ 	$(INSTALL_MAN) mandocd.8 $(DESTDIR)$(MANDIR)/man8
+ 	$(INSTALL_MAN) catman.8 $(DESTDIR)$(MANDIR)/man8/$(BINM_CATMAN).8
+ 
+@@ -462,7 +460,7 @@
+ 	rm -f $(DESTDIR)$(BINDIR)/$(BINM_MAN)
+ 	rm -f $(DESTDIR)$(BINDIR)/$(BINM_APROPOS)
+ 	rm -f $(DESTDIR)$(BINDIR)/$(BINM_WHATIS)
+-	rm -f $(DESTDIR)$(SBINDIR)/$(BINM_MAKEWHATIS)
++	rm -f $(DESTDIR)$(BINDIR)/$(BINM_MAKEWHATIS)
+ 	rm -f $(DESTDIR)$(MANDIR)/man1/mandoc.1
+ 	rm -f $(DESTDIR)$(MANDIR)/man1/demandoc.1
+ 	rm -f $(DESTDIR)$(MANDIR)/man1/$(BINM_SOELIM).1
+@@ -480,8 +478,8 @@
+ 	rm -f $(DESTDIR)$(MANDIR)/man8/$(BINM_MAKEWHATIS).8
+ 	rm -f $(DESTDIR)$(CGIBINDIR)/man.cgi
+ 	rm -f $(DESTDIR)$(HTDOCDIR)/mandoc.css
+-	rm -f $(DESTDIR)$(SBINDIR)/mandocd
+-	rm -f $(DESTDIR)$(SBINDIR)/$(BINM_CATMAN)
++	rm -f $(DESTDIR)$(BINDIR)/mandocd
++	rm -f $(DESTDIR)$(BINDIR)/$(BINM_CATMAN)
+ 	rm -f $(DESTDIR)$(MANDIR)/man8/mandocd.8
+ 	rm -f $(DESTDIR)$(MANDIR)/man8/$(BINM_CATMAN).8
+ 	rm -f $(DESTDIR)$(LIBDIR)/libmandoc.a
+--- configure
++++ configure
+@@ -97,8 +97,6 @@
+ 
+ PREFIX="/usr/local"
+ BINDIR=
+-SBINDIR=
+-BIN_FROM_SBIN=
+ INCLUDEDIR=
+ LIBDIR=
+ MANDIR=
+@@ -568,8 +566,6 @@
+ exec > Makefile.local
+ 
+ [ -z "${BINDIR}"          ] && BINDIR="${PREFIX}/bin"
+-[ -z "${SBINDIR}"         ] && SBINDIR="${PREFIX}/sbin"
+-[ -z "${BIN_FROM_SBIN}"   ] && BIN_FROM_SBIN="../bin"
+ [ -z "${INCLUDEDIR}"      ] && INCLUDEDIR="${PREFIX}/include/mandoc"
+ [ -z "${LIBDIR}"          ] && LIBDIR="${PREFIX}/lib/mandoc"
+ [ -z "${MANDIR}"          ] && MANDIR="${PREFIX}/man"
+@@ -602,8 +598,6 @@
+ STATIC		= ${STATIC}
+ PREFIX		= ${PREFIX}
+ BINDIR		= ${BINDIR}
+-SBINDIR		= ${SBINDIR}
+-BIN_FROM_SBIN	= ${BIN_FROM_SBIN}
+ INCLUDEDIR	= ${INCLUDEDIR}
+ LIBDIR		= ${LIBDIR}
+ MANDIR		= ${MANDIR}
+--- configure.local.example
++++ configure.local.example
+@@ -98,16 +98,8 @@
+ 
+ PREFIX="/usr/local"
+ BINDIR="${PREFIX}/bin"
+-SBINDIR="${PREFIX}/sbin"
+ MANDIR="${PREFIX}/man"
+ 
+-# If BINDIR and SBINDIR are not subdirectories of the same parent
+-# directory or if the basename(1) of BINDIR differs from "bin",
+-# the relative path from SBINDIR to BINDIR is also needed.
+-# The default is:
+-
+-BIN_FROM_SBIN="../bin"
+-
+ # Some distributions may want to avoid naming conflicts
+ # with the configuration files of other man(1) implementations.
+ # This changes the name of the installed section 5 manual page as well.

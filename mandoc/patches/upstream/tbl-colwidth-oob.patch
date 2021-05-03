@@ -1,0 +1,62 @@
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from localhost (fantadrom.bsd.lv [local])
+	by fantadrom.bsd.lv (OpenSMTPD) with ESMTPA id 0ff00a97
+	for <source@mandoc.bsd.lv>;
+	Fri, 29 Mar 2019 16:27:36 -0500 (EST)
+Date: Fri, 29 Mar 2019 16:27:36 -0500 (EST)
+X-Mailinglist: mandoc-source
+Reply-To: source@mandoc.bsd.lv
+MIME-Version: 1.0
+From: schwarze@mandoc.bsd.lv
+To: source@mandoc.bsd.lv
+Subject: mandoc: Set the maximum column index in a tbl(7) to the maximum *right* 
+X-Mailer: activitymail 1.26, http://search.cpan.org/dist/activitymail/
+Content-Type: text/plain; charset=utf-8
+Message-ID: <e3fceff42218668d@fantadrom.bsd.lv>
+Archived-At: <http://inbox.vuxu.org/mandoc-source/e3fceff42218668d@fantadrom.bsd.lv/>
+List-Archive: <http://inbox.vuxu.org/mandoc-source/>
+List-Post: <mailto:source@mandoc.bsd.lv>
+
+Log Message:
+-----------
+Set the maximum column index in a tbl(7) to the maximum *right* edge 
+of any cell span, not to the maximum *left* edge, which may be smaller 
+if the last column of the table is only reached by horizontal spans,
+but not by any regular cell in any row of the table.
+Otherwise, the algorithm calculating column widths accessed memomy
+after the end of the colwidth[] array, while it was trying to handle 
+the rightmost column(s).
+
+Crash reported by Jason Thorpe <thorpej at NetBSD>
+via https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=54069
+and via Thomas Klausner (wiz@).
+Christos@ Zoulas sent a (correct, but slightly confusing) patch.
+The patch i'm committing here is easier to understand.
+
+Modified Files:
+--------------
+    mandoc:
+        out.c
+
+Revision Data
+-------------
+Index: out.c
+===================================================================
+RCS file: /home/cvs/mandoc/mandoc/out.c,v
+retrieving revision 1.77
+retrieving revision 1.78
+diff -Lout.c -Lout.c -u -p -r1.77 -r1.78
+--- a/out.c
++++ b/out.c
+@@ -149,7 +149,7 @@ tblcalc(struct rofftbl *tbl, const struc
+ 		gp = &first_group;
+ 		for (dp = sp->first; dp != NULL; dp = dp->next) {
+ 			icol = dp->layout->col;
+-			while (icol > maxcol)
++			while (maxcol < icol + dp->hspans)
+ 				tbl->cols[++maxcol].spacing = SIZE_MAX;
+ 			col = tbl->cols + icol;
+ 			col->flags |= dp->layout->flags;
+--
+ To unsubscribe send an email to source+unsubscribe@mandoc.bsd.lv
+
