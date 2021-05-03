@@ -1,0 +1,62 @@
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from localhost (fantadrom.bsd.lv [local])
+	by fantadrom.bsd.lv (OpenSMTPD) with ESMTPA id 25e99424
+	for <source@mandoc.bsd.lv>;
+	Mon, 18 Mar 2019 03:01:04 -0500 (EST)
+Date: Mon, 18 Mar 2019 03:01:04 -0500 (EST)
+X-Mailinglist: mandoc-source
+Reply-To: source@mandoc.bsd.lv
+MIME-Version: 1.0
+From: schwarze@mandoc.bsd.lv
+To: source@mandoc.bsd.lv
+Subject: mandoc: fix a NULL pointer access on empty tbl(7) data cells that 
+X-Mailer: activitymail 1.26, http://search.cpan.org/dist/activitymail/
+Content-Type: text/plain; charset=utf-8
+Message-ID: <e3f22222366ad31d@fantadrom.bsd.lv>
+Archived-At: <http://inbox.vuxu.org/mandoc-source/e3f22222366ad31d@fantadrom.bsd.lv/>
+List-Archive: <http://inbox.vuxu.org/mandoc-source/>
+List-Post: <mailto:source@mandoc.bsd.lv>
+
+Log Message:
+-----------
+fix a NULL pointer access on empty tbl(7) data cells
+that bentley@ found in syncthing-bep(7)
+
+Modified Files:
+--------------
+    mandoc:
+        tbl_term.c
+
+Revision Data
+-------------
+Index: tbl_term.c
+===================================================================
+RCS file: /home/cvs/mandoc/mandoc/tbl_term.c,v
+retrieving revision 1.69
+retrieving revision 1.70
+diff -Ltbl_term.c -Ltbl_term.c -u -p -r1.69 -r1.70
+--- a/tbl_term.c
++++ b/tbl_term.c
+@@ -629,7 +629,8 @@ tbl_hrule(struct termp *tp, const struct
+ 
+ 		lw = cpp == NULL || cpn == NULL ||
+ 		    (cpn->pos != TBL_CELL_DOWN &&
+-		     (dpn == NULL || strcmp(dpn->string, "\\^") != 0))
++		     (dpn == NULL || dpn->string == NULL ||
++		      strcmp(dpn->string, "\\^") != 0))
+ 		    ? hw : 0;
+ 		tbl_direct_border(tp, BHORIZ * lw,
+ 		    col->width + col->spacing / 2);
+@@ -675,7 +676,8 @@ tbl_hrule(struct termp *tp, const struct
+ 
+ 		rw = cpp == NULL || cpn == NULL ||
+ 		    (cpn->pos != TBL_CELL_DOWN &&
+-		     (dpn == NULL || strcmp(dpn->string, "\\^") != 0))
++		     (dpn == NULL || dpn->string == NULL ||
++		      strcmp(dpn->string, "\\^") != 0))
+ 		    ? hw : 0;
+ 
+ 		/* The line crossing at the end of this column. */
+--
+ To unsubscribe send an email to source+unsubscribe@mandoc.bsd.lv
+

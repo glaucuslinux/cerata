@@ -1,0 +1,11 @@
+--- main.c
++++ main.c
+@@ -1171,7 +1171,7 @@
+ 	if (pager == NULL || *pager == '\0')
+ 		pager = getenv("PAGER");
+ 	if (pager == NULL || *pager == '\0')
+-		pager = "more -s";
++		pager = "less -s";
+ 	cp = mandoc_strdup(pager);
+ 
+ 	/*

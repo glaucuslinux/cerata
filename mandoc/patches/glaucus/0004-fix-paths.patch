@@ -1,0 +1,176 @@
+--- INSTALL
++++ INSTALL
+@@ -44,8 +44,7 @@
+ system contains one.
+ 
+ 3. Define MANPATH_DEFAULT in configure.local
+-if /usr/share/man:/usr/X11R6/man:/usr/local/man is not appropriate
+-for your operating system.
++if /usr/share/man is not appropriate for your operating system.
+ 
+ 4. Run "./configure".
+ This script attempts autoconfiguration of mandoc for your system.
+--- NEWS
++++ NEWS
+@@ -413,7 +413,7 @@
+  * roff(7): Implement \\$* (interpolate all arguments).
+  * roff(7): Parse and ignore \, and \/ (italic corrections).
+  * When there is no -m, no -M, no MANPATH and no /etc/man.conf,
+-   fall back to /usr/share/man:/usr/X11R6/man:/usr/local/man.
++   fall back to /usr/share/man.
+  * man(1): Give manuals in purely numerical sections priority over
+    manuals of the same name in sections with an alphabetical suffix.
+  * man.cgi(8): Support "header.html" and "footer.html".
+--- TODO
++++ TODO
+@@ -331,7 +331,7 @@
+   by syntax tree nodes.
+   loc **  exist *  algo **  size *  imp **
+ 
+-- formatting /usr/local/man/man1/latex2man.1 with groff and mandoc
++- formatting /usr/share/man/man1/latex2man.1 with groff and mandoc
+   reveals lots of bugs both in groff and mandoc...
+   reported by bentley@  Wed, 22 May 2013 23:49:30 -0600
+ 
+--- configure
++++ configure
+@@ -35,8 +35,8 @@
+ 
+ SOURCEDIR=`dirname "$0"`
+ 
+-MANPATH_BASE="/usr/share/man:/usr/X11R6/man"
+-MANPATH_DEFAULT="/usr/share/man:/usr/X11R6/man:/usr/local/man"
++MANPATH_BASE=/usr/share/man
++MANPATH_DEFAULT=/usr/share/man
+ OSENUM=
+ OSNAME=
+ UTF8_LOCALE=
+--- configure.local.example
++++ configure.local.example
+@@ -60,12 +60,12 @@
+ # available, manuals are searched for in the following directory
+ # trees by default.
+ 
+-MANPATH_DEFAULT="/usr/share/man:/usr/X11R6/man:/usr/local/man"
++MANPATH_DEFAULT=/usr/share/man
+ 
+ # Validation of cross references with mandoc -Tlint only looks
+ # for manual pages in the following directories:
+ 
+-MANPATH_BASE="/usr/share/man:/usr/X11R6/man"
++MANPATH_BASE="/usr/share/man"
+ 
+ # When man(1) is called with the -S option and no manual page is
+ # found matching the requested name and the requested architecture,
+@@ -96,7 +96,7 @@
+ # Even if you set PREFIX to something else, the other variables
+ # pick it up without copying them all over.
+ 
+-PREFIX="/usr/local"
++PREFIX=/usr
+ BINDIR="${PREFIX}/bin"
+ SBINDIR="${PREFIX}/sbin"
+ MANDIR="${PREFIX}/man"
+@@ -199,7 +199,7 @@
+ # you have to specify the physical location of the cellar as returned
+ # by realpath(3), for example:
+ 
+-PREFIX="/usr/local"
++PREFIX=/usr
+ HOMEBREWDIR="${PREFIX}/Cellar"
+ 
+ # --- user settings for the mandoc(3) library --------------------------
+--- gmdiff
++++ gmdiff
+@@ -25,7 +25,6 @@
+ 
+ if [ "X$1" = "X-h" ]; then
+   shift
+-  export PATH="/usr/local/heirloom-doctools/bin:$PATH"
+   EQN="neqn"
+   ROFF="nroff"
+   MOPT="-Ios=BSD -Tascii $MOPT"
+--- man.conf.5
++++ man.conf.5
+@@ -117,8 +117,6 @@
+ file at all.
+ .Bd -literal -offset indent
+ manpath /usr/share/man
+-manpath /usr/X11R6/man
+-manpath /usr/local/man
+ .Ed
+ .Sh SEE ALSO
+ .Xr apropos 1 ,
+--- mandoc.1
++++ mandoc.1
+@@ -897,7 +897,7 @@
+ macro references a manual page that is not found in the base system.
+ The path to look for base system manuals is configurable at compile
+ time and defaults to
+-.Pa /usr/share/man : /usr/X11R6/man .
++.Pa /usr/share/man .
+ .El
+ .Ss Style suggestions
+ .Bl -ohang
+--- mandoc.db.5
++++ mandoc.db.5
+@@ -189,13 +189,6 @@
+ .Bl -tag -width /usr/share/man/mandoc.db -compact
+ .It Pa /usr/share/man/mandoc.db
+ The manual page database for the base system.
+-.It Pa /usr/X11R6/man/mandoc.db
+-The same for the
+-.Xr X 7
+-Window System.
+-.It Pa /usr/local/man/mandoc.db
+-The same for
+-.Xr packages 7 .
+ .El
+ .Pp
+ A program to dump
+--- regress/eqn/Makefile.inc
++++ regress/eqn/Makefile.inc
+@@ -1,6 +1,6 @@
+ # $OpenBSD: Makefile.inc,v 1.2 2015/02/03 19:37:25 schwarze Exp $
+ 
+-EQN = /usr/local/bin/eqn
++EQN = /usr/bin/eqn
+ 
+ SKIP_GROFF ?= ${REGRESS_TARGETS}
+ SKIP_TMAN ?= ALL
+--- regress/man/TS/Makefile
++++ regress/man/TS/Makefile
+@@ -12,7 +12,7 @@
+ 
+ # OpenBSD only: maintainer targets
+ 
+-TBL=/usr/local/bin/tbl
++TBL=/usr/bin/tbl
+ 
+ .for t in ${REGRESS_TARGETS}
+ ${t}.out_ascii: ${t}.in
+--- regress/roff/de/Makefile
++++ regress/roff/de/Makefile
+@@ -41,10 +41,10 @@
+ 	@rm -f TH.mandoc_ascii_opt Dd.mandoc_ascii_opt
+ 
+ TH.out_ascii_opt: TH.in
+-	/usr/local/bin/nroff -c -man -Tascii ${.ALLSRC} > ${.TARGET}
++	/usr/bin/nroff -c -man -Tascii ${.ALLSRC} > ${.TARGET}
+ 
+ Dd.out_ascii_opt: Dd.in
+-	/usr/local/bin/nroff -c -mdoc -Tascii ${.ALLSRC} > ${.TARGET}
++	/usr/bin/nroff -c -mdoc -Tascii ${.ALLSRC} > ${.TARGET}
+ 
+ groff-clean-opt:
+ 	rm -f TH.out_ascii_opt Dd.out_ascii_opt
+--- regress/tbl/Makefile.inc
++++ regress/tbl/Makefile.inc
+@@ -1,6 +1,6 @@
+ # $OpenBSD: Makefile.inc,v 1.2 2015/02/03 19:37:25 schwarze Exp $
+ 
+-TBL = /usr/local/bin/tbl
++TBL = /usr/bin/tbl
+ 
+ SKIP_TMAN ?= ALL
+ SKIP_MARKDOWN ?= ALL
