@@ -6,10 +6,12 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-disable-all-tests
+  :
 }
 
 build() {
@@ -17,9 +19,15 @@ build() {
     DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \
-    SBINDIR=/usr/bin \
+    exec_prefix=/usr \
+    lib_prefix=/usr \
+    inc_prefix=/usr \
+    BINDIR=/usr/bin \
+    INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
+    KERNEL_HEADERS=/usr/include \
+    DEBUG=-g0 \
     BUILD_GPERF=no \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -35,9 +43,15 @@ install() {
     DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \
-    SBINDIR=/usr/bin \
+    exec_prefix=/usr \
+    lib_prefix=/usr \
+    inc_prefix=/usr \
+    BINDIR=/usr/bin \
+    INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
+    KERNEL_HEADERS=/usr/include \
+    DEBUG=-g0 \
     BUILD_GPERF=no \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -45,4 +59,5 @@ install() {
     install
 
   $CHMOD 0755 $CRSD/usr/lib/$nom.so.$ver
+  $CHMOD 0755 $CRSD/usr/lib/libpsx.so.$ver
 }

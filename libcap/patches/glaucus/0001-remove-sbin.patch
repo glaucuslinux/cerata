@@ -1,0 +1,345 @@
+--- Make.Rules
++++ Make.Rules
+@@ -12,7 +12,7 @@
+ FAKEROOT=$(DESTDIR)
+ 
+ # Autoconf-style prefixes are activated when $(prefix) is defined.
+-# Otherwise binaries and libraries are installed in /{lib,sbin}/,
++# Otherwise binaries and libraries are installed in /{lib,bin}/,
+ # header files in /usr/include/ and documentation in /usr/man/man?/.
+ # These choices are motivated by the fact that getcap and setcap are
+ # administrative operations that could be needed to recover a system.
+@@ -37,7 +37,7 @@
+ # Target directories
+ 
+ MANDIR=$(man_prefix)/man
+-SBINDIR=$(exec_prefix)/sbin
++BINDIR=$(exec_prefix)/bin
+ INCDIR=$(inc_prefix)/include
+ LIBDIR=$(lib_prefix)/$(lib)
+ PKGCONFIGDIR=$(LIBDIR)/pkgconfig
+--- README
++++ README
+@@ -33,7 +33,7 @@
+ 	$ sudo make install
+ 
+ 	       default installs the library libcap.XX.Y in /lib[64]/
+-	       the binaries in /sbin/
++	       the binaries in /bin/
+ 	       the header files in /usr/include
+ 	       the {libcap,libpsx}.pc files in /usr/lib[64]/pkgconfig
+ 	       the Go packages (if built) under /usr/share/gocode/src
+--- cap/names.go
++++ cap/names.go
+@@ -9,7 +9,7 @@
+ // cap.NamedCount < cap.MaxBits(), it is probably time to upgrade this
+ // package on your system.
+ //
+-// FWIW the userspace tool '/sbin/capsh' also contains a runtime check
++// FWIW the userspace tool '/bin/capsh' also contains a runtime check
+ // for the condition that libcap is behind the running kernel in this
+ // way.
+ const NamedCount = 41
+--- contrib/pcaps4convenience
++++ contrib/pcaps4convenience
+@@ -57,7 +57,7 @@
+ ######################
+ 
+ #save assumption!?
+-export PATH=/sbin:/bin:/usr/sbin:/usr/bin/:usr/local/sbin:/usr/local/bin
++export PATH=/usr/bin:/bin
+ 
+ p4c_test(){
+     # are we sane?
+--- contrib/pcaps4server
++++ contrib/pcaps4server
+@@ -85,9 +85,9 @@
+ 	chown $VERBOSE -R apache:apache /var/run/apache/
+ 	chown $VERBOSE -R apache:apache /etc/apache/
+ 	chown $VERBOSE -R apache:apache /var/log/apache/
+-	chown $VERBOSE apache:apache /usr/sbin/httpd
+-	chmod $VERBOSE u+s /usr/sbin/httpd
+-	setcap cap_net_bind_service=ep /usr/sbin/httpd
++	chown $VERBOSE apache:apache /usr/bin/httpd
++	chmod $VERBOSE u+s /usr/bin/httpd
++	setcap cap_net_bind_service=ep /usr/bin/httpd
+ 	checkReturnCode
+ }
+ apache1_revert(){
+@@ -95,9 +95,9 @@
+ 	chown $VERBOSE -R root:root /var/run/apache/
+ 	chown $VERBOSE -R root:root /etc/apache/
+ 	chown $VERBOSE -R root:root /var/log/apache/
+-	chown $VERBOSE root:root /usr/sbin/httpd
+-	chmod $VERBOSE u-s /usr/sbin/httpd
+-	setcap -r /usr/sbin/httpd
++	chown $VERBOSE root:root /usr/bin/httpd
++	chmod $VERBOSE u-s /usr/bin/httpd
++	setcap -r /usr/bin/httpd
+ 	checkReturnCode
+ 	sed -i -e "{s|^\(User\).*|\1 nobody|; s|^\(Group\).*|\1 nogroup|}" /etc/apache/httpd.conf
+ 	userdel apache
+@@ -120,10 +120,10 @@
+ 	chown $VERBOSE -R apache:apache /var/run/httpd/
+ 	chown $VERBOSE -R apache:apache /etc/httpd/
+ 	chown $VERBOSE -R apache:apache /var/log/httpd/
+-	chown $VERBOSE apache:apache /usr/sbin/httpd
+-	chmod $VERBOSE u+s /usr/sbin/httpd
+-	#setfcaps -c cap_net_bind_service=p -e /usr/sbin/httpd
+-	setcap cap_net_bind_service=ep /usr/sbin/httpd
++	chown $VERBOSE apache:apache /usr/bin/httpd
++	chmod $VERBOSE u+s /usr/bin/httpd
++	#setfcaps -c cap_net_bind_service=p -e /usr/bin/httpd
++	setcap cap_net_bind_service=ep /usr/bin/httpd
+ 	checkReturnCode
+ }
+ apache2_revert(){
+@@ -131,9 +131,9 @@
+ 	chown $VERBOSE -R root:root /var/run/httpd/
+ 	chown $VERBOSE -R root:root /etc/httpd/
+ 	chown $VERBOSE -R root:root /var/log/httpd/
+-	chown $VERBOSE root:root /usr/sbin/httpd
+-	chmod $VERBOSE u-s /usr/sbin/httpd
+-	setcap -r /usr/sbin/httpd
++	chown $VERBOSE root:root /usr/bin/httpd
++	chmod $VERBOSE u-s /usr/bin/httpd
++	setcap -r /usr/bin/httpd
+ 	checkReturnCode
+ 	sed -i -e "{s|^\(User\).*|\1 nobody|; s|^\(Group\).*|\1 nogroup|}" /etc/httpd/httpd.conf
+ 	userdel apache
+@@ -156,11 +156,11 @@
+ 	chown $VERBOSE -R samba:samba /etc/samba
+ 	chown $VERBOSE -R samba:samba /var/run/samba
+ 	chown $VERBOSE -R samba:samba /var/cache/samba
+-	chown $VERBOSE samba:samba /usr/sbin/smbd /usr/sbin/nmbd
+-	chmod $VERBOSE u+s /usr/sbin/smbd /usr/sbin/nmbd
+-	setcap cap_net_bind_service,cap_sys_resource,cap_dac_override=ep /usr/sbin/smbd
++	chown $VERBOSE samba:samba /usr/bin/smbd /usr/bin/nmbd
++	chmod $VERBOSE u+s /usr/bin/smbd /usr/bin/nmbd
++	setcap cap_net_bind_service,cap_sys_resource,cap_dac_override=ep /usr/bin/smbd
+ 	checkReturnCode
+-	setcap cap_net_bind_service=ep /usr/sbin/nmbd
++	setcap cap_net_bind_service=ep /usr/bin/nmbd
+ 	checkReturnCode
+ }
+ 
+@@ -170,11 +170,11 @@
+ 	chown $VERBOSE -R root:root /etc/samba
+ 	chown $VERBOSE -R root:root /var/run/samba
+ 	chown $VERBOSE -R root:root /var/cache/samba
+-	chown $VERBOSE root:root /usr/sbin/smbd /usr/sbin/nmbd
+-	chmod $VERBOSE u-s /usr/sbin/smbd /usr/sbin/nmbd
+-	setcap -r /usr/sbin/smbd
++	chown $VERBOSE root:root /usr/bin/smbd /usr/bin/nmbd
++	chmod $VERBOSE u-s /usr/bin/smbd /usr/bin/nmbd
++	setcap -r /usr/bin/smbd
+ 	checkReturnCode
+-	setcap -r /usr/sbin/nmbd
++	setcap -r /usr/bin/nmbd
+ 	checkReturnCode
+ 	userdel samba
+ 	groupdel samba
+@@ -195,9 +195,9 @@
+ 	chown $VERBOSE -R bind:bind /var/run/named
+ 	chown $VERBOSE -R bind:bind /var/named
+ 	chown $VERBOSE bind:bind /etc/rndc.key
+-	chown $VERBOSE bind:bind /usr/sbin/named
+-	chmod $VERBOSE u+s /usr/sbin/named
+-	setcap cap_net_bind_service=ep /usr/sbin/named
++	chown $VERBOSE bind:bind /usr/bin/named
++	chmod $VERBOSE u+s /usr/bin/named
++	setcap cap_net_bind_service=ep /usr/bin/named
+ 	checkReturnCode
+ }
+ bind_revert(){
+@@ -205,9 +205,9 @@
+ 	chown $VERBOSE -R root:root /var/run/named
+ 	chown $VERBOSE -R root:root /var/named
+ 	chown $VERBOSE root:root /etc/rndc.key
+-	chown $VERBOSE root:root /usr/sbin/named
+-	chmod $VERBOSE u-s /usr/sbin/named
+-	setcap -r /usr/sbin/named
++	chown $VERBOSE root:root /usr/bin/named
++	chmod $VERBOSE u-s /usr/bin/named
++	setcap -r /usr/bin/named
+ 	checkReturnCode
+ 	userdel bind
+ 	groupdel bind
+@@ -228,9 +228,9 @@
+ 	chown $VERBOSE dhcpd:dhcpd /var/run/dhcpd
+ 	chown $VERBOSE dhcpd:dhcpd /etc/dhcpd.conf
+ 	chown $VERBOSE -R dhcpd:dhcpd /var/state/dhcp/
+-	chown $VERBOSE dhcpd:dhcpd /usr/sbin/dhcpd
+-	chmod $VERBOSE u+s /usr/sbin/dhcpd
+-	setcap cap_net_bind_service,cap_net_raw=ep /usr/sbin/dhcpd
++	chown $VERBOSE dhcpd:dhcpd /usr/bin/dhcpd
++	chmod $VERBOSE u+s /usr/bin/dhcpd
++	setcap cap_net_bind_service,cap_net_raw=ep /usr/bin/dhcpd
+ 	checkReturnCode
+ }
+ dhcpd_revert(){
+@@ -238,9 +238,9 @@
+ 	chown $VERBOSE root:root /var/run/dhcpd
+ 	chown $VERBOSE root:root /etc/dhcpd.conf
+ 	chown $VERBOSE -R root:root /var/state/dhcp/
+-	chown $VERBOSE root:root /usr/sbin/dhcpd
+-	chmod $VERBOSE u-s /usr/sbin/dhcpd
+-	setcap -r /usr/sbin/dhcpd
++	chown $VERBOSE root:root /usr/bin/dhcpd
++	chmod $VERBOSE u-s /usr/bin/dhcpd
++	setcap -r /usr/bin/dhcpd
+ 	checkReturnCode
+ 	userdel dhcpd
+ 	groupdel dhcpd
+@@ -264,9 +264,9 @@
+ 	chown $VERBOSE -R cupsd:cupsd /var/log/cups
+ 	chown $VERBOSE -R cupsd:cupsd /var/spool/cups
+ 	chown $VERBOSE -R cupsd:cupsd /var/run/cups
+-	chown $VERBOSE cupsd:cupsd /usr/sbin/cupsd
+-	chmod $VERBOSE u+s /usr/sbin/cupsd
+-	setcap cap_net_bind_service,cap_dac_read_search=ep /usr/sbin/cupsd
++	chown $VERBOSE cupsd:cupsd /usr/bin/cupsd
++	chmod $VERBOSE u+s /usr/bin/cupsd
++	setcap cap_net_bind_service,cap_dac_read_search=ep /usr/bin/cupsd
+ 	checkReturnCode
+ }
+ cupsd_revert(){
+@@ -278,9 +278,9 @@
+ 	chown $VERBOSE root:lp /var/run/cups
+ 	chown $VERBOSE lp:sys /var/run/cups/certs
+ 	chmod $VERBOSE 750 /var/run/cups/certs
+-	chown $VERBOSE root:root /usr/sbin/cupsd
+-	chmod $VERBOSE u-s /usr/sbin/cupsd
+-	setcap -r /usr/sbin/cupsd
++	chown $VERBOSE root:root /usr/bin/cupsd
++	chmod $VERBOSE u-s /usr/bin/cupsd
++	setcap -r /usr/bin/cupsd
+ 	checkReturnCode
+ 	sed -i -e "{s|^\(User\).*|\1 lp|; s|^\(Group\) .*|\1 sys|}" /etc/cups/cupsd.conf
+ 	userdel cupsd
+--- contrib/pcaps4suid0
++++ contrib/pcaps4suid0
+@@ -30,7 +30,7 @@
+ #
+ ###############################################################
+ # for example use this find call:
+-# find {,/usr}{/bin,/sbin} -perm -4000 -uid 0 -exec ls -l {} \;
++# find {,/usr}/bin -perm -4000 -uid 0 -exec ls -l {} \;
+ ###############################################################
+ 
+ 
+@@ -71,7 +71,7 @@
+ ######################
+ 
+ #save assumption!?
+-export PATH=/sbin:/bin:/usr/sbin:/usr/bin/:usr/local/sbin:/usr/local/bin
++export PATH=/usr/bin:/bin
+ 
+ p4s_test(){
+     # are we sane?
+--- doc/cap_get_proc.3
++++ doc/cap_get_proc.3
+@@ -365,7 +365,7 @@
+ .B capsh
+ tool as follows:
+ .sp
+-.B sudo /sbin/capsh \-\-user=nobody \-\-mode=NOPRIV \-\-print
++.B sudo /bin/capsh \-\-user=nobody \-\-mode=NOPRIV \-\-print
+ .sp
+ where
+ .B \-\-print
+--- go/mknames.go
++++ go/mknames.go
+@@ -59,7 +59,7 @@
+ // cap.NamedCount < cap.MaxBits(), it is probably time to upgrade this
+ // package on your system.
+ //
+-// FWIW the userspace tool '/sbin/capsh' also contains a runtime check
++// FWIW the userspace tool '/bin/capsh' also contains a runtime check
+ // for the condition that libcap is behind the running kernel in this
+ // way.
+ const NamedCount = `, len(list), `
+--- kdebug/test-kernel.sh
++++ kdebug/test-kernel.sh
+@@ -33,8 +33,8 @@
+ dir /proc 0755 0 0
+ dir /dev 0755 0 0
+ dir /sys 0755 0 0
+-dir /sbin 0755 0 0
+-file /sbin/busybox /usr/sbin/busybox 0755 0 0
++dir /bin 0755 0 0
++file /bin/busybox /usr/bin/busybox 0755 0 0
+ dir /bin 0755 0 0
+ file /bin/myprompt test-prompt.sh 0755 0 0
+ file /bin/bash test-bash.sh 0755 0 0
+@@ -62,12 +62,12 @@
+ 
+ COMMANDS="awk cat chmod cp dmesg fgrep id less ln ls mkdir mount pwd rm rmdir sh sort umount uniq vi"
+ for f in $COMMANDS; do
+-    echo slink /bin/$f /sbin/busybox 0755 0 0 >> fs.conf
++    echo slink /bin/$f /bin/busybox 0755 0 0 >> fs.conf
+ done
+ 
+ UCOMMANDS="id cut"
+ for f in $UCOMMANDS; do
+-    echo slink /usr/bin/$f /sbin/busybox 0755 0 0 >> fs.conf
++    echo slink /usr/bin/$f /bin/busybox 0755 0 0 >> fs.conf
+ done
+ 
+ $KBASE/usr/gen_init_cpio fs.conf | gzip -9 > initramfs.img
+--- kdebug/test-passwd
++++ kdebug/test-passwd
+@@ -1,3 +1,3 @@
+ root:x:0:0:root:/root:/bin/bash
+ luser:x:1:1:Luser:/:/bin/bash
+-nobody:x:99:99:Nobody:/:/sbin/nologin
++nobody:x:99:99:Nobody:/:/bin/nologin
+--- libcap/Makefile
++++ libcap/Makefile
+@@ -149,7 +149,7 @@
+ 	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
+ 	ln -sf $(MAJCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(CAPLIBNAME)
+ ifeq ($(FAKEROOT),)
+-	-/sbin/ldconfig
++	-/bin/ldconfig
+ endif
+ 
+ install-static-psx: install-common-psx $(STAPSXLIBNAME)
+@@ -160,7 +160,7 @@
+ 	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
+ 	ln -sf $(MAJPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(PSXLIBNAME)
+ ifeq ($(FAKEROOT),)
+-	-/sbin/ldconfig
++	-/bin/ldconfig
+ endif
+ 
+ install-common-cap: install-common libcap.pc
+--- pam_cap/capability.conf
++++ pam_cap/capability.conf
+@@ -32,7 +32,7 @@
+ ## set'. That is, if you look at a random process, even one run by root,
+ ## you will see it has no inheritable capabilities (by default):
+ ##
+-##   $ /sbin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
++##   $ /bin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
+ ##   0000000000000000=
+ ##
+ ## The pam_cap module simply alters the value of this capability
+--- progs/Makefile
++++ progs/Makefile
+@@ -31,12 +31,12 @@
+ 	$(CC) $(IPATH) $(CAPSH_SHELL) $(CFLAGS) -c $< -o $@
+ 
+ install: all
+-	mkdir -p -m 0755 $(FAKEROOT)$(SBINDIR)
++	mkdir -p -m 0755 $(FAKEROOT)$(BINDIR)
+ 	for p in $(PROGS) ; do \
+-		install -m 0755 $$p $(FAKEROOT)$(SBINDIR) ; \
++		install -m 0755 $$p $(FAKEROOT)$(BINDIR) ; \
+ 	done
+ ifeq ($(RAISE_SETFCAP),yes)
+-	$(FAKEROOT)$(SBINDIR)/setcap cap_setfcap=i $(FAKEROOT)$(SBINDIR)/setcap
++	$(FAKEROOT)$(BINDIR)/setcap cap_setfcap=i $(FAKEROOT)$(BINDIR)/setcap
+ endif
+ 
+ test: $(PROGS)
