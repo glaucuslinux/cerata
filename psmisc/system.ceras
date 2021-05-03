@@ -26,7 +26,6 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-harden-flags \
-    --disable-ipv6 \
     --disable-nls \
     --disable-rpath
 }
