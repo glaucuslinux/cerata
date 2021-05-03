@@ -6,12 +6,11 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
-
-  radula_behave_patch 0 $nom glaucus 0001-remove-sbin
 }
 
 configure() {
-  radula_behave_patch 0 $nom lfs 0001-remove-arpd-and-two-modules
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-arpd.patch
 
   ./configure
 }
@@ -26,7 +25,7 @@ check() {
 
 install() {
   $MAKE \
-    SBINDIR=/usr/bin \
+    BINDIR=/usr/bin \
     DESTDIR=$CRSD \
     install
 }
