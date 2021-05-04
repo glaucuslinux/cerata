@@ -7,16 +7,15 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess config
-  radula_behave_gnu rpath config
-  radula_behave_gnu sub config
+  $RSYNC $CERD/binutils/config.guess config
+  $RSYNC $CERD/binutils/config.rpath config
+  $RSYNC $CERD/binutils/config.sub config
 
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -29,6 +28,8 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-symlink-install \
+    --enable-relative-symlinks \
+    --enable-symlink-build \
     --enable-elf-shlibs \
     --disable-bsd-shlibs \
     --disable-libuuid \
@@ -36,10 +37,8 @@ configure() {
     --disable-fsck \
     --disable-uuidd \
     --disable-nls \
-    --enable-threads=posix \
     --disable-rpath \
-    --enable-lto \
-    --without-included-gettext
+    --enable-lto
 }
 
 build() {
