@@ -4,14 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  $RSYNC $SRCD/$nom/procps-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu rpath .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
 
-  radula_behave_patch 1 $nom adelie use-utmpx
+  $PATCH -p1 -i $CERD/$nom/patches/adelie/use-utmpx.patch
 }
 
 configure() {
@@ -32,9 +32,9 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath \
+    --enable-watch8bit \
     --disable-kill \
-    --disable-whining \
-    --without-systemd
+    --disable-whining
 }
 
 build() {
