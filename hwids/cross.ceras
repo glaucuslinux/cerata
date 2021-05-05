@@ -20,8 +20,13 @@ check() {
 }
 
 install() {
-  $MKDIR $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$ver/pci.ids $CRSD/usr/share/hwdata
+  $MAKE \
+    GZIP=no \
+    UDEV=yes \
+    MISCDATA=/usr/share/hwdata \
+    DESTDIR=$CRSD \
+    install
+
+  $RSYNC $CERD/$nom/pnp.ids $CRSD/usr/share/hwdata
   $RSYNC $SRCD/$nom/$nom-$ver/sdio.ids $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$ver/usb.ids $CRSD/usr/share/hwdata
 }
