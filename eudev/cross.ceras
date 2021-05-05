@@ -9,6 +9,8 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
@@ -27,7 +29,8 @@ configure() {
     --includedir=/usr/include \
     --disable-static \
     --disable-selinux \
-    --disable-manpages
+    --disable-manpages \
+    --enable-hwdb
 }
 
 build() {

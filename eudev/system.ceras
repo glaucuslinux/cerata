@@ -9,6 +9,8 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
@@ -25,7 +27,8 @@ configure() {
     --includedir=/usr/include \
     --disable-static \
     --disable-selinux \
-    --disable-manpages
+    --disable-manpages \
+    --enable-hwdb
 }
 
 build() {
@@ -51,5 +54,6 @@ install() {
   $MKDIR $SCER/$nom/usr/lib/pkgconfig
   $MV $SCER/$nom/sac/usr/share/pkgconfig/udev.pc $SCER/$nom/sac/usr/lib/pkgconfig
 
-  $RM $SCER/$nom/sac/usr/share/pkgconfig
+  # Remove this "empty" directory (won't be empty when manpages are enabled)
+  $RM $SCER/$nom/sac/usr/share
 }
