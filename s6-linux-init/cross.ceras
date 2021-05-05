@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  radula_behave_patch 0 $nom glaucus 0001-use-gnu-hash-style
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 
   ./configure \
     --host=$TGT \
@@ -31,9 +31,6 @@ configure() {
     --disable-allstatic \
     --disable-all-pic \
     --enable-utmps
-
-  sed "s/CFLAGS := .*/CFLAGS := $CFLAGSFAT -fno-stack-protector/" \
-    -i config.mak
 }
 
 build() {
