@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
@@ -13,14 +15,17 @@ configure() {
 }
 
 build() {
+  # Disable support for compressed pci.ids
   $MAKE \
     HOST=$TGT \
     CROSS_COMPILE=$TGT- \
     ZLIB=no \
+    DNS=yes \
     SHARED=yes \
     LIBKMOD=yes \
+    HWDB=yes \
     PREFIX=/usr \
-    SBINDIR=/usr/bin \
+    BINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
     MANDIR=/usr/share/man
 }
@@ -34,15 +39,18 @@ install() {
     HOST=$TGT \
     CROSS_COMPILE=$TGT- \
     ZLIB=no \
+    DNS=yes \
     SHARED=yes \
     LIBKMOD=yes \
+    HWDB=yes \
     PREFIX=/usr \
-    SBINDIR=/usr/bin \
+    BINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
     MANDIR=/usr/share/man \
     DESTDIR=$CRSD \
     install install-lib
 
+  # This is provided by the `hwids` ceras
   $RM $CRSD/usr/bin/update-pciids
   $RM $CRSD/usr/share/hwdata
   $RM $CRSD/usr/share/man/man8/update-pciids.8
