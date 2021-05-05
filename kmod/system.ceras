@@ -7,10 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu sub build-aux
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 
-  radula_behave_patch 1 $nom arch 0002-add-zstd-compressed-module-support
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/strndupa.patch
 }
 
 configure() {
@@ -28,9 +28,10 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-manpages \
+    --disable-test-modules \
+    --with-zstd \
     --with-xz \
     --with-zlib \
-    --with-zstd \
     --with-openssl \
     --without-bashcompletiondir
 }

@@ -7,8 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu sub build-aux
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/strndupa.patch
 }
 
 configure() {
@@ -25,7 +27,13 @@ configure() {
     --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --disable-manpages
+    --disable-manpages \
+    --disable-test-modules \
+    --with-zstd \
+    --with-xz \
+    --with-zlib \
+    --with-openssl \
+    --without-bashcompletiondir
 }
 
 build() {
