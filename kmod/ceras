@@ -7,3 +7,4 @@ nom=kmod
 ver=28
 url=https://cdn.kernel.org/pub/linux/utils/kernel/$nom/$nom-$ver.tar.xz
 sum=50646dc72675a5e17b01e327e3d41b972f18aaeac20c8b00983c4d099c6218f35c32c184a833a2d7f716755d6a86851c90913d2835874cef933bdc4a9722df9a
+cnt='libressl make xz zlib-ng zstd'
