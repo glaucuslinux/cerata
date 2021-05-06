@@ -5,6 +5,7 @@ https://app.codacy.com/gh/glaucuslinux/cerata?utm_source=github.com&utm_medium=r
 [![Join the chat at https://gitter.im/glaucuslinux/cerata](
 https://badges.gitter.im/glaucuslinux/cerata.svg)](
 https://gitter.im/glaucuslinux/cerata?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fglaucuslinux%2Fcerata.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fglaucuslinux%2Fcerata?ref=badge_shield)
 
 glaucus's cerata
 
@@ -22,3 +23,7 @@ glaucus's cerata
 * [NotABug](https://notabug.org/glaucuslinux/cerata)
 * [SourceForge](https://git.code.sf.net/p/glaucuslinux/cerata)
 * [SourceHut](https://git.sr.ht/~glaucuslinux/cerata)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fglaucuslinux%2Fcerata.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fglaucuslinux%2Fcerata?ref=badge_large)
