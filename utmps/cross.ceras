@@ -30,9 +30,6 @@ configure() {
     --disable-static \
     --disable-allstatic \
     --disable-all-pic
-
-  sed "s/CFLAGS := .*/CFLAGS := $CFLAGSFAT -fno-stack-protector/" \
-    -i config.mak
 }
 
 build() {
