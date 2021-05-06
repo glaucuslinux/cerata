@@ -53,7 +53,7 @@ case $COMMAND in
 	s6-rc-bundle -c $DATABASE delete $BUNDLENAME
 	ret=$(s6-rc-bundle -c $DATABASE add $BUNDLENAME $old $CONTENTS)
 	if [ "$?" != 0 ]; then
-		echo "Error when trying to add$CONTENTS!"
+		echo "Error when trying to add $CONTENTS!"
 		s6-rc-bundle -c $DATABASE add $BUNDLENAME $old
 	fi;;
     
