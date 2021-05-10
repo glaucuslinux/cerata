@@ -7,14 +7,18 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess support
-  radula_behave_gnu rpath support
-  radula_behave_gnu sub support
+  $RSYNC $CERD/binutils/config.guess support
+  $RSYNC $CERD/binutils/config.rpath support
+  $RSYNC $CERD/binutils/config.sub support
 
-  rad_behave_patch 0 $nom upstream ${nom}51-001
-  rad_behave_patch 0 $nom upstream ${nom}51-002
-  rad_behave_patch 0 $nom upstream ${nom}51-003
-  rad_behave_patch 0 $nom upstream ${nom}51-004
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-001
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-002
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-003
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-004
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-005
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-006
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-007
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-008
 }
 
 configure() {
