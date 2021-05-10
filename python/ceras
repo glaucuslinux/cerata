@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=python
-ver=3.9.4
+ver=3.9.5
 url=https://www.$nom.org/ftp/$nom/$ver/Python-$ver.tar.xz
-sum=3d8a5a38de0df6edc074d141e0b4a12b79d80439e4341cd4519218aa4bb7317be2736a17058ceec43fc987fc17ea5167c19eeafbdeef732a2f1656fe2f0f0d39
+sum=7b581af1b3e73695f124ff6a3a960e22104153a5d920ca930c046f42ea313b1e7ec77e39876db2bf5d5da6d7412cb072ff8ae7814dda12c14f9da6c570fb0995
