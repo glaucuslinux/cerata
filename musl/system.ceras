@@ -10,7 +10,7 @@ prepare() {
 
 configure() {
   ./configure \
-    CFLAGS="$CFLAGSNOFPMATHNOLTO" \
+    CFLAGS="$CFLAGSNOFPMATH" \
     --prefix=/usr \
     --exec-prefix=/usr \
     --disable-wrapper \
