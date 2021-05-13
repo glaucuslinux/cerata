@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=zlib-ng
-ver=2.0.2
+ver=2.0.3
 url=https://github.com/$nom/$nom/archive/$ver.tar.gz
-sum=d40a4fe036783fbc46225a49ff026cc12cd335103aa6f24e14e724c23d034019ed392337072879bc014223fe7b74a68f8d1d7dc1dfdbda95af864020e14272a8
+sum=e1afe91e1a8b4c54a004b672f539ae68f7dc1f1b08ba93514c0de674230354c944d496753f00ad272f16ef322705f275b5b72dac6c2a757ec741ef3f1ea1d59a
