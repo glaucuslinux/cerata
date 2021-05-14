@@ -27,6 +27,7 @@ prepare() {
 }
 
 configure() {
+  libat_cv_have_ifunc=no \
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$BLD \
@@ -35,25 +36,32 @@ configure() {
     --libexecdir=$TLCD/lib \
     --libdir=$TLCD/lib \
     --disable-multilib \
+    --enable-shared \
+    --disable-static \
+    --disable-fixed-point \
+    --disable-gnu-indirect-function \
     --disable-symvers \
     --disable-cet \
     --enable-threads=posix \
     $GCARCH \
     --disable-bootstrap \
     --enable-languages=c,c++ \
+    --disable-gnu-unique-object \
+    --enable-linker-build-id \
     --disable-libsanitizer \
     --disable-libssp \
     --disable-werror \
     --disable-nls \
     --disable-rpath \
+    --disable-libstdcxx-pch \
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
+    --enable-libstdcxx-threads \
     --disable-initfini-array \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
-    --without-included-gettext \
     --with-system-zlib \
     --with-linker-hash-style=gnu
 
@@ -94,4 +102,9 @@ install() {
 
   $LN $TGT-$nom $TLCD/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/bin/$TGT-$nom-$ver
+
+  $MKDIR $TLCD/lib/bfd-plugins
+  $LN $TLCD/lib/$nom/$TGT/$ver/liblto_plugin.so $TLCD/lib/bfd-plugins
+
+  $LN ../bin/$TGT-cpp $TLCD/lib/$TGT-cpp
 }
