@@ -40,6 +40,7 @@ configure() {
     --enable-shared \
     --disable-static \
     --disable-fixed-point \
+    --enable-__cxa_atexit \
     --disable-gnu-indirect-function \
     --disable-symvers \
     --disable-cet \

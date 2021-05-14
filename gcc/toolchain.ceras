@@ -38,6 +38,7 @@ configure() {
     --disable-multilib \
     --enable-shared \
     --disable-static \
+    --enable-__cxa_atexit \
     --disable-fixed-point \
     --disable-gnu-indirect-function \
     --disable-symvers \
@@ -104,7 +105,7 @@ install() {
   $LN $TGT-$nom $TLCD/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/bin/$TGT-$nom-$ver
 
-  $MKDIR $TLCD/lib/bfd-plugins
+  # `$TLCD/lib/bfd-plugins` already exists and contains `libdep.so`
   $LN $TLCD/lib/$nom/$TGT/$ver/liblto_plugin.so $TLCD/lib/bfd-plugins
 
   $LN ../bin/$TGT-cpp $TLCD/lib/$TGT-cpp
