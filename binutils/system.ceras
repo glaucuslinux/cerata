@@ -7,9 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu rpath .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/$nom/config.guess .
+  $RSYNC $CERD/$nom/config.rpath .
+  $RSYNC $CERD/$nom/config.sub .
 
   $MKDIR $SBLD/$nom
   cd $SBLD/$nom
