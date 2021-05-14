@@ -10,7 +10,7 @@ prepare() {
   $RSYNC $SRCD/gmp/gmp-6.2.1/ gmp --delete
   $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete
   $RSYNC $SRCD/mpc/mpc-1.2.1/ mpc --delete
-  $RSYNC $SRCD/isl/isl-0.23/ isl --delete
+  $RSYNC $SRCD/isl/isl-0.24/ isl --delete
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.rpath .
