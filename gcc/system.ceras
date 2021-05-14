@@ -44,6 +44,7 @@ configure() {
     --disable-symvers \
     --disable-cet \
     --enable-threads=posix \
+    --enable-tls \
     $GCARCH \
     --disable-bootstrap \
     --enable-languages=c,c++ \
