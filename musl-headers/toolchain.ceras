@@ -32,6 +32,8 @@ install() {
     DESTDIR=$CRSD \
     install-headers
 
+  # Possible non-stub utmp backends in the future:
+  # https://wiki.musl-libc.org/roadmap.html
   $RM $CRSD/usr/include/utmp.h
   $RM $CRSD/usr/include/utmpx.h
 }
