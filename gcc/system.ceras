@@ -22,6 +22,7 @@ prepare() {
 }
 
 configure() {
+  libat_cv_have_ifunc=no \
   CFLAGS="$CFLAGSNOLTO" \
   CXXFLAGS="$CFLAGSNOIPANOLTO" \
   $SSRC/$nom/configure \
@@ -36,24 +37,31 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-multilib \
+    --enable-shared \
+    --disable-static \
+    --disable-fixed-point \
+    --disable-gnu-indirect-function \
     --disable-symvers \
     --disable-cet \
     --enable-threads=posix \
     $GCARCH \
     --disable-bootstrap \
     --enable-languages=c,c++ \
+    --disable-gnu-unique-object \
+    --enable-linker-build-id \
     --disable-libsanitizer \
     --disable-libssp \
     --disable-werror \
     --disable-nls \
     --disable-rpath \
+    --disable-libstdcxx-pch \
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
+    --enable-libstdcxx-threads \
     --disable-initfini-array \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
-    --without-included-gettext \
     --with-system-zlib \
     --with-linker-hash-style=gnu
 
@@ -85,13 +93,13 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/cc
   $LN $nom $SCER/$nom/sac/usr/bin/$nom-$ver
 
-  $LN $TUPL-g++ $SCER/$nom/sac/usr/bin/$TUPL-c++
+  $LN $TGT-g++ $SCER/$nom/sac/usr/bin/$TGT-c++
 
-  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-cc
-  $LN $TUPL-$nom $SCER/$nom/sac/usr/bin/$TUPL-$nom-$ver
+  $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-cc
+  $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-$nom-$ver
 
   $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
-  $LN ../../lib/$nom/$TUPL/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
+  $LN ../../lib/$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
 
   $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp
 
