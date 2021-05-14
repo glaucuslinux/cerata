@@ -24,7 +24,6 @@ configure() {
     --libdir=$TLCD/lib \
     --enable-deterministic-archives \
     --disable-compressed-debug-sections \
-    --enable-shared \
     --disable-static \
     --enable-plugins \
     --enable-new-dtags \
