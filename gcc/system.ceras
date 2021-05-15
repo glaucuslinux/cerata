@@ -101,7 +101,7 @@ install() {
   $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-$nom-$ver
 
   $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
-  $LN ../../lib/$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
+  $LN ../$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
 
   $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp
 
