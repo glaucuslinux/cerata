@@ -13,8 +13,7 @@ prepare() {
 }
 
 configure() {
-  # Allow LTO optimizations for `musl`
-  $PATCH -p0 -i $CERD/musl/patches/upstream/fix-lto-shared-library.patch
+  :
 }
 
 build() {

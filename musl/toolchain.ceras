@@ -9,7 +9,6 @@ prepare() {
 
 configure() {
   ARCH=$MARCH \
-  CFLAGS=-flto \
   CROSS_COMPILE=$TGT- \
   LIBCC="$TLCD/lib/gcc/$TGT/11.1.0/libgcc.a" \
   ./configure \
