@@ -36,29 +36,29 @@ configure() {
     --libexecdir=$TLCD/lib \
     --libdir=$TLCD/lib \
     --disable-multilib \
-    --disable-static \
     --enable-__cxa_atexit \
     --disable-fixed-point \
-    --disable-gnu-indirect-function \
-    --disable-symvers \
-    --disable-cet \
     --enable-threads=posix \
     --enable-tls \
-    $GCARCH \
-    --disable-bootstrap \
+    --disable-nls \
     --enable-languages=c,c++ \
+    --disable-rpath \
+    --disable-static \
+    --disable-gnu-indirect-function \
+    --disable-initfini-array \
+    $GCARCH \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
     --disable-libssp \
+    --disable-bootstrap \
+    --disable-symvers \
+    --disable-cet \
     --disable-werror \
-    --disable-nls \
-    --disable-rpath \
     --disable-libstdcxx-pch \
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
-    --disable-initfini-array \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
@@ -104,7 +104,7 @@ install() {
   $LN $TGT-$nom $TLCD/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/bin/$TGT-$nom-$ver
 
-  # `$TLCD/lib/bfd-plugins` already exists and contains `libdep.so`
+  # `$TLCD/lib/bfd-plugins` already exists
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/lib/bfd-plugins
 
   $LN ../bin/$TGT-cpp $TLCD/lib/$TGT-cpp

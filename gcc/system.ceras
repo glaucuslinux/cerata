@@ -22,9 +22,9 @@ prepare() {
 }
 
 configure() {
-  libat_cv_have_ifunc=no \
   CFLAGS="$CFLAGSNOLTO" \
   CXXFLAGS="$CFLAGSNOIPANOLTO" \
+  libat_cv_have_ifunc=no \
   $SSRC/$nom/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -37,30 +37,30 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-multilib \
-    --enable-shared \
-    --disable-static \
-    --disable-fixed-point \
     --enable-__cxa_atexit \
-    --disable-gnu-indirect-function \
-    --disable-symvers \
-    --disable-cet \
+    --disable-fixed-point \
     --enable-threads=posix \
     --enable-tls \
-    $GCARCH \
-    --disable-bootstrap \
+    --disable-nls \
     --enable-languages=c,c++ \
+    --disable-rpath \
+    --enable-shared \
+    --disable-static \
+    --disable-gnu-indirect-function \
+    --disable-initfini-array \
+    $GCARCH \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
     --disable-libssp \
+    --disable-bootstrap \
+    --disable-symvers \
+    --disable-cet \
     --disable-werror \
-    --disable-nls \
-    --disable-rpath \
     --disable-libstdcxx-pch \
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
-    --disable-initfini-array \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
