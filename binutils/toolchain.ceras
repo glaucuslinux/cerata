@@ -22,6 +22,7 @@ configure() {
     --target=$TGT \
     --prefix=$TLCD \
     --libdir=$TLCD/lib \
+    --disable-multilib \
     --disable-static \
     --enable-plugins \
     --enable-deterministic-archives \
@@ -38,8 +39,7 @@ configure() {
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
-    --with-system-zlib \
-    --disable-multilib
+    --with-system-zlib
 
   $MAKE \
     configure-host
