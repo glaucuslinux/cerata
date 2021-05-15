@@ -22,10 +22,10 @@ configure() {
     --target=$TGT \
     --prefix=$TLCD \
     --libdir=$TLCD/lib \
-    --enable-deterministic-archives \
-    --disable-compressed-debug-sections \
     --disable-static \
     --enable-plugins \
+    --enable-deterministic-archives \
+    --disable-compressed-debug-sections \
     --enable-new-dtags \
     --enable-relro \
     --disable-separate-code \
