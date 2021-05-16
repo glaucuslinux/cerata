@@ -20,8 +20,9 @@ check() {
 }
 
 install() {
-  $RSYNC $CERD $CRSD/usr --exclude .git \
+  $RSYNC $CERD/ $CRSD/var/db/radula/clusters/glaucus --exclude .git \
     --exclude .gitattributes \
     --exclude LICENSE \
-    --exclude README.md
+    --exclude README.md \
+    --delete
 }

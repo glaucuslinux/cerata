@@ -23,7 +23,7 @@ check() {
 install() {
   $RSYNC getent $CRSD/usr/bin
   $RSYNC $CERD/musl/ldconfig $CRSD/usr/bin
-  sed "s/ld-musl/ld-musl-$MARCH/" \
+  sed "s/ld-musl/ld-musl-$MLARCH/" \
     -i $CRSD/usr/bin/ldconfig
 
   $MKDIR $CRSD/usr/share/man/man1

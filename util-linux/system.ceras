@@ -10,8 +10,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
-
-  $MKDIR $SCER/$nom/sac/var/lib/hwclock
 }
 
 configure() {
