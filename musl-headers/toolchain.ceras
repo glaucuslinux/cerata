@@ -25,9 +25,14 @@ check() {
 }
 
 install() {
+  # Order according to Makefile
   $MAKE \
-    ARCH=$MARCH \
+    exec_prefix=/usr \
+    bindir=/usr/bin \
     prefix=/usr \
+    includedir=/usr/include \
+    libdir=/usr/lib \
+    ARCH=$MARCH \
     DESTDIR=$CRSD \
     install-headers
 
