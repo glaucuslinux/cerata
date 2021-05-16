@@ -52,7 +52,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $RSYNC $CERD/$nom/updatedb.conf $CRSD/etc
+  $RSYNC $CERD/plocate/updatedb.conf $CRSD/etc
 
   $LN $nom $CRSD/usr/bin/locate
   $LN $nom $CRSD/usr/bin/slocate
