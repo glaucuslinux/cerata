@@ -1,0 +1,54 @@
+--- meson.build
++++ meson.build
+@@ -38,16 +38,16 @@
+ executable('plocate-build', ['plocate-build.cpp', 'database-builder.cpp'],
+ 	dependencies: [zstddep],
+ 	install: true,
+-	install_dir: get_option('sbindir'))
++	install_dir: get_option('bindir'))
+ updatedb_progname = get_option('updatedb_progname')
+ executable(updatedb_progname, ['updatedb.cpp', 'database-builder.cpp', 'conf.cpp', 'lib.cpp', 'bind-mount.cpp', 'complete_pread.cpp'],
+ 	dependencies: [zstddep, threaddep],
+ 	install: true,
+-	install_dir: get_option('sbindir'))
++	install_dir: get_option('bindir'))
+ 
+ conf_data = configuration_data()
+ conf_data.set('PROCESSED_BY_MESON', '1')
+-conf_data.set('sbindir', join_paths(get_option('prefix'), get_option('sbindir')))
++conf_data.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
+ conf_data.set('groupname', get_option('locategroup'))
+ conf_data.set('dbfile', dbfile)
+ conf_data.set('updatedb_conf', '/etc/updatedb.conf')
+--- plocate-updatedb.service.in
++++ plocate-updatedb.service.in
+@@ -4,7 +4,7 @@
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=@sbindir@/@updatedb_progname@
++ExecStart=@bindir@/@updatedb_progname@
+ LimitNOFILE=131072
+ IOSchedulingClass=idle
+ 
+--- update-plocate.sh
++++ update-plocate.sh
+@@ -3,15 +3,15 @@
+ set -e
+ 
+ if [ @PROCESSED_BY_MESON@ = 1 ]; then
+-	SBINDIR=@sbindir@
++	BINDIR=@bindir@
+ 	LOCATEGROUP=@groupname@
+ 	DBFILE=@dbfile@
+ else
+-	SBINDIR=/usr/local/sbin
++	BINDIR=/usr/bin
+ 	LOCATEGROUP=plocate
+ 	DBFILE=/var/lib/plocate/plocate.db
+ fi
+ 
+-$SBINDIR/plocate-build /var/lib/mlocate/mlocate.db $DBFILE.new
++$BINDIR/plocate-build /var/lib/mlocate/mlocate.db $DBFILE.new
+ chgrp $LOCATEGROUP $DBFILE.new
+ mv $DBFILE.new $DBFILE
