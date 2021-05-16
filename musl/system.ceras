@@ -32,10 +32,10 @@ install() {
   $MAKE \
     install
 
-  $RSYNC $CERD/$nom/ld-$nom.path /etc/ld-$nom-${MARCH}hf.path
-  $CHOWN 0:0 /etc/ld-$nom-${MARCH}hf.path
+  $RSYNC $CERD/$nom/ld-$nom.path /etc/ld-$nom-$MLARCH.path
+  $CHOWN 0:0 /etc/ld-$nom-$MLARCH.path
 
-  $LN ../lib/ld-$nom-${MARCH}hf.so.1 /usr/bin/ldd
+  $LN ../lib/ld-$nom-$MLARCH.so.1 /usr/bin/ldd
 
-  $LN libc.so /usr/lib/ld-$nom-${MARCH}hf.so.1
+  $LN libc.so /usr/lib/ld-$nom-$MLARCH.so.1
 }

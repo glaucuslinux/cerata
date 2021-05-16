@@ -39,10 +39,10 @@ install() {
   $RM $CRSD/lib
 
   $MKDIR $CRSD/etc
-  $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-${MARCH}hf.path
+  $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-$MLARCH.path
 
   $MKDIR $CRSD/usr/bin
-  $LN ../lib/ld-$nom-${MARCH}hf.so.1 $CRSD/usr/bin/ldd
+  $LN ../lib/ld-$nom-$MLARCH.so.1 $CRSD/usr/bin/ldd
 
-  $LN libc.so $CRSD/usr/lib/ld-$nom-${MARCH}hf.so.1
+  $LN libc.so $CRSD/usr/lib/ld-$nom-$MLARCH.so.1
 }
