@@ -13,7 +13,7 @@ prepare() {
 }
 
 configure() {
-  # Disable locate because we're using mlocate
+  # Disable locate because we're using plocate
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
 
   ./configure \
@@ -38,7 +38,7 @@ configure() {
 }
 
 build() {
-  # Disable locate because we're using mlocate
+  # Disable locate because we're using plocate
   $MAKE \
     -C locate \
     dblocation.texi

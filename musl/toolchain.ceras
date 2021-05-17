@@ -44,5 +44,8 @@ install() {
   $MKDIR $CRSD/usr/bin
   $LN ../lib/ld-$nom-$MLARCH.so.1 $CRSD/usr/bin/ldd
 
+  # Install legacy and deprecated `error.h` needed by `elfutils` and `plocate`
+  $RSYNC $CERD/$nom/error.h $CRSD/usr/include
+
   $LN libc.so $CRSD/usr/lib/ld-$nom-$MLARCH.so.1
 }
