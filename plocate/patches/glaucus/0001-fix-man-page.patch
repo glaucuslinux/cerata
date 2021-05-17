@@ -1,0 +1,11 @@
+--- meson.build
++++ meson.build
+@@ -72,7 +72,7 @@
+ install_man(updatedb_man)
+ 
+ updatedb_conf_man = configure_file(input: 'updatedb.conf.5.in',
+-               output: 'updatedb.conf.5',
++               output: 'pupdatedb.conf.5',
+                configuration: conf_data)
+ install_man(updatedb_conf_man)
+ 
