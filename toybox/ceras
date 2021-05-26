@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=toybox
-ver=0.8.4
+ver=0.8.5
 url=https://github.com/landley/$nom/archive/$ver.tar.gz
-sum=8af134c40a1ebb4e97b9de26fcb4cfe1bbb92885843ffd6132a517ae09505c13b3c841d0e14fe73604ea6ff115c10a6ec6288484fa4fb687f447bfea03ed1955
+sum=6dd77bafc0d6df4473a2e605aeb20f652afe724471265f4e2f1eeb49245a0250038e1ade9550376a10ce8cb31cc823083588d144bf8127eb2e143a7eec7cb473
