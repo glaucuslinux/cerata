@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=slibtool
-ver=0.5.33
+ver=0.5.34
 url=https://git.midipix.org/$nom/snapshot/$nom-$ver.tar.xz
-sum=bcb4ac3f16794e61cf0babab8bfeff79f2a49ae93ff2070908296fbab199dcbccff0c7f468525b9f31bfca6eecd54557815eb8ac03b33d2a0e6030acdbe7f9d9
+sum=62f976d4a05c8a6464679fc98fb8734914bb27bff9ababfcda24d7be9ff8c7d2cb43ad73569403593142059d115750d1fc45660d934f43eb5e0f206d8ed43dbe
