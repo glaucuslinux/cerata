@@ -1,0 +1,53 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
+}
+
+configure() {
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --disable-static \
+    --disable-examples
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$CRSD \
+    install-strip
+
+  $MKDIR $CRSD/usr/include/readline
+  touch $CRSD/usr/include/readline/history.h
+  touch $CRSD/usr/include/readline/tilde.h
+  $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
+
+  $LN $nom.so $CRSD/usr/lib/libreadline.so
+
+  $LN $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
+}

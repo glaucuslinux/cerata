@@ -4,16 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
 }
 
 configure() {
-  CPPFLAGS=-D__STDC_ISO_10646__ \
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -23,9 +24,7 @@ configure() {
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
     --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --disable-static \
-    --disable-examples
+    --includedir=/usr/include
 }
 
 build() {
@@ -38,15 +37,6 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
-
-  $MKDIR $SCER/$nom/sac/usr/include/readline
-  touch $SCER/$nom/sac/usr/include/readline/history.h
-  touch $SCER/$nom/sac/usr/include/readline/tilde.h
-  $LN ../editline/readline.h $SCER/$nom/sac/usr/include/readline/readline.h
-
-  $LN $nom.so $SCER/$nom/sac/usr/lib/libreadline.so
-
-  $LN $nom.pc $SCER/$nom/sac/usr/lib/pkgconfig/readline.pc
 }
