@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=help2man
-ver=1.47.16
+ver=1.48.3
 url=http://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
-sum=b427e60a9e3d2e805caf1ae84c337b09c7ca6f92b7ff14771f946c4a1bf7adf177df99b9c1c223ad76df99756005ababf5b548ff8e08d4746702ff7f8150b544
+sum=e000e7380604c0986b14cb64b852d55eff48595884bddd389e876056dde6ce72b37aa16d92230e6f8f6e128003b819954bae4aa90933a58b51d3665d3c0ba356
