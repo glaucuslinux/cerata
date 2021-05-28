@@ -11,7 +11,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p1 -i $CERD/$nom/patches/adelie/use-utmpx.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
 }
 
 configure() {

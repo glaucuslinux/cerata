@@ -1,0 +1,110 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
+
+  case $ARCH in
+    aarch64 | x86-64)
+      $PATCH -p0 -i $CERD/gcc/patches/glaucus/0001-pure64-for-$ARCH.patch
+      ;;
+  esac
+
+  $MKDIR $SBLD/$nom
+  cd $SBLD/$nom
+}
+
+configure() {
+  CFLAGS="$CFLAGSNOLTO" \
+  CXXFLAGS="$CFLAGSNOIPANOLTO" \
+  libat_cv_have_ifunc=no \
+  $SSRC/$nom/configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --disable-multilib \
+    --enable-__cxa_atexit \
+    --disable-fixed-point \
+    --enable-threads=posix \
+    --enable-tls \
+    --disable-nls \
+    --enable-languages=c,c++,go \
+    --disable-rpath \
+    --enable-shared \
+    --disable-static \
+    --disable-gnu-indirect-function \
+    --disable-initfini-array \
+    $GCARCH \
+    --disable-gnu-unique-object \
+    --enable-linker-build-id \
+    --disable-libsanitizer \
+    --disable-libssp \
+    --disable-bootstrap \
+    --disable-symvers \
+    --disable-cet \
+    --disable-werror \
+    --disable-libstdcxx-pch \
+    --enable-libstdcxx-time=rt \
+    --disable-libstdcxx-visibility \
+    --enable-libstdcxx-threads \
+    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
+    --with-zstd \
+    --with-system-zlib \
+    --with-linker-hash-style=gnu
+
+  $MAKE \
+    configure-host
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    install-strip
+
+  $LN g++ $SCER/$nom/sac/usr/bin/c++
+
+  $RSYNC $CERD/$nom/c89 $SCER/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/c99 $SCER/$nom/sac/usr/bin
+
+  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c89
+  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c99
+
+  $LN $nom $SCER/$nom/sac/usr/bin/cc
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom-$ver
+
+  $LN $TGT-g++ $SCER/$nom/sac/usr/bin/$TGT-c++
+
+  $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-cc
+  $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-$nom-$ver
+
+  $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
+  $LN ../$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
+
+  $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp
+
+  $MKDIR $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
+  $MV $SCER/$nom/sac/usr/lib/libstdc++.so.6.0.28-gdb.py $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
+}

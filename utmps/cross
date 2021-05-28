@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $RSYNC $CERD/$nom/utmp.h src/include/$nom
 }
@@ -14,6 +14,7 @@ configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 
   ./configure \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
@@ -21,10 +22,10 @@ configure() {
     --libexecdir=/usr/lib/$nom \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
-    --with-include=$SYSD/usr/include \
-    --with-lib=$SYSD/usr/lib \
-    --with-dynlib=$SYSD/usr/lib \
+    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
+    --with-include=$CRSD/usr/include \
+    --with-lib=$CRSD/usr/lib \
+    --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
     --disable-allstatic \
@@ -42,9 +43,13 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 
-  $MKDIR $SCER/$nom/sac/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
+  # Some `cerata` include `utmp.h`/`utmpx.h` instead of `utmps/utmp.h` and
+  # `utmps/utmpx.h` (e.g. `procps-ng`).
+  $LN $nom/utmp.h $CRSD/usr/include
+  $LN $nom/utmpx.h $CRSD/usr/include
+
+  $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }

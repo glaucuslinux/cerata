@@ -1,4 +1,6 @@
 */ceras linguist-language=Shell
-*.ceras linguist-language=Shell
+*/cross linguist-language=Shell
+*/system linguist-language=Shell
+*/toolchain linguist-language=Shell
 
 elfutils/error.h linguist-language=C
