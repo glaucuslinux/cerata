@@ -58,6 +58,7 @@ configure() {
     --disable-cet \
     --disable-werror \
     --disable-libstdcxx-pch \
+    --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
