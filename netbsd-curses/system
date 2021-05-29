@@ -6,9 +6,6 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-
-  $PATCH -p0 -i $CERD/$nom/patches/sabotage/0001-mac-compat-don-t-redefine-__dead.patch
-  $PATCH -p0 -i $CERD/$nom/patches/sabotage/0002-Fix-incorrect-snprintf-overflow-checks.patch
 }
 
 configure() {
