@@ -4,6 +4,3 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=lksh
-ver=R59c
-url=https://www.mirbsd.org/MirOS/dist/mir/mksh/mksh-$ver.tgz
-sum=f56b6956f9e1dd88ddce2294301a5eb698050d9d4f49286fdcd8f9df8554eabbcc71d37e2bf3eb7234e3968a17231cc6de8aa7efbf17768834a90b14e8cdf340
