@@ -5,5 +5,5 @@
 
 nom=less
 ver=586
-url=http://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
+url=https://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
 sum=14579e1c682e0c30d614e85cdd969c007ecb613930376a46c0c5614e02c596ea0d0ab50211ed28095206ea70698fd1ccf6762888dfa149773d7b515cf3b2ca7c
