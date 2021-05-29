@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=ugrep
-ver=3.2.2
+ver=3.3
 url=https://github.com/Genivia/$nom/archive/v$ver.tar.gz
-sum=6deafa720f96cda21579fc09903221f178555a89ea119d92bc99b053ea4c2142d3a0b761e1911c8963e42ec694f9a301a69117ab280075eb6d01eee9c041bd5b
+sum=4df29e8c6a4824a970f6f7edd5ddf1a4f1598c0138a943e5d8c4b3c0fd44f21d4c534df473cf1a6c112588d17b853a367833b6404d3668f564deee177ca4653f
