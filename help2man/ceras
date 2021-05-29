@@ -5,5 +5,5 @@
 
 nom=help2man
 ver=1.48.3
-url=http://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
+url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
 sum=e000e7380604c0986b14cb64b852d55eff48595884bddd389e876056dde6ce72b37aa16d92230e6f8f6e128003b819954bae4aa90933a58b51d3665d3c0ba356

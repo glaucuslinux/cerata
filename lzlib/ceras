@@ -5,5 +5,5 @@
 
 nom=lzlib
 ver=1.12
-url=http://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
+url=https://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
 sum=22497039dbc1f82e574e263bc1857246a592c80e75684a0c7c320dfe8be02b31c1058dc42f6d19d281af4e049e4f56d4ffc6ffeca72f2933db0a3f780a829672
