@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/oasis/0001-Fix-tab-completion-with-escaped-characters.patch
 }
 
 configure() {
