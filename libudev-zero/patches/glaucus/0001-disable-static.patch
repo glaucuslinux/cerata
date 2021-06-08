@@ -1,11 +1,11 @@
 --- Makefile
 +++ Makefile
-@@ -17,14 +17,11 @@
+@@ -18,14 +18,11 @@
  	  udev_monitor.o \
  	  udev_enumerate.o
  
--all: libudev.so libudev.a
-+all: libudev.so
+-all: libudev.so.1 libudev.a
++all: libudev.so.1
  
  .c.o:
  	${CC} ${XCFLAGS} -c -o $@ $<
@@ -13,32 +13,32 @@
 -libudev.a: ${OBJ}
 -	${AR} ${XARFLAGS} $@ ${OBJ}
 -
- libudev.so: ${OBJ}
+ libudev.so.1: ${OBJ}
  	${CC} ${XCFLAGS} -o $@ ${OBJ} ${XLDFLAGS}
  
-@@ -44,22 +41,20 @@
+@@ -45,22 +42,20 @@
  		-e 's|@VERSION@|243|g' \
  		libudev.pc.in > libudev.pc
  
 -install: libudev.so libudev.a libudev.pc
 +install: libudev.so libudev.pc
- 	mkdir -p         ${DESTDIR}${INCLUDEDIR} ${DESTDIR}${LIBDIR}/pkgconfig
+ 	mkdir -p         ${DESTDIR}${INCLUDEDIR} ${DESTDIR}${LIBDIR} ${DESTDIR}${PKGCONFIGDIR}
  	cp -f udev.h  	 ${DESTDIR}${INCLUDEDIR}/libudev.h
 -	cp -f libudev.a  ${DESTDIR}${LIBDIR}/libudev.a
- 	cp -f libudev.so ${DESTDIR}${LIBDIR}/libudev.so
- 	ln -fs libudev.so ${DESTDIR}${LIBDIR}/libudev.so.1
- 	cp -f libudev.pc ${DESTDIR}${LIBDIR}/pkgconfig/
+ 	cp -f libudev.so.1 ${DESTDIR}${LIBDIR}/libudev.so.1
+ 	ln -fs libudev.so.1 ${DESTDIR}${LIBDIR}/libudev.so
+ 	cp -f libudev.pc ${DESTDIR}${PKGCONFIGDIR}/libudev.pc
  
  uninstall:
 -	rm -f ${DESTDIR}${LIBDIR}/libudev.a \
 -          ${DESTDIR}${LIBDIR}/libudev.so \
 +	rm -f ${DESTDIR}${LIBDIR}/libudev.so \
            ${DESTDIR}${LIBDIR}/libudev.so.1 \
-           ${DESTDIR}${LIBDIR}/pkgconfig/libudev.pc \
+           ${DESTDIR}${PKGCONFIGDIR}/libudev.pc \
            ${DESTDIR}${INCLUDEDIR}/libudev.h
  
  clean:
--	rm -f libudev.so libudev.a libudev.pc ${OBJ}
-+	rm -f libudev.so libudev.pc ${OBJ}
+-	rm -f libudev.so.1 libudev.a libudev.pc ${OBJ}
++	rm -f libudev.so.1 libudev.pc ${OBJ}
  
  .PHONY: all clean install uninstall

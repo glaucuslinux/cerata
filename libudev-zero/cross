@@ -18,7 +18,8 @@ build() {
   $MAKE \
     PREFIX=/usr \
     LIBDIR=/usr/lib \
-    INCLUDEDIR=/usr/include
+    INCLUDEDIR=/usr/include \
+    PKGCONFIGDIR=/usr/lib/pkgconfig
 }
 
 check() {
@@ -30,6 +31,7 @@ install() {
     PREFIX=/usr \
     LIBDIR=/usr/lib \
     INCLUDEDIR=/usr/include \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     DESTDIR=$CRSD \
     install
 }
