@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=libudev-zero
-ver=0.4.8
+ver=0.5.0
 url=https://github.com/illiliti/$nom/archive/$ver.tar.gz
-sum=7709ab9735041ba13591190dc0e7f92e1a226117a5f6e0cd4f88c80bac799aa258a9ec5ab4fb48c0a7d4ccd788f365d9a0f237173faad5f3ad0c07e14ef4780a
+sum=209b0faec79d2ca85efa29fe9cdb7586a780953e942d52f9341e140dfa12cd972d191f21331f7b1b3092a8d6acfb0eb79875a522c786e5fb5d8bc88071bf5091
