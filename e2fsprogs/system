@@ -60,8 +60,8 @@ install() {
 
   $MV $SCER/$nom/sac/usr/lib/e2initrd_helper $SCER/$nom/sac/usr/bin
 
-  $CHMOD u+w $SCER/$nom/sac/usr/lib/libcom_err.a
-  $CHMOD u+w $SCER/$nom/sac/usr/lib/libe2p.a
-  $CHMOD u+w $SCER/$nom/sac/usr/lib/libext2fs.a
-  $CHMOD u+w $SCER/$nom/sac/usr/lib/libss.a
+  $RM $SCER/$nom/sac/usr/lib/libcom_err.a
+  $RM $SCER/$nom/sac/usr/lib/libe2p.a
+  $RM $SCER/$nom/sac/usr/lib/libext2fs.a
+  $RM $SCER/$nom/sac/usr/lib/libss.a
 }
