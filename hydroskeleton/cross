@@ -27,10 +27,10 @@ install() {
   $MKDIR $CRSD/dev
 
   $RSYNC $CERD/$nom/fstab $CRSD/etc
+  $LN lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $CRSD/etc
   $RSYNC $CERD/$nom/hostname $CRSD/etc
   $RSYNC $CERD/$nom/hosts $CRSD/etc
-  $LN lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/issue $CRSD/etc
   $RSYNC $CERD/$nom/lsb-release $CRSD/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%d%m%Y)/" \
