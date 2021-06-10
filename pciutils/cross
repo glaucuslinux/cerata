@@ -52,6 +52,11 @@ install() {
 
   # This is provided by the `hwids` ceras
   $RM $CRSD/usr/bin/update-pciids
+
+  # Fix broken permissions
+  $CHMOD 0755 $CRSD/usr/lib/libpci.so.$ver
+
+  # This is provided by the `hwids` ceras
   $RM $CRSD/usr/share/hwdata
   $RM $CRSD/usr/share/man/man8/update-pciids.8
 }
