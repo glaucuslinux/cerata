@@ -7,7 +7,7 @@
 
 /* Unused, but some packages require this macro to be present */
 #define UTMP_FILE UTMPX_FILE
-#define WTMP_FILE "/run/utmps/wtmp"
+#define WTMP_FILE "/var/log/wtmp"
 #define UTMP_FILENAME UTMP_FILE
 #define WTMP_FILENAME WTMP_FILE
 #define _PATH_UTMP UTMP_FILE
