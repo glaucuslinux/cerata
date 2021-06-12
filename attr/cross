@@ -43,4 +43,6 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $RM $CRSD/usr/lib/lib$nom.la
 }
