@@ -26,6 +26,7 @@ install() {
 
   $MKDIR $CRSD/dev
 
+  # `$CRSD/etc` is already created in toolchain
   $RSYNC $CERD/$nom/fstab $CRSD/etc
   $LN lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $CRSD/etc
@@ -59,6 +60,7 @@ install() {
 
   $LN run/tmp $CRSD/tmp
 
+  # `$CRSD/usr` is already created in toolchain
   $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
   sed -e "s/^VERSION=/&$(date +%d%m%Y)/" \
     -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
