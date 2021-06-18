@@ -31,6 +31,7 @@ check() {
 install() {
   $RSYNC $nom $CRSD/usr/bin
 
+  $LN $nom $CRSD/usr/bin/base32
   $LN $nom $CRSD/usr/bin/base64
   $LN $nom $CRSD/usr/bin/basename
   $LN $nom $CRSD/usr/bin/cat
