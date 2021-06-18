@@ -1,0 +1,22 @@
+--- Makefile.in
++++ Makefile.in
+@@ -357,7 +357,7 @@
+ 	-@($(RANLIB) $(DESTDIR)$(libdir)/$(STATICLIB) || true) >/dev/null 2>&1
+ # The ranlib in install-static is needed on NeXTSTEP which checks file times
+ 
+-install-libs: install-shared install-static
++install-libs: install-shared
+ 	-@if [ ! -d $(DESTDIR)$(man3dir)      ]; then mkdir -p $(DESTDIR)$(man3dir); fi
+ 	-@if [ ! -d $(DESTDIR)$(pkgconfigdir) ]; then mkdir -p $(DESTDIR)$(pkgconfigdir); fi
+ 	rm -f $(DESTDIR)$(pkgconfigdir)/$(PKGFILE)
+--- configure
++++ configure
+@@ -693,7 +693,7 @@
+   UNINSTALLTARGETS=uninstall-static
+   echo Building static library $STATICLIB version $VER with $CC. | tee -a configure.log
+ else
+-  ALL="static shared"
++  ALL="shared"
+   TEST="${TEST} testshared"
+ fi
+ 
