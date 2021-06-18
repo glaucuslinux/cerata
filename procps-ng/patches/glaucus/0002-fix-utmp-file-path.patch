@@ -1,0 +1,276 @@
+--- NEWS
++++ NEWS
+@@ -552,7 +552,7 @@
+ top: multiple -p options work again
+ top: fixed 4 GB wrap-around
+ ps: has a set of tests to ensure correctness
+-man page: /var/run/utmp, not /etc/utmp           #206583
++man page: /run/utmps/utmp, not /etc/utmp           #206583
+ required flags moved out of CFLAGS               #205429
+ RPM generation handles /lib64
+ WCHAN skips leading '.'
+--- contrib/utmp.c
++++ contrib/utmp.c
+@@ -37,7 +37,7 @@
+ 
+ int main (int argc, char **argv) {
+ 
+-  FILE *ut; /* /var/run/utmp */
++  FILE *ut; /* /run/utmps/utmp */
+   struct utmp uts; /* utmp record */
+   char user[UT_NAMESIZE + 1];
+   char host[17];
+--- man-po/de/uptime.1
++++ man-po/de/uptime.1
+@@ -46,7 +46,7 @@
+ Versionsinformationen anzeigen und das Programm beenden.
+ .SH DATEIEN
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ Informationen darüber, wer aktuell angemeldet ist
+ .TP 
+ \fI/proc\fP
+--- man-po/de/w.1
++++ man-po/de/w.1
+@@ -70,7 +70,7 @@
+ setzt die vorgegebene Breite der From\-Spalte außer Kraft. Standardmäßig 16.
+ .SH DATEIEN
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ Informationen darüber, wer aktuell angemeldet ist
+ .TP 
+ \fI/proc\fP
+--- man-po/de.po
++++ man-po/de.po
+@@ -2775,8 +2775,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/fr/uptime.1
++++ man-po/fr/uptime.1
+@@ -43,7 +43,7 @@
+ Afficher la version du logiciel et quitter
+ .SH FICHIERS
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informations concernant les utilisateurs présents sur le système
+ .TP 
+ \fI/proc\fP
+--- man-po/fr/w.1
++++ man-po/fr/w.1
+@@ -76,7 +76,7 @@
+ est de 16.
+ .SH FICHIERS
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informations concernant les utilisateurs présents sur le système
+ .TP 
+ \fI/proc\fP
+--- man-po/fr.po
++++ man-po/fr.po
+@@ -2794,8 +2794,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/pl/uptime.1
++++ man-po/pl/uptime.1
+@@ -40,7 +40,7 @@
+ wyświetlenie informacji o wersji i zakończenie
+ .SH PLIKI
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informacja o tym, kto jest obecnie zalogowany
+ .TP 
+ \fI/proc\fP
+--- man-po/pl/w.1
++++ man-po/pl/w.1
+@@ -68,7 +68,7 @@
+ Nadpisanie domyślnej szerokości kolumny \fBz\fP. Domyślnie 16.
+ .SH PLIKI
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informacja o tym, kto jest obecnie zalogowany
+ .TP 
+ \fI/proc\fP
+--- man-po/pl.po
++++ man-po/pl.po
+@@ -3396,8 +3396,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/procps-man.pot
++++ man-po/procps-man.pot
+@@ -2969,7 +2969,7 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
+--- man-po/pt_BR/uptime.1
++++ man-po/pt_BR/uptime.1
+@@ -42,7 +42,7 @@
+ exibe informação da versão e sai
+ .SH ARQUIVOS
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informações sobre quem está atualmente conectado
+ .TP 
+ \fI/proc\fP
+--- man-po/pt_BR/w.1
++++ man-po/pt_BR/w.1
+@@ -67,7 +67,7 @@
+ Sobrescreve a largura padrão da coluna de "de". O padrão é 16.
+ .SH ARQUIVOS
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ informações sobre quem está atualmente conectado
+ .TP 
+ \fI/proc\fP
+--- man-po/pt_BR.po
++++ man-po/pt_BR.po
+@@ -3394,8 +3394,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/sv/uptime.1
++++ man-po/sv/uptime.1
+@@ -40,7 +40,7 @@
+ visa versionsinformation och avsluta
+ .SH FILER
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ information om vem som är inloggad för närvarande
+ .TP 
+ \fI/proc\fP
+--- man-po/sv/w.1
++++ man-po/sv/w.1
+@@ -68,7 +68,7 @@
+ Åsidosätt standardbredden på kolumnen från.  Standard är 16.
+ .SH FILER
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ information om vem som är inloggad för närvarande
+ .TP 
+ \fI/proc\fP
+--- man-po/sv.po
++++ man-po/sv.po
+@@ -2796,8 +2796,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/uk/uptime.1
++++ man-po/uk/uptime.1
+@@ -44,7 +44,7 @@
+ вивести дані щодо версії і завершити роботу
+ .SH ФАЙЛИ
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ Дані щодо тих, хто зараз працює у системі.
+ .TP 
+ \fI/proc\fP
+--- man-po/uk/w.1
++++ man-po/uk/w.1
+@@ -73,7 +73,7 @@
+ символів.
+ .SH ФАЙЛИ
+ .TP 
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ Дані щодо тих, хто зараз працює у системі.
+ .TP 
+ \fI/proc\fP
+--- man-po/uk.po
++++ man-po/uk.po
+@@ -2744,8 +2744,8 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../uptime.1:43 ../w.1:78
+--- man-po/zh_CN.po
++++ man-po/zh_CN.po
+@@ -2979,7 +2979,7 @@
+ #. type: TP
+ #: ../uptime.1:40 ../w.1:75
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
+--- uptime.1
++++ uptime.1
+@@ -38,7 +38,7 @@
+ display version information and exit
+ .SH FILES
+ .TP
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ information about who is currently logged on
+ .TP
+ .I /proc
+--- w.1
++++ w.1
+@@ -73,7 +73,7 @@
+ Override the default width of the from column.  Defaults to 16.
+ .SH FILES
+ .TP
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ information about who is currently logged on
+ .TP
+ .I /proc
