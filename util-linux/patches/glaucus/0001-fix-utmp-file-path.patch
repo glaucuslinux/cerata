@@ -1,0 +1,55 @@
+--- Documentation/poeigl.txt
++++ Documentation/poeigl.txt
+@@ -127,7 +127,7 @@
+ 	jlaiho@ichaos.nullnet.fi (Juha Laiho) for agetty.c, used
+ 	to return a pointer to an automatic variable in get_logname().
+ 	Many patches from or via Rickard Faith <faith@cs.unc.edu>, fixing
+-	man-pages etc, now defaults to using /var/log/wtmp and /var/run/utmp
++	man-pages etc, now defaults to using /var/log/wtmp and /run/utmps/utmp
+ 	according to the new FSSTND.
+ 
+ 	Fix in login.c for CPU eating bug when a remote telnet client dies
+--- NEWS
++++ NEWS
+@@ -1591,7 +1591,7 @@
+ 
+         /var/log/wtmp       /var/adm/wtmp
+         /var/log/lastlog    /var/adm/lastlog
+-        /var/run/utmp       /var/adm/utmp
++        /run/utmps/utmp     /var/adm/utmp
+ 
+ HIGHLIGHTS for version 2.2:
+ 1) This is primarily a quick bug-fix release for version 2.1
+--- login-utils/login.1
++++ login-utils/login.1
+@@ -344,7 +344,7 @@
+ .RE
+ .SH FILES
+ .nf
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ .I /var/log/wtmp
+ .I /var/log/lastlog
+ .I /var/spool/mail/*
+--- login-utils/login.c
++++ login-utils/login.c
+@@ -645,7 +645,7 @@
+ 
+ 	/* Find pid in utmp.
+ 	 *
+-	 * login sometimes overwrites the runlevel entry in /var/run/utmp,
++	 * login sometimes overwrites the runlevel entry in /run/utmps/utmp,
+ 	 * confusing sysvinit. I added a test for the entry type, and the
+ 	 * problem was gone. (In a runlevel entry, st_pid is not really a pid
+ 	 * but some number calculated from the previous and current runlevel.)
+--- term-utils/agetty.8
++++ term-utils/agetty.8
+@@ -469,7 +469,7 @@
+ .SH FILES
+ .na
+ .TP
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ the system status file.
+ .TP
+ .I /etc/issue
