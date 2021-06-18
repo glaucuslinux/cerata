@@ -20,6 +20,7 @@ configure() {
   $PATCH -p0 -i $CERD/$nom/patches/lfs/0001-disable-groups.patch
 
   LIBS='-lutmps -lskarnet' \
+  shadow_cv_utmpdir=/run/utmps \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
