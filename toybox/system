@@ -30,6 +30,8 @@ install() {
   $MKDIR $SCER/$nom/sac/usr/bin
   $RSYNC $nom $SCER/$nom/sac/usr/bin
 
+  $LN $nom $SCER/$nom/sac/usr/bin/[
+  $LN $nom $SCER/$nom/sac/usr/bin/base32
   $LN $nom $SCER/$nom/sac/usr/bin/base64
   $LN $nom $SCER/$nom/sac/usr/bin/basename
   $LN $nom $SCER/$nom/sac/usr/bin/cat
