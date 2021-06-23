@@ -21,7 +21,8 @@ build() {
     HAVE_LZ4=1 \
     BACKTRACE=0
 
-  # Build parallel zstd as well
+  # Build parallel zstd as well (requires `-fexceptions`)
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   $MAKE \
     -C contrib/p$nom
 }
