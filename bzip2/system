@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-O2.patch
+  $PATCH -p1 -i $CERD/$nom/patches/void/soname.patch
 }
 
 build() {
