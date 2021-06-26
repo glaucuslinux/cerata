@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=dash
-ver=0.5.11.3
+ver=0.5.11.4
 url=http://gondor.apana.org.au/~herbert/$nom/files/$nom-$ver.tar.gz
-sum=ffe69b8de3586aba298d936168c329524e385252e12979aa1db28761e882048eb5a80673e93a2a2227f61b52fd8b56546b78c5db9c21a022072f536267f8bc20
+sum=2344782b80f69b74d00eb153a918c2293eec2316825bf83c1eb4ff787eddf78f67ca3026cfce39b1db8d5ede69c7268951eec1e5711903f2306714b665f84160
