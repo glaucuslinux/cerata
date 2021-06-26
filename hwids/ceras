@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=hwids
-ver=20201207
+ver=20210613
 url=https://gitweb.gentoo.org/proj/$nom.git/snapshot/$nom-$ver.tar.bz2
-sum=b65b50554b21f97793d7c7ba20537cfb619501a02e8141d7dfe0f12e36f8f001eefa677baffb7c6639a6abe181f377b96685ba1eb2431798463eb5aa6b32f56f
+sum=8e064b3ff4e280d3d67dbb358bca30998bfd1f52bf90b41ca963bfacdcf1a6c289c9079f02be03a8fd7c2906b510054a4332062368f5717dac98e94affc82fdc
