@@ -17,6 +17,10 @@ build() {
     -f Makefile-libbz2_so
 }
 
+check () {
+  :
+}
+
 install() {
   $MKDIR $SCER/$nom/sac/usr/include
   $RSYNC bzlib.h $SCER/$nom/sac/usr/include

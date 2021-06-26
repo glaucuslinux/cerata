@@ -17,6 +17,10 @@ build() {
     -f Makefile-libbz2_so
 }
 
+check() {
+  :
+}
+
 install() {
   $RSYNC bzlib.h $CRSD/usr/include
 
