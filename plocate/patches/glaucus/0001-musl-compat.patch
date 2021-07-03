@@ -1,0 +1,51 @@
+--- conf.cpp
++++ conf.cpp
+@@ -22,12 +22,12 @@
+ 
+ #include "conf.h"
+ 
+-#include "error.h"
+ #include "lib.h"
+ 
+ #include <algorithm>
+ #include <ctype.h>
+ #include <errno.h>
++#include <error.h>
+ #include <getopt.h>
+ #include <limits.h>
+ #include <stdbool.h>
+@@ -479,7 +479,7 @@
+ 			if (conf_scan_root != NULL)
+ 				error(EXIT_FAILURE, 0, _("--%s specified twice"),
+ 				      "database-root");
+-			conf_scan_root = canonicalize_file_name(optarg);
++			conf_scan_root = realpath(optarg, NULL);
+ 			if (conf_scan_root == NULL)
+ 				error(EXIT_FAILURE, errno, _("invalid value `%s' of --%s"), optarg,
+ 				      "database-root");
+--- database-builder.h
++++ database-builder.h
+@@ -9,6 +9,7 @@
+ #include <random>
+ #include <stddef.h>
+ #include <string>
++#include <unistd.h>
+ #include <utility>
+ #include <vector>
+ #include <zstd.h>
+--- lib.cpp
++++ lib.cpp
+@@ -23,12 +23,12 @@
+ #include "lib.h"
+ 
+ #include "db.h"
+-#include "error.h"
+ 
+ #include <algorithm>
+ #include <arpa/inet.h>
+ #include <assert.h>
+ #include <errno.h>
++#include <error.h>
+ #include <limits.h>
+ #include <stdbool.h>
+ #include <stdint.h>
