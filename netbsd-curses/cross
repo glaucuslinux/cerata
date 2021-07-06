@@ -10,6 +10,7 @@ prepare() {
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
+  $PATCH -p1 -i $CERD/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
 }
 
 build() {
@@ -30,6 +31,12 @@ install() {
 
   $LN tic $CRSD/usr/bin/captoinfo
   $LN tic $CRSD/usr/bin/infotocap
+
+  $CHMOD 0755 $CRSD/usr/lib/libcurses.so
+  $CHMOD 0755 $CRSD/usr/lib/libform.so
+  $CHMOD 0755 $CRSD/usr/lib/libmenu.so
+  $CHMOD 0755 $CRSD/usr/lib/libpanel.so
+  $CHMOD 0755 $CRSD/usr/lib/libterminfo.so
 
   $LN libterminfo.so $CRSD/usr/lib/libtinfo.so
 }
