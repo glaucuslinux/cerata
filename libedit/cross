@@ -47,6 +47,8 @@ install() {
   touch $CRSD/usr/include/readline/tilde.h
   $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
+  $RM $CRSD/usr/lib/$nom.la
+
   $LN $nom.so $CRSD/usr/lib/libreadline.so
 
   $LN $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
