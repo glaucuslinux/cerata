@@ -22,7 +22,7 @@ configure() {
 
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
-  # HAVE_RECVMSG is not used (left empty) as catman is not needed.
+  # LD_RECVMSG is used to prevent catman from linking against libsocket.
   echo "MANPATH_BASE=/usr/share/man
 MANPATH_DEFAULT=/usr/share/man
 OSENUM=MANDOC_OS_OTHER
