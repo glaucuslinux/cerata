@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=gdbm
-ver=1.19
+ver=1.20
 url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.gz
-sum=118c5b8cdf74898bfb7c2100302fedf80096be017bf08e80a44486563cad5d93b93567622f2e7c7aceb72f30460504bd0b4ddfccf34df994ed65166e12ecd495
+sum=5f2fbd4318259e5b879ea2bff09e22defbb4e566ebbe11c44ac5b5369fd00745d7ed9f72ec1206153027eba245c4ee4a515a8ec6d67f84ec477483e72753590b
