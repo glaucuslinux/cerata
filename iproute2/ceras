@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=iproute2
-ver=5.12.0
+ver=5.13.0
 url=https://cdn.kernel.org/pub/linux/utils/net/$nom/$nom-$ver.tar.xz
-sum=9249beb67b30ceef178b60b2b61a5e6c45277e747ae4c865e739b7ab84192549e8e94ebaee43c0a87c0291037746ffb6936346245220786e369201ee13d60fac
+sum=a3286639fb303a7c3c553cb5df0a7336c4c67e53eb05e872d2776b771dbfa36ffdf2df140f570275db6785c882992f469f8eb34a5b506aac876216df7dde245d
