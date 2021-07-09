@@ -8,4 +8,4 @@ ver=3.7.0
 url=https://mirrors.edge.kernel.org/pub/software/utils/$nom/$nom-$ver.tar.xz
 sum=eaae09a1a91137f026aaa7484baa6fb138146dbe58a7fd5eb4cd38f206426a123b27e397c8f6a62eaef627470bff109365cd137a04358ec6a4539da342661f26
 cys=hwids
-cnt='kmod linux-headers make'
+cnt='eudev kmod linux-headers make'
