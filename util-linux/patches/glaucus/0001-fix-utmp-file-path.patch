@@ -11,7 +11,7 @@
  	Fix in login.c for CPU eating bug when a remote telnet client dies
 --- NEWS
 +++ NEWS
-@@ -1591,7 +1591,7 @@
+@@ -1595,7 +1595,7 @@
  
          /var/log/wtmp       /var/adm/wtmp
          /var/log/lastlog    /var/adm/lastlog
@@ -20,20 +20,20 @@
  
  HIGHLIGHTS for version 2.2:
  1) This is primarily a quick bug-fix release for version 2.1
---- login-utils/login.1
-+++ login-utils/login.1
-@@ -344,7 +344,7 @@
- .RE
- .SH FILES
- .nf
--.I /var/run/utmp
-+.I /run/utmps/utmp
- .I /var/log/wtmp
- .I /var/log/lastlog
- .I /var/spool/mail/*
+--- login-utils/login.1.adoc
++++ login-utils/login.1.adoc
+@@ -138,7 +138,7 @@
+ 
+ == FILES
+ 
+-_/var/run/utmp_,
++_/run/utmps/utmp_,
+ _/var/log/wtmp_,
+ _/var/log/lastlog_,
+ _/var/spool/mail/*_,
 --- login-utils/login.c
 +++ login-utils/login.c
-@@ -645,7 +645,7 @@
+@@ -724,7 +724,7 @@
  
  	/* Find pid in utmp.
  	 *
@@ -42,14 +42,56 @@
  	 * confusing sysvinit. I added a test for the entry type, and the
  	 * problem was gone. (In a runlevel entry, st_pid is not really a pid
  	 * but some number calculated from the previous and current runlevel.)
---- term-utils/agetty.8
-+++ term-utils/agetty.8
-@@ -469,7 +469,7 @@
- .SH FILES
- .na
- .TP
--.I /var/run/utmp
-+.I /run/utmps/utmp
+--- po-man/de.po
++++ po-man/de.po
+@@ -9820,7 +9820,7 @@
+ #. type: Plain text
+ #: ../login-utils/login.1.adoc:152
+ msgid ""
+-"_/var/run/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/"
++"_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/"
+ "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
+ "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
+ msgstr ""
+@@ -38547,8 +38547,8 @@
+ #. type: Labeled list
+ #: ../term-utils/agetty.8.adoc:302
+ #, no-wrap
+-msgid "_/var/run/utmp_"
+-msgstr "_/var/run/utmp_"
++msgid "_/run/utmps/utmp_"
++msgstr "_/run/utmps/utmp_"
+ 
+ #. type: Plain text
+ #: ../term-utils/agetty.8.adoc:304
+--- po-man/util-linux-man.pot
++++ po-man/util-linux-man.pot
+@@ -8996,7 +8996,7 @@
+ #. type: Plain text
+ #: ../login-utils/login.1.adoc:152
+ msgid ""
+-"_/var/run/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, "
++"_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, "
+ "_/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, "
+ "_/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
+ msgstr ""
+@@ -36131,7 +36131,7 @@
+ #. type: Labeled list
+ #: ../term-utils/agetty.8.adoc:302
+ #, no-wrap
+-msgid "_/var/run/utmp_"
++msgid "_/run/utmps/utmp_"
+ msgstr ""
+ 
+ #. type: Plain text
+--- term-utils/agetty.8.adoc
++++ term-utils/agetty.8.adoc
+@@ -299,7 +299,7 @@
+ 
+ == FILES
+ 
+-_/var/run/utmp_::
++_/run/utmps/utmp_::
  the system status file.
- .TP
- .I /etc/issue
+ 
+ _/etc/issue_::
