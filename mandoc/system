@@ -20,6 +20,9 @@ configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-remove-sbin.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0004-fix-paths.patch
 
+  # Environment variables (e.g. CFLAGS) have to be explicitly specified.
+  # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
+  # HAVE_RECVMSG is not used (left empty) as catman is not needed.
   echo "MANPATH_BASE=/usr/share/man
 MANPATH_DEFAULT=/usr/share/man
 OSENUM=MANDOC_OS_OTHER
@@ -27,16 +30,13 @@ OSNAME='glaucus $ARCH $(date +%d%m%Y)'
 UTF8_LOCALE=C.UTF-8
 
 CC=$CC
-CFLAGS='$CFLAGSFATNOCOMMON'
+CFLAGS='$CFLAGS'
 LDFLAGS='$LDFLAGS'
 
-BUILD_CATMAN=1
-
-HAVE_CMSG=1
-HAVE_CMSG_XPG42=0
+HAVE_CMSG=0
 HAVE_DIRENT_NAMLEN=0
-HAVE_ENDIAN=1
 HAVE_EFTYPE=0
+HAVE_ENDIAN=1
 HAVE_ERR=1
 HAVE_FTS=0
 HAVE_FTS_COMPARE_CONST=0
@@ -45,6 +45,7 @@ HAVE_GETSUBOPT=1
 HAVE_ISBLANK=1
 HAVE_LESS_T=1
 HAVE_MKDTEMP=1
+HAVE_NANOSLEEP=1
 HAVE_NTOHL=1
 HAVE_O_DIRECTORY=1
 HAVE_OHASH=0
