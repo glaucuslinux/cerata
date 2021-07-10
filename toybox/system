@@ -17,8 +17,6 @@ configure() {
 }
 
 build() {
-  CFLAGS="$CFLAGSNOCOMMONNOLTO" \
-  LDFLAGS="$LDFLAGSNORELRO" \
   $MAKE
 }
 

@@ -17,8 +17,6 @@ prepare() {
 configure() {
   $AUTORECONF
 
-  CFLAGS="$CFLAGSNOLTONOOPENMPNOPLT" \
-  LDFLAGS="$LDFLAGSNOOPENMP" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
