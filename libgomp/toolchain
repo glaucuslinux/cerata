@@ -1,0 +1,26 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  cd $TBLD/gcc
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    all-target-$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    install-strip-target-$nom
+}
