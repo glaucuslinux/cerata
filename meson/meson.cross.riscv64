@@ -1,0 +1,22 @@
+[binaries]
+ar = 'riscv64-glaucus-linux-musl-gcc-ar'
+as = 'riscv64-glaucus-linux-musl-as'
+c = 'riscv64-glaucus-linux-musl-gcc'
+c_ld = 'bfd'
+cpp = 'riscv64-glaucus-linux-musl-g++'
+cpp_ld = 'bfd'
+ld = 'riscv64-glaucus-linux-musl-ld.bfd'
+nm = 'riscv64-glaucus-linux-musl-gcc-nm'
+objcopy = 'riscv64-glaucus-linux-musl-objcopy'
+objdump = 'riscv64-glaucus-linux-musl-objdump'
+ranlib = 'riscv64-glaucus-linux-musl-gcc-ranlib'
+readelf = 'riscv64-glaucus-linux-musl-readelf'
+size = 'riscv64-glaucus-linux-musl-size'
+strings = 'riscv64-glaucus-linux-musl-strings'
+strip = 'riscv64-glaucus-linux-musl-strip'
+
+[host_machine]
+cpu = 'rv64gc'
+cpu_family = 'riscv64'
+system = 'linux'
+endian = 'little'

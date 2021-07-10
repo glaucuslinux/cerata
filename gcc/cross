@@ -27,6 +27,7 @@ prepare() {
 }
 
 configure() {
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   libat_cv_have_ifunc=no \
   $XSRC/$nom/configure \
     --build=$BLD \
