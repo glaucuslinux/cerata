@@ -19,8 +19,6 @@ configure() {
 
 build() {
   CROSS_COMPILE= \
-  CFLAGS="$CFLAGSNOCOMMONNOLTO" \
-  LDFLAGS="$LDFLAGSNORELRO" \
   $MAKE
 }
 
