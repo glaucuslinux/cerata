@@ -12,7 +12,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub .
 
   case $ARCH in
-    aarch64 | x86-64)
+    aarch64 | riscv64 | x86-64)
       $PATCH -p0 -i $CERD/gcc/patches/glaucus/0001-pure64-for-$ARCH.patch
       ;;
   esac
