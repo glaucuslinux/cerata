@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  :
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-disable-static.patch
 }
 
 build() {
