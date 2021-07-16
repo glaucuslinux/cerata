@@ -29,6 +29,7 @@ build() {
     KERNEL_HEADERS=/usr/include \
     DEBUG=-g0 \
     BUILD_GPERF=no \
+    SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no
@@ -53,6 +54,7 @@ install() {
     KERNEL_HEADERS=/usr/include \
     DEBUG=-g0 \
     BUILD_GPERF=no \
+    SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no \
