@@ -40,4 +40,5 @@ install() {
 
   $LN ping $SCER/$nom/sac/usr/bin/ping6
   $LN tracepath $SCER/$nom/sac/usr/bin/tracepath6
+  $LN traceroute $SCER/$nom/sac/usr/bin/traceroute6
 }

@@ -41,4 +41,5 @@ install() {
 
   $LN ping $CRSD/usr/bin/ping6
   $LN tracepath $CRSD/usr/bin/tracepath6
+  $LN traceroute $CRSD/usr/bin/traceroute6
 }
