@@ -26,9 +26,10 @@ build() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    KERNEL_HEADERS=/usr/include \
+    KERNEL_HEADERS=$CRSD/usr/include \
     DEBUG=-g0 \
     BUILD_GPERF=no \
+    SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no
@@ -50,9 +51,10 @@ install() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    KERNEL_HEADERS=/usr/include \
+    KERNEL_HEADERS=$CRSD/usr/include \
     DEBUG=-g0 \
     BUILD_GPERF=no \
+    SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no \

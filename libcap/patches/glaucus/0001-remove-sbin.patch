@@ -239,7 +239,7 @@
      # are we sane?
 --- doc/cap_get_proc.3
 +++ doc/cap_get_proc.3
-@@ -365,7 +365,7 @@
+@@ -378,7 +378,7 @@
  .B capsh
  tool as follows:
  .sp
@@ -272,7 +272,7 @@
  dir /bin 0755 0 0
  file /bin/myprompt test-prompt.sh 0755 0 0
  file /bin/bash test-bash.sh 0755 0 0
-@@ -62,12 +62,12 @@
+@@ -63,12 +63,12 @@
  
  COMMANDS="awk cat chmod cp dmesg fgrep id less ln ls mkdir mount pwd rm rmdir sh sort umount uniq vi"
  for f in $COMMANDS; do
@@ -316,24 +316,24 @@
  install-common-cap: install-common libcap.pc
 --- pam_cap/capability.conf
 +++ pam_cap/capability.conf
-@@ -32,7 +32,7 @@
- ## set'. That is, if you look at a random process, even one run by root,
- ## you will see it has no inheritable capabilities (by default):
+@@ -44,7 +44,7 @@
+ ## process, even one run by root, you will see it has no IAB
+ ## capabilities (by default):
  ##
 -##   $ /sbin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
 +##   $ /bin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
  ##   0000000000000000=
  ##
- ## The pam_cap module simply alters the value of this capability
+ ## The pam_cap module simply alters the value of the inheritable
 --- progs/Makefile
 +++ progs/Makefile
 @@ -31,12 +31,12 @@
- 	$(CC) $(IPATH) $(CAPSH_SHELL) $(CFLAGS) -c $< -o $@
+ 	$(CC) $(IPATH) $(CFLAGS) -c $< -o $@
  
  install: all
 -	mkdir -p -m 0755 $(FAKEROOT)$(SBINDIR)
 +	mkdir -p -m 0755 $(FAKEROOT)$(BINDIR)
- 	for p in $(PROGS) ; do \
+ 	for p in $(PROGS) capsh ; do \
 -		install -m 0755 $$p $(FAKEROOT)$(SBINDIR) ; \
 +		install -m 0755 $$p $(FAKEROOT)$(BINDIR) ; \
  	done
@@ -342,4 +342,4 @@
 +	$(FAKEROOT)$(BINDIR)/setcap cap_setfcap=i $(FAKEROOT)$(BINDIR)/setcap
  endif
  
- test: $(PROGS)
+ test: $(PROGS) capsh
