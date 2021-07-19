@@ -1,0 +1,13 @@
+--- sdhcp.c
++++ sdhcp.c
+@@ -84,8 +84,8 @@
+ 
+ enum { Broadcast, Unicast };
+ 
+-Bootp bp;
+-unsigned char magic[] = { 99, 130, 83, 99 };
++static Bootp bp;
++static unsigned char magic[] = { 99, 130, 83, 99 };
+ 
+ /* conf */
+ static unsigned char xid[sizeof(bp.xid)];

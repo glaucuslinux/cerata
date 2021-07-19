@@ -5,5 +5,5 @@
 
 nom=sdhcp
 ver=git
-cmt=8455fd2
-url=$ver://$ver.2f30.org/$nom
+cmt=5f9956c
+url=https://${ver}hub.com/michaelforney/$nom

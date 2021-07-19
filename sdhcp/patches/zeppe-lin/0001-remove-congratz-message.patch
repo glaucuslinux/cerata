@@ -1,0 +1,21 @@
+From e6a3715ff8f40b824229d13d68a4b425cff098c8 Mon Sep 17 00:00:00 2001
+From: "Alexandr Savca (chinarulezzz)" <alexandr.savca89@gmail.com>
+Date: Sat, 8 May 2021 14:56:09 +0300
+Subject: [PATCH] remove 'congratz' message
+
+---
+ sdhcp.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/sdhcp.c b/sdhcp.c
+index 0a16124..3040b1e 100644
+--- a/sdhcp.c
++++ b/sdhcp.c
+@@ -443,7 +443,6 @@ run(void)
+ 	rebindingtime = ntohl(rebindingtime);
+ 	lease = ntohl(lease);
+ 	acceptlease();
+-	fputs("Congrats! You should be on the 'net.\n", stdout);
+ 	if (!fflag && !forked) {
+ 		if (fork())
+ 			exit(0);
