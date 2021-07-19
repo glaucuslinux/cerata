@@ -10,7 +10,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-fno-common.patch
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-fno-common.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
@@ -39,6 +39,7 @@ configure() {
 }
 
 build() {
+  # This ceras does not support parallel build!
   MAKEFLAGS='-j1 V=1' \
   $MAKE
 }
