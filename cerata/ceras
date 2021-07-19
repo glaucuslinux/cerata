@@ -6,4 +6,4 @@
 nom=cerata
 ver=git
 cmt=d388120
-url=https://www.github.com/glaucuslinux/$nom
+url=https://www.${ver}hub.com/glaucuslinux/$nom

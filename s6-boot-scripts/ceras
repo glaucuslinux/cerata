@@ -6,4 +6,4 @@
 nom=s6-boot-scripts
 ver=git
 cmt=c40d32c
-url=https://github.com/glaucuslinux/$nom
+url=https://${ver}hub.com/glaucuslinux/$nom
