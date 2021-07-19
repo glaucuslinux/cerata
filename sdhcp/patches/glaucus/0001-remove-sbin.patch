@@ -1,0 +1,38 @@
+--- Makefile
++++ Makefile
+@@ -43,18 +43,18 @@
+ 	@ranlib $@
+ 
+ install: all
+-	@echo installing executables to $(DESTDIR)$(PREFIX)/sbin
+-	@mkdir -p $(DESTDIR)$(PREFIX)/sbin
+-	@cp -f $(BIN) $(DESTDIR)$(PREFIX)/sbin
+-	@cd $(DESTDIR)$(PREFIX)/sbin && chmod 755 $(BIN)
++	@echo installing executables to $(DESTDIR)$(PREFIX)/bin
++	@mkdir -p $(DESTDIR)$(PREFIX)/bin
++	@cp -f $(BIN) $(DESTDIR)$(PREFIX)/bin
++	@cd $(DESTDIR)$(PREFIX)/bin && chmod 755 $(BIN)
+ 	@echo installing manual pages to $(DESTDIR)$(MANPREFIX)/man1
+ 	@mkdir -p $(DESTDIR)$(MANPREFIX)/man1
+ 	@for m in $(MAN); do sed "s/VERSION/$(VERSION)/g" < "$$m" > $(DESTDIR)$(MANPREFIX)/man1/"$$m"; done
+ 	@cd $(DESTDIR)$(MANPREFIX)/man1 && chmod 644 $(MAN)
+ 
+ uninstall:
+-	@echo removing executables from $(DESTDIR)$(PREFIX)/sbin
+-	@cd $(DESTDIR)$(PREFIX)/sbin && rm -f $(BIN)
++	@echo removing executables from $(DESTDIR)$(PREFIX)/bin
++	@cd $(DESTDIR)$(PREFIX)/bin && rm -f $(BIN)
+ 	@echo removing manual pages from $(DESTDIR)$(MANPREFIX)/man1
+ 	@cd $(DESTDIR)$(MANPREFIX)/man1 && rm -f $(MAN)
+ 
+--- TODO
++++ TODO
+@@ -21,7 +21,7 @@
+ 	- replace die() with eprintf().
+ 	- makefile:
+ 		- man page install should respect $DESTDIR.
+-		- make sure on install /sbin and mandir exists.
++		- make sure on install /bin and mandir exists.
+ 		- add config.mk, and follow suckless Makefile style.
+ 	- add arg.h
+ 		- first parameter remains interface.

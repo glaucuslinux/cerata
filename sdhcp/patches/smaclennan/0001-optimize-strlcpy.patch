@@ -1,0 +1,43 @@
+--- util/strlcpy.c
++++ util/strlcpy.c
+@@ -1,5 +1,3 @@
+-/* Taken from OpenBSD */
+-#include <sys/types.h>
+ #include <string.h>
+ #include "../util.h"
+ 
+@@ -9,24 +7,17 @@
+  * Returns strlen(src); if retval >= siz, truncation occurred.
+  */
+ size_t
+-strlcpy(char *dst, const char *src, size_t siz)
++strlcpy(char *dst, const char *src, size_t dstlen)
+ {
+-        char *d = dst;
+-        const char *s = src;
+-        size_t n = siz;
+-        /* Copy as many bytes as will fit */
+-        if (n != 0) {
+-                while (--n != 0) {
+-                        if ((*d++ = *s++) == '\0')
+-                                break;
++        size_t srclen = strlen(src);
++
++        if (dstlen > 0) {
++                if (dstlen > srclen)
++                        strcpy(dst, src);
++                else {
++                        strncpy(dst, src, dstlen - 1);
++                        dst[dstlen - 1] = 0;
+                 }
+         }
+-        /* Not enough room in dst, add NUL and traverse rest of src */
+-        if (n == 0) {
+-                if (siz != 0)
+-                        *d = '\0';              /* NUL-terminate dst */
+-                while (*s++)
+-                        ;
+-        }
+-        return(s - src - 1);    /* count does not include NUL */
++        return srclen;
+ }
