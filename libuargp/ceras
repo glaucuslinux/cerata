@@ -6,4 +6,4 @@
 nom=libuargp
 ver=git
 cmt=1f92296
-url=https://github.com/xhebox/$nom
+url=https://${ver}hub.com/xhebox/$nom

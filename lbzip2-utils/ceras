@@ -6,4 +6,4 @@
 nom=lbzip2-utils
 ver=git
 cmt=16751ef
-url=https://github.com/kjn/$nom
+url=https://${ver}hub.com/kjn/$nom
