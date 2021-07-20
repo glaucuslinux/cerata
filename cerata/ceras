@@ -5,5 +5,5 @@
 
 nom=cerata
 ver=git
-cmt=457f3b6
+cmt=a1351ae
 url=https://www.${ver}hub.com/glaucuslinux/$nom
