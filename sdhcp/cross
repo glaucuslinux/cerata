@@ -21,8 +21,6 @@ configure() {
 
 build() {
   $MAKE \
-    PREFIX=/usr \
-    DESTDIR=$CRSD \
     CC=$CC \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS"
@@ -36,8 +34,5 @@ install() {
   $MAKE \
     PREFIX=/usr \
     DESTDIR=$CRSD \
-    CC=$CC \
-    CFLAGS="$CFLAGS" \
-    LDFLAGS="$LDFLAGS" \
     install
 }
