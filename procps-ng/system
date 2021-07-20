@@ -11,6 +11,8 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
+  $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-musl-fixes.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 }
@@ -33,7 +35,6 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath \
-    --enable-watch8bit \
     --disable-kill \
     --disable-whining
 }
@@ -50,4 +51,6 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $LN pgrep $SCER/$nom/sac/usr/bin/pkill
 }

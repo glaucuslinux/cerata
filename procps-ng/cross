@@ -11,6 +11,8 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
+  $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-musl-fixes.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 }
@@ -54,6 +56,8 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $LN pgrep $CRSD/usr/bin/pkill
 
   $RM $CRSD/usr/lib/libprocps.la
 }
