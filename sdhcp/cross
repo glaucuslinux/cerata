@@ -17,7 +17,6 @@ prepare() {
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-use-environment-variables.patch
 }
 
 build() {
