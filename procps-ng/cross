@@ -39,7 +39,6 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath \
-    --enable-watch8bit \
     --disable-kill \
     --disable-whining
 }
