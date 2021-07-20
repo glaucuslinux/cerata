@@ -10,11 +10,33 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
 
+  # bind mess
+  tar xvf bind/bind.tar.gz -C bind
+
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14
+
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14/contrib/dnsperf-2.1.0.0-1
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14/contrib/dnsperf-2.1.0.0-1
+
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14/contrib/idn/idnkit-1.0-src
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14/contrib/idn/idnkit-1.0-src
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/segfault-fix.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/gentoo/$nom-3.0-fix-perms.patch.patch
   $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-fno-common.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-variable-name.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-conf-paths.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-iproute2-and-shell-compat.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
 configure() {
+  CFLAGS="$CFLAGS -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"' -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"' -D_PATH_DHCLIENT_SCRIPT='\"/usr/bin/dhclient-script\"'" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -31,10 +53,11 @@ configure() {
     --enable-early-chroot \
     --enable-log-pid \
     --enable-binary-leases \
+    --with-srv-conf-file=/etc/$nom/${nom}d.conf \
     --with-srv-lease-file=/var/lib/$nom/${nom}d.leases \
     --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
-    --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
-    --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases \
+    --with-cli-lease-file=/var/lib/$nom/dhclient.leases \
+    --with-cli6-lease-file=/var/lib/$nom/dhclient6.leases \
     --with-randomdev
 }
 
@@ -53,10 +76,16 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $MV $SCER/$nom/sac/etc/dhclient.conf.example $SCER/$nom/sac/etc/dhclient.conf
+  $MV $SCER/$nom/sac/etc/$nom/dhclient.conf.example $SCER/$nom/sac/etc/$nom/dhclient.conf
   $RSYNC doc/examples/dhclient-${nom}v6.conf $SCER/$nom/sac/etc/dhclient6.conf
-  $MV $SCER/$nom/sac/etc/${nom}d.conf.example $SCER/$nom/sac/etc/${nom}d.conf
+  $MV $SCER/$nom/sac/etc/$nom/${nom}d.conf.example $SCER/$nom/sac/etc/$nom/${nom}d.conf
   $RSYNC doc/examples/${nom}d-${nom}v6.conf $SCER/$nom/sac/etc/${nom}d6.conf
 
   $RSYNC client/scripts/linux $SCER/$nom/sac/usr/bin/dhclient-script
+
+  $RM $SCER/$nom/sac/usr/lib/lib${nom}.a
+  $RM $SCER/$nom/sac/usr/lib/lib${nom}ctl.a
+  $RM $SCER/$nom/sac/usr/lib/libomapi.a
+
+  $MKDIR $SCER/$nom/sac/var/lib/$nom
 }

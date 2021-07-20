@@ -28,15 +28,15 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-fno-common.patch
   $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-variable-name.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-iproute2-and-shell-compat.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-conf-paths.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-iproute2-and-shell-compat.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-define-macro-_PATH_DHCPD_CONF-and-_PATH_DHCLIENT_CON.patch
   $PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
 configure() {
-  CFLAGS="$CFLAGS -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"' -D_PATH_DHCLIENT_SCRIPT='\"/usr/bin/dhclient-script\"' -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"'" \
+  CFLAGS="$CFLAGS -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"' -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"' -D_PATH_DHCLIENT_SCRIPT='\"/usr/bin/dhclient-script\"'" \
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -55,6 +55,7 @@ configure() {
     --enable-early-chroot \
     --enable-log-pid \
     --enable-binary-leases \
+    --with-srv-conf-file=/etc/$nom/${nom}d.conf \
     --with-srv-lease-file=/var/lib/$nom/${nom}d.leases \
     --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
     --with-cli-lease-file=/var/lib/$nom/dhclient.leases \
@@ -77,11 +78,16 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $MKDIR $CRSD/etc/$nom
-  $MV $CRSD/etc/dhclient.conf.example $CRSD/etc/$nom/dhclient.conf
+  $MV $CRSD/etc/$nom/dhclient.conf.example $CRSD/etc/$nom/dhclient.conf
   $RSYNC doc/examples/dhclient-${nom}v6.conf $CRSD/etc/$nom/dhclient6.conf
-  $MV $CRSD/etc/${nom}d.conf.example $CRSD/etc/$nom/${nom}d.conf
+  $MV $CRSD/etc/$nom/${nom}d.conf.example $CRSD/etc/$nom/${nom}d.conf
   $RSYNC doc/examples/${nom}d-${nom}v6.conf $CRSD/etc/$nom/${nom}d6.conf
 
   $RSYNC client/scripts/linux $CRSD/usr/bin/dhclient-script
+
+  $RM $CRSD/usr/lib/lib${nom}.a
+  $RM $CRSD/usr/lib/lib${nom}ctl.a
+  $RM $CRSD/usr/lib/libomapi.a
+
+  $MKDIR $CRSD/var/lib/$nom
 }
