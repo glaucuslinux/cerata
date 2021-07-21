@@ -1,8 +1,6 @@
-diff --git a/libkmod/libkmod-util.c b/libkmod/libkmod-util.c
-index df12433..142e767 100644
---- a/shared/util.c
-+++ b/shared/util.c
-@@ -334,7 +334,9 @@ int mkdir_p(const char *path, int len, mode_t mode)
+--- shared/util.c
++++ shared/util.c
+@@ -403,7 +403,9 @@
  {
  	char *start, *end;
  

@@ -10,7 +10,11 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/strndupa.patch
+  $PATCH -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/void/stdout.patch
 }
 
 configure() {
@@ -29,6 +33,7 @@ configure() {
     --includedir=/usr/include \
     --disable-manpages \
     --disable-test-modules \
+    --with-rootlibdir=/usr/lib \
     --with-zstd \
     --with-xz \
     --with-zlib \
