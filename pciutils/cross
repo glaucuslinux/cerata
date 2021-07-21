@@ -7,6 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/pread.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
@@ -56,7 +58,7 @@ install() {
   # Fix broken permissions
   $CHMOD 0755 $CRSD/usr/lib/libpci.so.$ver
 
-  # This is provided by the `hwids` ceras
+  # These are provided by the `hwids` ceras
   $RM $CRSD/usr/share/hwdata
   $RM $CRSD/usr/share/man/man8/update-pciids.8
 }
