@@ -52,5 +52,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
+  # `pkill` and `pwait` are identical to `pgrep`
   $LN pgrep $SCER/$nom/sac/usr/bin/pkill
+  $LN pgrep $SCER/$nom/sac/usr/bin/pwait
 }
