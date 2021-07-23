@@ -18,7 +18,6 @@ configure() {
     -DBUILD_NINFOD=false \
     -DNINFOD_MESSAGES=false \
     -DBUILD_MANS=false \
-    -DNO_SETCAP_OR_SUID=true \
     -DUSE_GETTEXT=false \
     $SBLD/$nom
 }
