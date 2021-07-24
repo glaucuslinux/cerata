@@ -12,10 +12,14 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub config
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+
+  # `INSTALL` documentation recommends building out of tree
+  $MKDIR $SBLD/$nom
+  cd $SBLD/$nom
 }
 
 configure() {
-  ./configure \
+  $SSRC/$nom/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -38,7 +42,8 @@ configure() {
     --disable-uuidd \
     --disable-nls \
     --disable-rpath \
-    --enable-lto
+    --enable-lto \
+    --with-udev-rules-dir=/usr/lib/udev/rules.d
 }
 
 build() {
@@ -53,10 +58,6 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
-
-  $MAKE \
-    DESTDIR=$SCER/$nom/sac \
-    install-libs
 
   $MV $SCER/$nom/sac/usr/lib/e2initrd_helper $SCER/$nom/sac/usr/bin
 
