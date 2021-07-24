@@ -7,3 +7,4 @@ nom=libcap
 ver=2.51
 url=https://cdn.kernel.org/pub/linux/libs/security/linux-privs/${nom}2/$nom-$ver.tar.xz
 sum=3b4a97ef864a2ce2f87056ebc282223b0c71ca71c539744dc629ffe7905ca5fdde937ca70c34ec84406fe54863d39abf32775818a5e5a6fdf3069706b1723a88
+cnt='linux-headers make'
