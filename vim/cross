@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  LIBS="-lterminfo" \
+  LIBS=-lterminfo \
   ac_cv_sizeof_int=4 \
   ac_cv_small_wchar_t=no \
   vim_cv_getcwd_broken=no \
