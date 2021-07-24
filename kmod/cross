@@ -37,8 +37,7 @@ configure() {
     --with-zstd \
     --with-xz \
     --with-zlib \
-    --with-openssl \
-    --without-bashcompletiondir
+    --with-openssl
 }
 
 build() {
