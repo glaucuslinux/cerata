@@ -11,7 +11,7 @@
  	Fix in login.c for CPU eating bug when a remote telnet client dies
 --- NEWS
 +++ NEWS
-@@ -1595,7 +1595,7 @@
+@@ -1599,7 +1599,7 @@
  
          /var/log/wtmp       /var/adm/wtmp
          /var/log/lastlog    /var/adm/lastlog
