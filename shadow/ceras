@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=shadow
-ver=4.8.1
+ver=4.9
 url=https://github.com/$nom-maint/$nom/releases/download/$ver/$nom-$ver.tar.xz
-sum=780a983483d847ed3c91c82064a0fa902b6f4185225978241bc3bc03fcc3aa143975b46aee43151c6ba43efcfdb1819516b76ba7ad3d1d3c34fcc38ea42e917b
+sum=254cda49bb14505a7604821e7fa898bf4bf317d648e9ddc881ab80a6860d52053dfffacad6feab87c7d16608c35ed6b6cee99e7757eac930da3a7b31cdcd4b95
