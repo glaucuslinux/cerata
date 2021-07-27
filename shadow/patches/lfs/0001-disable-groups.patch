@@ -1,6 +1,6 @@
 --- man/Makefile.in
 +++ man/Makefile.in
-@@ -384,7 +384,7 @@
+@@ -393,7 +393,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \
@@ -11,7 +11,7 @@
  	man8/newusers.8 man8/nologin.8 man1/passwd.1 man5/passwd.5 \
 --- man/cs/Makefile.in
 +++ man/cs/Makefile.in
-@@ -317,7 +317,7 @@
+@@ -326,7 +326,7 @@
  	man8/groupadd.8 \
  	man8/groupdel.8 \
  	man8/groupmod.8 \
@@ -22,7 +22,7 @@
  	man8/lastlog.8 \
 --- man/da/Makefile.in
 +++ man/da/Makefile.in
-@@ -314,7 +314,7 @@
+@@ -323,7 +323,7 @@
  top_srcdir = @top_srcdir@
  
  # 2012.01.28 - activate manpages with more than 50% translated messages
@@ -33,7 +33,7 @@
  man_nopam = 
 --- man/de/Makefile.in
 +++ man/de/Makefile.in
-@@ -316,7 +316,7 @@
+@@ -325,7 +325,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \
@@ -44,7 +44,7 @@
  	man8/newusers.8 man8/nologin.8 man1/passwd.1 man5/passwd.5 \
 --- man/fr/Makefile.in
 +++ man/fr/Makefile.in
-@@ -318,7 +318,7 @@
+@@ -327,7 +327,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \
@@ -55,7 +55,7 @@
  	man8/newusers.8 man8/nologin.8 man1/passwd.1 man5/passwd.5 \
 --- man/hu/Makefile.in
 +++ man/hu/Makefile.in
-@@ -312,7 +312,7 @@
+@@ -321,7 +321,7 @@
  man_MANS = \
  	man1/chsh.1 \
  	man1/gpasswd.1 \
@@ -66,7 +66,7 @@
  	man1/newgrp.1 \
 --- man/it/Makefile.in
 +++ man/it/Makefile.in
-@@ -316,7 +316,7 @@
+@@ -325,7 +325,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \
@@ -77,7 +77,7 @@
  	man8/newusers.8 man8/nologin.8 man1/passwd.1 man5/passwd.5 \
 --- man/ja/Makefile.in
 +++ man/ja/Makefile.in
-@@ -313,7 +313,7 @@
+@@ -322,7 +322,7 @@
  top_srcdir = @top_srcdir@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chpasswd.8 man1/chsh.1 \
  	man1/expiry.1 man5/faillog.5 man8/faillog.8 man1/gpasswd.1 \
@@ -88,7 +88,7 @@
  	man8/newusers.8 man1/passwd.1 man5/passwd.5 man8/pwck.8 \
 --- man/ko/Makefile.in
 +++ man/ko/Makefile.in
-@@ -312,7 +312,7 @@
+@@ -321,7 +321,7 @@
  man_MANS = \
  	man1/chfn.1 \
  	man1/chsh.1 \
@@ -99,7 +99,7 @@
  	man1/su.1 \
 --- man/pl/Makefile.in
 +++ man/pl/Makefile.in
-@@ -317,7 +317,7 @@
+@@ -326,7 +326,7 @@
  # 2012.01.28 - activate manpages with more than 50% translated messages
  man_MANS = man1/chage.1 man1/chsh.1 man1/expiry.1 man5/faillog.5 \
  	man8/faillog.8 man3/getspnam.3 man8/groupadd.8 man8/groupdel.8 \
@@ -110,7 +110,7 @@
  	man8/vipw.8 $(am__append_1)
 --- man/ru/Makefile.in
 +++ man/ru/Makefile.in
-@@ -316,7 +316,7 @@
+@@ -325,7 +325,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \
@@ -121,7 +121,7 @@
  	man8/newusers.8 man8/nologin.8 man1/passwd.1 man5/passwd.5 \
 --- man/sv/Makefile.in
 +++ man/sv/Makefile.in
-@@ -317,7 +317,7 @@
+@@ -326,7 +326,7 @@
  # 2012.01.28 - activate manpages with more than 50% translated messages
  man_MANS = man1/chage.1 man1/chsh.1 man1/expiry.1 man5/faillog.5 \
  	man8/faillog.8 man3/getspnam.3 man8/groupadd.8 man8/groupdel.8 \
@@ -132,7 +132,7 @@
  	man1/sg.1 man3/shadow.3 man5/suauth.5 man8/userdel.8 \
 --- man/zh_CN/Makefile.in
 +++ man/zh_CN/Makefile.in
-@@ -316,7 +316,7 @@
+@@ -325,7 +325,7 @@
  man_MANS = man1/chage.1 man1/chfn.1 man8/chgpasswd.8 man8/chpasswd.8 \
  	man1/chsh.1 man1/expiry.1 man5/faillog.5 man8/faillog.8 \
  	man3/getspnam.3 man1/gpasswd.1 man8/groupadd.8 man8/groupdel.8 \

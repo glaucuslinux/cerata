@@ -9,7 +9,7 @@
  #MAIL_FILE	.mail
  
  #
-@@ -332,7 +332,7 @@
+@@ -334,7 +334,7 @@
  # Note: If you use PAM, it is recommended to use a value consistent with
  # the PAM modules configuration.
  #
