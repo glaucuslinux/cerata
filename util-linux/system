@@ -26,6 +26,7 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
@@ -33,15 +34,20 @@ configure() {
     --disable-nls \
     --disable-rpath \
     --disable-setpriv \
+    --disable-chfn-chsh \
+    --disable-login \
     --disable-nologin \
     --disable-su \
     --disable-runuser \
     --disable-more \
     --disable-bash-completion \
     --disable-pylibmount \
+    --enable-fs-paths-default=/usr/bin \
     --disable-use-tty-group \
     --enable-usrdir-path \
     --disable-makeinstall-chown \
+    --with-readline \
+    --without-cap-ng \
     --without-systemd \
     --without-systemdsystemunitdir \
     --without-python
