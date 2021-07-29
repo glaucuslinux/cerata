@@ -7,3 +7,4 @@ nom=shadow
 ver=4.9
 url=https://github.com/$nom-maint/$nom/releases/download/$ver/$nom-$ver.tar.xz
 sum=254cda49bb14505a7604821e7fa898bf4bf317d648e9ddc881ab80a6860d52053dfffacad6feab87c7d16608c35ed6b6cee99e7757eac930da3a7b31cdcd4b95
+cnt='execline make skalibs utmps'
