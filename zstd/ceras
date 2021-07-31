@@ -7,3 +7,4 @@ nom=zstd
 ver=1.5.0
 url=https://github.com/facebook/$nom/releases/download/v$ver/$nom-$ver.tar.zst
 sum=071b4596afbb290fdfab0021b1ddda3e24f508680c643259ced683ec4685fca186f6c9c111097594d2d2911976df1a2f92a321ae71a0d5b9734c9f8e2c1bff76
+cnt='lz4 make xz zlib-ng'
