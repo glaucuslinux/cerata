@@ -20,15 +20,15 @@
  PKGCONFIGDIR=$(LIBDIR)/pkgconfig
 --- README
 +++ README
-@@ -33,7 +33,7 @@
- 	$ sudo make install
+@@ -37,7 +37,7 @@
+     $ sudo make install
  
- 	       default installs the library libcap.XX.Y in /lib[64]/
--	       the binaries in /sbin/
-+	       the binaries in /bin/
- 	       the header files in /usr/include
- 	       the {libcap,libpsx}.pc files in /usr/lib[64]/pkgconfig
- 	       the Go packages (if built) under /usr/share/gocode/src
+        default installs the library libcap.XX.Y in /lib[64]/
+-       the binaries in /sbin/
++       the binaries in /bin/
+        the header files in /usr/include
+        the {libcap,libpsx}.pc files in /usr/lib[64]/pkgconfig
+        the Go packages (if built) under /usr/share/gocode/src
 --- cap/names.go
 +++ cap/names.go
 @@ -9,7 +9,7 @@
@@ -296,7 +296,7 @@
 +nobody:x:99:99:Nobody:/:/bin/nologin
 --- libcap/Makefile
 +++ libcap/Makefile
-@@ -149,7 +149,7 @@
+@@ -181,7 +181,7 @@
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
  	ln -sf $(MAJCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(CAPLIBNAME)
  ifeq ($(FAKEROOT),)
@@ -305,7 +305,7 @@
  endif
  
  install-static-psx: install-common-psx $(STAPSXLIBNAME)
-@@ -160,7 +160,7 @@
+@@ -192,7 +192,7 @@
  	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
  	ln -sf $(MAJPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(PSXLIBNAME)
  ifeq ($(FAKEROOT),)
@@ -313,12 +313,12 @@
 +	-/bin/ldconfig
  endif
  
- install-common-cap: install-common libcap.pc
+ install-common-cap: install-common $(LIBTITLE).pc
 --- pam_cap/capability.conf
 +++ pam_cap/capability.conf
-@@ -44,7 +44,7 @@
- ## process, even one run by root, you will see it has no IAB
- ## capabilities (by default):
+@@ -46,7 +46,7 @@
+ ## look at a random process, even one run by root, you will see it has
+ ## no IAB capabilities (by default):
  ##
 -##   $ /sbin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
 +##   $ /bin/capsh --decode=$(grep CapInh /proc/1/status|awk '{print $2}')
