@@ -53,9 +53,6 @@ install() {
 
   $MKDIR -m 0750 $CRSD/root
 
-  $MKDIR $CRSD/run/lock
-  $MKDIR -m 1777 $CRSD/run/tmp
-
   $MKDIR $CRSD/sys
 
   $LN run/tmp $CRSD/tmp
