@@ -66,6 +66,7 @@ install() {
     -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
     -e "s/^PRETTY_NAME=/&'glaucus $ARCH $(date +%d%m%Y)'/" \
     -i $CRSD/usr/lib/os-release
+  $MKDIR $PKG_CONFIG_LIBDIR
   $MKDIR $CRSD/usr/share
 
   $MKDIR $CRSD/var/cache/radula/bin
