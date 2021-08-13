@@ -5,29 +5,35 @@
 
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-
-  $MKDIR $SBLD/$nom
-
   cd $SSRC/$nom
 
   $MAKE \
+    ARCH=$LARCH \
     mrproper
 
-  radula_behave_patch 1 $nom clear 0104-pci-pme-wakeups
-  radula_behave_patch 1 $nom clear 0105-ksm-wakeups
-  radula_behave_patch 1 $nom clear 0106-intel_idle-tweak-cpuidle-cstates
-  radula_behave_patch 1 $nom clear 0108-smpboot-reuse-timer-calibration
-  radula_behave_patch 1 $nom clear 0109-Initialize-ata-before-graphics
-  radula_behave_patch 1 $nom clear 0110-give-rdrand-some-credit
-  radula_behave_patch 1 $nom clear 0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit
-  radula_behave_patch 1 $nom clear 0119-use-lfence-instead-of-rep-and-nop
-  radula_behave_patch 1 $nom clear 0120-do-accept-in-LIFO-order-for-cache-efficiency
-  radula_behave_patch 1 $nom clear 0121-locking-rwsem-spin-faster
-  radula_behave_patch 1 $nom clear 0122-ata-libahci-ignore-staggered-spin-up
-  radula_behave_patch 1 $nom clear 0123-print-CPU-that-faults
-  radula_behave_patch 1 $nom clear 0127-nvme-workaround
+  if [ $ARCH = x86-64 ]; then
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0104-pci-pme-wakeups.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0105-ksm-wakeups.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0106-intel_idle-tweak-cpuidle-cstates.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0108-smpboot-reuse-timer-calibration.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0109-initialize-ata-before-graphics.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0110-give-rdrand-some-credit.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0119-use-lfence-instead-of-rep-and-nop.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0121-locking-rwsem-spin-faster.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0122-ata-libahci-ignore-staggered-spin-up.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0123-print-CPU-that-faults.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0127-nvme-workaround.patch
 
-  radula_behave_patch 0 $nom glaucus 0001-libarchive-bsdtar-compatibility
+    $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
+
+    $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
+
+    $PATCH -p0 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8+.patch
+  fi
+
+  $MKDIR $SBLD/$nom
 }
 
 configure() {

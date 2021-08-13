@@ -6,12 +6,12 @@
      tar "${KBUILD_BUILD_TIMESTAMP:+--mtime=$KBUILD_BUILD_TIMESTAMP}" \
 -    --owner=0 --group=0 --numeric-owner --no-recursion \
 +    --gid 0 --uid 0 --numeric-owner --no-recursion \
-     -Jcf $tarfile -C $cpio_dir/ -T - > /dev/null
+     -I $XZ -cf $tarfile -C $cpio_dir/ -T - > /dev/null
  
  echo $headers_md5 > kernel/kheaders.md5
 --- scripts/package/buildtar
 +++ scripts/package/buildtar
-@@ -133,8 +133,8 @@
+@@ -153,8 +153,8 @@
  #
  # Create the tarball
  #

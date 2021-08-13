@@ -4,13 +4,36 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
-
-  cd $SRCD/$nom/$nom-$ver
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $MAKE \
     ARCH=$LARCH \
     mrproper
+
+  if [ $ARCH = x86-64 ]; then
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0104-pci-pme-wakeups.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0105-ksm-wakeups.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0106-intel_idle-tweak-cpuidle-cstates.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0108-smpboot-reuse-timer-calibration.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0109-initialize-ata-before-graphics.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0110-give-rdrand-some-credit.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0119-use-lfence-instead-of-rep-and-nop.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0121-locking-rwsem-spin-faster.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0122-ata-libahci-ignore-staggered-spin-up.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0123-print-CPU-that-faults.patch
+    $PATCH -p1 -i $CERD/$nom/patches/clear/0127-nvme-workaround.patch
+
+    $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
+
+    $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
+
+    $PATCH -p0 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8+.patch
+  fi
+
+  $MKDIR $XBLD/$nom
 }
 
 configure() {
