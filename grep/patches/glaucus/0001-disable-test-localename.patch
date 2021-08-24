@@ -1,6 +1,6 @@
 --- gnulib-tests/Makefile.in
 +++ gnulib-tests/Makefile.in
-@@ -144,7 +144,7 @@
+@@ -145,7 +145,7 @@
  	test-iswblank$(EXEEXT) test-iswdigit.sh test-iswxdigit.sh \
  	test-langinfo$(EXEEXT) test-limits-h$(EXEEXT) \
  	test-listen$(EXEEXT) test-locale$(EXEEXT) \
@@ -9,7 +9,7 @@
  	test-lseek.sh test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
  	test-malloca$(EXEEXT) test-mbscasecmp.sh test-mbsinit.sh \
  	test-mbsrtowcs1.sh test-mbsrtowcs2.sh test-mbsrtowcs3.sh \
-@@ -229,7 +229,7 @@
+@@ -235,7 +235,7 @@
  	test-iswxdigit$(EXEEXT) test-langinfo$(EXEEXT) \
  	test-limits-h$(EXEEXT) test-listen$(EXEEXT) \
  	test-locale$(EXEEXT) test-localeconv$(EXEEXT) \
@@ -18,7 +18,7 @@
  	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
  	test-malloca$(EXEEXT) test-mbscasecmp$(EXEEXT) \
  	test-mbsinit$(EXEEXT) test-mbsrtowcs$(EXEEXT) \
-@@ -3555,10 +3555,6 @@
+@@ -3800,10 +3800,6 @@
  	@rm -f test-localeconv$(EXEEXT)
  	$(AM_V_CCLD)$(LINK) $(test_localeconv_OBJECTS) $(test_localeconv_LDADD) $(LIBS)
  
@@ -29,7 +29,7 @@
  test-lseek$(EXEEXT): $(test_lseek_OBJECTS) $(test_lseek_DEPENDENCIES) $(EXTRA_test_lseek_DEPENDENCIES) 
  	@rm -f test-lseek$(EXEEXT)
  	$(AM_V_CCLD)$(LINK) $(test_lseek_OBJECTS) $(test_lseek_LDADD) $(LIBS)
-@@ -5034,13 +5030,6 @@
+@@ -5330,13 +5326,6 @@
  	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
  	--log-file $$b.log --trs-file $$b.trs \
  	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
