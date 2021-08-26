@@ -31,5 +31,5 @@ install() {
   $LN $nom $TLCD/bin/$nom/$TGT-cpp
   $LN $nom $TLCD/bin/$nom/$TGT-g++
   $LN $nom $TLCD/bin/$nom/$TGT-gcc
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc-11.1.0
+  $LN $nom $TLCD/bin/$nom/$TGT-gcc-11.2.0
 }
