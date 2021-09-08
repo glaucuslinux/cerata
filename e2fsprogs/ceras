@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=e2fsprogs
-ver=1.46.2
+ver=1.46.4
 url=https://prdownloads.sourceforge.net/$nom/$nom-$ver.tar.gz
-sum=cdf03e0e5190073dbd9c0d0cd0fea66cc8ed462a789b018b39c45c0dcbbe268992851603035e8e9afb9c3d8cedd1d3550ec27d179b2dca3db629ddc148db4d76
+sum=3fc4c71b6a951b9701d1943dab092dc8598869e1d4f1fabb236c49e6d5349cda809ba2cfc3957160e334824a2fe18e9000624dc02a35fc794ab09a098db13e81
 cnt='make util-linux'

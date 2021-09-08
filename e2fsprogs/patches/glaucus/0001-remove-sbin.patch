@@ -42,7 +42,7 @@
  
 --- misc/mke2fs.c
 +++ misc/mke2fs.c
-@@ -790,7 +790,7 @@
+@@ -792,7 +792,7 @@
  	return 1;
  }
  
@@ -51,7 +51,7 @@
  
  static void parse_extended_opts(struct ext2_super_block *param,
  				const char *opts)
-@@ -1589,7 +1589,7 @@
+@@ -1593,7 +1593,7 @@
  	}
  	strcpy(newpath, PATH_SET);
  
