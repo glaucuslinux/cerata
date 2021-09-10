@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=plocate
-ver=1.1.8
+ver=1.1.11
 url=https://$nom.sesse.net/download/$nom-$ver.tar.gz
-sum=a685347df64ac1a3eb7789cb7023b4d0ffed5fb7435a4bd88c3943991e145a387829532ec0c01d30d851b97b8d3173ff4c7c274775e639b75f0b1b45e5bca2a6
+sum=59f88a11ebbac5f350acca6d1a5890ac1c1cb10c1de2e4e149df60fc63673eefa7f143b06f79ec4e59c65d435b3e222eba5618c48afab97983d76f56fbe8b433
 cnt='meson samu zstd'
