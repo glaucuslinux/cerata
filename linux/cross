@@ -37,10 +37,24 @@ prepare() {
 }
 
 configure() {
-  $MAKE \
-    O=$XBLD/$nom \
-    ARCH=$LARCH \
-    ${LCARCH}defconfig
+  if [ $ARCH = x86-64 ]; then
+    $RSYNC $CERD/$nom/glaucus.config.$ARCH $XBLD/$nom/.config
+
+    $MAKE \
+      O=$XBLD/$nom \
+      ARCH=$LARCH \
+      oldconfig
+
+    $MAKE \
+      O=$XBLD/$nom \
+      ARCH=$LARCH \
+      prepare
+  else
+    $MAKE \
+      O=$XBLD/$nom \
+      ARCH=$LARCH \
+      ${LCARCH}defconfig
+  fi
 }
 
 build() {
@@ -57,6 +71,7 @@ install() {
   $MAKE \
     O=$XBLD/$nom \
     ARCH=$LARCH \
+    INSTALL_MOD_STRIP=1 \
     INSTALL_MOD_PATH=$CRSD/usr \
     modules_install
 
