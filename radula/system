@@ -20,5 +20,5 @@ check() {
 }
 
 install() {
-  $RSYNC $SRCD/$nom/$nom /usr/bin
+  :
 }
