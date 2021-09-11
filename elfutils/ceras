@@ -7,3 +7,4 @@ nom=elfutils
 ver=0.185
 url=https://sourceware.org/$nom/ftp/$ver/$nom-$ver.tar.bz2
 sum=34de0de1355b11740e036e0fc64f2fc063587c8eb121b19216ee5548d3f0f268d8fc3995176c47190466b9d881007cfa11a9d01e9a50e38af6119492bf8bb47f
+cnt='libuargp make musl-fts musl-obstack zlib-ng'
