@@ -7,23 +7,17 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess config
-  radula_behave_gnu sub config
+  $RSYNC $CERD/binutils/config.guess config
+  $RSYNC $CERD/binutils/config.rpath config
+  $RSYNC $CERD/binutils/config.sub config
 
   $RSYNC $CERD/musl/error.h lib
   $RSYNC $CERD/musl/error.h src
 
-  radula_behave_patch 0 $nom void fix-aarch64_fregs
-  radula_behave_patch 0 $nom void fts-obstack
-  radula_behave_patch 0 $nom void musl-asm_ptrace_h
-  radula_behave_patch 0 $nom void musl-macros
-  radula_behave_patch 0 $nom void musl-qsort_r
-  radula_behave_patch 0 $nom void musl-strerror_r
+  $PATCH -p0 -i $CERD/elfutils/patches/glaucus/0001-musl-compat.patch
 }
 
 configure() {
-  $AUTORECONF
-
   CFLAGS="$CFLAGS -Wno-error" \
   ./configure \
     --prefix=/usr \
@@ -38,10 +32,13 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-deterministic-archives \
+    --enable-install-elfh \
     --disable-symbol-versioning \
     --disable-nls \
+    --disable-rpath \
     --disable-libdebuginfod \
-    --disable-debuginfod
+    --disable-debuginfod \
+    --with-zlib
 }
 
 build() {
@@ -55,5 +52,5 @@ check() {
 install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
-    install
+    install-strip
 }
