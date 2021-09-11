@@ -7,3 +7,4 @@ nom=linux
 ver=5.13.9
 url=https://cdn.kernel.org/pub/$nom/kernel/v5.x/$nom-$ver.tar.xz
 sum=85ee6554fb77a47fbe5242ab2a92ab5ce90c170df7f58fa252192186ce2f724d29ee20c2d2e8bb118730bc6a1e6148b132faa209dcd801cb73e6c480d8b51157
+cnt='libelf libuargp make musl-fts musl-obstack zlib-ng'
