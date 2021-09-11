@@ -4,21 +4,24 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/elfutils/elfutils-$ver/ $SSRC/elfutils --delete
-  cd $SSRC/elfutils
+  $RSYNC $SRCD/elfutils/elfutils-$ver/ $XSRC/elfutils --delete
+  cd $XSRC/elfutils
 
-  radula_behave_gnu guess config
-  radula_behave_gnu sub config
+  $RSYNC $CERD/binutils/config.guess config
+  $RSYNC $CERD/binutils/config.rpath config
+  $RSYNC $CERD/binutils/config.sub config
 
-  $RSYNC $CERD/elfutils/error.h lib
-  $RSYNC $CERD/elfutils/error.h src
+  $RSYNC $CERD/musl/error.h lib
+  $RSYNC $CERD/musl/error.h src
+
+  $PATCH -p0 -i $CERD/elfutils/patches/glaucus/0001-musl-compat.patch
 }
 
 configure() {
-  $AUTORECONF
-
   CFLAGS="$CFLAGS -Wno-error" \
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -31,8 +34,10 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-deterministic-archives \
+    --enable-install-elfh \
     --disable-symbol-versioning \
     --disable-nls \
+    --disable-rpath \
     --disable-libdebuginfod \
     --disable-debuginfod
 }
@@ -42,7 +47,7 @@ build() {
     -C lib
 
   $MAKE \
-    -C libelf
+    -C $nom
 }
 
 check() {
@@ -51,7 +56,11 @@ check() {
 
 install() {
   $MAKE \
-    -C libelf \
-    DESTDIR=$SCER/$nom/sac \
-    install
+    -C $nom \
+    DESTDIR=$CRSD \
+    install-strip
+
+  $RM $CRSD/usr/lib/$nom.a
+
+  $RSYNC config/$nom.pc $PKG_CONFIG_LIBDIR
 }
