@@ -1,0 +1,23 @@
+--- Makefile
++++ Makefile
+@@ -8,7 +8,7 @@
+ 
+ SHLIB_EXT=.so
+ ALL_INCLUDES=argp.h
+-ALL_LIBS=libargp$(SHLIB_EXT) libargp.a
++ALL_LIBS=libargp$(SHLIB_EXT)
+ 
+ CFLAGS=-O0 -fPIC -Wall
+ BUILDCFLAGS=$(CFLAGS) -I.
+@@ -32,11 +32,6 @@
+ %.o: %.c
+ 	$(CC) $(BUILDCFLAGS) -c -o $@ $<
+ 
+-libargp.a: $(OBJS)
+-	rm -f $@
+-	$(AR) rc $@ $(OBJS)
+-	$(RANLIB) $@
+-
+ libargp$(SHLIB_EXT): $(OBJS)
+ 	rm -f $@
+ 	$(CC) $(LDFLAGS) -shared -o $@ $(OBJS) $(LDFLAGS)
