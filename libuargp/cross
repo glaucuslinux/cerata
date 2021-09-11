@@ -1,0 +1,37 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom $XSRC --delete
+  cd $XSRC/$nom
+}
+
+configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    prefix=/usr \
+    bindir=/usr/bin \
+    includedir=/usr/include \
+    libdir=/usr/lib \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
+    DESTDIR=$CRSD \
+    install
+
+  $MV $CRSD/usr/lib/libargp.so $CRSD/usr/lib/libargp.so.0.0.0
+  $LN libargp.so.0.0.0 $CRSD/usr/lib/libargp.so
+  $LN libargp.so.0.0.0 $CRSD/usr/lib/libargp.so.0
+}
