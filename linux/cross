@@ -28,7 +28,8 @@ prepare() {
 
     $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
 
-    $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
+    # This should only run on glaucus as it uses libarchive bsdtar by default
+    #$PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
 
     $PATCH -p0 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8+.patch
   fi
