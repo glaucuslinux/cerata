@@ -1,0 +1,18 @@
+Update the legacy definition of a "small prime" to a 2021 memory size appropriate one
+
+this wastes a bit of initial memory but starting with a much bigger hash table means
+we can avoid resizing a few times for most cases
+
+--- grep-3.7/lib/hash.c.org	2021-08-16 14:32:05.236791981 +0000
++++ grep-3.7/lib/hash.c	2021-08-16 14:34:25.234790032 +0000
+@@ -415,8 +415,8 @@
+ next_prime (size_t candidate)
+ {
+   /* Skip small primes.  */
+-  if (candidate < 10)
+-    candidate = 10;
++  if (candidate < 193)
++    candidate = 193;
+ 
+   /* Make it definitely odd.  */
+   candidate |= 1;
