@@ -73,8 +73,8 @@ install() {
   $MKDIR $CRSD/var/cache/radula/venom
   $MKDIR $CRSD/var/db/radula/clusters/glaucus
   $MKDIR $CRSD/var/lib/hwclock
+  $MKDIR $CRSD/var/lib/misc
   $MKDIR $CRSD/var/lib/radula
-  $MKDIR $CRSD/var/lib/urandom
   $LN ../run/lock $CRSD/var/lock
   $MKDIR $CRSD/var/log/radula
   $LN ../run $CRSD/var/run
