@@ -33,7 +33,7 @@ install() {
   $MKDIR -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
   $MKDIR $CRSD/etc/s6/current/run-image/utmps
-  $CHOWN utmp:utmp $CRSD/etc/s6/current/run-image/utmps
+  $CHOWN 20:20 $CRSD/etc/s6/current/run-image/utmps
 
   #s6-rc-compile $CRSD/etc/s6/rc/compiled $CRSD/etc/s6/sv
 
