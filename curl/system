@@ -1,0 +1,52 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
+
+  $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
+
+  # Disable locale test that fails on musl
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-test-localename.patch
+}
+
+configure() {
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --enable-threads=posix \
+    --disable-rpath \
+    --disable-nls \
+    --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    install-strip
+}
