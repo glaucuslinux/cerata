@@ -6,5 +6,6 @@ fi
 
 ENV=$HOME/.kshrc
 HISTFILE=$HOME/.ksh_history
+PATH=/usr/bin:/bin
 
 alias ls='ls --color=auto'
