@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=wget
+ver=1.21.2
+url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.lz
+sum=25e682e6f8458e9b9ec9ba1c796e670d1170d6de62716e3e879d729b04c0899cf300701330527b2f1d5a5e62ed1acb3c90c1a32716f96b3ecd8a71337a76a15a
+cnt='bzip2 libressl make netbsd-curses pcre2 zlib-ng'
