@@ -7,10 +7,10 @@ prepare() {
   $RSYNC $SRCD/$nom/Python-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess .
-  radula_behave_gnu sub .
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
 
-  radula_behave_patch 1 $nom clear 0001-Fix-$nom-path-for-linux
+  $PATCH -p1 -i $CERD/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
 }
 
 configure() {
