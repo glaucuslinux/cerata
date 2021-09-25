@@ -7,4 +7,4 @@ nom=plzip
 ver=1.9
 url=https://download.savannah.gnu.org/releases/lzip/$nom/$nom-$ver.tar.lz
 sum=20c58feff7deee9ed3762a1d937463485493a3340f499dbf5b2c2004eba12722a12a23977914a78dcf179d0bf6a7841a25983cd55b48fc6e55a70dcc9e4722fa
-cnt=lzlib
+cnt='lzlib make'

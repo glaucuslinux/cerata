@@ -7,3 +7,4 @@ nom=less
 ver=590
 url=https://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
 sum=426fa5840fd43c17bd5a452ad35ad24f2d6684623c6914403fd0059af62266bf2138e6828c7d73a1cef26a736c0d2b8ed4ab180eea8297281dae79a4228eb903
+cnt='make netbsd-curses pcre2'
