@@ -6,19 +6,11 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-gcc10.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-default-to-less.patch
-
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/empty-tbl-null-deref.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/tbl-colwidth-oob.patch
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-configure.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0004-fix-paths.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-paths.patch
 
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
@@ -29,11 +21,14 @@ OSENUM=MANDOC_OS_OTHER
 OSNAME='glaucus $ARCH $(date +%d%m%Y)'
 UTF8_LOCALE=C.UTF-8
 
+AR=$AR
 CC=$CC
 CFLAGS='$CFLAGS'
 LDFLAGS='$LDFLAGS'
 
-HAVE_CMSG=0
+HAVE_ATTRIBUTE=1
+HAVE_CMSG=1
+HAVE_CMSG_XPG42=0
 HAVE_DIRENT_NAMLEN=0
 HAVE_EFTYPE=0
 HAVE_ENDIAN=1
@@ -45,6 +40,7 @@ HAVE_GETSUBOPT=1
 HAVE_ISBLANK=1
 HAVE_LESS_T=1
 HAVE_MKDTEMP=1
+HAVE_MKSTEMPS=1
 HAVE_NANOSLEEP=1
 HAVE_NTOHL=1
 HAVE_O_DIRECTORY=1
@@ -71,6 +67,8 @@ HAVE_WCHAR=1
 
 PREFIX=/usr
 BINDIR=/usr/bin
+INCLUDEDIR=/usr/include
+LIBDIR=/usr/lib
 MANDIR=/usr/share/man
 
 LN='$LN'" > configure.local
