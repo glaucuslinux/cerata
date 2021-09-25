@@ -1,18 +1,20 @@
 --- INSTALL
 +++ INSTALL
-@@ -44,8 +44,7 @@
+@@ -43,9 +43,8 @@
+ functionality as your system's "catman", if your operating
  system contains one.
  
- 3. Define MANPATH_DEFAULT in configure.local
+-3. Define MANPATH_DEFAULT in configure.local
 -if /usr/share/man:/usr/X11R6/man:/usr/local/man is not appropriate
 -for your operating system.
-+if /usr/share/man is not appropriate for your operating system.
++3. Define MANPATH_DEFAULT in configure.local if /usr/share/man is not
++appropriate for your operating system.
  
  4. Run "./configure".
  This script attempts autoconfiguration of mandoc for your system.
 --- NEWS
 +++ NEWS
-@@ -413,7 +413,7 @@
+@@ -612,7 +612,7 @@
   * roff(7): Implement \\$* (interpolate all arguments).
   * roff(7): Parse and ignore \, and \/ (italic corrections).
   * When there is no -m, no -M, no MANPATH and no /etc/man.conf,
@@ -23,7 +25,7 @@
   * man.cgi(8): Support "header.html" and "footer.html".
 --- TODO
 +++ TODO
-@@ -331,7 +331,7 @@
+@@ -449,7 +449,7 @@
    by syntax tree nodes.
    loc **  exist *  algo **  size *  imp **
  
@@ -36,7 +38,7 @@
 +++ configure
 @@ -35,8 +35,8 @@
  
- SOURCEDIR=`dirname "$0"`
+ SOURCEDIR=`dirname "${0}"`
  
 -MANPATH_BASE="/usr/share/man:/usr/X11R6/man"
 -MANPATH_DEFAULT="/usr/share/man:/usr/X11R6/man:/usr/local/man"
@@ -45,9 +47,18 @@
  OSENUM=
  OSNAME=
  UTF8_LOCALE=
+@@ -102,7 +102,7 @@
+ MANDOC_COBJS=
+ SOELIM_COBJS=
+ 
+-PREFIX="/usr/local"
++PREFIX=/usr
+ BINDIR=
+ INCLUDEDIR=
+ LIBDIR=
 --- configure.local.example
 +++ configure.local.example
-@@ -60,12 +60,12 @@
+@@ -73,12 +73,12 @@
  # available, manuals are searched for in the following directory
  # trees by default.
  
@@ -58,26 +69,35 @@
  # for manual pages in the following directories:
  
 -MANPATH_BASE="/usr/share/man:/usr/X11R6/man"
-+MANPATH_BASE="/usr/share/man"
++MANPATH_BASE=/usr/share/man
  
  # When man(1) is called with the -S option and no manual page is
  # found matching the requested name and the requested architecture,
-@@ -96,7 +96,7 @@
+@@ -109,7 +109,7 @@
  # Even if you set PREFIX to something else, the other variables
  # pick it up without copying them all over.
  
 -PREFIX="/usr/local"
 +PREFIX=/usr
  BINDIR="${PREFIX}/bin"
- SBINDIR="${PREFIX}/sbin"
  MANDIR="${PREFIX}/man"
-@@ -199,7 +199,7 @@
- # you have to specify the physical location of the cellar as returned
- # by realpath(3), for example:
  
+@@ -216,7 +216,7 @@
+ # of a colon-separated path:
+ 
+ # Homebrow package manager on Mac OS X:
 -PREFIX="/usr/local"
 +PREFIX=/usr
- HOMEBREWDIR="${PREFIX}/Cellar"
+ READ_ALLOWED_PATH="${PREFIX}/Cellar"
+ 
+ # Nix package manager and/or NixOS Linux distribution:
+@@ -226,7 +226,7 @@
+ READ_ALLOWED_PATH="/gnu/store"
+ 
+ # If multiple package managers are used concurrently:
+-PREFIX="/usr/local"
++PREFIX=/usr
+ READ_ALLOWED_PATH="/nix/store:${PREFIX}/Cellar"
  
  # --- user settings for the mandoc(3) library --------------------------
 --- gmdiff
@@ -90,9 +110,20 @@
    EQN="neqn"
    ROFF="nroff"
    MOPT="-Ios=BSD -Tascii $MOPT"
+--- man.1
++++ man.1
+@@ -224,7 +224,7 @@
+ entries in the
+ .Xr man.conf 5
+ file, or with
+-.Pa /usr/share/man : Ns Pa /usr/X11R6/man : Ns Pa /usr/local/man
++.Pa /usr/share/man
+ by default.
+ Within each of these, directories are searched in the order provided.
+ Within each directory, the search proceeds according to the following
 --- man.conf.5
 +++ man.conf.5
-@@ -117,8 +117,6 @@
+@@ -113,8 +113,6 @@
  file at all.
  .Bd -literal -offset indent
  manpath /usr/share/man
@@ -103,15 +134,24 @@
  .Xr apropos 1 ,
 --- mandoc.1
 +++ mandoc.1
-@@ -897,7 +897,7 @@
- macro references a manual page that is not found in the base system.
- The path to look for base system manuals is configurable at compile
- time and defaults to
--.Pa /usr/share/man : /usr/X11R6/man .
+@@ -1016,7 +1016,7 @@
+ When running with
+ .Fl W Cm base ,
+ the search is restricted to the base system, by default to
+-.Pa /usr/share/man : Ns Pa /usr/X11R6/man .
 +.Pa /usr/share/man .
- .El
- .Ss Style suggestions
- .Bl -ohang
+ This path can be configured at compile time using the
+ .Dv MANPATH_BASE
+ preprocessor macro.
+@@ -1033,7 +1033,7 @@
+ environment variable, the
+ .Xr man.conf 5
+ file and falling back to the default of
+-.Pa /usr/share/man : Ns Pa /usr/X11R6/man : Ns Pa /usr/local/man ,
++.Pa /usr/share/man ,
+ also configurable at compile time using the
+ .Dv MANPATH_DEFAULT
+ preprocessor macro.
 --- mandoc.db.5
 +++ mandoc.db.5
 @@ -189,13 +189,6 @@
@@ -128,31 +168,10 @@
  .El
  .Pp
  A program to dump
---- regress/eqn/Makefile.inc
-+++ regress/eqn/Makefile.inc
-@@ -1,6 +1,6 @@
- # $OpenBSD: Makefile.inc,v 1.2 2015/02/03 19:37:25 schwarze Exp $
- 
--EQN = /usr/local/bin/eqn
-+EQN = /usr/bin/eqn
- 
- SKIP_GROFF ?= ${REGRESS_TARGETS}
- SKIP_TMAN ?= ALL
---- regress/man/TS/Makefile
-+++ regress/man/TS/Makefile
-@@ -12,7 +12,7 @@
- 
- # OpenBSD only: maintainer targets
- 
--TBL=/usr/local/bin/tbl
-+TBL=/usr/bin/tbl
- 
- .for t in ${REGRESS_TARGETS}
- ${t}.out_ascii: ${t}.in
 --- regress/roff/de/Makefile
 +++ regress/roff/de/Makefile
 @@ -41,10 +41,10 @@
- 	@rm -f TH.mandoc_ascii_opt Dd.mandoc_ascii_opt
+ 	rm -f TH.mandoc_ascii_opt Dd.mandoc_ascii_opt
  
  TH.out_ascii_opt: TH.in
 -	/usr/local/bin/nroff -c -man -Tascii ${.ALLSRC} > ${.TARGET}
@@ -164,13 +183,3 @@
  
  groff-clean-opt:
  	rm -f TH.out_ascii_opt Dd.out_ascii_opt
---- regress/tbl/Makefile.inc
-+++ regress/tbl/Makefile.inc
-@@ -1,6 +1,6 @@
- # $OpenBSD: Makefile.inc,v 1.2 2015/02/03 19:37:25 schwarze Exp $
- 
--TBL = /usr/local/bin/tbl
-+TBL = /usr/bin/tbl
- 
- SKIP_TMAN ?= ALL
- SKIP_MARKDOWN ?= ALL
