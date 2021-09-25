@@ -7,4 +7,4 @@ nom=toybox
 ver=0.8.5
 url=https://github.com/landley/$nom/archive/$ver.tar.gz
 sum=6dd77bafc0d6df4473a2e605aeb20f652afe724471265f4e2f1eeb49245a0250038e1ade9550376a10ce8cb31cc823083588d144bf8127eb2e143a7eec7cb473
-cnt='execline make skalibs utmps'
+cnt='execline libressl make skalibs utmps'

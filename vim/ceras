@@ -7,3 +7,4 @@ nom=vim
 ver=8.2.3299
 url=https://github.com/$nom/$nom/archive/v$ver.tar.gz
 sum=23fe76886ac4469ecc561d3aa8e94606c4d1158c5c14284dfc642f937017396bdbc3a42adb3caf801f559a700d94c6708edac27fa6e04b6eec89ab7257c3d65a
+cnt='acl attr make netbsd-curses'

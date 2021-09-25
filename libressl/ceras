@@ -7,3 +7,4 @@ nom=libressl
 ver=3.3.3
 url=https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/$nom-$ver.tar.gz
 sum=2d0b5f4cfe37d573bc64d5967abb77f536dbe581fbad9637d925332bcdfd185fe6810335b2af80a89f92d7e6edaa8ea3ba2492c60a117e47ea1b2d6aacf01f0f
+cnt=make

@@ -7,4 +7,4 @@ nom=procps-ng
 ver=3.3.17
 url=https://prdownloads.sourceforge.net/$nom/$nom-$ver.tar.xz
 sum=59e9a5013430fd9da508c4655d58375dc32e025bb502bb28fb9a92a48e4f2838b3355e92b4648f7384b2050064d17079bf4595d889822ebb5030006bc154a1a7
-cnt='execline make skalibs utmps'
+cnt='execline make netbsd-curses skalibs utmps'
