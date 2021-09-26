@@ -8,3 +8,4 @@ ver=1.1.11
 url=https://$nom.sesse.net/download/$nom-$ver.tar.gz
 sum=59f88a11ebbac5f350acca6d1a5890ac1c1cb10c1de2e4e149df60fc63673eefa7f143b06f79ec4e59c65d435b3e222eba5618c48afab97983d76f56fbe8b433
 cnt='meson samu zstd'
+cys=gcc
