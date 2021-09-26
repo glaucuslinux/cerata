@@ -22,12 +22,15 @@ prepare() {
       ;;
   esac
 
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-fenv_t-not-declared.patch
+
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
 }
 
 configure() {
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
+  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 //')" \
+  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-flto=auto -flto-compression-level=19 //' -e 's/-fno-exceptions //' -e 's/-fipa-pta //')" \
   libat_cv_have_ifunc=no \
   $XSRC/$nom/configure \
     --build=$BLD \
@@ -49,7 +52,7 @@ configure() {
     --enable-threads=posix \
     --enable-tls \
     --disable-nls \
-    --enable-languages=c,c++,go \
+    --enable-languages=c,c++ \
     --disable-rpath \
     --disable-static \
     --disable-gnu-indirect-function \
@@ -89,6 +92,7 @@ check() {
 
 install() {
   $MAKE \
+    DESTDIR=$CRSD \
     install-strip
 
   $LN g++ $CRSD/usr/bin/c++
