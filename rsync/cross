@@ -27,7 +27,6 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-debug \
-    --disable-simd \
     --disable-xxhash \
     --without-included-popt \
     --without-included-zlib
