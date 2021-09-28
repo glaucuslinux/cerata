@@ -1,0 +1,73 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $RSYNC $CERD/$nom/config.guess .
+  $RSYNC $CERD/$nom/config.rpath .
+  $RSYNC $CERD/$nom/config.sub .
+
+  $MKDIR $XBLD/$nom
+  cd $XBLD/$nom
+}
+
+configure() {
+  $XSRC/$nom/configure \
+    --build=$BLD \
+    --host=$TGT \
+    --target=$TGT \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --disable-multilib \
+    --disable-static \
+    --enable-plugins \
+    --enable-deterministic-archives \
+    --disable-compressed-debug-sections \
+    --enable-new-dtags \
+    --enable-relro \
+    --disable-separate-code \
+    --enable-default-hash-style=gnu \
+    --disable-werror \
+    --disable-nls \
+    --disable-rpath \
+    --disable-initfini-array \
+    --with-mmap \
+    --with-lib-path=/usr/lib \
+    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
+    --with-system-zlib
+
+  $MAKE \
+    tooldir=/usr \
+    configure-host
+}
+
+build() {
+  $MAKE \
+    tooldir=/usr
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    tooldir=/usr \
+    DESTDIR=$CRSD \
+    install-strip
+
+  $LN ld.bfd $CRSD/usr/bin/ld
+}
