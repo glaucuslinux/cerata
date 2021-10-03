@@ -33,7 +33,11 @@ configure() {
     --enable-threads=posix \
     --disable-nls \
     --disable-rpath \
-    --with-ssl=openssl
+    --enable-pcre2 \
+    --with-ssl=openssl \
+    --with-linux-crypto \
+    --with-openssl \
+    --without-included-regex
 }
 
 build() {
