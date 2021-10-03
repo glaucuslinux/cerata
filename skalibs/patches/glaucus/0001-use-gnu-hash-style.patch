@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -522,7 +522,7 @@
+@@ -572,7 +572,7 @@
  tryldflag LDFLAGS_AUTO -Wl,--sort-section=alignment
  tryldflag LDFLAGS_AUTO -Wl,--sort-common
  if $shared ; then
@@ -8,4 +8,4 @@
 +  tryldflag LDFLAGS -Wl,--hash-style=gnu
  fi
  
- rm -f "$tmps"
+ # And now, determine a big fat batch of sysdeps.
