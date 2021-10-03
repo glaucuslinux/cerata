@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=skalibs
-ver=2.10.0.3
+ver=2.11.0.0
 url=https://skarnet.org/software/$nom/$nom-$ver.tar.gz
-sum=93eb35da9e5514f9bcdc569cef5b498653f9ffc47f8fab82ce75043d8cca0371884ad84577988ae5e7f939e7c3568eaa8304487dcff3797df369ff80ae0de309
+sum=14e62e9e63735184d54497295b0d3d97bee393d1dc09af9542f17c6083c2a6b310e6f15275d96819f14cb2e033baa264c6b3a4c680eb0c83edf84932b8df87f2
 cnt=make
