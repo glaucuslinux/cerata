@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=less
-ver=590
+ver=594
 url=https://www.greenwoodsoftware.com/$nom/$nom-$ver.tar.gz
-sum=426fa5840fd43c17bd5a452ad35ad24f2d6684623c6914403fd0059af62266bf2138e6828c7d73a1cef26a736c0d2b8ed4ab180eea8297281dae79a4228eb903
+sum=f83b3613ae90aa9e78432bcd074e475960e69039c21870a1317871a6cab4fc5431f8c57461699492a94c059e06ee5848131063ff320351daaca66f70a2bad9e4
 cnt='make netbsd-curses pcre2'
