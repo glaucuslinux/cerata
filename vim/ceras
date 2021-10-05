@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=vim
-ver=8.2.3455
+ver=8.2.3478
 url=https://github.com/$nom/$nom/archive/v$ver.tar.gz
-sum=e311b20fe7e31c0e643947eef4a6efbc9f44487f2036cad53994b77dcf74d4bee5e8948f9a9105af74354f024c8e9fafc791bca6b7fd56dcfbc66a3b638b1e57
+sum=786560c57e58aeb2c38929807ce5edfa10c28bdafda2ee9efb64d5c02f0ea23fc3da7146f801ff181c0f4cb2152cf6198474d0175aba0c82d8f12228c6c440b7
 cnt='acl attr make netbsd-curses'
