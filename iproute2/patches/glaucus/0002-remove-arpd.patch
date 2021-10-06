@@ -8,7 +8,7 @@
  KERNEL_INCLUDE?=/usr/include
  BASH_COMPDIR?=$(DATADIR)/bash-completion/completions
  
-@@ -86,7 +85,6 @@
+@@ -88,7 +87,6 @@
  install: all
  	install -m 0755 -d $(DESTDIR)$(BINDIR)
  	install -m 0755 -d $(DESTDIR)$(CONFDIR)

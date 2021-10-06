@@ -9,8 +9,8 @@
  CONFDIR?=/etc/iproute2
  NETNS_RUN_DIR?=/var/run/netns
  NETNS_ETC_DIR?=/etc/netns
-@@ -84,7 +84,7 @@
- 	sh configure $(KERNEL_INCLUDE)
+@@ -86,7 +86,7 @@
+ 	fi
  
  install: all
 -	install -m 0755 -d $(DESTDIR)$(SBINDIR)
@@ -42,7 +42,7 @@
  clean:
 --- devlink/Makefile
 +++ devlink/Makefile
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  
  install: all
  	for i in $(TARGETS); \
