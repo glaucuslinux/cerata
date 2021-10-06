@@ -31,7 +31,7 @@ prepare() {
     # This should only run on glaucus as it uses libarchive bsdtar by default
     #$PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
 
-    $PATCH -p0 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8-5.14.patch
+    $PATCH -p1 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8-5.14.patch
   fi
 
   $MKDIR $XBLD/$nom

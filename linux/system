@@ -30,7 +30,7 @@ prepare() {
 
     $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
 
-    $PATCH -p0 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8+.patch
+    $PATCH -p1 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.8-5.14.patch
   fi
 
   $MKDIR $SBLD/$nom
