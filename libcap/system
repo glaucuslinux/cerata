@@ -59,7 +59,4 @@ install() {
     DYNAMIC=yes \
     GOLANG=no \
     install
-
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/$nom.so.$ver
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libpsx.so.$ver
 }
