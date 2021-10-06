@@ -46,7 +46,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcrypto.so.46.0.2
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libssl.so.48.0.2
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.20.0.3
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcrypto.so.47.0.0
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libssl.so.50.0.0
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.22.0.0
 }
