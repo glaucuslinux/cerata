@@ -8,6 +8,18 @@ prepare() {
   cd $TSRC/musl
 
   $PATCH -p1 -i $CERD/musl/patches/adelie/3001-make-real-lastlog-h.patch
+
+  # Alpine uses upstream patches that will be applied in future `musl` releases
+  $PATCH -p1 -i $CERD/musl/patches/alpine/0001-fix-TZ-parsing-logic-for-identifying-POSIX-form-stri.patch
+  $PATCH -p1 -i $CERD/musl/patches/alpine/0001-riscv64-define-ELF_NFPREG.patch
+  $PATCH -p1 -i $CERD/musl/patches/alpine/qsort_r.patch
+  $PATCH -p1 -i $CERD/musl/patches/alpine/syscall-cp-epoll.patch
+
+  # Custom Alpine patches
+  $PATCH -p1 -i $CERD/musl/patches/alpine/eh-frame.patch
+  $PATCH -p1 -i $CERD/musl/patches/alpine/handle-aux-at_base.patch
+
+  $PATCH -p1 -i $CERD/musl/patches/gentoo/musl-$ver-gethostid.patch
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
   $PATCH -p0 -i $CERD/musl/patches/void/mo_lookup.patch
 }

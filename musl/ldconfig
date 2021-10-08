@@ -1,4 +1,4 @@
-#!/bin/sh -eu
+#!/bin/sh -efu
 #
 # Copyright © 2016-2018 Samuel Holland <samuel@sholland.org>
 # SPDX-License-Identifier: 0BSD
