@@ -1,0 +1,38 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  # Source directory has $nom twice in it
+  $RSYNC $SRCD/$nom/$nom-$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+}
+
+configure() {
+  :
+}
+
+build() {
+  # First LIBDIR is for the path inside libucontext.pc
+  $MAKE \
+    ARCH=$UARCH \
+    LIBDIR=/usr/lib
+}
+
+check() {
+  :
+}
+
+install() {
+  # Second LIBDIR is for the final installation path
+  $MAKE \
+    ARCH=$UARCH \
+    LIBDIR=/usr/lib \
+    DESTDIR=$CRSD \
+    install
+
+  $LN ${nom}_posix.so.1 $CRSD/usr/lib/${nom}_posix.so
+}
