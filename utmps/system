@@ -49,7 +49,6 @@ install() {
   # Some `cerata` include `utmp.h`/`utmpx.h` instead of `utmps/utmp.h` and
   # `utmps/utmpx.h` (e.g. `procps-ng`).
   $LN $nom/utmp.h $SCER/$nom/sac/usr/include
-  $LN $nom/utmpx.h $SCER/$nom/sac/usr/include
 
   $MKDIR $SCER/$nom/sac/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
