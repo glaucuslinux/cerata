@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 configure() {
@@ -16,8 +18,6 @@ build() {
   $MAKE \
     LINKER_PATH=/lib/ld-musl-$MLARCH.so.1 \
     LOADER_NAME=ld-linux$GARCH \
-    LIBGCOMPAT_PATH=/usr/lib/lib$nom.so.0 \
-    LOADER_PATH=/lib/ld-linux$GARCH \
     WITH_LIBUCONTEXT=1 \
     WITH_OBSTACK=musl-obstack
 }
@@ -30,8 +30,6 @@ install() {
   $MAKE \
     LINKER_PATH=/lib/ld-musl-$MLARCH.so.1 \
     LOADER_NAME=ld-linux$GARCH \
-    LIBGCOMPAT_PATH=/usr/lib/lib$nom.so.0 \
-    LOADER_PATH=/lib/ld-linux$GARCH \
     WITH_LIBUCONTEXT=1 \
     WITH_OBSTACK=musl-obstack \
     DESTDIR=$CRSD \
