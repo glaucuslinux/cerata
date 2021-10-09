@@ -5,6 +5,6 @@
 
 nom=radula
 ver=git
-cmt=02e9270
+cmt=6a16f7d
 url=https://${ver}hub.com/glaucuslinux/$nom
 cys='curl git libarchive rsync toybox'
