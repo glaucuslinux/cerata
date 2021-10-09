@@ -39,4 +39,7 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  # Compatibility symlink
+  $LN $nom $CRSD/usr/bin/grep
 }
