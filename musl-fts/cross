@@ -45,6 +45,7 @@ install() {
 
   $LN $nom.pc $PKG_CONFIG_LIBDIR/libfts.pc
 
+  $MKDIR $CRSD/usr/share/man/man3
   $RSYNC fts.3 $CRSD/usr/share/man/man3
   $LN fts.3 $CRSD/usr/share/man/man3/$nom.3
 }
