@@ -7,6 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
+  # Provide `utmps/utmp.h` which includes `utmpx.h` (same directory)
   $RSYNC $CERD/$nom/utmp.h src/include/$nom
 }
 
@@ -47,9 +48,9 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  # Some `cerata` include `utmp.h`/`utmpx.h` instead of `utmps/utmp.h` and
-  # `utmps/utmpx.h` (e.g. `procps-ng`).
-  #$LN $nom/utmp.h $CRSD/usr/include
+  # Provide `utmp.h` which includes `utmpx.h` (same directory) which in turn
+  # includes `utmps/utmpx.h`
+  $LN $nom/utmp.h $CRSD/usr/include
 
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }
