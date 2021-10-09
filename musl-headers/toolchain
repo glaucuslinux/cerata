@@ -21,6 +21,10 @@ prepare() {
 
   $PATCH -p1 -i $CERD/musl/patches/gentoo/musl-$ver-gethostid.patch
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
+
+  # Emoji wcwidth patch for musl
+  $PATCH -p1 -i $CERD/musl/patches/noname/emoji.patch
+
   $PATCH -p0 -i $CERD/musl/patches/void/mo_lookup.patch
 }
 
