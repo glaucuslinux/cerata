@@ -42,4 +42,6 @@ install() {
     install-strip
 
   $RM $CRSD/usr/lib/librpmatch.la
+
+  $RSYNC $nom.pc $PKG_CONFIG_LIBDIR
 }
