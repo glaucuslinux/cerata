@@ -22,8 +22,8 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$CFLAGSNOLTO" \
-  CXXFLAGS="$CFLAGSNOIPANOLTO" \
+  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 //')" \
+  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-flto=auto -flto-compression-level=19 //' -e 's/-fno-exceptions //')" \
   libat_cv_have_ifunc=no \
   $SSRC/$nom/configure \
     --prefix=/usr \
@@ -42,7 +42,7 @@ configure() {
     --enable-threads=posix \
     --enable-tls \
     --disable-nls \
-    --enable-languages=c,c++,go \
+    --enable-languages=c,c++ \
     --disable-rpath \
     --enable-shared \
     --disable-static \
@@ -90,9 +90,6 @@ install() {
   $RSYNC $CERD/$nom/c89 $SCER/$nom/sac/usr/bin
   $RSYNC $CERD/$nom/c99 $SCER/$nom/sac/usr/bin
 
-  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c89
-  $CHOWN 0:0 $SCER/$nom/sac/usr/bin/c99
-
   $LN $nom $SCER/$nom/sac/usr/bin/cc
   $LN $nom $SCER/$nom/sac/usr/bin/$nom-$ver
 
@@ -104,8 +101,9 @@ install() {
   $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
 
+  # Compatibility symlink
   $LN ../bin/cpp $SCER/$nom/sac/usr/lib/cpp
 
   $MKDIR $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
-  $MV $SCER/$nom/sac/usr/lib/libstdc++.so.6.0.28-gdb.py $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
+  $MV $SCER/$nom/sac/usr/lib/libstdc++.so.6.0.29-gdb.py $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
 }
