@@ -5,5 +5,5 @@
 
 nom=isl
 ver=0.24
-url=http://$nom.gforge.inria.fr/$nom-$ver.tar.xz
+url=https://lib$nom.sourceforge.io/$nom-$ver.tar.xz
 sum=ff6bdcff839e1cd473f2a0c1e4dd4a3612ec6fee4544ccbc62b530a7248db2cf93b4b99bf493a86ddf2aba00e768927265d5d411f92061ea85fd7929073428e8
