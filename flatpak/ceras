@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=flatpak
-ver=1.12.0
+ver=1.12.2
 url=https://github.com/$nom/$nom/releases/download/$ver/$nom-$ver.tar.xz
-sum=3f20ee3f91dcd2ca00104f6f0f354ea8ab8e15e1d90cea6dbefb9ea9535b2dab17ab2e12a7f134c5965e95f351ae3ece5e3d1ea4311809a0c3d2cb1270fddfaf
+sum=4887fe540a821f2c8539fbe1fd89b1cc350126a6fa90c1acf070e08db0de1073406a061f5483bc7a7ef9b07f73409beb7bc02d055d4b3ae1c33ba5c318e11b6f
