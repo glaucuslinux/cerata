@@ -13,6 +13,7 @@ configure() {
 }
 
 build() {
+  $CC $CFLAGS $LDFLAGS $CERD/musl/gencat.c -o gencat
   $CC $CFLAGS $LDFLAGS $CERD/musl/getent.c -o getent
 }
 
@@ -21,11 +22,13 @@ check() {
 }
 
 install() {
+  $RSYNC gencat $CRSD/usr/bin
   $RSYNC getent $CRSD/usr/bin
   $RSYNC $CERD/musl/ldconfig $CRSD/usr/bin
   sed "s/ld-musl/ld-musl-$MLARCH/" \
     -i $CRSD/usr/bin/ldconfig
 
   $MKDIR $CRSD/usr/share/man/man1
+  $RSYNC $CERD/musl/gencat.1 $CRSD/usr/share/man/man1
   $RSYNC $CERD/musl/getent.1 $CRSD/usr/share/man/man1
 }
