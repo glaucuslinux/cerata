@@ -36,6 +36,9 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath
+
+  # Further disable rpath
+  $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-disable-rpath.patch
 }
 
 build() {

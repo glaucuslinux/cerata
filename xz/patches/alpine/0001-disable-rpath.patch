@@ -1,0 +1,20 @@
+--- libtool
++++ libtool
+@@ -249,7 +249,7 @@
+ version_type=linux
+ 
+ # Shared library runtime path variable.
+-runpath_var=LD_RUN_PATH
++runpath_var=DIE_RPATH_DIE
+ 
+ # Shared library path variable.
+ shlibpath_var=LD_LIBRARY_PATH
+@@ -384,7 +384,7 @@
+ 
+ # Flag to hardcode $libdir into a binary during linking.
+ # This must work even if $libdir does not exist
+-hardcode_libdir_flag_spec="\$wl-rpath \$wl\$libdir"
++hardcode_libdir_flag_spec=""
+ 
+ # Whether we need a single "-rpath" flag with a separated argument.
+ hardcode_libdir_separator=""

@@ -14,7 +14,6 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
-  $PATCH -p2 -i $CERD/$nom/patches/clear/add-pgo.patch
 }
 
 configure() {
@@ -38,8 +37,7 @@ configure() {
 }
 
 build() {
-  $MAKE \
-    pgo-build
+  $MAKE
 }
 
 check() {
