@@ -57,5 +57,6 @@ install() {
 
   $MV $CRSD/usr/share/pkgconfig/udev.pc $PKG_CONFIG_LIBDIR
 
+  # The only allowed directory for pkg-config files is `$PKG_CONFIG_LIBDIR`
   $RM $CRSD/usr/share/pkgconfig
 }
