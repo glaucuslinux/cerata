@@ -13,11 +13,13 @@ configure() {
   LIBS=-lterminfo \
   ac_cv_sizeof_int=4 \
   ac_cv_small_wchar_t=no \
+  vim_cv_bcopy_handles_overlap=yes \
   vim_cv_getcwd_broken=no \
+  vim_cv_memcpy_handles_overlap=yes \
   vim_cv_memmove_handles_overlap=yes \
   vim_cv_stat_ignores_slash=yes \
-  vim_cv_terminfo=yes \
   vim_cv_tgetent=zero \
+  vim_cv_terminfo=yes \
   vim_cv_toupper_broken=no \
   ./configure \
     --build=$BLD \
