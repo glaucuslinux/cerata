@@ -30,7 +30,7 @@ prepare() {
 
 configure() {
   CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 //')" \
-  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-flto=auto -flto-compression-level=19 //' -e 's/-fno-exceptions //')" \
+  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-flto=auto -flto-compression-level=19 //' -e 's/-fno-exceptions //' -e 's/ -fvisibility=hidden//')" \
   libat_cv_have_ifunc=no \
   $XSRC/$nom/configure \
     --build=$BLD \
