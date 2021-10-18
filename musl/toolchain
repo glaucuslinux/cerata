@@ -21,7 +21,7 @@ configure() {
     --disable-wrapper \
     --disable-static
 
-  # Provide minimal libssp_nonshared.a so we don't need libssp from gcc
+  # Provide minimal libssp_nonshared.a so we don't require libssp from gcc
   $TGT-gcc -c $CERD/$nom/__stack_chk_fail_local.c
   $TGT-gcc-ar rsS libssp_nonshared.a __stack_chk_fail_local.o
 }
@@ -67,5 +67,5 @@ install() {
   $LN libc.so $CRSD/usr/lib/libutil.so.1
 
   $RSYNC libssp_nonshared.a $CRSD/usr/lib
-  $TGT-strip -g $CRSD/usr/lib/libssp_nonshared.a
+  $TGT-strip -gv $CRSD/usr/lib/libssp_nonshared.a
 }

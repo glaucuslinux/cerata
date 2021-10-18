@@ -52,6 +52,7 @@ install() {
     DESTDIR=$CRSD \
     install-headers
 
+  # BSD compatibility headers
   $RSYNC $CERD/musl/cdefs.h $CRSD/usr/include/sys
   $RSYNC $CERD/musl/queue.h $CRSD/usr/include/sys
   $RSYNC $CERD/musl/tree.h $CRSD/usr/include/sys
