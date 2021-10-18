@@ -1,0 +1,38 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    prefix=/usr \
+    sysconfdir=/etc \
+    LIBINTL=MUSL \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS"
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    prefix=/usr \
+    sysconfdir=/etc \
+    LIBINTL=MUSL \
+    DESTDIR=$CRSD \
+    install
+
+  # Use dragora's autopoint
+  $RSYNC $CERD/$nom/autopoint $CRSD/usr/bin
+}
