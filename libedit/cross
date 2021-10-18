@@ -42,6 +42,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Use libedit as a readline drop-in replacement
   $MKDIR $CRSD/usr/include/readline
   touch $CRSD/usr/include/readline/history.h
   touch $CRSD/usr/include/readline/tilde.h
@@ -52,4 +53,7 @@ install() {
   $LN $nom.so $CRSD/usr/lib/libreadline.so
 
   $LN $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
+
+  $LN editline.3 $CRSD/usr/share/man/man3/el.3
+  $LN editline.3 $CRSD/usr/share/man/man3/$nom.3
 }
