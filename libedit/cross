@@ -42,6 +42,8 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  $RSYNC $CERD/$nom/inputrc $CRSD/etc
+
   # Use libedit as a readline drop-in replacement
   $MKDIR $CRSD/usr/include/readline
   touch $CRSD/usr/include/readline/history.h
