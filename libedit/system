@@ -40,6 +40,8 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
+  $RSYNC $CERD/$nom/inputrc $SCER/$nom/sac/etc
+
   # Use libedit as a readline drop-in replacement
   $MKDIR $SCER/$nom/sac/usr/include/readline
   touch $SCER/$nom/sac/usr/include/readline/history.h
