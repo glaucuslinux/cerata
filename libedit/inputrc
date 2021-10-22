@@ -1,4 +1,5 @@
 set bell-style audible
+set blink-matching-paren on
 set colored-completion-prefix on
 set colored-stats on
 set completion-ignore-case on
