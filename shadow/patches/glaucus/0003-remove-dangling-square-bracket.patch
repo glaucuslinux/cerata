@@ -1,0 +1,11 @@
+--- configure
++++ configure
+@@ -15467,7 +15467,7 @@
+ if test "$with_su" != "no"; then :
+ 
+ $as_echo "#define WITH_SU 1" >>confdefs.h
+-]
++
+ fi
+  if test "x$with_su" != "xno"; then
+   WITH_SU_TRUE=
