@@ -8,7 +8,7 @@ f=-std=c99
 for i; do
   case $i in
     -std=c9[9x] | -std=iso9899:199[9x]) f= ;;
-    -ansi | -std=*) printf "c99 called with non ISO C99 option $i\n" >&2 && exit 1 ;;
+    -ansi | -std=*) echo "c99 called with non ISO C99 option $i" >&2 && exit 1 ;;
   esac
 done
 
