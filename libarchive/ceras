@@ -7,4 +7,4 @@ nom=libarchive
 ver=3.5.2
 url=https://www.$nom.org/downloads/$nom-$ver.tar.xz
 sum=ac7c47f9ddfe5d4d5db6ca9c1bcba788af95662bf0e54ca5426fe66cd8262896e12acc426eecdf0e0d6681c180bcd37f4c4469619273607e95399c7f49b61c7c
-cnt='acl attr bzip2 libressl lz4 make pigz xz zlib-ng zstd'
+cnt='acl attr bzip2 expat libressl lz4 make pigz xz zlib-ng zstd'
