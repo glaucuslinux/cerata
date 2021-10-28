@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=file
-ver=5.40
+ver=5.41
 url=https://astron.com/pub/$nom/$nom-$ver.tar.gz
-sum=3b70df75fa4c9050d55b1ffdc28e5f3c8b8ef7d4efd1a06bf53f113b676d81114a85aae56e0897d32b53716662d64ad18ab251ca8c92c6405c69eb758bb99afb
+sum=bbf2d8e39450b31d0ba8d76d202790fea953775657f942f06e6dc9091798d4a395f7205e542388e4a25b6a4506d07f36c5c4da37cfce0734133e9203a3b00654
