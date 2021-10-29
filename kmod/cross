@@ -64,7 +64,7 @@ install() {
   $LN $nom $CRSD/usr/bin/rmmod
 
   $MKDIR $CRSD/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/depmod-search.conf $CRSD/usr/lib/depmod.d/search.conf
+  $RSYNC $CERD/$nom/search.conf $CRSD/usr/lib/depmod.d
 
   $RM $CRSD/usr/lib/lib$nom.la
 
