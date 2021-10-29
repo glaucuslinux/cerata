@@ -62,7 +62,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/rmmod
 
   $MKDIR $SCER/$nom/sac/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/depmod-search.conf $SCER/$nom/sac/usr/lib/depmod.d/search.conf
+  $RSYNC $CERD/$nom/search.conf $SCER/$nom/sac/usr/lib/depmod.d
 
   $MKDIR $SCER/$nom/sac/usr/lib/modprobe.d
 }
