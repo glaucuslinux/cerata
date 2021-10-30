@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2021, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom=liburing
+ver=2.1
+url=https://git.kernel.dk/cgit/$nom/snapshot/$nom-$ver.tar.bz2
+sum=a658454869b01752b5e499c4f0b50c342a8ff63b3dd1a473a96f9fad03f22a6e4d2354b0e658a4e7e50ea27440a84ee274856b3687803583bc80cb4bc45aec71
+cnt='libucontext make'
