@@ -7,5 +7,5 @@ nom=plocate
 ver=1.1.12
 url=https://$nom.sesse.net/download/$nom-$ver.tar.gz
 sum=b22d6c45f43ac06391f7a92e9ef8d642d1da2ee40d7273e4a61d278d05cdc2be6d5a777ed5966bdf58b13ac7027518e3eb308d7034db030c665cf3b35baea2b5
-cnt='meson samu zstd'
+cnt='liburing meson samu zstd'
 cys=gcc
