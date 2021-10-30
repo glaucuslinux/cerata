@@ -7,3 +7,4 @@ nom=python
 ver=3.10.0
 url=https://www.$nom.org/ftp/$nom/$ver/Python-$ver.tar.xz
 sum=82b2729afc7d72a80882f199970667dce7d971a2e5ecfe6cf84f7b68612ab2caf6ed6d7a8cb81f24ea85cb0816464bb2e8b2e6884eda62fa40742edc674193bd
+cnt='expat make'
