@@ -54,4 +54,31 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $LN $nom $CRSD/usr/bin/wget
+
+  #$RM $CRSD/usr/lib/libwget.la
+  #$RM $CRSD/usr/lib/libwget_alloc.la
+  #$RM $CRSD/usr/lib/libwget_common.la
+  #$RM $CRSD/usr/lib/libwget_css.la
+  #$RM $CRSD/usr/lib/libwget_decompress.la
+  #$RM $CRSD/usr/lib/libwget_dns.la
+  #$RM $CRSD/usr/lib/libwget_dnscache.la
+  #$RM $CRSD/usr/lib/libwget_encoding.la
+  #$RM $CRSD/usr/lib/libwget_hashfile.la
+  #$RM $CRSD/usr/lib/libwget_hpkp_db.la
+  #$RM $CRSD/usr/lib/libwget_hsts.la
+  #$RM $CRSD/usr/lib/libwget_http_parse.la
+  #$RM $CRSD/usr/lib/libwget_io.la
+  #$RM $CRSD/usr/lib/libwget_ip.la
+  #$RM $CRSD/usr/lib/libwget_iri.la
+  #$RM $CRSD/usr/lib/libwget_logger.la
+  #$RM $CRSD/usr/lib/libwget_metalink.la
+  #$RM $CRSD/usr/lib/libwget_netrc.la
+  #$RM $CRSD/usr/lib/libwget_ocsp.la
+  #$RM $CRSD/usr/lib/libwget_progress.la
+  #$RM $CRSD/usr/lib/libwget_robots.la
+  #$RM $CRSD/usr/lib/libwget_thread.la
+  #$RM $CRSD/usr/lib/libwget_tls_session.la
+  #$RM $CRSD/usr/lib/libwget_xml.la
 }
