@@ -7,11 +7,13 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
+
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.rpath build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-default-root-certs-location.patch
 }
 
 configure() {
@@ -29,15 +31,15 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --disable-debug \
     --enable-threads=posix \
-    --disable-nls \
     --disable-rpath \
-    --enable-pcre2 \
-    --with-ssl=openssl \
+    --disable-static \
+    --disable-nls \
+    --disable-doc \
     --with-linux-crypto \
     --with-openssl \
-    --without-included-regex
+    --without-included-regex \
+    --with-ssl=openssl
 }
 
 build() {
