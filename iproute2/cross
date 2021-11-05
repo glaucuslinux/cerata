@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
 }
 
 configure() {
@@ -28,4 +30,6 @@ install() {
     BINDIR=/usr/bin \
     DESTDIR=$CRSD \
     install
+
+  $RSYNC include/libnetlink.h $CRSD/usr/include
 }
