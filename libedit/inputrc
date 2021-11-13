@@ -6,7 +6,7 @@ set completion-ignore-case on
 set completion-query-items 200
 set convert-meta off
 set echo-control-characters off
-set editing-mode vi
+set editing-mode emacs
 set expand-tilde on
 set horizontal-scroll-mode on
 set input-meta on
@@ -17,7 +17,7 @@ set output-meta on
 set page-completions off
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
-set show-mode-in-prompt on
+set show-mode-in-prompt off
 set skip-completed-text on
 set visible-stats on
 
