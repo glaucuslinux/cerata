@@ -37,11 +37,11 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc-11.2.0
 
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-c++
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-c89
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-c99
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-cc
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-g++
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-gcc
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TUPL-gcc-11.2.0
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-c++
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-c89
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-c99
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-cc
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-g++
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-gcc
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-gcc-11.2.0
 }
