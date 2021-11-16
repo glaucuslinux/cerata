@@ -46,6 +46,6 @@ install() {
 
   # Compatibility symlinks
   $LN $nom $CRSD/usr/bin/pkg-config
-  $LN $nom $CRSD/usr/bin/$TUPL-pkg-config
   $LN $nom $CRSD/usr/bin/$TUPL-$nom
+  $LN $nom $CRSD/usr/bin/$TUPL-pkg-config
 }
