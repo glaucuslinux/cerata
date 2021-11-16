@@ -104,6 +104,20 @@ install() {
   $LN $TGT-$nom $CRSD/usr/bin/$TGT-cc
   $LN $TGT-$nom $CRSD/usr/bin/$TGT-$nom-$ver
 
+  # Remove libtool archive (.la) files
+  $RM $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
+  $RM $CRSD/usr/lib/libatomic.la
+  $RM $CRSD/usr/lib/libbfd.la
+  $RM $CRSD/usr/lib/libctf.la
+  $RM $CRSD/usr/lib/libctf-nobfd.la
+  $RM $CRSD/usr/lib/libgomp.la
+  $RM $CRSD/usr/lib/libitm.la
+  $RM $CRSD/usr/lib/libopcodes.la
+  $RM $CRSD/usr/lib/libquadmath.la
+  $RM $CRSD/usr/lib/libstdc++fs.la
+  $RM $CRSD/usr/lib/libstdc++.la
+  $RM $CRSD/usr/lib/libsupc++.la
+
   # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
