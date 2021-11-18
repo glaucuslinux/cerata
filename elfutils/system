@@ -13,8 +13,6 @@ prepare() {
 
   $RSYNC $CERD/musl/error.h lib
   $RSYNC $CERD/musl/error.h src
-
-  $PATCH -p0 -i $CERD/elfutils/patches/glaucus/0001-musl-compat.patch
 }
 
 configure() {
