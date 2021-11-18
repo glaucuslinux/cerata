@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=iana-etc
-ver=20211025
+ver=20211112
 url=https://github.com/Mic92/$nom/releases/download/$ver/$nom-$ver.tar.gz
-sum=def996ff3e87a1aa5e2ded2f5018f37996346364bb73677b17daa02cb98e795a3f44bd16b7e8985f592586e8a15bff95cf09c2770a70a2fbb0715845ce192bfc
+sum=e8197f1c6137e7b9664fd7a279b966f33ac6975517539e545afb487b7b1312fd90eaf22eb3a9310393ee773e476b801bcc1958673bdd41a1dc96eb4338cd8122
 cnt=hydroskeleton
