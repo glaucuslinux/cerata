@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom=cmake
-ver=3.21.4
-url=https://$nom.org/files/v3.21/$nom-$ver.tar.gz
-sum=0262a666f6da106576c26215580c40b54497bcdac400e847e1799716c31c71068293e719416338132a7da6122826c08ff50ac23dfed2711ab42631e96303f544
+ver=3.22.0
+url=https://$nom.org/files/v3.22/$nom-$ver.tar.gz
+sum=72e4e39bfd0a918572228af68391422979f89a0a5020fae7764b5d7ba86a7a56e8174e22f1b0ffeb37b741c0a6118162a2a47655a03939ea0535453186ed385c
