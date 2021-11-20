@@ -39,16 +39,25 @@ configure() {
     --disable-xsmp \
     --disable-xsmp-interact \
     --enable-cscope \
+    --enable-luainterp=dynamic \
+    --disable-mzschemeinterp \
+    --enable-perlinterp=dynamic \
+    --disable-pythoninterp \
+    --enable-python3interp=dynamic \
+    --disable-tclinterp \
+    --disable-rubyinterp \
     --disable-netbeans \
     --enable-terminal \
     --enable-multibyte \
     --disable-gui \
     --disable-canberra \
+    --disable-libsodium \
     --disable-gpm \
     --disable-sysmouse \
     --disable-nls \
     --with-modified-by="glaucus $ARCH $(date +%d%m%Y)" \
     --with-compiledby="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-luajit \
     --without-x \
     --with-tlib=ncursesw
 }
@@ -65,6 +74,8 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install
+
+  $RSYNC $CERD/$nom/vimrc $SCER/$nom/sac/etc
 
   $LN $nom $SCER/$nom/sac/usr/bin/vi
 }

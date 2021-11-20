@@ -1,0 +1,61 @@
+set nocompatible
+
+filetype plugin indent on
+
+set autoindent
+set autoread
+set background=dark
+set backspace=eol,indent,start
+set cmdheight=1
+set colorcolumn=80
+set completeopt=menuone,noinsert,noselect
+set confirm
+set cursorcolumn
+set cursorline
+set display+=lastline
+set encoding=UTF-8
+set expandtab
+set fillchars=vert:█
+set formatoptions+=j
+set hidden
+set history=50
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw
+set linebreak
+set list
+set mat=2
+set modifiable
+set mouse=a
+set nobackup
+set noshiftround
+set noswapfile
+set number
+set ruler
+set scrolloff=1
+set shiftwidth=2
+set shortmess=a
+set showcmd
+set showmatch
+set showmode
+set smartcase
+set smartindent
+set smarttab
+set softtabstop=0
+set spell
+set tabstop=2
+set t_Co=256
+set termguicolors
+set textwidth=80
+set title
+set ttyfast
+set updatetime=100
+set wildmenu
+set wildmode=longest:full,full
+set wrap
+
+syntax enable
+
+autocmd BufRead ceras,cross,system,toolchain set filetype=sh

@@ -41,11 +41,19 @@ configure() {
     --disable-xsmp \
     --disable-xsmp-interact \
     --enable-cscope \
+    --disable-luainterp \
+    --disable-mzschemeinterp \
+    --disable-perlinterp \
+    --disable-pythoninterp \
+    --disable-python3interp \
+    --disable-tclinterp \
+    --disable-rubyinterp \
     --disable-netbeans \
     --enable-terminal \
     --enable-multibyte \
     --disable-gui \
     --disable-canberra \
+    --disable-libsodium \
     --disable-gpm \
     --disable-sysmouse \
     --disable-nls \
@@ -67,6 +75,8 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
+
+  $RSYNC $CERD/$nom/vimrc $CRSD/etc
 
   $LN $nom $CRSD/usr/bin/vi
 }
