@@ -5,6 +5,6 @@
 
 nom=musl-locales
 ver=git
-cmt=76fcf3c
-url=https://github.com/rilian-la-te/$nom
+cmt=1101fb2b
+url=https://${nom}lab.com/rilian-la-te/$nom
 cnt='cmake gettext-tiny make'
