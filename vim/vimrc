@@ -28,7 +28,7 @@ set linebreak
 set list
 set mat=2
 set modifiable
-set mouse=a
+set mouse=
 set nobackup
 set noshiftround
 set noswapfile
@@ -51,6 +51,7 @@ set termguicolors
 set textwidth=80
 set title
 set ttyfast
+set ttymouse=
 set updatetime=100
 set wildmenu
 set wildmode=longest:full,full
