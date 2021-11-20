@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom $XSRC --delete
   cd $XSRC/$nom
 
-  radula_behave_patch 0 $nom glaucus 0001-remove-sbin
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
