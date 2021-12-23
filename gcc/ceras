@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=gcc
-ver=11.2.0
-url=https://ftpmirror.gnu.org/$nom/$nom-$ver/$nom-$ver.tar.xz
-sum=d53a0a966230895c54f01aea38696f818817b505f1e2bfa65e508753fcd01b2aedb4a61434f41f3a2ddbbd9f41384b96153c684ded3f0fa97c82758d9de5c7cf
-cnt='gmp make mpfr mpc isl'
+nom = "gcc"
+ver = "11.2.0"
+url = "https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
+sum = "d53a0a966230895c54f01aea38696f818817b505f1e2bfa65e508753fcd01b2aedb4a61434f41f3a2ddbbd9f41384b96153c684ded3f0fa97c82758d9de5c7cf"
+cnt = "gmp make mpfr mpc isl"
