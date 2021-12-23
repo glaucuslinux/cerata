@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=python
-ver=3.10.0
-url=https://www.$nom.org/ftp/$nom/$ver/Python-$ver.tar.xz
-sum=82b2729afc7d72a80882f199970667dce7d971a2e5ecfe6cf84f7b68612ab2caf6ed6d7a8cb81f24ea85cb0816464bb2e8b2e6884eda62fa40742edc674193bd
-cnt='expat make'
+nom = "python"
+ver = "3.10.1"
+url = "https://www.python.org/ftp/python/3.10.1/Python-3.10.1.tar.xz"
+sum = "1c559e33f1252e51bafb941c380de16f142c0735858363c84cb8dbed6767843de3af126889c2826ffb94bd4777d7cdfc31040301c8c74de56af52b80b1aa9e76"
+cnt = "expat make"
