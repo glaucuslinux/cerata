@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom = "cmake"
-ver = "3.22.0"
-url = "https://cmake.org/files/v3.22/cmake-3.22.0.tar.gz"
-sum = "72e4e39bfd0a918572228af68391422979f89a0a5020fae7764b5d7ba86a7a56e8174e22f1b0ffeb37b741c0a6118162a2a47655a03939ea0535453186ed385c"
+ver = "3.22.1"
+url = "https://cmake.org/files/v3.22/cmake-3.22.1.tar.gz"
+sum = "b1e900fe573cd1cc76d26386f2298d7722737c9ff67930ee108994972b4561ef69caeb537177c9b95b7f17b755e20e034825d3807ea0d2dd4c391310b03adc11"
