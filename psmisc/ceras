@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=psmisc
-ver=23.4
-url=https://prdownloads.sourceforge.net/$nom/$nom-$ver.tar.xz
-sum=b05781fdb283a6f132bd385d64437f8080e6bc0e11cd2e3e02227678682bb67b3c89edec34a6d067d77312811d072dc60b47ebb32b168c4c69bbc36df643a471
-cnt='make netbsd-curses'
+nom = "psmisc"
+ver = "23.4"
+url = "https://prdownloads.sourceforge.net/psmisc/psmisc-23.4.tar.xz"
+sum = "b05781fdb283a6f132bd385d64437f8080e6bc0e11cd2e3e02227678682bb67b3c89edec34a6d067d77312811d072dc60b47ebb32b168c4c69bbc36df643a471"
+cnt = "make netbsd-curses"

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=grub
-ver=2.06
-url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
-sum=4f11c648f3078567e53fc0c74d5026fdc6da4be27d188975e79d9a4df817ade0fe5ad2ddd694238a07edc45adfa02943d83c57767dd51548102b375e529e8efe
+nom = "grub"
+ver = "2.06"
+url = "https://ftpmirror.gnu.org/grub/grub-2.06.tar.xz"
+sum = "4f11c648f3078567e53fc0c74d5026fdc6da4be27d188975e79d9a4df817ade0fe5ad2ddd694238a07edc45adfa02943d83c57767dd51548102b375e529e8efe"
