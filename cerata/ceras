@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=cerata
-ver=git
-cmt=b05fe0e
-url=https://www.${ver}hub.com/glaucuslinux/$nom
+nom = "cerata"
+ver = "git"
+cmt = "b05fe0e"
+url = "https://www.github.com/glaucuslinux/cerata"
