@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom = "utmps"
-ver = "0.1.0.3"
-url = "https://skarnet.org/software/utmps/utmps-0.1.0.3.tar.gz"
-sum = "37daf1c94640f2576795ff5e274b09b95d05d5a42711914e65688493c31efa8cbdaf8698f43af1d90dc28a0ea42695cc1a69e326621f50e6470708853596ae88"
+ver = "0.1.1.0"
+url = "https://skarnet.org/software/utmps/utmps-0.1.1.0.tar.gz"
+sum = "13a6791df2d246c2e2b04176bc614cc0ee238cc2131aa893e0abb7250f9e10598b0d3a5e8ed26cb18a9dffea16bc75a1787d537a80067588bc8e4388139de78f"
 cnt = "execline make skalibs"
 cys = "execline s6 skalibs"
