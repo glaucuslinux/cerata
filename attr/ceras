@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=attr
-ver=2.5.1
-url=https://download.savannah.nongnu.org/releases/$nom/$nom-$ver.tar.xz
-sum=9e5555260189bb6ef2440c76700ebb813ff70582eb63d446823874977307d13dfa3a347dfae619f8866943dfa4b24ccf67dadd7e3ea2637239fdb219be5d2932
+nom = "attr"
+ver = "2.5.1"
+url = "https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz"
+sum = "9e5555260189bb6ef2440c76700ebb813ff70582eb63d446823874977307d13dfa3a347dfae619f8866943dfa4b24ccf67dadd7e3ea2637239fdb219be5d2932"
