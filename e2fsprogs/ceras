@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=e2fsprogs
-ver=1.46.4
-url=https://prdownloads.sourceforge.net/$nom/$nom-$ver.tar.gz
-sum=3fc4c71b6a951b9701d1943dab092dc8598869e1d4f1fabb236c49e6d5349cda809ba2cfc3957160e334824a2fe18e9000624dc02a35fc794ab09a098db13e81
-cnt='eudev execline libedit linux-headers make netbsd-curses skalibs util-linux utmps zlib-ng'
+nom = "e2fsprogs"
+ver = "1.46.4"
+url = "https://prdownloads.sourceforge.net/e2fsprogs/e2fsprogs-1.46.4.tar.gz"
+sum = "3fc4c71b6a951b9701d1943dab092dc8598869e1d4f1fabb236c49e6d5349cda809ba2cfc3957160e334824a2fe18e9000624dc02a35fc794ab09a098db13e81"
+cnt = "eudev execline libedit linux-headers make netbsd-curses skalibs util-linux utmps zlib-ng"
