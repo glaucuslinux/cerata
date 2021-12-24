@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=automake
-ver=1.16.5
-url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.xz
-sum=3084ae543aa3fb5a05104ffb2e66cfa9a53080f2343c44809707fd648516869511500dba50dae67ff10f92a1bf3b5a92b2a0fa01cda30adb69b9da03994d9d88
+nom = "automake"
+ver = "1.16.5"
+url = "https://ftpmirror.gnu.org/automake/automake-1.16.5.tar.xz"
+sum = "3084ae543aa3fb5a05104ffb2e66cfa9a53080f2343c44809707fd648516869511500dba50dae67ff10f92a1bf3b5a92b2a0fa01cda30adb69b9da03994d9d88"
