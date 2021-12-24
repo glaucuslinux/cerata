@@ -5,5 +5,5 @@
 
 nom = "s6-boot-scripts"
 ver = "git"
-cmt = "7bd79e0"
+cmt = "07feb95"
 url = "https://github.com/glaucuslinux/s6-boot-scripts"
