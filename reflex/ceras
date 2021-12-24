@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom = "reflex"
-ver = "3.0.4"
-url = "https://github.com/Genivia/RE-flex/archive/v3.0.4.tar.gz"
-sum = "95c244be6244bc54af84560e8488bbc6f2b8eb637ab31d2e96e9d7879242edc37bdc522185bf4bb24aec4abe107ee73535404152511cd813897c38c086baaf4f"
+ver = "3.1.0"
+url = "https://github.com/Genivia/RE-flex/archive/v3.1.0.tar.gz"
+sum = "a4550679efd75f345c87540350f224f55d4c2554f67bd21d6bfd5e6ccbf643d880e7aa6689a5cdc381769dc47db64b283f6ae87c4cbafecf9a3e3d4734967f3e"
