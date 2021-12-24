@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=mimalloc
-ver=2.0.2
-url=https://github.com/microsoft/$nom/archive/v$ver.tar.gz
-sum=d6f1749a6df86346220fc190a3fd6aa67deff5439b26846c33ff95e91ce5fea73837ee39348dd432db3592575298e6e87856329d0236d2c6959abd8bf7756cdc
-cnt=cmake
+nom = "mimalloc"
+ver = "2.0.2"
+url = "https://github.com/microsoft/mimalloc/archive/v2.0.2.tar.gz"
+sum = "d6f1749a6df86346220fc190a3fd6aa67deff5439b26846c33ff95e91ce5fea73837ee39348dd432db3592575298e6e87856329d0236d2c6959abd8bf7756cdc"
+cnt = "cmake"

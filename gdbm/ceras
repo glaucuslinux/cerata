@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=gdbm
-ver=1.22
-url=https://ftpmirror.gnu.org/$nom/$nom-$ver.tar.gz
-sum=67461fc4f41e825d0134175ff99c913ccb4aa7ea3d0f64f32bdedbc7677b3ecabd2c525ac6b2ee47a9561e002e4224e492b72088d57bb4862a1f8c089521ec51
+nom = "gdbm"
+ver = "1.22"
+url = "https://ftpmirror.gnu.org/gdbm/gdbm-1.22.tar.gz"
+sum = "67461fc4f41e825d0134175ff99c913ccb4aa7ea3d0f64f32bdedbc7677b3ecabd2c525ac6b2ee47a9561e002e4224e492b72088d57bb4862a1f8c089521ec51"

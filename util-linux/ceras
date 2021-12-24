@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=util-linux
-ver=2.37.2
-url=https://cdn.kernel.org/pub/linux/utils/$nom/v2.37/$nom-$ver.tar.xz
-sum=38f0fe820445e3bfa79550e6581c230f98c7661566ccc4daa51c7208a5f972c61b4e57dfc86bed074fdbc7c40bc79f856be8f6a05a8860c1c0cecc4208e8b81d
-cnt='eudev execline libedit linux-headers make netbsd-curses skalibs utmps zlib-ng'
+nom = "util-linux"
+ver = "2.37.2"
+url = "https://cdn.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.2.tar.xz"
+sum = "38f0fe820445e3bfa79550e6581c230f98c7661566ccc4daa51c7208a5f972c61b4e57dfc86bed074fdbc7c40bc79f856be8f6a05a8860c1c0cecc4208e8b81d"
+cnt = "eudev execline libedit linux-headers make netbsd-curses skalibs utmps zlib-ng"

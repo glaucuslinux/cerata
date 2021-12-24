@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=iputils
-ver=20210722
-url=https://github.com/$nom/$nom/archive/$ver.tar.gz
-sum=8f85bf468f8ef1e2832e9bbf9009552df4a6d723dd130fa0d5b2aa3bae617c972f936143c2370c3b4ce2ba2499828c91a299ee42cf81fa81aabe10552db2b328
-cnt='libcap meson samu'
+nom = "iputils"
+ver = "20210722"
+url = "https://github.com/iputils/iputils/archive/20210722.tar.gz"
+sum = "8f85bf468f8ef1e2832e9bbf9009552df4a6d723dd130fa0d5b2aa3bae617c972f936143c2370c3b4ce2ba2499828c91a299ee42cf81fa81aabe10552db2b328"
+cnt = "libcap meson samu"

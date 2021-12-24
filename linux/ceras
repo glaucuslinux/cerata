@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=linux
-ver=5.14.9
-url=https://cdn.kernel.org/pub/$nom/kernel/v5.x/$nom-$ver.tar.xz
-sum=987ae9ceba83ba12e5e1962118831dbc47eaf26848cfd83b93db58f004dbc3c8d10d62a33cf449abddcfe996023dc705207c43a22aae665461eff9d7365bbc00
-cnt='libelf libuargp make musl-fts musl-obstack zlib-ng'
+nom = "linux"
+ver = "5.14.9"
+url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.14.9.tar.xz"
+sum = "987ae9ceba83ba12e5e1962118831dbc47eaf26848cfd83b93db58f004dbc3c8d10d62a33cf449abddcfe996023dc705207c43a22aae665461eff9d7365bbc00"
+cnt = "libelf libuargp make musl-fts musl-obstack zlib-ng"

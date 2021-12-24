@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=sdhcp
-ver=git
-cmt=5f9956c
-url=https://${ver}hub.com/michaelforney/$nom
+nom = "sdhcp"
+ver = "git"
+cmt = "5f9956c"
+url = "https://github.com/michaelforney/sdhcp"

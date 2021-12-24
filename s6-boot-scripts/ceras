@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom=s6-boot-scripts
-ver=git
-cmt=7bd79e0
-url=https://${ver}hub.com/glaucuslinux/$nom
+nom = "s6-boot-scripts"
+ver = "git"
+cmt = "7bd79e0"
+url = "https://github.com/glaucuslinux/s6-boot-scripts"
