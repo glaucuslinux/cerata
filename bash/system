@@ -19,6 +19,10 @@ prepare() {
   $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-006
   $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-007
   $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-008
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-009
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-010
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-011
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-012
 }
 
 configure() {
