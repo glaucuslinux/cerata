@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom = "execline"
-ver = "2.8.1.0"
-url = "https://skarnet.org/software/execline/execline-2.8.1.0.tar.gz"
-sum = "4e20ff5cd82941914a639abe2481efd93a7ada6d2431b65813793cc7801463179bc1c58ee73e889747038c859e5fd6e7e668b758fa1785da03e549547ca3c94c"
+ver = "2.8.2.0"
+url = "https://skarnet.org/software/execline/execline-2.8.2.0.tar.gz"
+sum = "9a2c21fbddfc4bce69857fa906fcbb7b17b0cd1009a33a9f3bbcce69ff443af82704d74b792e2d4393eb6d7de9888a5bc74ff208c31485d3398b0dea07368a15"
 cnt = "make skalibs"
 cys = "skalibs"
