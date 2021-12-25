@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  $RSYNC $CERD/$nom/system.config .config
+  $RSYNC $CERD/$nom/config .config
 
   CROSS_COMPILE= \
   scripts/genconfig.sh
