@@ -13,8 +13,6 @@ configure() {
   glaucus-meson \
     -DUSE_IDN=false \
     -DBUILD_RARPD=true \
-    -DBUILD_TFTPD=true \
-    -DBUILD_TRACEROUTE6=true \
     -DBUILD_NINFOD=false \
     -DNINFOD_MESSAGES=false \
     -DBUILD_MANS=false \
@@ -39,5 +37,4 @@ install() {
 
   $LN ping $SCER/$nom/sac/usr/bin/ping6
   $LN tracepath $SCER/$nom/sac/usr/bin/tracepath6
-  $LN traceroute6 $SCER/$nom/sac/usr/bin/traceroute
 }
