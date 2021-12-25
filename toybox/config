@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # ToyBox version: KCONFIG_VERSION
-# Sat Dec 25 12:19:31 2021
+# Sun Dec 26 01:35:22 2021
 #
 CONFIG_TOYBOX_CONTAINER=y
 CONFIG_TOYBOX_FIFREEZE=y
@@ -336,7 +336,7 @@ CONFIG_MKTEMP=y
 # CONFIG_PASSWD_SAD is not set
 # CONFIG_PIDOF is not set
 CONFIG_SEQ=y
-# CONFIG_SU is not set
+CONFIG_SU=y
 CONFIG_SYNC=y
 # CONFIG_UMOUNT is not set
 
