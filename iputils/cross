@@ -14,8 +14,6 @@ configure() {
     --cross-file $CERD/meson/meson.cross.$ARCH \
     -DUSE_IDN=false \
     -DBUILD_RARPD=true \
-    -DBUILD_TFTPD=true \
-    -DBUILD_TRACEROUTE6=true \
     -DBUILD_NINFOD=false \
     -DNINFOD_MESSAGES=false \
     -DBUILD_MANS=false \
@@ -40,5 +38,4 @@ install() {
 
   $LN ping $CRSD/usr/bin/ping6
   $LN tracepath $CRSD/usr/bin/tracepath6
-  $LN traceroute6 $CRSD/usr/bin/traceroute
 }
