@@ -6,5 +6,5 @@
 nom = "iana-etc"
 ver = "20211215"
 url = "https://github.com/Mic92/iana-etc/releases/download/20211215/iana-etc-20211215.tar.gz"
-sum = "e8197f1c6137e7b9664fd7a279b966f33ac6975517539e545afb487b7b1312fd90eaf22eb3a9310393ee773e476b801bcc1958673bdd41a1dc96eb4338cd8122"
+sum = "b03ef5135f2fdf311292f4d8de4cc9e7b54417d160a6bc65f26422116fbe0c86d4f2f95652dd43ed0a3a5347161dd6030397f3fceb131205715cd92196c71a5c"
 cnt = "hydroskeleton"
