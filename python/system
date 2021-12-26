@@ -24,11 +24,12 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-shared \
     --enable-optimizations \
-    --disable-ipv6 \
+    --enable-ipv6 \
     --with-lto \
     --with-system-expat \
     --with-system-ffi \
