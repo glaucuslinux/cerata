@@ -97,6 +97,7 @@ install() {
   $LN $nom $CRSD/usr/bin/split
   $LN $nom $CRSD/usr/bin/stat
   $LN $nom $CRSD/usr/bin/stty
+  $LN $nom $CRSD/usr/bin/su
   $LN $nom $CRSD/usr/bin/sync
   $LN $nom $CRSD/usr/bin/tac
   $LN $nom $CRSD/usr/bin/tail
