@@ -6,5 +6,5 @@
 nom = "musl-locales"
 ver = "git"
 cmt = "1101fb2b"
-url = "https://musl-localeslab.com/rilian-la-te/musl-locales"
+url = "https://gitlab.com/rilian-la-te/musl-locales"
 cnt = "cmake gettext-tiny make"
