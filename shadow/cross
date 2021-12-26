@@ -16,7 +16,6 @@ prepare() {
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-remove-dangling-square-bracket.patch
 
   $PATCH -p0 -i $CERD/$nom/patches/lfs/0001-disable-groups.patch
 
@@ -44,7 +43,8 @@ configure() {
     --without-selinux \
     --with-acl \
     --with-attr \
-    --with-group-name-max-length=32
+    --with-group-name-max-length=32 \
+    --without-su
 }
 
 build() {
