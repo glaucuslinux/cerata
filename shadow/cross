@@ -35,7 +35,6 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --enable-shared \
     --disable-static \
     --enable-utmpx \
     --disable-nls \
