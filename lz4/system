@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/clear/fix-make-install.patch
   $PATCH -p0 -i $CERD/$nom/patches/clear/0001-Makefile-propagate-CFLAGS.patch
+  $PATCH -p0 -i $CERD/$nom/patches/clear/fix-make-install.patch
 }
 
 configure() {
