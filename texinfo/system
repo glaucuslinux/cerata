@@ -7,13 +7,13 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess build-aux
-  radula_behave_gnu rpath build-aux
-  radula_behave_gnu sub build-aux
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 
-  radula_behave_gnu guess tp/Texinfo/XS
-  radula_behave_gnu rpath tp/Texinfo/XS
-  radula_behave_gnu sub tp/Texinfo/XS
+  $RSYNC $CERD/binutils/config.guess tp/Texinfo/XS
+  $RSYNC $CERD/binutils/config.rpath tp/Texinfo/XS
+  $RSYNC $CERD/binutils/config.sub tp/Texinfo/XS
 }
 
 configure() {
