@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  radula_behave_gnu guess configfsf.guess
-  radula_behave_gnu sub configfsf.sub
+  $RSYNC $CERD/binutils/config.guess configfsf.guess
+  $RSYNC $CERD/binutils/config.sub configfsf.sub
 }
 
 configure() {
