@@ -1,6 +1,6 @@
 --- src/Makefile.in
 +++ src/Makefile.in
-@@ -630,7 +630,7 @@
+@@ -629,7 +629,7 @@
  	.indent.pro
  
  ubindir = ${prefix}/bin
