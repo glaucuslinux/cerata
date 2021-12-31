@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2021, Firas Khalil Khana
+# Copyright (c) 2018-2022, Firas Khalil Khana
 # Distributed under the terms of the ISC License
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
@@ -6,12 +6,10 @@
 prepare() {
   $RSYNC $SRCD/$nom $XSRC --delete
   cd $XSRC/$nom
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
-  :
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 build() {
