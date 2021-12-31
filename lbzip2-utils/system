@@ -37,6 +37,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
+  # Compatibility symlinks
   $LN lbzcmp $SCER/$nom/sac/usr/bin/bzcmp
   $LN lbzdiff $SCER/$nom/sac/usr/bin/bzdiff
   $LN lbzegrep $SCER/$nom/sac/usr/bin/bzegrep

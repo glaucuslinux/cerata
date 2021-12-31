@@ -39,6 +39,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Compatibility symlinks
   $LN lbzcmp $CRSD/usr/bin/bzcmp
   $LN lbzdiff $CRSD/usr/bin/bzdiff
   $LN lbzegrep $CRSD/usr/bin/bzegrep
