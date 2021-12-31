@@ -23,6 +23,7 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
@@ -44,7 +45,7 @@ install() {
 
   $RSYNC $CERD/$nom/inputrc $CRSD/etc
 
-  # Use libedit as a readline drop-in replacement
+  # Use libedit as a drop-in replacement for `readline`
   $MKDIR $CRSD/usr/include/readline
   touch $CRSD/usr/include/readline/history.h
   touch $CRSD/usr/include/readline/tilde.h
