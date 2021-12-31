@@ -9,7 +9,6 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
-
 }
 
 configure() {
