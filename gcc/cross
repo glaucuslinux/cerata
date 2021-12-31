@@ -121,5 +121,6 @@ install() {
   # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
+  # Compatibility symlink
   $LN ../bin/cpp $CRSD/usr/lib/cpp
 }
