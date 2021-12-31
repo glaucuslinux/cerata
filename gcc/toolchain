@@ -108,5 +108,6 @@ install() {
   # `$TLCD/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/lib/bfd-plugins
 
+  # Compatibility symlink
   $LN ../bin/$TGT-cpp $TLCD/lib/$TGT-cpp
 }
