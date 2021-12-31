@@ -42,6 +42,7 @@ install() {
 
   $RSYNC $CERD/$nom/updatedb.conf $CRSD/etc
 
+  # Compatibility symlinks
   $LN $nom $CRSD/usr/bin/locate
   $LN $nom $CRSD/usr/bin/slocate
   $LN pupdatedb $CRSD/usr/bin/updatedb
