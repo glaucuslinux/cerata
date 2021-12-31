@@ -10,30 +10,30 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
 
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0001-Avoid-set_file_attributes-sign-conversion-warnings.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0002-Test-suite-compatibility-fixes.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0003-Test-suite-fix-Korn-shell-incompatibility.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0004-Fix-segfault-with-mangled-rename-$nom.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0005-Allow-input-files-to-be-missing-for-ed-style-${nom}es.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0006-Fix-arbitrary-command-execution-in-ed-style-${nom}es-.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0007-Invoke-ed-directly-instead-of-using-the-shell.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0011-Fix-check-of-return-value-of-fwrite.patch
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0012-Fix-ed-style-test-failure.patch
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0001-Avoid-set_file_attributes-sign-conversion-warnings.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0002-Test-suite-compatibility-fixes.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0003-Test-suite-fix-Korn-shell-incompatibility.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0004-Fix-segfault-with-mangled-rename-$nom.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0005-Allow-input-files-to-be-missing-for-ed-style-${nom}es.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0006-Fix-arbitrary-command-execution-in-ed-style-${nom}es-.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0007-Invoke-ed-directly-instead-of-using-the-shell.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0011-Fix-check-of-return-value-of-fwrite.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0012-Fix-ed-style-test-failure.$nom
 
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-2.7.6-CVE-2018-1000156-fix1.patch
+  $PATCH -p1 -i $CERD/$nom/${nom}es/gentoo/$nom-2.7.6-CVE-2018-1000156-fix1.$nom
 
-  $PATCH -p1 -i $CERD/$nom/patches/0015-Don-t-leak-temporary-file-on-failed-multi-file-ed-st.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0016-Make-the-debug-2-output-more-useful.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0017-Fix-swapping-fake-lines-in-pch_swap.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0018-Improve-support-for-memory-leak-detection.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0019-Skip-ed-test-when-the-ed-utility-is-not-installed.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0020-Abort-when-cleaning-up-fails.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0021-Don-t-crash-when-RLIMIT_NOFILE-is-set-to-RLIM_INFINI.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0022-Don-t-follow-symlinks-unless-follow-symlinks-is-give.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0023-Avoid-invalid-memory-access-in-context-format-diffs.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0024-Fix-failed-assertion-outstate-after_newline.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0025-Add-missing-section-tests-to-context-format-test-cas.patch
-  $PATCH -p1 -i $CERD/$nom/patches/0026-Fix-test-for-presence-of-BASH_LINENO.patch
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0015-Don-t-leak-temporary-file-on-failed-multi-file-ed-st.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0016-Make-the-debug-2-output-more-useful.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0017-Fix-swapping-fake-lines-in-pch_swap.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0018-Improve-support-for-memory-leak-detection.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0019-Skip-ed-test-when-the-ed-utility-is-not-installed.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0020-Abort-when-cleaning-up-fails.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0021-Don-t-crash-when-RLIMIT_NOFILE-is-set-to-RLIM_INFINI.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0022-Don-t-follow-symlinks-unless-follow-symlinks-is-give.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0023-Avoid-invalid-memory-access-in-context-format-diffs.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0024-Fix-failed-assertion-outstate-after_newline.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0025-Add-missing-section-tests-to-context-format-test-cas.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/0026-Fix-test-for-presence-of-BASH_LINENO.$nom
 }
 
 configure() {
