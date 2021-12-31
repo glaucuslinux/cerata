@@ -37,5 +37,6 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
+  # Provide compatibility symlink as `more` is disabled in `util-linux`
   $LN $nom $SCER/$nom/sac/usr/bin/more
 }
