@@ -12,12 +12,12 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub .
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/lfs/0001-disable-groups.patch
 }
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/lfs/0001-disable-groups.patch
 
   LIBS='-lutmps -lskarnet' \
   shadow_cv_utmpdir=/run/utmps \
