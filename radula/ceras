@@ -5,6 +5,6 @@
 
 nom = "radula"
 ver = "git"
-cmt = "5fa2916"
+cmt = "bfd22a6"
 url = "https://github.com/glaucuslinux/radula"
 cys = "curl git libarchive rsync toybox"
