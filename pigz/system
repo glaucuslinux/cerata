@@ -29,7 +29,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/gunzip
   $LN $nom $SCER/$nom/sac/usr/bin/gzcat
   $LN $nom $SCER/$nom/sac/usr/bin/gzip
-  $LN $nom $SCER/$nom/sac/usr/bin/unpigz
+  $LN $nom $SCER/$nom/sac/usr/bin/un$nom
   $LN $nom $SCER/$nom/sac/usr/bin/zcat
 
   $MKDIR $SCER/$nom/sac/usr/share/man/man1
