@@ -30,6 +30,7 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-doc \
