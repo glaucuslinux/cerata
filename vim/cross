@@ -76,7 +76,7 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $RSYNC $CERD/$nom/vimrc $CRSD/etc
+  $RSYNC $CERD/$nom/${nom}rc $CRSD/etc
 
   $LN $nom $CRSD/usr/bin/vi
 }
