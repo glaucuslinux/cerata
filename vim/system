@@ -75,7 +75,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
-  $RSYNC $CERD/$nom/vimrc $SCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/${nom}rc $SCER/$nom/sac/etc
 
   $LN $nom $SCER/$nom/sac/usr/bin/vi
 }
