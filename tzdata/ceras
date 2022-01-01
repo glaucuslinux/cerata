@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "tzdata"
-ver = "2021e"
-url = "https://data.iana.org/time-zones/releases/tzdata2021e.tar.gz"
-sum = "c1e8d04e049157ed5d4af0868855bbd75517e3d7e1db9c41d5283ff260109de46b6fac6be94828201d093e163d868044ac2a9db2bf0aeab800e264d0c73a9119"
+nom="tzdata"
+ver="2021e"
+url="https://data.iana.org/time-zones/releases/tzdata2021e.tar.gz"
+sum="c1e8d04e049157ed5d4af0868855bbd75517e3d7e1db9c41d5283ff260109de46b6fac6be94828201d093e163d868044ac2a9db2bf0aeab800e264d0c73a9119"
