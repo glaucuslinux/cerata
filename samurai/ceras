@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "samurai"
-ver = "1.2"
-url = "https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz"
-sum = "bbe6a582c34b04f1df53b76c1647aa3e03c4698ebf7591a203935f11ffa05971bbcb86dc1a8c06aeb904cdc741abb08918122810fc47216fed0a6d9f87fd1225"
+nom="samurai"
+ver="1.2"
+url="https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz"
+sum="bbe6a582c34b04f1df53b76c1647aa3e03c4698ebf7591a203935f11ffa05971bbcb86dc1a8c06aeb904cdc741abb08918122810fc47216fed0a6d9f87fd1225"

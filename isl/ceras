@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "isl"
-ver = "0.24"
-url = "https://libisl.sourceforge.io/isl-0.24.tar.xz"
-sum = "ff6bdcff839e1cd473f2a0c1e4dd4a3612ec6fee4544ccbc62b530a7248db2cf93b4b99bf493a86ddf2aba00e768927265d5d411f92061ea85fd7929073428e8"
+nom="isl"
+ver="0.24"
+url="https://libisl.sourceforge.io/isl-0.24.tar.xz"
+sum="ff6bdcff839e1cd473f2a0c1e4dd4a3612ec6fee4544ccbc62b530a7248db2cf93b4b99bf493a86ddf2aba00e768927265d5d411f92061ea85fd7929073428e8"

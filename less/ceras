@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "less"
-ver = "598"
-url = "https://www.greenwoodsoftware.com/less/less-598.tar.gz"
-sum = "5cb882c10d7b1b8435ba1a565bc2b452b7df3fdf75beb818df67a957b34976cb2c4fe9428fbaf7faa882d428d6a6eb27870f0e3052c5fa5f0da13d92789cf524"
-cnt = "make netbsd-curses pcre2"
+nom="less"
+ver="598"
+url="https://www.greenwoodsoftware.com/less/less-598.tar.gz"
+sum="5cb882c10d7b1b8435ba1a565bc2b452b7df3fdf75beb818df67a957b34976cb2c4fe9428fbaf7faa882d428d6a6eb27870f0e3052c5fa5f0da13d92789cf524"
+cnt="make netbsd-curses pcre2"

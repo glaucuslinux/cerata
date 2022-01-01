@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "dash"
-ver = "0.5.11.5"
-url = "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.5.tar.gz"
-sum = "5387e213820eeb44d812bb4697543023fd4662b51a9ffd52a702810fed8b28d23fbe35a7f371e6686107de9f81902eff109458964b4622f4c5412d60190a66bf"
+nom="dash"
+ver="0.5.11.5"
+url="http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.11.5.tar.gz"
+sum="5387e213820eeb44d812bb4697543023fd4662b51a9ffd52a702810fed8b28d23fbe35a7f371e6686107de9f81902eff109458964b4622f4c5412d60190a66bf"

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "ccache"
-ver = "4.5.1"
-url = "https://github.com/ccache/ccache/releases/download/v4.5.1/ccache-4.5.1.tar.xz"
-sum = "267dcc6b41270eeffe029d13e58eca3399540037cc19dc58bb5ebeb7dcc51b201fbde91c9824eaee5b14fbf28bb7304b78d1340118bc72e56b80ff148575bc56"
+nom="ccache"
+ver="4.5.1"
+url="https://github.com/ccache/ccache/releases/download/v4.5.1/ccache-4.5.1.tar.xz"
+sum="267dcc6b41270eeffe029d13e58eca3399540037cc19dc58bb5ebeb7dcc51b201fbde91c9824eaee5b14fbf28bb7304b78d1340118bc72e56b80ff148575bc56"

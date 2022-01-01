@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "musl-locales"
-ver = "git"
-cmt = "1101fb2b"
-url = "https://gitlab.com/rilian-la-te/musl-locales"
-cnt = "cmake gettext-tiny make"
+nom="musl-locales"
+ver="git"
+cmt="1101fb2b"
+url="https://gitlab.com/rilian-la-te/musl-locales"
+cnt="cmake gettext-tiny make"
