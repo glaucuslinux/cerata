@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "vim"
-ver = "8.2.3877"
-url = "https://github.com/vim/vim/archive/v8.2.3877.tar.gz"
-sum = "1bef95c7914efc466ab89f6acd77d1286ef6809568ee9b1d7db33b9f55c4a42167ee54fcf3a50ccadb38bd6a887db5a8d469894fffe420dadbdbf83ca51b6550"
-cnt = "acl attr make netbsd-curses"
+nom="vim"
+ver="8.2.3877"
+url="https://github.com/vim/vim/archive/v8.2.3877.tar.gz"
+sum="1bef95c7914efc466ab89f6acd77d1286ef6809568ee9b1d7db33b9f55c4a42167ee54fcf3a50ccadb38bd6a887db5a8d469894fffe420dadbdbf83ca51b6550"
+cnt="acl attr make netbsd-curses"

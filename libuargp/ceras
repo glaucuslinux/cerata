@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "libuargp"
-ver = "git"
-cmt = "1f92296"
-url = "https://github.com/xhebox/libuargp"
+nom="libuargp"
+ver="git"
+cmt="1f92296"
+url="https://github.com/xhebox/libuargp"

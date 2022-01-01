@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "iproute2"
-ver = "5.14.0"
-url = "https://cdn.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.14.0.tar.xz"
-sum = "e2b9b0a2c3e6fc4c67cb50b0a9bf710e749648b83369a49bf905edd7e519d76c50c2cc818bb63cc605c409c66075d4d371f2371796e5f7a8f9d04101b80ef75c"
+nom="iproute2"
+ver="5.14.0"
+url="https://cdn.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.14.0.tar.xz"
+sum="e2b9b0a2c3e6fc4c67cb50b0a9bf710e749648b83369a49bf905edd7e519d76c50c2cc818bb63cc605c409c66075d4d371f2371796e5f7a8f9d04101b80ef75c"

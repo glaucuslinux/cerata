@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "lbzip2-utils"
-ver = "git"
-cmt = "16751ef"
-url = "https://github.com/kjn/lbzip2-utils"
+nom="lbzip2-utils"
+ver="git"
+cmt="16751ef"
+url="https://github.com/kjn/lbzip2-utils"

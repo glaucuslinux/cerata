@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "netbsd-curses"
-ver = "0.3.2"
-url = "https://ftp.barfooze.de/pub/sabotage/tarballs/netbsd-curses-0.3.2.tar.xz"
-sum = "2f5604782599f07ee8c54bbf98fa7f8b1c13a26b3e194a4b4ac756f8b23448d1d3cb65223f39de304f34322b73deec6ccfa93cd4a606b2ed56308de730d6593e"
+nom="netbsd-curses"
+ver="0.3.2"
+url="https://ftp.barfooze.de/pub/sabotage/tarballs/netbsd-curses-0.3.2.tar.xz"
+sum="2f5604782599f07ee8c54bbf98fa7f8b1c13a26b3e194a4b4ac756f8b23448d1d3cb65223f39de304f34322b73deec6ccfa93cd4a606b2ed56308de730d6593e"

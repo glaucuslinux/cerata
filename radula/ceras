@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "radula"
-ver = "git"
-cmt = "bfd22a6"
-url = "https://github.com/glaucuslinux/radula"
-cys = "curl git libarchive rsync toybox"
+nom="radula"
+ver="git"
+cmt="bfd22a6"
+url="https://github.com/glaucuslinux/radula"
+cys="curl git libarchive rsync toybox"

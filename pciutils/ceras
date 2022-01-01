@@ -3,9 +3,9 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom = "pciutils"
-ver = "3.7.0"
-url = "https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.7.0.tar.xz"
-sum = "eaae09a1a91137f026aaa7484baa6fb138146dbe58a7fd5eb4cd38f206426a123b27e397c8f6a62eaef627470bff109365cd137a04358ec6a4539da342661f26"
-cnt = "eudev kmod libressl linux-headers make xz zlib-ng zstd"
-cys = "hwids"
+nom="pciutils"
+ver="3.7.0"
+url="https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.7.0.tar.xz"
+sum="eaae09a1a91137f026aaa7484baa6fb138146dbe58a7fd5eb4cd38f206426a123b27e397c8f6a62eaef627470bff109365cd137a04358ec6a4539da342661f26"
+cnt="eudev kmod libressl linux-headers make xz zlib-ng zstd"
+cys="hwids"
