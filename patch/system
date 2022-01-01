@@ -20,7 +20,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0011-Fix-check-of-return-value-of-fwrite.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/upstream/0012-Fix-ed-style-test-failure.$nom
 
-  $PATCH -p1 -i $CERD/$nom/${nom}es/gentoo/$nom-2.7.6-CVE-2018-1000156-fix1.$nom
+  $PATCH -p1 -i $CERD/$nom/${nom}es/gentoo/$nom-$ver-CVE-2018-1000156-fix1.$nom
 
   $PATCH -p1 -i $CERD/$nom/${nom}es/0015-Don-t-leak-temporary-file-on-failed-multi-file-ed-st.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/0016-Make-the-debug-2-output-more-useful.$nom
