@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="shadow"
-ver="4.10"
-url="https://github.com/shadow-maint/shadow/releases/download/v4.10/shadow-4.10.tar.xz"
-sum="39ffc1863d1f84aa39a2983c08e5adb93642b09e3e5e65c1c4e8a342207a79201b199e518e3701726014c7cb736977ef275d2dc1c659b5776183ae73978357da"
+ver="4.11.1"
+url="https://github.com/shadow-maint/shadow/releases/download/v4.11.1/shadow-4.11.1.tar.xz"
+sum="12fbe4d6ac929ad3c21525ed0f1026b5b678ccec9762f2ec7e611d9c180934def506325f2835fb750dd30af035b592f827ff151cd6e4c805aaaf8e01425c279f"
 cnt="execline make skalibs utmps"
