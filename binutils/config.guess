@@ -4,7 +4,7 @@
 
 # shellcheck disable=SC2006,SC2268 # see below for rationale
 
-timestamp='2022-01-03'
+timestamp='2022-01-09'
 
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -929,6 +929,9 @@ EOF
     i*:PW*:*)
 	GUESS=$UNAME_MACHINE-pc-pw32
 	;;
+    *:SerenityOS:*:*)
+        GUESS=$UNAME_MACHINE-pc-serenity
+        ;;
     *:Interix*:*)
 	case $UNAME_MACHINE in
 	    x86)
