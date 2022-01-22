@@ -6,5 +6,5 @@
 nom="toybox"
 ver="0.8.6"
 url="https://github.com/landley/toybox/archive/0.8.6.tar.gz"
-sum="f4b275037ec571a3e89e0a47343c901da5521398788aab28f6718c945e0c73fd29f8cb192772e1f0117f5129b22e95cd0a1d30aeaa91de8338f39a1b0f4bb5e1"
+sum="251c618807677111267721d93dd54638"
 cnt="execline libressl make skalibs utmps"

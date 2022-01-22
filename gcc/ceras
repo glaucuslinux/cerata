@@ -6,5 +6,5 @@
 nom="gcc"
 ver="11.2.0"
 url="https://ftpmirror.gnu.org/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz"
-sum="d53a0a966230895c54f01aea38696f818817b505f1e2bfa65e508753fcd01b2aedb4a61434f41f3a2ddbbd9f41384b96153c684ded3f0fa97c82758d9de5c7cf"
+sum="75c861e67181aca32a682863a67a2dc2"
 cnt="gmp make mpfr mpc isl"

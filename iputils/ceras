@@ -6,5 +6,5 @@
 nom="iputils"
 ver="20211215"
 url="https://github.com/iputils/iputils/archive/20211215.tar.gz"
-sum="191062e51f7c8e8b38e3e4a96845adb77cd69f487d548c7cc578fad544443b4bc0dbe965d8f8e6fbda0a2f5b2fe2829789c05f873190c53d773245959298f6e9"
+sum="139042f771c0f7271b892ffaa22af662"
 cnt="libcap meson samu"

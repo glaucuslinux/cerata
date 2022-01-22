@@ -6,5 +6,5 @@
 nom="elfutils"
 ver="0.186"
 url="https://sourceware.org/elfutils/ftp/0.186/elfutils-0.186.tar.bz2"
-sum="c9180b27ec62935f18b9431268d176f6023d1bb938731d2af6e7626ae460af6608a70ba68483aa1ec7e6cb0fa0528b661ca8b68bc4f58ea8e18af527c5950c78"
+sum="507be9a4e56fd70a0b061d16418f999e"
 cnt="libuargp make musl-fts musl-obstack zlib-ng"

@@ -6,6 +6,6 @@
 nom="execline"
 ver="2.8.2.0"
 url="https://skarnet.org/software/execline/execline-2.8.2.0.tar.gz"
-sum="9a2c21fbddfc4bce69857fa906fcbb7b17b0cd1009a33a9f3bbcce69ff443af82704d74b792e2d4393eb6d7de9888a5bc74ff208c31485d3398b0dea07368a15"
+sum="f0fe6201b81be6dd88adca4442a80540"
 cnt="make skalibs"
 cys="skalibs"

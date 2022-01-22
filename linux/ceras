@@ -6,5 +6,5 @@
 nom="linux"
 ver="5.14.9"
 url="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.14.9.tar.xz"
-sum="987ae9ceba83ba12e5e1962118831dbc47eaf26848cfd83b93db58f004dbc3c8d10d62a33cf449abddcfe996023dc705207c43a22aae665461eff9d7365bbc00"
+sum="ac1c7f24dd17832e68a455c2bc4c6776"
 cnt="libelf libuargp make musl-fts musl-obstack zlib-ng"
