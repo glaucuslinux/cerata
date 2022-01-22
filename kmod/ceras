@@ -6,5 +6,5 @@
 nom="kmod"
 ver="29"
 url="https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-29.tar.xz"
-sum="557cdcaec75e5a1ceea2d10862c944e9a65ef54f6ee9da6dc98ce4582418fdc9958aab2e14a84807db61daf36ec4fcdc23a36376c39d5dc31d1823ca7cd47998"
+sum="8ead2fbe43e12920dca73195e8485ad0"
 cnt="libressl make xz zlib-ng zstd"

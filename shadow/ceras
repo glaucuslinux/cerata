@@ -6,5 +6,5 @@
 nom="shadow"
 ver="4.11.1"
 url="https://github.com/shadow-maint/shadow/releases/download/v4.11.1/shadow-4.11.1.tar.xz"
-sum="12fbe4d6ac929ad3c21525ed0f1026b5b678ccec9762f2ec7e611d9c180934def506325f2835fb750dd30af035b592f827ff151cd6e4c805aaaf8e01425c279f"
+sum="111354cfe7eb4ccbc439c4f86e135d03"
 cnt="execline make skalibs utmps"

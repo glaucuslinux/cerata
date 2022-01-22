@@ -6,5 +6,5 @@
 nom="gcompat"
 ver="1.0.0"
 url="https://distfiles.adelielinux.org/source/gcompat/gcompat-1.0.0.tar.xz"
-sum="61e355445571760b7cb8c8a828e7182544fefb403dca602f0b3756f39430974b5161517b0fdf4636a8a513be8e64d4dcb13553b28e9c7833f15c3b9871c94455"
+sum="b02f3fa881d242c16fdb226167101c3e"
 cnt="libucontext musl-fts musl-obstack utmps"
