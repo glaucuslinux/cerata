@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="bash"
-ver="5.1"
-url="https://ftpmirror.gnu.org/bash/bash-5.1.tar.gz"
-sum="b7dae31a5d16f78c227334a1ced22722"
+ver="5.1.16"
+url="https://ftpmirror.gnu.org/bash/bash-5.1.16.tar.gz"
+sum="a5ee95a53bc48e96a8437a1c3cbaf5e4"

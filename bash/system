@@ -10,19 +10,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess support
   $RSYNC $CERD/binutils/config.rpath support
   $RSYNC $CERD/binutils/config.sub support
-
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-001
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-002
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-003
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-004
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-005
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-006
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-007
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-008
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-009
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-010
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-011
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}51-012
 }
 
 configure() {
