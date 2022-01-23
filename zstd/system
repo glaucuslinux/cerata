@@ -16,9 +16,9 @@ build() {
   $MAKE \
     HAVE_PTHREAD=1 \
     ZSTD_LEGACY_SUPPORT=0 \
-    HAVE_ZLIB=0 \
-    HAVE_LZMA=0 \
-    HAVE_LZ4=0 \
+    HAVE_ZLIB=1 \
+    HAVE_LZMA=1 \
+    HAVE_LZ4=1 \
     BACKTRACE=0
 
   # Build parallel zstd as well (requires `-fexceptions`)
