@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="python"
-ver="3.10.1"
-url="https://www.python.org/ftp/python/3.10.1/Python-3.10.1.tar.xz"
-sum="a89468cdbe563691aa00f03f148eee93"
+ver="3.10.2"
+url="https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tar.xz"
+sum="9869dc56ca8b9eb3a7b8229e1730e9b9"
 cnt="expat make"
