@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="expat"
-ver="2.4.2"
-url="https://github.com/libexpat/libexpat/releases/download/R_2_4_2/expat-2.4.2.tar.lz"
-sum="29efdea7075d0dbe9c2c0d1956fcc572"
+ver="2.4.3"
+url="https://github.com/libexpat/libexpat/releases/download/R_2_4_3/expat-2.4.3.tar.lz"
+sum="59bc9701f98e40d0fc4b8a9d9b9a656b"
