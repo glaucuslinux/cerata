@@ -52,5 +52,5 @@ install() {
     install
 
   $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
-  $LN pip3.9 $SCER/$nom/sac/usr/bin/pip3
+  $LN pip3.10 $SCER/$nom/sac/usr/bin/pip3
 }
