@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="e2fsprogs"
-ver="1.46.4"
-url="https://prdownloads.sourceforge.net/e2fsprogs/e2fsprogs-1.46.4.tar.gz"
-sum="3be623d3f7f292da858ec840f4b0019e"
+ver="1.46.5"
+url="https://prdownloads.sourceforge.net/e2fsprogs/e2fsprogs-1.46.5.tar.gz"
+sum="146daeecdda8852313b2f8d2d7064db0"
 cnt="eudev execline libedit linux-headers make netbsd-curses skalibs util-linux utmps zlib-ng"

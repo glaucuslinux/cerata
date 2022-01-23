@@ -1,6 +1,6 @@
 --- configure.ac
 +++ configure.ac
-@@ -1664,6 +1664,9 @@
+@@ -1667,6 +1667,9 @@
  if test $cross_compiling = no; then
     BUILD_CFLAGS="$CFLAGS $CPPFLAGS $INCLUDES -DHAVE_CONFIG_H"
     BUILD_LDFLAGS="$LDFLAGS"
