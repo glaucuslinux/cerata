@@ -9,17 +9,24 @@
  	according to the new FSSTND.
  
  	Fix in login.c for CPU eating bug when a remote telnet client dies
---- NEWS
-+++ NEWS
-@@ -1603,7 +1603,7 @@
- 
-         /var/log/wtmp       /var/adm/wtmp
-         /var/log/lastlog    /var/adm/lastlog
--        /var/run/utmp       /var/adm/utmp
-+        /run/utmps/utmp     /var/adm/utmp
- 
- HIGHLIGHTS for version 2.2:
- 1) This is primarily a quick bug-fix release for version 2.1
+--- login-utils/login.1
++++ login-utils/login.1
+@@ -176,7 +176,7 @@
+ .RE
+ .SH "FILES"
+ .sp
+-\fI/var/run/utmp\fP,
++\fI/run/utmps/utmp\fP,
+ \fI/var/log/wtmp\fP,
+ \fI/var/log/lastlog\fP,
+ \fI/var/spool/mail/*\fP,
+@@ -218,4 +218,4 @@
+ .SH "AVAILABILITY"
+ .sp
+ The \fBlogin\fP command is part of the util\-linux package which can be downloaded from \c
+-.URL "https://www.kernel.org/pub/linux/utils/util\-linux/" "Linux Kernel Archive" "."
+\ No newline at end of file
++.URL "https://www.kernel.org/pub/linux/utils/util\-linux/" "Linux Kernel Archive" "."
 --- login-utils/login.1.adoc
 +++ login-utils/login.1.adoc
 @@ -138,7 +138,7 @@
@@ -42,6 +49,17 @@
  	 * confusing sysvinit. I added a test for the entry type, and the
  	 * problem was gone. (In a runlevel entry, st_pid is not really a pid
  	 * but some number calculated from the previous and current runlevel.)
+--- NEWS
++++ NEWS
+@@ -1607,7 +1607,7 @@
+ 
+         /var/log/wtmp       /var/adm/wtmp
+         /var/log/lastlog    /var/adm/lastlog
+-        /var/run/utmp       /var/adm/utmp
++        /run/utmps/utmp     /var/adm/utmp
+ 
+ HIGHLIGHTS for version 2.2:
+ 1) This is primarily a quick bug-fix release for version 2.1
 --- po-man/de.po
 +++ po-man/de.po
 @@ -9820,7 +9820,7 @@
@@ -84,6 +102,24 @@
  msgstr ""
  
  #. type: Plain text
+--- term-utils/agetty.8
++++ term-utils/agetty.8
+@@ -540,7 +540,7 @@
+ .if n .RE
+ .SH "FILES"
+ .sp
+-\fI/var/run/utmp\fP
++\fI/run/utmps/utmp\fP
+ .RS 4
+ the system status file.
+ .RE
+@@ -590,4 +590,4 @@
+ .SH "AVAILABILITY"
+ .sp
+ The \fBagetty\fP command is part of the util\-linux package which can be downloaded from \c
+-.URL "https://www.kernel.org/pub/linux/utils/util\-linux/" "Linux Kernel Archive" "."
+\ No newline at end of file
++.URL "https://www.kernel.org/pub/linux/utils/util\-linux/" "Linux Kernel Archive" "."
 --- term-utils/agetty.8.adoc
 +++ term-utils/agetty.8.adoc
 @@ -299,7 +299,7 @@
