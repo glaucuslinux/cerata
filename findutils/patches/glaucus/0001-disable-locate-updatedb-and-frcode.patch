@@ -1,6 +1,6 @@
 --- Makefile.in
 +++ Makefile.in
-@@ -2200,11 +2200,11 @@
+@@ -2247,11 +2247,11 @@
  DISTCLEANFILES = tool-versions.txt
  
  # "gnulib-tests" is the gnulib unit test dir.
@@ -9,8 +9,8 @@
  ALL_RECURSIVE_TARGETS = check-root
  ACLOCAL_AMFLAGS = -I gl/m4 -I m4
  TESTFILE_SUFFIXES = .exp .xo .xe .xi
--built_programs = find oldfind xargs frcode locate updatedb
-+built_programs = find oldfind xargs
+-built_programs = find xargs frcode locate updatedb
++built_programs = find xargs
  
  # Indirections required so that we'll still be able to know the
  # complete list of our tests even if the user overrides TESTS
