@@ -23,9 +23,9 @@ check() {
 }
 
 install() {
+  # `pigz` and `unpigz` are symbolic links
   $MKDIR $SCER/$nom/sac/usr/bin
   $RSYNC $nom $SCER/$nom/sac/usr/bin
-
   $LN $nom $SCER/$nom/sac/usr/bin/gunzip
   $LN $nom $SCER/$nom/sac/usr/bin/gzcat
   $LN $nom $SCER/$nom/sac/usr/bin/gzip
