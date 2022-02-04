@@ -13,7 +13,7 @@ prepare() {
 }
 
 configure() {
-  # Disable locate because we're using plocate
+  # Disable locate because we're using `plocate`
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
 
   ./configure \
@@ -30,8 +30,8 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-threads=posix \
-    --disable-rpath \
     --disable-nls \
+    --disable-rpath \
     --without-selinux \
     --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
