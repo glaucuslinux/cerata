@@ -24,6 +24,7 @@ check() {
 }
 
 install() {
+  # `pigz` and `unpigz` are symbolic links
   $RSYNC $nom $CRSD/usr/bin
   $LN $nom $CRSD/usr/bin/gunzip
   $LN $nom $CRSD/usr/bin/gzcat
