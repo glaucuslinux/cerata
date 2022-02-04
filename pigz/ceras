@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pigz"
-ver="2.6"
-url="https://zlib.net/pigz/pigz-2.6.tar.gz"
-sum="193cb6d273dbfde1c1d5b34518125ce9"
+ver="2.7"
+url="https://zlib.net/pigz/pigz-2.7.tar.gz"
+sum="2363bb508f5594dd56b4dc67b0b91a07"
 cnt="make zlib-ng"
