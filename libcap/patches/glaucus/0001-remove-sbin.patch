@@ -1,49 +1,3 @@
---- Make.Rules
-+++ Make.Rules
-@@ -12,7 +12,7 @@
- FAKEROOT=$(DESTDIR)
- 
- # Autoconf-style prefixes are activated when $(prefix) is defined.
--# Otherwise binaries and libraries are installed in /{lib,sbin}/,
-+# Otherwise binaries and libraries are installed in /{lib,bin}/,
- # header files in /usr/include/ and documentation in /usr/man/man?/.
- # These choices are motivated by the fact that getcap and setcap are
- # administrative operations that could be needed to recover a system.
-@@ -21,14 +21,6 @@
- lib=$(shell ldd /usr/bin/ld|egrep "ld-linux|ld.so"|cut -d/ -f2)
- endif
- 
--ifndef sbin
--sbin=sbin
--endif
--
--ifdef sbindir
--sbin=$(sbindir)
--endif
--
- ifdef prefix
- exec_prefix=$(prefix)
- lib_prefix=$(exec_prefix)
-@@ -45,7 +37,7 @@
- # Target directories
- 
- MANDIR=$(man_prefix)/man
--SBINDIR=$(exec_prefix)/$(sbin)
-+BINDIR=$(exec_prefix)/$(bin)
- INCDIR=$(inc_prefix)/include
- LIBDIR=$(lib_prefix)/$(lib)
- PKGCONFIGDIR=$(LIBDIR)/pkgconfig
---- README
-+++ README
-@@ -37,7 +37,7 @@
-     $ sudo make install
- 
-        default installs the library libcap.XX.Y in /lib[64]/
--       the binaries in /sbin/
-+       the binaries in /bin/
-        the header files in /usr/include
-        the {libcap,libpsx}.pc files in /usr/lib[64]/pkgconfig
-        the Go packages (if built) under /usr/share/gocode/src
 --- cap/names.go
 +++ cap/names.go
 @@ -9,7 +9,7 @@
@@ -265,7 +219,7 @@
  .B \-\-print
 --- go/Makefile
 +++ go/Makefile
-@@ -134,8 +134,8 @@
+@@ -172,8 +172,8 @@
  # of their packaging, we reward them with a copy of the captree
  # utility!
  install: all
@@ -324,7 +278,7 @@
 +nobody:x:99:99:Nobody:/:/bin/nologin
 --- libcap/Makefile
 +++ libcap/Makefile
-@@ -184,7 +184,7 @@
+@@ -191,7 +191,7 @@
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
  	ln -sf $(MAJCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(CAPLIBNAME)
  ifeq ($(FAKEROOT),)
@@ -333,7 +287,7 @@
  endif
  
  install-static-psx: install-common-psx $(STAPSXLIBNAME)
-@@ -195,7 +195,7 @@
+@@ -202,7 +202,7 @@
  	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
  	ln -sf $(MAJPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(PSXLIBNAME)
  ifeq ($(FAKEROOT),)
@@ -342,6 +296,41 @@
  endif
  
  install-common-cap: install-common $(LIBTITLE).pc
+--- Make.Rules
++++ Make.Rules
+@@ -12,7 +12,7 @@
+ FAKEROOT=$(DESTDIR)
+ 
+ # Autoconf-style prefixes are activated when $(prefix) is defined.
+-# Otherwise binaries and libraries are installed in /{lib,sbin}/,
++# Otherwise binaries and libraries are installed in /{lib,bin}/,
+ # header files in /usr/include/ and documentation in /usr/man/man?/.
+ # These choices are motivated by the fact that getcap and setcap are
+ # administrative operations that could be needed to recover a system.
+@@ -21,14 +21,6 @@
+ lib=$(shell ldd /usr/bin/ld|egrep "ld-linux|ld.so"|cut -d/ -f2)
+ endif
+ 
+-ifndef sbin
+-sbin=sbin
+-endif
+-
+-ifdef sbindir
+-sbin=$(sbindir)
+-endif
+-
+ ifdef prefix
+ exec_prefix=$(prefix)
+ lib_prefix=$(exec_prefix)
+@@ -45,7 +37,7 @@
+ # Target directories
+ 
+ MANDIR=$(man_prefix)/man
+-SBINDIR=$(exec_prefix)/$(sbin)
++BINDIR=$(exec_prefix)/$(bin)
+ INCDIR=$(inc_prefix)/include
+ LIBDIR=$(lib_prefix)/$(lib)
+ PKGCONFIGDIR=$(LIBDIR)/pkgconfig
 --- pam_cap/capability.conf
 +++ pam_cap/capability.conf
 @@ -46,7 +46,7 @@
@@ -371,3 +360,14 @@
  endif
  
  test:
+--- README
++++ README
+@@ -37,7 +37,7 @@
+     $ sudo make install
+ 
+        default installs the library libcap.XX.Y in /lib[64]/
+-       the binaries in /sbin/
++       the binaries in /bin/
+        the header files in /usr/include
+        the {libcap,libpsx}.pc files in /usr/lib[64]/pkgconfig
+        the Go packages (if built) under /usr/share/gocode/src
