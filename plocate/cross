@@ -19,9 +19,9 @@ configure() {
 
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross.$ARCH \
-    -Dupdatedb_progname=pupdatedb \
     -Dinstall_systemd=false \
     -Dlocategroup=locate \
+    -Dupdatedb_progname=pupdatedb \
     $XBLD/$nom
 }
 

@@ -14,19 +14,3 @@
  #include <getopt.h>
  #include <limits.h>
  #include <stdbool.h>
---- lib.cpp
-+++ lib.cpp
-@@ -23,12 +23,12 @@
- #include "lib.h"
- 
- #include "db.h"
--#include "error.h"
- 
- #include <algorithm>
- #include <arpa/inet.h>
- #include <assert.h>
- #include <errno.h>
-+#include <error.h>
- #include <limits.h>
- #include <stdbool.h>
- #include <stdint.h>
