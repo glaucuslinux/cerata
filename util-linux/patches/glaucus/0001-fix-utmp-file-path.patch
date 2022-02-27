@@ -51,7 +51,7 @@
  	 * but some number calculated from the previous and current runlevel.)
 --- NEWS
 +++ NEWS
-@@ -1607,7 +1607,7 @@
+@@ -1611,7 +1611,7 @@
  
          /var/log/wtmp       /var/adm/wtmp
          /var/log/lastlog    /var/adm/lastlog
