@@ -31,6 +31,4 @@ install() {
     LIBDIR=/usr/lib \
     DESTDIR=$CRSD \
     install
-
-  $LN ${nom}_posix.so.1 $CRSD/usr/lib/${nom}_posix.so
 }
