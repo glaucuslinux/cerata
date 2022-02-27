@@ -9,16 +9,17 @@ prepare() {
 }
 
 configure() {
-  # `CC`, `CFLAGS` and `LDFLAGS` have to be specified, otherwise they won't be
-  # read!
+  # `CC`, `AR`, `CFLAGS` and `LDFLAGS` have to be specified, otherwise they
+  # won't be read, and `--disable-static` implies `--enable-shared`.
   $SRCD/$nom/$nom-$ver/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
     --includedir=/usr/include \
+    --libdir=/usr/lib \
     --disable-static \
-    --enable-shared \
     CC=$CC \
+    AR=$AR \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS"
 }
