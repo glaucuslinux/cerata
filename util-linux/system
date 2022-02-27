@@ -52,9 +52,6 @@ configure() {
     --without-systemdsystemunitdir \
     --with-vendordir=/usr/lib \
     --without-python
-
-  sed 's/${exec_prefix}\/sbin/\/usr\/bin/' \
-    -i Makefile
 }
 
 build() {
