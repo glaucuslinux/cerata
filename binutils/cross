@@ -13,10 +13,6 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/defang-no-split.patch
-
-  # This upstream patch will be automatically applied in future releases
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/bfd-close-file-desriptor-if-there-is-no-archive-fd.patch
 
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
