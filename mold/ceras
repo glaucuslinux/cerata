@@ -5,5 +5,5 @@
 
 nom="mold"
 ver="1.1"
-url="https://github.com/rui314/mold/releases/download/v1.1/mold-1.1-x86_64-linux.tar.gz"
-sum="914f7b9f76f3bba745b6b15cec6b8cad"
+url="https://github.com/rui314/mold/archive/v1.1.tar.gz"
+sum="e2b8c83e8be26267638af4cd05dfadb5"
