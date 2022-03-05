@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="mold"
+ver="1.1"
+url="https://github.com/rui314/mold/releases/download/v1.1/mold-1.1-x86_64-linux.tar.gz"
+sum="914f7b9f76f3bba745b6b15cec6b8cad"
