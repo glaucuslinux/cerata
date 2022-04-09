@@ -33,7 +33,9 @@ check() {
 }
 
 install() {
+  # `install-bin-strip` ensures that the `minilzip` binary is installed
   $MAKE \
     DESTDIR=$CRSD \
+    install-bin-strip \
     install-strip
 }
