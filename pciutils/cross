@@ -50,7 +50,8 @@ install() {
     SHAREDIR=/usr/share/hwdata \
     MANDIR=/usr/share/man \
     DESTDIR=$CRSD \
-    install install-lib
+    install \
+    install-lib
 
   # This is provided by the `hwids` ceras
   $RM $CRSD/usr/bin/update-pciids
