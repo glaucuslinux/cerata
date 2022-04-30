@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="procps-ng"
-ver="3.3.17"
-url="https://prdownloads.sourceforge.net/procps-ng/procps-ng-3.3.17.tar.xz"
-sum="6c51d467747f3e619d3e822162d25e6f"
+ver="4.0.0"
+url="https://prdownloads.sourceforge.net/procps-ng/procps-ng-4.0.0.tar.xz"
+sum="923237b32c9cce350d3af0d9508d6e74"
 cnt="execline make netbsd-curses skalibs utmps"
