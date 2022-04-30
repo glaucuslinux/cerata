@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="musl-obstack"
-ver="1.2.2"
-url="https://github.com/void-linux/musl-obstack/archive/v1.2.2.tar.gz"
-sum="f5703191b4acf1857c84659ffd6a156a"
+ver="1.2.3"
+url="https://github.com/void-linux/musl-obstack/archive/v1.2.3.tar.gz"
+sum="9d6a21ffbe9d967b00dab087777a90cc"
