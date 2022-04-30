@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="oksh"
-ver="7.0"
-url="https://github.com/ibara/oksh/releases/download/oksh-7.0/oksh-7.0.tar.gz"
-sum="50aee55d9b5a99a5fe88c8ac4fc1a119"
+ver="7.1"
+url="https://github.com/ibara/oksh/releases/download/oksh-7.1/oksh-7.1.tar.gz"
+sum="969c6f8328e03c817d65b9bad6a40a95"
