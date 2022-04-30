@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="dhcp"
-ver="4.4.2-P1"
-url="https://downloads.isc.org/isc/dhcp/4.4.2-P1/dhcp-4.4.2-P1.tar.gz"
-sum="dca3abd6edc0e379a7514e21d509fff1"
+ver="4.4.3"
+url="https://downloads.isc.org/isc/dhcp/4.4.3/dhcp-4.4.3.tar.gz"
+sum="4f8d46bb7992667a1add0e50c0859034"
