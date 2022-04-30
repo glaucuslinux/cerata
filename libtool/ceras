@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libtool"
-ver="2.4.6"
-url="https://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.xz"
-sum="55981814661aab80235ab581a9651cbf"
+ver="2.4.7"
+url="https://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
+sum="949136edb564662b04733d66f617df8e"
