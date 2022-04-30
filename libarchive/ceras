@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libarchive"
-ver="3.5.2"
-url="https://www.libarchive.org/downloads/libarchive-3.5.2.tar.xz"
-sum="e6eb55b5bf6364bb220270960adc76a8"
+ver="3.6.1"
+url="https://www.libarchive.org/downloads/libarchive-3.6.1.tar.gz"
+sum="e3100f474c8110cc4e0869e1714e012d"
 cnt="acl attr bzip2 expat libressl lz4 make pigz xz zlib-ng zstd"
