@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="elfutils"
-ver="0.186"
-url="https://sourceware.org/elfutils/ftp/0.186/elfutils-0.186.tar.bz2"
-sum="507be9a4e56fd70a0b061d16418f999e"
+ver="0.187"
+url="https://sourceware.org/elfutils/ftp/0.187/elfutils-0.187.tar.bz2"
+sum="8d1995d97079ea678cd844a51d8ee32e"
 cnt="libuargp make musl-fts musl-obstack zlib-ng"
