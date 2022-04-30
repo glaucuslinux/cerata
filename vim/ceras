@@ -6,5 +6,5 @@
 nom="vim"
 ver="8.2.4850"
 url="https://github.com/vim/vim/archive/v8.2.4850.tar.gz"
-sum="4ff563a5682c73f2f7a544241dbf0707"
+sum="0888c88baff39941cbac5fce6b02353b"
 cnt="acl attr make netbsd-curses"
