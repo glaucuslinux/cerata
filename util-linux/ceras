@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="util-linux"
-ver="2.37.4"
-url="https://cdn.kernel.org/pub/linux/utils/util-linux/v2.37/util-linux-2.37.4.tar.xz"
-sum="8770f1d42d313d82eb4a4eb300c97887"
+ver="2.38"
+url="https://cdn.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.tar.gz"
+sum="501ede5a1b7e909167e90ae6af8401cf"
 cnt="eudev execline libedit linux-headers make netbsd-curses skalibs utmps zlib-ng"
