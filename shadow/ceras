@@ -5,6 +5,6 @@
 
 nom="shadow"
 ver="4.11.1"
-url="https://github.com/shadow-maint/shadow/releases/download/v4.11.1/shadow-4.11.1.tar.xz"
-sum="111354cfe7eb4ccbc439c4f86e135d03"
+url="https://github.com/shadow-maint/shadow/releases/download/v4.11.1/shadow-4.11.1.tar.gz"
+sum="0baf82c0b549255c9d3bcf34d14fbf16"
 cnt="execline make skalibs utmps"

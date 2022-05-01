@@ -5,6 +5,6 @@
 
 nom="grep"
 ver="3.7"
-url="https://ftpmirror.gnu.org/grep/grep-3.7.tar.xz"
-sum="c140369ca990685df27a045faeaf57c3"
+url="https://ftpmirror.gnu.org/grep/grep-3.7.tar.gz"
+sum="fb44692b23a923a1f56d26033a63b476"
 cnt="make"

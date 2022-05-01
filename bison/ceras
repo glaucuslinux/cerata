@@ -5,5 +5,5 @@
 
 nom="bison"
 ver="3.8.2"
-url="https://ftpmirror.gnu.org/bison/bison-3.8.2.tar.lz"
-sum="bbdc426a6894cd6b102d3fe10c7804d8"
+url="https://ftpmirror.gnu.org/bison/bison-3.8.2.tar.gz"
+sum="0ff3914973f5ecef68337d0e3fe0cf1f"

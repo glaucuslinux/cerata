@@ -5,6 +5,6 @@
 
 nom="sed"
 ver="4.8"
-url="https://ftpmirror.gnu.org/sed/sed-4.8.tar.xz"
-sum="6e1189e2a3d5837461c23ea56acc1a8d"
+url="https://ftpmirror.gnu.org/sed/sed-4.8.tar.gz"
+sum="f337afb8cc0915d7c8554741a5e8b2eb"
 cnt="acl attr make"

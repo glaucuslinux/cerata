@@ -5,5 +5,5 @@
 
 nom="ccache"
 ver="4.6"
-url="https://github.com/ccache/ccache/releases/download/v4.6/ccache-4.6.tar.xz"
-sum="cdf2ce7a36c4296bf81bd9d844cd0468"
+url="https://github.com/ccache/ccache/releases/download/v4.6/ccache-4.6.tar.gz"
+sum="1d6f6678983cebd3bb5ffa7d39bbac67"

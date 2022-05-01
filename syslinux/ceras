@@ -5,5 +5,5 @@
 
 nom="syslinux"
 ver="6.04-pre1"
-url="https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.xz"
-sum="7c5aff5d2574e7431abdbbca888973f9"
+url="https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.gz"
+sum="181f8ab2d076dbfc1bea4af1dab5855f"
