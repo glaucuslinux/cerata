@@ -5,5 +5,5 @@
 
 nom="kbd"
 ver="2.4.0"
-url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.4.0.tar.xz"
-sum="3d902f96a7e5eca1f574ef057dfdbfc5"
+url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.4.0.tar.gz"
+sum="aa05ef3336104bd78689b62aecfc695a"

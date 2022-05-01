@@ -5,5 +5,5 @@
 
 nom="binutils"
 ver="2.38"
-url="https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.lz"
-sum="15b558807e0a407208742ac79fbe5965"
+url="https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.gz"
+sum="043eac928d20e070e117c1350298d6fc"

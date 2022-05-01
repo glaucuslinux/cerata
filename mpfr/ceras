@@ -5,5 +5,5 @@
 
 nom="mpfr"
 ver="4.1.0"
-url="https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.xz"
-sum="36a636c53e2a1aacbeec48e52533b1a5"
+url="https://www.mpfr.org/mpfr-current/mpfr-4.1.0.tar.gz"
+sum="fdb7ddfb884737f4420137f98562cf87"
