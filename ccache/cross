@@ -24,6 +24,7 @@ install() {
   $MAKE \
     install
 
+  # Hardcoded `gcc` version number
   $LN $nom $TLCD/bin/$nom/$TGT-c++
   $LN $nom $TLCD/bin/$nom/$TGT-c89
   $LN $nom $TLCD/bin/$nom/$TGT-c99
@@ -31,5 +32,5 @@ install() {
   $LN $nom $TLCD/bin/$nom/$TGT-cpp
   $LN $nom $TLCD/bin/$nom/$TGT-g++
   $LN $nom $TLCD/bin/$nom/$TGT-gcc
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc-11.2.0
+  $LN $nom $TLCD/bin/$nom/$TGT-gcc-11.3.0
 }
