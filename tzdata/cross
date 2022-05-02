@@ -4,7 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $XSRC --delete
+  $RSYNC $SRCD/$nom $XSRC --delete \
+    --exclude $nom$ver.tar.gz
   cd $XSRC/$nom
 }
 
@@ -21,6 +22,18 @@ check() {
 }
 
 install() {
-  $MKDIR $CRSD/usr/share/zoneinfo/posix
-  $MKDIR $CRSD/usr/share/zoneinfo/right
+  zic -b fat -d $CRSD/usr/share/zoneinfo africa antarctica asia australasia \
+    backward backzone etcetera europe factory northamerica southamerica
+  zic -b fat -d $CRSD/usr/share/zoneinfo/posix africa antarctica asia \
+    australasia backward backzone etcetera europe factory northamerica \
+    southamerica
+  zic -b fat -d $CRSD/usr/share/zoneinfo/right africa antarctica asia \
+    australasia backward backzone etcetera europe factory northamerica \
+    southamerica -L leapseconds
+
+  zic -d $CRSD/usr/share/zoneinfo -p Asia/Damascus
+
+  $RSYNC iso3166.tab zone1970.tab zone.tab $CRSD/usr/share/zoneinfo
+
+  $LN $CRSD/usr/share/zoneinfo/Asia/Damascus $CRSD/etc/localtime
 }
