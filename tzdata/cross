@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+  :
 }
 
 build() {
@@ -33,7 +33,8 @@ install() {
 
   zic -d $CRSD/usr/share/zoneinfo -p Asia/Damascus
 
-  $RSYNC iso3166.tab zone1970.tab zone.tab $CRSD/usr/share/zoneinfo
+  $RSYNC iso3166.tab leap-seconds.list zone1970.tab zone.tab \
+    $CRSD/usr/share/zoneinfo
 
   $LN $CRSD/usr/share/zoneinfo/Asia/Damascus $CRSD/etc/localtime
 }

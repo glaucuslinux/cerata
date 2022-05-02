@@ -6,16 +6,21 @@
 prepare() {
   $RSYNC $SRCD/$nom $XSRC --delete \
     --exclude $nom$ver.tar.gz
+  $RSYNC $SRCD/tzdata/ $XSRC/$nom \
+    --exclude $nom$ver.tar.gz
   cd $XSRC/$nom
 }
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-disable-static.patch
 }
 
 build() {
-  $MAKE cc="${CC:-gcc}" CFLAGS="$CFLAGS -DHAVE_STDINT_H=1"
-  TZDIR="/usr/share/zoneinfo"
+  $MAKE \
+    tzselect \
+    zdump \
+    zic
 }
 
 check() {
@@ -23,9 +28,9 @@ check() {
 }
 
 install() {
-  $RSYNC zic zdump $CRSD/usr/bin
+  $RSYNC tzselect zdump zic $CRSD/usr/bin
 
-  $RSYNC zic.8 zdump.8 $CRSD/usr/share/man/man8
+  $RSYNC tzselect zdump.8 zic.8 $CRSD/usr/share/man/man8
 
   $MKDIR $CRSD/usr/share/zoneinfo/posix
   $MKDIR $CRSD/usr/share/zoneinfo/right
