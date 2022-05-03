@@ -22,6 +22,8 @@ check() {
 }
 
 install() {
+  $LN $CRSD/usr/share/zoneinfo/Asia/Damascus $CRSD/etc/localtime
+
   zic -b fat -d $CRSD/usr/share/zoneinfo africa antarctica asia australasia \
     backward backzone etcetera europe factory northamerica southamerica
   zic -b fat -d $CRSD/usr/share/zoneinfo/posix africa antarctica asia \
@@ -35,6 +37,4 @@ install() {
 
   $RSYNC iso3166.tab leap-seconds.list zone1970.tab zone.tab \
     $CRSD/usr/share/zoneinfo
-
-  $LN $CRSD/usr/share/zoneinfo/Asia/Damascus $CRSD/etc/localtime
 }
