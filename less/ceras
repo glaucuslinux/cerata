@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="less"
-ver="600"
-url="https://www.greenwoodsoftware.com/less/less-600.tar.gz"
-sum="3a6f9f927cc02f3a70f2e40d1f849b02"
+ver="590"
+url="https://www.greenwoodsoftware.com/less/less-590.tar.gz"
+sum="328a600c4d87c65941e21e488ebae46a"
 cnt="make netbsd-curses pcre2"
