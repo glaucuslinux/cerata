@@ -22,6 +22,7 @@ check() {
 }
 
 install() {
+  # Don't run `make install` as it builds and installs unnecessary stuff
   $LN $CRSD/usr/share/zoneinfo/Asia/Damascus $CRSD/etc/localtime
 
   zic -b fat -d $CRSD/usr/share/zoneinfo africa antarctica asia australasia \
