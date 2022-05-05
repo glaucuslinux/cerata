@@ -1,0 +1,49 @@
+--- Makefile
++++ Makefile
+@@ -128,10 +128,6 @@
+ 
+ # library
+ 
+-libxxhash.a: ARFLAGS = rcs
+-libxxhash.a: xxhash.o
+-	$(AR) $(ARFLAGS) $@ $^
+-
+ $(LIBXXH): LDFLAGS += -shared
+ ifeq (,$(filter Windows%,$(OS)))
+ $(LIBXXH): CFLAGS += -fPIC
+@@ -149,8 +145,8 @@
+ libxxhash: $(LIBXXH)
+ 
+ .PHONY: lib
+-lib:  ## generate static and dynamic xxhash libraries
+-lib: libxxhash.a libxxhash
++lib:  ## generate dynamic xxhash library
++lib: libxxhash
+ 
+ # helper targets
+ 
+@@ -172,7 +168,7 @@
+ .PHONY: clean
+ clean:  ## remove all build artifacts
+ 	$(Q)$(RM) -r *.dSYM   # Mac OS-X specific
+-	$(Q)$(RM) core *.o *.obj *.$(SHARED_EXT) *.$(SHARED_EXT).* *.a libxxhash.pc
++	$(Q)$(RM) core *.o *.obj *.$(SHARED_EXT) *.$(SHARED_EXT).* libxxhash.pc
+ 	$(Q)$(RM) xxhsum$(EXT) xxhsum32$(EXT) xxhsum_inlinedXXH$(EXT) dispatch$(EXT)
+ 	$(Q)$(RM) xxh32sum$(EXT) xxh64sum$(EXT) xxh128sum$(EXT)
+ 	$(Q)$(RM) $(XXHSUM_SRC_DIR)/*.o $(XXHSUM_SRC_DIR)/*.obj
+@@ -497,7 +493,6 @@
+ install: lib libxxhash.pc xxhsum  ## install libraries, CLI, links and man page
+ 	@echo Installing libxxhash
+ 	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
+-	$(Q)$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
+ 	$(Q)$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
+ 	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+ 	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+@@ -525,7 +520,6 @@
+ 
+ .PHONY: uninstall
+ uninstall:  ## uninstall libraries, CLI, links and man page
+-	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.a
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/$(LIBXXH)
