@@ -18,11 +18,7 @@ prepare() {
   # Emoji wcwidth patch for musl
   $PATCH -p1 -i $CERD/musl/patches/noname/emoji.patch
 
-  case $ARCH in
-    x86-64)
-      $PATCH -p1 -i $CERD/musl/patches/sabotage/memcpy.patch
-      ;;
-  esac
+  [ $ARCH = x86-64 ] && $PATCH -p1 -i $CERD/musl/patches/sabotage/memcpy.patch
 
   $PATCH -p0 -i $CERD/musl/patches/void/mo_lookup.patch
 }
