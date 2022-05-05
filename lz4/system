@@ -27,7 +27,7 @@ check() {
 install() {
   $MAKE \
     BUILD_STATIC=no \
-    PREFIX=/usr \
     DESTDIR=$SCER/$nom/sac \
+    PREFIX=/usr \
     install
 }
