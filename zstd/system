@@ -39,7 +39,7 @@ install() {
 
   # Install parallel zstd as well
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     PREFIX=/usr \
     -C contrib/p$nom \
     install
