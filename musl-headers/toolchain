@@ -8,6 +8,7 @@ prepare() {
   cd $TSRC/musl
 
   $PATCH -p1 -i $CERD/musl/patches/adelie/make-real-lastlog-h.patch
+  $PATCH -p1 -i $CERD/musl/patches/adelie/realpath.patch
 
   $PATCH -p1 -i $CERD/musl/patches/alpine/handle-aux-at_base.patch
 

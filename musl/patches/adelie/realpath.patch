@@ -1,0 +1,37 @@
+From 99b84a793669c69acc705a61d339441b50bd09a8 Mon Sep 17 00:00:00 2001
+From: Natanael Copa <ncopa@alpinelinux.org>
+Date: Wed, 13 Jan 2021 14:28:35 +0100
+Subject: [PATCH] realpath: replace leading // with a single /
+
+On some systems a leading double slash may have special meaning, so
+POSIX[1] says that "If a pathname begins with two successive <slash>
+characters, the first component following the leading <slash> characters
+may be interpreted in an implementation-defined manner"
+
+While current musl implementation is technically correct, most other
+systems' (at least GNU libc, freebsd, openbsd, netbsd macOS)
+implementations will replace a leading // with a single /. Make musl
+do the same to avoid surprises.
+
+[1]: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html#tag_04_13
+---
+ src/misc/realpath.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/misc/realpath.c b/src/misc/realpath.c
+index db8b74dc..414b4741 100644
+--- a/src/misc/realpath.c
++++ b/src/misc/realpath.c
+@@ -46,9 +46,6 @@ restart:
+ 			q=0;
+ 			output[q++] = '/';
+ 			p++;
+-			/* Initial // is special. */
+-			if (stack[p] == '/' && stack[p+1] != '/')
+-				output[q++] = '/';
+ 			continue;
+ 		}
+ 
+-- 
+2.29.2
+
