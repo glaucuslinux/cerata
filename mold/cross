@@ -1,0 +1,43 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/install-nopython.patch
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    LIBDIR=/usr/lib \
+    LIBEXECDIR=/usr/lib/$nom \
+    LTO=1 \
+    SYSTEM_MIMALLOC=1 \
+    SYSTEM_TBB=1
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$CRSD \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    LIBDIR=/usr/lib \
+    LIBEXECDIR=/usr/lib/$nom \
+    LTO=1 \
+    SYSTEM_MIMALLOC=1 \
+    SYSTEM_TBB=1 \
+    install
+}
