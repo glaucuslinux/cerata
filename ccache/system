@@ -36,7 +36,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/cpp
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/g++
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc-11.3.0
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/gcc-12.1.0
 
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-c++
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-c89
@@ -44,5 +44,5 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-cc
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-g++
   $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-gcc
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-gcc-11.3.0
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom/$TGT-gcc-12.1.0
 }
