@@ -15,6 +15,7 @@ configure() {
 }
 
 build() {
+  # This ceras does not support parallel build!
   $MAKE \
     PREFIX=/usr \
     BINDIR=/usr/bin \
@@ -22,7 +23,8 @@ build() {
     LIBEXECDIR=/usr/lib/$nom \
     LTO=1 \
     SYSTEM_MIMALLOC=1 \
-    SYSTEM_TBB=1
+    SYSTEM_TBB=1 \
+    -j1
 }
 
 check() {
