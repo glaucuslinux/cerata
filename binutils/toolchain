@@ -31,6 +31,7 @@ configure() {
     --disable-multilib \
     --disable-static \
     --enable-plugins \
+    $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
     --enable-deterministic-archives \
     --disable-compressed-debug-sections \
     --enable-new-dtags \
@@ -45,6 +46,7 @@ configure() {
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
+    --without-debuginfod \
     --with-system-zlib
 
   $MAKE \
