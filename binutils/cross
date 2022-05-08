@@ -79,4 +79,10 @@ install() {
     install-strip
 
   $LN ld.bfd $CRSD/usr/bin/ld
+
+  # Remove unnecessary manpages
+  $RM $CRSD/share/man/man1/dlltool.1
+  $RM $CRSD/share/man/man1/nlmconv.1
+  $RM $CRSD/share/man/man1/windmc.1
+  $RM $CRSD/share/man/man1/windres.1
 }

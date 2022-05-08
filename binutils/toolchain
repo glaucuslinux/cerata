@@ -82,4 +82,10 @@ install() {
   $LN ../../bin/$TGT-ranlib $TLCD/$TGT/bin/ranlib
   $LN ../../bin/$TGT-readelf $TLCD/$TGT/bin/readelf
   $LN ../../bin/$TGT-strip $TLCD/$TGT/bin/strip
+
+  # Remove unnecessary manpages
+  $RM $TLCD/share/man/man1/$TGT-dlltool.1
+  $RM $TLCD/share/man/man1/$TGT-nlmconv.1
+  $RM $TLCD/share/man/man1/$TGT-windmc.1
+  $RM $TLCD/share/man/man1/$TGT-windres.1
 }
