@@ -21,6 +21,7 @@ prepare() {
       $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
       ;;
   esac
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-cross-compile.patch
 
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
