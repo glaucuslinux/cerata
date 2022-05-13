@@ -38,6 +38,7 @@ configure() {
     --disable-multilib \
     --disable-static \
     --enable-install-libiberty \
+    --enable-pgo-build=lto \
     --enable-plugins \
     $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
     --enable-deterministic-archives \
