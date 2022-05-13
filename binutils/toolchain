@@ -29,7 +29,6 @@ configure() {
     --libdir=$TLCD/lib \
     --disable-multilib \
     --disable-static \
-    --enable-pgo-build=lto \
     --enable-plugins \
     $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
     --enable-deterministic-archives \
