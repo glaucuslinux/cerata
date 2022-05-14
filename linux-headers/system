@@ -11,11 +11,6 @@ prepare() {
   $MAKE \
     ARCH=$LARCH \
     mrproper
-
-  $MAKE \
-    O=$SBLD/$nom \
-    ARCH=$LARCH \
-    headers_check
 }
 
 configure() {
@@ -34,6 +29,6 @@ install() {
   $MAKE \
     O=$SBLD/$nom \
     ARCH=$LARCH \
-    INSTALL_HDR_PATH=$CRSD/usr \
+    INSTALL_HDR_PATH=$SCER/$nom/sac/usr \
     headers_install
 }
