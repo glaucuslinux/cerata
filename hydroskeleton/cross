@@ -26,7 +26,7 @@ install() {
 
   $MKDIR $CRSD/dev
 
-  # `$CRSD/etc` is already created in toolchain
+  # `$CRSD/etc` is already created in toolchain `musl`
   $RSYNC $CERD/$nom/fstab $CRSD/etc
   $LN lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $CRSD/etc
