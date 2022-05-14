@@ -27,7 +27,8 @@ configure() {
     --enable-shared \
     --disable-static \
     --disable-allstatic \
-    --disable-all-pic
+    --disable-all-pic \
+    --enable-nsss
 }
 
 build() {
