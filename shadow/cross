@@ -42,6 +42,7 @@ configure() {
     --without-selinux \
     --with-acl \
     --with-attr \
+    --without-nscd \
     --with-group-name-max-length=32 \
     --without-su
 }
