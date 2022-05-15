@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+if [ ! -f configure.ac ]; then
+  echo "autopoint: *** Missing configure.in or configure.ac, please cd to your package first." 1>&2
+  echo "autopoint: *** Stop." 1>&2
+  exit 1
+fi
+
+install -d intl m4 po
+
+cp -f /usr/share/gettext-tiny/m4/*.m4 m4
+
+install -d $dirprefix
+touch "./$dirprefix/config.rpath" ABOUT-NLS
+
+for i in intl/Makefile.in po/Makefile.in.in; do
+  cp -f /usr/share/gettext-tiny/data/autopoint_Makefile.in $i
+  chmod 0644 $i
+done
+
+cp -f /usr/share/gettext-tiny/data/Makevars.template po/Makevars.template
+chmod 0644 po/Makevars.template
