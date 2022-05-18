@@ -28,8 +28,8 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
-    --enable-nc \
     --disable-tests \
+    --enable-nc \
     --with-openssldir=/etc/ssl
 }
 
