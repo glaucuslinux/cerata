@@ -48,5 +48,5 @@ install() {
 
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcrypto.so.49.0.0
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/libssl.so.52.0.0
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.24.0.1
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libtls.so.25.0.0
 }
