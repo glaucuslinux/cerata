@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # ToyBox version: KCONFIG_VERSION
-# Sat May 21 23:50:36 2022
+# Sun May 22 00:05:42 2022
 #
 CONFIG_TOYBOX_CONTAINER=y
 CONFIG_TOYBOX_FIFREEZE=y
@@ -191,7 +191,7 @@ CONFIG_TR=y
 #
 # CONFIG_ACPI is not set
 # CONFIG_ASCII is not set
-CONFIG_UNICODE=y
+# CONFIG_UNICODE is not set
 CONFIG_BASE64=y
 CONFIG_BASE32=y
 # CONFIG_BLKDISCARD is not set
