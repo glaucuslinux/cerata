@@ -12,8 +12,6 @@ prepare() {
 
 configure() {
   $RSYNC $CERD/$nom/config .config
-
-  scripts/genconfig.sh
 }
 
 build() {

@@ -12,9 +12,6 @@ prepare() {
 
 configure() {
   $RSYNC $CERD/$nom/config .config
-
-  CROSS_COMPILE= \
-  scripts/genconfig.sh
 }
 
 build() {
