@@ -17,7 +17,7 @@ build() {
     -f Makefile-libbz2_so
 }
 
-check () {
+check() {
   :
 }
 
