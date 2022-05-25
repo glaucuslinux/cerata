@@ -1,0 +1,44 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $MKDIR $TBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
+}
+
+configure() {
+  cmake \
+    -B $TBLD/$nom \
+    -DCMAKE_INSTALL_PREFIX=$TLCD \
+    -DENABLE_TESTING=OFF \
+    -DREDIS_STORAGE_BACKEND=OFF \
+    -G Ninja
+}
+
+build() {
+  samu \
+    -C $TBLD/$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  samu \
+    -C $TBLD/$nom \
+    install
+
+  # Hardcoded `gcc` version number
+  $LN $nom $TLCD/bin/$nom/$TGT-c++
+  $LN $nom $TLCD/bin/$nom/$TGT-c89
+  $LN $nom $TLCD/bin/$nom/$TGT-c99
+  $LN $nom $TLCD/bin/$nom/$TGT-cc
+  $LN $nom $TLCD/bin/$nom/$TGT-cpp
+  $LN $nom $TLCD/bin/$nom/$TGT-g++
+  $LN $nom $TLCD/bin/$nom/$TGT-gcc
+  $LN $nom $TLCD/bin/$nom/$TGT-gcc-12.1.0
+}
