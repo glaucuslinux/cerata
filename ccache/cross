@@ -4,16 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $MKDIR $XBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
-  :
+  cmake \
+    -B $XBLD/$nom \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DENABLE_TESTING=OFF \
+    -DREDIS_STORAGE_BACKEND=OFF \
+    -G Ninja
 }
 
 build() {
-  $MAKE
+  samu \
+    -C $XBLD/$nom
 }
 
 check() {
@@ -21,16 +28,18 @@ check() {
 }
 
 install() {
-  $MAKE \
+  DESTDIR=$CRSD \
+  samu \
+    -C $XBLD/$nom \
     install
 
   # Hardcoded `gcc` version number
-  $LN $nom $TLCD/bin/$nom/$TGT-c++
-  $LN $nom $TLCD/bin/$nom/$TGT-c89
-  $LN $nom $TLCD/bin/$nom/$TGT-c99
-  $LN $nom $TLCD/bin/$nom/$TGT-cc
-  $LN $nom $TLCD/bin/$nom/$TGT-cpp
-  $LN $nom $TLCD/bin/$nom/$TGT-g++
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc-12.1.0
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-c++
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-c89
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-c99
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-cc
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-cpp
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-g++
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-gcc
+  $LN $nom $CRSD/usr/bin/$nom/$TGT-gcc-12.1.0
 }
