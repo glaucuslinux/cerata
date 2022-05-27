@@ -79,9 +79,14 @@ install() {
 
   $LN ld.bfd $CRSD/usr/bin/ld
 
+  $RM $CRSD/usr/lib/libbfd.la
+  $RM $CRSD/usr/lib/libctf.la
+  $RM $CRSD/usr/lib/libctf-nobfd.la
+  $RM $CRSD/usr/lib/libopcodes.la
+
   # Remove unnecessary manpages
-  $RM $CRSD/share/man/man1/dlltool.1
-  $RM $CRSD/share/man/man1/nlmconv.1
-  $RM $CRSD/share/man/man1/windmc.1
-  $RM $CRSD/share/man/man1/windres.1
+  $RM $CRSD/usr/share/man/man1/dlltool.1
+  $RM $CRSD/usr/share/man/man1/nlmconv.1
+  $RM $CRSD/usr/share/man/man1/windmc.1
+  $RM $CRSD/usr/share/man/man1/windres.1
 }
