@@ -13,6 +13,7 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --bindir=/usr/bin \
     --enable-lto
 }
 
