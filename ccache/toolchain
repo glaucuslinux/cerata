@@ -33,12 +33,13 @@ install() {
     install
 
   # Hardcoded `gcc` version number
-  $LN $nom $TLCD/bin/$nom/$TGT-c++
-  $LN $nom $TLCD/bin/$nom/$TGT-c89
-  $LN $nom $TLCD/bin/$nom/$TGT-c99
-  $LN $nom $TLCD/bin/$nom/$TGT-cc
-  $LN $nom $TLCD/bin/$nom/$TGT-cpp
-  $LN $nom $TLCD/bin/$nom/$TGT-g++
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc
-  $LN $nom $TLCD/bin/$nom/$TGT-gcc-12.1.0
+  $MKDIR $TLCD/lib/$nom
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-c++
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-c89
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-c99
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-cc
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-cpp
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-g++
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-gcc
+  $LN ../../bin/$nom $TLCD/lib/$nom/$TGT-gcc-12.1.0
 }
