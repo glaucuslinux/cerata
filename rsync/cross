@@ -12,6 +12,9 @@ prepare() {
 }
 
 configure() {
+  # Force enable IPv6 on musl, upstream bug:
+  # <https://bugzilla.samba.org/show_bug.cgi?id=10715>
+  CFLAGS="$CFLAGS -DINET6" \
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -48,5 +51,5 @@ install() {
 
   $RSYNC support/r${nom} $CRSD/usr/bin
 
-  $RSYNC r${nom}.1 $SCER/$nom/sac/usr/share/man/man1
+  $RSYNC r${nom}.1 $CRSD/usr/share/man/man1
 }
