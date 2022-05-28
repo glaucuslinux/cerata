@@ -43,4 +43,8 @@ install() {
     install-strip
 
   $RSYNC $CERD/$nom/${nom}d.conf $SCER/$nom/sac/etc
+
+  $RSYNC support/r${nom} $SCER/$nom/sac/usr/bin
+
+  $RSYNC r${nom}.1 $SCER/$nom/sac/usr/share/man/man1
 }
