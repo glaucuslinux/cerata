@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="kbd"
-ver="2.4.0"
-url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.4.0.tar.gz"
-sum="aa05ef3336104bd78689b62aecfc695a"
+ver="2.5.0"
+url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.5.0.tar.gz"
+sum="fccea28a3e4414ff42aeb3de2d6ab1be"
