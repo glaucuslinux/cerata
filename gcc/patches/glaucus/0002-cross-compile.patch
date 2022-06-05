@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -17292,7 +17292,7 @@
+@@ -16874,7 +16874,7 @@
  fi
  
  
@@ -11,7 +11,7 @@
  $as_echo_n "checking where to find the target ar... " >&6; }
 --- configure.ac
 +++ configure.ac
-@@ -3634,7 +3634,7 @@
+@@ -3538,7 +3538,7 @@
  ACX_CHECK_INSTALLED_TARGET_TOOL(WINDRES_FOR_TARGET, windres)
  ACX_CHECK_INSTALLED_TARGET_TOOL(WINDMC_FOR_TARGET, windmc)
  
