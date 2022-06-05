@@ -22,38 +22,18 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0010-Don-t-declare-asprintf-if-defined-as-a-macro.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-libitm-disable-FORTIFY.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0013-lib${nom}_s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0015-libffi-use-__linux__-instead-of-__gnu_linux__-for-mu.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0016-dlang-update-zlib-binding.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0019-ada-fix-shared-linking.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0020-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0022-Alpine-musl-package-provides-libssp_nonshared.a.-We-.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0023-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0030-always-build-lib${nom}_eh.a.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0031-ada-libgnarl-compatibility-for-musl.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0032-ada-musl-support-fixes.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0033-$nom-go-Fix-handling-of-signal-34-on-musl.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0034-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0035-$nom-go-signal-34-is-special-on-musl-libc.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0036-$nom-go-undef-SETCONTEXT_CLOBBERS_TLS-in-proc.c.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0037-$nom-go-link-to-libucontext.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0038-Use-generic-errstr.go-implementation-on-musl.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0041-libgo-Recognize-off64_t-and-loff_t-definitions-of-mu.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0042-Fix-attempt-to-use-poisoned-calloc-error-in-lib${nom}ji.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0043-stddef.h-add-support-for-musl-typedef-macro-guards.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0044-$nom-go-Use-int64-type-as-offset-argument-for-mmap.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0045-libgo-include-asm-ptrace.h-for-pt_regs-definition-on.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0046-Disable-fsplit-stack-support-on-non-glibc-targets.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0047-x86-Properly-disable-fsplit-stack-support-on-non-gli.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0048-gdc-unconditionally-link-libgphobos-against-libucont.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0049-properly-disable-fsplit-stack-on-non-glibc-targets-P.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0050-x86-Fix-fsplit-stack-feature-detection-via-TARGET_CA.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0051-go-gospec-forcibly-disable-fsplit-stack-support.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/libgo-musl-1.2.3.patch
 
   [ $ARCH = x86-64 ] && $PATCH -p1 -i $CERD/$nom/patches/clear/memcpy-avx2.patch
 
