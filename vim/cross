@@ -40,7 +40,6 @@ configure() {
     --disable-selinux \
     --disable-xsmp \
     --disable-xsmp-interact \
-    --enable-cscope \
     --disable-luainterp \
     --disable-mzschemeinterp \
     --disable-perlinterp \
@@ -48,6 +47,7 @@ configure() {
     --disable-python3interp \
     --disable-tclinterp \
     --disable-rubyinterp \
+    --enable-cscope \
     --disable-netbeans \
     --enable-terminal \
     --enable-multibyte \

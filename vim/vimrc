@@ -59,4 +59,5 @@ set wrap
 
 syntax enable
 
-autocmd BufRead ceras,cross,system,toolchain set filetype=sh
+autocmd BufNewFile,BufRead ceras set filetype=toml
+autocmd BufNewFile,BufRead cross,system,toolchain set filetype=sh
