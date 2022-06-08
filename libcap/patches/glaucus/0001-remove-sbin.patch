@@ -208,7 +208,7 @@
      # are we sane?
 --- doc/cap_get_proc.3
 +++ doc/cap_get_proc.3
-@@ -378,7 +378,7 @@
+@@ -382,7 +382,7 @@
  .B capsh
  tool as follows:
  .sp
