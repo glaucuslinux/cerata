@@ -1,6 +1,6 @@
 --- Makefile
 +++ Makefile
-@@ -22,7 +22,6 @@
+@@ -23,7 +23,6 @@
  HDRDIR?=$(PREFIX)/include/iproute2
  DOCDIR?=$(DATADIR)/doc/iproute2
  MANDIR?=$(DATADIR)/man
@@ -8,7 +8,7 @@
  KERNEL_INCLUDE?=/usr/include
  BASH_COMPDIR?=$(DATADIR)/bash-completion/completions
  
-@@ -88,7 +87,6 @@
+@@ -101,7 +100,6 @@
  install: all
  	install -m 0755 -d $(DESTDIR)$(BINDIR)
  	install -m 0755 -d $(DESTDIR)$(CONFDIR)
