@@ -28,7 +28,7 @@ build() {
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     KERNEL_HEADERS=$CRSD/usr/include \
     DEBUG=-g0 \
-    BUILD_GPERF=no \
+    USE_GPERF=no \
     SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
