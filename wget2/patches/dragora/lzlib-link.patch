@@ -1,0 +1,9 @@
+--- libwget/decompressor.c~    2021-08-21 19:47:39.000000000 +0200
++++ libwget/decompressor.c     2021-09-26 18:58:03.000000000 +0200
+@@ -60,6 +60,7 @@
+ #endif
+
+ #ifdef WITH_LZIP
++#include <stdint.h> // uint8_t
+ #include <lzlib.h>
+ #endif
