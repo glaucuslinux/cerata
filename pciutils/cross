@@ -29,7 +29,9 @@ build() {
     PREFIX=/usr \
     BINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
-    MANDIR=/usr/share/man
+    MANDIR=/usr/share/man \
+    PCI_IDS=pci.ids \
+    PCI_COMPRESSED_IDS=0
 }
 
 check() {
@@ -49,11 +51,13 @@ install() {
     BINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
     MANDIR=/usr/share/man \
+    PCI_IDS=pci.ids \
+    PCI_COMPRESSED_IDS=0 \
     DESTDIR=$CRSD \
     install \
     install-lib
 
-  # Fix broken permissions
+  # Fix library permissions
   $CHMOD 0755 $CRSD/usr/lib/libpci.so.$ver
 
   # ids are provided by the `hwdata` ceras
