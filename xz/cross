@@ -15,7 +15,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/xzgrep-fix.patch
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}grep-fix.patch
 }
 
 configure() {
