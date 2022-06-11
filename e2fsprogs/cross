@@ -13,6 +13,8 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 
+  $PATCH -p1 -i $CERD/$nom/patches/upstream/libext2fs-add-sanity-check-to-extent-manipulation.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
 
   # `INSTALL` documentation recommends building out of tree
@@ -61,7 +63,8 @@ check() {
 install() {
   $MAKE \
     DESTDIR=$CRSD \
-    install-strip
+    install-strip \
+    install-libs
 
   $MV $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
 
