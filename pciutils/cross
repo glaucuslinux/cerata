@@ -17,7 +17,7 @@ configure() {
 }
 
 build() {
-  # Disable support for compressed pci.ids
+  # Disable support for compressed ids
   $MAKE \
     HOST=$TGT \
     CROSS_COMPILE=$TGT- \
@@ -53,13 +53,9 @@ install() {
     install \
     install-lib
 
-  # This is provided by the `hwids` ceras
-  $RM $CRSD/usr/bin/update-pciids
-
   # Fix broken permissions
   $CHMOD 0755 $CRSD/usr/lib/libpci.so.$ver
 
-  # These are provided by the `hwids` ceras
+  # ids are provided by the `hwdata` ceras
   $RM $CRSD/usr/share/hwdata
-  $RM $CRSD/usr/share/man/man8/update-pciids.8
 }
