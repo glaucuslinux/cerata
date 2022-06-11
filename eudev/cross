@@ -29,6 +29,7 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
+    --disable-introspection \
     --disable-selinux \
     --disable-manpages \
     --enable-hwdb
