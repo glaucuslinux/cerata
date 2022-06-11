@@ -21,6 +21,7 @@ check() {
 }
 
 install() {
+  # `GZIP` should be explicitly disabled to stop the installation of `.gz` files
   $MAKE \
     GZIP=no \
     UDEV=yes \
