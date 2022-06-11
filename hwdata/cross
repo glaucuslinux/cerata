@@ -9,7 +9,13 @@ prepare() {
 }
 
 configure() {
-  :
+  ./configure \
+    --prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --libdir=/usr/lib
 }
 
 build() {
@@ -21,14 +27,9 @@ check() {
 }
 
 install() {
-  # `GZIP` should be explicitly disabled to stop the installation of `.gz` files
   $MAKE \
-    GZIP=no \
-    UDEV=yes \
-    MISCDATA=/usr/share/hwdata \
     DESTDIR=$CRSD \
     install
 
-  $RSYNC $CERD/$nom/pnp.ids $CRSD/usr/share/hwdata
-  $RSYNC $SRCD/$nom/$nom-$ver/sdio.ids $CRSD/usr/share/hwdata
+  $RSYNC $CERD/$nom/sdio.ids $CRSD/usr/share/hwdata
 }
