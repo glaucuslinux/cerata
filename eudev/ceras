@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="eudev"
-ver="3.2.10"
-url="https://dev.gentoo.org/~blueness/eudev/eudev-3.2.10.tar.gz"
-sum="1b42f2eb0808774db9d340111ed2bd3a"
-cnt="libressl make xz zlib-ng zstd"
+ver="3.2.11"
+url="https://github.com/eudev-project/eudev/releases/download/v3.2.11/eudev-3.2.11.tar.gz"
+sum="50e5dc5c3e18e37093f8ad33254c3e40"
+cnt="gperf libressl make xz zlib-ng zstd"
 cys="kmod"
