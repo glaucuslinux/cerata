@@ -13,6 +13,10 @@ prepare() {
 
   $RSYNC $CERD/musl/error.h lib
   $RSYNC $CERD/musl/error.h src
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-aarch64_fregs.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
 }
 
 configure() {
@@ -36,7 +40,10 @@ configure() {
     --disable-rpath \
     --disable-libdebuginfod \
     --disable-debuginfod \
-    --with-zlib
+    --with-zlib \
+    --with-bzlib \
+    --with-lzma \
+    --with-zstd
 }
 
 build() {
