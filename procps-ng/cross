@@ -57,9 +57,10 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  # `pkill` and `pwait` are identical to `pgrep`
+  # `pidwait`, `pkill` and `pwait` are identical to `pgrep`
+  $LN pgrep $CRSD/usr/bin/pidwait
   $LN pgrep $CRSD/usr/bin/pkill
   $LN pgrep $CRSD/usr/bin/pwait
 
-  $RM $CRSD/usr/lib/libprocps.la
+  $RM $CRSD/usr/lib/libproc-2.la
 }
