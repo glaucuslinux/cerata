@@ -39,6 +39,7 @@ configure() {
     --enable-utmpx \
     --disable-nls \
     --disable-rpath \
+    --without-libpam \
     --without-selinux \
     --with-acl \
     --with-attr \
