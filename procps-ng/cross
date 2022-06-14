@@ -43,7 +43,6 @@ configure() {
     --disable-rpath \
     --enable-watch8bit \
     --disable-kill \
-    --enable-skill \
     --enable-sigwinch \
     --enable-wide-percent \
     --enable-wide-memory \
