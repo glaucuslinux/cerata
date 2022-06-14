@@ -11,8 +11,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
 
-  $PATCH -p1 -i $CERD/$nom/patches/clear/0001-speed-up-agetty-waits.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
