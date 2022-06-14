@@ -11,15 +11,16 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-musl-fixes.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-fix-wrong-ncursesw-header.patch
 }
 
 configure() {
   $AUTORECONF
 
+  # `ncurses` support is enabled by default
+  # `systemd` support is disabled by default
   LIBS='-lutmps -lskarnet' \
   ac_cv_func_malloc_0_nonnull=yes \
   ac_cv_func_realloc_0_nonnull=yes \
@@ -37,9 +38,10 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --disable-static \
     --disable-nls \
+    --disable-static \
     --disable-rpath \
+    --enable-watch8bit \
     --disable-kill \
     --disable-whining
 }
@@ -57,10 +59,9 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  # `pidwait`, `pkill` and `pwait` are identical to `pgrep`
+  # `pidwait` and `pkill` are identical to `pgrep`
   $LN pgrep $CRSD/usr/bin/pidwait
   $LN pgrep $CRSD/usr/bin/pkill
-  $LN pgrep $CRSD/usr/bin/pwait
 
   $RM $CRSD/usr/lib/libproc-2.la
 }
