@@ -13,7 +13,7 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-fix-wrong-ncursesw-header.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
 }
 
 configure() {
