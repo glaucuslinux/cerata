@@ -21,6 +21,7 @@ configure() {
     --includedir=/usr/include \
     --skeldir=/etc/s6/skel \
     --tmpfsdir=/run \
+    --scandir=service \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
     --with-lib=$SYSD/usr/lib \
