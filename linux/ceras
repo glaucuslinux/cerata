@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="linux"
-ver="5.18.1"
-url="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.18.1.tar.gz"
-sum="044b9439ecc530dfcde3258abf12bba8"
+ver="5.18.5"
+url="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.18.5.tar.gz"
+sum="b031d174d86107aadf4a4582bd82871d"
 cnt="libelf libuargp make musl-fts musl-obstack zlib-ng"
