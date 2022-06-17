@@ -35,7 +35,6 @@ configure() {
     --disable-symvers \
     --disable-nls \
     --disable-rpath \
-    --disable-setpriv \
     --disable-chfn-chsh \
     --disable-login \
     --disable-nologin \
@@ -67,6 +66,7 @@ check() {
 install() {
   $MAKE \
     DESTDIR=$CRSD \
+    usrsbin_execdir=/usr/bin \
     install-strip
 
   $RM $CRSD/usr/lib/libblkid.la
