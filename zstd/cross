@@ -6,25 +6,29 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/clear/multi-thread-default.patch
+
+  $MKDIR $XBLD/$nom
 }
 
 configure() {
-  :
+  cmake \
+    -S build/cmake \
+    -B $XBLD/$nom \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DZSTD_BUILD_CONTRIB=ON \
+    -DZSTD_BUILD_STATIC=OFF \
+    -DZSTD_LZ4_SUPPORT=ON \
+    -DZSTD_LZMA_SUPPORT=ON \
+    -DZSTD_PROGRAMS_LINK_SHARED=ON \
+    -DZSTD_ZLIB_SUPPORT=ON \
+    -G Ninja
 }
 
 build() {
-  $MAKE \
-    HAVE_PTHREAD=1 \
-    ZSTD_LEGACY_SUPPORT=0 \
-    HAVE_ZLIB=1 \
-    HAVE_LZMA=1 \
-    HAVE_LZ4=1 \
-    BACKTRACE=0
-
-  # Build parallel zstd as well (requires `-fexceptions`)
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
-  $MAKE \
-    -C contrib/p$nom
+  samu \
+    -C $XBLD/$nom
 }
 
 check() {
@@ -32,18 +36,10 @@ check() {
 }
 
 install() {
-  $MAKE \
-    DESTDIR=$CRSD \
-    PREFIX=/usr \
+  DESTDIR=$CRSD \
+  samu \
+    -C $XBLD/$nom \
     install
 
-  # Install parallel zstd as well
-  $MAKE \
-    -C contrib/p$nom \
-    DESTDIR=$CRSD \
-    PREFIX=/usr \
-    install
-
-  # Manually remove the static library
-  $RM $CRSD/usr/lib/lib$nom.a
+  $RSYNC $XBLD/$nom/programs/$nom-frugal $CRSD/usr/bin
 }
