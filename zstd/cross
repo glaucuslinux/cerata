@@ -9,26 +9,29 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/clear/multi-thread-default.patch
 
-  $MKDIR $XBLD/$nom
+  $PATCH -p1 -i $CERD/$nom/patches/opensuse/p${nom}.1.patch
 }
 
 configure() {
-  cmake \
-    -S build/cmake \
-    -B $XBLD/$nom \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DZSTD_BUILD_CONTRIB=ON \
-    -DZSTD_BUILD_STATIC=OFF \
-    -DZSTD_LZ4_SUPPORT=ON \
-    -DZSTD_LZMA_SUPPORT=ON \
-    -DZSTD_PROGRAMS_LINK_SHARED=ON \
-    -DZSTD_ZLIB_SUPPORT=ON \
-    -G Ninja
+  :
 }
 
 build() {
-  samu \
-    -C $XBLD/$nom
+  $MAKE \
+    HAVE_PTHREAD=1 \
+    ZSTD_LEGACY_SUPPORT=0 \
+    HAVE_ZLIB=1 \
+    HAVE_LZMA=1 \
+    HAVE_LZ4=1 \
+    BACKTRACE=0
+
+  $MAKE \
+    lib-mt
+
+  # Build parallel zstd as well (requires `-fexceptions`)
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
+  $MAKE \
+    -C contrib/p$nom
 }
 
 check() {
@@ -36,10 +39,23 @@ check() {
 }
 
 install() {
-  DESTDIR=$CRSD \
-  samu \
-    -C $XBLD/$nom \
+  $MAKE \
+    DESTDIR=$CRSD \
+    PREFIX=/usr \
     install
 
+  # Install parallel zstd as well
+  $MAKE \
+    DESTDIR=$CRSD \
+    PREFIX=/usr \
+    -C contrib/p$nom \
+    install
+
+  # Compressor only
   $RSYNC $XBLD/$nom/programs/$nom-frugal $CRSD/usr/bin
+
+  # Manually remove the static library
+  $RM $CRSD/usr/lib/lib$nom.a
+
+  $LN $nom.1 $CRSD/usr/share/man/man1/p${nom}.1
 }
