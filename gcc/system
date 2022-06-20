@@ -138,6 +138,14 @@ install() {
   $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-cc
   $LN $TGT-$nom $SCER/$nom/sac/usr/bin/$TGT-$nom-$ver
 
+  $LN g++ $SCER/$nom/sac/usr/bin/$TGT-g++
+  $LN $nom $SCER/$nom/sac/usr/bin/$TGT-$nom
+
+  $LN $nom-ar $SCER/$nom/sac/usr/bin/$TGT-$nom-ar
+  $LN ${nom}go $SCER/$nom/sac/usr/bin/$TGT-${nom}go
+  $LN $nom-nm $SCER/$nom/sac/usr/bin/$TGT-$nom-nm
+  $LN $nom-ranlib $SCER/$nom/sac/usr/bin/$TGT-$nom-ranlib
+
   $MKDIR $SCER/$nom/sac/usr/lib/bfd-plugins
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $SCER/$nom/sac/usr/lib/bfd-plugins
 
