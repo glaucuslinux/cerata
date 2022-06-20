@@ -11,10 +11,10 @@ in parallel
  1 file changed, 8 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/Makefile b/drivers/Makefile
-index 27c018bdf4de..975edd7f20ba 100644
+index a110338c860c..f91099276a78 100644
 --- a/drivers/Makefile
 +++ b/drivers/Makefile
-@@ -60,15 +60,8 @@ obj-y				+= char/
+@@ -59,15 +59,8 @@ obj-y				+= char/
  # iommu/ comes before gpu as gpu are using iommu controllers
  obj-y				+= iommu/
  
@@ -28,9 +28,9 @@ index 27c018bdf4de..975edd7f20ba 100644
 -obj-$(CONFIG_FB_INTEL)          += video/fbdev/intelfb/
 -
  obj-$(CONFIG_PARPORT)		+= parport/
- obj-$(CONFIG_NVM)		+= lightnvm/
  obj-y				+= base/ block/ misc/ mfd/ nfc/
-@@ -81,6 +74,14 @@ obj-y				+= macintosh/
+ obj-$(CONFIG_LIBNVDIMM)		+= nvdimm/
+@@ -79,6 +72,14 @@ obj-y				+= macintosh/
  obj-y				+= scsi/
  obj-y				+= nvme/
  obj-$(CONFIG_ATA)		+= ata/
