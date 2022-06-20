@@ -138,10 +138,21 @@ install() {
   $RSYNC $CERD/$nom/c89 $CRSD/usr/bin
   $RSYNC $CERD/$nom/c99 $CRSD/usr/bin
 
+  $LN $nom $CRSD/usr/bin/cc
+  $LN $nom $CRSD/usr/bin/$nom-$ver
+
   $LN $TGT-g++ $CRSD/usr/bin/$TGT-c++
 
   $LN $TGT-$nom $CRSD/usr/bin/$TGT-cc
   $LN $TGT-$nom $CRSD/usr/bin/$TGT-$nom-$ver
+
+  $LN g++ $CRSD/usr/bin/$TGT-g++
+  $LN $nom $CRSD/usr/bin/$TGT-$nom
+
+  $LN $nom-ar $CRSD/usr/bin/$TGT-$nom-ar
+  $LN ${nom}go $CRSD/usr/bin/$TGT-${nom}go
+  $LN $nom-nm $CRSD/usr/bin/$TGT-$nom-nm
+  $LN $nom-ranlib $CRSD/usr/bin/$TGT-$nom-ranlib
 
   # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
