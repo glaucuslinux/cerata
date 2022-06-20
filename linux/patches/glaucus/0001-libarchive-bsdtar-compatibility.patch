@@ -11,7 +11,7 @@
  echo $headers_md5 > kernel/kheaders.md5
 --- scripts/package/buildtar
 +++ scripts/package/buildtar
-@@ -153,8 +153,8 @@
+@@ -157,8 +157,8 @@
  #
  # Create the tarball
  #
