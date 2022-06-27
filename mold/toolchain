@@ -1,0 +1,38 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/install-nopython.patch
+}
+
+configure() {
+  :
+}
+
+build() {
+  # This ceras does not support parallel build!
+  $MAKE \
+    PREFIX=$TLCD \
+    LTO=1 \
+    SYSTEM_MIMALLOC=1 \
+    SYSTEM_TBB=1 \
+    -j1
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    PREFIX=$TLCD \
+    LTO=1 \
+    SYSTEM_MIMALLOC=1 \
+    SYSTEM_TBB=1 \
+    install
+}
