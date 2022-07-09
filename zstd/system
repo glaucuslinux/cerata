@@ -51,9 +51,6 @@ install() {
     -C contrib/p$nom \
     install
 
-  # Compressor only
-  $RSYNC $SBLD/$nom/programs/$nom-frugal $SCER/$nom/sac/usr/bin
-
   # Manually remove the static library
   $RM $SCER/$nom/sac/usr/lib/lib$nom.a
 
