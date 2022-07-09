@@ -9,9 +9,12 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
 }
 
 configure() {
+  ac_cv_prog_swig_found=no \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -26,7 +29,7 @@ configure() {
     --includedir=/usr/include \
     --disable-static \
     --without-python \
-    --with-python3
+    --without-python3
 }
 
 build() {

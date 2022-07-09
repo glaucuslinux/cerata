@@ -9,9 +9,12 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
 }
 
 configure() {
+  ac_cv_prog_swig_found=no \
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -27,7 +30,8 @@ configure() {
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --disable-static \
-    --without-python
+    --without-python \
+    --without-python3
 }
 
 build() {
