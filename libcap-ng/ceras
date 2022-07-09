@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="libcap-ng"
+ver="0.8.3"
+url="https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.3.tar.gz"
+sum="d344748ee3808ed04c53f0385ede4615"
