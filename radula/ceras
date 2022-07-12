@@ -5,6 +5,6 @@
 
 nom="radula"
 ver="git"
-cmt="3657a49"
+cmt="da18c49"
 url="https://github.com/glaucuslinux/radula"
 cys="oksh rsync toybox"
