@@ -46,9 +46,10 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --enable-${nom}v4o6 \
+    --enable-dhcpv4o6 \
     --enable-paranoia \
     --enable-early-chroot \
     --enable-log-pid \
@@ -58,6 +59,12 @@ configure() {
     --with-srv6-lease-file=/var/lib/$nom/${nom}d6.leases \
     --with-cli-lease-file=/var/lib/$nom/dhclient.leases \
     --with-cli6-lease-file=/var/lib/$nom/dhclient6.leases \
+    --with-srv-pid-file=/run/$nom/${nom}d.pid \
+    --with-srv6-pid-file=/run/$nom/${nom}d6.pid \
+    --with-cli-pid-file=/run/$nom/dhclient.pid \
+    --with-cli6-pid-file=/run/$nom/dhclient6.pid \
+    --with-relay-pid-file=/run/$nom/dhcrelay.pid \
+    --with-relay6-pid-file=/run/$nom/dhcrelay6.pid \
     --with-randomdev
 }
 
@@ -87,5 +94,6 @@ install() {
   $RM $SCER/$nom/sac/usr/lib/lib${nom}ctl.a
   $RM $SCER/$nom/sac/usr/lib/libomapi.a
 
+  $MKDIR $SCER/$nom/sac/run/$nom
   $MKDIR $SCER/$nom/sac/var/lib/$nom
 }
