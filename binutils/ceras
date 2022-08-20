@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="binutils"
-ver="2.38"
-url="https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.gz"
-sum="043eac928d20e070e117c1350298d6fc"
+ver="2.39"
+url="https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.gz"
+sum="e44edc18ea4193ba4969e6640ce3680e"
 cnt="make"
