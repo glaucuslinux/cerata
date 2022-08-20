@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="lz4"
-ver="1.9.3"
-url="https://github.com/lz4/lz4/archive/v1.9.3.tar.gz"
-sum="87ad1ae9785e4e9bf340c6a3a8295706"
+ver="1.9.4"
+url="https://github.com/lz4/lz4/archive/v1.9.4.tar.gz"
+sum="e28ec94f24f03fcb1c6127400993872d"
 cnt="make"
