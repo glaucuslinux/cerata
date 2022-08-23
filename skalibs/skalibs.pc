@@ -1,5 +1,5 @@
 Name: skalibs
 Description: The skarnet.org general-purpose C library.
 URL: https://skarnet.org/software/skalibs/
-Version: 2.12.0.0
+Version: 2.12.0.1
 Libs: -lskarnet
