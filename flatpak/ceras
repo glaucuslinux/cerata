@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="flatpak"
-ver="1.12.7"
-url="https://github.com/flatpak/flatpak/releases/download/1.12.7/flatpak-1.12.7.tar.xz"
-sum="9be49ff76626b2f2f595361fd32a6b03"
+ver="1.14.0"
+url="https://github.com/flatpak/flatpak/releases/download/1.14.0/flatpak-1.14.0.tar.xz"
+sum="5c9cfbe164fe3bdfc6b18076892b6ae9"
