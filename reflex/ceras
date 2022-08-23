@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="reflex"
-ver="3.2.9"
-url="https://github.com/Genivia/RE-flex/archive/v3.2.9.tar.gz"
-sum="f71d70286107f5a2a7a2cd1b7f07aea2"
+ver="3.2.10"
+url="https://github.com/Genivia/RE-flex/archive/v3.2.10.tar.gz"
+sum="363977d6d2755e3dc5c6ef36b99e9f67"
 cnt="make"
