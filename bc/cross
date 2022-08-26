@@ -13,6 +13,7 @@ configure() {
     --disable-generated-tests \
     --disable-man-pages \
     --disable-nls \
+    --enable-editline \
     --prefix=/usr \
     --bindir=/usr/bin \
     --includedir=/usr/include \
