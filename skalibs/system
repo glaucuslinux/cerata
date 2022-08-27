@@ -19,6 +19,7 @@ configure() {
     --datadir=/etc \
     --sysdepdir=/usr/lib/$nom/sysdeps \
     --with-include=$SYSD/usr/include \
+    --with-lib=$SYSD/usr/lib \
     --with-dynlib=$SYSD/usr/lib \
     --disable-static \
     --disable-all-pic \
