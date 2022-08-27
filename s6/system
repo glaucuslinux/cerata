@@ -19,7 +19,6 @@ configure() {
     --libexecdir=/usr/lib/$nom \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --libexecdir=/usr/bin \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
     --with-lib=$SYSD/usr/lib \
