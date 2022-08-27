@@ -13,6 +13,7 @@ configure() {
   cmake \
     -B $TBLD/$nom \
     -DCMAKE_INSTALL_PREFIX=$TLCD \
+    -DENABLE_IPO=ON \
     -DENABLE_TESTING=OFF \
     -DREDIS_STORAGE_BACKEND=OFF \
     -G Ninja
