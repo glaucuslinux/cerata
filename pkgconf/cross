@@ -51,4 +51,6 @@ install() {
   $LN $nom $CRSD/usr/bin/$TGT-pkg-config
 
   $RM $CRSD/usr/lib/lib$nom.la
+
+  $LN $nom.1 $CRSD/usr/share/man/man1/pkg-config.1
 }
