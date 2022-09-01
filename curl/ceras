@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="curl"
-ver="7.84.0"
-url="https://curl.se/download/curl-7.84.0.tar.gz"
-sum="0044b00de17b7798373bea595e3e3c7e"
+ver="7.85.0"
+url="https://curl.se/download/curl-7.85.0.tar.gz"
+sum="8d9c8095c824166efd439bc55c7bf547"
 cnt="libressl make zlib-ng zstd"
