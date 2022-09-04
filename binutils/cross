@@ -14,8 +14,6 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/arch/gold-warn-unsupported.patch
-
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
 }
@@ -45,11 +43,13 @@ configure() {
     --enable-new-dtags \
     --enable-relro \
     --disable-separate-code \
+    --disable-default-execstack \
     --enable-default-hash-style=gnu \
     --disable-werror \
     --disable-nls \
     --disable-rpath \
     --disable-initfini-array \
+    --disable-gprofng \
     --with-mmap \
     --with-lib-path=/usr/lib \
     --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
