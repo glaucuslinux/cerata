@@ -1,4 +1,4 @@
-From a46c8d6cb9428db29fbf8a80609ff449354ce111 Mon Sep 17 00:00:00 2001
+From 51a35c0fa0e793c6a2c64ae1449c0cfd681d8f8a Mon Sep 17 00:00:00 2001
 From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Fri, 21 Aug 2020 07:05:41 +0000
 Subject: [PATCH] always build libgcc_eh.a
@@ -10,7 +10,7 @@ highly inspired by:
  1 file changed, 6 insertions(+), 5 deletions(-)
 
 diff --git a/libgcc/Makefile.in b/libgcc/Makefile.in
-index 2c8be561eb5..c557750b1b3 100644
+index 09b3ec8bc2e..c9ca58c64cc 100644
 --- a/libgcc/Makefile.in
 +++ b/libgcc/Makefile.in
 @@ -957,8 +957,9 @@ ifneq ($(LIBUNWIND),)
@@ -46,6 +46,3 @@ index 2c8be561eb5..c557750b1b3 100644
  	parts="$(INSTALL_PARTS)";				\
  	for file in $$parts; do					\
  	  rm -f $(DESTDIR)$(inst_libdir)/$$file;		\
--- 
-2.35.1
-

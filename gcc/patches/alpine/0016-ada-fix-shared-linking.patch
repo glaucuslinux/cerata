@@ -1,4 +1,4 @@
-From 374a19de60fcd5c31321c3f4d26dcc4b631e8c3f Mon Sep 17 00:00:00 2001
+From fd642f8cd61849a9dc169588be5562ceda96a889 Mon Sep 17 00:00:00 2001
 From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Fri, 21 Aug 2020 06:59:16 +0000
 Subject: [PATCH] ada: fix shared linking
@@ -8,7 +8,7 @@ Subject: [PATCH] ada: fix shared linking
  1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/gcc/ada/link.c b/gcc/ada/link.c
-index 5cd5ef64f56..1c611a82cab 100644
+index a7574efb472..0ad0d66463c 100644
 --- a/gcc/ada/link.c
 +++ b/gcc/ada/link.c
 @@ -107,9 +107,9 @@ const char *__gnat_default_libgcc_subdir = "lib";
@@ -37,6 +37,3 @@ index 5cd5ef64f56..1c611a82cab 100644
  int __gnat_link_max = 8192;
  unsigned char __gnat_objlist_file_supported = 1;
  const char *__gnat_object_library_extension = ".a";
--- 
-2.35.1
-

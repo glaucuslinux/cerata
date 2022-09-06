@@ -1,4 +1,4 @@
-From 3fb914ca83ac18287ee24aa75aba9149e35487ad Mon Sep 17 00:00:00 2001
+From 5093aa99f9cdded2e1ddf67b7139da6fac36b0a6 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=B6ren=20Tempel?= <soeren+git@soeren-tempel.net>
 Date: Mon, 19 Apr 2021 07:21:41 +0200
 Subject: [PATCH] Use generic errstr.go implementation on musl
@@ -43,6 +43,3 @@ index 5b19e6f202d..8dc60172186 100644
  
  package syscall
  
--- 
-2.35.1
-

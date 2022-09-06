@@ -1,4 +1,4 @@
-From d7064ab25a561bb99c3d0b35663154656013aed2 Mon Sep 17 00:00:00 2001
+From 64a1c5f57e278869f41c43ee56cc5defb3dd55c5 Mon Sep 17 00:00:00 2001
 From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Fri, 21 Aug 2020 07:06:30 +0000
 Subject: [PATCH] ada: libgnarl compatibility for musl
@@ -9,10 +9,10 @@ Subject: [PATCH] ada: libgnarl compatibility for musl
  2 files changed, 3 insertions(+), 61 deletions(-)
 
 diff --git a/gcc/ada/libgnarl/s-osinte__linux.ads b/gcc/ada/libgnarl/s-osinte__linux.ads
-index 2272f83d68d..1d78456544a 100644
+index 7c9e7ca4518..caafc4aa68f 100644
 --- a/gcc/ada/libgnarl/s-osinte__linux.ads
 +++ b/gcc/ada/libgnarl/s-osinte__linux.ads
-@@ -401,12 +401,6 @@ package System.OS_Interface is
+@@ -403,12 +403,6 @@ package System.OS_Interface is
     PTHREAD_RWLOCK_PREFER_WRITER_NP              : constant := 1;
     PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP : constant := 2;
  
@@ -25,7 +25,7 @@ index 2272f83d68d..1d78456544a 100644
     function pthread_rwlock_init
       (mutex : access pthread_rwlock_t;
        attr  : access pthread_rwlockattr_t) return int;
-@@ -468,11 +462,6 @@ package System.OS_Interface is
+@@ -470,11 +464,6 @@ package System.OS_Interface is
        protocol : int) return int;
     pragma Import (C, pthread_mutexattr_setprotocol);
  
@@ -38,7 +38,7 @@ index 2272f83d68d..1d78456544a 100644
        sched_priority : int;  --  scheduling priority
     end record;
 diff --git a/gcc/ada/libgnarl/s-taprop__linux.adb b/gcc/ada/libgnarl/s-taprop__linux.adb
-index 757a6cdfdad..82df94f6a00 100644
+index 4ff784f0ea7..b34a12802c6 100644
 --- a/gcc/ada/libgnarl/s-taprop__linux.adb
 +++ b/gcc/ada/libgnarl/s-taprop__linux.adb
 @@ -198,9 +198,6 @@ package body System.Task_Primitives.Operations is
@@ -130,6 +130,3 @@ index 757a6cdfdad..82df94f6a00 100644
              Result := pthread_rwlock_init (L.RW'Access, RWlock_Attr'Access);
  
              pragma Assert (Result in 0 | ENOMEM);
--- 
-2.35.1
-

@@ -1,4 +1,4 @@
-From cc89c078ffc58a7f6675a60fbca24224effcb7e3 Mon Sep 17 00:00:00 2001
+From ef9df74e0c1059e51bb76b1f6d9d4746949d4d34 Mon Sep 17 00:00:00 2001
 From: "A. Wilcox" <AWilcox@Wilcox-Tech.com>
 Date: Mon, 31 Aug 2020 08:59:40 +0200
 Subject: [PATCH] gcc-go: link to libucontext
@@ -8,10 +8,10 @@ Subject: [PATCH] gcc-go: link to libucontext
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/Makefile.in b/Makefile.in
-index 426949aa91c..f97db1ef569 100644
+index b96f60e33e2..b564ddbf792 100644
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -50331,7 +50331,7 @@ configure-target-libgo:
+@@ -52802,7 +52802,7 @@ configure-target-libgo:
  	esac; \
  	module_srcdir=libgo; \
  	rm -f no-such-file || : ; \
@@ -20,6 +20,3 @@ index 426949aa91c..f97db1ef569 100644
  	  $$s/$$module_srcdir/configure \
  	  --srcdir=$${topdir}/$$module_srcdir \
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
--- 
-2.35.1
-

@@ -1,4 +1,4 @@
-From 5193de0a6c96fefe0c46fc9a6b8c27623ad85640 Mon Sep 17 00:00:00 2001
+From 82addb1312f4f58a412a664228944009aa5cb569 Mon Sep 17 00:00:00 2001
 From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Fri, 21 Aug 2020 07:07:48 +0000
 Subject: [PATCH] ada: musl support fixes
@@ -11,10 +11,10 @@ Subject: [PATCH] ada: musl support fixes
  4 files changed, 32 insertions(+), 30 deletions(-)
 
 diff --git a/gcc/ada/Makefile.rtl b/gcc/ada/Makefile.rtl
-index b5b8b573ea4..6fce40d1e98 100644
+index aaf853e3a2a..e2dd3587ed5 100644
 --- a/gcc/ada/Makefile.rtl
 +++ b/gcc/ada/Makefile.rtl
-@@ -1748,7 +1748,7 @@ ifeq ($(strip $(filter-out %86 linux%,$(target_cpu) $(target_os))),)
+@@ -1633,7 +1633,7 @@ ifeq ($(strip $(filter-out %86 linux%,$(target_cpu) $(target_os))),)
    s-intman.adb<libgnarl/s-intman__posix.adb \
    s-tpopsp.adb<libgnarl/s-tpopsp__tls.adb \
    $(TRASYM_DWARF_UNIX_PAIRS) \
@@ -23,7 +23,7 @@ index b5b8b573ea4..6fce40d1e98 100644
    a-exetim.adb<libgnarl/a-exetim__posix.adb \
    a-exetim.ads<libgnarl/a-exetim__default.ads \
    s-linux.ads<libgnarl/s-linux.ads \
-@@ -2355,7 +2355,7 @@ ifeq ($(strip $(filter-out powerpc% linux%,$(target_cpu) $(target_os))),)
+@@ -2258,7 +2258,7 @@ ifeq ($(strip $(filter-out powerpc% linux%,$(target_cpu) $(target_os))),)
    s-tasinf.adb<libgnarl/s-tasinf__linux.adb \
    s-taspri.ads<libgnarl/s-taspri__posix.ads \
    $(TRASYM_DWARF_UNIX_PAIRS) \
@@ -32,7 +32,7 @@ index b5b8b573ea4..6fce40d1e98 100644
    $(ATOMICS_TARGET_PAIRS) \
    $(ATOMICS_BUILTINS_TARGET_PAIRS) \
    system.ads<libgnat/system-linux-ppc.ads
-@@ -2386,7 +2386,7 @@ ifeq ($(strip $(filter-out powerpc% linux%,$(target_cpu) $(target_os))),)
+@@ -2289,7 +2289,7 @@ ifeq ($(strip $(filter-out powerpc% linux%,$(target_cpu) $(target_os))),)
  endif
  
  # ARM linux, GNU eabi
@@ -41,7 +41,7 @@ index b5b8b573ea4..6fce40d1e98 100644
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<libgnarl/a-intnam__linux.ads \
    s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
-@@ -2597,7 +2597,7 @@ ifeq ($(strip $(filter-out %ia64 linux%,$(target_cpu) $(target_os))),)
+@@ -2504,7 +2504,7 @@ ifeq ($(strip $(filter-out %ia64 linux%,$(target_cpu) $(target_os))),)
    s-tpopsp.adb<libgnarl/s-tpopsp__tls.adb \
    s-taspri.ads<libgnarl/s-taspri__posix-noaltstack.ads \
    $(TRASYM_DWARF_UNIX_PAIRS) \
@@ -50,7 +50,7 @@ index b5b8b573ea4..6fce40d1e98 100644
    $(ATOMICS_TARGET_PAIRS) \
    $(ATOMICS_BUILTINS_TARGET_PAIRS) \
    $(GNATRTL_128BIT_PAIRS) \
-@@ -2700,7 +2700,7 @@ ifeq ($(strip $(filter-out %x86_64 linux%,$(target_cpu) $(target_os))),)
+@@ -2608,7 +2608,7 @@ ifeq ($(strip $(filter-out %x86_64 linux%,$(target_cpu) $(target_os))),)
    s-tpopsp.adb<libgnarl/s-tpopsp__tls.adb \
    s-taspri.ads<libgnarl/s-taspri__posix.ads \
    $(TRASYM_DWARF_UNIX_PAIRS) \
@@ -60,7 +60,7 @@ index b5b8b573ea4..6fce40d1e98 100644
    $(X86_64_TARGET_PAIRS) \
    $(GNATRTL_128BIT_PAIRS) \
 diff --git a/gcc/ada/adaint.c b/gcc/ada/adaint.c
-index 2e54e69643a..e7e6507e2e0 100644
+index 591d033fbca..a485cbf15b9 100644
 --- a/gcc/ada/adaint.c
 +++ b/gcc/ada/adaint.c
 @@ -91,6 +91,11 @@
@@ -75,7 +75,7 @@ index 2e54e69643a..e7e6507e2e0 100644
  
  #ifdef __PikeOS__
  #define __BSD_VISIBLE 1
-@@ -3442,7 +3447,6 @@ __gnat_lwp_self (void)
+@@ -3446,7 +3451,6 @@ __gnat_lwp_self (void)
  #endif
  
  #if defined (__linux__)
@@ -83,7 +83,7 @@ index 2e54e69643a..e7e6507e2e0 100644
  
  /* glibc versions earlier than 2.7 do not define the routines to handle
     dynamically allocated CPU sets. For these targets, we use the static
-@@ -3452,7 +3456,7 @@ __gnat_lwp_self (void)
+@@ -3456,7 +3460,7 @@ __gnat_lwp_self (void)
  
  /* Dynamic cpu sets */
  
@@ -92,7 +92,7 @@ index 2e54e69643a..e7e6507e2e0 100644
  __gnat_cpu_alloc (size_t count)
  {
    return CPU_ALLOC (count);
-@@ -3465,33 +3469,33 @@ __gnat_cpu_alloc_size (size_t count)
+@@ -3469,33 +3473,33 @@ __gnat_cpu_alloc_size (size_t count)
  }
  
  void
@@ -134,7 +134,7 @@ index 2e54e69643a..e7e6507e2e0 100644
  }
  
  size_t
-@@ -3501,23 +3505,23 @@ __gnat_cpu_alloc_size (size_t count ATTRIBUTE_UNUSED)
+@@ -3505,23 +3509,23 @@ __gnat_cpu_alloc_size (size_t count ATTRIBUTE_UNUSED)
  }
  
  void
@@ -164,10 +164,10 @@ index 2e54e69643a..e7e6507e2e0 100644
  #endif /* !CPU_ALLOC */
  #endif /* __linux__ */
 diff --git a/gcc/ada/adaint.h b/gcc/ada/adaint.h
-index 85997b9ba68..fd10e5b5589 100644
+index 2631be5ad3e..d442f4bd6cd 100644
 --- a/gcc/ada/adaint.h
 +++ b/gcc/ada/adaint.h
-@@ -325,13 +325,11 @@ extern void   *__gnat_lwp_self			   (void);
+@@ -321,13 +321,11 @@ extern void   *__gnat_lwp_self			   (void);
  
  /* Routines for interface to required CPU set primitives */
  
@@ -186,7 +186,7 @@ index 85997b9ba68..fd10e5b5589 100644
  
  #if defined (_WIN32)
 diff --git a/gcc/ada/terminals.c b/gcc/ada/terminals.c
-index ec9db3a6a4c..6f92e50dd67 100644
+index 32d30a49c7e..d960e32e2d0 100644
 --- a/gcc/ada/terminals.c
 +++ b/gcc/ada/terminals.c
 @@ -1132,7 +1132,7 @@ __gnat_setup_winsize (void *desc ATTRIBUTE_UNUSED,
@@ -218,6 +218,3 @@ index ec9db3a6a4c..6f92e50dd67 100644
  #elif defined (USE_OPENPTY)
    status = openpty (&master_fd, &slave_fd, NULL, NULL, NULL);
  #elif defined (USE_CLONE_DEVICE)
--- 
-2.35.1
-
