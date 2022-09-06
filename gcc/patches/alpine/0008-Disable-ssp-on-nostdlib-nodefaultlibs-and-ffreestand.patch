@@ -1,177 +1,50 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<title>0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch « gcc « main - aports - Alpine packages build scripts
-</title>
-<meta name='generator' content='cgit v1.2.3'/>
-<meta name='robots' content='index, nofollow'/>
-<link rel='stylesheet' type='text/css' href='/cgit.css'/>
-<link rel='shortcut icon' href='//alpinelinux.org/alpine-logo.ico'/>
-<link rel='alternate' title='Atom feed' href='http://git.alpinelinux.org/aports/atom/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch?h=master' type='application/atom+xml'/>
-<link rel='vcs-git' href='https://git.alpinelinux.org/aports' title='aports Git repository'/>
-</head>
-<body>
-<div id='cgit'><table id='header'>
-<tr>
-<td class='logo' rowspan='2'><a href='/'><img src='//wiki.alpinelinux.org/images/alogo.png' alt='cgit logo'/></a></td>
-<td class='main'><a href='/'>index</a> : <a title='aports' href='/aports/'>aports</a></td><td class='form'><form method='get'>
-<select name='h' onchange='this.form.submit();'>
-<option value='1.10-stable'>1.10-stable</option>
-<option value='1.9'>1.9</option>
-<option value='2.0-stable'>2.0-stable</option>
-<option value='2.1-stable'>2.1-stable</option>
-<option value='2.2-stable'>2.2-stable</option>
-<option value='2.3-stable'>2.3-stable</option>
-<option value='2.4-stable'>2.4-stable</option>
-<option value='2.5-stable'>2.5-stable</option>
-<option value='2.6-stable'>2.6-stable</option>
-<option value='2.7-stable'>2.7-stable</option>
-<option value='3.0-stable'>3.0-stable</option>
-<option value='3.1-stable'>3.1-stable</option>
-<option value='3.10-stable'>3.10-stable</option>
-<option value='3.11-stable'>3.11-stable</option>
-<option value='3.12-stable'>3.12-stable</option>
-<option value='3.13-stable'>3.13-stable</option>
-<option value='3.14-stable'>3.14-stable</option>
-<option value='3.15-stable'>3.15-stable</option>
-<option value='3.16-stable'>3.16-stable</option>
-<option value='3.2-stable'>3.2-stable</option>
-<option value='3.3-stable'>3.3-stable</option>
-<option value='3.4-stable'>3.4-stable</option>
-<option value='3.5-stable'>3.5-stable</option>
-<option value='3.6-stable'>3.6-stable</option>
-<option value='3.7-stable'>3.7-stable</option>
-<option value='3.8-stable'>3.8-stable</option>
-<option value='3.9-stable'>3.9-stable</option>
-<option value='master' selected='selected'>master</option>
-<option value='patches/3538'>patches/3538</option>
-<option value='patches/3539'>patches/3539</option>
-<option value='patches/3808'>patches/3808</option>
-<option value='patches/3888'>patches/3888</option>
-<option value='patches/3913'>patches/3913</option>
-<option value='patches/3977'>patches/3977</option>
-<option value='patches/3998'>patches/3998</option>
-</select> <input type='submit' value='switch'/></form></td></tr>
-<tr><td class='sub'>Alpine packages build scripts
-</td><td class='sub right'>uwsgi</td></tr></table>
-<table class='tabs'><tr><td>
-<a href='/aports/about/'>about</a><a href='/aports/'>summary</a><a href='/aports/refs/'>refs</a><a href='/aports/log/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>log</a><a class='active' href='/aports/tree/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>tree</a><a href='/aports/commit/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>commit</a><a href='/aports/diff/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>diff</a><a href='/aports/stats/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>stats</a></td><td class='form'><form class='right' method='get' action='/aports/log/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>
-<select name='qt'>
-<option value='grep'>log msg</option>
-<option value='author'>author</option>
-<option value='committer'>committer</option>
-<option value='range'>range</option>
-</select>
-<input class='txt' type='search' size='10' name='q' value=''/>
-<input type='submit' value='search'/>
-</form>
-</td></tr></table>
-<div class='path'>path: <a href='/aports/tree/'>root</a>/<a href='/aports/tree/main'>main</a>/<a href='/aports/tree/main/gcc'>gcc</a>/<a href='/aports/tree/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch</a></div><div class='content'>blob: a0dc5862b3239748a2ce71716d3654a4993a320e (<a href='/aports/plain/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>plain</a>) (<a href='/aports/blame/main/gcc/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch'>blame</a>)
-<table summary='blob content' class='blob'>
-<tr><td class='linenumbers'><pre><a id='n1' href='#n1'>1</a>
-<a id='n2' href='#n2'>2</a>
-<a id='n3' href='#n3'>3</a>
-<a id='n4' href='#n4'>4</a>
-<a id='n5' href='#n5'>5</a>
-<a id='n6' href='#n6'>6</a>
-<a id='n7' href='#n7'>7</a>
-<a id='n8' href='#n8'>8</a>
-<a id='n9' href='#n9'>9</a>
-<a id='n10' href='#n10'>10</a>
-<a id='n11' href='#n11'>11</a>
-<a id='n12' href='#n12'>12</a>
-<a id='n13' href='#n13'>13</a>
-<a id='n14' href='#n14'>14</a>
-<a id='n15' href='#n15'>15</a>
-<a id='n16' href='#n16'>16</a>
-<a id='n17' href='#n17'>17</a>
-<a id='n18' href='#n18'>18</a>
-<a id='n19' href='#n19'>19</a>
-<a id='n20' href='#n20'>20</a>
-<a id='n21' href='#n21'>21</a>
-<a id='n22' href='#n22'>22</a>
-<a id='n23' href='#n23'>23</a>
-<a id='n24' href='#n24'>24</a>
-<a id='n25' href='#n25'>25</a>
-<a id='n26' href='#n26'>26</a>
-<a id='n27' href='#n27'>27</a>
-<a id='n28' href='#n28'>28</a>
-<a id='n29' href='#n29'>29</a>
-<a id='n30' href='#n30'>30</a>
-<a id='n31' href='#n31'>31</a>
-<a id='n32' href='#n32'>32</a>
-<a id='n33' href='#n33'>33</a>
-<a id='n34' href='#n34'>34</a>
-<a id='n35' href='#n35'>35</a>
-<a id='n36' href='#n36'>36</a>
-<a id='n37' href='#n37'>37</a>
-<a id='n38' href='#n38'>38</a>
-<a id='n39' href='#n39'>39</a>
-<a id='n40' href='#n40'>40</a>
-<a id='n41' href='#n41'>41</a>
-<a id='n42' href='#n42'>42</a>
-<a id='n43' href='#n43'>43</a>
-<a id='n44' href='#n44'>44</a>
-<a id='n45' href='#n45'>45</a>
-<a id='n46' href='#n46'>46</a>
-<a id='n47' href='#n47'>47</a>
-<a id='n48' href='#n48'>48</a>
-<a id='n49' href='#n49'>49</a>
-<a id='n50' href='#n50'>50</a>
-</pre></td>
-<td class='lines'><pre><code>From 27e5d5bd3fed9006a2958d2b09750d15ad07383b Mon Sep 17 00:00:00 2001
-From: Ariadne Conill &lt;ariadne&#64;dereferenced.org&gt;
+From 27e5d5bd3fed9006a2958d2b09750d15ad07383b Mon Sep 17 00:00:00 2001
+From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Fri, 21 Aug 2020 06:49:40 +0000
 Subject: [PATCH] Disable ssp on -nostdlib, -nodefaultlibs and -ffreestanding
  Change the buffer size.
 
-<span style="color:#000000; font-weight:bold">---</span>
+---
  gcc/gcc.cc     | 8 +++++++-
  gcc/params.opt | 2 +-
  2 files changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/gcc/gcc.cc b/gcc/gcc.cc
 index 3b76311b544..cc99d0b7aa1 100644
-<span style="color:#000000; font-weight:bold">--- a/gcc/gcc.cc</span>
-<span style="color:#0057ae">+++ b/gcc/gcc.cc</span>
-&#64;&#64; -996,6 +996,12 &#64;&#64; proper position among the other output files.  */
- #define LINK_GCC_C_SEQUENCE_SPEC &quot;%G %{!nolibc:%L %G}&quot;
+--- a/gcc/gcc.cc
++++ b/gcc/gcc.cc
+@@ -996,6 +996,12 @@ proper position among the other output files.  */
+ #define LINK_GCC_C_SEQUENCE_SPEC "%G %{!nolibc:%L %G}"
  #endif
  
-<span style="color:#0057ae">+#ifdef ENABLE_DEFAULT_SSP</span>
-<span style="color:#0057ae">+#define NO_SSP_SPEC &quot;%{nostdlib|nodefaultlibs|ffreestanding:-fno-stack-protector} &quot;</span>
-<span style="color:#0057ae">+#else</span>
-<span style="color:#0057ae">+#define NO_SSP_SPEC &quot;&quot;</span>
-<span style="color:#0057ae">+#endif</span>
-<span style="color:#0057ae">+</span>
++#ifdef ENABLE_DEFAULT_SSP
++#define NO_SSP_SPEC "%{nostdlib|nodefaultlibs|ffreestanding:-fno-stack-protector} "
++#else
++#define NO_SSP_SPEC ""
++#endif
++
  #ifndef LINK_SSP_SPEC
  #ifdef TARGET_LIBC_PROVIDES_SSP
- #define LINK_SSP_SPEC &quot;%{fstack-protector|fstack-protector-all&quot; \
-&#64;&#64; -1295,7 +1301,7 &#64;&#64; static const char *cc1_options =
+ #define LINK_SSP_SPEC "%{fstack-protector|fstack-protector-all" \
+@@ -1295,7 +1301,7 @@ static const char *cc1_options =
   %{-version:--version}\
   %{-help=*:--help=%*}\
   %{!fsyntax-only:%{S:%W{o*}%{!o*:-o %w%b.s}}}\
-<span style="color:#000000; font-weight:bold">- %{fsyntax-only:-o %j} %{-param*}\</span>
-<span style="color:#0057ae">+ %{fsyntax-only:-o %j} %{-param*} &quot; NO_SSP_SPEC &quot;\</span>
+- %{fsyntax-only:-o %j} %{-param*}\
++ %{fsyntax-only:-o %j} %{-param*} " NO_SSP_SPEC "\
   %{coverage:-fprofile-arcs -ftest-coverage}\
   %{fprofile-arcs|fprofile-generate*|coverage:\
     %{!fprofile-update=single:\
 diff --git a/gcc/params.opt b/gcc/params.opt
 index b88e1372005..82a7e25dd2f 100644
-<span style="color:#000000; font-weight:bold">--- a/gcc/params.opt</span>
-<span style="color:#0057ae">+++ b/gcc/params.opt</span>
-&#64;&#64; -1012,7 +1012,7 &#64;&#64; Common Joined UInteger Var(param_ssa_name_def_chain_limit) Init(512) Param Optim
+--- a/gcc/params.opt
++++ b/gcc/params.opt
+@@ -1012,7 +1012,7 @@ Common Joined UInteger Var(param_ssa_name_def_chain_limit) Init(512) Param Optim
  The maximum number of SSA_NAME assignments to follow in determining a value.
  
  -param=ssp-buffer-size=
-<span style="color:#000000; font-weight:bold">-Common Joined UInteger Var(param_ssp_buffer_size) Init(8) IntegerRange(1, 65536) Param Optimization</span>
-<span style="color:#0057ae">+Common Joined UInteger Var(param_ssp_buffer_size) Init(4) IntegerRange(1, 65536) Param Optimization</span>
+-Common Joined UInteger Var(param_ssp_buffer_size) Init(8) IntegerRange(1, 65536) Param Optimization
++Common Joined UInteger Var(param_ssp_buffer_size) Init(4) IntegerRange(1, 65536) Param Optimization
  The lower bound for a buffer to be considered for stack smashing protection.
  
  -param=stack-clash-protection-guard-size=
-</code></pre></td></tr></table>
-</div> <!-- class=content -->
-<div class='footer'>generated by <a href='https://git.zx2c4.com/cgit/about/'>cgit v1.2.3</a> (<a href='https://git-scm.com/'>git 2.25.1</a>) at 2022-09-05 17:20:58 +0000</div>
-</div> <!-- id=cgit -->
-</body>
-</html>
