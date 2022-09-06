@@ -1,4 +1,4 @@
-From 36c79820c1085590f272ef1afcad4744125d96d0 Mon Sep 17 00:00:00 2001
+From 76c13560bba3534bff335e5bb571a8b95d50d4ba Mon Sep 17 00:00:00 2001
 From: "A. Wilcox" <AWilcox@Wilcox-Tech.com>
 Date: Sun, 30 Aug 2020 18:33:49 +0200
 Subject: [PATCH] gcc-go: Use int64 type as offset argument for mmap
@@ -58,6 +58,3 @@ index fa3389d857e..57bed97c710 100644
  	p := sysMmap(addr, n, prot, flags, fd, off)
  	if uintptr(p) == _MAP_FAILED {
  		return nil, errno()
--- 
-2.35.1
-

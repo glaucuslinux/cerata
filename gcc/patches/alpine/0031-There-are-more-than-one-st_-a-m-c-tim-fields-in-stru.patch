@@ -1,4 +1,4 @@
-From c205f79c18add13247a06cfd843f5eb44c4c3cb4 Mon Sep 17 00:00:00 2001
+From b6885cf73989161b1b6893b5ae0dafed006d5f13 Mon Sep 17 00:00:00 2001
 From: Ariadne Conill <ariadne@dereferenced.org>
 Date: Thu, 25 Nov 2021 01:47:03 +0000
 Subject: [PATCH] There are more than one st_{a,m,c}tim fields in struct stat
@@ -22,6 +22,3 @@ index 0c52ea5d71a..6fef104cc1c 100755
  if test "${GOOS}" = "netbsd"; then
      st_times='-e s/st_atim/Atimespec/ -e s/st_mtim/Mtimespec/ -e s/st_ctim/Ctimespec/'
  fi
--- 
-2.35.1
-

@@ -1,4 +1,4 @@
-From 353c8abdc34a294c89c24423ef0c4182189117f6 Mon Sep 17 00:00:00 2001
+From cf41d579088e1c0b5c33c93657ad041e797b5905 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=B6ren=20Tempel?= <soeren@soeren-tempel.net>
 Date: Sun, 2 Jan 2022 01:07:03 +0100
 Subject: [PATCH] libgo: include asm/ptrace.h for pt_regs definition on PowerPC
@@ -37,7 +37,7 @@ Signed-off-by: Sören Tempel <soeren@soeren-tempel.net>
  1 file changed, 6 insertions(+)
 
 diff --git a/libgo/runtime/go-signal.c b/libgo/runtime/go-signal.c
-index d30d1603adc..fc01e04e4a1 100644
+index 528d9b6d9fe..c67503f0a79 100644
 --- a/libgo/runtime/go-signal.c
 +++ b/libgo/runtime/go-signal.c
 @@ -10,6 +10,12 @@
@@ -53,6 +53,3 @@ index d30d1603adc..fc01e04e4a1 100644
  #include "runtime.h"
  
  #ifndef SA_RESTART
--- 
-2.35.1
-

@@ -26,16 +26,10 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0010-Don-t-declare-asprintf-if-defined-as-a-macro.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-libitm-disable-FORTIFY.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0013-lib${nom}_s.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0015-libffi-use-__linux__-instead-of-__gnu_linux__-for-mu.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0020-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0023-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0030-always-build-lib${nom}_eh.a.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0034-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0042-Fix-attempt-to-use-poisoned-calloc-error-in-lib${nom}ji.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0047-x86-Properly-disable-fsplit-stack-support-on-non-gli.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0050-x86-Fix-fsplit-stack-feature-detection-via-TARGET_CA.patch
-
-  [ $ARCH = x86-64 ] && $PATCH -p1 -i $CERD/$nom/patches/clear/memcpy-avx2.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0017-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0020-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0027-always-build-lib${nom}_eh.a.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0031-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
 
   case $ARCH in
     aarch64 | riscv64 | x86-64)
