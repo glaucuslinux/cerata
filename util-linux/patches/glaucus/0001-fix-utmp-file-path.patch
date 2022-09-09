@@ -51,7 +51,7 @@
  	 * but some number calculated from the previous and current runlevel.)
 --- NEWS
 +++ NEWS
-@@ -1615,7 +1615,7 @@
+@@ -1619,7 +1619,7 @@
  
          /var/log/wtmp       /var/adm/wtmp
          /var/log/lastlog    /var/adm/lastlog
@@ -82,7 +82,7 @@
  #. type: Plain text
 --- po-man/de.po
 +++ po-man/de.po
-@@ -10602,11 +10602,11 @@
+@@ -10605,11 +10605,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -96,7 +96,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -45735,8 +45735,8 @@
+@@ -45772,8 +45772,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -109,7 +109,7 @@
  #: ../term-utils/agetty.8.adoc:300
 --- po-man/es.po
 +++ po-man/es.po
-@@ -9518,11 +9518,11 @@
+@@ -9520,11 +9520,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -123,7 +123,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -40048,8 +40048,8 @@
+@@ -40068,8 +40068,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -134,7 +134,7 @@
  
  #. type: Plain text
  #: ../term-utils/agetty.8.adoc:300
-@@ -48248,7 +48248,7 @@
+@@ -48269,7 +48269,7 @@
  #~ "utmp y wtmp. Solo el superusuario podrá usar esta opción."
  
  #~ msgid ""
@@ -143,7 +143,7 @@
  #~ "I</var/log/wtmp>\n"
  #~ "I</var/log/lastlog>\n"
  #~ "I</var/spool/mail/*>\n"
-@@ -48260,7 +48260,7 @@
+@@ -48281,7 +48281,7 @@
  #~ "I</etc/hushlogins>\n"
  #~ "I<.hushlogin>\n"
  #~ msgstr ""
@@ -154,7 +154,7 @@
  #~ "I</var/spool/mail/*>\n"
 --- po-man/fr.po
 +++ po-man/fr.po
-@@ -10455,11 +10455,11 @@
+@@ -10554,11 +10554,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -168,7 +168,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -45430,8 +45430,8 @@
+@@ -45550,8 +45550,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -181,7 +181,7 @@
  #: ../term-utils/agetty.8.adoc:300
 --- po-man/pt_BR.po
 +++ po-man/pt_BR.po
-@@ -10169,7 +10169,7 @@
+@@ -10170,7 +10170,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -190,7 +190,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -39808,8 +39808,8 @@
+@@ -39825,8 +39825,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -203,7 +203,7 @@
  #: ../term-utils/agetty.8.adoc:300
 --- po-man/sr.po
 +++ po-man/sr.po
-@@ -10549,11 +10549,11 @@
+@@ -10552,11 +10552,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -217,7 +217,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -45377,8 +45377,8 @@
+@@ -45405,8 +45405,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -230,7 +230,7 @@
  #: ../term-utils/agetty.8.adoc:300
 --- po-man/uk.po
 +++ po-man/uk.po
-@@ -9215,11 +9215,11 @@
+@@ -9964,11 +9964,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -244,7 +244,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -38026,8 +38026,8 @@
+@@ -42528,8 +42528,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
@@ -257,7 +257,7 @@
  #: ../term-utils/agetty.8.adoc:300
 --- po-man/util-linux-man.pot
 +++ po-man/util-linux-man.pot
-@@ -9004,7 +9004,7 @@
+@@ -9005,7 +9005,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -266,7 +266,7 @@
  "_/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, "
  "_/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -37927,7 +37927,7 @@
+@@ -37943,7 +37943,7 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:298
  #, no-wrap
