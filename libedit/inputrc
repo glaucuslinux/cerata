@@ -8,7 +8,7 @@ set convert-meta off
 set echo-control-characters off
 set editing-mode emacs
 set expand-tilde on
-set horizontal-scroll-mode on
+set horizontal-scroll-mode off
 set input-meta on
 set mark-symlinked-directories on
 set match-hidden-files off
