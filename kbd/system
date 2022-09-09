@@ -15,8 +15,6 @@ prepare() {
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -47,4 +45,30 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $LN openvt $SCER/$nom/sac/usr/bin/open
+
+  $RM $SCER/$nom/sac/usr/share/keymaps/amiga
+  $RM $SCER/$nom/sac/usr/share/keymaps/atari
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz \
+    $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr-old.map.gz
+  $LN fr-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz
+  $LN fr-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr-latin0.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/colemak/en-latin9.map.gz \
+    $SCER/$nom/sac/usr/share/keymaps/i386/colemak/colemak.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/fgGIod/trf.map.gz \
+    $SCER/$nom/sac/usr/share/keymaps/i386/fgGIod/trf-fgGIod.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/olpc/es.map.gz \
+    $SCER/$nom/usr/share/keymaps/i386/olpc/es-olpc.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/olpc/pt.map.gz \
+    $SCER/$nom/usr/share/keymaps/i386/olpc/pt-olpc.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/cz.map.gz \
+    $SCER/$nom/usr/share/keymaps/i386/qwerty/cz-qwerty.map.gz
+  $MV $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/fi.map.gz \
+    $SCER/$nom/usr/share/keymaps/i386/qwerty/fi-kotoistus.map.gz
+  $LN pt-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/pt.map.gz
+  $RM $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/ro_win.map.gz
+  $LN sv-latin1.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/se-latin1.map
+  $LN sr-cy.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/sr-latin.map.gz
+  $RM $SCER/$nom/sac/usr/share/keymaps/sun
 }
