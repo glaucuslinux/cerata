@@ -15,8 +15,7 @@ configure() {
 build() {
   iucode_tool \
     --write-earlyfw=$nom.img $nom/ $nom-with-caveats/ \
-    --overwrite \
-    --mini-earlyfw
+    --overwrite
 }
 
 check() {
