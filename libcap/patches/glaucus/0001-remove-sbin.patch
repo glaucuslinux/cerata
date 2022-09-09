@@ -206,20 +206,9 @@
  
  p4s_test(){
      # are we sane?
---- doc/cap_get_proc.3
-+++ doc/cap_get_proc.3
-@@ -382,7 +382,7 @@
- .B capsh
- tool as follows:
- .sp
--.B sudo /sbin/capsh \-\-user=nobody \-\-mode=NOPRIV \-\-print
-+.B sudo /bin/capsh \-\-user=nobody \-\-mode=NOPRIV \-\-print
- .sp
- where
- .B \-\-print
 --- go/Makefile
 +++ go/Makefile
-@@ -172,8 +172,8 @@
+@@ -175,8 +175,8 @@
  # of their packaging, we reward them with a copy of the captree
  # utility!
  install: all
