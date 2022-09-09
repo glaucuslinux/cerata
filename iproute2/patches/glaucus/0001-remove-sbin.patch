@@ -55,7 +55,7 @@
  	rm -f $(GENLOBJ) $(GENLLIB) genl
 --- ip/Makefile
 +++ ip/Makefile
-@@ -31,8 +31,8 @@
+@@ -32,8 +32,8 @@
  	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
  
  install: all
