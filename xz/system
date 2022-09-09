@@ -14,8 +14,6 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/${nom}grep-fix.patch
 }
 
 configure() {
@@ -37,9 +35,6 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath
-
-  # Further disable rpath
-  $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-disable-rpath.patch
 }
 
 build() {
