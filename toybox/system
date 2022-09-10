@@ -56,6 +56,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/groups
   $LN $nom $SCER/$nom/sac/usr/bin/head
   $LN $nom $SCER/$nom/sac/usr/bin/hostid
+  $LN $nom $SCER/$nom/sac/usr/bin/hostname
   $LN $nom $SCER/$nom/sac/usr/bin/iconv
   $LN $nom $SCER/$nom/sac/usr/bin/id
   $LN $nom $SCER/$nom/sac/usr/bin/install
@@ -111,6 +112,7 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/uniq
   $LN $nom $SCER/$nom/sac/usr/bin/unlink
   $LN $nom $SCER/$nom/sac/usr/bin/wc
+  $LN $nom $SCER/$nom/sac/usr/bin/which
   $LN $nom $SCER/$nom/sac/usr/bin/who
   $LN $nom $SCER/$nom/sac/usr/bin/whoami
   $LN $nom $SCER/$nom/sac/usr/bin/yes
