@@ -56,6 +56,7 @@ install() {
   $LN $nom $CRSD/usr/bin/groups
   $LN $nom $CRSD/usr/bin/head
   $LN $nom $CRSD/usr/bin/hostid
+  $LN $nom $CRSD/usr/bin/hostname
   $LN $nom $CRSD/usr/bin/iconv
   $LN $nom $CRSD/usr/bin/id
   $LN $nom $CRSD/usr/bin/install
@@ -111,6 +112,7 @@ install() {
   $LN $nom $CRSD/usr/bin/uniq
   $LN $nom $CRSD/usr/bin/unlink
   $LN $nom $CRSD/usr/bin/wc
+  $LN $nom $CRSD/usr/bin/which
   $LN $nom $CRSD/usr/bin/who
   $LN $nom $CRSD/usr/bin/whoami
   $LN $nom $CRSD/usr/bin/yes
