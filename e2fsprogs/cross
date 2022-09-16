@@ -17,6 +17,8 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
 
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-misc-makefile-error.patch
+
   # `INSTALL` documentation recommends building out of tree
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom

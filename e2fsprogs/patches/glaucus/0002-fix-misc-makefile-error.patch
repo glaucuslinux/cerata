@@ -1,0 +1,14 @@
+--- misc/Makefile.in
++++ misc/Makefile.in
+@@ -653,11 +653,9 @@
+ 
+ install-strip: install
+ 	$(Q) for i in $(SPROGS); do \
+-		$(E) "	STRIP $(root_sbindir)/$$i"; \
+ 		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 	$(Q) for i in $(USPROGS); do \
+-		$(E) "	STRIP $(sbindir)/$$i"; \
+ 		$(STRIP) $(DESTDIR)$(sbindir)/$$i; \
+ 	done
+ 
