@@ -35,6 +35,8 @@ configure() {
     --disable-symvers \
     --disable-nls \
     --disable-rpath \
+    --enable-setpriv \
+    --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
     --disable-nologin \
