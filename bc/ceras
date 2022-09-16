@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="bc"
-ver="6.0.2"
-url="https://github.com/gavinhoward/bc/releases/download/6.0.2/bc-6.0.2.tar.gz"
-sum="ffbc47317c65af8277f6d04db9062c0b"
+ver="6.0.3"
+url="https://github.com/gavinhoward/bc/releases/download/6.0.3/bc-6.0.3.tar.gz"
+sum="9425ad9207f8bed5953106ec5fceeb23"
 cnt="libedit make"
