@@ -46,4 +46,7 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip
+
+  $RM $CRSD/usr/lib/$nom.la
+  $RM $CRSD/usr/lib/libdrop_ambient.la
 }
