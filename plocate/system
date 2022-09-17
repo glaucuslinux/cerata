@@ -1,0 +1,57 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/musl/error.h .
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-musl-compat.patch
+
+  $MKDIR $SBLD/$nom
+}
+
+configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-man-page.patch
+
+  $CERD/meson/glaucus-meson \
+    --cross-file $CERD/meson/meson.cross.$ARCH \
+    -Dinstall_systemd=false \
+    -Dlocategroup=locate \
+    -Dupdatedb_progname=pupdatedb \
+    $SBLD/$nom
+}
+
+build() {
+  samu \
+    -C $SBLD/$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  DESTDIR=$SCER/$nom/sac \
+  samu \
+    -C $SBLD/$nom \
+    install
+
+  $RSYNC $CERD/$nom/updatedb.conf $SCER/$nom/sac/etc
+
+  # Compatibility symlinks
+  $LN $nom $SCER/$nom/sac/usr/bin/locate
+  $LN $nom $SCER/$nom/sac/usr/bin/slocate
+  $LN pupdatedb $SCER/$nom/sac/usr/bin/updatedb
+
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/locate.1
+  $LN ../man8/pupdatedb.8 $SCER/$nom/sac/usr/share/man/man1/pupdatedb.1
+  $LN ../man8/pupdatedb.8 $SCER/$nom/sac/usr/share/man/man1/updatedb.1
+
+  $LN pupdatedb.conf.5 $SCER/$nom/sac/usr/share/man/man5/updatedb.conf.5
+
+  $LN $nom $SCER/$nom/sac/var/lib/locate
+}
