@@ -35,7 +35,7 @@ configure() {
     --disable-symvers \
     --disable-nls \
     --disable-rpath \
-    --enable-setpriv \
+    --disable-asciidoc \
     --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
@@ -50,7 +50,6 @@ configure() {
     --enable-usrdir-path \
     --disable-makeinstall-chown \
     --with-readline \
-    --without-cap-ng \
     --without-systemd \
     --without-systemdsystemunitdir \
     --with-vendordir=/usr/lib \
