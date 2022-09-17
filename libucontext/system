@@ -5,8 +5,8 @@
 
 prepare() {
   # Source directory has $nom twice in it
-  $RSYNC $SRCD/$nom/$nom-$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -29,6 +29,6 @@ install() {
   $MAKE \
     ARCH=$UARCH \
     LIBDIR=/usr/lib \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install
 }
