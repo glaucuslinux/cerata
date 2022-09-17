@@ -1,7 +1,7 @@
 From 123eaff0d5d1aebe128295959435b9ca5909c26d Mon Sep 17 00:00:00 2001
 From: Andreas Gruenbacher <agruen@gnu.org>
 Date: Fri, 6 Apr 2018 12:14:49 +0200
-Subject: [PATCH 06/25] Fix arbitrary command execution in ed-style patches
+Subject: [PATCH] Fix arbitrary command execution in ed-style patches
  (CVE-2018-1000156)
 
 * src/pch.c (do_ed_script): Write ed script to a temporary file instead
@@ -207,5 +207,5 @@ index 0000000..d8c0689
 +foo
 +EOF
 -- 
-2.25.0
+2.22.0
 
