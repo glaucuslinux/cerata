@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $XSRC --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom $SSRC --delete
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -25,6 +25,6 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install
 }
