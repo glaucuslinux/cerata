@@ -4,20 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
-
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.rpath build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
-
-  $RSYNC $CERD/binutils/config.guess tp/Texinfo/XS
-  $RSYNC $CERD/binutils/config.rpath tp/Texinfo/XS
-  $RSYNC $CERD/binutils/config.sub tp/Texinfo/XS
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 }
 
 configure() {
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -32,7 +26,8 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls \
-    --without-included-regex
+    --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
 build() {
@@ -45,6 +40,6 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 }
