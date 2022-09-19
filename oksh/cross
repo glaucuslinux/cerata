@@ -35,9 +35,11 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $LN $nom $CRSD/usr/bin/bash
   $LN $nom $CRSD/usr/bin/ksh
   $LN $nom $CRSD/usr/bin/rksh
 
+  $LN $nom.1 $CRSD/usr/share/man/man1/bash.1
   $LN $nom.1 $CRSD/usr/share/man/man1/ksh.1
   $LN $nom.1 $CRSD/usr/share/man/man1/rksh.1
 }
