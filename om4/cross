@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+}
+
+configure() {
+  ./configure \
+    --prefix=/usr \
+    --bindir=/usr/bin
+}
+
+build() {
+  # This ceras does not support parallel build!
+  $MAKE \
+    -j1
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$CRSD \
+    install
+
+  $LN $nom $CRSD/usr/bin/m4
+  $LN $nom.1 $CRSD/usr/share/man/man1/m4.1
+}
