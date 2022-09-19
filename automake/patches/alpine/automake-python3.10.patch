@@ -1,0 +1,46 @@
+From 930a9a73f4bb776ec334eff4cf6e182802841daa Mon Sep 17 00:00:00 2001
+From: Mike Frysinger <vapier@gentoo.org>
+Date: Wed, 26 Jan 2022 06:33:19 -0500
+Subject: [PATCH] python: add 3.10 - 3.15 to the version search list
+
+Fixes automake bug https://bugs.gnu.org/53530.
+
+Based on the cadence of Automake releases, add the current Python
+release (3.10), the current Python development (3.11), and then 4
+more versions on top of that.  It doesn't hurt to check for a few
+extra versions here since this is the fallback logic when the main
+`python` and `python3` programs aren't found.
+
+* m4/python.m4: Add python3.10 - python3.15.
+* NEWS: Mention new Python versions.
+---
+ NEWS         | 3 +++
+ m4/python.m4 | 1 +
+ 2 files changed, 4 insertions(+)
+
+diff --git a/NEWS b/NEWS
+index 79a81f22e..57fd4275b 100644
+--- a/NEWS
++++ b/NEWS
+@@ -9,6 +9,9 @@ New in 1.17:
+ 
+   - RANLIB may be overridden on a per-target basis.
+ 
++  - AM_PATH_PYTHON will also search for Python versions 3.10 - 3.15.  It has
++    previously searched for 3.0 - 3.9.
++
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ New in 1.16.5:
+diff --git a/m4/python.m4 b/m4/python.m4
+index f5b5371c6..6653e4d89 100644
+--- a/m4/python.m4
++++ b/m4/python.m4
+@@ -38,6 +38,7 @@ AC_DEFUN([AM_PATH_PYTHON],
+   dnl supported. (2.0 was released on October 16, 2000).
+   m4_define_default([_AM_PYTHON_INTERPRETER_LIST],
+ [python python2 python3 dnl
++ python3.15 python3.14 python3.13 python3.12 python3.11 python3.10 dnl
+  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3 dnl
+  python3.2 python3.1 python3.0 dnl
+  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 dnl
