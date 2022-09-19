@@ -13,6 +13,7 @@ prepare() {
 }
 
 configure() {
+  # This patch will be part of flex-2.6.5 release
   $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
 
   ac_cv_func_malloc_0_nonnull=yes \
