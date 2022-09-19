@@ -48,4 +48,6 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $RM $SCER/$nom/sac/usr/lib/charset.alias
 }
