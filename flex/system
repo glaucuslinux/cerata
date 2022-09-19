@@ -44,4 +44,6 @@ install() {
     install-strip
 
   $LN $nom $SCER/$nom/sac/usr/bin/lex
+
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/lex.1
 }
