@@ -70,8 +70,8 @@ configure() {
 
 build() {
   # This ceras does not support parallel build!
-  MAKEFLAGS='-j1 V=1' \
-  $MAKE
+  $MAKE \
+    -j1
 }
 
 check() {
