@@ -41,6 +41,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $LN aclocal-1.16 $SCER/$nom/sac/usr/bin/aclocal
-  $LN $nom-1.16 $SCER/$nom/sac/usr/bin/$nom
+  # Replace hard links with symbolic links
+  $LN aclocal $SCER/$nom/sac/usr/bin/aclocal-1.16
+  $LN $nom $SCER/$nom/sac/usr/bin/$nom-1.16
 }
