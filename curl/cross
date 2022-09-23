@@ -35,7 +35,7 @@ configure() {
     --with-openssl \
     --with-zlib \
     --with-zstd \
-    --with-ca-bundle=/etc/ssl/cacert.pem \
+    --with-ca-bundle=/etc/ssl/cert.pem \
     --without-libidn2
 }
 
