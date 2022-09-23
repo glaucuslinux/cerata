@@ -20,5 +20,5 @@ check() {
 }
 
 install() {
-  $RSYNC $CERD/$nom/cert.pem $CRSD/etc/ssl
+  $RSYNC $SRCD/$nom/cert.pem $CRSD/etc/ssl
 }
