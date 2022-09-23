@@ -1,0 +1,24 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+check() {
+  :
+}
+
+install() {
+  $RSYNC $CERD/$nom/cert.pem $CRSD/etc/ssl
+}
