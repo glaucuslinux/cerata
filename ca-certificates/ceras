@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2022, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="ca-certificates"
-ver="20220719"
-url="https://curl.se/ca/cacert.pem"
-sum="5506e63a2d0f413f1380c2efac8ca7f7"
