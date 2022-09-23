@@ -34,7 +34,9 @@ configure() {
     --enable-pthreads \
     --with-openssl \
     --with-zlib \
-    --with-zstd
+    --with-zstd \
+    --with-ca-bundle=/etc/ssl/cacert.pem \
+    --without-libidn2
 }
 
 build() {
