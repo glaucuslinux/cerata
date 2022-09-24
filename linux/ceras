@@ -6,5 +6,5 @@
 nom="linux"
 ver="5.19.11"
 url="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.11.tar.gz"
-sum=""
+sum="3047df9dc8c9b1b0633f25eb2a40a6d0"
 cnt="bc byacc flex libelf libuargp make musl-fts musl-obstack zlib-ng"
