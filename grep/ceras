@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="grep"
-ver="3.7"
-url="https://ftpmirror.gnu.org/grep/grep-3.7.tar.gz"
-sum="fb44692b23a923a1f56d26033a63b476"
+ver="3.8"
+url="https://ftpmirror.gnu.org/grep/grep-3.8.tar.gz"
+sum="e664a837f41d04e46928d2eeee151ab5"
 cnt="make"
