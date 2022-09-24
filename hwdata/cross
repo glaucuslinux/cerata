@@ -31,5 +31,10 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $MV $CRSD/usr/share/pkgconfig/$nom.pc $PKG_CONFIG_LIBDIR
+
   $RSYNC $CERD/$nom/sdio.ids $CRSD/usr/share/hwdata
+
+  # The only allowed directory for pkg-config files is `$PKG_CONFIG_LIBDIR`
+  $RM $CRSD/usr/share/pkgconfig
 }
