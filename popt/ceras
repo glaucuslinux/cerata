@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="popt"
-ver="1.18"
-url="https://fossies.org/linux/misc/popt-1.18.tar.gz"
-sum="a6b5b5b6959fe9f369bb6ee6b2af148a"
+ver="1.19"
+url="https://fossies.org/linux/misc/popt-1.19.tar.gz"
+sum="ffd3032d4a070604e4acd2bda83cbfcb"
 cnt="make"
