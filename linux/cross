@@ -61,6 +61,7 @@ configure() {
 }
 
 build() {
+  MAKEFLAGS='-j4 -O V=1' \
   $MAKE \
     O=$XBLD/$nom \
     ARCH=$LARCH
