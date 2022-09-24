@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/Python-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/Python-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
@@ -21,6 +21,8 @@ prepare() {
 configure() {
   ax_cv_c_float_words_bigendian=no \
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -53,9 +55,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 
-  $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
-  $LN pip3.10 $SCER/$nom/sac/usr/bin/pip3
+  $LN ${nom}3 $CRSD/usr/bin/$nom
+  $LN pip3.10 $CRSD/usr/bin/pip3
 }
