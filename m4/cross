@@ -29,6 +29,7 @@ configure() {
     --includedir=/usr/include \
     --enable-threads=posix \
     --disable-rpath \
+    --enable-changeword \
     --disable-nls \
     --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
