@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="tarlz"
-ver="0.22"
-url="https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.22.tar.lz"
-sum="3b2c0289969d83c41392b851d6b39c10"
+ver="0.23"
+url="https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
+sum="0acd89078020b47df693718ef7abbc1a"
 cnt="lzlib make"
 cys="gcc"
