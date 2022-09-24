@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="tzcode"
-ver="2022c"
-url="https://data.iana.org/time-zones/releases/tzcode2022c.tar.gz"
-sum="78dc532f79c362a088134ae8b44260b2"
+ver="2022d"
+url="https://data.iana.org/time-zones/releases/tzcode2022d.tar.gz"
+sum="f36585489fee67749c37ae3d9a7405b8"
 cnt="make"
