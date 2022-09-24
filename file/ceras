@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="file"
-ver="5.42"
-url="https://astron.com/pub/file/file-5.42.tar.gz"
-sum="c8458466301dc2961890a63409b468a4"
+ver="5.43"
+url="https://astron.com/pub/file/file-5.43.tar.gz"
+sum="1e01389afd76d7b30b2977727a6f91c9"
 cnt="make"
