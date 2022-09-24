@@ -15,6 +15,9 @@ prepare() {
 }
 
 configure() {
+  # Disable locale test that fails on musl
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-test-localename.patch
+
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
