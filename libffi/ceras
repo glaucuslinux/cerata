@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libffi"
-ver="3.4.2"
-url="https://github.com/libffi/libffi/releases/download/v3.4.2/libffi-3.4.2.tar.gz"
-sum="5c4e87f3fdeebecabc0fde36dc1c165b"
+ver="3.4.3"
+url="https://github.com/libffi/libffi/releases/download/v3.4.3/libffi-3.4.3.tar.gz"
+sum="d0b047486660a7273844d0bd606123df"
 cnt="make"
