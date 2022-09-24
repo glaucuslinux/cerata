@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="rsync"
-ver="3.2.5"
-url="https://download.samba.org/pub/rsync/rsync-3.2.5.tar.gz"
-sum="86ad0f7e8f4e4dfdb9c478a9e078ec7e"
+ver="3.2.6"
+url="https://download.samba.org/pub/rsync/rsync-3.2.6.tar.gz"
+sum="07f41d0a5e32e5c1a75a5c1984596267"
 cnt="acl attr gcc libressl lz4 make popt xxhash zlib-ng zstd"
