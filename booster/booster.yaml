@@ -1,0 +1,5 @@
+network:
+  dhcp: on
+universal: true
+compression: zstd
+strip: true
