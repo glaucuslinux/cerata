@@ -32,11 +32,9 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
-  $LN $nom $SCER/$nom/sac/usr/bin/bash
   $LN $nom $SCER/$nom/sac/usr/bin/ksh
   $LN $nom $SCER/$nom/sac/usr/bin/rksh
 
-  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/bash.1
   $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/ksh.1
   $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/rksh.1
 }
