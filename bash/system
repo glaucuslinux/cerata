@@ -26,6 +26,7 @@ configure() {
     --includedir=/usr/include \
     --enable-multibyte \
     --disable-nls \
+    --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
     --without-included-gettext
