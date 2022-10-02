@@ -5,6 +5,6 @@
 
 nom="popt"
 ver="1.19"
-url="https://fossies.org/linux/misc/popt-1.19.tar.gz"
+url="https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/popt-1.19.tar.gz"
 sum="ffd3032d4a070604e4acd2bda83cbfcb"
 cnt="make"
