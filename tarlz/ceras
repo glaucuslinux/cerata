@@ -5,7 +5,7 @@
 
 nom="tarlz"
 ver="0.23"
-url="https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
+url="https://download.savannah.nongnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
 sum="0acd89078020b47df693718ef7abbc1a"
 cnt="lzlib make"
 cys="gcc"
