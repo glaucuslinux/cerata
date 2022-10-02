@@ -5,6 +5,6 @@
 
 nom="rsync"
 ver="3.2.6"
-url="https://download.samba.org/pub/rsync/rsync-3.2.6.tar.gz"
+url="https://download.samba.org/pub/rsync/src/rsync-3.2.6.tar.gz"
 sum="07f41d0a5e32e5c1a75a5c1984596267"
 cnt="acl attr gcc libressl lz4 make popt xxhash zlib-ng zstd"
