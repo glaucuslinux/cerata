@@ -5,7 +5,7 @@
 
 nom="pciutils"
 ver="3.8.0"
-url="https://mirrors.edge.kernel.org/pub/software/utils/pciutils/pciutils-3.8.0.tar.gz"
-sum="217cdef3ccd723197b96d02b703a46ba"
+url="https://mj.ucw.cz/download/linux/pci/pciutils-3.8.0.tar.gz"
+sum="6dd6d82025693a947b58ae92ddbcbe3e"
 cnt="eudev kmod libressl linux-headers make xz zlib-ng zstd"
 cys="hwdata"
