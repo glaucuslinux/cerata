@@ -13,6 +13,7 @@ glaucus's cerata
 * [Gitter](https://gitter.im/glaucuslinux/cerata)
 * [Reddit](https://www.reddit.com/r/glaucus)
 * [Telegram](https://t.me/glaucuslinux)
+* [Twitter](https://twitter.com/glaucuslinux)
 * [YouTube](https://www.youtube.com/channel/UCOpZsBcIF2NvJHuzdP1UP_w)
 
 ## Mirrors
