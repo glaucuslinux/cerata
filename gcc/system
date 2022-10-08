@@ -29,26 +29,12 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0027-always-build-lib${nom}_eh.a.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0028-ada-libgnarl-compatibility-for-musl.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0029-ada-musl-support-fixes.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0030-$nom-go-Fix-handling-of-signal-34-on-musl.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0031-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0032-$nom-go-undef-SETCONTEXT_CLOBBERS_TLS-in-proc.c.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0033-$nom-go-link-to-libucontext.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0034-Use-generic-errstr.go-implementation-on-musl.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0037-libgo-Recognize-off64_t-and-loff_t-definitions-of-mu.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0039-$nom-go-Use-int64-type-as-offset-argument-for-mmap.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0040-libgo-include-asm-ptrace.h-for-pt_regs-definition-on.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0041-go-gospec-forcibly-disable-fsplit-stack-support.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0042-$nom-go-fix-build-error-with-SYS_SECCOMP.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0043-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0044-gdc-unconditionally-link-libgphobos-against-libucont.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0045-druntime-link-against-libucontext-on-all-platforms.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0046-c-avoid-memory-poisoning-on-musl-PR106102.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0047-jit-avoid-calloc-poisoning-on-musl-PR106102.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0049-libgo-adjust-name-of-union-in-sigevent-struct.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0050-libphobos-don-t-define-__mode_t-twice-on-musl-target.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0051-libgo-Explicitly-define-SYS_timer_settime-for-32-bit.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0052-libgnat-time_t-is-always-64-bit-on-musl-libc.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0053-libgo-make-match.sh-POSIX-shell-compatible.patch
 
   case $ARCH in
     aarch64 | riscv64 | x86-64)
@@ -81,7 +67,7 @@ configure() {
     --enable-threads=posix \
     --enable-tls \
     --disable-nls \
-    --enable-languages=c,c++,go \
+    --enable-languages=c,c++ \
     --disable-rpath \
     --disable-static \
     --disable-gnu-indirect-function \
@@ -140,7 +126,6 @@ install() {
   $LN $nom $SCER/$nom/sac/usr/bin/$TGT-$nom
 
   $LN $nom-ar $SCER/$nom/sac/usr/bin/$TGT-$nom-ar
-  $LN ${nom}go $SCER/$nom/sac/usr/bin/$TGT-${nom}go
   $LN $nom-nm $SCER/$nom/sac/usr/bin/$TGT-$nom-nm
   $LN $nom-ranlib $SCER/$nom/sac/usr/bin/$TGT-$nom-ranlib
 
