@@ -60,7 +60,6 @@ configure() {
 }
 
 build() {
-  MAKEFLAGS='-j4 -O V=1' \
   $MAKE \
     O=$SBLD/$nom \
     ARCH=$LARCH
