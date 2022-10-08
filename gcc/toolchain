@@ -56,7 +56,7 @@ configure() {
     --enable-threads=posix \
     --enable-tls \
     --disable-nls \
-    --enable-languages=c,c++,go \
+    --enable-languages=c,c++ \
     --disable-rpath \
     --disable-static \
     --disable-gnu-indirect-function \
