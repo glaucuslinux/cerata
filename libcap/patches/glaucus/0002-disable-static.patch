@@ -44,8 +44,8 @@
 -
  ifeq ($(SHARED),yes)
  
- loader.txt: empty
-@@ -158,34 +145,26 @@
+ empty: empty.c
+@@ -161,34 +148,26 @@
  sudotest:
  	@echo no sudotests for libcap
  
@@ -83,7 +83,7 @@
  install-shared-cap: install-common-cap $(MINCAPLIBNAME)
  	install -m 0755 $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MINCAPLIBNAME)
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
-@@ -194,9 +173,6 @@
+@@ -197,9 +176,6 @@
  	-/bin/ldconfig
  endif
  
@@ -93,7 +93,7 @@
  install-shared-psx: install-common-psx $(MINPSXLIBNAME)
  	install -m 0755 $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MINPSXLIBNAME)
  	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
-@@ -224,8 +200,8 @@
+@@ -227,8 +203,8 @@
  
  clean:
  	$(LOCALCLEAN)
