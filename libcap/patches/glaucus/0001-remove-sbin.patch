@@ -208,7 +208,7 @@
      # are we sane?
 --- go/Makefile
 +++ go/Makefile
-@@ -175,8 +175,8 @@
+@@ -180,8 +180,8 @@
  # of their packaging, we reward them with a copy of the captree
  # utility!
  install: all
@@ -267,7 +267,7 @@
 +nobody:x:99:99:Nobody:/:/bin/nologin
 --- libcap/Makefile
 +++ libcap/Makefile
-@@ -191,7 +191,7 @@
+@@ -194,7 +194,7 @@
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
  	ln -sf $(MAJCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(CAPLIBNAME)
  ifeq ($(FAKEROOT),)
@@ -276,7 +276,7 @@
  endif
  
  install-static-psx: install-common-psx $(STAPSXLIBNAME)
-@@ -202,7 +202,7 @@
+@@ -205,7 +205,7 @@
  	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
  	ln -sf $(MAJPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(PSXLIBNAME)
  ifeq ($(FAKEROOT),)
