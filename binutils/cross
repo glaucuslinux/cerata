@@ -42,7 +42,6 @@ configure() {
     --disable-compressed-debug-sections \
     --enable-new-dtags \
     --enable-relro \
-    --disable-separate-code \
     --disable-default-execstack \
     --enable-default-hash-style=gnu \
     --disable-werror \
