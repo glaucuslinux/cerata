@@ -58,6 +58,4 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
-
-  $RM $CRSD/usr/lib/libsubid.la
 }
