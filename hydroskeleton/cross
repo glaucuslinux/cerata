@@ -80,7 +80,7 @@ install() {
   $MKDIR $CRSD/var/mail
   $LN ../run $CRSD/var/run
   $MKDIR $CRSD/var/spool
-  $LN ../../mail $CRSD/var/spool/mail
+  $LN ../mail $CRSD/var/spool/mail
   $MKDIR $CRSD/var/tmp/radula/ccache
   $MKDIR $CRSD/var/tmp/radula/cross
   $MKDIR $CRSD/var/tmp/radula/system
