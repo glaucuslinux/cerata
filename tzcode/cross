@@ -17,6 +17,9 @@ configure() {
 }
 
 build() {
+  CC=$CC \
+  CFLAGS="$CFLAGS" \
+  LDFLAGS="$LDFLAGS" \
   $MAKE \
     tzselect \
     zdump \
@@ -30,7 +33,7 @@ check() {
 install() {
   $RSYNC tzselect zdump zic $CRSD/usr/bin
 
-  $RSYNC tzselect zdump.8 zic.8 $CRSD/usr/share/man/man8
+  $RSYNC tzselect.8 zdump.8 zic.8 $CRSD/usr/share/man/man8
 
   $MKDIR $CRSD/usr/share/zoneinfo/posix
   $MKDIR $CRSD/usr/share/zoneinfo/right
