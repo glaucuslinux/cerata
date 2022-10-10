@@ -17,10 +17,10 @@ configure() {
 }
 
 build() {
-  CC=$CC \
-  CFLAGS="$CFLAGS" \
-  LDFLAGS="$LDFLAGS" \
   $MAKE \
+    CC=$CC \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
     tzselect \
     zdump \
     zic
