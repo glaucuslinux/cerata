@@ -69,5 +69,4 @@ install() {
   $LN libc.so $CRSD/usr/lib/libxnet.so.1
 
   $RSYNC libssp_nonshared.a $CRSD/usr/lib
-  $TGT-strip -gv $CRSD/usr/lib/libssp_nonshared.a
 }
