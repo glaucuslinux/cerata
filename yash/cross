@@ -1,0 +1,48 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+}
+
+configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-cross-compile.patch
+
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --enable-array \
+    --enable-dirstack \
+    --enable-double-bracket \
+    --enable-help \
+    --enable-history \
+    --enable-lineedit \
+    --disable-nls \
+    --enable-printf \
+    --enable-socket \
+    --enable-test \
+    --enable-ulimit
+}
+
+build() {
+  # Build `makesignum` using host's `gcc`
+  $MAKE \
+    CC=gcc \
+    makesignum
+
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$CRSD \
+    install-strip
+}
