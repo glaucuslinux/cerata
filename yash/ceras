@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2022, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="yash"
+ver="2.53"
+url="https://osdn.net/dl/yash/yash-2.53.tar.gz"
+sum="d53162ff5018a5cdde2e80104e30e201"
+cnt="make netbsd-curses"

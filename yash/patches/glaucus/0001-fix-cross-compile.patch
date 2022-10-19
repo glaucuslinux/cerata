@@ -1,0 +1,11 @@
+--- configure
++++ configure
+@@ -408,7 +408,7 @@
+ int main(void) { return 0; }
+ END
+ if
+-    trymake && tryexec
++    trymake
+ then
+     checked "yes"
+ elif
