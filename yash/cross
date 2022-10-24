@@ -31,7 +31,7 @@ configure() {
 build() {
   # Build `makesignum` using host's `gcc`
   $MAKE \
-    CC=gcc \
+    CC=$HOSTCC \
     makesignum
 
   $MAKE
