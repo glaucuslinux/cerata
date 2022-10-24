@@ -32,6 +32,8 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
+  $RSYNC $CERD/$nom/ksh.kshrc $SCER/$nom/sac/etc
+
   $LN $nom $SCER/$nom/sac/usr/bin/ksh
   $LN $nom $SCER/$nom/sac/usr/bin/rksh
 
