@@ -35,6 +35,8 @@ install() {
     DESTDIR=$CRSD \
     install
 
+  $RSYNC $CERD/$nom/ksh.kshrc $CRSD/etc
+
   $LN $nom $CRSD/usr/bin/ksh
   $LN $nom $CRSD/usr/bin/rksh
 
