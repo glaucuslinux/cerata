@@ -39,5 +39,6 @@ install() {
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/libpanel.so
   $CHMOD 0755 $SCER/$nom/sac/usr/lib/libterminfo.so
 
+  # Some cerata (e.g. yash) link against this symlink
   $LN libterminfo.so $SCER/$nom/sac/usr/lib/libtinfo.so
 }
