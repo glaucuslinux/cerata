@@ -6,6 +6,8 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-add-clear-and-redraw-binding.patch
 }
 
 configure() {
