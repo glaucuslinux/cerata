@@ -1,2 +1,2 @@
-# Return if shell is not running interactively
+# Exit if shell is not running interactively
 [[ $- != *i* ]] && return
