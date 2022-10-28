@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="gcompat"
-ver="1.0.0"
-url="https://distfiles.adelielinux.org/source/gcompat/gcompat-1.0.0.tar.xz"
-sum="b02f3fa881d242c16fdb226167101c3e"
+ver="1.1.0"
+url="https://distfiles.adelielinux.org/source/gcompat/gcompat-1.1.0.tar.gz"
+sum="c5404bcdad58e14542d9f62a9bf3ac3c"
 cnt="libucontext make musl-fts musl-obstack utmps"
