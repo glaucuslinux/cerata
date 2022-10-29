@@ -6,8 +6,6 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
-
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/install-nopython.patch
 }
 
 configure() {
@@ -16,7 +14,7 @@ configure() {
 
 build() {
   # This ceras does not support parallel build!
-  MAKEFLAGS='-j1 -O V=1' \
+  MAKEFLAGS=-j1 \
   $MAKE \
     PREFIX=/usr \
     BINDIR=/usr/bin \
