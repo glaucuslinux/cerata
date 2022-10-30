@@ -1,0 +1,40 @@
+# enable bash-like extended expansion
+set --brace-expand
+
+# enable recursive pathname expansion
+set --extended-glob
+
+# don't save commands starting with a space in history
+set --hist-space
+
+# print job status update ASAP, but only while line-editing
+set --notify-le
+
+# enable command line prediction
+set --le-predict
+
+# most users are more familiar with emacs mode than vi mode
+set --emacs
+
+# some useful key bindings
+bindkey --emacs '\^L' clear-and-redraw-all
+
+# some useful shortcuts
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ll -a'
+
+# variables needed for command history
+HISTFILE=~/.yash_history
+HISTSIZE=5000
+
+YASH_PS1=$_uc'${LOGNAME}'$_hc'@${HOSTNAME%%.*}\fd. '
+PS1R=
+PS1S=
+PS2='> '
+PS2R=
+PS2S=$PS1S
+PS4='\fm.+ '
+PS4S='\fmo.'
+
+PS1='${LOGNAME}@${HOSTNAME%%.*} '$PS1
