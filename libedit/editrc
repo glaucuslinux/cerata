@@ -1,0 +1,46 @@
+edit on
+
+bind -e
+
+bind -k up ed-search-prev-history
+bind -k down ed-search-next-history
+
+bind "^R" em-inc-search-prev
+bind "^W" ed-delete-prev-word
+
+# Linux
+bind "\e[1~" ed-move-to-beg
+bind "\e[4~" ed-move-to-end
+
+bind "\e[5~" ed-search-prev-history
+bind "\e[6~" ed-search-next-history
+
+bind "\e[A" ed-search-prev-history
+bind "\e[B" ed-search-next-history
+
+bind "\e[2~" ed-quoted-insert
+bind "\e[3~" ed-delete-next-char
+
+bind "\e[5C" em-next-word
+bind "\e[5D" ed-prev-word
+
+bind "\e\e[C" em-next-word
+bind "\e\e[D" ed-prev-word
+
+bind "\e[1;5C" em-next-word
+bind "\e[1;5D" ed-prev-word
+
+# xterm
+bind "\eOH" ed-move-to-beg
+bind "\eOF" ed-move-to-end
+
+# rxvt
+bind "\e[7~" ed-move-to-beg
+bind "\e[8~" ed-move-to-end
+
+bind "\eOc" em-next-word
+bind "\eOd" ed-prev-word
+
+# Konsole
+bind "\e[H" ed-move-to-beg
+bind "\e[F" ed-move-to-end

@@ -41,6 +41,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
+  $RSYNC $CERD/$nom/editrc $SCER/$nom/sac/etc
   $RSYNC $CERD/$nom/inputrc $SCER/$nom/sac/etc
 
   # Use libedit as a drop-in replacement for `readline`
