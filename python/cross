@@ -58,6 +58,7 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $LN ${nom}3 $CRSD/usr/bin/$nom
   $LN pip3.10 $CRSD/usr/bin/pip3
+  $LN ${nom}3 $CRSD/usr/bin/$nom
+  $LN ${nom}3-config $CRSD/usr/bin/$nom-config
 }

@@ -56,6 +56,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
-  $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
   $LN pip3.10 $SCER/$nom/sac/usr/bin/pip3
+  $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
+  $LN ${nom}3-config $SCER/$nom/sac/usr/bin/$nom-config
 }
