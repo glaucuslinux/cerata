@@ -43,6 +43,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  $RSYNC $CERD/$nom/editrc $CRSD/etc
   $RSYNC $CERD/$nom/inputrc $CRSD/etc
 
   # Use libedit as a drop-in replacement for `readline`

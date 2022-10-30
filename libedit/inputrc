@@ -31,8 +31,8 @@ set visible-stats on
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-"\e[3~": delete-char
 "\e[2~": quoted-insert
+"\e[3~": delete-char
 
 "\e[5C": forward-word
 "\e[5D": backward-word
