@@ -32,6 +32,7 @@ configure() {
     --enable-ipv6 \
     --enable-threaded-resolver \
     --enable-pthreads \
+    --enable-websockets \
     --with-openssl \
     --with-zlib \
     --with-zstd \
