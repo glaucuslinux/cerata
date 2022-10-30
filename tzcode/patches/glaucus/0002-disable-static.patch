@@ -1,6 +1,6 @@
 --- Makefile
 +++ Makefile
-@@ -575,7 +575,7 @@
+@@ -581,7 +581,7 @@
  
  SHELL=		/bin/sh
  
@@ -9,7 +9,7 @@
  		  vanguard.zi main.zi rearguard.zi
  
  ALL:		all date $(ENCHILADA)
-@@ -594,8 +594,6 @@
+@@ -600,8 +600,6 @@
  		cp tzselect '$(DESTDIR)$(BINDIR)/.'
  		cp zdump '$(DESTDIR)$(ZDUMPDIR)/.'
  		cp zic '$(DESTDIR)$(ZICDIR)/.'
@@ -18,7 +18,7 @@
  		cp -f newctime.3 newtzset.3 '$(DESTDIR)$(MANDIR)/man3/.'
  		cp -f tzfile.5 '$(DESTDIR)$(MANDIR)/man5/.'
  		cp -f tzselect.8 zdump.8 zic.8 '$(DESTDIR)$(MANDIR)/man8/.'
-@@ -747,11 +745,6 @@
+@@ -753,11 +751,6 @@
  force_tzs:	$(TZS_NEW)
  		cp $(TZS_NEW) $(TZS)
  
@@ -30,7 +30,7 @@
  date:		$(DATEOBJS)
  		$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(DATEOBJS) $(LDLIBS)
  
-@@ -890,7 +883,7 @@
+@@ -902,7 +895,7 @@
  		rm -fr check_*.dir
  		rm -f *.o *.out $(TIME_T_ALTERNATIVES) \
  		  check_* core typecheck_* \

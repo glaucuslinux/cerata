@@ -31,9 +31,13 @@ check() {
 }
 
 install() {
-  $RSYNC tzselect zdump zic $CRSD/usr/bin
+  $RSYNC tzselect $CRSD/usr/bin
+  $RSYNC zdump $CRSD/usr/bin
+  $RSYNC zic $CRSD/usr/bin
 
-  $RSYNC tzselect.8 zdump.8 zic.8 $CRSD/usr/share/man/man8
+  $RSYNC tzselect.8 $CRSD/usr/share/man/man8
+  $RSYNC zdump.8 $CRSD/usr/share/man/man8
+  $RSYNC zic.8 $CRSD/usr/share/man/man8
 
   $MKDIR $CRSD/usr/share/zoneinfo/posix
   $MKDIR $CRSD/usr/share/zoneinfo/right
