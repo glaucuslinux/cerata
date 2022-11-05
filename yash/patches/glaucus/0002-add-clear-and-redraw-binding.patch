@@ -1,10 +1,10 @@
 --- share/initialization/common
 +++ share/initialization/common
-@@ -63,6 +63,7 @@
+@@ -60,6 +60,7 @@
+   fi
+ 
+   # some useful key bindings
++  bindkey --emacs '\^L' clear-and-redraw-all
    bindkey --emacs '\^N' beginning-search-forward
    bindkey --emacs '\^O' clear-candidates
    bindkey --emacs '\^P' beginning-search-backward
-+  bindkey --emacs '\L' clear-and-redraw-all
-   bindkey --emacs '\N' complete-next-column
-   bindkey --emacs '\P' complete-prev-column
- 
