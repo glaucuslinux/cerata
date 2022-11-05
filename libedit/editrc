@@ -7,6 +7,7 @@ bind -k down ed-search-next-history
 
 bind "^R" em-inc-search-prev
 bind "^W" ed-delete-prev-word
+bind "^[W" em-kill-region
 
 # Linux
 bind "\e[1~" ed-move-to-beg
