@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="byacc"
-ver="20220128"
-url="https://invisible-mirror.net/archives/byacc/byacc-20220128.tgz"
-sum="2a7ad6a487801ca29fe0ca044858f14d"
+ver="20221106"
+url="https://invisible-mirror.net/archives/byacc/byacc-20221106.tgz"
+sum="a84165da940676cfde6e4a42f9128352"
 cnt="make"
