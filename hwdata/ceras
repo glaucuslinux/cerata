@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="hwdata"
-ver="0.363"
-url="https://github.com/vcrhonek/hwdata/archive/v0.363.tar.gz"
-sum="176c164e73d0cac38683caf2658932fb"
+ver="0.364"
+url="https://github.com/vcrhonek/hwdata/archive/v0.364.tar.gz"
+sum="ac31d6d9d83cf11d1f30eb915949eabe"
 cnt="make"
