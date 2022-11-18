@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="sed"
-ver="4.8"
-url="https://ftpmirror.gnu.org/sed/sed-4.8.tar.gz"
-sum="f337afb8cc0915d7c8554741a5e8b2eb"
+ver="4.9"
+url="https://ftpmirror.gnu.org/sed/sed-4.9.tar.gz"
+sum="734c73fd9b87f788705e91a30a685f8f"
 cnt="acl attr make"
