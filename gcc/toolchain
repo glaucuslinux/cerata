@@ -8,7 +8,7 @@ prepare() {
   cd $TSRC/$nom
 
   $RSYNC $SRCD/gmp/gmp-6.2.1/ gmp --delete
-  $RSYNC $SRCD/mpfr/mpfr-4.1.0/ mpfr --delete
+  $RSYNC $SRCD/mpfr/mpfr-4.1.1/ mpfr --delete
   $RSYNC $SRCD/mpc/mpc-1.2.1/ mpc --delete
   $RSYNC $SRCD/isl/isl-0.25/ isl --delete
 
