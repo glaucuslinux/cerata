@@ -24,6 +24,10 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --mandir=/usr/share/man \
     --program-prefix=b \
     --enable-btyacc
 }
