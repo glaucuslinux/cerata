@@ -18,7 +18,8 @@ configure() {
     --datadir=/usr/share \
     --sysconfdir=/etc \
     --libdir=/usr/lib \
-    --mandir=/usr/share/man
+    --mandir=/usr/share/man \
+    --disable-blacklist
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
