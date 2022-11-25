@@ -14,8 +14,11 @@ configure() {
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/$nom \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
     --sysconfdir=/etc \
-    --libdir=/usr/lib
+    --libdir=/usr/lib \
+    --mandir=/usr/share/man
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
