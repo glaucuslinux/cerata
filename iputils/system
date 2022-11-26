@@ -12,10 +12,6 @@ prepare() {
 configure() {
   glaucus-meson \
     -DUSE_IDN=false \
-    -DBUILD_RDISC=false \
-    -DENABLE_RDISC_SERVER=false \
-    -DBUILD_NINFOD=false \
-    -DNINFOD_MESSAGES=false \
     -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
     $SBLD/$nom
