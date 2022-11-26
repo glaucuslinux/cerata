@@ -13,10 +13,6 @@ configure() {
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross.$ARCH \
     -DUSE_IDN=false \
-    -DBUILD_RDISC=false \
-    -DENABLE_RDISC_SERVER=false \
-    -DBUILD_NINFOD=false \
-    -DNINFOD_MESSAGES=false \
     -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
     $XBLD/$nom
