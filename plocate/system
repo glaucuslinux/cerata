@@ -7,15 +7,11 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $RSYNC $CERD/musl/error.h .
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-musl-compat.patch
-
   $MKDIR $SBLD/$nom
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-man-page.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross.$ARCH \
