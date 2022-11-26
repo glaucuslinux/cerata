@@ -14,7 +14,8 @@ configure() {
     --includedir=/usr/include \
     --libdir=/usr/lib \
     --libdevdir=/usr/lib \
-    --mandir=/usr/share/man
+    --mandir=/usr/share/man \
+    --datadir=/usr/share
 }
 
 build() {
