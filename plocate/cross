@@ -40,6 +40,7 @@ install() {
 
   # Compatibility symlinks
   $LN $nom $CRSD/usr/bin/locate
+  $LN $nom $CRSD/usr/bin/mlocate
   $LN $nom $CRSD/usr/bin/slocate
   $LN pupdatedb $CRSD/usr/bin/updatedb
 
