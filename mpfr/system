@@ -12,7 +12,6 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$CFLAGSFINITE" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -28,6 +27,7 @@ configure() {
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --enable-thread-safe \
