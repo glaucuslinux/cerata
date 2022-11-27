@@ -1,6 +1,6 @@
 --- ChangeLog
 +++ ChangeLog
-@@ -1174,8 +1174,8 @@
+@@ -1203,8 +1203,8 @@
  
  2004-08-19  Martin Mares  <mj@ucw.cz>
  
@@ -58,29 +58,57 @@
  SHAREDIR=$(PREFIX)/share
  IDSDIR=$(SHAREDIR)
  MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
-@@ -130,10 +129,10 @@
+@@ -147,14 +146,14 @@
  
  install: all
  # -c is ignored on Linux, but required on FreeBSD
--	$(DIRINSTALL) -m 755 $(DESTDIR)$(BINDIR) $(DESTDIR)$(SBINDIR) $(DESTDIR)$(IDSDIR) $(DESTDIR)$(MANDIR)/man8 $(DESTDIR)$(MANDIR)/man7 $(DESTDIR)/$(MANDIR)/man5
-+	$(DIRINSTALL) -m 755 $(DESTDIR)$(BINDIR) $(DESTDIR)$(BINDIR) $(DESTDIR)$(IDSDIR) $(DESTDIR)$(MANDIR)/man8 $(DESTDIR)$(MANDIR)/man7 $(DESTDIR)/$(MANDIR)/man5
+-	$(DIRINSTALL) -m 755 $(DESTDIR)$(BINDIR) $(DESTDIR)$(SBINDIR) $(DESTDIR)$(IDSDIR) $(DESTDIR)$(MANDIR)/man8 $(DESTDIR)$(MANDIR)/man7 $(DESTDIR)$(MANDIR)/man5
++	$(DIRINSTALL) -m 755 $(DESTDIR)$(BINDIR) $(DESTDIR)$(BINDIR) $(DESTDIR)$(IDSDIR) $(DESTDIR)$(MANDIR)/man8 $(DESTDIR)$(MANDIR)/man7 $(DESTDIR)$(MANDIR)/man5
  	$(INSTALL) -c -m 755 $(STRIP) lspci$(EXEEXT) $(DESTDIR)$(LSPCIDIR)
 -	$(INSTALL) -c -m 755 $(STRIP) setpci$(EXEEXT) $(DESTDIR)$(SBINDIR)
 -	$(INSTALL) -c -m 755 update-pciids $(DESTDIR)$(SBINDIR)
 +	$(INSTALL) -c -m 755 $(STRIP) setpci$(EXEEXT) $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -c -m 755 update-pciids $(DESTDIR)$(BINDIR)
+ ifneq ($(IDSDIR),)
  	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(IDSDIR)
+ else
+-	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(SBINDIR)
++	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(BINDIR)
+ endif
  	$(INSTALL) -c -m 644 lspci.8 setpci.8 update-pciids.8 $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -c -m 644 pcilib.7 $(DESTDIR)$(MANDIR)/man7
-@@ -169,7 +168,7 @@
+@@ -175,8 +174,8 @@
+ 	$(DIRINSTALL) -m 755 $(DESTDIR)$(LIBDIR)
+ ifeq ($(SHARED)_$(LIBEXT),yes_dll)
+ # DLL library must have executable flag on disk and be placed in same directory as where are EXE files
+-	$(DIRINSTALL) -m 755 $(DESTDIR)$(SBINDIR)
+-	$(INSTALL) -c -m 755 lib/$(PCILIB) $(DESTDIR)$(SBINDIR)
++	$(DIRINSTALL) -m 755 $(DESTDIR)$(BINDIR)
++	$(INSTALL) -c -m 755 lib/$(PCILIB) $(DESTDIR)$(BINDIR)
+ else
+ 	$(INSTALL) -c -m 644 lib/$(PCILIB) $(DESTDIR)$(LIBDIR)
+ endif
+@@ -202,17 +201,17 @@
  endif
  
  uninstall: all
 -	rm -f $(DESTDIR)$(SBINDIR)/lspci$(EXEEXT) $(DESTDIR)$(SBINDIR)/setpci$(EXEEXT) $(DESTDIR)$(SBINDIR)/update-pciids
 +	rm -f $(DESTDIR)$(BINDIR)/lspci$(EXEEXT) $(DESTDIR)$(BINDIR)/setpci$(EXEEXT) $(DESTDIR)$(BINDIR)/update-pciids
+ ifneq ($(IDSDIR),)
  	rm -f $(DESTDIR)$(IDSDIR)/$(PCI_IDS)
+ else
+-	rm -f $(DESTDIR)$(SBINDIR)/$(PCI_IDS)
++	rm -f $(DESTDIR)$(BINDIR)/$(PCI_IDS)
+ endif
  	rm -f $(DESTDIR)$(MANDIR)/man8/lspci.8 $(DESTDIR)$(MANDIR)/man8/setpci.8 $(DESTDIR)$(MANDIR)/man8/update-pciids.8
  	rm -f $(DESTDIR)$(MANDIR)/man7/pcilib.7
+ 	rm -f $(DESTDIR)$(MANDIR)/man5/pci.ids.5
+ ifeq ($(SHARED)_$(LIBEXT),yes_dll)
+-	rm -f $(DESTDIR)$(SBINDIR)/$(PCILIB)
++	rm -f $(DESTDIR)$(BINDIR)/$(PCILIB)
+ else
+ 	rm -f $(DESTDIR)$(LIBDIR)/$(PCILIB)
+ endif
 --- pciutils.spec
 +++ pciutils.spec
 @@ -35,7 +35,7 @@
