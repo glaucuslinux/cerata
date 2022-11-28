@@ -20,14 +20,14 @@ configure() {
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/$nom \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
     --infodir=/usr/share/info \
     --mandir=/usr/share/man \
     --program-prefix=b \
