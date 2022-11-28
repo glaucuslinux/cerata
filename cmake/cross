@@ -12,7 +12,7 @@ configure() {
   ./bootstrap \
     --prefix=/usr \
     --bindir=/bin \
-    --datadir=/share \
+    --datadir=/share/$nom \
     --docdir=/share/doc/$nom \
     --mandir=/share/man \
     --parallel=2 \
