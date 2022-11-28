@@ -22,8 +22,7 @@ configure() {
     --datadir=/usr/share \
     --mandir=/usr/share/man \
     --man1dir=/usr/share/man/man1 \
-    --man3dir=/usr/share/man/man3 \
-    --localedir=/usr/share/locale
+    --man3dir=/usr/share/man/man3
 }
 
 build() {
