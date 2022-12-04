@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  $RSYNC $CERD/$nom/config .config
+  $RSYNC $CERD/$nom/glaucus.config .config
 }
 
 build() {
