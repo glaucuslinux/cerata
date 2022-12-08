@@ -33,6 +33,6 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  # Use dragora's autopoint
+  # Use dragora's autopoint for now
   $RSYNC $CERD/$nom/autopoint $CRSD/usr/bin
 }
