@@ -12,7 +12,7 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/automake-python3.10.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-python3.10.patch
 
   ./configure \
     --prefix=/usr \
