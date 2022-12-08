@@ -25,6 +25,12 @@ configure() {
     --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
     --disable-libseccomp \
     --enable-fsect-man5
 }
