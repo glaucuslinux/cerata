@@ -33,7 +33,7 @@ install() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     DESTDIR=$CRSD \
-    install-strip
+    install
 
   $LN $nom.pc $PKG_CONFIG_LIBDIR/librpmatch.pc
 }
