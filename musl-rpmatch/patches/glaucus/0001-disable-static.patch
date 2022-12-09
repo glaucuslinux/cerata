@@ -1,0 +1,38 @@
+--- Makefile
++++ Makefile
+@@ -13,19 +13,15 @@
+ SOBASE = librpmatch.so
+ SONAME = $(SOBASE).0
+ 
+-SLIB = librpmatch.a
+ DLIB = $(SONAME).0.0
+ 
+ .PHONY: clean
+ 
+-all: $(SLIB) $(DLIB) musl-rpmatch.pc
++all: $(DLIB) musl-rpmatch.pc
+ 
+ .c.o:
+ 	$(CC) -c -o $@ $< $(EXTRA_CFLAGS) $(CFLAGS)
+ 
+-$(SLIB): $(OBJS)
+-	$(AR) -rcs $(SLIB) $(OBJS)
+-
+ $(DLIB): $(OBJS)
+ 	$(CC) $(EXTRA_CFLAGS) $(CFLAGS) $(LDFLAGS) $(OBJS) \
+ 		-shared -Wl,-soname,$(SONAME) -o $(DLIB)
+@@ -38,12 +34,11 @@
+ 		-e "s,@VERSION@,$(VERSION)," musl-rpmatch.pc.in > musl-rpmatch.pc
+ 
+ clean:
+-	rm -f $(OBJS) $(SLIB) $(DLIB) musl-rpmatch.pc
++	rm -f $(OBJS) $(DLIB) musl-rpmatch.pc
+ 
+-install: $(SLIB) $(DLIB)
++install: $(DLIB)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 755 $(DLIB) $(DESTDIR)$(LIBDIR)/$(DLIB)
+-	install -m 644 $(SLIB) $(DESTDIR)$(LIBDIR)/$(SLIB)
+ 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SONAME)
+ 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SOBASE)
+ 	install -d $(DESTDIR)$(INCDIR)
