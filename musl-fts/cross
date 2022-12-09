@@ -4,38 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  $RSYNC $SRCD/$nom/$nom-$ver-mk2/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 configure() {
-  $AUTORECONF
-
-  ./configure \
-    --build=$BLD \
-    --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/fts \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/fts \
-    --disable-static
+  :
 }
 
 build() {
-  $MAKE
+  $MAKE \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    MANDIR=/usr/share/man/man3
 }
 
 check() {
@@ -44,14 +29,13 @@ check() {
 
 install() {
   $MAKE \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    MANDIR=/usr/share/man/man3 \
     DESTDIR=$CRSD \
-    install-strip
+    install
 
-  $RM $CRSD/usr/lib/libfts.la
-
-  $LN $nom.pc $PKG_CONFIG_LIBDIR/libfts.pc
-
-  $MKDIR $CRSD/usr/share/man/man3
-  $RSYNC fts.3 $CRSD/usr/share/man/man3
   $LN fts.3 $CRSD/usr/share/man/man3/$nom.3
 }

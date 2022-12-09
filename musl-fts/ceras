@@ -5,6 +5,6 @@
 
 nom="musl-fts"
 ver="1.2.7"
-url="https://github.com/void-linux/musl-fts/archive/v1.2.7.tar.gz"
-sum="e4577022487469c306655c5dbe15829f"
+url="https://github.com/chimera-linux/musl-fts/archive/v1.2.7-mk2.tar.gz"
+sum="db4adb86d2476dc5a373860102d0b9fb"
 cnt="make"

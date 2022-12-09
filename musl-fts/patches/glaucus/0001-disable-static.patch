@@ -1,0 +1,38 @@
+--- Makefile
++++ Makefile
+@@ -14,19 +14,15 @@
+ SOBASE = libfts.so
+ SONAME = $(SOBASE).0
+ 
+-SLIB = libfts.a
+ DLIB = $(SONAME).0.0
+ 
+ .PHONY: clean
+ 
+-all: $(SLIB) $(DLIB) musl-fts.pc
++all: $(DLIB) musl-fts.pc
+ 
+ .c.o:
+ 	$(CC) -c -o $@ $< $(EXTRA_CFLAGS) $(CFLAGS)
+ 
+-$(SLIB): $(OBJS)
+-	$(AR) -rcs $(SLIB) $(OBJS)
+-
+ $(DLIB): $(OBJS)
+ 	$(CC) $(EXTRA_CFLAGS) $(CFLAGS) $(LDFLAGS) $(OBJS) \
+ 		-shared -Wl,-soname,$(SONAME) -o $(DLIB)
+@@ -39,12 +35,11 @@
+ 		-e "s,@VERSION@,$(VERSION)," musl-fts.pc.in > musl-fts.pc
+ 
+ clean:
+-	rm -f $(OBJS) $(SLIB) $(DLIB) musl-fts.pc
++	rm -f $(OBJS) $(DLIB) musl-fts.pc
+ 
+-install: $(SLIB) $(DLIB)
++install: $(DLIB)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 755 $(DLIB) $(DESTDIR)$(LIBDIR)/$(DLIB)
+-	install -m 644 $(SLIB) $(DESTDIR)$(LIBDIR)/$(SLIB)
+ 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SONAME)
+ 	ln -sf $(DLIB) $(DESTDIR)$(LIBDIR)/$(SOBASE)
+ 	install -d $(DESTDIR)$(INCDIR)
