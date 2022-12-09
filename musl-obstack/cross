@@ -25,6 +25,12 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/obstack \
     --disable-static
 }
 
@@ -42,4 +48,6 @@ install() {
     install-strip
 
   $RM $CRSD/usr/lib/libobstack.la
+
+  $LN $nom.pc $PKG_CONFIG_LIBDIR/libobstack.pc
 }
