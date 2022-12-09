@@ -18,7 +18,7 @@ configure() {
     --exec-prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/lib/obstack \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
