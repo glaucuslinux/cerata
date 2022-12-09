@@ -18,13 +18,19 @@ configure() {
     --exec-prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/lib/rpmatch \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/rpmatch \
     --disable-static
 }
 
@@ -44,4 +50,6 @@ install() {
   $RM $CRSD/usr/lib/librpmatch.la
 
   $RSYNC $nom.pc $PKG_CONFIG_LIBDIR
+
+  $LN $nom.pc $PKG_CONFIG_LIBDIR/librpmatch.pc
 }
