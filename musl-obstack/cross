@@ -6,11 +6,14 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
+
+  $AUTORECONF
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --build=$BLD \
     --host=$TGT \
