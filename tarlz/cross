@@ -13,6 +13,9 @@ configure() {
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
+    --datarootdir=/usr/share \
+    --infodir=/usr/share/info \
+    --mandir=/usr/share/man \
     CXX=$CXX \
     CXXFLAGS="$CXXFLAGS" \
     LDFLAGS="$LDFLAGS"
