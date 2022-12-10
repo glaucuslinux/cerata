@@ -17,6 +17,11 @@ configure() {
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
     --enable-array \
     --enable-dirstack \
     --enable-double-bracket \
