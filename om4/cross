@@ -13,7 +13,8 @@ configure() {
 
   ./configure \
     --prefix=/usr \
-    --bindir=/usr/bin
+    --bindir=/usr/bin \
+    --mandir=/usr/share/man
 }
 
 build() {
