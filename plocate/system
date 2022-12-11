@@ -13,8 +13,7 @@ prepare() {
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
-  $CERD/meson/glaucus-meson \
-    --cross-file $CERD/meson/meson.cross.$ARCH \
+  glaucus-meson \
     -Dinstall_systemd=false \
     -Dlocategroup=locate \
     -Dupdatedb_progname=pupdatedb \
