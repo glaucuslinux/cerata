@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="xz"
-ver="5.2.9"
-url="https://tukaani.org/xz/xz-5.2.9.tar.zst"
-sum="4f8d2c543d95547cac25f01576e61d15"
+ver="5.4.0"
+url="https://tukaani.org/xz/xz-5.4.0.tar.zst"
+sum="5343557ed269ba82346f283e1f92d2a1"
 cnt="make"
