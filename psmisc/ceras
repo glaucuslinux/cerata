@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="psmisc"
-ver="23.5"
-url="https://prdownloads.sourceforge.net/psmisc/psmisc-23.5.tar.xz"
-sum="6471ddaabbf9f5abcd84d53c128f5228"
+ver="23.6"
+url="https://prdownloads.sourceforge.net/psmisc/psmisc-23.6.tar.xz"
+sum="8f797bc0dec2437ee8eae64cb4b8fd4d"
 cnt="make netbsd-curses"
