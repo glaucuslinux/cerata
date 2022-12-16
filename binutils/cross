@@ -13,6 +13,7 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/CVE-2022-38533.patch
 
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
@@ -61,10 +62,6 @@ configure() {
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
     --with-system-zlib
-
-  $MAKE \
-    tooldir=/usr \
-    configure-host
 }
 
 build() {
@@ -91,7 +88,6 @@ install() {
 
   # Remove unnecessary manpages
   $RM $CRSD/usr/share/man/man1/dlltool.1
-  $RM $CRSD/usr/share/man/man1/nlmconv.1
   $RM $CRSD/usr/share/man/man1/windmc.1
   $RM $CRSD/usr/share/man/man1/windres.1
 }
