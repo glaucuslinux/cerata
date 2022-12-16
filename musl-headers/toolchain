@@ -7,17 +7,15 @@ prepare() {
   $RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  $PATCH -p1 -i $CERD/musl/patches/adelie/make-real-lastlog-h.patch
   $PATCH -p1 -i $CERD/musl/patches/adelie/realpath.patch
 
   $PATCH -p1 -i $CERD/musl/patches/alpine/handle-aux-at_base.patch
 
-  $PATCH -p1 -i $CERD/musl/patches/gentoo/gethostid.patch
-
-  $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
+  $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-lastlog.patch
+  $PATCH -p0 -i $CERD/musl/patches/glaucus/0002-fix-paths.patch
 
   # Emoji wcwidth patch for musl
-  $PATCH -p1 -i $CERD/musl/patches/noname/emoji.patch
+  $PATCH -p0 -i $CERD/musl/patches/noname/emoji.patch
 
   [ $ARCH = x86-64 ] && $PATCH -p1 -i $CERD/musl/patches/sabotage/memcpy.patch
 
@@ -44,6 +42,7 @@ install() {
     prefix=/usr \
     includedir=/usr/include \
     libdir=/usr/lib \
+    syslibdir=/usr/lib \
     ARCH=$MARCH \
     DESTDIR=$CRSD \
     install-headers

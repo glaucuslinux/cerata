@@ -19,6 +19,7 @@ configure() {
     --bindir=/usr/bin \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --syslibdir=/usr/lib \
     --disable-wrapper \
     --disable-static
 }
