@@ -34,6 +34,7 @@ configure() {
     --localstatedir=$TLCD/var \
     --libdir=$TLCD/usr/lib \
     --includedir=$TLCD/usr/include \
+    --oldincludedir=$TLCD/usr/include \
     --datarootdir=$TLCD/usr/share \
     --datadir=$TLCD/usr/share \
     --infodir=$TLCD/usr/share/info \
