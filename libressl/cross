@@ -54,6 +54,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/libcrypto.la
   $RM $CRSD/usr/lib/libssl.la
   $RM $CRSD/usr/lib/libtls.la
