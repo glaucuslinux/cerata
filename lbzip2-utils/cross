@@ -6,11 +6,11 @@
 prepare() {
   $RSYNC $SRCD/$nom $XSRC --delete
   cd $XSRC/$nom
+
+  $AUTORECONF
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --build=$BLD \
     --host=$TGT \
