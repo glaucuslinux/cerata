@@ -53,6 +53,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/$nom.la
   $RM $CRSD/usr/lib/libdrop_ambient.la
 }
