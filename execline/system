@@ -44,6 +44,4 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install
-
-  $LN ${nom}b $SCER/$nom/sac/usr/bin/$nom
 }
