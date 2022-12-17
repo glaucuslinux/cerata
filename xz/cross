@@ -7,18 +7,18 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.rpath build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
-
   $PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
+
+  $AUTORECONF
+
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.rpath build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --build=$BLD \
     --host=$TGT \
