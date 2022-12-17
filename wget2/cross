@@ -76,5 +76,6 @@ install() {
   $LN $nom $CRSD/usr/bin/wget
   $RM $CRSD/usr/bin/${nom}_noinstall
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/libwget.la
 }
