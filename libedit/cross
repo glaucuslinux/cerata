@@ -58,6 +58,7 @@ install() {
   touch $CRSD/usr/include/readline/tilde.h
   $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/$nom.la
 
   $LN $nom.so $CRSD/usr/lib/libreadline.so
