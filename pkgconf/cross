@@ -58,6 +58,7 @@ install() {
   $LN $nom $CRSD/usr/bin/$TGT-$nom
   $LN $nom $CRSD/usr/bin/$TGT-pkg-config
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/lib$nom.la
 
   $LN pkg.m4 $CRSD/usr/share/aclocal/$nom.m4
