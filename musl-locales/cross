@@ -13,6 +13,7 @@ prepare() {
 }
 
 configure() {
+  # Don't set `MUSL_LOCPATH`
   cmake \
     -B $XBLD/$nom \
     -DCMAKE_BUILD_TYPE=Release \
