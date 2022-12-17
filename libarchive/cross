@@ -59,5 +59,6 @@ install() {
   $LN bsdcpio $CRSD/usr/bin/cpio
   $LN bsdtar $CRSD/usr/bin/tar
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/$nom.la
 }
