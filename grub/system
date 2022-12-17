@@ -7,16 +7,16 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
+  $PATCH -p1 -i $CERD/$nom/patches/clear/0001-Lower-test-timeout.patch
+
+  $AUTORECONF
+
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.rpath build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
-
-  $PATCH -p1 -i $CERD/$nom/patches/clear/0001-Lower-test-timeout.patch
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
