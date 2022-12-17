@@ -29,11 +29,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0031-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0043-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
 
-  case $ARCH in
-    aarch64 | riscv64 | x86-64)
-      $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
-      ;;
-  esac
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
   $MKDIR $SBLD/$nom
   cd $SBLD/$nom
@@ -90,9 +86,6 @@ configure() {
     --with-zstd \
     --with-system-zlib \
     --with-linker-hash-style=gnu
-
-  $MAKE \
-    configure-host
 }
 
 build() {
