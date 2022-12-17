@@ -49,7 +49,7 @@ install() {
   DESTDIR=$CRSD \
   samu \
     -C $XBLD/$nom \
-    install
+    install/strip
 
   $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
 
