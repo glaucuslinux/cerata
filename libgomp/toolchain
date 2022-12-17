@@ -23,4 +23,7 @@ check() {
 install() {
   $MAKE \
     install-strip-target-$nom
+
+  # Remove libtool archive (.la) file
+  $RM $TLCD/usr/lib/libgomp.la
 }
