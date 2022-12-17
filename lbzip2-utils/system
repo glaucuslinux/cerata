@@ -6,11 +6,11 @@
 prepare() {
   $RSYNC $SRCD/$nom $SSRC --delete
   cd $SSRC/$nom
+
+  $AUTORECONF
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
