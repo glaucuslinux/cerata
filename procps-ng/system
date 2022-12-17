@@ -7,18 +7,18 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.rpath .
-  $RSYNC $CERD/binutils/config.sub .
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
+
+  $AUTORECONF
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.rpath .
+  $RSYNC $CERD/binutils/config.sub .
 }
 
 configure() {
-  $AUTORECONF
-
   # `ncurses` support is enabled by default
   # `systemd` support is disabled by default
   LIBS='-lutmps -lskarnet' \
