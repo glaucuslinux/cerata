@@ -74,5 +74,6 @@ install() {
   $LN pgrep $CRSD/usr/bin/pidwait
   $LN pgrep $CRSD/usr/bin/pkill
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/libproc-2.la
 }
