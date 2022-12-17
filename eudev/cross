@@ -61,6 +61,7 @@ install() {
   $MV $CRSD/usr/lib/udev/scsi_id $CRSD/usr/bin
   $MV $CRSD/usr/lib/udev/v4l_id $CRSD/usr/bin
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/libudev.la
 
   $MV $CRSD/usr/share/pkgconfig/udev.pc $PKG_CONFIG_LIBDIR
