@@ -93,6 +93,8 @@ configure() {
 }
 
 build() {
+  # This ceras does not support parallel build!
+  MAKEFLAGS=-j1 \
   $MAKE \
     all-$nom
 
@@ -126,11 +128,11 @@ install() {
   $LN $TGT-$nom $TLCD/usr/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/usr/bin/$TGT-$nom-$ver
 
-  # Remove libtool archive (.la) file
-  $RM $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
-
   # `$TLCD/usr/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
+
+  # Remove libtool archive (.la) file
+  $RM $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
 
   # Compatibility symlink
   $LN ../bin/$TGT-cpp $TLCD/usr/lib/$TGT-cpp

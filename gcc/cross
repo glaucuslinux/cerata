@@ -131,6 +131,9 @@ install() {
   $LN $nom-nm $CRSD/usr/bin/$TGT-$nom-nm
   $LN $nom-ranlib $CRSD/usr/bin/$TGT-$nom-ranlib
 
+  # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
+  $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
+
   # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
   $RM $CRSD/usr/lib/libatomic.la
@@ -144,9 +147,6 @@ install() {
   $RM $CRSD/usr/lib/libstdc++fs.la
   $RM $CRSD/usr/lib/libstdc++.la
   $RM $CRSD/usr/lib/libsupc++.la
-
-  # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
-  $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
   # Compatibility symlink
   $LN ../bin/cpp $CRSD/usr/lib/cpp
