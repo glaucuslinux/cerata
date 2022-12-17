@@ -48,7 +48,7 @@ check() {
 install() {
   samu \
     -C $TBLD/$nom \
-    install
+    install/strip
 
   # Hardcoded `gcc` version number
   $MKDIR $TLCD/usr/lib/$nom

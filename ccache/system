@@ -49,7 +49,7 @@ install() {
   DESTDIR=$SCER/$nom/sac \
   samu \
     -C $SBLD/$nom \
-    install
+    install/strip
 
   $MKDIR $SCER/$nom/sac/etc
   $RSYNC $CERD/$nom/$nom.conf $SCER/$nom/sac/etc
