@@ -50,6 +50,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/libobstack.la
 
   $LN $nom.pc $PKG_CONFIG_LIBDIR/libobstack.pc
