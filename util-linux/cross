@@ -76,6 +76,7 @@ install() {
     usrsbin_execdir=/usr/bin \
     install-strip
 
+  # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/libblkid.la
   $RM $CRSD/usr/lib/libfdisk.la
   $RM $CRSD/usr/lib/libmount.la
