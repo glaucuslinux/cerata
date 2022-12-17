@@ -24,8 +24,8 @@ configure() {
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
-    --prefix=$TLCD \
-    --exec-prefix=$TLCD \
+    --prefix=$TLCD/usr \
+    --exec-prefix=$TLCD/usr \
     --bindir=$TLCD/usr/bin \
     --sbindir=$TLCD/usr/bin \
     --libexecdir=$TLCD/usr/lib/$nom \
@@ -82,16 +82,16 @@ install() {
 
   $LN $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
 
-  $LN ../../usr/bin/$TGT-ar $TLCD/$TGT/bin/ar
-  $LN ../../usr/bin/$TGT-as $TLCD/$TGT/bin/as
-  $LN ../../usr/bin/$TGT-ld $TLCD/$TGT/bin/ld
-  $LN ../../usr/bin/$TGT-ld.bfd $TLCD/$TGT/bin/ld.bfd
-  $LN ../../usr/bin/$TGT-nm $TLCD/$TGT/bin/nm
-  $LN ../../usr/bin/$TGT-objcopy $TLCD/$TGT/bin/objcopy
-  $LN ../../usr/bin/$TGT-objdump $TLCD/$TGT/bin/objdump
-  $LN ../../usr/bin/$TGT-ranlib $TLCD/$TGT/bin/ranlib
-  $LN ../../usr/bin/$TGT-readelf $TLCD/$TGT/bin/readelf
-  $LN ../../usr/bin/$TGT-strip $TLCD/$TGT/bin/strip
+  $LN ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
+  $LN ../../bin/$TGT-as $TLCD/usr/$TGT/bin/as
+  $LN ../../bin/$TGT-ld $TLCD/usr/$TGT/bin/ld
+  $LN ../../bin/$TGT-ld.bfd $TLCD/usr/$TGT/bin/ld.bfd
+  $LN ../../bin/$TGT-nm $TLCD/usr/$TGT/bin/nm
+  $LN ../../bin/$TGT-objcopy $TLCD/usr/$TGT/bin/objcopy
+  $LN ../../bin/$TGT-objdump $TLCD/usr/$TGT/bin/objdump
+  $LN ../../bin/$TGT-ranlib $TLCD/usr/$TGT/bin/ranlib
+  $LN ../../bin/$TGT-readelf $TLCD/usr/$TGT/bin/readelf
+  $LN ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
 
   # Remove unnecessary manpages
   $RM $TLCD/usr/share/man/man1/$TGT-dlltool.1

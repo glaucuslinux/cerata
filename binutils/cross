@@ -81,6 +81,7 @@ install() {
 
   $LN ld.bfd $CRSD/usr/bin/ld
 
+  # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/libbfd.la
   $RM $CRSD/usr/lib/libctf.la
   $RM $CRSD/usr/lib/libctf-nobfd.la
