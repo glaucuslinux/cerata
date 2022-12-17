@@ -43,8 +43,8 @@ configure() {
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
-    --prefix=$TLCD \
-    --exec-prefix=$TLCD \
+    --prefix=$TLCD/usr \
+    --exec-prefix=$TLCD/usr \
     --bindir=$TLCD/usr/bin \
     --sbindir=$TLCD/usr/bin \
     --libexecdir=$TLCD/usr/lib \
@@ -126,7 +126,10 @@ install() {
   $LN $TGT-$nom $TLCD/usr/bin/$TGT-cc
   $LN $TGT-$nom $TLCD/usr/bin/$TGT-$nom-$ver
 
-  # `$TLCD/lib/bfd-plugins` is already provided by `binutils`
+  # Remove libtool archive (.la) file
+  $RM $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
+
+  # `$TLCD/usr/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
 
   # Compatibility symlink
