@@ -7,9 +7,6 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
-
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/0001-Allow-input-files-to-be-missing-for-ed-style-${nom}es.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/0002-Fix-arbitrary-command-execution-in-ed-style-${nom}es-.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2018-6951.$nom
@@ -17,11 +14,14 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13636.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13638.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-20633.$nom
+
+  $AUTORECONF
+
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 }
 
 configure() {
-  $AUTORECONF
-
   ./configure \
     --build=$BLD \
     --host=$TGT \
