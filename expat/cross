@@ -51,5 +51,6 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  # Remove libtool archive (.la) file
   $RM $CRSD/usr/lib/lib$nom.la
 }
