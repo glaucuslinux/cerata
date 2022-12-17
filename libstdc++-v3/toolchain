@@ -23,4 +23,9 @@ check() {
 install() {
   $MAKE \
     install-strip-target-$nom
+
+  # Remove libtool archive (.la) files
+  $RM $TLCD/usr/lib/libstdc++fs.la
+  $RM $TLCD/usr/lib/libstdc++.la
+  $RM $TLCD/usr/lib/libsupc++.la
 }
