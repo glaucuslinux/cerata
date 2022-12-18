@@ -17,7 +17,8 @@ build() {
   # First LIBDIR is for the path inside libucontext.pc
   $MAKE \
     ARCH=$UARCH \
-    LIBDIR=/usr/lib
+    LIBDIR=/usr/lib \
+    INCLUDEDIR=/usr/include
 }
 
 check() {
@@ -29,6 +30,15 @@ install() {
   $MAKE \
     ARCH=$UARCH \
     LIBDIR=/usr/lib \
+    INCLUDEDIR=/usr/include \
     DESTDIR=$SCER/$nom/sac \
     install
+
+  # Don't depend on `scdoc` for documentation
+  $MKDIR $SCER/$nom/sac/usr/share/man/man3
+  $RSYNC $CERD/$nom/$nom.3 $SCER/$nom/sac/usr/share/man/man3
+  $LN $nom.3 $SCER/$nom/sac/usr/share/man/man3/${nom}_getcontext.3
+  $LN $nom.3 $SCER/$nom/sac/usr/share/man/man3/${nom}_makecontext.3
+  $LN $nom.3 $SCER/$nom/sac/usr/share/man/man3/${nom}_setcontext.3
+  $LN $nom.3 $SCER/$nom/sac/usr/share/man/man3/${nom}_swapcontext.3
 }
