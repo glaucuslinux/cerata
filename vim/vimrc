@@ -49,7 +49,6 @@ set softtabstop=0
 set spell
 set tabstop=2
 set t_Co=256
-set termguicolors
 set textwidth=80
 set title
 set ttyfast

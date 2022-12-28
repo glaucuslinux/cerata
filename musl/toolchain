@@ -45,29 +45,12 @@ install() {
   $MKDIR $CRSD/etc
   $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-$MLARCH.path
 
-  # glibc compatibility symlink
-  $LN ld-$nom-$MLARCH.path $CRSD/etc/ld.so.conf
-
   $RM $CRSD/lib
 
   $MKDIR $CRSD/usr/bin
   $LN ../lib/ld-$nom-$MLARCH.so.1 $CRSD/usr/bin/ldd
 
-  # glibc compatibility loader symlink
-  $LN ld-$nom-$MLARCH.so.1 $CRSD/usr/lib/ld-linux$GARCH
-
   $LN libc.so $CRSD/usr/lib/ld-$nom-$MLARCH.so.1
-
-  # glibc compatibility libraries symlinks
-  $LN libc.so $CRSD/usr/lib/libc.so.6
-  $LN libc.so $CRSD/usr/lib/libcrypt.so.1
-  $LN libc.so $CRSD/usr/lib/libdl.so.2
-  $LN libc.so $CRSD/usr/lib/libm.so.6
-  $LN libc.so $CRSD/usr/lib/libpthread.so.0
-  $LN libc.so $CRSD/usr/lib/libresolv.so.2
-  $LN libc.so $CRSD/usr/lib/librt.so.1
-  $LN libc.so $CRSD/usr/lib/libutil.so.1
-  $LN libc.so $CRSD/usr/lib/libxnet.so.1
 
   $RSYNC libssp_nonshared.a $CRSD/usr/lib
 }
