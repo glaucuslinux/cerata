@@ -9,8 +9,6 @@ prepare() {
 
   $PATCH -p1 -i $CERD/musl/patches/adelie/realpath.patch
 
-  $PATCH -p1 -i $CERD/musl/patches/alpine/handle-aux-at_base.patch
-
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-lastlog.patch
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0002-fix-paths.patch
 
