@@ -20,5 +20,4 @@ glaucus's cerata
 * [GitHub](https://github.com/glaucuslinux/cerata)
 * [GitLab](https://gitlab.com/glaucuslinux/cerata)
 * [NotABug](https://notabug.org/glaucuslinux/cerata)
-* [SourceForge](https://git.code.sf.net/p/glaucuslinux/cerata)
 * [SourceHut](https://git.sr.ht/~glaucuslinux/cerata)
