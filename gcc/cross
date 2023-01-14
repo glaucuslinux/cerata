@@ -8,8 +8,8 @@ prepare() {
   cd $XSRC/$nom
 
   $RSYNC $SRCD/gmp/gmp-6.2.1/ gmp --delete
-  $RSYNC $SRCD/mpfr/mpfr-4.1.1/ mpfr --delete
-  $RSYNC $SRCD/mpc/mpc-1.3.0/ mpc --delete
+  $RSYNC $SRCD/mpfr/mpfr-4.2.0/ mpfr --delete
+  $RSYNC $SRCD/mpc/mpc-1.3.1/ mpc --delete
   $RSYNC $SRCD/isl/isl-0.25/ isl --delete
 
   $RSYNC $CERD/binutils/config.guess .
