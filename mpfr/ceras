@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mpfr"
-ver="4.1.1"
-url="https://www.mpfr.org/mpfr-current/mpfr-4.1.1.tar.gz"
-sum="d0f2406fe2255e2dd40012377042f4e6"
+ver="4.2.0"
+url="https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.gz"
+sum="7d8cde589c7922332023f93c5c0be739"
 cnt="make"
