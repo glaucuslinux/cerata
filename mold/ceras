@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mold"
-ver="1.7.1"
-url="https://github.com/rui314/mold/archive/v1.7.1.tar.gz"
-sum="048d680e2cbc87dff007ab7e384d90c2"
+ver="1.9.0"
+url="https://github.com/rui314/mold/archive/v1.9.0.tar.gz"
+sum="15a24feb453ca928e95e6c11ff01a990"
 cnt="gcc libressl make mimalloc xxhash zlib-ng"
