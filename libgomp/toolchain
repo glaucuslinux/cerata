@@ -25,5 +25,5 @@ install() {
     install-strip-target-$nom
 
   # Remove libtool archive (.la) file
-  $RM $TLCD/usr/lib/libgomp.la
+  $RM $TLCD/usr/lib/$nom.la
 }
