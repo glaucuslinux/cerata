@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="meson"
-ver="0.64.1"
-url="https://github.com/mesonbuild/meson/releases/download/0.64.1/meson-0.64.1.tar.gz"
-sum="a8140ad2fdb2e67f208d8d17f258dc13"
+ver="1.0.0"
+url="https://github.com/mesonbuild/meson/releases/download/1.0.0/meson-1.0.0.tar.gz"
+sum="379ccc1e9f49ff9bfacafc9250c44905"
 cnt="python"
