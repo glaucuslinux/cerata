@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="diffutils"
-ver="3.8"
-url="https://ftpmirror.gnu.org/diffutils/diffutils-3.8.tar.xz"
-sum="40831518b524d8f045a4a977ace11c22"
+ver="3.9"
+url="https://ftpmirror.gnu.org/diffutils/diffutils-3.9.tar.xz"
+sum="5459dded7bcfaf25e160f4289cbcfedd"
 cnt="make"
