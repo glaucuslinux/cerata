@@ -5,6 +5,6 @@
 
 nom="lbzip2"
 ver="2.5"
-url="https://fossies.org/linux/privat/lbzip2-2.5.tar.gz"
-sum="28c9b3b920c8a5a3c5a0127750a5f255"
+url="https://deb.debian.org/debian/pool/main/l/lbzip2/lbzip2_2.5.orig.tar.bz2"
+sum="c26b81956ec8228fa697cabd2f7bd6cd"
 cnt="make"
