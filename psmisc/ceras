@@ -5,6 +5,6 @@
 
 nom="psmisc"
 ver="23.6"
-url="https://prdownloads.sourceforge.net/psmisc/psmisc-23.6.tar.xz"
-sum="8f797bc0dec2437ee8eae64cb4b8fd4d"
+url="https://gitlab.com/psmisc/psmisc/-/archive/v23.6/psmisc-v23.6.tar.gz"
+sum="65b99064e07bc626af197b9bd3432100"
 cnt="make netbsd-curses"
