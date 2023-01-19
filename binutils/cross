@@ -13,7 +13,6 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/CVE-2022-38533.patch
 
   $MKDIR $XBLD/$nom
   cd $XBLD/$nom
