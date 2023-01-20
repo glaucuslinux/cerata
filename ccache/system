@@ -51,9 +51,6 @@ install() {
     -C $SBLD/$nom \
     install/strip
 
-  $MKDIR $SCER/$nom/sac/etc
-  $RSYNC $CERD/$nom/$nom.conf $SCER/$nom/sac/etc
-
   # Hardcoded `gcc` version number
   $MKDIR $SCER/$nom/sac/usr/lib/$nom
   $LN ../../bin/$nom $SCER/$nom/sac/usr/lib/$nom/c++

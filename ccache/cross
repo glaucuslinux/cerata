@@ -51,8 +51,6 @@ install() {
     -C $XBLD/$nom \
     install/strip
 
-  $RSYNC $CERD/$nom/$nom.conf $CRSD/etc
-
   # Hardcoded `gcc` version number
   $MKDIR $CRSD/usr/lib/$nom
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/c++
