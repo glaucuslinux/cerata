@@ -31,6 +31,7 @@ configure() {
     --disable-static \
     --disable-allstatic \
     --disable-all-pic \
+    --enable-nsss \
     --enable-libc-includes
 }
 
