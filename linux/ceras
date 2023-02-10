@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="linux"
-ver="6.1.6"
-url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.6.tar.gz"
-sum="e3db5d2434b4301ff20ba70a814c7a7b"
+ver="6.1.11"
+url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.gz"
+sum="6352356e6bc55fefa6e2c55aa5a46300"
 cnt="bc byacc flex libarchive libelf libuargp make musl-fts musl-obstack zlib-ng"
