@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="zstd"
-ver="1.5.2"
-url="https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.zst"
-sum="cca7641bfffb17c19a1a8adcfd8bdcf8"
+ver="1.5.4"
+url="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.zst"
+sum="2af352df3ef7571571617e94ef5b2da9"
 cnt="lz4 make xz zlib-ng"
 cys="gcc"
