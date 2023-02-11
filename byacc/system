@@ -26,10 +26,10 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --infodir=/usr/share/info \
     --mandir=/usr/share/man \
-    --program-prefix=b \
-    --enable-btyacc
+    --program-prefix=b
 }
 
 build() {
