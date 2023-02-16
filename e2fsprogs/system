@@ -13,8 +13,6 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/libext2fs-add-sanity-check-to-extent-manipulation.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-misc-makefile-error.patch
@@ -37,6 +35,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
