@@ -1,6 +1,6 @@
 --- e2fsck/unix.c
 +++ e2fsck/unix.c
-@@ -604,7 +604,7 @@
+@@ -605,7 +605,7 @@
  	return 0;
  }
  
@@ -9,7 +9,7 @@
  
  /*
   * Make sure 0,1,2 file descriptors are open, so that we don't open
-@@ -1125,7 +1125,7 @@
+@@ -1126,7 +1126,7 @@
  	sigaction(SIGUSR2, &sa, 0);
  #endif
  
@@ -31,7 +31,7 @@
  #define UUIDD_OP_GET_MAXOP		1
 --- misc/fsck.c
 +++ misc/fsck.c
-@@ -120,7 +120,7 @@
+@@ -121,7 +121,7 @@
  static char *fstype = NULL;
  static struct fs_info *filesys_info = NULL, *filesys_last = NULL;
  static struct fsck_instance *instance_list;
@@ -42,7 +42,7 @@
  
 --- misc/mke2fs.c
 +++ misc/mke2fs.c
-@@ -792,7 +792,7 @@
+@@ -794,7 +794,7 @@
  	return 1;
  }
  
@@ -51,7 +51,7 @@
  
  static void parse_extended_opts(struct ext2_super_block *param,
  				const char *opts)
-@@ -1593,7 +1593,7 @@
+@@ -1618,7 +1618,7 @@
  	}
  	strcpy(newpath, PATH_SET);
  
@@ -60,17 +60,6 @@
  	if (oldpath) {
  		strcat (newpath, ":");
  		strcat (newpath, oldpath);
---- scrub/e2scrub.in
-+++ scrub/e2scrub.in
-@@ -23,7 +23,7 @@
- # check filesystems in VGs that have at least 256MB (or so) of
- # free space.
- 
--PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-+PATH=/usr/bin:/bin
- 
- if (( $EUID != 0 )); then
-     echo "e2scrub must be run as root"
 --- scrub/e2scrub_all.in
 +++ scrub/e2scrub_all.in
 @@ -18,7 +18,7 @@
@@ -82,3 +71,14 @@
  
  if (( $EUID != 0 )); then
      echo "e2scrub_all must be run as root"
+--- scrub/e2scrub.in
++++ scrub/e2scrub.in
+@@ -23,7 +23,7 @@
+ # check filesystems in VGs that have at least 256MB (or so) of
+ # free space.
+ 
+-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
++PATH=/usr/bin:/bin
+ 
+ if (( $EUID != 0 )); then
+     echo "e2scrub must be run as root"
