@@ -4,12 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/upstream/CVE-2022-46663.patch
 }
 
 configure() {
-  $SRCD/$nom/$nom-$ver/configure \
+  ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -21,6 +23,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
