@@ -1,0 +1,46 @@
+From b5c7c28ee5ade95044dfabd3181a70cb0ceb2305 Mon Sep 17 00:00:00 2001
+From: Noah Goldstein <goldstein.w.n@gmail.com>
+Date: Wed, 8 Jun 2022 10:39:56 -0700
+Subject: [PATCH v1] Make zap_nuls vectorizable
+
+---
+ src/grep.c | 21 ++++++++-------------
+ 1 file changed, 8 insertions(+), 13 deletions(-)
+
+diff --git a/src/grep.c b/src/grep.c
+index 9b9407d..b3bb183 100644
+--- a/src/grep.c
++++ b/src/grep.c
+@@ -1436,21 +1436,16 @@ prtext (char *beg, char *lim)
+    This avoids running out of memory when binary input contains a long
+    sequence of zeros, which would otherwise be considered to be part
+    of a long line.  P[LIM] should be EOL.  */
+-static void
++static void /* Should add __attribute__((target_clone(...))).  */
+ zap_nuls (char *p, char *lim, char eol)
+ {
+-  if (eol)
+-    while (true)
+-      {
+-        *lim = '\0';
+-        p += strlen (p);
+-        *lim = eol;
+-        if (p == lim)
+-          break;
+-        do
+-          *p++ = eol;
+-        while (!*p);
+-      }
++    if (eol) {
++        for(; p != lim; ++p) {
++            if(*p == '\0') {
++                *p = eol;
++            }
++        }
++    }
+ }
+ 
+ /* Scan the specified portion of the buffer, matching lines (or
+-- 
+2.34.1
+
