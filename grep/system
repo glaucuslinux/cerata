@@ -12,12 +12,10 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub build-aux
 
   $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
+  $PATCH -p1 -i $CERD/$nom/patches/clear/v1-0001-Make-zap_nuls-vectorizable.patch
 }
 
 configure() {
-  # Disable locale test that fails on musl
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-test-localename.patch
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -30,6 +28,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls \
