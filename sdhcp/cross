@@ -9,6 +9,7 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 
+  # Remove upstream patch in following release
   $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
 
   $PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
