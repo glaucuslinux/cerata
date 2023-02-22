@@ -7,6 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
+  # Remove upstream patch in following release
   $PATCH -p1 -i $CERD/$nom/patches/upstream/CVE-2022-46663.patch
 }
 
