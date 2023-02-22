@@ -7,6 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
+  # Remove upstream patch in following release
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-add-missing-include.patch
+
   $MKDIR $SBLD/$nom
 }
 
