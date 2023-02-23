@@ -33,6 +33,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-static \
     --disable-docs \
+    --disable-exec-static-tramp \
     --disable-symvers \
     $CARCH
 }
