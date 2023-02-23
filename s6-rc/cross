@@ -44,6 +44,4 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
-
-  $RSYNC $CERD/$nom/$nom-bundle-update $CRSD/usr/bin
 }
