@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mdevd"
-ver="0.1.6.1"
-url="https://skarnet.org/software/mdevd/mdevd-0.1.6.1.tar.gz"
-sum="9ccb083fc1fe6685db56c3b20bb97af1"
+ver="0.1.6.2"
+url="https://skarnet.org/software/mdevd/mdevd-0.1.6.2.tar.gz"
+sum="f1e3130e66d18fd8ee9017113d625085"
 cnt="make nsss skalibs"
 cys="execline nsss skalibs"
