@@ -4,13 +4,23 @@
 # Distributed under the terms of the ISC License
 
 exec meson setup \
-  --prefix /usr \
-  --libexecdir lib \
-  --sbindir bin \
-  --buildtype release \
+  --prefix=/usr \
+  --bindir=/usr/bin \
+  --datadir=/usr/share \
+  --includedir=/usr/include \
+  --infodir=/usr/share/info \
+  --libdir=/usr/lib \
+  --libexecdir=/usr/lib/$nom \
+  --localedir=/usr/share/locale \
+  --mandir=/usr/share/man \
+  --sbindir=/usr/bin \
+  --sharedstatedir=/var/lib \
+  --sysconfdir=/etc \
+  --backend=ninja \
+  --buildtype=release \
   --stdsplit \
   --strip \
-  --wrap-mode nodownload \
+  --wrap-mode=nodownload \
   -Db_lto=true \
   -Db_lto_mode=thin \
   $@
