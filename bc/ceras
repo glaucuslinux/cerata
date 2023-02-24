@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="bc"
-ver="6.2.4"
-url="https://github.com/gavinhoward/bc/releases/download/6.2.4/bc-6.2.4.tar.gz"
-sum="b8d99ef0f3d26853ad0a890524f47048"
+ver="6.3.1"
+url="https://github.com/gavinhoward/bc/releases/download/6.3.1/bc-6.3.1.tar.gz"
+sum="b9cfe70cede93f75e55d76b5127c3ec2"
 cnt="libedit make netbsd-curses"
