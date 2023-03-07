@@ -11,6 +11,8 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath build/autoconf
   $RSYNC $CERD/binutils/config.sub build/autoconf
 
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
 }
 
