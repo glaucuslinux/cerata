@@ -245,7 +245,7 @@
  file /bin/bash test-bash.sh 0755 0 0
 @@ -64,12 +64,12 @@
  
- COMMANDS="awk cat chmod cp dmesg fgrep id less ln ls mkdir mount pwd rm rmdir sh sort umount uniq vi"
+ COMMANDS="awk cat chmod cp dmesg grep id less ln ls mkdir mount pwd rm rmdir sh sort umount uniq vi"
  for f in $COMMANDS; do
 -    echo slink /bin/$f /sbin/busybox 0755 0 0 >> fs.conf
 +    echo slink /bin/$f /bin/busybox 0755 0 0 >> fs.conf
@@ -297,7 +297,7 @@
  # These choices are motivated by the fact that getcap and setcap are
  # administrative operations that could be needed to recover a system.
 @@ -21,14 +21,6 @@
- lib=$(shell ldd /usr/bin/ld|egrep "ld-linux|ld.so"|cut -d/ -f2)
+ lib=$(shell ldd /usr/bin/ld|grep -E "ld-linux|ld.so"|cut -d/ -f2)
  endif
  
 -ifndef sbin
@@ -333,7 +333,7 @@
  ## The pam_cap module simply alters the value of the inheritable
 --- progs/Makefile
 +++ progs/Makefile
-@@ -34,12 +34,12 @@
+@@ -36,12 +36,12 @@
  	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
  
  install: all
