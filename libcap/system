@@ -22,6 +22,8 @@ build() {
     exec_prefix=/usr \
     lib_prefix=/usr \
     inc_prefix=/usr \
+    man_prefix=/usr/share \
+    MANDIR=/usr/share/man \
     BINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
@@ -47,6 +49,8 @@ install() {
     exec_prefix=/usr \
     lib_prefix=/usr \
     inc_prefix=/usr \
+    man_prefix=/usr/share \
+    MANDIR=/usr/share/man \
     BINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
