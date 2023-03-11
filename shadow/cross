@@ -35,6 +35,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -49,9 +50,11 @@ configure() {
     --without-selinux \
     --with-acl \
     --with-attr \
+    --with-yescrypt \
     --without-nscd \
     --with-group-name-max-length=32 \
-    --without-su
+    --without-su \
+    --with-fcaps
 }
 
 build() {
