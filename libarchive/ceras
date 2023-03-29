@@ -6,5 +6,5 @@
 nom="libarchive"
 ver="3.6.2"
 url="https://www.libarchive.org/downloads/libarchive-3.6.2.tar.gz"
-sum="bf514d843d78b7e0d93f52d3662ed006"
+sum="c79472125300a3704858fc857c07cce7069b1746"
 cnt="acl attr bzip2 expat libressl lz4 make pigz xz zlib-ng zstd"

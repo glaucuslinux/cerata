@@ -6,5 +6,5 @@
 nom="musl-obstack"
 ver="1.2.3"
 url="https://github.com/void-linux/musl-obstack/archive/v1.2.3.tar.gz"
-sum="9d6a21ffbe9d967b00dab087777a90cc"
+sum="3d0cc071b3ef152eac576929a81666009eb54b4b"
 cnt="make"

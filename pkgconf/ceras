@@ -6,5 +6,5 @@
 nom="pkgconf"
 ver="1.9.4"
 url="https://distfiles.dereferenced.org/pkgconf/pkgconf-1.9.4.tar.gz"
-sum="d645eebcc7bacee52eec1c9d2dda5cec"
+sum="967cb3e8558ec1f39059320fc95d4cc511448d2a"
 cnt="make"

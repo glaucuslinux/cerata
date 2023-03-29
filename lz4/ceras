@@ -6,5 +6,5 @@
 nom="lz4"
 ver="1.9.4"
 url="https://github.com/lz4/lz4/archive/v1.9.4.tar.gz"
-sum="e28ec94f24f03fcb1c6127400993872d"
+sum="1d262fd78a0dbaa409e764979c6a643d0370f8d1"
 cnt="make"

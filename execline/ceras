@@ -6,6 +6,6 @@
 nom="execline"
 ver="2.9.2.1"
 url="https://skarnet.org/software/execline/execline-2.9.2.1.tar.gz"
-sum="dab93d2cc43421c755eb711bb5aebd29"
+sum="5eee38cef276429b68af472b0160ce59ce0518df"
 cnt="make nsss skalibs"
 cys="nsss skalibs"

@@ -6,5 +6,5 @@
 nom="pcre2"
 ver="10.42"
 url="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.gz"
-sum="df65da65419c58458fdcc1d337645704"
+sum="0c265c2e3b8325db8d87d06e8a4cc31ce4cbc731"
 cnt="bzip2 libedit make netbsd-curses zlib-ng"

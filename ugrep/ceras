@@ -6,5 +6,5 @@
 nom="ugrep"
 ver="3.9.7"
 url="https://github.com/Genivia/ugrep/archive/v3.9.7.tar.gz"
-sum="0e1f32e0a8368bd0b48b2a29854690aa"
+sum="dc982291606433b8a1c6f4fbceae86a2d5a64259"
 cnt="bzip2 gcc lz4 make pcre2 xz zlib-ng zstd"

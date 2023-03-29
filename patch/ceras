@@ -6,5 +6,5 @@
 nom="patch"
 ver="2.7.6"
 url="https://ftpmirror.gnu.org/patch/patch-2.7.6.tar.gz"
-sum="aabe2272d502e1fa731f5d6467d84294"
+sum="0ed8f3e49d84964f27e27c712fc8780e291dfa60"
 cnt="make"

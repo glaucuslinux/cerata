@@ -6,5 +6,5 @@
 nom="diffutils"
 ver="3.9"
 url="https://ftpmirror.gnu.org/diffutils/diffutils-3.9.tar.xz"
-sum="5459dded7bcfaf25e160f4289cbcfedd"
+sum="35905d7c3d1ce116e6794be7fe894cd25b2ded74"
 cnt="make"

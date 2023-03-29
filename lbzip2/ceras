@@ -6,5 +6,5 @@
 nom="lbzip2"
 ver="2.5"
 url="https://deb.debian.org/debian/pool/main/l/lbzip2/lbzip2_2.5.orig.tar.bz2"
-sum="c26b81956ec8228fa697cabd2f7bd6cd"
+sum="e0ed740c4a85ae7b23dba4f30470b11342d1756f"
 cnt="make"

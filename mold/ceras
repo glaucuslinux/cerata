@@ -6,5 +6,5 @@
 nom="mold"
 ver="1.10.1"
 url="https://github.com/rui314/mold/archive/v1.10.1.tar.gz"
-sum="6352633ba640431614755a3590a1f60e"
+sum="3859d3886cde8cc406d29750084e42ee2c757007"
 cnt="gcc libressl make mimalloc xxhash zlib-ng"

@@ -6,5 +6,5 @@
 nom="wget2"
 ver="2.0.1"
 url="https://gitlab.com/gnuwget/wget2/uploads/83752270de83e103306576e67a1c7c80/wget2-2.0.1.tar.gz"
-sum="25957988c101df5dbfce79a906f32244"
+sum="e50ab408168e28d8b9eecba046e21cffbb30636f"
 cnt="bzip2 libressl lzlib make netbsd-curses pcre2 xz zlib-ng zstd"

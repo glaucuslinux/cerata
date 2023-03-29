@@ -6,5 +6,5 @@
 nom="jemalloc"
 ver="5.3.0"
 url="https://github.com/jemalloc/jemalloc/releases/download/5.3.0/jemalloc-5.3.0.tar.bz2"
-sum="23e2d0fe481521440563d3b16d4730ca"
+sum="1c8f2d0dfbf39fa8cd86363bf3314351ab21f8d4"
 cnt="make"

@@ -6,6 +6,6 @@
 nom="help2man"
 ver="1.49.3"
 url="https://ftpmirror.gnu.org/help2man/help2man-1.49.3.tar.xz"
-sum="6d44611f57fb49fdda763f6521806fc2"
+sum="3ed88430c97af3c5b57949f6f030b913044af507"
 cnt="make"
 cys="perl"

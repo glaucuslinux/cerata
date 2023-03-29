@@ -6,5 +6,5 @@
 nom="sed"
 ver="4.9"
 url="https://ftpmirror.gnu.org/sed/sed-4.9.tar.gz"
-sum="734c73fd9b87f788705e91a30a685f8f"
+sum="69ad1f6be316fff4b23594287f16dfd14cd88093"
 cnt="acl attr make"

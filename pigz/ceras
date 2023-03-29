@@ -6,5 +6,5 @@
 nom="pigz"
 ver="2.7"
 url="https://zlib.net/pigz/pigz-2.7.tar.gz"
-sum="2363bb508f5594dd56b4dc67b0b91a07"
+sum="64acd19929e01f04de4e9c481860492b27fe5ec4"
 cnt="make zlib-ng"
