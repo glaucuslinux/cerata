@@ -6,5 +6,5 @@
 nom="python"
 ver="3.11.2"
 url="https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz"
-sum="54d04be4309e6fb445477dd0ae2ac548cee473e7"
+sum="9521680f0f1d9d58d15eb8c0b53f665170b56de9e67ec59d9f9dbbaf84192bb9"
 cnt="expat libffi make"

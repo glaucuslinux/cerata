@@ -6,5 +6,5 @@
 nom="libcap-ng"
 ver="0.8.3"
 url="https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.3.tar.gz"
-sum="c063db138f3b0e623fc4ebb8a0aa126fed801ecf"
+sum="b0357296a150e29d25ac49bc092a224e646003ade758a7d053f846e2ee852eaa"
 cnt="make"

@@ -6,5 +6,5 @@
 nom="cmake"
 ver="3.25.2"
 url="https://cmake.org/files/v3.25/cmake-3.25.2.tar.gz"
-sum="2f444bb9951aad09452b692d8b3b9e33309e1641"
+sum="169df358afca57f99d15f0841a1e320db8317af31abb5d98aae36c0a1515d853"
 cnt="make samurai"

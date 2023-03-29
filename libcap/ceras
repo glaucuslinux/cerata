@@ -6,5 +6,5 @@
 nom="libcap"
 ver="2.67"
 url="https://cdn.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.67.tar.gz"
-sum="6581ac6bf734c000331c49c302dbc8ac341b7fb4"
+sum="1c692e56071dc573a85b2fef1151b43e72fd906d95608e8273e33e5ba1f8f5ac"
 cnt="linux-headers make"

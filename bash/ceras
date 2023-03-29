@@ -6,5 +6,5 @@
 nom="bash"
 ver="5.2.15"
 url="https://ftpmirror.gnu.org/bash/bash-5.2.15.tar.gz"
-sum="cc9ed5a0bcb2e10cbc6f0510e94150bc5d976a4b"
+sum="c1548e3f2a9b6de5296e18c28b3d2007985e647273e03f039efd3e489edaa41f"
 cnt="libedit make netbsd-curses"

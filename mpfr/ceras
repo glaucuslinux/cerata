@@ -6,5 +6,5 @@
 nom="mpfr"
 ver="4.2.0"
 url="https://www.mpfr.org/mpfr-current/mpfr-4.2.0.tar.gz"
-sum="114083f1ff2cbfdc09864d240449eae382a38223"
+sum="21b3276150c76ccbccd91d4fde8f425bdad6643f21d23e7a772faf9940ea0f91"
 cnt="make"

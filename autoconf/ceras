@@ -6,6 +6,6 @@
 nom="autoconf"
 ver="2.71"
 url="https://ftpmirror.gnu.org/autoconf/autoconf-2.71.tar.gz"
-sum="abe5a4bcf06ebd1bbbf81007159df346f5c1db8b"
+sum="1e9ac41b8ea0cb8a287307ae9083f2e1f1a337ead46eff709e01f533d78d9eca"
 cnt="make"
 cys="om4 perl"

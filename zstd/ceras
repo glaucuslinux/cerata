@@ -6,6 +6,6 @@
 nom="zstd"
 ver="1.5.4"
 url="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.zst"
-sum="3b5bf667b6f6ee1fa4d4a84b5eeafbab52cee5ca"
+sum="0b7ca3d308536e825fd3a6a7c06f6e0dfed634fab1efa7df17c0788cb3ba926f"
 cnt="lz4 make xz zlib-ng"
 cys="gcc"

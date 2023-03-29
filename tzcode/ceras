@@ -6,5 +6,5 @@
 nom="tzcode"
 ver="2022g"
 url="https://data.iana.org/time-zones/releases/tzcode2022g.tar.gz"
-sum="ffcae61ec6a0b703deb7c5dba497577eae018cd5"
+sum="eea404b3f5ea05122ff50a24b821ba163753f52ef0c6ccaf083f9d6a7564542f"
 cnt="make"

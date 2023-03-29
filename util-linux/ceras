@@ -6,5 +6,5 @@
 nom="util-linux"
 ver="2.38.1"
 url="https://cdn.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.gz"
-sum="c9779609435cf2269a1c44dbe52401f261c59968"
+sum="de3b1dc7bc1b31b036538c3ba086cf1542a4657a1dfe7154c2f1d8fd1d481144"
 cnt="eudev execline libcap-ng libedit linux-headers make netbsd-curses skalibs utmps zlib-ng"

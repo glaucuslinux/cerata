@@ -6,6 +6,6 @@
 nom="s6-linux-init"
 ver="1.1.0.0"
 url="https://skarnet.org/software/s6-linux-init/s6-linux-init-1.1.0.0.tar.gz"
-sum="a971251cedde9dcac649e36d1887ad78f7de5a61"
+sum="8041acbaf9c34552ce8cbe1aedc799417c232424537a26e733aa377b7c5e195b"
 cnt="execline make nsss s6 skalibs utmps"
 cys="execline nsss s6 skalibs utmps"

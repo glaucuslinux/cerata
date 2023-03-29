@@ -6,5 +6,5 @@
 nom="grep"
 ver="3.8"
 url="https://ftpmirror.gnu.org/grep/grep-3.8.tar.gz"
-sum="eb3bf741fefb2d64e67d9ea6d74c723ea0efddb6"
+sum="5b6cf27f2ed67e570c12282a974fbbc03cf5d4fe702563d0516dd6cae7faba45"
 cnt="make pcre2"

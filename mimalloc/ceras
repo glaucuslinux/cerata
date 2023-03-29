@@ -6,5 +6,5 @@
 nom="mimalloc"
 ver="2.0.9"
 url="https://github.com/microsoft/mimalloc/archive/v2.0.9.tar.gz"
-sum="b77401600e3cd5f2f72bd2a433e04b0b8a4e9dbb"
+sum="9d4064fda3862301b858d1fb4cb569f776700e08415228b7515b3e5b4f6836c9"
 cnt="cmake"

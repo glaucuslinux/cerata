@@ -6,5 +6,5 @@
 nom="musl-rpmatch"
 ver="1.0"
 url="https://github.com/chimera-linux/musl-rpmatch/archive/v1.0-mk2.tar.gz"
-sum="5a3b6ae30513040186201f7be417251b8fdbc9a0"
+sum="f06bcaddb7a2f804fb9bf0c7ca89ac3fcc84e26b84a330246a7707503771dc80"
 cnt="make"

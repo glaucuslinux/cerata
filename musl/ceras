@@ -6,5 +6,5 @@
 nom="musl"
 ver="1.2.3"
 url="https://musl.libc.org/releases/musl-1.2.3.tar.gz"
-sum="3b6b673196c2dc96b24c5d6028c5fa922457dd26"
+sum="dd4d86b7f568ec1650d473d79697ea5df7a7b1a7fb71859a33f6e3161e62aecc"
 cnt="make"

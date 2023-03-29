@@ -6,6 +6,6 @@
 nom="plocate"
 ver="1.1.18"
 url="https://plocate.sesse.net/download/plocate-1.1.18.tar.gz"
-sum="e819035ee91b4ae792be393c9c24be59d042ae09"
+sum="af2993e3bd42a56ddad38997134e0cea2dc03e9ee0202905b503ae8e748cae7b"
 cnt="liburing meson samurai zstd"
 cys="gcc"

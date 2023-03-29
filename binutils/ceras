@@ -6,5 +6,5 @@
 nom="binutils"
 ver="2.40"
 url="https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.gz"
-sum="51cf8aac159473418688c62ec52f3653d1b8e0a7"
+sum="8b660141449dc1b7b1ba5fae405ef78535278bc3c5e0bcdf9b5aec46b9d11b41"
 cnt="make"
