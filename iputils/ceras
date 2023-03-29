@@ -6,5 +6,5 @@
 nom="iputils"
 ver="20221126"
 url="https://github.com/iputils/iputils/archive/20221126.tar.gz"
-sum="306cd6cc158810180c7eacc94746006abde682a3"
+sum="0cb053033e0d6f034bd41a5255e3680ff1f8cc09546ab0468377f1765c7545f8"
 cnt="libcap meson samurai"

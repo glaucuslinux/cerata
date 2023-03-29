@@ -6,5 +6,5 @@
 nom="ccache"
 ver="4.7.4"
 url="https://github.com/ccache/ccache/releases/download/v4.7.4/ccache-4.7.4.tar.gz"
-sum="4da90218bbc451c8e0e9e655a139c92e1a65aaea"
+sum="b323fe2439d6a4cb16b8d07b28f6dae816a9d276f895a7069eb210a74f4fc677"
 cnt="cmake samurai"

@@ -6,5 +6,5 @@
 nom="lzlib"
 ver="1.13"
 url="https://download.savannah.nongnu.org/releases/lzip/lzlib/lzlib-1.13.tar.gz"
-sum="42fdddb42009f7f82c58605d1879cb9353d1c5c7"
+sum="2cfcccfb66ea894d9ed591a0e30da384e119b0ffecbdf54625bfeb4e386742f1"
 cnt="make"

@@ -6,5 +6,5 @@
 nom="expat"
 ver="2.5.0"
 url="https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz"
-sum="061c1232188dff35e44aa7137aec7757d3d90d27"
+sum="ab78ba1341a4617ddfbd9cde2c351dde99342e0fefeadb0ef18ca3624210940a"
 cnt="make"

@@ -6,5 +6,5 @@
 nom="vim"
 ver="9.0.1396"
 url="https://github.com/vim/vim/archive/v9.0.1396.tar.gz"
-sum="c07ce6858d9a3afbac5a3e7282e076fdc21aa3c0"
+sum="aafe6ef0ae1246bb48271013407cc6b3c4cbc150c4f47134922068190b0124f6"
 cnt="acl attr make netbsd-curses"

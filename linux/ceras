@@ -6,5 +6,5 @@
 nom="linux"
 ver="6.1.11"
 url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.11.tar.gz"
-sum="574801c9d1969a3b46d521af40ee520fac2a491d"
+sum="88d0860cbb15c194853a326e34dd8141b9176a69c1511dc01aa2cc6e02da7e9c"
 cnt="bc byacc flex libarchive libelf libuargp make musl-fts musl-obstack zlib-ng"

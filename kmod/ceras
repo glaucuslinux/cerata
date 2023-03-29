@@ -6,5 +6,5 @@
 nom="kmod"
 ver="30"
 url="https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-30.tar.gz"
-sum="8d057ecd797ab945269f743e22f731677a94a876"
+sum="d81e31ec4b69bb1b96010cbb894a41a67096471e5740a4e529cc98eecc8b9cb5"
 cnt="libressl make xz zlib-ng zstd"

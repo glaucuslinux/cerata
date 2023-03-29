@@ -6,5 +6,5 @@
 nom="gmp"
 ver="6.2.1"
 url="https://gmplib.org/download/gmp/gmp-6.2.1.tar.zst"
-sum="33acace4568324a1dfeab842ab67ad48c2cfde63"
+sum="aea327cc749220d4d6069b6bb88e34eec84ff73e0eaa10b0176e8c330772d931"
 cnt="make"

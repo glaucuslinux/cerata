@@ -6,5 +6,5 @@
 nom="libffi"
 ver="3.4.4"
 url="https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz"
-sum="ecc58fb89aac4329b34dd019fe337d291b47c799"
+sum="42abcee37cdbf72c9c749f5cce8dc2fea0257a6a4e4776ba310ee8bdaf6e36ed"
 cnt="make"

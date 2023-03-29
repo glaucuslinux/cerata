@@ -6,4 +6,4 @@
 nom="syslinux"
 ver="6.04-pre1"
 url="https://cdn.kernel.org/pub/linux/utils/boot/syslinux/Testing/6.04/syslinux-6.04-pre1.tar.gz"
-sum="9f4d3dc82b52ed6d227f2f65f90399621ada97b9"
+sum="fd7ff40c95b57e5caa2f342508571888e9c7bb2029e181705d80d8ea8d2972ae"

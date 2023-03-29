@@ -6,6 +6,6 @@
 nom="eudev"
 ver="3.2.11"
 url="https://github.com/eudev-project/eudev/releases/download/v3.2.11/eudev-3.2.11.tar.gz"
-sum="4c6418766e6a10a23ef0ab52efa7a374ec25b765"
+sum="519cdc2cd044d01eba5ebd1074c611de3ca12514bc02a4f52c1d6b27e03f192b"
 cnt="gperf libressl make xz zlib-ng zstd"
 cys="kmod"

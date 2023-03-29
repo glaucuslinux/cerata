@@ -6,5 +6,5 @@
 nom="rsync"
 ver="3.2.7"
 url="https://download.samba.org/pub/rsync/src/rsync-3.2.7.tar.gz"
-sum="0729ee0cd5e7e609510583ce4768a6170a7a9de7"
+sum="36f619e948cbb5dde312ba70398f1e35b66e25a8e9788a9bfe4356866795d39f"
 cnt="acl attr gcc libressl lz4 make popt xxhash zlib-ng zstd"

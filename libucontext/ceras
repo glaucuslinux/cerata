@@ -6,5 +6,5 @@
 nom="libucontext"
 ver="1.2"
 url="https://github.com/kaniini/libucontext/archive/libucontext-1.2.tar.gz"
-sum="9625d86e2cd842cd9a708ab70c423a231aaa9094"
+sum="5cb04c159fe54c0c14b4aa30d13af4eafa08d05e67791c19f893b3770749b2f6"
 cnt="make"

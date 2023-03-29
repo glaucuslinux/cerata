@@ -6,6 +6,6 @@
 nom="meson"
 ver="1.0.1"
 url="https://github.com/mesonbuild/meson/releases/download/1.0.1/meson-1.0.1.tar.gz"
-sum="a2d102eb6a37307c9b67283e9764ed57cf286223"
+sum="d151617b0846252737df30cc744d39b689f1b90d48e23fe105cd9da2cc119304"
 cnt="python"
 cys="python samurai"

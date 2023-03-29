@@ -6,5 +6,5 @@
 nom="iproute2"
 ver="6.1.0"
 url="https://cdn.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.1.0.tar.gz"
-sum="399e73cb6bad6a92d29d65781dc44ecad105f979"
+sum="4913070f76e15db4cbcb8cafc70a00ff32c10a326d589105e2f136953db1a1d3"
 cnt="make"

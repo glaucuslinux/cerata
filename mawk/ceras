@@ -6,5 +6,5 @@
 nom="mawk"
 ver="1.3.4-20230203"
 url="https://invisible-island.net/archives/mawk/mawk-1.3.4-20230203.tgz"
-sum="24819e7ef7d77c49663ab835dfa24139ab39057c"
+sum="38ad3cb1d03db379f39cac209d015bdd1b968b0fbf3259646b2748c155eab2bf"
 cnt="make"

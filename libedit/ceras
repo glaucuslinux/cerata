@@ -6,5 +6,5 @@
 nom="libedit"
 ver="20221030-3.1"
 url="https://www.thrysoee.dk/editline/libedit-20221030-3.1.tar.gz"
-sum="2a178c4a09b11651427a9e911c56bb9fed811597"
+sum="991f3d226ddaaca30a4c0182cc726c0874acbea83778b53e708b2f973d7769d4"
 cnt="make"

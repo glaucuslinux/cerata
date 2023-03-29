@@ -6,6 +6,6 @@
 nom="plzip"
 ver="1.10"
 url="https://download.savannah.nongnu.org/releases/lzip/plzip/plzip-1.10.tar.gz"
-sum="cf591ba38996589b0a86599a1d2238668dfbed93"
+sum="718fbc2d06f3ac20a78fcf90da32f1a4c1f56f9ecc8625815b5da1cd9147ed30"
 cnt="lzlib make"
 cys="gcc"

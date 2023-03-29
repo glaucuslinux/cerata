@@ -6,5 +6,5 @@
 nom="libtool"
 ver="2.4.7"
 url="https://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.gz"
-sum="d3f2d5399f4bf5cbd974b812ebaca28d6492ca65"
+sum="347de0b9ddbd76beb5e1c71afd7b7f5b08e2e6201e1b281d2145261804a831cc"
 cnt="help2man make"
