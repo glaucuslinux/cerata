@@ -6,6 +6,6 @@
 nom="mdevd"
 ver="0.1.6.2"
 url="https://skarnet.org/software/mdevd/mdevd-0.1.6.2.tar.gz"
-sum="f1e3130e66d18fd8ee9017113d625085"
+sum="dfc3878eeb3dd6be6d214e6254545d39adc99bf1"
 cnt="make nsss skalibs"
 cys="execline nsss skalibs"

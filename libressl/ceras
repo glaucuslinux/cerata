@@ -6,5 +6,5 @@
 nom="libressl"
 ver="3.7.0"
 url="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.0.tar.gz"
-sum="40ac815c4974e9976791b118fe7dacc5"
+sum="8ba82ec89aa882d4da6190640db9777b470eb6cd"
 cnt="make"

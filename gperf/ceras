@@ -6,5 +6,5 @@
 nom="gperf"
 ver="3.1"
 url="https://ftpmirror.gnu.org/gperf/gperf-3.1.tar.gz"
-sum="2f8aebe1c11aa6bd68dee612fbf037d9"
+sum="e3c0618c2d2e5586eda9498c867d5e4858a3b0e2"
 cnt="make"

@@ -6,5 +6,5 @@
 nom="bzip2"
 ver="1.0.8"
 url="https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
-sum="212672e26785617097cbaab8250b0c0a"
+sum="bf7badf7e248e0ecf465d33c2f5aeec774209227"
 cnt="make"

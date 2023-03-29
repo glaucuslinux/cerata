@@ -6,5 +6,5 @@
 nom="dash"
 ver="0.5.12"
 url="http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz"
-sum="8ff48be4b09f04c7c02e2985a2482458"
+sum="e15444a93853f693774df003f87d9040ab600a5e"
 cnt="libedit make netbsd-curses"

@@ -6,6 +6,6 @@
 nom="mandoc"
 ver="1.14.6"
 url="https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz"
-sum="9a9a53a8c1fc27216a305a81f23f32af"
+sum="4033a504b005e43a0642e195c1ef49609c65f1c4"
 cnt="make musl-fts netbsd-curses pcre2 zlib-ng"
 cys="less"

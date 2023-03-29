@@ -6,5 +6,5 @@
 nom="liburing"
 ver="2.3"
 url="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.3.tar.gz"
-sum="25d211155e0577825e3e4ec48d7ed7bc"
+sum="240887388272433c85a59c90e5dee56861e7cb45"
 cnt="libucontext make"

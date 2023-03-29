@@ -6,5 +6,5 @@
 nom="gcc"
 ver="12.2.0"
 url="https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.gz"
-sum="a79cabf940c3b60d89b577d88b4e6b49"
+sum="528e27c3c4a0bb9b13ee2a4c53bb1cf048fc1fe4"
 cnt="gmp isl make mpc mpfr zstd"

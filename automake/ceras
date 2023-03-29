@@ -6,6 +6,6 @@
 nom="automake"
 ver="1.16.5"
 url="https://ftpmirror.gnu.org/automake/automake-1.16.5.tar.gz"
-sum="5fc7fcdb13edb59e8cc42001cb90c691"
+sum="efa94f48ba6b058461608cec967194c381d6b600"
 cnt="make"
 cys="autoconf perl"

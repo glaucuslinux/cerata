@@ -6,5 +6,5 @@
 nom="bc"
 ver="6.3.1"
 url="https://github.com/gavinhoward/bc/releases/download/6.3.1/bc-6.3.1.tar.gz"
-sum="b9cfe70cede93f75e55d76b5127c3ec2"
+sum="126370d9f659d29ec0ca2b7cd666ae956bdd9c6f"
 cnt="libedit make netbsd-curses"

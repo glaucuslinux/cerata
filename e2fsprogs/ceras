@@ -6,5 +6,5 @@
 nom="e2fsprogs"
 ver="1.47.0"
 url="https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz"
-sum="ca1ce50fb70e4f22d3e4eaeb19b57e8c"
+sum="bf17ae92c13c09579377520cf364059e24233c96"
 cnt="eudev execline libedit linux-headers make netbsd-curses skalibs util-linux utmps zlib-ng"

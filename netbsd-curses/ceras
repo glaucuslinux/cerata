@@ -6,5 +6,5 @@
 nom="netbsd-curses"
 ver="0.3.2"
 url="https://ftp.barfooze.de/pub/sabotage/tarballs/netbsd-curses-0.3.2.tar.xz"
-sum="b391c6773b9977d9040b784b0d1a2a93"
+sum="ffffe30ed60ef619e727260ec4994f7bf819728e"
 cnt="make"

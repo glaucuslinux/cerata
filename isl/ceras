@@ -6,5 +6,5 @@
 nom="isl"
 ver="0.25"
 url="https://libisl.sourceforge.io/isl-0.25.tar.gz"
-sum="b38ddc4294e02e4f8a26a9afee8ff657"
+sum="64ced0199938791ae903d40b3ab22ef68e360461"
 cnt="make"

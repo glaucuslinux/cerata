@@ -6,5 +6,5 @@
 nom="zlib-ng"
 ver="2.0.6"
 url="https://github.com/zlib-ng/zlib-ng/archive/2.0.6.tar.gz"
-sum="5a30c0508cf7e09387dc05c10d9b2a88"
+sum="2744d01e1fd4383f1f40777b4090e3f5f9955e17"
 cnt="make"

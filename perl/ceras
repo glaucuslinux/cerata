@@ -6,5 +6,5 @@
 nom="perl"
 ver="5.36.0"
 url="https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz"
-sum="9ec98c6ed9cdf818a88093f6f116868b"
+sum="5fa41c8dffd9700f0c8427de7dd19f06b095fa6d"
 cnt="make"

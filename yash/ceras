@@ -6,5 +6,5 @@
 nom="yash"
 ver="2.54"
 url="https://osdn.net/dl/yash/yash-2.54.tar.gz"
-sum="326b47540e455e5e7c70c7fd4bc0223d"
+sum="2d040fffd70183e3835872a0080fd14a4657ee7c"
 cnt="make netbsd-curses"

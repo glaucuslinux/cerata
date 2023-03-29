@@ -6,5 +6,5 @@
 nom="findutils"
 ver="4.9.0"
 url="https://ftpmirror.gnu.org/findutils/findutils-4.9.0.tar.xz"
-sum="f4650fbf65f35d261429e296651c25d1"
+sum="2a7830f1c25c3c7179150084748099c3c31f819b"
 cnt="make"

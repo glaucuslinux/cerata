@@ -6,5 +6,5 @@
 nom="procps-ng"
 ver="4.0.3"
 url="https://gitlab.com/procps-ng/procps/-/archive/v4.0.3/procps-v4.0.3.tar.gz"
-sum="3cc1b8ec5a7ddfa63f03cf39711137d5"
+sum="b53054c871e36bfb8817af0fbf6a219ea17789e7"
 cnt="execline make netbsd-curses skalibs utmps"

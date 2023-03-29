@@ -6,6 +6,6 @@
 nom="s6"
 ver="2.11.3.0"
 url="https://skarnet.org/software/s6/s6-2.11.3.0.tar.gz"
-sum="054158194fb383da8dab44dd5595b84d"
+sum="59ea6767720594d0078b4c94be3f06293d5016be"
 cnt="execline make nsss skalibs"
 cys="execline nsss skalibs"

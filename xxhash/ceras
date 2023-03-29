@@ -6,5 +6,5 @@
 nom="xxhash"
 ver="0.8.1"
 url="https://github.com/Cyan4973/xxHash/archive/v0.8.1.tar.gz"
-sum="1c568c4ce14852eba32b5d7ddb69575b"
+sum="a92c9a9cfbef23e52f2d1b581cb9926c680d261d"
 cnt="make"

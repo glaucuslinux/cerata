@@ -6,5 +6,5 @@
 nom="grub"
 ver="2.06"
 url="https://ftpmirror.gnu.org/grub/grub-2.06.tar.gz"
-sum="d37fbd62a0480609b5d00d9a9f94ccd0"
+sum="6c797b173ef92a8afa2010d98d3ba1f54410ff06"
 cnt="make"

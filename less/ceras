@@ -6,5 +6,5 @@
 nom="less"
 ver="608"
 url="https://www.greenwoodsoftware.com/less/less-608.tar.gz"
-sum="e811953f714e7a31ed3d2f4a2d509405"
+sum="94493a15bed80574cefc30153a10ceebab6824a0"
 cnt="make netbsd-curses pcre2"

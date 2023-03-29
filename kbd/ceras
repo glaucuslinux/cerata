@@ -6,5 +6,5 @@
 nom="kbd"
 ver="2.5.1"
 url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.5.1.tar.gz"
-sum="e931d23bb1bd4332ada6f26d73f6b030"
+sum="415d4752c7876c29a22a26569b111b90abe0f397"
 cnt="make"
