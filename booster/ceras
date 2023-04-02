@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="booster"
-ver="0.9"
-url="https://github.com/anatol/booster/archive/0.9.tar.gz"
-sum="e1135b2cb68caa34f3d2642d4a5fe6d0b196dade6f83467e9d4dd9cfd81b31f2"
+ver="0.10"
+url="https://github.com/anatol/booster/archive/0.10.tar.gz"
+sum="fbbc2a1db76a6bda0dc9cc5d1975c7a175f5b9fdf2f059e3b1a724c2d2684539"
