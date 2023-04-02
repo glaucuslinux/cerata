@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="make"
-ver="4.4"
-url="https://ftpmirror.gnu.org/make/make-4.4.tar.gz"
-sum="1a0e5353205e106bd9b3c0f4a5f37ee1156a1e1c8feb771d1b4842c216612cba"
+ver="4.4.1"
+url="https://ftpmirror.gnu.org/make/make-4.4.1.tar.gz"
+sum="a7d8aee97b7e9a525ef561afa84eea0d929f246e3aafa420231c0602151cf9eb"
