@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="ccache"
-ver="4.7.4"
-url="https://github.com/ccache/ccache/releases/download/v4.7.4/ccache-4.7.4.tar.gz"
-sum="b323fe2439d6a4cb16b8d07b28f6dae816a9d276f895a7069eb210a74f4fc677"
+ver="4.7.5"
+url="https://github.com/ccache/ccache/releases/download/v4.7.5/ccache-4.7.5.tar.gz"
+sum="9ceef472f926c8a5a68c32830a0aad1b0dae5a85ec4b4e21d4f5af498c02ddc0"
 cnt="cmake samurai"
