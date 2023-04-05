@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -117,7 +117,7 @@
+@@ -118,7 +118,7 @@
  old_cflags="$CFLAGS"
  OBJC='$(OBJZ)'
  PIC_OBJC='$(PIC_OBJZ)'
@@ -9,7 +9,7 @@
  UNINSTALLTARGETS="uninstall-shared uninstall-static"
  
  TEST="teststatic"
-@@ -693,7 +693,7 @@
+@@ -681,7 +681,7 @@
    UNINSTALLTARGETS=uninstall-static
    echo Building static library $STATICLIB version $VER with $CC. | tee -a configure.log
  else
