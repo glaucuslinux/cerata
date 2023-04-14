@@ -60,7 +60,7 @@ install() {
   $RM $CRSD/usr/lib/libssl.la
   $RM $CRSD/usr/lib/libtls.la
 
-  $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.50.0.1
-  $CHMOD 0755 $CRSD/usr/lib/libssl.so.53.0.1
-  $CHMOD 0755 $CRSD/usr/lib/libtls.so.26.0.1
+  $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.50.0.2
+  $CHMOD 0755 $CRSD/usr/lib/libssl.so.53.0.2
+  $CHMOD 0755 $CRSD/usr/lib/libtls.so.26.0.2
 }
