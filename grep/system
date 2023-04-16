@@ -12,7 +12,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub build-aux
 
   $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
-  $PATCH -p1 -i $CERD/$nom/patches/clear/v1-0001-Make-zap_nuls-vectorizable.patch
 }
 
 configure() {
