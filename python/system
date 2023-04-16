@@ -13,9 +13,10 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
 
   # Force use the system copy of various libraries
-  $RM Modules/expat
   $RM Modules/_ctypes/darwin
   $RM Modules/_ctypes/libffi_osx
+  $RM Modules/_decimal/libmpdec
+  $RM Modules/expat
 }
 
 configure() {
@@ -44,6 +45,7 @@ configure() {
     --with-lto \
     --with-system-expat \
     --with-system-ffi \
+    --with-system-libmpdec \
     --without-doc-strings \
     --with-pymalloc \
     --with-ensurepip
@@ -62,7 +64,7 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install
 
-  $LN pip3.10 $SCER/$nom/sac/usr/bin/pip3
+  $LN pip3.11 $SCER/$nom/sac/usr/bin/pip3
   $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
   $LN ${nom}3-config $SCER/$nom/sac/usr/bin/$nom-config
 }
