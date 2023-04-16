@@ -11,9 +11,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
 
-  $RSYNC $CERD/musl/error.h lib
-  $RSYNC $CERD/musl/error.h src
-
   $PATCH -p1 -i $CERD/elfutils/patches/alpine/fix-aarch64_fregs.patch
   $PATCH -p1 -i $CERD/elfutils/patches/alpine/fix-uninitialized.patch
   $PATCH -p1 -i $CERD/elfutils/patches/alpine/musl-macros.patch
