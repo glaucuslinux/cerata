@@ -1,0 +1,13 @@
+--- lib/utils.c
++++ lib/utils.c
+@@ -877,8 +877,8 @@
+ 
+ int inet_addr_match(const inet_prefix *a, const inet_prefix *b, int bits)
+ {
+-	const __u32 *a1 = a->data;
+-	const __u32 *a2 = b->data;
++	const __u32 *a1 = (__u32*)a->data;
++	const __u32 *a2 = (__u32*)b->data;
+ 	int words = bits >> 0x05;
+ 
+ 	bits &= 0x1f;
