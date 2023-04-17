@@ -10,6 +10,8 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/missing-sep.patch
 
   $PATCH -p1 -i $CERD/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/opensuse/add-explicit-typecast-to-avoid-gcc-warning.patch
 }
 
 configure() {
