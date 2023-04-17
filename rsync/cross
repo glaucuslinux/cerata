@@ -33,7 +33,6 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-debug \
-    --with-rrsync \
     --without-included-popt \
     --without-included-zlib
 }
@@ -51,5 +50,9 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  $RSYNC support/r$nom $CRSD/usr/bin
+
   $RSYNC $CERD/$nom/${nom}d.conf $CRSD/etc
+
+  $RSYNC r$nom.1 $CRSD/usr/share/man/man1
 }
