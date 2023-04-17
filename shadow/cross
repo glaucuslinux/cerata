@@ -53,8 +53,7 @@ configure() {
     --with-yescrypt \
     --without-nscd \
     --with-group-name-max-length=32 \
-    --without-su \
-    --with-fcaps
+    --without-su
 }
 
 build() {
