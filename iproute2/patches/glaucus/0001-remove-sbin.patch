@@ -11,7 +11,7 @@
  	rm -f $(BROBJ) bridge
 --- dcb/Makefile
 +++ dcb/Makefile
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  
  install: all
  	for i in $(TARGETS); \
@@ -44,7 +44,7 @@
  $TC qdisc add dev ifb0 parent 1:1 handle 10: sfq
 --- genl/Makefile
 +++ genl/Makefile
-@@ -24,7 +24,7 @@
+@@ -22,7 +22,7 @@
  	$(QUIET_LINK)$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
  
  install: all
@@ -52,7 +52,7 @@
 +	install -m 0755 genl $(DESTDIR)$(BINDIR)
  
  clean:
- 	rm -f $(GENLOBJ) $(GENLLIB) genl
+ 	rm -f $(GENLOBJ) genl
 --- ip/Makefile
 +++ ip/Makefile
 @@ -32,8 +32,8 @@
@@ -114,7 +114,7 @@
  clean:
 --- tc/Makefile
 +++ tc/Makefile
-@@ -148,7 +148,7 @@
+@@ -147,7 +147,7 @@
  
  install: all
  	mkdir -p $(MODDESTDIR)
