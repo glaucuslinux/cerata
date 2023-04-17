@@ -4,25 +4,43 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $MKDIR $XBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
-  :
+  cmake \
+    -B $XBLD/$nom \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_BINDIR=/usr/bin \
+    -DCMAKE_INSTALL_DATADIR=/usr/share \
+    -DCMAKE_INSTALL_DATAROOTDIR=/usr/share \
+    -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/$nom \
+    -DCMAKE_INSTALL_INCLUDEDIR=/usr/include \
+    -DCMAKE_INSTALL_INFODIR=/usr/share/info \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib \
+    -DCMAKE_INSTALL_LOCALEDIR=/usr/share/locale \
+    -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+    -DCMAKE_INSTALL_MANDIR=/usr/share/man \
+    -DCMAKE_INSTALL_OLDINCLUDEDIR=/usr/include \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_RUNSTATEDIR=/run \
+    -DCMAKE_INSTALL_SBINDIR=/usr/bin \
+    -DCMAKE_INSTALL_SHAREDSTATEDIR=/var/lib \
+    -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+    -DMOLD_LTO=ON \
+    -DMOLD_USE_MOLD=ON \
+    -DMOLD_USE_SYSTEM_MIMALLOC=ON \
+    -DMOLD_USE_SYSTEM_TBB=ON \
+    -G Ninja
 }
 
 build() {
-  # This ceras does not support parallel build!
-  MAKEFLAGS=-j1 \
-  $MAKE \
-    PREFIX=/usr \
-    BINDIR=/usr/bin \
-    LIBDIR=/usr/lib \
-    LIBEXECDIR=/usr/lib/$nom \
-    LTO=1 \
-    SYSTEM_MIMALLOC=1 \
-    SYSTEM_TBB=1
+  samu \
+    -C $XBLD/$nom
 }
 
 check() {
@@ -30,14 +48,8 @@ check() {
 }
 
 install() {
-  $MAKE \
-    DESTDIR=$CRSD \
-    PREFIX=/usr \
-    BINDIR=/usr/bin \
-    LIBDIR=/usr/lib \
-    LIBEXECDIR=/usr/lib/$nom \
-    LTO=1 \
-    SYSTEM_MIMALLOC=1 \
-    SYSTEM_TBB=1 \
-    install
+  DESTDIR=$CRSD \
+  samu \
+    -C $XBLD/$nom \
+    install/strip
 }

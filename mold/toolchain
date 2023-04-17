@@ -1,0 +1,52 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $MKDIR $TBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
+}
+
+configure() {
+  cmake \
+    -B $TBLD/$nom \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_BINDIR=$TLCD/usr/bin \
+    -DCMAKE_INSTALL_DATADIR=$TLCD/usr/share \
+    -DCMAKE_INSTALL_DATAROOTDIR=$TLCD/usr/share \
+    -DCMAKE_INSTALL_DOCDIR=$TLCD/usr/share/doc/$nom \
+    -DCMAKE_INSTALL_INCLUDEDIR=$TLCD/usr/include \
+    -DCMAKE_INSTALL_INFODIR=$TLCD/usr/share/info \
+    -DCMAKE_INSTALL_LIBDIR=$TLCD/usr/lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=$TLCD/usr/lib \
+    -DCMAKE_INSTALL_LOCALEDIR=$TLCD/usr/share/locale \
+    -DCMAKE_INSTALL_LOCALSTATEDIR=$TLCD/var \
+    -DCMAKE_INSTALL_MANDIR=$TLCD/usr/share/man \
+    -DCMAKE_INSTALL_OLDINCLUDEDIR=$TLCD/usr/include \
+    -DCMAKE_INSTALL_PREFIX=$TLCD/usr \
+    -DCMAKE_INSTALL_RUNSTATEDIR=$TLCD/run \
+    -DCMAKE_INSTALL_SBINDIR=$TLCD/usr/bin \
+    -DCMAKE_INSTALL_SHAREDSTATEDIR=$TLCD/var/lib \
+    -DCMAKE_INSTALL_SYSCONFDIR=$TLCD/etc \
+    -DMOLD_LTO=ON \
+    -DMOLD_USE_MOLD=ON \
+    -G Ninja
+}
+
+build() {
+  samu \
+    -C $TBLD/$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  samu \
+    -C $TBLD/$nom \
+    install/strip
+}
