@@ -130,4 +130,6 @@ install() {
 
   $MKDIR $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
   $MV $SCER/$nom/sac/usr/lib/libstdc++.so.6.0.30-gdb.py $SCER/$nom/sac/usr/share/gdb/auto-load/usr/lib
+
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/g++.1
 }

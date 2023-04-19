@@ -137,4 +137,6 @@ install() {
 
   # Compatibility symlink
   $LN ../bin/$TGT-cpp $TLCD/usr/lib/$TGT-cpp
+
+  $LN $TGT-$nom.1 $TLCD/usr/share/man/man1/$TGT-g++.1
 }
