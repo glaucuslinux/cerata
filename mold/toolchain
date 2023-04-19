@@ -33,6 +33,7 @@ configure() {
     -DCMAKE_INSTALL_SYSCONFDIR=$TLCD/etc \
     -DMOLD_LTO=ON \
     -DMOLD_USE_MOLD=ON \
+    -DMOLD_USE_SYSTEM_MIMALLOC=ON \
     -G Ninja
 }
 
@@ -49,4 +50,6 @@ install() {
   samu \
     -C $TBLD/$nom \
     install/strip
+
+  $LN ../../bin/ld.$nom $TLCD/usr/$TGT/bin/ld.$nom
 }
