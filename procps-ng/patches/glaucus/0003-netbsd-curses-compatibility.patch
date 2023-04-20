@@ -1,6 +1,6 @@
---- watch.c
-+++ watch.c
-@@ -52,7 +52,7 @@
+--- src/watch.c
++++ src/watch.c
+@@ -53,7 +53,7 @@
  # define _XOPEN_SOURCE_EXTENDED 1
  # include <wchar.h>
  # include <wctype.h>
@@ -9,7 +9,7 @@
  #else
  # include <ncurses.h>
  #endif	/* WITH_WATCH8BIT */
-@@ -698,7 +698,7 @@
+@@ -712,7 +712,7 @@
  #ifdef WITH_WATCH8BIT
  				cchar_t oldc;
  				in_wch(&oldc);
@@ -18,7 +18,16 @@
  #else
  				chtype oldch = inch();
  				unsigned char oldc = oldch & A_CHARTEXT;
-@@ -710,10 +710,10 @@
+@@ -724,7 +724,7 @@
+ #ifdef WITH_WATCH8BIT
+ 				cchar_t oldc;
+ 				in_wch(&oldc);
+-				if ((wchar_t) c == oldc.chars[0])
++				if ((wchar_t) c == oldc.vals[0])
+ 					unchanged_buffer++;
+ #else
+ 				chtype oldch = inch();
+@@ -738,10 +738,10 @@
  				cchar_t oldc;
  				in_wch(&oldc);
  				attr = !first_screen
