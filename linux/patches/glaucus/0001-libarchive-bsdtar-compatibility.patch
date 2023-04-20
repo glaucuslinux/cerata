@@ -1,6 +1,6 @@
 --- kernel/gen_kheaders.sh
 +++ kernel/gen_kheaders.sh
-@@ -85,7 +85,7 @@
+@@ -87,7 +87,7 @@
  # pre-sorted, as --sort=name might not be available.
  find $cpio_dir -printf "./%P\n" | LC_ALL=C sort | \
      tar "${KBUILD_BUILD_TIMESTAMP:+--mtime=$KBUILD_BUILD_TIMESTAMP}" \

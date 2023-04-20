@@ -18,7 +18,6 @@ prepare() {
     $PATCH -p1 -i $CERD/$nom/patches/clear/0108-smpboot-reuse-timer-calibration.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0109-initialize-ata-before-graphics.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0119-use-lfence-instead-of-rep-and-nop.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0121-locking-rwsem-spin-faster.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0122-ata-libahci-ignore-staggered-spin-up.patch
