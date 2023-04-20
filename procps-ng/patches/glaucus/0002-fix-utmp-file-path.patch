@@ -1,194 +1,6 @@
---- contrib/utmp.c
-+++ contrib/utmp.c
-@@ -37,7 +37,7 @@
- 
- int main (int argc, char **argv) {
- 
--  FILE *ut; /* /var/run/utmp */
-+  FILE *ut; /* /run/utmps/utmp */
-   struct utmp uts; /* utmp record */
-   char user[UT_NAMESIZE + 1];
-   char host[17];
---- man-po/de/uptime.1
-+++ man-po/de/uptime.1
-@@ -46,7 +46,7 @@
- Versionsinformationen anzeigen und das Programm beenden.
- .SH DATEIEN
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- Informationen darüber, wer aktuell angemeldet ist
- .TP 
- \fI/proc\fP
---- man-po/de.po
-+++ man-po/de.po
-@@ -1681,8 +1681,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/fr/uptime.1
-+++ man-po/fr/uptime.1
-@@ -43,7 +43,7 @@
- Afficher la version du logiciel et quitter
- .SH FICHIERS
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- informations concernant les utilisateurs présents sur le système
- .TP 
- \fI/proc\fP
---- man-po/fr.po
-+++ man-po/fr.po
-@@ -1676,8 +1676,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/pl/uptime.1
-+++ man-po/pl/uptime.1
-@@ -40,7 +40,7 @@
- wyświetlenie informacji o wersji i zakończenie
- .SH PLIKI
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- informacja o tym, kto jest obecnie zalogowany
- .TP 
- \fI/proc\fP
---- man-po/pl.po
-+++ man-po/pl.po
-@@ -1657,8 +1657,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/procps-man.pot
-+++ man-po/procps-man.pot
-@@ -1452,7 +1452,7 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
- msgstr ""
- 
- #. type: Plain text
---- man-po/pt_BR/uptime.1
-+++ man-po/pt_BR/uptime.1
-@@ -42,7 +42,7 @@
- exibe informação da versão e sai
- .SH ARQUIVOS
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- informações sobre quem está atualmente conectado
- .TP 
- \fI/proc\fP
---- man-po/pt_BR.po
-+++ man-po/pt_BR.po
-@@ -1648,8 +1648,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/sv/uptime.1
-+++ man-po/sv/uptime.1
-@@ -40,7 +40,7 @@
- visa versionsinformation och avsluta
- .SH FILER
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- information om vem som är inloggad för närvarande
- .TP 
- \fI/proc\fP
---- man-po/sv.po
-+++ man-po/sv.po
-@@ -1648,8 +1648,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/uk/uptime.1
-+++ man-po/uk/uptime.1
-@@ -44,7 +44,7 @@
- вивести дані щодо версії і завершити роботу
- .SH ФАЙЛИ
- .TP 
--\fI/var/run/utmp\fP
-+\fI/run/utmps/utmp\fP
- Дані щодо тих, хто зараз працює у системі.
- .TP 
- \fI/proc\fP
---- man-po/uk.po
-+++ man-po/uk.po
-@@ -1673,8 +1673,8 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
--msgstr "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
-+msgstr "I</run/utmps/utmp>"
- 
- #. type: Plain text
- #: ../uptime.1:43
---- man-po/zh_CN.po
-+++ man-po/zh_CN.po
-@@ -1452,7 +1452,7 @@
- #. type: TP
- #: ../uptime.1:40
- #, no-wrap
--msgid "I</var/run/utmp>"
-+msgid "I</run/utmps/utmp>"
- msgstr ""
- 
- #. type: Plain text
---- NEWS
-+++ NEWS
-@@ -584,7 +584,7 @@
- top: multiple -p options work again
- top: fixed 4 GB wrap-around
- ps: has a set of tests to ensure correctness
--man page: /var/run/utmp, not /etc/utmp           #206583
-+man page: /run/utmps/utmp, not /etc/utmp           #206583
- required flags moved out of CFLAGS               #205429
- RPM generation handles /lib64
- WCHAN skips leading '.'
---- uptime.1
-+++ uptime.1
-@@ -38,7 +38,7 @@
+--- man/uptime.1
++++ man/uptime.1
+@@ -48,7 +48,7 @@
  display version information and exit
  .SH FILES
  .TP
@@ -197,9 +9,9 @@
  information about who is currently logged on
  .TP
  .I /proc
---- w.1
-+++ w.1
-@@ -73,7 +73,7 @@
+--- man/w.1
++++ man/w.1
+@@ -87,7 +87,7 @@
  Override the default width of the from column.  Defaults to 16.
  .SH FILES
  .TP
@@ -208,3 +20,136 @@
  information about who is currently logged on
  .TP
  .I /proc
+--- NEWS
++++ NEWS
+@@ -637,7 +637,7 @@
+ top: multiple -p options work again
+ top: fixed 4 GB wrap-around
+ ps: has a set of tests to ensure correctness
+-man page: /var/run/utmp, not /etc/utmp           #206583
++man page: /run/utmps/utmp, not /etc/utmp           #206583
+ required flags moved out of CFLAGS               #205429
+ RPM generation handles /lib64
+ WCHAN skips leading '.'
+--- po-man/de.po
++++ po-man/de.po
+@@ -3459,8 +3459,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+@@ -18919,8 +18919,8 @@
+ #~ msgid "FILES        "
+ #~ msgstr "DATEIEN"
+ 
+-#~ msgid "I</var/run/utmp> "
+-#~ msgstr "I</var/run/utmp> "
++#~ msgid "I</run/utmps/utmp> "
++#~ msgstr "I</run/utmps/utmp> "
+ 
+ #~ msgid "information about who is currently logged on "
+ #~ msgstr "Informationen darüber, wer aktuell angemeldet ist"
+--- po-man/fr.po
++++ po-man/fr.po
+@@ -3563,8 +3563,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/pl.po
++++ po-man/pl.po
+@@ -3355,8 +3355,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/procps-man.pot
++++ po-man/procps-man.pot
+@@ -3075,7 +3075,7 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
+--- po-man/pt_BR.po
++++ po-man/pt_BR.po
+@@ -3542,8 +3542,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/sv.po
++++ po-man/sv.po
+@@ -3395,8 +3395,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/uk.po
++++ po-man/uk.po
+@@ -3456,8 +3456,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+@@ -20848,8 +20848,8 @@
+ #~ msgid "FILES        "
+ #~ msgstr "ФАЙЛИ    "
+ 
+-#~ msgid "I</var/run/utmp> "
+-#~ msgstr "I</var/run/utmp> "
++#~ msgid "I</run/utmps/utmp> "
++#~ msgstr "I</run/utmps/utmp> "
+ 
+ #~ msgid "information about who is currently logged on "
+ #~ msgstr "Дані щодо тих, хто зараз працює у системі. "
+--- po-man/zh_CN.po
++++ po-man/zh_CN.po
+@@ -3082,7 +3082,7 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
