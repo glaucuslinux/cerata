@@ -5,6 +5,6 @@
 
 nom="radula"
 ver="git"
-cmt="19d57d5"
+cmt="826e5e8"
 url="https://github.com/glaucuslinux/radula"
-cys="dash libarchive rsync toybox zstd"
+cys="axel dash libarchive rsync toybox zstd"
