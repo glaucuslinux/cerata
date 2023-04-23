@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-v$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  $AUTORECONF
+  ./autogen.sh
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.rpath .
