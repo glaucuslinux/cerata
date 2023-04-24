@@ -32,6 +32,7 @@ configure() {
     -DCMAKE_INSTALL_SYSCONFDIR=/etc \
     -DMI_BUILD_STATIC=OFF \
     -DMI_BUILD_TESTS=OFF \
+    -DMI_INSTALL_TOPLEVEL=ON \
     -G Ninja
 }
 
