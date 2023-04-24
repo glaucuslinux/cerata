@@ -31,7 +31,6 @@ configure() {
     -DCMAKE_INSTALL_SHAREDSTATEDIR=/var/lib \
     -DCMAKE_INSTALL_SYSCONFDIR=/etc \
     -DMI_BUILD_STATIC=OFF \
-    -DMI_BUILD_OBJECT=OFF \
     -DMI_BUILD_TESTS=OFF \
     -G Ninja
 }
