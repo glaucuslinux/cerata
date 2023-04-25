@@ -27,12 +27,12 @@ prepare() {
     $PATCH -p1 -i $CERD/$nom/patches/clear/0130-itmt2-ADL-fixes.patch
     $PATCH -p1 -i $CERD/$nom/patches/clear/0131-add-a-per-cpu-minimum-high-watermark-an-tune-batch-s.patch
 
-    $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
-
-    $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
-
     $PATCH -p1 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.17+.patch
   fi
+
+  $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
 
   $MKDIR $SBLD/$nom
 }
