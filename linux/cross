@@ -35,7 +35,7 @@ prepare() {
   fi
 
   $MKDIR $XBLD/$nom
-# }
+}
 
 configure() {
   if [ $ARCH = x86-64 ]; then
