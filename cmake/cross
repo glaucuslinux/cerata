@@ -17,7 +17,6 @@ configure() {
     --mandir=/share/man \
     --parallel=2 \
     --generator=Ninja \
-    --enable-ccache \
     --system-libs
 }
 
