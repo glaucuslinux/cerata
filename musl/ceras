@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="musl"
-ver="1.2.3"
-url="https://musl.libc.org/releases/musl-1.2.3.tar.gz"
-sum="dd4d86b7f568ec1650d473d79697ea5df7a7b1a7fb71859a33f6e3161e62aecc"
+ver="1.2.4"
+url="https://musl.libc.org/releases/musl-1.2.4.tar.gz"
+sum="fc33d5ebf5812ddc4a409b5e5abe620e216ad0378273fdafb73795d52e1722c6"
 cnt="make"
