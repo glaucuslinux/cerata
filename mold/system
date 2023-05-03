@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
+  $MKDIR $SBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
@@ -13,7 +13,7 @@ configure() {
   # mold requires `-fexceptions`
   CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   cmake \
-    -B $XBLD/$nom \
+    -B $SBLD/$nom \
     -DBUILD_TESTING=OFF \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_BINDIR=/usr/bin \
@@ -41,7 +41,7 @@ configure() {
 
 build() {
   samu \
-    -C $XBLD/$nom
+    -C $SBLD/$nom
 }
 
 check() {
@@ -49,8 +49,8 @@ check() {
 }
 
 install() {
-  DESTDIR=$CRSD \
+  DESTDIR=$SCER/$nom/sac \
   samu \
-    -C $XBLD/$nom \
+    -C $SBLD/$nom \
     install/strip
 }
