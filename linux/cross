@@ -41,34 +41,26 @@ configure() {
   if [ $ARCH = x86-64 ]; then
     $RSYNC $CERD/$nom/glaucus.config.$ARCH $XBLD/$nom/.config
 
-    # `mold` linker is not supported
     $MAKE \
       O=$XBLD/$nom \
-      LD=$TGT-ld.bfd \
       ARCH=$LARCH \
       oldconfig
 
-    # `mold` linker is not supported
     $MAKE \
       O=$XBLD/$nom \
-      LD=$TGT-ld.bfd \
       ARCH=$LARCH \
       prepare
   else
-    # `mold` linker is not supported
     $MAKE \
       O=$XBLD/$nom \
-      LD=$TGT-ld.bfd \
       ARCH=$LARCH \
       ${LCARCH}defconfig
   fi
 }
 
 build() {
-    # `mold` linker is not supported
   $MAKE \
     O=$XBLD/$nom \
-    LD=$TGT-ld.bfd \
     ARCH=$LARCH
 }
 
