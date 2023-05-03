@@ -80,6 +80,7 @@ install() {
     install-strip-gas \
     install-strip-ld
 
+  # This symlink will be updated by `mold`
   $LN $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
 
   $LN ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
