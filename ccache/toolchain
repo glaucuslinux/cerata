@@ -1,0 +1,65 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $MKDIR $TBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
+}
+
+configure() {
+  cmake \
+    -B $TBLD/$nom \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_BINDIR=$TLCD/usr/bin \
+    -DCMAKE_INSTALL_DATADIR=$TLCD/usr/share \
+    -DCMAKE_INSTALL_DATAROOTDIR=$TLCD/usr/share \
+    -DCMAKE_INSTALL_DOCDIR=$TLCD/usr/share/doc/$nom \
+    -DCMAKE_INSTALL_INCLUDEDIR=$TLCD/usr/include \
+    -DCMAKE_INSTALL_INFODIR=$TLCD/usr/share/info \
+    -DCMAKE_INSTALL_LIBDIR=$TLCD/usr/lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=$TLCD/usr/lib/$nom \
+    -DCMAKE_INSTALL_LOCALEDIR=$TLCD/usr/share/locale \
+    -DCMAKE_INSTALL_LOCALSTATEDIR=$TLCD/var \
+    -DCMAKE_INSTALL_MANDIR=$TLCD/usr/share/man \
+    -DCMAKE_INSTALL_OLDINCLUDEDIR=$TLCD/usr/include \
+    -DCMAKE_INSTALL_PREFIX=$TLCD/usr \
+    -DCMAKE_INSTALL_RUNSTATEDIR=$TLCD/run \
+    -DCMAKE_INSTALL_SBINDIR=$TLCD/usr/bin \
+    -DCMAKE_INSTALL_SHAREDSTATEDIR=$TLCD/var/lib \
+    -DCMAKE_INSTALL_SYSCONFDIR=$TLCD/etc \
+    -DENABLE_IPO=ON \
+    -DENABLE_TESTING=OFF \
+    -DHIREDIS_FROM_INTERNET=OFF \
+    -DREDIS_STORAGE_BACKEND=OFF \
+    -DZSTD_FROM_INTERNET=OFF \
+    -G Ninja
+}
+
+build() {
+  samu \
+    -C $TBLD/$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  samu \
+    -C $TBLD/$nom \
+    install/strip
+
+  # Hardcoded `gcc` version number
+  $MKDIR $TLCD/usr/lib/$nom
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-c++
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-c89
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-c99
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-cc
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-cpp
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-g++
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-gcc
+  $LN ../../bin/$nom $TLCD/usr/lib/$nom/$TGT-gcc-12.2.0
+}
