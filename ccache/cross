@@ -64,7 +64,7 @@ install() {
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/cpp
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/g++
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/gcc
-  $LN ../../bin/$nom $CRSD/usr/lib/$nom/gcc-12.2.0
+  $LN ../../bin/$nom $CRSD/usr/lib/$nom/gcc-13.1.0
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-c++
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-c89
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-c99
@@ -72,5 +72,5 @@ install() {
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-cpp
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-g++
   $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-gcc
-  $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-gcc-12.2.0
+  $LN ../../bin/$nom $CRSD/usr/lib/$nom/$TGT-gcc-13.1.0
 }
