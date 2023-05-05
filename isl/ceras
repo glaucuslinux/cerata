@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="isl"
-ver="0.26"
-url="https://libisl.sourceforge.io/isl-0.26.tar.gz"
-sum="0633bd70a80452ea608244d711c8bb6cebf4b2b507fbc441faea0948809f6631"
+ver="0.25"
+url="https://libisl.sourceforge.io/isl-0.25.tar.gz"
+sum="c1d0fef5d75a72f2ba0e9e42c13a6e09673460ffa3be4f785888a5c5ca7a1371"
 cnt="make"
