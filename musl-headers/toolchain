@@ -12,8 +12,6 @@ prepare() {
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-lastlog.patch
   $PATCH -p0 -i $CERD/musl/patches/glaucus/0002-fix-paths.patch
 
-  [ $ARCH = x86-64 ] && $PATCH -p1 -i $CERD/musl/patches/sabotage/memcpy.patch
-
   # Remove upstream patches in following release
   $PATCH -p1 -i $CERD/musl/patches/upstream/0001-relr.patch
   $PATCH -p1 -i $CERD/musl/patches/upstream/0002-relr.patch
