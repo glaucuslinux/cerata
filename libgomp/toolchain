@@ -1,0 +1,29 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  cd $TBLD/gcc
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    all-target-$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    install-strip-target-$nom
+
+  # Remove libtool archive (.la) file
+  $RM $TLCD/usr/lib/$nom.la
+}
