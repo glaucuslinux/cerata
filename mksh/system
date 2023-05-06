@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
-  cd $XBLD/$nom
+  $MKDIR $SBLD/$nom
+  cd $SBLD/$nom
 }
 
 configure() {
@@ -22,7 +22,7 @@ check() {
 }
 
 install() {
-  $RSYNC $nom $CRSD/usr/bin
-  $LN $nom $CRSD/usr/bin/ksh
-  $LN $nom $CRSD/usr/bin/rksh
+  $RSYNC $nom $SCER/$nom/sac/usr/bin
+  $LN $nom $SCER/$nom/sac/usr/bin/ksh
+  $LN $nom $SCER/$nom/sac/usr/bin/rksh
 }
