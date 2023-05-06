@@ -43,7 +43,7 @@ configure() {
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
+    --sysconfdir=/etc/$nom \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
     --runstatedir=/run \
