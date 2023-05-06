@@ -18,7 +18,7 @@ configure() {
 }
 
 build() {
-  # This ceras does not support parallel build!
+  # `om4` does not support parallel build!
   $MAKE \
     -j1
 }
