@@ -86,7 +86,7 @@ configure() {
     --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
     --with-sysroot=$CRSD \
-    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
     --with-system-zlib \
