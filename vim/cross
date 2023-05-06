@@ -64,8 +64,8 @@ configure() {
     --disable-gpm \
     --disable-sysmouse \
     --disable-nls \
-    --with-modified-by="glaucus $ARCH $(date +%d%m%Y)" \
-    --with-compiledby="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-modified-by="glaucus $ARCH $(date +%Y%m%d)" \
+    --with-compiledby="glaucus $ARCH $(date +%Y%m%d)" \
     --without-x \
     --with-tlib=ncursesw
 }
