@@ -39,7 +39,7 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls \
-    --with-packager="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-packager="glaucus $ARCH $(date +%Y%m%d)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
