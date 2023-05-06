@@ -15,7 +15,7 @@ configure() {
 }
 
 build() {
-  # This ceras does not support parallel build!
+  # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
   $MAKE \
     DESTDIR=$CRSD \
