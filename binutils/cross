@@ -58,7 +58,7 @@ configure() {
     --disable-gprofng \
     --with-mmap \
     --with-lib-path=/usr/lib \
-    --with-pkgversion="glaucus $ARCH $(date +%d%m%Y)" \
+    --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
     --with-system-zlib
