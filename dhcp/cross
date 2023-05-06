@@ -77,7 +77,7 @@ configure() {
 }
 
 build() {
-  # This ceras does not support parallel build!
+  # `dhcp` does not support parallel build!
   MAKEFLAGS=-j1 \
   $MAKE
 }
