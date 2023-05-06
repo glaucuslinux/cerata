@@ -34,8 +34,8 @@ install() {
   $RSYNC $CERD/$nom/hosts $CRSD/etc
   $RSYNC $CERD/$nom/issue $CRSD/etc
   $RSYNC $CERD/$nom/lsb-release $CRSD/etc
-  sed -e "s/^DISTRIB_RELEASE=/&$(date +%d%m%Y)/" \
-    -e "s/^DISTRIB_DESCRIPTION=/&'glaucus $ARCH $(date +%d%m%Y)'/" \
+  sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
+    -e "s/^DISTRIB_DESCRIPTION=/&'glaucus $ARCH $(date +%Y%m%d)'/" \
     -i $CRSD/etc/lsb-release
   $LN ../usr/lib/os-release $CRSD/etc/os-release
   $RSYNC $CERD/$nom/passwd $CRSD/etc
@@ -61,9 +61,9 @@ install() {
 
   # `$CRSD/usr` is already created in toolchain
   $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
-  sed -e "s/^VERSION=/&$(date +%d%m%Y)/" \
-    -e "s/^VERSION_ID=/&$(date +%d%m%Y)/" \
-    -e "s/^PRETTY_NAME=/&'glaucus $ARCH $(date +%d%m%Y)'/" \
+  sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
+    -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $ARCH $(date +%Y%m%d)'/" \
     -i $CRSD/usr/lib/os-release
   $MKDIR $PKG_CONFIG_LIBDIR
   $MKDIR $CRSD/usr/share
