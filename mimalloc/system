@@ -4,14 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
+  $MKDIR $SBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
   cmake \
-    -B $XBLD/$nom \
+    -B $SBLD/$nom \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_BINDIR=/usr/bin \
     -DCMAKE_INSTALL_DATADIR=/usr/share \
@@ -38,7 +38,7 @@ configure() {
 
 build() {
   samu \
-    -C $XBLD/$nom
+    -C $SBLD/$nom
 }
 
 check() {
@@ -46,8 +46,8 @@ check() {
 }
 
 install() {
-  DESTDIR=$CRSD \
+  DESTDIR=$SCER/$nom/sac \
   samu \
-    -C $XBLD/$nom \
+    -C $SBLD/$nom \
     install/strip
 }
