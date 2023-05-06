@@ -43,7 +43,6 @@ prepare() {
 configure() {
   CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 //')" \
   CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-flto=auto -flto-compression-level=19 //' -e 's/-fno-exceptions //' -e 's/ -fvisibility=hidden//')" \
-  libat_cv_have_ifunc=no \
   $XSRC/$nom/configure \
     --build=$BLD \
     --host=$TGT \
@@ -89,7 +88,6 @@ configure() {
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
-    --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \

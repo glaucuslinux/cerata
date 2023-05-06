@@ -38,7 +38,6 @@ prepare() {
 }
 
 configure() {
-  libat_cv_have_ifunc=no \
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$BLD \
@@ -83,7 +82,6 @@ configure() {
     --disable-libstdcxx-pch \
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
-    --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
