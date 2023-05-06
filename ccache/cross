@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  # ccache requires `-fexceptions`
+  # `ccache` requires `-fexceptions`
   CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   cmake \
     -B $XBLD/$nom \
