@@ -12,6 +12,8 @@ prepare() {
 }
 
 configure() {
+  # `ugrep` requires `-fexceptions`
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   ./configure \
     --build=$BLD \
     --host=$TGT \
