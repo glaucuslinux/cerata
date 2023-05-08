@@ -72,6 +72,8 @@ configure() {
     --enable-linker-build-id \
     --disable-libsanitizer \
     --disable-libssp \
+    --enable-default-ssp \
+    --enable-default-pie \
     --disable-bootstrap \
     --disable-symvers \
     --disable-cet \
