@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -31,11 +31,11 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $CRSD/usr/bin/lzip
+  $LN $nom $SCER/$nom/sac/usr/bin/lzip
 
-  $LN $nom.1 $CRSD/usr/share/man/man1/lzip.1
+  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/lzip.1
 }
