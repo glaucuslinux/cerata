@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.rpath .
@@ -21,8 +21,6 @@ prepare() {
 configure() {
   # `--with-openssl` doesn't work with `libressl`
   ./configure \
-    --build=$BLD \
-    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -70,12 +68,12 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/wget
-  $RM $CRSD/usr/bin/${nom}_noinstall
+  $LN $nom $SCER/$nom/sac/usr/bin/wget
+  $RM $SCER/$nom/sac/usr/bin/${nom}_noinstall
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/libwget.la
+  $RM $SCER/$nom/sac/usr/lib/libwget.la
 }
