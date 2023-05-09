@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $XSRC --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom $SSRC --delete
+  cd $SSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 
@@ -37,6 +37,6 @@ install() {
   $MAKE \
     PREFIX=/usr \
     MANPREFIX=/usr/share/man \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install
 }
