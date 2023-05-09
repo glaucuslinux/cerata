@@ -1,0 +1,43 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom $SSRC --delete \
+    --exclude $nom$ver.tar.gz
+  cd $SSRC/$nom
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+check() {
+  :
+}
+
+install() {
+  # Don't run `make install` as it builds and installs unnecessary stuff
+  $LN $SCER/$nom/sac/usr/share/zoneinfo/Asia/Damascus $SCER/$nom/sac/etc/localtime
+
+  zic -b fat -d $SCER/$nom/sac/usr/share/zoneinfo africa antarctica asia australasia \
+    backward backzone etcetera europe factory northamerica southamerica
+  zic -b fat -d $SCER/$nom/sac/usr/share/zoneinfo/posix africa antarctica asia \
+    australasia backward backzone etcetera europe factory northamerica \
+    southamerica
+  zic -b fat -d $SCER/$nom/sac/usr/share/zoneinfo/right africa antarctica asia \
+    australasia backward backzone etcetera europe factory northamerica \
+    southamerica -L leapseconds
+
+  zic -d $SCER/$nom/sac/usr/share/zoneinfo -p Asia/Damascus
+
+  $RSYNC iso3166.tab $SCER/$nom/sac/usr/share/zoneinfo
+  $RSYNC leap-seconds.list $SCER/$nom/sac/usr/share/zoneinfo
+  $RSYNC zone1970.tab $SCER/$nom/sac/usr/share/zoneinfo
+  $RSYNC zone.tab $SCER/$nom/sac/usr/share/zoneinfo
+}
