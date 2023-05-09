@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/pread.patch
 
@@ -19,8 +19,6 @@ configure() {
 build() {
   # Disable support for compressed ids
   $MAKE \
-    HOST=$TGT \
-    CROSS_COMPILE=$TGT- \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \
@@ -42,8 +40,6 @@ check() {
 
 install() {
   $MAKE \
-    HOST=$TGT \
-    CROSS_COMPILE=$TGT- \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \
@@ -57,13 +53,13 @@ install() {
     LIBDIR=/usr/lib \
     PCI_IDS=pci.ids \
     PCI_COMPRESSED_IDS=0 \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install \
     install-lib
 
   # Fix library permissions
-  $CHMOD 0755 $CRSD/usr/lib/libpci.so.$ver
+  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libpci.so.$ver
 
   # ids are provided by the `hwdata` ceras
-  $RM $CRSD/usr/share/hwdata
+  $RM $SCER/$nom/sac/usr/share/hwdata
 }
