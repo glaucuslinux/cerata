@@ -1,0 +1,67 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess build/autoconf
+  $RSYNC $CERD/binutils/config.rpath build/autoconf
+  $RSYNC $CERD/binutils/config.sub build/autoconf
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
+}
+
+configure() {
+  ./configure \
+    --build=$BLD \
+    --host=$TGT \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
+    --disable-static \
+    --disable-rpath \
+    --enable-xattr \
+    --enable-acl \
+    --without-nettle \
+    --without-xml2
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$CRSD \
+    install-strip
+
+  $LN bsdcpio $CRSD/usr/bin/cpio
+  $LN bsdtar $CRSD/usr/bin/tar
+
+  # Remove libtool archive (.la) file
+  $RM $CRSD/usr/lib/$nom.la
+}
