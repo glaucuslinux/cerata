@@ -98,6 +98,8 @@ configure() {
 }
 
 build() {
+  # Disable parallel build!
+  MAKEFLAGS=-j1 \
   $MAKE
 }
 
