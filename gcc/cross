@@ -72,7 +72,6 @@ configure() {
     --disable-nls \
     --enable-languages=c,c++ \
     --disable-rpath \
-    --disable-static \
     --disable-gnu-indirect-function \
     --disable-initfini-array \
     $GCARCH \
