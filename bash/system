@@ -32,6 +32,7 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
+    --enable-extended-glob \
     --enable-history \
     --enable-job-control \
     --enable-readline \
