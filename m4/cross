@@ -57,5 +57,5 @@ install() {
 
   $LN $nom $CRSD/usr/bin/g$nom
 
-  $LN $nom.1 $CSRD/usr/share/man/man1/g$nom.1
+  $LN $nom.1 $CRSD/usr/share/man/man1/g$nom.1
 }
