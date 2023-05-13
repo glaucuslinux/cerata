@@ -1,0 +1,598 @@
+From d823b17912a6589bccca37e4128911f8d692bb91 Mon Sep 17 00:00:00 2001
+From: wael <wael@wael.cc>
+Date: Wed, 5 Oct 2022 18:05:32 +0300
+Subject: [PATCH] Convert scripts to POSIX sh
+
+This patch is the work of E5ten; Landley doesn't want toybox to be POSIX
+because he's writing his own sh (toysh), and somehow that means the build
+system shouldn't be buildable outside of toybox bootstrapping itself.
+
+https://github.com/landley/toybox/pull/182
+
+wael: scripts/{{test_}mkroot,git-static-index}.sh has been ignored for
+my own sanity.
+---
+ Makefile                |  2 +-
+ configure               |  8 +++---
+ scripts/bloatcheck      |  4 +--
+ scripts/change.sh       |  8 +++---
+ scripts/findglobals.sh  |  2 +-
+ scripts/genconfig.sh    | 37 +++++++++++++--------------
+ scripts/install.sh      | 16 ++++++------
+ scripts/make.sh         | 55 ++++++++++++++++++++++-------------------
+ scripts/mcm-buildall.sh | 30 ++++++++++++----------
+ scripts/portability.sh  |  6 ++---
+ scripts/record-commands |  2 +-
+ scripts/single.sh       |  8 +++---
+ scripts/test.sh         |  6 ++---
+ 13 files changed, 95 insertions(+), 89 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index f51cd48c..25778432 100644
+--- a/Makefile
++++ b/Makefile
+@@ -64,7 +64,7 @@ root_clean:
+ 	@echo root cleaned
+ 
+ clean::
+-	@chmod -fR 700 generated || true
++	@chmod -R 700 generated || true
+ 	@rm -rf toybox generated change install .singleconfig*
+ 	@echo cleaned
+ 
+diff --git a/configure b/configure
+index d6bbd7da..705027a2 100755
+--- a/configure
++++ b/configure
+@@ -1,19 +1,17 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # set environment variables used by scripts/make.sh
+ 
+ # People run ./configure out of habit, so do "defconfig" for them.
+ 
+-if [ "$(basename "$0")" == configure ]
++if [ "${0##*/}" = configure ]
+ then
+   echo "Assuming you want 'make defconfig', but you should probably check the README."
+   make defconfig
+   exit $?
+ fi
+ 
+-# Warn about stuff, disable stupid warnings, be 8-bit clean for utf8.
+-[ "${CFLAGS/-funsigned-char//}" == "$CFLAGS" ] &&
+-  CFLAGS+=" -Wall -Wundef -Werror=implicit-function-declaration -Wno-char-subscripts -Wno-pointer-sign -funsigned-char"
++CFLAGS="$CFLAGS -Wall -Wundef -Werror=implicit-function-declaration -Wno-char-subscripts -Wno-pointer-sign -Wno-string-plus-int -funsigned-char"
+ 
+ # Set default values if variable not already set
+ : ${CC:=cc} ${HOSTCC:=cc} ${GENDIR:=generated} ${KCONFIG_CONFIG:=.config}
+diff --git a/scripts/bloatcheck b/scripts/bloatcheck
+index fff4690f..30492c64 100755
+--- a/scripts/bloatcheck
++++ b/scripts/bloatcheck
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ $# -ne 2 ]
+ then
+@@ -40,7 +40,7 @@ do_bloatcheck()
+     fi
+ 
+     SIZE=$(printf "%d" "0x$b")
+-    if [ "$a" == "-" ]
++    if [ "$a" = "-" ]
+     then
+       OLD=$(($OLD+$SIZE))
+       SIZE=$((-1*$SIZE))
+diff --git a/scripts/change.sh b/scripts/change.sh
+index dda5ee14..3dc31644 100755
+--- a/scripts/change.sh
++++ b/scripts/change.sh
+@@ -1,8 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # build each command as a standalone executable
+ 
+-source scripts/portability.sh
++. scripts/portability.sh
+ 
+ NOBUILD=1 scripts/make.sh > /dev/null &&
+ ${HOSTCC:-cc} -I . scripts/install.c -o "$UNSTRIPPED"/instlist &&
+@@ -12,8 +12,8 @@ mkdir -p "$PREFIX" || exit 1
+ # Build all the commands standalone
+ for i in $("$UNSTRIPPED"/instlist)
+ do
+-  echo -n " $i" &&
++  printf ' %s' "$i" &&
+   scripts/single.sh $i &>$PREFIX/${i}.bad &&
+-    rm $PREFIX/${i}.bad || echo -n '*'
++    rm $PREFIX/${i}.bad || printf '*'
+ done
+ echo
+diff --git a/scripts/findglobals.sh b/scripts/findglobals.sh
+index 2bb94d69..9b6151f4 100755
+--- a/scripts/findglobals.sh
++++ b/scripts/findglobals.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Quick and dirty check to see if anybody's leaked global variables.
+ # We should have this, toy_list, toybuf, and toys.
+diff --git a/scripts/genconfig.sh b/scripts/genconfig.sh
+index 52a9c259..5dd4ca8a 100755
+--- a/scripts/genconfig.sh
++++ b/scripts/genconfig.sh
+@@ -1,9 +1,9 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This has to be a separate file from scripts/make.sh so it can be called
+ # before menuconfig. (It's called again from scripts/make.sh just to be sure.)
+ 
+-source scripts/portability.sh
++. scripts/portability.sh
+ 
+ mkdir -p "$GENDIR"
+ 
+@@ -16,9 +16,10 @@ probecc()
+ # Symbol name is first argument, flags second, feed C file to stdin
+ probesymbol()
+ {
+-  probecc "${@:2}" 2>/dev/null && DEFAULT=y || DEFAULT=n
+-  rm a.out 2>/dev/null
+-  echo -e "config $1\n\tbool\n\tdefault $DEFAULT\n" || exit 1
++  target="$1"; shift
++  probecc "$@" 2>/dev/null && DEFAULT=y || DEFAULT=n
++  rm a.out 2>/dev/null 
++  printf 'config %s\n\tbool\n\tdefault %s\n\n' "$target" "$DEFAULT" || exit 1
+ }
+ 
+ probeconfig()
+@@ -35,7 +36,7 @@ EOF
+     #include <unistd.h>
+     int main(int argc, char *argv[]) { return fork(); }
+ EOF
+-  echo -e '\tdepends on !TOYBOX_FORCE_NOMMU'
++  printf '\tdepends on !TOYBOX_FORCE_NOMMU\n'
+ }
+ 
+ genconfig()
+@@ -77,18 +78,18 @@ WORKING= PENDING= EXAMPLE=
+ toys toys/*/*.c | (
+ while IFS=":" read FILE NAME
+ do
+-  [ "$NAME" == help ] && continue
+-  [ "$NAME" == install ] && continue
+-  [ "$NAME" == sh ] && FILE="toys/*/*.c"
+-  echo -e "$NAME: $FILE *.[ch] lib/*.[ch]\n\tscripts/single.sh $NAME\n"
+-  echo -e "test_$NAME:\n\tscripts/test.sh $NAME\n"
+-  [ "${FILE/example//}" != "$FILE" ] && EXAMPLE="$EXAMPLE $NAME" ||
+-  [ "${FILE/pending//}" != "$FILE" ] && PENDING="$PENDING $NAME" ||
++  [ "$NAME" = help ] && continue
++  [ "$NAME" = install ] && continue
++  [ "$NAME" = sh ] && FILE="toys/*/*.c"
++  printf '%s: %s *.[ch] lib/*.[ch]\n\tscripts/single.sh %s\n\n' "$NAME" "$FILE" "$NAME"
++  printf 'test_%s:\n\tscripts/test.sh %s\n\n' "$NAME" "$NAME"
++  [ "${FILE#*example}" != "$FILE" ] && EXAMPLE="$EXAMPLE $NAME" ||
++  [ "${FILE#*pending}" != "$FILE" ] && PENDING="$PENDING $NAME" ||
+     WORKING="$WORKING $NAME"
+ done &&
+-echo -e "clean::\n\t@rm -f $WORKING $PENDING" &&
+-echo -e "list:\n\t@echo $(echo $WORKING | tr ' ' '\n' | sort | xargs)" &&
+-echo -e "list_example:\n\t@echo $(echo $EXAMPLE | tr ' ' '\n' | sort | xargs)"&&
+-echo -e "list_pending:\n\t@echo $(echo $PENDING | tr ' ' '\n' | sort | xargs)"&&
+-echo -e ".PHONY: $WORKING $PENDING" | $SED 's/ \([^ ]\)/ test_\1/g'
++printf 'clean::\n\t@rm -f %s %s\n' "$WORKING" "$PENDING" &&
++printf 'list:\n\t@echo %s\n' "$(echo $WORKING | tr ' ' '\n' | sort | xargs)" &&
++printf 'list_example:\n\t@echo %s\n' "$(echo $EXAMPLE | tr ' ' '\n' | sort | xargs)" &&
++printf 'list_pending:\n\t@echo %s\n' "$(echo $PENDING | tr ' ' '\n' | sort | xargs)" &&
++echo ".PHONY: $WORKING $PENDING" | $SED 's/ \([^ ]\)/ test_\1/g'
+ ) > .singlemake
+diff --git a/scripts/install.sh b/scripts/install.sh
+index 38d9dcec..48048675 100755
+--- a/scripts/install.sh
++++ b/scripts/install.sh
+@@ -1,8 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Grab default values for $CFLAGS and such.
+ 
+-source scripts/portability.sh
++. scripts/portability.sh
+ 
+ [ -z "$PREFIX" ] && PREFIX="$PWD/install"
+ 
+@@ -12,19 +12,19 @@ LONG_PATH=""
+ while [ ! -z "$1" ]
+ do
+   # Create symlinks instead of hardlinks?
+-  [ "$1" == "--symlink" ] && LINK_TYPE="-s"
++  [ "$1" = "--symlink" ] && LINK_TYPE="-s"
+ 
+   # Uninstall?
+-  [ "$1" == "--uninstall" ] && UNINSTALL=Uninstall
++  [ "$1" = "--uninstall" ] && UNINSTALL=Uninstall
+ 
+   # Delete destination command if it exists?
+-  [ "$1" == "--force" ] && DO_FORCE="-f"
++  [ "$1" = "--force" ] && DO_FORCE="-f"
+ 
+   # Use {,usr}/{bin,sbin} paths instead of all files in one directory?
+-  [ "$1" == "--long" ] && LONG_PATH="bin/"
++  [ "$1" = "--long" ] && LONG_PATH="bin/"
+ 
+   # Symlink host toolchain binaries to destination to create cross compile $PATH
+-  [ "$1" == "--airlock" ] && AIRLOCK=1
++  [ "$1" = "--airlock" ] && AIRLOCK=1
+ 
+   shift
+ done
+@@ -129,7 +129,7 @@ do
+       fi
+ 
+       X=$[$X+1]
+-      FALLBACK="$PREFIX/fallback-$X"
++      FALLBACK="$PREFIX/fallback-$((X += 1))"
+     done
+ 
+     if [ ! -f "$PREFIX/$i" ]
+diff --git a/scripts/make.sh b/scripts/make.sh
+index 3e578d1d..e4b4d715 100755
+--- a/scripts/make.sh
++++ b/scripts/make.sh
+@@ -1,24 +1,24 @@
+-#!/bin/bash
++#!/bin/sh 
+ 
+ # Grab default values for $CFLAGS and such.
+-set -o pipefail
+-source scripts/portability.sh
++. scripts/portability.sh
+ 
+ # Shell functions called by the build
+ 
+ # Respond to V= by echoing command lines as well as running them
+ do_loudly()
+ {
+-  { [ -n "$V" ] && echo "$@" || echo -n "$DOTPROG" ; } >&2
++  { [ -n "$V" ] && echo "$@" || printf '%s' "$DOTPROG" ; } >&2
+   "$@"
+ }
+ 
+ # Is anything under directory $2 newer than generated/$1 (or does it not exist)?
+ isnewer()
+ {
+-  [ -e "$GENDIR/$1" ] && [ -z "$(find "${@:2}" -newer "$GENDIR/$1")" ] &&
++  is="$1"; shift
++  [ -e "$GENDIR/$is" ] && [ -z "$(find "$@" -newer "$GENDIR/$is")" ] &&
+     return 1
+-  echo -n "${DIDNEWER:-$GENDIR/{}$1"
++  echo -n "${DIDNEWER:-$GENDIR/{}$is"
+   DIDNEWER=,
+ }
+ 
+@@ -51,23 +51,23 @@ compflags()
+ 
+ # Make sure rm -rf isn't gonna go funny
+ B="$(readlink -f "$PWD")/" A="$(readlink -f "$GENDIR")" A="${A%/}"/
+-[ "$A" == "${B::${#A}}" ] &&
++[ "${B#"$A"}" = "$B" ] ||
+   { echo "\$GENDIR=$GENDIR cannot include \$PWD=$PWD"; exit 1; }
+ unset A B DOTPROG DIDNEWER
+ 
+ # Force full rebuild if our compiler/linker options changed
+-cmp -s <(compflags|sed '5,8!d') <($SED '5,8!d' "$GENDIR"/build.sh 2>/dev/null)||
++[ "$(compflags|sed '5,8!d')" != "$($SED '5,8!d' "$GENDIR"/build.sh 2>/dev/null)" ] ||
+   rm -rf "$GENDIR"/* # Keep symlink, delete contents
+ mkdir -p "$UNSTRIPPED"  "$(dirname $OUTNAME)" || exit 1
+ 
+ # Extract a list of toys/*/*.c files to compile from the data in $KCONFIG_CONFIG
+ # (First command names, then filenames with relevant {NEW,OLD}TOY() macro.)
+ 
+-[ -n "$V" ] && echo -e "\nWhich C files to build..."
++[ -n "$V" ] && printf '\n%s\n' "Which C files to build..."
+ TOYFILES="$($SED -n 's/^CONFIG_\([^=]*\)=.*/\1/p' "$KCONFIG_CONFIG" | xargs | tr ' [A-Z]' '|[a-z]')"
+ TOYFILES="main.c $(egrep -l "TOY[(]($TOYFILES)[ ,]" toys/*/*.c | xargs)"
+ 
+-if [ "${TOYFILES/pending//}" != "$TOYFILES" ]
++if [ "${TOYFILES#*pending}" != "$TOYFILES" ]
+ then
+   echo -e "\n\033[1;31mwarning: using unfinished code from toys/pending\033[0m"
+ fi
+@@ -75,7 +75,7 @@ fi
+ # Probe library list if our compiler/linker options changed
+ if [ ! -e "$GENDIR"/optlibs.dat ]
+ then
+-  echo -n "Library probe"
++  printf '%s\n' "Library probe"
+ 
+   # --as-needed removes libraries we don't use any symbols out of, but the
+   # compiler has no way to ignore a library that doesn't exist, so detect
+@@ -85,18 +85,19 @@ then
+   [ -z "$V" ] && X=/dev/null || X=/dev/stderr
+   for i in util crypt m resolv selinux smack attr crypto z log iconv tls ssl
+   do
+-    do_loudly ${CROSS_COMPILE}${CC} $CFLAGS $LDFLAGS -xc - -l$i >>$X 2>&1 \
+-      -o "$UNSTRIPPED"/libprobe <<<"int main(int argc,char*argv[]){return 0;}"&&
+-      do_loudly echo -n ' '-l$i >> "$GENDIR"/optlibs.new
++    echo "int main(int argc,char*argv[]){return 0;}" | \
++       do_loudly ${CROSS_COMPILE}${CC} $CFLAGS $LDFLAGS -xc - -l$i >>$X 2>&1 \
++         -o "$UNSTRIPPED"/libprobe &&
++       do_loudly printf ' -l%s' $i >> "$GENDIR"/optlibs.new
+   done
+   unset X
+   rm -f "$UNSTRIPPED"/libprobe
+-  mv "$GENDIR"/optlibs.{new,dat} || exit 1
++  mv "$GENDIR"/optlibs.new "$GENDIR"/optlibs.dat || exit 1
+   echo
+ fi
+ 
+ # Write build variables (and set them locally), then append build invocation.
+-compflags > "$GENDIR"/build.sh && source "$GENDIR/build.sh" &&
++compflags > "$GENDIR"/build.sh && . "$GENDIR/build.sh" &&
+   echo -e "\$BUILD lib/*.c $TOYFILES \$LINK -o $OUTNAME" >> "$GENDIR"/build.sh&&
+   chmod +x "$GENDIR"/build.sh || exit 1
+ 
+@@ -171,7 +172,7 @@ then
+ 
+     echo "#define NEWTOY(aa,bb,cc) aa $I bb"
+     echo '#define OLDTOY(...)'
+-    if [ "$I" == A ]
++    if [ "$I" = A ]
+     then
+       cat "$GENDIR"/config.h
+     else
+@@ -201,7 +202,7 @@ fi
+ 
+ # Extract global structure definitions and flag definitions from toys/*/*.c
+ 
+-function getglobals()
++getglobals()
+ {
+   for i in toys/*/*.c
+   do
+@@ -210,7 +211,7 @@ function getglobals()
+     DATA="$($SED -n -e '/^GLOBALS(/,/^)/b got;b;:got' \
+             -e 's/^GLOBALS(/_data {/' \
+             -e 's/^)/};/' -e 'p' $i)"
+-    [ -n "$DATA" ] && echo -e "// $i\n\nstruct $NAME$DATA\n"
++    [ -n "$DATA" ] && printf '// %s\n\nstruct %s%s\n\n' "$i" "$NAME" "$DATA"
+   done
+ }
+ 
+@@ -243,7 +244,7 @@ fi
+ 
+ [ -n "$NOBUILD" ] && exit 0
+ 
+-echo "Compile $OUTNAME"
++printf '%s' "Compile $OUTNAME"
+ DOTPROG=.
+ 
+ # This is a parallel version of: do_loudly $BUILD lib/*.c $TOYFILES $LINK
+@@ -263,33 +264,35 @@ fi
+ PENDING= LNKFILES= CLICK= DONE=0 COUNT=0
+ for i in lib/*.c click $TOYFILES
+ do
+-  [ "$i" == click ] && CLICK=1 && continue
++  [ "$i" = click ] && CLICK=1 && continue
+ 
+-  X=${i/lib\//lib_}
++  X="$i"
++  [ "${X#*lib/}" = "$X" ] || X="${X%%lib/*}lib_${X#*lib/}"
+   X=${X##*/}
+   OUT="$GENDIR/obj/${X%%.c}.o"
+   LNKFILES="$LNKFILES $OUT"
+ 
+   # Library files don't get rebuilt if older than .config, but commands do.
+-  [ "$OUT" -nt "$i" ] && [ -z "$CLICK" -o "$OUT" -nt "$KCONFIG_CONFIG" ] &&
++  [ -n "$(find "$OUT" -newer "$i" 2>/dev/null)" ] &&
++    { [ -z "$CLICK" ] || [ -n "$(find "$OUT" -newer "$KCONFIG_CONFIG" 2>/dev/null)" ]; } &&
+     continue
+ 
+   do_loudly $BUILD -c $i -o $OUT &
+ 
+   # ratelimit to $CPUS many parallel jobs, detecting errors
+-  [ $((++COUNT)) -ge $CPUS ] && { wait $DASHN; DONE=$?; : $((--COUNT)); }
++  [ $((COUNT + 1)) -ge $CPUS ] && { wait $DASHN; DONE=$?; : $((COUNT - 1)); }
+   [ $DONE -ne 0 ] && break
+ done
+ 
+ # wait for all background jobs, detecting errors
+-while [ $((COUNT--)) -gt 0 ]
++while [ $((COUNT - 1)) -gt 0 ] 
+ do
+   wait $DASHN;
+   DONE=$((DONE+$?))
+ done
+ [ $DONE -ne 0 ] && exit 1
+ 
+-UNSTRIPPED="$UNSTRIPPED/${OUTNAME/*\//}"
++UNSTRIPPED="$UNSTRIPPED/${OUTNAME##*/}"
+ do_loudly $BUILD $LNKFILES $LINK -o "$UNSTRIPPED" || exit 1
+ if [ -n "$NOSTRIP" ] ||
+   ! do_loudly ${CROSS_COMPILE}${STRIP} "$UNSTRIPPED" -o "$OUTNAME"
+diff --git a/scripts/mcm-buildall.sh b/scripts/mcm-buildall.sh
+index 11a10136..1c1dcf43 100755
+--- a/scripts/mcm-buildall.sh
++++ b/scripts/mcm-buildall.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh 
+ 
+ # Script to build all cross and native compilers supported by musl-libc.
+ # This isn't directly used by toybox, but is useful for testing.
+@@ -22,7 +22,7 @@ BOOTSTRAP=i686-linux-musl
+ 
+ [ -z "$OUTPUT" ] && OUTPUT="$PWD/ccc"
+ 
+-if [ "$1" == clean ]
++if [ "$1" = clean ]
+ then
+   rm -rf "$OUTPUT" host-* *.log
+   make clean
+@@ -38,7 +38,7 @@ make_toolchain()
+     OUTPUT="$PWD/host-$TARGET"
+     EXTRASUB=y
+   else
+-    if [ "$TYPE" == static ]
++    if [ "$TYPE" = static ]
+     then
+       HOST=$BOOTSTRAP
+       [ "$TARGET" = "$HOST" ] && LP="$PWD/host-$HOST/bin:$LP"
+@@ -54,6 +54,9 @@ make_toolchain()
+     fi
+     COMMON_CONFIG="CC=\"$HOST-gcc -static --static\" CXX=\"$HOST-g++ -static --static\""
+     export -n HOST
++    _HOST="$HOST"
++    unset HOST
++    HOST="$_HOST"
+     OUTPUT="$OUTPUT/${RENAME:-$TARGET}-$TYPE"
+   fi
+ 
+@@ -66,7 +69,7 @@ make_toolchain()
+   # Change title bar to say what we're currently building
+ 
+   echo === building $TARGET-$TYPE
+-  echo -en "\033]2;$TARGET-$TYPE\007"
++  printf '\033]2;%s-%s\007' "$TARGET" "$TYPE"
+ 
+   rm -rf build/"$TARGET" "$OUTPUT" &&
+   [ -z "$CPUS" ] && CPUS=$(($(nproc)+1))
+@@ -76,10 +79,10 @@ make_toolchain()
+     COMMON_CONFIG="CFLAGS=\"$CFLAGS -g0 -Os\" CXXFLAGS=\"$CXXFLAGS -g0 -Os\" LDFLAGS=\"$LDFLAGS -s\" $COMMON_CONFIG" \
+     install -j$CPUS || exit 1
+   set +x
+-  echo -e '#ifndef __MUSL__\n#define __MUSL__ 1\n#endif' \
++  printf '#ifndef __MUSL__\n#define __MUSL__ 1\n#endif\n' \
+     >> "$OUTPUT/${EXTRASUB:+$TARGET/}include/features.h"
+ 
+-  if [ ! -z "$RENAME" ] && [ "$TYPE" == cross ]
++  if [ ! -z "$RENAME" ] && [ "$TYPE" = cross ]
+   then
+     CONTEXT="output/$RENAME-cross/bin"
+     for i in "$CONTEXT/$TARGET-"*
+@@ -97,7 +100,7 @@ make_toolchain()
+     [ -e keep-this-dir ] && mv keep-this-dir musl-git-master
+   }
+ 
+-  if [ "$TYPE" == native ]
++  if [ "$TYPE" = native ]
+   then
+     # gcc looks in "../usr/include" but not "/bin/../include" (relative to the
+     # executable). That means /usr/bin/gcc looks in /usr/usr/include, so that's
+@@ -112,14 +115,15 @@ make_toolchain()
+ # Expand compressed target into binutils/gcc "tuple" and call make_toolchain
+ make_tuple()
+ {
+-  PART1=${1/:*/}
+-  PART3=${1/*:/}
+-  PART2=${1:$((${#PART1}+1)):$((${#1}-${#PART3}-${#PART1}-2))}
++  PART1=${1%%:*}
++  PART3=${1##*:}
++  PART2=${1#${PART1}:} PART2+${PART2%:${PART3}}
+ 
+   # Do we need to rename this toolchain after building it?
+-  RENAME=${PART1/*@/}
+-  [ "$RENAME" == "$PART1" ] && RENAME=
+-  PART1=${PART1/@*/}
++  RENAME=${PART1##*@}
++  [ "$RENAME" = "$PART1" ] && RENAME=
++  PART1=${PART1%%@*}
++
+   TARGET=${PART1}-linux-musl${PART2} 
+ 
+   [ -z "$NOCLEAN" ] && rm -rf build
+diff --git a/scripts/portability.sh b/scripts/portability.sh
+index 3beaf521..2783132f 100644
+--- a/scripts/portability.sh
++++ b/scripts/portability.sh
+@@ -1,6 +1,6 @@
+ # sourced to find alternate names for things
+ 
+-source ./configure
++. ./configure
+ 
+ if [ -z "$(command -v "$CROSS_COMPILE$CC")" ]
+ then
+@@ -14,9 +14,9 @@ then
+ fi
+ 
+ # Tell linker to do dead code elimination at function level
+-if [ "$(uname)" == "Darwin" ]
++if [ "$(uname)" = "Darwin" ]
+ then
+-  CFLAGS+=" -Wno-deprecated-declarations"
++  CFLAGS="$CFLAGS -Wno-deprecated-declarations"
+   : ${LDOPTIMIZE:=-Wl,-dead_strip} ${STRIP:=strip}
+ else
+   : ${LDOPTIMIZE:=-Wl,--gc-sections -Wl,--as-needed} ${STRIP:=strip -s -R .note* -R .comment}
+diff --git a/scripts/record-commands b/scripts/record-commands
+index d2b779fa..a0f79f6e 100755
+--- a/scripts/record-commands
++++ b/scripts/record-commands
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Set up command recording wrapper
+ 
+diff --git a/scripts/single.sh b/scripts/single.sh
+index f4f28be9..3d6e19de 100755
+--- a/scripts/single.sh
++++ b/scripts/single.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Build a standalone toybox command
+ 
+@@ -7,7 +7,7 @@
+ source scripts/portability.sh
+ 
+ # Add trailing / to PREFIX when it's set but hasn't got one
+-[ "$PREFIX" == "${PREFIX%/}" ] && PREFIX="${PREFIX:+$PREFIX/}"
++[ "$PREFIX" = "${PREFIX%/}" ] && PREFIX="${PREFIX:+$PREFIX/}"
+ 
+ # Harvest TOYBOX_* symbols from .config, or fresh defconfig if none
+ export KCONFIG_CONFIG
+@@ -24,7 +24,7 @@ KCONFIG_CONFIG=.singleconfig
+ 
+ for i in "$@"
+ do
+-  echo -n "$i:"
++  printf '%s:\n' "$i"
+   TOYFILE="$(egrep -l "TOY[(]($i)[ ,]" toys/*/*.c)"
+ 
+   if [ -z "$TOYFILE" ]
+@@ -36,7 +36,7 @@ do
+   make allnoconfig > /dev/null || exit 1
+ 
+   unset DEPENDS MPDEL
+-  if [ "$i" == sh ]
++  if [ "$i" = sh ]
+   then
+     DEPENDS="$($SED -n 's/USE_\([^(]*\)(NEWTOY([^,]*,.*TOYFLAG_MAYFORK.*/\1/p' toys/*/*.c)"
+   else
+diff --git a/scripts/test.sh b/scripts/test.sh
+index c29a9aa9..3f47e39e 100755
+--- a/scripts/test.sh
++++ b/scripts/test.sh
+@@ -1,7 +1,7 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-source scripts/runtest.sh
+-source scripts/portability.sh
++. scripts/runtest.sh
++. scripts/portability.sh
+ 
+ TOPDIR="$PWD"
+ export FILES="$PWD"/tests/files
+-- 
+2.39.0
+
