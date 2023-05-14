@@ -11,8 +11,6 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p1 -i $CERD/$nom/patches/e5ten/POSIX-$ver.patch
-
   $RSYNC $CERD/$nom/glaucus.config .config
 }
 
