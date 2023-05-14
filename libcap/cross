@@ -15,8 +15,6 @@ configure() {
 }
 
 build() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-remove-bash-dependency.patch
-
   # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
   $MAKE \
