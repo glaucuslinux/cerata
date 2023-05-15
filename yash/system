@@ -4,15 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-add-clear-and-redraw-binding.patch
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-cross-compile.patch
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -36,11 +34,6 @@ configure() {
 }
 
 build() {
-  # Build `makesignum` using host's compiler
-  $MAKE \
-    CC=$HOSTCC \
-    makesignum
-
   $MAKE
 }
 
@@ -50,8 +43,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/sh
+  $LN $nom $SCER/$nom/sac/usr/bin/sh
 }
