@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess support
   $RSYNC $CERD/binutils/config.rpath support
@@ -16,6 +16,8 @@ configure() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
 
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -42,7 +44,6 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
-    --with-installed-readline \
     --without-included-gettext
 }
 
@@ -63,8 +64,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $SCER/$nom/sac/usr/bin/r$nom
+  $LN $nom $CRSD/usr/bin/r$nom
 }
