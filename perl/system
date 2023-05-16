@@ -6,6 +6,9 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
+
+  $PATCH -p1 -i $CERD/perl/patches/alpine/zlib-no-zsolo.patch
+  $PATCH -p1 -i $CERD/perl/patches/alpine/default-https-perl-http-tiny.patch
 }
 
 configure() {

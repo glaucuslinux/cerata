@@ -8,6 +8,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/perl
   cd $XSRC/perl
 
+  $PATCH -p1 -i $CERD/perl/patches/alpine/zlib-no-zsolo.patch
   $PATCH -p1 -i $CERD/perl/patches/alpine/default-https-perl-http-tiny.patch
 }
 
