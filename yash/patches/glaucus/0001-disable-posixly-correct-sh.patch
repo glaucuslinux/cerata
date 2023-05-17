@@ -1,0 +1,11 @@
+--- yash.c
++++ yash.c
+@@ -133,8 +133,6 @@
+     shortest_name = yash_program_invocation_short_name;
+     if (shortest_name[0] == L'-')
+ 	shortest_name++;
+-    if (wcscmp(shortest_name, L"sh") == 0)
+-	posixly_correct = true;
+ 
+     shell_pid = getpid();
+     shell_pgid = getpgrp();
