@@ -7,7 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-add-clear-and-redraw-binding.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/sample-yashrc.patch
 }
 
 configure() {
@@ -45,6 +47,8 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
+
+  $RSYNC $CERD/$nom/yashrc $SCER/$nom/sac/etc
 
   $LN $nom $SCER/$nom/sac/usr/bin/sh
 }
