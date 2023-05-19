@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver-mk2/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver-mk2/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -30,8 +30,8 @@ install() {
     BINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install
 
-  $LN $nom.pc $PKG_CONFIG_LIBDIR/librpmatch.pc
+  $LN $nom.pc $SCER/$nom/sac/usr/lib/librpmatch.pc
 }
