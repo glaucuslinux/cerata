@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $AUTORECONF
 
@@ -15,8 +15,6 @@ prepare() {
 
 configure() {
   ./configure \
-    --build=$BLD \
-    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -28,6 +26,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -47,11 +46,11 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/libobstack.la
+  $RM $SCER/$nom/sac/usr/lib/libobstack.la
 
-  $LN $nom.pc $PKG_CONFIG_LIBDIR/libobstack.pc
+  $LN $nom.pc $SCER/$nom/sac/usr/lib/libobstack.pc
 }
