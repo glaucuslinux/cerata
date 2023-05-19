@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
@@ -13,8 +13,6 @@ prepare() {
 
 configure() {
   ./configure \
-    --build=$BLD \
-    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -46,10 +44,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install-strip
 
   # Manually remove the static libraries
-  $RM $CRSD/usr/lib/libmpdec.a
-  $RM $CRSD/usr/lib/libmpdec++.a
+  $RM $SCER/$nom/sac/usr/lib/libmpdec.a
+  $RM $SCER/$nom/sac/usr/lib/libmpdec++.a
 }
