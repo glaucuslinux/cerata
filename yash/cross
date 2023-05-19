@@ -57,6 +57,4 @@ install() {
     install-strip
 
   $RSYNC $CERD/$nom/yashrc $CRSD/etc
-
-  $LN $nom $CRSD/usr/bin/sh
 }
