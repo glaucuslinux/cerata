@@ -68,4 +68,5 @@ install() {
     install-strip
 
   $LN $nom $CRSD/usr/bin/r$nom
+  $LN $nom $CRSD/usr/bin/sh
 }
