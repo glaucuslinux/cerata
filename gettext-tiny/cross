@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 }
 
 configure() {
@@ -30,6 +30,6 @@ install() {
     prefix=/usr \
     sysconfdir=/etc \
     LIBINTL=MUSL \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$CRSD \
     install
 }
