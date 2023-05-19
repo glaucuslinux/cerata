@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="nim"
+ver="1.6.12"
+url="https://github.com/nim-lang/Nim/archive/v1.6.12.tar.gz"
+sum="4e27c6b96785b1cdcce36d769e4729c76ce11950678312134ae5e4567e445a55"
