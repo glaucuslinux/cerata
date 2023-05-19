@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $XSRC --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom $SSRC --delete
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -28,10 +28,10 @@ install() {
     libdir=/usr/lib \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS" \
-    DESTDIR=$CRSD \
+    DESTDIR=$SCER/$nom/sac \
     install
 
-  $MV $CRSD/usr/lib/libargp.so $CRSD/usr/lib/libargp.so.0.0.0
-  $LN libargp.so.0.0.0 $CRSD/usr/lib/libargp.so
-  $LN libargp.so.0.0.0 $CRSD/usr/lib/libargp.so.0
+  $MV $SCER/$nom/sac/usr/lib/libargp.so $SCER/$nom/sac/usr/lib/libargp.so.0.0.0
+  $LN libargp.so.0.0.0 $SCER/$nom/sac/usr/lib/libargp.so
+  $LN libargp.so.0.0.0 $SCER/$nom/sac/usr/lib/libargp.so.0
 }
