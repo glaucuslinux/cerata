@@ -1,0 +1,88 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+check() {
+  :
+}
+
+install() {
+  $LN usr/bin $SYSD/bin
+
+  $MKDIR $SYSD/boot
+
+  $MKDIR $SYSD/dev
+
+  $MKDIR $SYSD/etc
+  $RSYNC $CERD/$nom/fstab $SYSD/etc
+  $LN lsb-release $SYSD/etc/glaucus-release
+  $RSYNC $CERD/$nom/group $SYSD/etc
+  $RSYNC $CERD/$nom/hostname $SYSD/etc
+  $RSYNC $CERD/$nom/hosts $SYSD/etc
+  $RSYNC $CERD/$nom/issue $SYSD/etc
+  $RSYNC $CERD/$nom/lsb-release $SYSD/etc
+  sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
+    -e "s/^DISTRIB_DESCRIPTION=/&'glaucus $ARCH $(date +%Y%m%d)'/" \
+    -i $SYSD/etc/lsb-release
+  $LN ../usr/lib/os-release $SYSD/etc/os-release
+  $RSYNC $CERD/$nom/passwd $SYSD/etc
+  $RSYNC $CERD/$nom/profile $SYSD/etc
+  $RSYNC $CERD/$nom/resolv.conf $SYSD/etc
+  $RSYNC $CERD/$nom/shells $SYSD/etc
+
+  $MKDIR $SYSD/home
+
+  $LN usr/lib $SYSD/lib
+
+  $MKDIR $SYSD/mnt
+
+  $MKDIR $SYSD/proc
+
+  $MKDIR -m 0750 $SYSD/root
+
+  $MKDIR $SYSD/run
+
+  $MKDIR $SYSD/sys
+
+  $LN run/tmp $SYSD/tmp
+
+  $MKDIR $SYSD/usr/lib
+  $RSYNC $CERD/$nom/os-release $SYSD/usr/lib
+  sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
+    -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
+    -e "s/^PRETTY_NAME=/&'glaucus $ARCH $(date +%Y%m%d)'/" \
+    -i $SYSD/usr/lib/os-release
+  $MKDIR $PKG_CONFIG_LIBDIR
+  $MKDIR $SYSD/usr/share
+
+  $MKDIR $SYSD/var/cache/radula/bin
+  $MKDIR $SYSD/var/cache/radula/src
+  $MKDIR $SYSD/var/cache/radula/venom
+  $MKDIR $SYSD/var/db/radula/clusters/glaucus
+  $MKDIR $SYSD/var/lib/hwclock
+  $MKDIR $SYSD/var/lib/misc
+  $MKDIR $SYSD/var/lib/radula
+  $LN ../run/lock $SYSD/var/lock
+  $MKDIR $SYSD/var/log/radula
+  $MKDIR $SYSD/var/mail
+  $LN ../run $SYSD/var/run
+  $MKDIR $SYSD/var/spool
+  $LN ../mail $SYSD/var/spool/mail
+  $MKDIR $SYSD/var/tmp/radula/ccache
+  $MKDIR $SYSD/var/tmp/radula/cross
+  $MKDIR $SYSD/var/tmp/radula/system
+  $MKDIR $SYSD/var/tmp/radula/toolchain
+}
