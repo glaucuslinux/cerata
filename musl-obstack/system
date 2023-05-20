@@ -49,8 +49,5 @@ install() {
     DESTDIR=$SCER/$nom/sac \
     install-strip
 
-  # Remove libtool archive (.la) file
-  $RM $SCER/$nom/sac/usr/lib/libobstack.la
-
   $LN $nom.pc $SCER/$nom/sac/usr/lib/libobstack.pc
 }
