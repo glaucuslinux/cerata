@@ -1,0 +1,92 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/$nom/config.guess .
+  $RSYNC $CERD/$nom/config.rpath .
+  $RSYNC $CERD/$nom/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
+
+  $MKDIR $SBLD/$nom
+  cd $SBLD/$nom
+}
+
+configure() {
+  $SSRC/$nom/configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
+    --disable-multilib \
+    --disable-static \
+    --enable-install-libiberty \
+    --enable-plugins \
+    $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
+    --enable-deterministic-archives \
+    --disable-compressed-debug-sections \
+    --enable-new-dtags \
+    --enable-relro \
+    --disable-default-execstack \
+    --enable-default-hash-style=gnu \
+    --disable-werror \
+    --disable-nls \
+    --disable-rpath \
+    --disable-initfini-array \
+    --disable-gprofng \
+    --with-mmap \
+    --with-lib-path=/usr/lib \
+    --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
+    --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
+    --without-debuginfod \
+    --with-system-zlib
+}
+
+build() {
+  $MAKE \
+    tooldir=/usr
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    tooldir=/usr \
+    DESTDIR=$SCER/$nom/sac \
+    install-strip
+
+  $LN ld.bfd $SCER/$nom/sac/usr/bin/ld
+
+  # Manually remove the static libraries
+  $RM $SCER/$nom/sac/usr/lib/libbfd.a
+  $RM $SCER/$nom/sac/usr/lib/libctf.a
+  $RM $SCER/$nom/sac/usr/lib/libctf-nobfd.a
+  $RM $SCER/$nom/sac/usr/lib/libopcodes.a
+  $RM $SCER/$nom/sac/usr/lib/libsframe.a
+
+  # Remove unnecessary manpages
+  $RM $SCER/$nom/sac/usr/share/man/man1/dlltool.1
+  $RM $SCER/$nom/sac/usr/share/man/man1/windmc.1
+  $RM $SCER/$nom/sac/usr/share/man/man1/windres.1
+}
