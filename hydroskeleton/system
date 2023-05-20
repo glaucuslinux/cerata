@@ -81,7 +81,6 @@ install() {
   $LN ../run $SYSD/var/run
   $MKDIR $SYSD/var/spool
   $LN ../mail $SYSD/var/spool/mail
-  $MKDIR $SYSD/var/tmp/radula/ccache
   $MKDIR $SYSD/var/tmp/radula/cross
   $MKDIR $SYSD/var/tmp/radula/system
   $MKDIR $SYSD/var/tmp/radula/toolchain
