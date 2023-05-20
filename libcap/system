@@ -18,7 +18,7 @@ build() {
   # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \
@@ -44,7 +44,7 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \

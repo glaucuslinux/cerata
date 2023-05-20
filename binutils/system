@@ -73,20 +73,20 @@ check() {
 install() {
   $MAKE \
     tooldir=/usr \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $LN ld.bfd $SCER/$nom/sac/usr/bin/ld
+  $LN ld.bfd $VNMD/$nom/sac/usr/bin/ld
 
   # Manually remove the static libraries
-  $RM $SCER/$nom/sac/usr/lib/libbfd.a
-  $RM $SCER/$nom/sac/usr/lib/libctf.a
-  $RM $SCER/$nom/sac/usr/lib/libctf-nobfd.a
-  $RM $SCER/$nom/sac/usr/lib/libopcodes.a
-  $RM $SCER/$nom/sac/usr/lib/libsframe.a
+  $RM $VNMD/$nom/sac/usr/lib/libbfd.a
+  $RM $VNMD/$nom/sac/usr/lib/libctf.a
+  $RM $VNMD/$nom/sac/usr/lib/libctf-nobfd.a
+  $RM $VNMD/$nom/sac/usr/lib/libopcodes.a
+  $RM $VNMD/$nom/sac/usr/lib/libsframe.a
 
   # Remove unnecessary manpages
-  $RM $SCER/$nom/sac/usr/share/man/man1/dlltool.1
-  $RM $SCER/$nom/sac/usr/share/man/man1/windmc.1
-  $RM $SCER/$nom/sac/usr/share/man/man1/windres.1
+  $RM $VNMD/$nom/sac/usr/share/man/man1/dlltool.1
+  $RM $VNMD/$nom/sac/usr/share/man/man1/windmc.1
+  $RM $VNMD/$nom/sac/usr/share/man/man1/windres.1
 }

@@ -53,13 +53,13 @@ install() {
     LIBDIR=/usr/lib \
     PCI_IDS=pci.ids \
     PCI_COMPRESSED_IDS=0 \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install \
     install-lib
 
   # Fix library permissions
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libpci.so.$ver
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libpci.so.$ver
 
   # ids are provided by the `hwdata` ceras
-  $RM $SCER/$nom/sac/usr/share/hwdata
+  $RM $VNMD/$nom/sac/usr/share/hwdata
 }

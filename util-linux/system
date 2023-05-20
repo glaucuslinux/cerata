@@ -71,7 +71,7 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     usrsbin_execdir=/usr/bin \
     install-strip
 }

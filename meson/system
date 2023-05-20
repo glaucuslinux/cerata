@@ -24,10 +24,10 @@ check() {
 install() {
   python3 setup.py \
     install \
-    --root=$SCER/$nom/sac \
+    --root=$VNMD/$nom/sac \
     --optimize=2 \
     --force \
     --skip-build
 
-  $RSYNC $CERD/$nom/glaucus-$nom $SCER/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/glaucus-$nom $VNMD/$nom/sac/usr/bin
 }

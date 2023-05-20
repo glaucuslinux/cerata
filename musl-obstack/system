@@ -46,8 +46,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $LN $nom.pc $SCER/$nom/sac/usr/lib/libobstack.pc
+  $LN $nom.pc $VNMD/$nom/sac/usr/lib/libobstack.pc
 }

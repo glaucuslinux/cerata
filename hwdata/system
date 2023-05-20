@@ -34,8 +34,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $RSYNC $CERD/$nom/sdio.ids $SCER/$nom/sac/usr/share/$nom
+  $RSYNC $CERD/$nom/sdio.ids $VNMD/$nom/sac/usr/share/$nom
 }

@@ -56,21 +56,21 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $MKDIR $SCER/$nom/sac/etc/depmod.d
-  $MKDIR $SCER/$nom/sac/etc/modprobe.d
+  $MKDIR $VNMD/$nom/sac/etc/depmod.d
+  $MKDIR $VNMD/$nom/sac/etc/modprobe.d
 
-  $LN $nom $SCER/$nom/sac/usr/bin/depmod
-  $LN $nom $SCER/$nom/sac/usr/bin/insmod
-  $LN $nom $SCER/$nom/sac/usr/bin/lsmod
-  $LN $nom $SCER/$nom/sac/usr/bin/modinfo
-  $LN $nom $SCER/$nom/sac/usr/bin/modprobe
-  $LN $nom $SCER/$nom/sac/usr/bin/rmmod
+  $LN $nom $VNMD/$nom/sac/usr/bin/depmod
+  $LN $nom $VNMD/$nom/sac/usr/bin/insmod
+  $LN $nom $VNMD/$nom/sac/usr/bin/lsmod
+  $LN $nom $VNMD/$nom/sac/usr/bin/modinfo
+  $LN $nom $VNMD/$nom/sac/usr/bin/modprobe
+  $LN $nom $VNMD/$nom/sac/usr/bin/rmmod
 
-  $MKDIR $SCER/$nom/sac/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/search.conf $SCER/$nom/sac/usr/lib/depmod.d
+  $MKDIR $VNMD/$nom/sac/usr/lib/depmod.d
+  $RSYNC $CERD/$nom/search.conf $VNMD/$nom/sac/usr/lib/depmod.d
 
-  $MKDIR $SCER/$nom/sac/usr/lib/modprobe.d
+  $MKDIR $VNMD/$nom/sac/usr/lib/modprobe.d
 }

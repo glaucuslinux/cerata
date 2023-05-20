@@ -41,34 +41,34 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
   # Compatibility symlinks
-  $LN lbzcmp $SCER/$nom/sac/usr/bin/bzcmp
-  $LN lbzdiff $SCER/$nom/sac/usr/bin/bzdiff
-  $LN lbzegrep $SCER/$nom/sac/usr/bin/bzegrep
-  $LN lbzexe $SCER/$nom/sac/usr/bin/bzexe
-  $LN lbzfgrep $SCER/$nom/sac/usr/bin/bzfgrep
-  $LN lbzforce $SCER/$nom/sac/usr/bin/bzforce
-  $LN lbzgrep $SCER/$nom/sac/usr/bin/bzgrep
-  $LN lbzrecover $SCER/$nom/sac/usr/bin/bzip2recover
-  $LN lbzless $SCER/$nom/sac/usr/bin/bzless
-  $LN lbzmerge $SCER/$nom/sac/usr/bin/bzmerge
-  $LN lbzmore $SCER/$nom/sac/usr/bin/bzmore
+  $LN lbzcmp $VNMD/$nom/sac/usr/bin/bzcmp
+  $LN lbzdiff $VNMD/$nom/sac/usr/bin/bzdiff
+  $LN lbzegrep $VNMD/$nom/sac/usr/bin/bzegrep
+  $LN lbzexe $VNMD/$nom/sac/usr/bin/bzexe
+  $LN lbzfgrep $VNMD/$nom/sac/usr/bin/bzfgrep
+  $LN lbzforce $VNMD/$nom/sac/usr/bin/bzforce
+  $LN lbzgrep $VNMD/$nom/sac/usr/bin/bzgrep
+  $LN lbzrecover $VNMD/$nom/sac/usr/bin/bzip2recover
+  $LN lbzless $VNMD/$nom/sac/usr/bin/bzless
+  $LN lbzmerge $VNMD/$nom/sac/usr/bin/bzmerge
+  $LN lbzmore $VNMD/$nom/sac/usr/bin/bzmore
 
-  $LN lbzcmp.1 $SCER/$nom/sac/usr/share/man/man1/bzcmp.1
-  $LN lbzdiff.1 $SCER/$nom/sac/usr/share/man/man1/bzdiff.1
-  $LN lbzegrep.1 $SCER/$nom/sac/usr/share/man/man1/bzegrep.1
-  $LN lbzexe.1 $SCER/$nom/sac/usr/share/man/man1/bzexe.1
-  $LN lbzfgrep.1 $SCER/$nom/sac/usr/share/man/man1/bzfgrep.1
-  $LN lbzforce.1 $SCER/$nom/sac/usr/share/man/man1/bzforce.1
-  $LN lbzgrep.1 $SCER/$nom/sac/usr/share/man/man1/bzgrep.1
-  $LN lbzrecover.1 $SCER/$nom/sac/usr/share/man/man1/bzip2recover.1
-  $LN lbzless.1 $SCER/$nom/sac/usr/share/man/man1/bzless.1
-  $LN lbzmerge.1 $SCER/$nom/sac/usr/share/man/man1/bzmerge.1
-  $LN lbzmore.1 $SCER/$nom/sac/usr/share/man/man1/bzmore.1
-  $LN lbzdiff.1 $SCER/$nom/sac/usr/share/man/man1/lbzcmp.1
-  $LN lbzgrep.1 $SCER/$nom/sac/usr/share/man/man1/lbzegrep.1
-  $LN lbzgrep.1 $SCER/$nom/sac/usr/share/man/man1/lbzfgrep.1
+  $LN lbzcmp.1 $VNMD/$nom/sac/usr/share/man/man1/bzcmp.1
+  $LN lbzdiff.1 $VNMD/$nom/sac/usr/share/man/man1/bzdiff.1
+  $LN lbzegrep.1 $VNMD/$nom/sac/usr/share/man/man1/bzegrep.1
+  $LN lbzexe.1 $VNMD/$nom/sac/usr/share/man/man1/bzexe.1
+  $LN lbzfgrep.1 $VNMD/$nom/sac/usr/share/man/man1/bzfgrep.1
+  $LN lbzforce.1 $VNMD/$nom/sac/usr/share/man/man1/bzforce.1
+  $LN lbzgrep.1 $VNMD/$nom/sac/usr/share/man/man1/bzgrep.1
+  $LN lbzrecover.1 $VNMD/$nom/sac/usr/share/man/man1/bzip2recover.1
+  $LN lbzless.1 $VNMD/$nom/sac/usr/share/man/man1/bzless.1
+  $LN lbzmerge.1 $VNMD/$nom/sac/usr/share/man/man1/bzmerge.1
+  $LN lbzmore.1 $VNMD/$nom/sac/usr/share/man/man1/bzmore.1
+  $LN lbzdiff.1 $VNMD/$nom/sac/usr/share/man/man1/lbzcmp.1
+  $LN lbzgrep.1 $VNMD/$nom/sac/usr/share/man/man1/lbzegrep.1
+  $LN lbzgrep.1 $VNMD/$nom/sac/usr/share/man/man1/lbzfgrep.1
 }

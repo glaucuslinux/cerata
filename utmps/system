@@ -45,13 +45,13 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
   # Provide `utmp.h` which includes `utmpx.h` (same directory) which in turn
   # includes `utmps/utmpx.h`
-  $LN $nom/utmp.h $SCER/$nom/sac/usr/include
+  $LN $nom/utmp.h $VNMD/$nom/sac/usr/include
 
-  $MKDIR $SCER/$nom/sac/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
+  $MKDIR $VNMD/$nom/sac/usr/lib/pkgconfig
+  $RSYNC $CERD/$nom/$nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig
 }

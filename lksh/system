@@ -24,5 +24,5 @@ check() {
 }
 
 install() {
-  $RSYNC $nom $SCER/$nom/sac/usr/bin
+  $RSYNC $nom $VNMD/$nom/sac/usr/bin
 }

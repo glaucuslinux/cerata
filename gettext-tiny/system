@@ -30,6 +30,6 @@ install() {
     prefix=/usr \
     sysconfdir=/etc \
     LIBINTL=MUSL \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 }

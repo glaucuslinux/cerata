@@ -29,6 +29,6 @@ install() {
   $MAKE \
     O=$SBLD/$nom \
     ARCH=$LARCH \
-    INSTALL_HDR_PATH=$SCER/$nom/sac/usr \
+    INSTALL_HDR_PATH=$VNMD/$nom/sac/usr \
     headers_install
 }

@@ -26,11 +26,11 @@ check() {
 }
 
 install() {
-  DESTDIR=$SCER/$nom/sac \
+  DESTDIR=$VNMD/$nom/sac \
   samu \
     -C $SBLD/$nom \
     install
 
-  $LN ping $SCER/$nom/sac/usr/bin/ping6
-  $LN tracepath $SCER/$nom/sac/usr/bin/tracepath6
+  $LN ping $VNMD/$nom/sac/usr/bin/ping6
+  $LN tracepath $VNMD/$nom/sac/usr/bin/tracepath6
 }

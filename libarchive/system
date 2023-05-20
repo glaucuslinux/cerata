@@ -54,9 +54,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $LN bsdcpio $SCER/$nom/sac/usr/bin/cpio
-  $LN bsdtar $SCER/$nom/sac/usr/bin/tar
+  $LN bsdcpio $VNMD/$nom/sac/usr/bin/cpio
+  $LN bsdtar $VNMD/$nom/sac/usr/bin/tar
 }

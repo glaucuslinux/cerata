@@ -73,11 +73,11 @@ install() {
     O=$SBLD/$nom \
     ARCH=$LARCH \
     INSTALL_MOD_STRIP=1 \
-    INSTALL_MOD_PATH=$SCER/$nom/sac/usr \
+    INSTALL_MOD_PATH=$VNMD/$nom/sac/usr \
     modules_install
 
-  $MKDIR $SCER/$nom/sac/boot
+  $MKDIR $VNMD/$nom/sac/boot
 
-  $RSYNC $SBLD/$nom/$LIARCH $SCER/$nom/sac/boot/vmlinuz
-  $RSYNC $SBLD/$nom/System.map $SCER/$nom/sac/boot
+  $RSYNC $SBLD/$nom/$LIARCH $VNMD/$nom/sac/boot/vmlinuz
+  $RSYNC $SBLD/$nom/System.map $VNMD/$nom/sac/boot
 }

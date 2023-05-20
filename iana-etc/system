@@ -20,7 +20,7 @@ check() {
 }
 
 install() {
-  $MKDIR $SCER/$nom/sac/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/protocols $SCER/$nom/sac/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/services $SCER/$nom/sac/etc
+  $MKDIR $VNMD/$nom/sac/etc
+  $RSYNC $SRCD/$nom/$nom-$ver/protocols $VNMD/$nom/sac/etc
+  $RSYNC $SRCD/$nom/$nom-$ver/services $VNMD/$nom/sac/etc
 }

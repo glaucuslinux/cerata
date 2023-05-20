@@ -49,32 +49,32 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $LN openvt $SCER/$nom/sac/usr/bin/open
+  $LN openvt $VNMD/$nom/sac/usr/bin/open
 
-  $RM $SCER/$nom/sac/usr/share/keymaps/amiga
-  $RM $SCER/$nom/sac/usr/share/keymaps/atari
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz \
-    $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr-old.map.gz
-  $LN fr-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz
-  $LN fr-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/azerty/fr-latin0.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/colemak/en-latin9.map.gz \
-    $SCER/$nom/sac/usr/share/keymaps/i386/colemak/colemak.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/fgGIod/trf.map.gz \
-    $SCER/$nom/sac/usr/share/keymaps/i386/fgGIod/trf-fgGIod.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/olpc/es.map.gz \
-    $SCER/$nom/usr/share/keymaps/i386/olpc/es-olpc.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/olpc/pt.map.gz \
-    $SCER/$nom/usr/share/keymaps/i386/olpc/pt-olpc.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/cz.map.gz \
-    $SCER/$nom/usr/share/keymaps/i386/qwerty/cz-qwerty.map.gz
-  $MV $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/fi.map.gz \
-    $SCER/$nom/usr/share/keymaps/i386/qwerty/fi-kotoistus.map.gz
-  $LN pt-latin9.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/pt.map.gz
-  $RM $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/ro_win.map.gz
-  $LN sv-latin1.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/se-latin1.map
-  $LN sr-cy.map.gz $SCER/$nom/sac/usr/share/keymaps/i386/qwerty/sr-latin.map.gz
-  $RM $SCER/$nom/sac/usr/share/keymaps/sun
+  $RM $VNMD/$nom/sac/usr/share/keymaps/amiga
+  $RM $VNMD/$nom/sac/usr/share/keymaps/atari
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz \
+    $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr-old.map.gz
+  $LN fr-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz
+  $LN fr-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr-latin0.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/colemak/en-latin9.map.gz \
+    $VNMD/$nom/sac/usr/share/keymaps/i386/colemak/colemak.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/fgGIod/trf.map.gz \
+    $VNMD/$nom/sac/usr/share/keymaps/i386/fgGIod/trf-fgGIod.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/olpc/es.map.gz \
+    $VNMD/$nom/usr/share/keymaps/i386/olpc/es-olpc.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/olpc/pt.map.gz \
+    $VNMD/$nom/usr/share/keymaps/i386/olpc/pt-olpc.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/cz.map.gz \
+    $VNMD/$nom/usr/share/keymaps/i386/qwerty/cz-qwerty.map.gz
+  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/fi.map.gz \
+    $VNMD/$nom/usr/share/keymaps/i386/qwerty/fi-kotoistus.map.gz
+  $LN pt-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/pt.map.gz
+  $RM $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/ro_win.map.gz
+  $LN sv-latin1.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/se-latin1.map
+  $LN sr-cy.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/sr-latin.map.gz
+  $RM $VNMD/$nom/sac/usr/share/keymaps/sun
 }
