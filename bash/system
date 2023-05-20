@@ -67,4 +67,5 @@ install() {
     install-strip
 
   $LN $nom $SCER/$nom/sac/usr/bin/r$nom
+  $LN $nom $SCER/$nom/sac/usr/bin/sh
 }
