@@ -50,6 +50,4 @@ install() {
     install-strip
 
   $RSYNC $CERD/$nom/yashrc $SCER/$nom/sac/etc
-
-  $LN $nom $SCER/$nom/sac/usr/bin/sh
 }
