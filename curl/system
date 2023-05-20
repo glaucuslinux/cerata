@@ -57,7 +57,4 @@ install() {
   $MAKE \
     DESTDIR=$SCER/$nom/sac \
     install-strip
-
-  # Remove libtool archive (.la) file
-  $RM $SCER/$nom/sac/usr/lib/lib$nom.la
 }
