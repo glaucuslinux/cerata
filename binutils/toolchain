@@ -41,7 +41,6 @@ configure() {
     --mandir=$TLCD/usr/share/man \
     --docdir=$TLCD/usr/share/doc/$nom \
     --disable-multilib \
-    --disable-static \
     --enable-plugins \
     $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
     --enable-deterministic-archives \
@@ -55,6 +54,7 @@ configure() {
     --disable-rpath \
     --disable-initfini-array \
     --disable-gprofng \
+    --with-pic \
     --with-mmap \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \

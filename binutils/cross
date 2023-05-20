@@ -41,7 +41,6 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-multilib \
-    --disable-static \
     --enable-install-libiberty \
     --enable-plugins \
     $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
@@ -56,6 +55,7 @@ configure() {
     --disable-rpath \
     --disable-initfini-array \
     --disable-gprofng \
+    --with-pic \
     --with-mmap \
     --with-lib-path=/usr/lib \
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
