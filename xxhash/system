@@ -1,0 +1,28 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/xxHash-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+}
+
+configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$SCER/$nom/sac \
+    PREFIX=/usr \
+    install
+}
