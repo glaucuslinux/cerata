@@ -67,7 +67,6 @@ configure() {
     --disable-nls \
     --enable-languages=c,c++ \
     --disable-rpath \
-    --disable-static \
     --disable-gnu-indirect-function \
     --disable-initfini-array \
     $GCARCH \
@@ -84,7 +83,6 @@ configure() {
     --disable-libstdcxx-pch \
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
-    --disable-libstdcxx-visibility \
     --enable-libstdcxx-threads \
     --with-sysroot=$CRSD \
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
