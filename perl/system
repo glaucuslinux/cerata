@@ -40,11 +40,11 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom$ver
-  $LN ${nom}bug $SCER/$nom/sac/usr/bin/${nom}thanks
+  $LN $nom $VNMD/$nom/sac/usr/bin/$nom$ver
+  $LN ${nom}bug $VNMD/$nom/sac/usr/bin/${nom}thanks
 
-  $LN ${nom}bug.1 $SCER/$nom/sac/usr/share/man/man1/${nom}thanks.1
+  $LN ${nom}bug.1 $VNMD/$nom/sac/usr/share/man/man1/${nom}thanks.1
 }

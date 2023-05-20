@@ -47,14 +47,14 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $SCER/$nom/sac/usr/bin/pkg-config
-  $LN $nom $SCER/$nom/sac/usr/bin/$TGT-$nom
-  $LN $nom $SCER/$nom/sac/usr/bin/$TGT-pkg-config
+  $LN $nom $VNMD/$nom/sac/usr/bin/pkg-config
+  $LN $nom $VNMD/$nom/sac/usr/bin/$TGT-$nom
+  $LN $nom $VNMD/$nom/sac/usr/bin/$TGT-pkg-config
 
-  $LN pkg.m4 $SCER/$nom/sac/usr/share/aclocal/$nom.m4
-  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/pkg-config.1
+  $LN pkg.m4 $VNMD/$nom/sac/usr/share/aclocal/$nom.m4
+  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/pkg-config.1
 }

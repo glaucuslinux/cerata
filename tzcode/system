@@ -31,14 +31,14 @@ check() {
 }
 
 install() {
-  $RSYNC tzselect $SCER/$nom/sac/usr/bin
-  $RSYNC zdump $SCER/$nom/sac/usr/bin
-  $RSYNC zic $SCER/$nom/sac/usr/bin
+  $RSYNC tzselect $VNMD/$nom/sac/usr/bin
+  $RSYNC zdump $VNMD/$nom/sac/usr/bin
+  $RSYNC zic $VNMD/$nom/sac/usr/bin
 
-  $RSYNC tzselect.8 $SCER/$nom/sac/usr/share/man/man8
-  $RSYNC zdump.8 $SCER/$nom/sac/usr/share/man/man8
-  $RSYNC zic.8 $SCER/$nom/sac/usr/share/man/man8
+  $RSYNC tzselect.8 $VNMD/$nom/sac/usr/share/man/man8
+  $RSYNC zdump.8 $VNMD/$nom/sac/usr/share/man/man8
+  $RSYNC zic.8 $VNMD/$nom/sac/usr/share/man/man8
 
-  $MKDIR $SCER/$nom/sac/usr/share/zoneinfo/posix
-  $MKDIR $SCER/$nom/sac/usr/share/zoneinfo/right
+  $MKDIR $VNMD/$nom/sac/usr/share/zoneinfo/posix
+  $MKDIR $VNMD/$nom/sac/usr/share/zoneinfo/right
 }

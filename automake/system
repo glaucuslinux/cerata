@@ -45,10 +45,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
   # Replace hard links with symbolic links
-  $LN aclocal $SCER/$nom/sac/usr/bin/aclocal-1.16
-  $LN $nom $SCER/$nom/sac/usr/bin/$nom-1.16
+  $LN aclocal $VNMD/$nom/sac/usr/bin/aclocal-1.16
+  $LN $nom $VNMD/$nom/sac/usr/bin/$nom-1.16
 }

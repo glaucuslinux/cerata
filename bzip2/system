@@ -22,16 +22,16 @@ check() {
 }
 
 install() {
-  $MKDIR $SCER/$nom/sac/usr/include
-  $RSYNC bzlib.h $SCER/$nom/sac/usr/include
+  $MKDIR $VNMD/$nom/sac/usr/include
+  $RSYNC bzlib.h $VNMD/$nom/sac/usr/include
 
-  $MKDIR $SCER/$nom/sac/usr/lib
-  $RSYNC libbz2.so.$ver $SCER/$nom/sac/usr/lib
-  $LN libbz2.so.$ver $SCER/$nom/sac/usr/lib/libbz2.so
-  $LN libbz2.so.$ver $SCER/$nom/sac/usr/lib/libbz2.so.1
-  $LN libbz2.so.$ver $SCER/$nom/sac/usr/lib/libbz2.so.1.0
+  $MKDIR $VNMD/$nom/sac/usr/lib
+  $RSYNC libbz2.so.$ver $VNMD/$nom/sac/usr/lib
+  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so
+  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so.1
+  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so.1.0
 
-  $MKDIR $SCER/$nom/sac/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $SCER/$nom/sac/usr/lib/pkgconfig
-  $LN $nom.pc $SCER/$nom/sac/usr/lib/pkgconfig/libbz2.pc
+  $MKDIR $VNMD/$nom/sac/usr/lib/pkgconfig
+  $RSYNC $CERD/$nom/$nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig
+  $LN $nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig/libbz2.pc
 }

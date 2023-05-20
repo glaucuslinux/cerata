@@ -32,8 +32,8 @@ install() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     MANDIR=/usr/share/man/man3 \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $LN fts.3 $SCER/$nom/sac/usr/share/man/man3/$nom.3
+  $LN fts.3 $VNMD/$nom/sac/usr/share/man/man3/$nom.3
 }

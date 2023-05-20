@@ -86,20 +86,20 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $MV $SCER/$nom/sac/etc/$nom/dhclient.conf.example $SCER/$nom/sac/etc/$nom/dhclient.conf
-  $RSYNC doc/examples/dhclient-${nom}v6.conf $SCER/$nom/sac/etc/dhclient6.conf
-  $MV $SCER/$nom/sac/etc/$nom/${nom}d.conf.example $SCER/$nom/sac/etc/$nom/${nom}d.conf
-  $RSYNC doc/examples/${nom}d-${nom}v6.conf $SCER/$nom/sac/etc/${nom}d6.conf
+  $MV $VNMD/$nom/sac/etc/$nom/dhclient.conf.example $VNMD/$nom/sac/etc/$nom/dhclient.conf
+  $RSYNC doc/examples/dhclient-${nom}v6.conf $VNMD/$nom/sac/etc/dhclient6.conf
+  $MV $VNMD/$nom/sac/etc/$nom/${nom}d.conf.example $VNMD/$nom/sac/etc/$nom/${nom}d.conf
+  $RSYNC doc/examples/${nom}d-${nom}v6.conf $VNMD/$nom/sac/etc/${nom}d6.conf
 
-  $RSYNC client/scripts/linux $SCER/$nom/sac/usr/bin/dhclient-script
+  $RSYNC client/scripts/linux $VNMD/$nom/sac/usr/bin/dhclient-script
 
-  $RM $SCER/$nom/sac/usr/lib/lib${nom}.a
-  $RM $SCER/$nom/sac/usr/lib/lib${nom}ctl.a
-  $RM $SCER/$nom/sac/usr/lib/libomapi.a
+  $RM $VNMD/$nom/sac/usr/lib/lib${nom}.a
+  $RM $VNMD/$nom/sac/usr/lib/lib${nom}ctl.a
+  $RM $VNMD/$nom/sac/usr/lib/libomapi.a
 
-  $MKDIR $SCER/$nom/sac/run/$nom
-  $MKDIR $SCER/$nom/sac/var/lib/$nom
+  $MKDIR $VNMD/$nom/sac/run/$nom
+  $MKDIR $VNMD/$nom/sac/var/lib/$nom
 }

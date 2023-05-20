@@ -44,10 +44,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
   # Manually remove the static libraries
-  $RM $SCER/$nom/sac/usr/lib/libmpdec.a
-  $RM $SCER/$nom/sac/usr/lib/libmpdec++.a
+  $RM $VNMD/$nom/sac/usr/lib/libmpdec.a
+  $RM $VNMD/$nom/sac/usr/lib/libmpdec++.a
 }

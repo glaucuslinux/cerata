@@ -62,10 +62,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $LN pip3.11 $SCER/$nom/sac/usr/bin/pip3
-  $LN ${nom}3 $SCER/$nom/sac/usr/bin/$nom
-  $LN ${nom}3-config $SCER/$nom/sac/usr/bin/$nom-config
+  $LN pip3.11 $VNMD/$nom/sac/usr/bin/pip3
+  $LN ${nom}3 $VNMD/$nom/sac/usr/bin/$nom
+  $LN ${nom}3-config $VNMD/$nom/sac/usr/bin/$nom-config
 }

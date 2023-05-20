@@ -28,18 +28,18 @@ check() {
 install() {
   $MAKE \
     PREFIX=/usr \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-dynamic
 
-  $LN tic $SCER/$nom/sac/usr/bin/captoinfo
-  $LN tic $SCER/$nom/sac/usr/bin/infotocap
+  $LN tic $VNMD/$nom/sac/usr/bin/captoinfo
+  $LN tic $VNMD/$nom/sac/usr/bin/infotocap
 
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libcurses.so
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libform.so
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libmenu.so
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libpanel.so
-  $CHMOD 0755 $SCER/$nom/sac/usr/lib/libterminfo.so
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libcurses.so
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libform.so
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libmenu.so
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libpanel.so
+  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libterminfo.so
 
   # Some cerata (e.g. yash) link against this symlink
-  $LN libterminfo.so $SCER/$nom/sac/usr/lib/libtinfo.so
+  $LN libterminfo.so $VNMD/$nom/sac/usr/lib/libtinfo.so
 }

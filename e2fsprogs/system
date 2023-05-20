@@ -67,14 +67,14 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip \
     install-libs
 
-  $MV $SCER/$nom/sac/usr/lib/e2initrd_helper $SCER/$nom/sac/usr/bin
+  $MV $VNMD/$nom/sac/usr/lib/e2initrd_helper $VNMD/$nom/sac/usr/bin
 
-  $RM $SCER/$nom/sac/usr/lib/libcom_err.a
-  $RM $SCER/$nom/sac/usr/lib/libe2p.a
-  $RM $SCER/$nom/sac/usr/lib/libext2fs.a
-  $RM $SCER/$nom/sac/usr/lib/libss.a
+  $RM $VNMD/$nom/sac/usr/lib/libcom_err.a
+  $RM $VNMD/$nom/sac/usr/lib/libe2p.a
+  $RM $VNMD/$nom/sac/usr/lib/libext2fs.a
+  $RM $VNMD/$nom/sac/usr/lib/libss.a
 }

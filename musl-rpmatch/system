@@ -30,8 +30,8 @@ install() {
     BINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $LN $nom.pc $SCER/$nom/sac/usr/lib/librpmatch.pc
+  $LN $nom.pc $VNMD/$nom/sac/usr/lib/librpmatch.pc
 }

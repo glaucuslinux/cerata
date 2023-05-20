@@ -33,24 +33,24 @@ check() {
 }
 
 install() {
-  DESTDIR=$SCER/$nom/sac \
+  DESTDIR=$VNMD/$nom/sac \
   samu \
     -C $SBLD/$nom \
     install
 
-  $RSYNC $CERD/$nom/updatedb.conf $SCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/updatedb.conf $VNMD/$nom/sac/etc
 
   # Compatibility symlinks
-  $LN $nom $SCER/$nom/sac/usr/bin/locate
-  $LN $nom $SCER/$nom/sac/usr/bin/mlocate
-  $LN $nom $SCER/$nom/sac/usr/bin/slocate
-  $LN pupdatedb $SCER/$nom/sac/usr/bin/updatedb
+  $LN $nom $VNMD/$nom/sac/usr/bin/locate
+  $LN $nom $VNMD/$nom/sac/usr/bin/mlocate
+  $LN $nom $VNMD/$nom/sac/usr/bin/slocate
+  $LN pupdatedb $VNMD/$nom/sac/usr/bin/updatedb
 
-  $LN $nom.1 $SCER/$nom/sac/usr/share/man/man1/locate.1
-  $LN ../man8/pupdatedb.8 $SCER/$nom/sac/usr/share/man/man1/pupdatedb.1
-  $LN ../man8/pupdatedb.8 $SCER/$nom/sac/usr/share/man/man1/updatedb.1
+  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/locate.1
+  $LN ../man8/pupdatedb.8 $VNMD/$nom/sac/usr/share/man/man1/pupdatedb.1
+  $LN ../man8/pupdatedb.8 $VNMD/$nom/sac/usr/share/man/man1/updatedb.1
 
-  $LN pupdatedb.conf.5 $SCER/$nom/sac/usr/share/man/man5/updatedb.conf.5
+  $LN pupdatedb.conf.5 $VNMD/$nom/sac/usr/share/man/man5/updatedb.conf.5
 
-  $LN $nom $SCER/$nom/sac/var/lib/locate
+  $LN $nom $VNMD/$nom/sac/var/lib/locate
 }

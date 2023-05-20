@@ -20,7 +20,7 @@ check() {
 }
 
 install() {
-  $RSYNC $CERD/ $SCER/$nom/sac/var/db/radula/clusters/glaucus --exclude .$ver \
+  $RSYNC $CERD/ $VNMD/$nom/sac/var/db/radula/clusters/glaucus --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \
     --exclude README.md \

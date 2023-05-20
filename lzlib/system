@@ -38,7 +38,7 @@ check() {
 install() {
   # `install-bin-strip` ensures that the `minilzip` binary is installed
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-bin-strip \
     install-strip
 }

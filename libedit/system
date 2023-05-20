@@ -45,22 +45,22 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $RSYNC $CERD/$nom/editrc $SCER/$nom/sac/etc
-  $RSYNC $CERD/$nom/inputrc $SCER/$nom/sac/etc
+  $RSYNC $CERD/$nom/editrc $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/inputrc $VNMD/$nom/sac/etc
 
   # Use libedit as a drop-in replacement for `readline`
-  $MKDIR $SCER/$nom/sac/usr/include/readline
-  touch $SCER/$nom/sac/usr/include/readline/history.h
-  touch $SCER/$nom/sac/usr/include/readline/tilde.h
-  $LN ../editline/readline.h $SCER/$nom/sac/usr/include/readline/readline.h
+  $MKDIR $VNMD/$nom/sac/usr/include/readline
+  touch $VNMD/$nom/sac/usr/include/readline/history.h
+  touch $VNMD/$nom/sac/usr/include/readline/tilde.h
+  $LN ../editline/readline.h $VNMD/$nom/sac/usr/include/readline/readline.h
 
-  $LN $nom.so $SCER/$nom/sac/usr/lib/libreadline.so
+  $LN $nom.so $VNMD/$nom/sac/usr/lib/libreadline.so
 
-  $LN $nom.pc $SCER/$nom/sac/usr/lib/pkgconfig/readline.pc
+  $LN $nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig/readline.pc
 
-  $LN editline.3 $SCER/$nom/sac/usr/share/man/man3/el.3
-  $LN editline.3 $SCER/$nom/sac/usr/share/man/man3/$nom.3
+  $LN editline.3 $VNMD/$nom/sac/usr/share/man/man3/el.3
+  $LN editline.3 $VNMD/$nom/sac/usr/share/man/man3/$nom.3
 }

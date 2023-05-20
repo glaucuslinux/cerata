@@ -32,8 +32,8 @@ check() {
 install() {
   $MAKE \
     BINDIR=/usr/bin \
-    DESTDIR=$SCER/$nom/sac \
+    DESTDIR=$VNMD/$nom/sac \
     install
 
-  $RSYNC include/libnetlink.h $SCER/$nom/sac/usr/include
+  $RSYNC include/libnetlink.h $VNMD/$nom/sac/usr/include
 }
