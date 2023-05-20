@@ -73,7 +73,4 @@ install() {
 
   $LN $nom $SCER/$nom/sac/usr/bin/wget
   $RM $SCER/$nom/sac/usr/bin/${nom}_noinstall
-
-  # Remove libtool archive (.la) file
-  $RM $SCER/$nom/sac/usr/lib/libwget.la
 }
