@@ -78,6 +78,9 @@ install() {
 
   $LN ld.bfd $VNMD/$nom/sac/usr/bin/ld
 
+  # Install the PIC version of libiberty
+  $RSYNC libiberty/pic/libiberty.a $VNMD/$nom/sac/usr/lib
+
   # Manually remove the static libraries
   $RM $VNMD/$nom/sac/usr/lib/libbfd.a
   $RM $VNMD/$nom/sac/usr/lib/libctf.a
