@@ -84,8 +84,8 @@ configure() {
     --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
-    --with-pic \
     --with-system-zlib \
+    --with-pic \
     --with-linker-hash-style=gnu
 }
 
