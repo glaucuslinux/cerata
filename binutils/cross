@@ -81,9 +81,6 @@ install() {
 
   $LN ld.bfd $CRSD/usr/bin/ld
 
-  # Install the PIC version of libiberty
-  $RSYNC libiberty/pic/libiberty.a $CRSD/usr/lib
-
   # Manually remove the static libraries
   $RM $CRSD/usr/lib/libbfd.a
   $RM $CRSD/usr/lib/libctf.a
