@@ -24,6 +24,7 @@ configure() {
     --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -32,8 +33,9 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --enable-thread-safe \
     --enable-shared-cache \
-    --disable-static \
-    --enable-float128
+    --enable-thread-safe \
+    --enable-float128 \
+    --disable-static
 }
 
 build() {
@@ -48,4 +50,7 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install-strip
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
 }
