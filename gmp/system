@@ -23,6 +23,7 @@ configure() {
     --localstatedir=/var \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -30,7 +31,8 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --enable-cxx \
-    --disable-static
+    --disable-static \
+    --with-pic
 }
 
 build() {
@@ -45,4 +47,7 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install-strip
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
 }
