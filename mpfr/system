@@ -35,7 +35,9 @@ configure() {
     --enable-shared-cache \
     --enable-thread-safe \
     --enable-float128 \
-    --disable-static
+    --enable-lto \
+    --disable-static \
+    --with-pic
 }
 
 build() {
