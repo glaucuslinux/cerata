@@ -20,6 +20,7 @@ check() {
 }
 
 install() {
+  $MKDIR $VNMD/$nom/sac/var/db/radula/clusters
   $RSYNC $CERD/ $VNMD/$nom/sac/var/db/radula/clusters/glaucus --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \
