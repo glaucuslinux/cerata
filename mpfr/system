@@ -33,7 +33,6 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --enable-thread-safe \
     --enable-shared-cache \
-    --enable-thread-safe \
     --enable-float128 \
     --disable-static \
     --with-pic
