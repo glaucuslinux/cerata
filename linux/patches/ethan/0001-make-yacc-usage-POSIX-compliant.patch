@@ -1,0 +1,75 @@
+--- scripts/Makefile.host
++++ scripts/Makefile.host
+@@ -11,7 +11,7 @@
+ # YACC
+ # ---------------------------------------------------------------------------
+ quiet_cmd_bison = YACC    $(basename $@).[ch]
+-      cmd_bison = $(YACC) -o $(basename $@).c --defines=$(basename $@).h -t -l $<
++      cmd_bison = $(YACC) -b $(basename $(basename $@)) -d -t -l $<
+ 
+ $(obj)/%.tab.c $(obj)/%.tab.h: $(src)/%.y FORCE
+ 	$(call if_changed,bison)
+--- scripts/genksyms/Makefile
++++ scripts/genksyms/Makefile
+@@ -13,9 +13,11 @@
+ # so that 'bison: not found' will be displayed if it is missing.
+ ifeq ($(findstring 1,$(KBUILD_EXTRA_WARN)),)
+ 
++ifeq ($(shell command -v $(YACC) || [ -x $(YACC) ] && echo y),)
++  $(error command not found: $(YACC))
++endif
+ quiet_cmd_bison_no_warn = $(quiet_cmd_bison)
+-      cmd_bison_no_warn = $(YACC) --version >/dev/null; \
+-			  $(cmd_bison) 2>/dev/null
++      cmd_bison_no_warn = $(cmd_bison) 2>/dev/null
+ 
+ $(obj)/pars%.tab.c $(obj)/pars%.tab.h: $(src)/pars%.y FORCE
+ 	$(call if_changed,bison_no_warn)
+--- scripts/genksyms/lex.l
++++ scripts/genksyms/lex.l
+@@ -19,6 +19,8 @@
+ #include "genksyms.h"
+ #include "parse.tab.h"
+ 
++extern YYSTYPE yylval;
++
+ /* We've got a two-level lexer here.  We let flex do basic tokenization
+    and then we categorize those basic tokens in the second stage.  */
+ #define YY_DECL		static int yylex1(void)
+--- scripts/kconfig/parser.y
++++ scripts/kconfig/parser.y
+@@ -21,6 +21,8 @@
+ 
+ int cdebug = PRINTD;
+ 
++int yynerrs = 0;
++
+ static void yyerror(const char *err);
+ static void zconfprint(const char *err, ...);
+ static void zconf_error(const char *err, ...);
+@@ -98,13 +100,6 @@
+ %type <string> word_opt assign_val
+ %type <flavor> assign_op
+ 
+-%destructor {
+-	fprintf(stderr, "%s:%d: missing end statement for this entry\n",
+-		$$->file->name, $$->lineno);
+-	if (current_menu == $$)
+-		menu_end_menu();
+-} if_entry menu_entry choice_entry
+-
+ %%
+ input: mainmenu_stmt stmt_list | stmt_list;
+ 
+@@ -517,6 +512,11 @@
+ 	if (strcmp(tokenname, expected_tokenname)) {
+ 		zconf_error("unexpected '%s' within %s block",
+ 			    tokenname, expected_tokenname);
++		if (!strcmp(tokenname, "if") || !strcmp(tokenname, "menu") ||
++			!strcmp(tokenname, "choice"))
++			fprintf(stderr, "%s:%d: missing end statement for this entry\n",
++				current_menu->file->name, current_menu->lineno);
++		menu_end_menu();
+ 		yynerrs++;
+ 		return false;
+ 	}

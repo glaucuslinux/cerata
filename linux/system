@@ -4,64 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
-
-  $MAKE \
-    ARCH=$LARCH \
-    mrproper
-
-  if [ $ARCH = x86-64 ]; then
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0104-pci-pme-wakeups.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0105-ksm-wakeups.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0106-intel_idle-tweak-cpuidle-cstates.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0108-smpboot-reuse-timer-calibration.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0109-initialize-ata-before-graphics.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0111-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0120-do-accept-in-LIFO-order-for-cache-efficiency.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0121-locking-rwsem-spin-faster.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0122-ata-libahci-ignore-staggered-spin-up.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0123-print-CPU-that-faults.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0125-nvme-workaround.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0128-itmt_epb-use-epb-to-scale-itmt.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0130-itmt2-ADL-fixes.patch
-    $PATCH -p1 -i $CERD/$nom/patches/clear/0131-add-a-per-cpu-minimum-high-watermark-an-tune-batch-s.patch
-
-    $PATCH -p1 -i $CERD/$nom/patches/graysky/more-uarches-for-kernel-5.17+.patch
-  fi
-
-  $PATCH -p0 -i $CERD/$nom/patches/ethan/0001-make-yacc-usage-POSIX-compliant.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-libarchive-bsdtar-compatibility.patch
-
-  $MKDIR $SBLD/$nom
+  :
 }
 
 configure() {
-  if [ $ARCH = x86-64 ]; then
-    $RSYNC $CERD/$nom/glaucus.config.$ARCH $SBLD/$nom/.config
-
-    $MAKE \
-      O=$SBLD/$nom \
-      ARCH=$LARCH \
-      oldconfig
-
-    $MAKE \
-      O=$SBLD/$nom \
-      ARCH=$LARCH \
-      prepare
-  else
-    $MAKE \
-      O=$SBLD/$nom \
-      ARCH=$LARCH \
-      ${LCARCH}defconfig
-  fi
+  :
 }
 
 build() {
-  $MAKE \
-    O=$SBLD/$nom \
-    ARCH=$LARCH
+  :
 }
 
 check() {
@@ -69,15 +20,6 @@ check() {
 }
 
 install() {
-  $MAKE \
-    O=$SBLD/$nom \
-    ARCH=$LARCH \
-    INSTALL_MOD_STRIP=1 \
-    INSTALL_MOD_PATH=$VNMD/$nom/sac/usr \
-    modules_install
-
-  $MKDIR $VNMD/$nom/sac/boot
-
-  $RSYNC $SBLD/$nom/$LIARCH $VNMD/$nom/sac/boot/vmlinuz
-  $RSYNC $SBLD/$nom/System.map $VNMD/$nom/sac/boot
+  $RSYNC /boot/vmlinuz-linux $VNMD/$nom/sac/boot/vmlinuz
+  $RSYNC /usr/lib/modules $VNMD/$nom/sac/usr/lib
 }
