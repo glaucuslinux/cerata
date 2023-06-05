@@ -13,7 +13,7 @@ prepare() {
 
 configure() {
   # `ugrep` requires `-fexceptions`
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
+  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-fno-exceptions //' -e 's/-fno-rtti //')" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
