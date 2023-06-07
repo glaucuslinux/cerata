@@ -4,16 +4,27 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $MKDIR $SBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
-  :
+  # Use `samurai` provided by the host system
+  $MESON setup \
+    -Dlibcurl=disabled \
+    -Dlibarchive=enabled \
+    -Dlibpkgconf=enabled \
+    -Dsamurai=disabled \
+    -Dbestline=enabled \
+    -Ddocs=disabled \
+    -Dtracy=disabled \
+    $SBLD/$nom
 }
 
 build() {
-  :
+  samu \
+    -C $SBLD/$nom
 }
 
 check() {
@@ -21,5 +32,8 @@ check() {
 }
 
 install() {
-  :
+  DESTDIR=$VNMD/$nom/sac \
+  samu \
+    -C $SBLD/$nom \
+    install
 }
