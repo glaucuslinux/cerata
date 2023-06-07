@@ -1,0 +1,42 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom $XSRC --delete
+  cd $XSRC/$nom
+
+  $PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
+
+  # Remove upstream patch in following release
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
+  $PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
+}
+
+configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
+}
+
+build() {
+  $MAKE \
+    PREFIX=/usr \
+    MANPREFIX=/usr/share/man \
+    CC=$CC \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS"
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    PREFIX=/usr \
+    MANPREFIX=/usr/share/man \
+    DESTDIR=$CRSD \
+    install
+}
