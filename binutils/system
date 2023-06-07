@@ -85,6 +85,13 @@ install() {
   $RM $VNMD/$nom/sac/usr/lib/libopcodes.a
   $RM $VNMD/$nom/sac/usr/lib/libsframe.a
 
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/libbfd.la
+  $RM $VNMD/$nom/sac/usr/lib/libctf.la
+  $RM $VNMD/$nom/sac/usr/lib/libctf-nobfd.la
+  $RM $VNMD/$nom/sac/usr/lib/libopcodes.la
+  $RM $VNMD/$nom/sac/usr/lib/libsframe.la
+
   # Remove unnecessary manpages
   $RM $VNMD/$nom/sac/usr/share/man/man1/dlltool.1
   $RM $VNMD/$nom/sac/usr/share/man/man1/windmc.1
