@@ -4,14 +4,33 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
-
-  cd $SRCD/$nom/$nom-$ver
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 }
 
 configure() {
   # Use `samurai` provided by the host system
-  $MESON setup \
+  muon setup \
+    --prefix=/usr \
+    --bindir=/usr/bin \
+    --datadir=/usr/share \
+    --includedir=/usr/include \
+    --infodir=/usr/share/info \
+    --libdir=/usr/lib \
+    --libexecdir=/usr/lib/$nom \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --sbindir=/usr/bin \
+    --sharedstatedir=/var/lib \
+    --sysconfdir=/etc \
+    --backend=ninja \
+    --buildtype=release \
+    --stdsplit \
+    --strip \
+    --wrap-mode=nodownload \
+    -Db_lto=true \
+    -Db_lto_mode=thin \
+    -Db_pie=true \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \
     -Dlibpkgconf=enabled \
@@ -19,12 +38,12 @@ configure() {
     -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
-    $SBLD/$nom
+    build
 }
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C build
 }
 
 check() {
@@ -33,7 +52,7 @@ check() {
 
 install() {
   DESTDIR=$VNMD/$nom/sac \
-  samu \
-    -C $SBLD/$nom \
+  muon \
+    -C build \
     install
 }
