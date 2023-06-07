@@ -50,4 +50,8 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install-strip
+
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
+  $RM $VNMD/$nom/sac/usr/lib/libdrop_ambient.la
 }
