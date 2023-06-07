@@ -59,4 +59,7 @@ install() {
 
   $LN bsdcpio $VNMD/$nom/sac/usr/bin/cpio
   $LN bsdtar $VNMD/$nom/sac/usr/bin/tar
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
 }
