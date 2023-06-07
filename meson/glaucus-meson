@@ -23,4 +23,5 @@ exec meson setup \
   --wrap-mode=nodownload \
   -Db_lto=true \
   -Db_lto_mode=thin \
+  -Db_pie=true \
   $@
