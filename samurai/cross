@@ -1,0 +1,39 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/CVE-2021-30218.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/CVE-2021-30219.patch
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    BINDIR=/usr/bin \
+    MANDIR=/usr/share/man
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    MANDIR=/usr/share/man \
+    DESTDIR=$CRSD \
+    install
+
+  $LN samu $CRSD/usr/bin/ninja
+
+  $LN samu.1 $CRSD/usr/share/man/man1/ninja.1
+}
