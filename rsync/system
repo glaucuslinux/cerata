@@ -31,7 +31,6 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-debug \
-    --with-rrsync \
     --without-included-popt \
     --without-included-zlib
 }
@@ -50,4 +49,8 @@ install() {
     install-strip
 
   $RSYNC $CERD/$nom/${nom}d.conf $VNMD/$nom/sac/etc
+
+  $RSYNC support/r$nom $VNMD/$nom/sac/usr/bin
+
+  $RSYNC r$nom.1 $VNMD/$nom/sac/usr/share/man/man1
 }
