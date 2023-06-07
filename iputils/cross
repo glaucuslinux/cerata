@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $MKDIR $XBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
@@ -13,12 +13,12 @@ configure() {
   $MESON \
     -DUSE_IDN=false \
     -DUSE_GETTEXT=false \
-    $SBLD/$nom
+    $XBLD/$nom
 }
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C $XBLD/$nom
 }
 
 check() {
@@ -26,11 +26,11 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$CRSD \
   samu \
-    -C $SBLD/$nom \
+    -C $XBLD/$nom \
     install
 
-  $LN ping $VNMD/$nom/sac/usr/bin/ping6
-  $LN tracepath $VNMD/$nom/sac/usr/bin/tracepath6
+  $LN ping $CRSD/usr/bin/ping6
+  $LN tracepath $CRSD/usr/bin/tracepath6
 }
