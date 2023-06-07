@@ -53,6 +53,11 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     install-strip
 
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/libcrypto.la
+  $RM $VNMD/$nom/sac/usr/lib/libssl.la
+  $RM $VNMD/$nom/sac/usr/lib/libtls.la
+
   $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libcrypto.so.50.0.2
   $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libssl.so.53.0.2
   $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libtls.so.26.0.2
