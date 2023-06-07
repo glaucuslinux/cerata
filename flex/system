@@ -54,5 +54,8 @@ install() {
 
   $LN $nom $VNMD/$nom/sac/usr/bin/lex
 
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/libfl.la
+
   $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/lex.1
 }
