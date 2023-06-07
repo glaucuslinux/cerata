@@ -57,4 +57,5 @@ install() {
 
   # Remove libtool archive (.la) file
   $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
+  $RM $VNMD/$nom/sac/usr/lib/lib${nom}xx.la
 }
