@@ -10,27 +10,7 @@ prepare() {
 
 configure() {
   # Use `samurai` provided by the host system
-  muon setup \
-    --prefix=/usr \
-    --bindir=/usr/bin \
-    --datadir=/usr/share \
-    --includedir=/usr/include \
-    --infodir=/usr/share/info \
-    --libdir=/usr/lib \
-    --libexecdir=/usr/lib/$nom \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --sbindir=/usr/bin \
-    --sharedstatedir=/var/lib \
-    --sysconfdir=/etc \
-    --backend=ninja \
-    --buildtype=release \
-    --stdsplit \
-    --strip \
-    --wrap-mode=nodownload \
-    -Db_lto=true \
-    -Db_lto_mode=thin \
-    -Db_pie=true \
+  $CERD/$nom/glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \
     -Dlibpkgconf=enabled \
@@ -52,7 +32,7 @@ check() {
 
 install() {
   DESTDIR=$VNMD/$nom/sac \
-  muon \
+  $nom \
     -C build \
     install
 }
