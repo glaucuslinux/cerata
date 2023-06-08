@@ -1,0 +1,27 @@
+#!/bin/sh -e
+
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+exec muon setup \
+  --prefix=/usr \
+  --bindir=/usr/bin \
+  --datadir=/usr/share \
+  --includedir=/usr/include \
+  --infodir=/usr/share/info \
+  --libdir=/usr/lib \
+  --libexecdir=/usr/lib/$nom \
+  --localedir=/usr/share/locale \
+  --mandir=/usr/share/man \
+  --sbindir=/usr/bin \
+  --sharedstatedir=/var/lib \
+  --sysconfdir=/etc \
+  --backend=ninja \
+  --buildtype=release \
+  --stdsplit \
+  --strip \
+  --wrap-mode=nodownload \
+  -Db_lto=true \
+  -Db_lto_mode=thin \
+  -Db_pie=true \
+  $@
