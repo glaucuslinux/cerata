@@ -29,11 +29,6 @@ check() {
 }
 
 install() {
-  if [ $BOOTSTRAP = yes ]; then
-    samu \
-      install/strip
-  fi
-
   DESTDIR=$VNMD/$nom/sac \
   samu \
     install/strip
