@@ -127,6 +127,19 @@ install() {
   $MKDIR $VNMD/$nom/sac/usr/lib/bfd-plugins
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $VNMD/$nom/sac/usr/lib/bfd-plugins
 
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
+  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la
+  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/plugin/libcp1plugin.la
+  $RM $VNMD/$nom/sac/usr/lib/libatomic.la
+  $RM $VNMD/$nom/sac/usr/lib/libcc1.la
+  $RM $VNMD/$nom/sac/usr/lib/libgomp.la
+  $RM $VNMD/$nom/sac/usr/lib/libitm.la
+  $RM $VNMD/$nom/sac/usr/lib/libquadmath.la
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++.la
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++fs.la
+  $RM $VNMD/$nom/sac/usr/lib/libsupc++.la
+
   # Compatibility symlink
   $LN ../bin/cpp $VNMD/$nom/sac/usr/lib/cpp
 
