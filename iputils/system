@@ -4,20 +4,21 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $MKDIR $SBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
   $CERD/muon/glaucus-muon \
     -DUSE_IDN=false \
     -DUSE_GETTEXT=false \
-    build
+    $SBLD/$nom
 }
 
 build() {
   samu \
-    -C build
+    -C $SBLD/$nom
 }
 
 check() {
@@ -27,7 +28,7 @@ check() {
 install() {
   DESTDIR=$VNMD/$nom/sac \
   muon \
-    -C build \
+    -C $SBLD/$nom \
     install
 
   $LN ping $VNMD/$nom/sac/usr/bin/ping6
