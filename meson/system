@@ -22,14 +22,6 @@ check() {
 }
 
 install() {
-  if [ $BOOTSTRAP = yes ]; then
-    python3 setup.py \
-      install \
-      --optimize=2 \
-      --force \
-      --skip-build
-  fi
-
   python3 setup.py \
     install \
     --root=$VNMD/$nom/sac \
