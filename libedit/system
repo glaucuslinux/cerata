@@ -57,6 +57,9 @@ install() {
   touch $VNMD/$nom/sac/usr/include/readline/tilde.h
   $LN ../editline/readline.h $VNMD/$nom/sac/usr/include/readline/readline.h
 
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
+
   $LN $nom.so $VNMD/$nom/sac/usr/lib/libreadline.so
 
   $LN $nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig/readline.pc
