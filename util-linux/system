@@ -74,4 +74,11 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     usrsbin_execdir=/usr/bin \
     install-strip
+
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/libblkid.la
+  $RM $VNMD/$nom/sac/usr/lib/libfdisk.la
+  $RM $VNMD/$nom/sac/usr/lib/libmount.la
+  $RM $VNMD/$nom/sac/usr/lib/libsmartcols.la
+  $RM $VNMD/$nom/sac/usr/lib/libuuid.la
 }
