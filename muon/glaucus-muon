@@ -4,23 +4,23 @@
 # Distributed under the terms of the ISC License
 
 exec muon setup \
-  --prefix=/usr \
-  --bindir=/usr/bin \
-  --datadir=/usr/share \
-  --includedir=/usr/include \
-  --infodir=/usr/share/info \
-  --libdir=/usr/lib \
-  --libexecdir=/usr/lib/$nom \
-  --localedir=/usr/share/locale \
-  --mandir=/usr/share/man \
-  --sbindir=/usr/bin \
-  --sharedstatedir=/var/lib \
-  --sysconfdir=/etc \
-  --backend=ninja \
-  --buildtype=release \
-  --stdsplit \
-  --strip \
-  --wrap-mode=nodownload \
+  -Dprefix=/usr \
+  -Dbindir=/usr/bin \
+  -Ddatadir=/usr/share \
+  -Dincludedir=/usr/include \
+  -Dinfodir=/usr/share/info \
+  -Dlibdir=/usr/lib \
+  -Dlibexecdir=/usr/lib/$nom \
+  -Dlocaledir=/usr/share/locale \
+  -Dmandir=/usr/share/man \
+  -Dsbindir=/usr/bin \
+  -Dsharedstatedir=/var/lib \
+  -Dsysconfdir=/etc \
+  -Dbackend=ninja \
+  -Dbuildtype=release \
+  -Dstdsplit=true \
+  -Dstrip=true \
+  -Dwrap_mode=nodownload \
   -Db_lto=true \
   -Db_lto_mode=thin \
   -Db_pie=true \
