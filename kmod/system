@@ -72,5 +72,8 @@ install() {
   $MKDIR $VNMD/$nom/sac/usr/lib/depmod.d
   $RSYNC $CERD/$nom/search.conf $VNMD/$nom/sac/usr/lib/depmod.d
 
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
+
   $MKDIR $VNMD/$nom/sac/usr/lib/modprobe.d
 }
