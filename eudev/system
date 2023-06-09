@@ -60,6 +60,9 @@ install() {
   $MV $VNMD/$nom/sac/usr/lib/udev/scsi_id $CRSD/usr/bin
   $MV $VNMD/$nom/sac/usr/lib/udev/v4l_id $CRSD/usr/bin
 
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/libudev.la
+
   $MKDIR $VNMD/$nom/usr/lib/pkgconfig
   $MV $VNMD/$nom/sac/usr/share/pkgconfig/udev.pc $VNMD/$nom/sac/usr/lib/pkgconfig
 
