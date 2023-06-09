@@ -70,4 +70,7 @@ install() {
   # `pidwait` and `pkill` are identical to `pgrep`
   $LN pgrep $VNMD/$nom/sac/usr/bin/pidwait
   $LN pgrep $VNMD/$nom/sac/usr/bin/pkill
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/libproc2.la
 }
