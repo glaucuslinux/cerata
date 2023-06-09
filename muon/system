@@ -4,8 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $MKDIR $SBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
@@ -18,12 +19,12 @@ configure() {
     -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
-    build
+    $SBLD/$nom
 }
 
 build() {
   samu \
-    -C build
+    -C $SBLD/$nom
 }
 
 check() {
@@ -33,6 +34,6 @@ check() {
 install() {
   DESTDIR=$VNMD/$nom/sac \
   $nom \
-    -C build \
+    -C $SBLD/$nom \
     install
 }
