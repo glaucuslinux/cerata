@@ -13,7 +13,9 @@ configure() {
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross.$ARCH \
     -DUSE_IDN=false \
+    -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
+    -DSKIP_TESTS=true \
     $XBLD/$nom
 }
 

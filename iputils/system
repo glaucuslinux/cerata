@@ -12,7 +12,9 @@ prepare() {
 configure() {
   $CERD/muon/glaucus-muon \
     -DUSE_IDN=false \
+    -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
+    -DSKIP_TESTS=true \
     $SBLD/$nom
 }
 
