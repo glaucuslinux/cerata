@@ -52,6 +52,9 @@ install() {
   if [ $BOOTSTRAP = yes ]; then
     $MAKE \
       install-strip
+
+    # Remove libtool archive (.la) file
+    $RM /usr/lib/lib$nom.la
   fi
 
   $MAKE \
@@ -60,5 +63,6 @@ install() {
 
   # Remove libtool archive (.la) file
   $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
+
   $RM $VNMD/$nom/sac/usr/lib/lib$nom.so.23.2.0-gdb.py
 }
