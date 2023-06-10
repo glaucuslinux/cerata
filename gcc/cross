@@ -135,6 +135,17 @@ install() {
   # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
+  # Manually remove the static libraries
+  $RM $CRSD/usr/lib/$nom/$TGT/$ver/libgcc_eh.a
+  $RM $CRSD/usr/lib/$nom/$TGT/$ver/libgcov.a
+  $RM $CRSD/usr/lib/libatomic.a
+  $RM $CRSD/usr/lib/libgomp.a
+  $RM $CRSD/usr/lib/libitm.a
+  $RM $CRSD/usr/lib/libquadmath.a
+  $RM $CRSD/usr/lib/libstdc++.a
+  $RM $CRSD/usr/lib/libstdc++fs.a
+  $RM $CRSD/usr/lib/libsupc++.a
+
   # Remove libtool archive (.la) files
   $RM $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
   $RM $CRSD/usr/lib/libatomic.la

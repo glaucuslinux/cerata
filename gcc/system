@@ -127,6 +127,17 @@ install() {
   $MKDIR $VNMD/$nom/sac/usr/lib/bfd-plugins
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $VNMD/$nom/sac/usr/lib/bfd-plugins
 
+  # Manually remove the static libraries
+  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/libgcc_eh.a
+  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/libgcov.a
+  $RM $VNMD/$nom/sac/usr/lib/libatomic.a
+  $RM $VNMD/$nom/sac/usr/lib/libgomp.a
+  $RM $VNMD/$nom/sac/usr/lib/libitm.a
+  $RM $VNMD/$nom/sac/usr/lib/libquadmath.a
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++.a
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++fs.a
+  $RM $VNMD/$nom/sac/usr/lib/libsupc++.a
+
   # Remove libtool archive (.la) files
   $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
   $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la
