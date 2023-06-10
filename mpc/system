@@ -46,6 +46,9 @@ install() {
   if [ $BOOTSTRAP = yes ]; then
     $MAKE \
       install-strip
+
+    # Remove libtool archive (.la) file
+    $RM /usr/lib/lib$nom.la
   fi
 
   $MAKE \
