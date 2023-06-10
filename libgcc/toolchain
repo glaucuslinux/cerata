@@ -27,4 +27,9 @@ check() {
 install() {
   $MAKE \
     install-strip-target-$nom
+
+  # Manually remove the static libraries
+  $RM $TLCD/usr/lib/gcc/$TGT/$ver/$nom.a
+  $RM $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a
+  $RM $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a
 }
