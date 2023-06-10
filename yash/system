@@ -7,8 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-posixly-correct-sh.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-introduction.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/sample-yashrc.patch
 }
