@@ -10,8 +10,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
-
-  $PATCH -p1 -i $CERD/$nom/patches/lfs/$nom-$ver-backspace-1.patch
 }
 
 configure() {
@@ -36,6 +34,7 @@ configure() {
     --disable-static \
     --disable-nls \
     --disable-rpath \
+    --enable-optional-progs \
     --disable-vlock \
     --disable-tests
 }
@@ -57,25 +56,6 @@ install() {
 
   $RM $VNMD/$nom/sac/usr/share/keymaps/amiga
   $RM $VNMD/$nom/sac/usr/share/keymaps/atari
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz \
-    $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr-old.map.gz
-  $LN fr-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr.map.gz
-  $LN fr-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/azerty/fr-latin0.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/colemak/en-latin9.map.gz \
-    $VNMD/$nom/sac/usr/share/keymaps/i386/colemak/colemak.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/fgGIod/trf.map.gz \
-    $VNMD/$nom/sac/usr/share/keymaps/i386/fgGIod/trf-fgGIod.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/olpc/es.map.gz \
-    $VNMD/$nom/usr/share/keymaps/i386/olpc/es-olpc.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/olpc/pt.map.gz \
-    $VNMD/$nom/usr/share/keymaps/i386/olpc/pt-olpc.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/cz.map.gz \
-    $VNMD/$nom/usr/share/keymaps/i386/qwerty/cz-qwerty.map.gz
-  $MV $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/fi.map.gz \
-    $VNMD/$nom/usr/share/keymaps/i386/qwerty/fi-kotoistus.map.gz
-  $LN pt-latin9.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/pt.map.gz
   $RM $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/ro_win.map.gz
-  $LN sv-latin1.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/se-latin1.map
-  $LN sr-cy.map.gz $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/sr-latin.map.gz
   $RM $VNMD/$nom/sac/usr/share/keymaps/sun
 }
