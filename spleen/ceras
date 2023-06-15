@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="spleen"
+ver="2.0.0"
+url="https://github.com/fcambus/spleen/releases/download/2.0.0/spleen-2.0.0.tar.gz"
+sum="f0cda8f4d5e123a9827b72fd12ae8a147a27a11190e02ed01c6070c38c57e713"
+cnt="make"
