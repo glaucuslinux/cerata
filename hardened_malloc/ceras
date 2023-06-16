@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="hardened_malloc"
+ver="11"
+url="https://github.com/GrapheneOS/hardened_malloc/archive/11.tar.gz"
+sum="72e5687821b37692dce5dd1ad155b76357e442a37cc913d6162988264b056b2a"
+cnt="make"
