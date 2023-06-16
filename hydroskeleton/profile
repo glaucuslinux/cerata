@@ -1,10 +1,6 @@
 umask 022
 
-if [ $(id -u) -eq 0 ]; then
-  PS1="[\033[0;41m\u@\h\033[0m:\033[1m\w\033[0m]# "
-else
-  PS1="[\033[0;44m\u@\h\033[0m:\033[1m\w\033[0m]$ "
-fi
+LD_PRELOAD=/usr/lib/libhardened_malloc.so
 
 PATH=/usr/bin:/bin
 
