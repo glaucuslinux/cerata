@@ -8,12 +8,11 @@ prepare() {
   cd $XSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
-
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/sample-yashrc.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile.patch
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-cross-compile.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-fix-cross-compile.patch
 
   ./configure \
     --prefix=/usr \
