@@ -1,0 +1,30 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+check() {
+  :
+}
+
+install() {
+  $MKDIR $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-5x8.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-6x12.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-8x16.psfu $VNMD/$nom/sac/usr/share/consolefonts
+}
