@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  :
 }
 
 build() {
@@ -31,5 +31,5 @@ install() {
     INCLUDEDIR=/usr/include \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     DESTDIR=$CRSD \
-    install
+    install-shared
 }
