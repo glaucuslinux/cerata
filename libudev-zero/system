@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom
+  cd $SSRC/$nom
 }
 
 configure() {
@@ -31,6 +31,6 @@ install() {
     LIBDIR=/usr/lib \
     INCLUDEDIR=/usr/include \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    DESTDIR=$CRSD \
+    DESTDIR=$VNMD/$nom/sac \
     install-shared
 }
