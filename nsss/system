@@ -21,7 +21,7 @@ configure() {
     --includedir=/usr/include \
     --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
     --with-include=$SYSD/usr/include \
-    --with-lib=$CRSD/usr/lib \
+    --with-lib=$SYSD/usr/lib \
     --with-dynlib=$SYSD/usr/lib \
     --enable-shared \
     --disable-static \
