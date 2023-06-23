@@ -43,4 +43,6 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install
+
+  $RSYNC $CERD/$nom/mdev.conf $VNMD/$nom/sac/etc
 }

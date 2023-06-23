@@ -44,4 +44,6 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
+
+  $RSYNC $CERD/$nom/mdev.conf $CRSD/etc
 }
