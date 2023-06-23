@@ -19,6 +19,8 @@ build() {
     INCLUDEDIR=/usr/include \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     libudev.so.1
+
+  $CC $CFLAGS $LDFLAGS contrib/helper.c -o $nom-helper
 }
 
 check() {
@@ -33,4 +35,6 @@ install() {
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     DESTDIR=$CRSD \
     install-shared
+
+  $RSYNC $nom-helper $CRSD/usr/bin
 }
