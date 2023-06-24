@@ -47,5 +47,5 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $RSYNC $CERD/$nom/yashrc $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/${nom}rc $VNMD/$nom/sac/etc
 }

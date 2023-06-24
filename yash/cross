@@ -54,5 +54,5 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $RSYNC $CERD/$nom/yashrc $CRSD/etc
+  $RSYNC $CERD/$nom/${nom}rc $CRSD/etc
 }
