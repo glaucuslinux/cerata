@@ -1,6 +1,6 @@
 umask 022
 
-LD_PRELOAD=/usr/lib/libhardened_malloc.so
+LD_PRELOAD=/usr/lib/libmimalloc.so
 
 PATH=/usr/bin:/bin
 
