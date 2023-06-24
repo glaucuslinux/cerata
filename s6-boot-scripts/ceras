@@ -5,5 +5,5 @@
 
 nom="s6-boot-scripts"
 ver="git"
-cmt="85c3da7"
+cmt="76daa14"
 url="https://github.com/glaucuslinux/s6-boot-scripts"
