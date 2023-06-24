@@ -8,7 +8,7 @@ prepare() {
   cd $SSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
 }
 
 configure() {
