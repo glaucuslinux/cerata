@@ -1,5 +1,4 @@
-network:
-  dhcp: on
 universal: true
+modules: loop,squashfs,erofs
 compression: zstd
 strip: true
