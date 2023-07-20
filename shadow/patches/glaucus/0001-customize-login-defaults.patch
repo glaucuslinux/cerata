@@ -14,7 +14,16 @@
  # the PAM modules configuration.
  #
 -#ENCRYPT_METHOD DES
-+ENCRYPT_METHOD SHA512
++ENCRYPT_METHOD YESCRYPT
  
  #
  # Only works if ENCRYPT_METHOD is set to SHA256 or SHA512.
+@@ -379,7 +379,7 @@
+ # If not specified, a cost factor of 5 will be used.
+ # The value must be within the 1-11 range.
+ #
+-#YESCRYPT_COST_FACTOR 5
++YESCRYPT_COST_FACTOR 11
+ 
+ #
+ # List of groups to add to the user's supplementary group set
