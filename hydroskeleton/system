@@ -41,6 +41,7 @@ install() {
   $RSYNC $CERD/$nom/passwd $SYSD/etc
   $RSYNC $CERD/$nom/profile $SYSD/etc
   $RSYNC $CERD/$nom/resolv.conf $SYSD/etc
+  $RSYNC $CERD/$nom/shadow $SYSD/etc
   $RSYNC $CERD/$nom/shells $SYSD/etc
 
   $MKDIR $SYSD/home
