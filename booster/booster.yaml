@@ -1,4 +1,4 @@
 universal: true
-modules: loop,squashfs,erofs
+modules: loop,erofs
 compression: zstd
 strip: true
