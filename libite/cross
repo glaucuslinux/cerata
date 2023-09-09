@@ -33,7 +33,8 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
-    --disable-static
+    --disable-static \
+    --disable-doxygen-doc
 }
 
 build() {
