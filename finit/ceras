@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="finit"
+ver="4.4"
+url="https://github.com/troglobit/finit/releases/download/4.4/finit-4.4.tar.gz"
+sum="b491e9b5b050afc3c0b33f7571ed42cb4e880db7b4a02d83758d1ad077d4ad20"
+cnt="libite libuev make"
