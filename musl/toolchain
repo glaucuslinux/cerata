@@ -25,10 +25,6 @@ configure() {
 }
 
 build() {
-  # Provide minimal libssp_nonshared.a so we don't require libssp from gcc
-  $TGT-gcc -c $CERD/$nom/__stack_chk_fail_local.c
-  $TGT-gcc-ar r libssp_nonshared.a __stack_chk_fail_local.o
-
   $MAKE
 }
 
@@ -51,6 +47,4 @@ install() {
   $LN ../lib/ld-$nom-$MLARCH.so.1 $CRSD/usr/bin/ldd
 
   $LN libc.so $CRSD/usr/lib/ld-$nom-$MLARCH.so.1
-
-  $RSYNC libssp_nonshared.a $CRSD/usr/lib
 }
