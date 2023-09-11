@@ -28,7 +28,6 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-libitm-disable-FORTIFY.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0013-lib${nom}_s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0017-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0019-Alpine-musl-package-provides-libssp_nonshared.a.-We-.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0020-DP-Use-push-state-pop-state-for-gold-as-well-when-li.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0027-always-build-lib${nom}_eh.a.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0031-There-are-more-than-one-st_-a-m-c-tim-fields-in-stru.patch
