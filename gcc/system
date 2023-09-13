@@ -17,7 +17,6 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0008-Disable-ssp-on-nostdlib-nodefaultlibs-and-ffreestand.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0010-Don-t-declare-asprintf-if-defined-as-a-macro.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-libitm-disable-FORTIFY.patch
