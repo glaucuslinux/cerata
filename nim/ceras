@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="nim"
-ver="1.6.12"
-url="https://github.com/nim-lang/Nim/archive/v1.6.12.tar.gz"
-sum="4e27c6b96785b1cdcce36d769e4729c76ce11950678312134ae5e4567e445a55"
+ver="2.0.0"
+url="https://github.com/nim-lang/Nim/archive/v2.0.0.tar.gz"
+sum="7cd26d57ee1ac89848783a109c34e3180aee859629363ebf9ad8a2146122b8ed"
