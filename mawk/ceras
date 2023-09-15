@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mawk"
-ver="1.3.4-20230322"
-url="https://invisible-island.net/archives/mawk/mawk-1.3.4-20230322.tgz"
-sum="1358848ae0da39b42cad9519cf36f7d94220c1ed1ce5e2c23c92efebf6420f6b"
+ver="1.3.4-20230808"
+url="https://invisible-island.net/archives/mawk/mawk-1.3.4-20230808.tgz"
+sum="59ed67af55cc33dfb1ff6d4aeee3eb9313429d3d16d9cc5bea4e2e3b59372a5d"
 cnt="make"
