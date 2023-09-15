@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="grep"
-ver="3.10"
-url="https://ftpmirror.gnu.org/grep/grep-3.10.tar.gz"
-sum="efc5a7adc11f825c242fa4f810227518208dea3c2536fa25485c6a5ff42d0717"
+ver="3.11"
+url="https://ftpmirror.gnu.org/grep/grep-3.11.tar.gz"
+sum="3f89442f3f593ad02e5a392d56d531196d43154dba716a001010b458c6f428e6"
 cnt="make pcre2"
