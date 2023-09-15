@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="intel-ucode"
-ver="20230214"
-url="https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/archive/microcode-20230214.tar.gz"
-sum="d3fb85619e936f8f05d436bfac6c5f762e2552fd27d8517a862e50bf08f7f7fa"
+ver="20230808"
+url="https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/archive/microcode-20230808.tar.gz"
+sum="15453604ecf71eda8bd60cfbd46bb57f05726c44dda2ca5d6c462ec2eaf9b3ba"
 cnt="iucode-tool"
