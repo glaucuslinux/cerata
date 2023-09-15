@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pciutils"
-ver="3.9.0"
-url="https://mj.ucw.cz/download/linux/pci/pciutils-3.9.0.tar.gz"
-sum="e2c73a440bd572e2d11d458d07d3c89be863abc8cfa2af6057f0e8dd8bc979a8"
+ver="3.10.0"
+url="https://mj.ucw.cz/download/linux/pci/pciutils-3.10.0.tar.gz"
+sum="8665b6604ae390079c2d4c6c4c69775af79533385faa4032a09b7697fc63e654"
 cnt="kmod libressl libudev-zero linux-headers make xz zlib-ng zstd"
 cys="hwdata"
