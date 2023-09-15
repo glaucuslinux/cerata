@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="xxhash"
-ver="0.8.1"
-url="https://github.com/Cyan4973/xxHash/archive/v0.8.1.tar.gz"
-sum="65ffa3883d271c3949c4d7b69d3140196c02d4b3a0338ea163fb5bdd60a6161e"
+ver="0.8.2"
+url="https://github.com/Cyan4973/xxHash/archive/v0.8.2.tar.gz"
+sum="746e7a7e00b964272c2190fbbeea0138b1db9790c32ab5724b8107e7f12ea54b"
 cnt="make"
