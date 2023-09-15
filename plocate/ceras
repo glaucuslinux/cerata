@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="plocate"
-ver="1.1.18"
-url="https://plocate.sesse.net/download/plocate-1.1.18.tar.gz"
-sum="af2993e3bd42a56ddad38997134e0cea2dc03e9ee0202905b503ae8e748cae7b"
+ver="1.1.19"
+url="https://plocate.sesse.net/download/plocate-1.1.19.tar.gz"
+sum="409264217a7d87e77a56dc637b8510962e14efb0e56bebf4f3765068170e07d9"
 cnt="liburing meson samurai zstd"
 cys="gcc"
