@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pkgconf"
-ver="1.9.4"
-url="https://distfiles.dereferenced.org/pkgconf/pkgconf-1.9.4.tar.gz"
-sum="0bf1970e71c6dc708d9136a37708f1837ba0fffdbe6eb2bb27306c112e935dde"
+ver="2.3"
+url="https://distfiles.dereferenced.org/pkgconf/pkgconf-2.0.3.tar.gz"
+sum="8c45af7409e3660228227eb631941a35f94aa4f7983fc3605cf1ce7b2f830c18"
 cnt="make"
