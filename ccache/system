@@ -4,9 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  cd $SRCD/$nom/$nom-$ver
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
+
+  $MKDIR $SBLD/$nom
 }
 
 configure() {
