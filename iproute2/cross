@@ -7,11 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/missing-sep.patch
-
   $PATCH -p1 -i $CERD/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/opensuse/add-explicit-typecast-to-avoid-gcc-warning.patch
 }
 
 configure() {

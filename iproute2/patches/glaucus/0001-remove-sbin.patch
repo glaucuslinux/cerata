@@ -11,7 +11,7 @@
  	rm -f $(BROBJ) bridge
 --- dcb/Makefile
 +++ dcb/Makefile
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  
  install: all
  	for i in $(TARGETS); \
@@ -74,16 +74,16 @@
  PREFIX?=/usr
 -SBINDIR?=/sbin
 +BINDIR?=/bin
- CONFDIR?=/etc/iproute2
+ CONF_ETC_DIR?=/etc/iproute2
+ CONF_USR_DIR?=$(PREFIX)/lib/iproute2
  NETNS_RUN_DIR?=/var/run/netns
- NETNS_ETC_DIR?=/etc/netns
-@@ -99,7 +99,7 @@
+@@ -101,7 +101,7 @@
  	fi
  
  install: all
 -	install -m 0755 -d $(DESTDIR)$(SBINDIR)
 +	install -m 0755 -d $(DESTDIR)$(BINDIR)
- 	install -m 0755 -d $(DESTDIR)$(CONFDIR)
+ 	install -m 0755 -d $(DESTDIR)$(CONF_USR_DIR)
  	install -m 0755 -d $(DESTDIR)$(ARPDDIR)
  	install -m 0755 -d $(DESTDIR)$(HDRDIR)
 --- misc/Makefile
