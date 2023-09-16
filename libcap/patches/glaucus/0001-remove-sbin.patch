@@ -333,7 +333,7 @@
  ## The pam_cap module simply alters the value of the inheritable
 --- progs/Makefile
 +++ progs/Makefile
-@@ -36,12 +36,12 @@
+@@ -41,12 +41,12 @@
  	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
  
  install: all
