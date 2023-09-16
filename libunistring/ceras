@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="libunistring"
+ver="1.1"
+url="https://ftpmirror.gnu.org/libunistring/libunistring-1.1.tar.gz"
+sum="a1df9867ce4cf10d66702242549c746a14dd705612c71c987704119bd1e90a36"
+cnt="make"
