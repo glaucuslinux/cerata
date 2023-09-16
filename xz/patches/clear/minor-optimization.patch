@@ -1,0 +1,46 @@
+diff --git a/src/liblzma/rangecoder/range_encoder.h b/src/liblzma/rangecoder/range_encoder.h
+index d794eab..aa52424 100644
+--- a/src/liblzma/rangecoder/range_encoder.h
++++ b/src/liblzma/rangecoder/range_encoder.h
+@@ -128,6 +128,7 @@ rc_direct(lzma_range_encoder *rc,
+ static inline void
+ rc_flush(lzma_range_encoder *rc)
+ {
++	_Pragma("GCC unroll 5")
+ 	for (size_t i = 0; i < 5; ++i)
+ 		rc->symbols[rc->count++] = RC_FLUSH;
+ }
+@@ -140,7 +141,7 @@ rc_shift_low(lzma_range_encoder *rc,
+ 	if ((uint32_t)(rc->low) < (uint32_t)(0xFF000000)
+ 			|| (uint32_t)(rc->low >> 32) != 0) {
+ 		do {
+-			if (*out_pos == out_size)
++			if (__builtin_expect((*out_pos == out_size), 0))
+ 				return true;
+ 
+ 			out[*out_pos] = rc->cache + (uint8_t)(rc->low >> 32);
+@@ -187,7 +188,6 @@ rc_shift_low_dummy(uint64_t *low, uint64_t *cache_size, uint8_t *cache,
+ 	return false;
+ }
+ 
+-
+ static inline bool
+ rc_encode(lzma_range_encoder *rc,
+ 		uint8_t *out, size_t *out_pos, size_t out_size)
+@@ -279,7 +279,7 @@ rc_encode_dummy(const lzma_range_encoder *rc, uint64_t out_limit)
+ 
+ 	while (true) {
+ 		// Normalize
+-		if (range < RC_TOP_VALUE) {
++		if (__builtin_expect((range < RC_TOP_VALUE), 0)) {
+ 			if (rc_shift_low_dummy(&low, &cache_size, &cache,
+ 					&out_pos, out_limit))
+ 				return true;
+@@ -331,6 +331,7 @@ rc_encode_dummy(const lzma_range_encoder *rc, uint64_t out_limit)
+ 	// Flush the last bytes. This isn't in rc->symbols[] so we do
+ 	// it after the above loop to take into account the size of
+ 	// the flushing that will be done at the end of the stream.
++	_Pragma("GCC unroll 5")
+ 	for (pos = 0; pos < 5; ++pos) {
+ 		if (rc_shift_low_dummy(&low, &cache_size,
+ 				&cache, &out_pos, out_limit))
