@@ -42,7 +42,7 @@ configure() {
     --with-zlib \
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
-    --without-libidn2
+    --with-libidn2
 }
 
 build() {
