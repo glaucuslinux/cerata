@@ -8,6 +8,7 @@ prepare() {
   cd $SSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
 
   $MKDIR $SBLD/$nom
 }
