@@ -1,0 +1,17 @@
+musl uses an `int` instead of a `unsigend long` for the ioctl function
+prototype, contrary to glibc, since POSIX mandates the former. This
+causes a spurious error on ppc64le which can be silenced by casting to
+int explicitly.
+
+See https://www.openwall.com/lists/musl/2020/01/20/2
+
+--- ccache-4.4.2.orig/src/Util.cpp	2021-09-28 21:39:22.000000000 +0200
++++ ccache-4.4.2/src/Util.cpp	2021-11-05 16:16:59.972620042 +0100
+@@ -253,7 +253,7 @@ clone_file(const std::string& src, const
+     }
+   }
+ 
+-  if (ioctl(*dest_fd, FICLONE, *src_fd) != 0) {
++  if (ioctl(*dest_fd, (int)FICLONE, *src_fd) != 0) {
+     throw core::Error(strerror(errno));
+   }
