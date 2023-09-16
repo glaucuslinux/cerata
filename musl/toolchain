@@ -11,7 +11,7 @@ configure() {
   # Hardcoded `gcc` version number
   ARCH=$MARCH \
   CROSS_COMPILE=$TGT- \
-  LIBCC="$TLCD/usr/lib/gcc/$TGT/12.2.0/libgcc.a" \
+  LIBCC="$TLCD/usr/lib/gcc/$TGT/13.2.0/libgcc.a" \
   ./configure \
     --host=$TGT \
     --prefix=/usr \
