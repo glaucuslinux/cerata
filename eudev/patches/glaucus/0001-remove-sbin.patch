@@ -1,6 +1,6 @@
 --- man/udevd.8
 +++ man/udevd.8
-@@ -32,8 +32,8 @@
+@@ -24,8 +24,8 @@
  .SH "SYNOPSIS"
  .PP
  udevd
