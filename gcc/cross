@@ -23,7 +23,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib{$nom}_s.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
 
@@ -129,7 +129,7 @@ install() {
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries
-  $RM $CRSD/usr/lib/$nom/$TGT/$ver/lib{$nom}_eh.a
+  $RM $CRSD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a
   $RM $CRSD/usr/lib/$nom/$TGT/$ver/libgcov.a
   $RM $CRSD/usr/lib/libatomic.a
   $RM $CRSD/usr/lib/libgomp.a
