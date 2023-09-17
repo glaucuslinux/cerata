@@ -47,6 +47,7 @@ configure() {
     --without-nscd \
     --with-group-name-max-length=32 \
     --without-su \
+    --without-libbsd \
     --with-fcaps
 }
 

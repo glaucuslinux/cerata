@@ -48,7 +48,8 @@ configure() {
     --with-yescrypt \
     --without-nscd \
     --with-group-name-max-length=32 \
-    --without-su
+    --without-su \
+    --without-libbsd
 }
 
 build() {
