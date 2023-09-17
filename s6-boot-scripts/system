@@ -30,9 +30,6 @@ install() {
 
   $MKDIR -m 02750 $VNMD/$nom/sac/etc/s6/current/run-image/uncaught-logs
 
-  $MKDIR $VNMD/$nom/sac/etc/s6/current/run-image/utmps
-  $CHOWN 20:20 $VNMD/$nom/sac/etc/s6/current/run-image/utmps
-
   s6-rc-compile $VNMD/$nom/sac/etc/s6/rc/compiled $VNMD/$nom/sac/etc/s6/sv
 
   $RSYNC $CERD/$nom/modules-load $VNMD/$nom/sac/usr/bin

@@ -30,9 +30,6 @@ install() {
 
   $MKDIR -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
-  $MKDIR $CRSD/etc/s6/current/run-image/utmps
-  $CHOWN 20:20 $CRSD/etc/s6/current/run-image/utmps
-
   $RSYNC $CERD/$nom/modules-load $CRSD/usr/bin
 
   $RSYNC $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8

@@ -10,12 +10,9 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
 configure() {
-  LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   ./configure \
     --prefix=/usr \
