@@ -6,22 +6,26 @@
  #include <unistd.h>
 -#include <utmp.h>
 +#include <utmpx.h>
- 
- #include "misc.h"
- #include "procps-private.h"
-@@ -43,14 +43,14 @@
+ #ifdef WITH_SYSTEMD
+ #include <systemd/sd-daemon.h>
+ #include <systemd/sd-login.h>
+@@ -51,19 +51,19 @@
  static int count_users(void)
  {
      int numuser = 0;
 -    struct utmp *ut;
-+    struct utmpx *u;
++    struct utmpx *ut;
+ 
+ #if defined(WITH_SYSTEMD) || defined(WITH_ELOGIND)
+     if (sd_booted() > 0)
+       return sd_get_sessions(NULL);
+ #endif
  
 -    setutent();
 -    while ((ut = getutent())) {
--    if ((ut->ut_type == USER_PROCESS) && (ut->ut_name[0] != '\0'))
 +    setutxent();
-+    while ((u = getutxent())) {
-+    if ((u->ut_type == USER_PROCESS) && (u->ut_name[0] != '\0'))
++    while ((ut = getutxent())) {
+     if ((ut->ut_type == USER_PROCESS) && (ut->ut_name[0] != '\0'))
          numuser++;
      }
 -    endutent();
@@ -31,20 +35,22 @@
  }
 --- src/w.c
 +++ src/w.c
-@@ -46,11 +46,7 @@
+@@ -44,14 +44,7 @@
  #include <termios.h>
  #include <time.h>
  #include <unistd.h>
 -#ifdef HAVE_UTMPX_H
--#	include <utmpx.h>
+ #include <utmpx.h>
+-#ifndef HAVE_UT_HOSTSIZE_IN_UTMPX
+-#include <utmp.h>
+-#endif
 -#else
 -#	include <utmp.h>
 -#endif
-+#include <utmpx.h>
  #include <arpa/inet.h>
- 
- #include "c.h"
-@@ -63,11 +59,7 @@
+ #ifdef WITH_SYSTEMD
+ #      include <systemd/sd-login.h>
+@@ -72,11 +65,7 @@
  static int ignoreuser = 0;	/* for '-u' */
  static int oldstyle = 0;	/* for '-o' */
  
@@ -54,24 +60,24 @@
 -typedef struct utmp utmp_t;
 -#endif
  
+ #ifdef __GLIBC__
  #if !defined(UT_HOSTSIZE) || defined(__UT_HOSTSIZE)
- #	define UT_HOSTSIZE __UT_HOSTSIZE
-@@ -495,11 +487,7 @@
-         printf("%-*.*s%-9.8s", userlen + 1, userlen, uname, u->ut_line);
-         if (from)
-             print_from(u, ip_addresses, fromlen);
--#ifdef HAVE_UTMPX_H
-         print_logintime(u->ut_tv.tv_sec, stdout);
--#else
--        print_logintime(u->ut_time, stdout);
--#endif
-         if (*u->ut_line == ':')
-             /* idle unknown for xdm logins */
-             printf(" ?xdm? ");
-@@ -692,19 +680,10 @@
- 			printf(_("   IDLE WHAT\n"));
- 	}
+@@ -595,11 +584,7 @@
+ #endif
+ 			   u, ip_addresses, fromlen);
  
+-#ifdef HAVE_UTMPX_H
+             print_logintime(u->ut_tv.tv_sec, stdout);
+-#else
+-            print_logintime(u->ut_time, stdout);
+-#endif
+ #if (defined(WITH_SYSTEMD) || defined(WITH_ELOGIND)) && defined(HAVE_SD_SESSION_GET_LEADER)
+         }
+ #endif
+@@ -838,19 +823,10 @@
+ 		}
+ 	} else {
+ #endif
 -#ifdef HAVE_UTMPX_H
  	setutxent();
 -#else
@@ -88,7 +94,7 @@
  			if (!u)
  				break;
  			if (u->ut_type != USER_PROCESS)
-@@ -715,11 +694,7 @@
+@@ -865,11 +841,7 @@
  		}
  	} else {
  		for (;;) {
@@ -100,7 +106,7 @@
  			if (!u)
  				break;
  			if (u->ut_type != USER_PROCESS)
-@@ -729,11 +704,7 @@
+@@ -883,11 +855,7 @@
  					 fromlen, ip_addresses, pids);
  		}
  	}
@@ -109,6 +115,6 @@
 -#else
 -	endutent();
 -#endif
- 
- 	return EXIT_SUCCESS;
- }
+ #if (defined(WITH_SYSTEMD) || defined(WITH_ELOGIND)) && defined(HAVE_SD_SESSION_GET_LEADER)
+ 	}
+ #endif
