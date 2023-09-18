@@ -23,7 +23,7 @@ UTF8_LOCALE=C.UTF-8
 
 AR=$AR
 CC=$CC
-CFLAGS='$(echo $CFLAGS | sed 's/-Werror=implicit-function-declaration //')'
+CFLAGS='$CFLAGS'
 LDADD=-lfts
 LDFLAGS='$LDFLAGS'
 LD_RECVMSG=' '
