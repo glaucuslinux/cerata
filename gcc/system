@@ -17,10 +17,8 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0009-Ensure-that-msgfmt-doesn-t-encounter-problems-during.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
