@@ -39,15 +39,17 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
+    --disable-logind \
     --disable-nls \
     --disable-rpath \
+    --without-audit \
     --without-libpam \
     --without-selinux \
     --with-acl \
     --with-attr \
+    --without-tcb \
     --with-yescrypt \
     --without-nscd \
-    --with-group-name-max-length=32 \
     --without-su \
     --without-libbsd \
     --with-fcaps
