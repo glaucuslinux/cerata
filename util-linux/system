@@ -38,6 +38,8 @@ configure() {
     --disable-nls \
     --disable-rpath \
     --disable-asciidoc \
+    --disable-last \
+    --disable-utmpdump \
     --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
