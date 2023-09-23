@@ -1,4 +1,3 @@
-universal: true
 modules: loop,erofs
 compression: zstd
 strip: true
