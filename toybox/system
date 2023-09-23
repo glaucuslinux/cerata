@@ -53,7 +53,6 @@ install() {
   $LN $nom $VNMD/$nom/sac/usr/bin/fmt
   $LN $nom $VNMD/$nom/sac/usr/bin/fold
   $LN $nom $VNMD/$nom/sac/usr/bin/getconf
-  $LN $nom $VNMD/$nom/sac/usr/bin/groups
   $LN $nom $VNMD/$nom/sac/usr/bin/head
   $LN $nom $VNMD/$nom/sac/usr/bin/hostid
   $LN $nom $VNMD/$nom/sac/usr/bin/hostname
