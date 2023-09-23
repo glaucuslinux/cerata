@@ -90,12 +90,12 @@ install() {
   $LN $nom $VNMD/$nom/sac/usr/bin/sha384sum
   $LN $nom $VNMD/$nom/sac/usr/bin/sha512sum
   $LN $nom $VNMD/$nom/sac/usr/bin/shred
+  $LN $nom $VNMD/$nom/sac/usr/bin/shuf
   $LN $nom $VNMD/$nom/sac/usr/bin/sleep
   $LN $nom $VNMD/$nom/sac/usr/bin/sort
   $LN $nom $VNMD/$nom/sac/usr/bin/split
   $LN $nom $VNMD/$nom/sac/usr/bin/stat
   $LN $nom $VNMD/$nom/sac/usr/bin/stty
-  $LN $nom $VNMD/$nom/sac/usr/bin/su
   $LN $nom $VNMD/$nom/sac/usr/bin/sync
   $LN $nom $VNMD/$nom/sac/usr/bin/tac
   $LN $nom $VNMD/$nom/sac/usr/bin/tail
