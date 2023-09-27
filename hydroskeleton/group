@@ -11,7 +11,6 @@ kmem:x:9:
 wheel:x:10:
 ftp:x:11:
 mail:x:12:
-uucp:x:14:
 dialout:x:18:
 log:x:19:
 locate:x:21:
