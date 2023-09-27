@@ -15,11 +15,9 @@ log:x:19:
 locate:x:21:
 kvm:x:78:
 tape:x:89:
-cdrom:x:90:
 video:x:91:
 audio:x:92:
 optical:x:93:
-floppy:x:94:
 storage:x:95:
 scanner:x:96:
 input:x:97:
