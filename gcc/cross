@@ -134,6 +134,7 @@ install() {
   $RM $CRSD/usr/lib/libitm.a
   $RM $CRSD/usr/lib/libquadmath.a
   $RM $CRSD/usr/lib/libstdc++.a
+  $RM $CRSD/usr/lib/libstdc++exp.a
   $RM $CRSD/usr/lib/libstdc++fs.a
   $RM $CRSD/usr/lib/libsupc++.a
 
@@ -144,6 +145,7 @@ install() {
   $RM $CRSD/usr/lib/libitm.la
   $RM $CRSD/usr/lib/libquadmath.la
   $RM $CRSD/usr/lib/libstdc++.la
+  $RM $CRSD/usr/lib/libstdc++exp.la
   $RM $CRSD/usr/lib/libstdc++fs.la
   $RM $CRSD/usr/lib/libsupc++.la
 
