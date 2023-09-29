@@ -36,4 +36,8 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install
+
+  $LN doas $VNMD/$nom/sac/usr/bin/$nom
+
+  $LN doas.1 $VNMD/$nom/sac/usr/share/man/man1/$nom.1
 }
