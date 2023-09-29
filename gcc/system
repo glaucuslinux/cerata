@@ -126,6 +126,7 @@ install() {
   $RM $VNMD/$nom/sac/usr/lib/libitm.a
   $RM $VNMD/$nom/sac/usr/lib/libquadmath.a
   $RM $VNMD/$nom/sac/usr/lib/libstdc++.a
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++exp.a
   $RM $VNMD/$nom/sac/usr/lib/libstdc++fs.a
   $RM $VNMD/$nom/sac/usr/lib/libsupc++.a
 
@@ -139,6 +140,7 @@ install() {
   $RM $VNMD/$nom/sac/usr/lib/libitm.la
   $RM $VNMD/$nom/sac/usr/lib/libquadmath.la
   $RM $VNMD/$nom/sac/usr/lib/libstdc++.la
+  $RM $VNMD/$nom/sac/usr/lib/libstdc++exp.la
   $RM $VNMD/$nom/sac/usr/lib/libstdc++fs.la
   $RM $VNMD/$nom/sac/usr/lib/libsupc++.la
 
