@@ -1,0 +1,28 @@
+From 6836b7d873878dbc5b8406455f5b270854c2316f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tim=20R=C3=BChsen?= <tim.ruehsen@gmx.de>
+Date: Sat, 30 Sep 2023 20:02:23 +0200
+Subject: [PATCH] * libwget/ssl_openssl.c (tls_exit): Don't call
+ CRYPTO_free_ex_index() when build with LibreSSL
+
+---
+ libwget/ssl_openssl.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/libwget/ssl_openssl.c b/libwget/ssl_openssl.c
+index 6dcdf27b2..2da8591d2 100644
+--- a/libwget/ssl_openssl.c
++++ b/libwget/ssl_openssl.c
+@@ -129,7 +129,10 @@ static void tls_exit(void)
+ {
+ 	if (mutex) {
+ 		wget_thread_mutex_destroy(&mutex);
++#if !defined(LIBRESSL_VERSION_NUMBER)
++		// LibreSSL 3.8.1 doesn't know this function (latest version as of 30.09.2023).
+ 		CRYPTO_free_ex_index(CRYPTO_EX_INDEX_APP, ssl_userdata_idx);
++#endif
+ 	}
+ }
+ 
+-- 
+GitLab
+
