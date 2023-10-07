@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  $CERD/muon/glaucus-muon \
+  glaucus-muon \
     -Dxcb-errors=disabled \
     -Dxwayland=disabled \
     -Dexamples=false \
