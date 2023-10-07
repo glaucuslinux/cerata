@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  $CERD/muon/glaucus-muon \
+  glaucus-muon \
     -Dlibwacom=false \
     -Ddebug-gui=false \
     -Dtests=false \
