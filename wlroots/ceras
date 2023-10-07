@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="wlroots"
+ver="0.16.2"
+url="https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.16.2/downloads/wlroots-0.16.2.tar.gz"
+sum="d943b782e792dd10b9f271af5c3290aa9fa0ff55ff688d2279fe86a13fec4454"
+cnt="libinput muon"
