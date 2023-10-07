@@ -11,10 +11,14 @@ prepare() {
 
 configure() {
   glaucus-muon \
-    -DUSE_IDN=false \
-    -DBUILD_MANS=false \
-    -DUSE_GETTEXT=false \
-    -DSKIP_TESTS=true \
+    -Dzsh-completions=false \
+    -Dbash-completions=false \
+    -Dfish-completions=false \
+    -Dswaybar=false \
+    -Dswaynag=false \
+    -Dxwayland=disabled \
+    -Dtray=disabled \
+    -Dsd-bus-provider=basu \
     $SBLD/$nom
 }
 
