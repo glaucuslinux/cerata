@@ -13,7 +13,7 @@ prepare() {
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
-  glaucus-meson \
+  glaucus-muon \
     -Dinstall_systemd=false \
     -Dlocategroup=locate \
     -Dupdatedb_progname=pupdatedb \
