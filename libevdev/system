@@ -4,21 +4,38 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  cd $SRCD/$nom/$nom-$ver
+  $RSYNC $CERD/binutils/config.guess build-aux
+  $RSYNC $CERD/binutils/config.sub build-aux
 }
 
 configure() {
-  $CERD/muon/glaucus-muon \
-    -Dtests=disabled \
-    -Ddocumentation=disabled \
-    $SBLD/$nom
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
+    --disable-static
 }
 
 build() {
-  samu \
-    -C $SBLD/$nom
+  $MAKE
 }
 
 check() {
@@ -26,8 +43,10 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
-  muon \
-    -C $SBLD/$nom \
-    install
+  $MAKE \
+    DESTDIR=$VNMD/$nom/sac \
+    install-strip
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
 }
