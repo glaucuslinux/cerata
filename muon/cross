@@ -37,4 +37,6 @@ install() {
   samu \
     -C $XBLD/$nom \
     install
+
+  $RSYNC $CERD/$nom/glaucus-$nom $CRSD/usr/bin
 }
