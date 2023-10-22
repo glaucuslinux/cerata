@@ -1,0 +1,3 @@
+/dev/sr0 /media/cdrom iso9660 defaults 0 0
+/rootfs.erofs /media/rootfs/lower erofs defaults,loop 0 0
+overlay / overlay defaults,lowerdir=/media/rootfs/lower,upperdir=/media/rootfs/upper,workdir=/media/rootfs/work 0 0
