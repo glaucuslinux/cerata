@@ -33,7 +33,7 @@ prepare() {
 
 configure() {
   CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
-  CXXFLAGS="$(echo $CXXFLAGS | sed -e 's/-fno-exceptions //' -e 's/-fno-rtti -fvisibility-inlines-hidden //')" \
+  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   $XSRC/$nom/configure \
     --build=$BLD \
     --host=$TGT \
