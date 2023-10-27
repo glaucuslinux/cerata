@@ -34,6 +34,7 @@ configure() {
     --disable-static \
     --disable-docs \
     --disable-exec-static-tramp \
+    --disable-multi-os-directory \
     --disable-symvers \
     $CARCH
 }
