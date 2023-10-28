@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $PATCH -p1 -i $CERD/perl/patches/alpine/digest-sha-cflags.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch
 }
 
 configure() {
@@ -15,18 +15,30 @@ configure() {
   BUILD_BZIP2=0 \
   ./Configure \
     -des \
-    -Dprefix=/usr \
-    -Dvendorprefix=/usr \
+    -Darchlib=/usr/lib/${nom}5/core_$nom \
+    -Dcc=$CC \
+    -Dcf_by="glaucus $ARCH $(date +%Y%m%d)" \
+    -Dinc_version_list=none \
+    -Dinstallusrbinperl \
+    -Dlocincpth= \
     -Dman1dir=/usr/share/man/man1 \
     -Dman3dir=/usr/share/man/man3 \
-    -Dcc=$CC \
-    -Doptimize="$CFLAGS" \
+    -Dman1ext=1pm \
     -Dman3ext=3pm \
-    -Dinstallusrbinperl \
-    -Dusethreads \
-    -Duseshrplib \
+    -Doptimize="$CFLAGS" \
     -Dpager='/usr/bin/less -isR' \
-    -Dcf_by="glaucus $ARCH $(date +%Y%m%d)"
+    -Dprefix=/usr \
+    -Dprivlib=/usr/share/${nom}5/core_$nom \
+    -Dscriptdir=/usr/bin/core_$nom \
+    -Dsitearch=/usr/lib/${nom}5/site_$nom \
+    -Dsitelib=/usr/share/${nom}5/site_$nom \
+    -Dsitescript=/usr/bin/site_$nom \
+    -Duseshrplib \
+    -Dusethreads \
+    -Dvendorarch=/usr/lib/${nom}5/vendor_$nom \
+    -Dvendorlib=/usr/share/${nom}5/vendor_$nom \
+    -Dvendorprefix=/usr \
+    -Dvendorscript=/usr/bin/vendor_$nom
 }
 
 build() {
