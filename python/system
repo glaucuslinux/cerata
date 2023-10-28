@@ -42,6 +42,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --enable-shared \
     --enable-optimizations \
+    --enable-loadable-sqlite-extensions \
     --enable-ipv6 \
     --with-lto \
     --with-system-expat \
@@ -49,7 +50,8 @@ configure() {
     --with-system-libmpdec \
     --without-doc-strings \
     --with-pymalloc \
-    --with-ensurepip
+    --with-computed-gotos \
+    --without-ensurepip
 }
 
 build() {
