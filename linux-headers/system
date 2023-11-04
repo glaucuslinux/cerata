@@ -9,7 +9,7 @@ prepare() {
   cd $SRCD/linux/linux-$ver
 
   $MAKE \
-    ARCH=$LARCH \
+    ARCH=x86_64 \
     mrproper
 }
 
@@ -28,7 +28,7 @@ check() {
 install() {
   $MAKE \
     O=$SBLD/$nom \
-    ARCH=$LARCH \
+    ARCH=x86_64 \
     INSTALL_HDR_PATH=$VNMD/$nom/sac/usr \
     headers_install
 }
