@@ -33,6 +33,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-debug \
+    --disable-roll-simd \
     --without-included-popt \
     --without-included-zlib
 }
