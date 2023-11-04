@@ -31,7 +31,7 @@ install() {
     includedir=/usr/include \
     libdir=/usr/lib \
     syslibdir=/usr/lib \
-    ARCH=$MARCH \
+    ARCH=x86_64 \
     DESTDIR=$CRSD \
     install-headers
 
