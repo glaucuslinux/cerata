@@ -37,7 +37,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    $CARCH
+    --with-gcc-arch=x86-64
 }
 
 build() {
