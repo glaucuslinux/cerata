@@ -43,7 +43,7 @@ configure() {
     --disable-multilib \
     --enable-install-libiberty \
     --enable-plugins \
-    $([ $ARCH = x86-64 ] && echo --enable-targets=${LARCH}-pep) \
+    --enable-targets=x86_64-pep \
     --enable-deterministic-archives \
     --disable-compressed-debug-sections \
     --enable-new-dtags \
