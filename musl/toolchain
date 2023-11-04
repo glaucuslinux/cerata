@@ -9,7 +9,7 @@ prepare() {
 
 configure() {
   # Hardcoded `gcc` version number
-  ARCH=$MARCH \
+  ARCH=x86_64 \
   CROSS_COMPILE=$TGT- \
   LIBCC="$TLCD/usr/lib/gcc/$TGT/13.2.0/libgcc.a" \
   ./configure \
@@ -39,12 +39,12 @@ install() {
     install-tools
 
   $MKDIR $CRSD/etc
-  $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-$MLARCH.path
+  $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-x86_64.path
 
   $RM $CRSD/lib
 
   $MKDIR $CRSD/usr/bin
-  $LN ../lib/ld-$nom-$MLARCH.so.1 $CRSD/usr/bin/ldd
+  $LN ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd
 
-  $LN libc.so $CRSD/usr/lib/ld-$nom-$MLARCH.so.1
+  $LN libc.so $CRSD/usr/lib/ld-$nom-x86_64.so.1
 }
