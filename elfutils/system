@@ -11,7 +11,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-aarch64_fregs.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
 }
