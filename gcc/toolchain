@@ -63,7 +63,6 @@ configure() {
     --disable-rpath \
     --disable-gnu-indirect-function \
     --disable-initfini-array \
-    $GCARCH \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
