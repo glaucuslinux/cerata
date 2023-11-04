@@ -11,7 +11,7 @@ prepare() {
 
 configure() {
   $CERD/meson/glaucus-meson \
-    --cross-file $CERD/meson/meson.cross.$ARCH \
+    --cross-file $CERD/meson/meson.cross \
     -DUSE_IDN=false \
     -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
