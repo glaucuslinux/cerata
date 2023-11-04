@@ -12,7 +12,7 @@ prepare() {
 configure() {
   # Use `samurai` provided by the host system
   $CERD/meson/glaucus-meson \
-    --cross-file $CERD/meson/meson.cross.$ARCH \
+    --cross-file $CERD/meson/meson.cross \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \
     -Dlibpkgconf=enabled \
