@@ -1,5 +1,5 @@
 set timeout=5
 menuentry glaucus {
-  linux /boot/vmlinuz init=/usr/bin/init root=/dev/disk/by-label/glaucus-s6-x86-64-20231106
+  linux /boot/vmlinuz init=/usr/bin/init quiet ro root=LABEL=GLAUCUS
   initrd /boot/initramfs
 }
