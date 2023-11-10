@@ -48,6 +48,7 @@ configure() {
     --with-system-expat \
     --with-system-ffi \
     --with-system-libmpdec \
+    --with-dbmliborder=gdbm:ndbm \
     --without-doc-strings \
     --with-pymalloc \
     --with-computed-gotos \
