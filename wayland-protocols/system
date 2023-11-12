@@ -10,6 +10,8 @@ prepare() {
 }
 
 configure() {
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
+
   glaucus-muon \
     -Dtests=false \
     $SBLD/$nom
