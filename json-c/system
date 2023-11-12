@@ -49,6 +49,12 @@ check() {
 }
 
 install() {
+  if [ $BOOTSTRAP = yes ]; then
+    samu \
+      -C $SBLD/$nom \
+      install/strip
+  fi
+
   DESTDIR=$VNMD/$nom/sac \
   samu \
     -C $SBLD/$nom \
