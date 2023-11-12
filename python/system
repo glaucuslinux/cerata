@@ -73,7 +73,6 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     install
 
-  $LN pip3.11 $VNMD/$nom/sac/usr/bin/pip3
   $LN ${nom}3 $VNMD/$nom/sac/usr/bin/$nom
   $LN ${nom}3-config $VNMD/$nom/sac/usr/bin/$nom-config
 }
