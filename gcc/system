@@ -119,7 +119,6 @@ install() {
 
   # Manually remove the static libraries
   $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a
-  $RM $VNMD/$nom/sac/usr/lib/$nom/$TGT/$ver/libgcov.a
   $RM $VNMD/$nom/sac/usr/lib/libatomic.a
   $RM $VNMD/$nom/sac/usr/lib/libgomp.a
   $RM $VNMD/$nom/sac/usr/lib/libitm.a
