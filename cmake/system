@@ -17,7 +17,18 @@ configure() {
     --mandir=/share/man \
     --parallel=2 \
     --generator=Ninja \
-    --system-libs
+    --no-system-cppdap \
+    --no-system-curl \
+    --system-expat \
+    --no-system-jsoncpp \
+    --system-zlib \
+    --system-bzip2 \
+    --system-liblzma \
+    --no-system-nghttp2 \
+    --system-zstd \
+    --system-libarchive \
+    --no-system-librhash \
+    --no-system-libuv
 }
 
 build() {
@@ -29,6 +40,11 @@ check() {
 }
 
 install() {
+  if [ $BOOTSTRAP = yes ]; then
+    samu \
+      install/strip
+  fi
+
   DESTDIR=$VNMD/$nom/sac \
   samu \
     install/strip
