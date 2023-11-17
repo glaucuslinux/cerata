@@ -9,8 +9,6 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
-
-  $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
 }
 
 configure() {
@@ -33,11 +31,9 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
-    --enable-threads=posix \
-    --disable-rpath \
-    --disable-nls \
-    --with-packager="glaucus $ARCH $(date +%Y%m%d)" \
-    --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
+    --without-debug \
+    --with-zlib \
+    --with-lzma
 }
 
 build() {
@@ -52,4 +48,8 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install-strip
+
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
+  $RM $VNMD/$nom/sac/usr/lib/python3.11/site-packages/${nom}mod.la
 }
