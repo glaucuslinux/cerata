@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="libpciaccess"
+ver="0.17"
+url="https://www.x.org/releases/individual/lib/libpciaccess-0.17.tar.gz"
+sum="cc4529bf6a2ce21d63ecdb6b5b6c5e7a8c3223a13444829cda4fd39d074b750c"
+cnt="muon"
