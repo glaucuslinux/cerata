@@ -9,6 +9,8 @@ prepare() {
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 }
 
 configure() {
@@ -47,4 +49,7 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install-strip
+
+  # Remove libtool archive (.la) file
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
 }
