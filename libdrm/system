@@ -23,7 +23,6 @@ configure() {
     -Dman-pages=disabled \
     -Dvalgrind=disabled \
     -Dudev=true \
-    -Dudev=false \
     $SBLD/$nom
 }
 
