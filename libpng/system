@@ -1,0 +1,64 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+
+  $RSYNC $CERD/binutils/config.guess .
+  $RSYNC $CERD/binutils/config.sub .
+
+  $PATCH -p1 -i $CERD/$nom/patches/upstream/$nom-1.6.39-apng.patch
+}
+
+configure() {
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
+    --disable-static
+}
+
+build() {
+  $MAKE
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    DESTDIR=$VNMD/$nom/sac \
+    install-strip
+
+  # Remove libtool archive (.la) files
+  $RM $VNMD/$nom/sac/usr/lib/$nom.la
+  $RM $VNMD/$nom/sac/usr/lib/${nom}16.la
+
+  cd contrib/pngminus
+
+  $MAKE \
+    png2pnm \
+    pnm2png
+
+  $RSYNC png2pnm $VNMD/$nom/sac/usr/bin
+  $RSYNC pnm2png $VNMD/$nom/sac/usr/bin
+}
