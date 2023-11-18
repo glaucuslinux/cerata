@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="libpng"
+ver="1.6.40"
+url="https://github.com/glennrp/libpng/archive/v1.6.40.tar.gz"
+sum="99d2b2684b045a128210230a8b5437066b68d162f38923a27a925d37ce101bd4"
+cnt="make zlib-ng"
