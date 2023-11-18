@@ -12,12 +12,14 @@ exec meson setup \
   --libdir=/usr/lib \
   --libexecdir=/usr/lib/$nom \
   --localedir=/usr/share/locale \
+  --localstatedir=/var \
   --mandir=/usr/share/man \
   --sbindir=/usr/bin \
   --sharedstatedir=/var/lib \
   --sysconfdir=/etc \
   --backend=ninja \
   --buildtype=release \
+  --default_library=shared \
   --stdsplit \
   --strip \
   --wrap-mode=nodownload \
