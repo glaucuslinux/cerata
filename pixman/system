@@ -33,7 +33,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-static \
     --disable-gtk \
-    --disable-libpng
+    --enable-libpng
 }
 
 build() {
