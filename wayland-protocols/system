@@ -4,9 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
 
-  cd $SRCD/$nom/$nom-$ver
+  $MKDIR $SBLD/$nom
 }
 
 configure() {
