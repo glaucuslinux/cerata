@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="pango"
+ver="1.51.0"
+url="https://download.gnome.org/sources/pango/1.51/pango-1.51.0.tar.xz"
+sum="eaf604e5c9b69cdb85fdd6f3e546aa2e4eba5d5c89dbbcabbdbb574d8a24b226"
+cnt="cairo glib muon samurai"
