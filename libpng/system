@@ -38,6 +38,11 @@ configure() {
 
 build() {
   $MAKE
+
+  $MAKE \
+    -C contrib/pngminus \
+    png2pnm \
+    pnm2png
 }
 
 check() {
@@ -53,12 +58,6 @@ install() {
   $RM $VNMD/$nom/sac/usr/lib/$nom.la
   $RM $VNMD/$nom/sac/usr/lib/${nom}16.la
 
-  cd contrib/pngminus
-
-  $MAKE \
-    png2pnm \
-    pnm2png
-
-  $RSYNC png2pnm $VNMD/$nom/sac/usr/bin
-  $RSYNC pnm2png $VNMD/$nom/sac/usr/bin
+  $RSYNC contrib/pngminus/png2pnm $VNMD/$nom/sac/usr/bin
+  $RSYNC contrib/pngminus/pnm2png $VNMD/$nom/sac/usr/bin
 }
