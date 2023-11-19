@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="cairo"
+ver="1.18.0"
+url="https://www.cairographics.org/releases/cairo-1.18.0.tar.xz"
+sum="55b4b6406668e08dd6b816beba82c86df8e9a5468352c66597badb4f6583930e"
+cnt="libpng muon samurai"
