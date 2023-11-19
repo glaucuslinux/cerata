@@ -1,0 +1,35 @@
+# Copyright (c) 2018-2023, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $MKDIR $SBLD/$nom
+
+  cd $SRCD/$nom/$nom-$ver
+}
+
+configure() {
+  glaucus-muon \
+    -Dselinux=disabled \
+    -Dtests=false \
+    -Dnls=disabled \
+    -Dglib_debug=disabled \
+    $SBLD/$nom
+}
+
+build() {
+  samu \
+    -C $SBLD/$nom
+}
+
+check() {
+  :
+}
+
+install() {
+  DESTDIR=$VNMD/$nom/sac \
+  muon \
+    -C $SBLD/$nom \
+    install
+}
