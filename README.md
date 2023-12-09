@@ -16,10 +16,8 @@ glaucus's cerata
 * [YouTube](https://www.youtube.com/@glaucuslinux)
 
 ## Mirrors
-* [BitBucket](https://bitbucket.org/glaucuslinux/cerata)
 * [Codeberg](https://codeberg.org/glaucuslinux/cerata)
 * [Framagit](https://framagit.org/glaucuslinux/cerata)
 * [GitHub](https://github.com/glaucuslinux/cerata)
 * [GitLab](https://gitlab.com/glaucuslinux/cerata)
-* [NotABug](https://notabug.org/glaucuslinux/cerata)
 * [SourceHut](https://git.sr.ht/~glaucuslinux/cerata)
