@@ -19,7 +19,7 @@ exec meson setup \
   --sysconfdir=/etc \
   --backend=ninja \
   --buildtype=release \
-  --default_library=shared \
+  --default-library=shared \
   --stdsplit \
   --strip \
   --wrap-mode=nodownload \
