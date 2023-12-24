@@ -12,8 +12,6 @@ prepare() {
 }
 
 configure() {
-  # `gmp` requires `-fexceptions`
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
