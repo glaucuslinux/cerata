@@ -14,8 +14,6 @@ prepare() {
 }
 
 configure() {
-  # `ccache` requires `-fexceptions`
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   cmake \
     -B $SBLD/$nom \
     -DCMAKE_BUILD_TYPE=Release \
