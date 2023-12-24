@@ -28,8 +28,6 @@ build() {
   $MAKE \
     lib-mt
 
-  # Build parallel zstd as well (requires `-fexceptions`)
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   $MAKE \
     -C contrib/p$nom
 }
