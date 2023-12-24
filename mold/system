@@ -13,8 +13,6 @@ prepare() {
 }
 
 configure() {
-  # `mold` requires `-fexceptions`
-  CXXFLAGS="$(echo $CXXFLAGS | sed 's/-fno-exceptions //')" \
   cmake \
     -B $SBLD/$nom \
     -DBUILD_TESTING=OFF \
