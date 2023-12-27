@@ -11,7 +11,8 @@ prepare() {
 
 configure() {
   glaucus-muon \
-    -Dlibseat-logind=systemd \
+    -Dlibseat-logind=disabled \
+    -Dlibseat-builtin=enabled \
     -Dman-pages=disabled \
     $SBLD/$nom
 }
