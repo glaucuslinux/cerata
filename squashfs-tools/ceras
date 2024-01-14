@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="squashfs-tools"
+ver="4.6.1"
+url="https://github.com/plougher/squashfs-tools/archive/4.6.1.tar.gz"
+sum="47554d274a08c6410d8a87195f2fb2e2a47e8602170cf75638936b42a2dfe632"
+cnt="attr lz4 make xz zstd"
