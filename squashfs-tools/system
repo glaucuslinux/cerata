@@ -1,0 +1,36 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
+  cd $SSRC/$nom
+}
+
+configure() {
+  :
+}
+
+build() {
+  $MAKE \
+    XZ_SUPPORT=1 \
+    LZO_SUPPORT=1 \
+    LZ4_SUPPORT=1 \
+    ZSTD_SUPPORT=1 \
+    COMP_DEFAULT=zstd \
+    -C $nom
+}
+
+check() {
+  :
+}
+
+install() {
+  $MAKE \
+    INSTALL_PREFIX=$VNMD/$nom/sac/usr \
+    INSTALL_DIR=$VNMD/$nom/sac/usr/bin \
+    INSTALL_MANPAGES_DIR=$VNMD/$nom/sac/usr/share/man/man1 \
+    -C $nom \
+    install
+}
