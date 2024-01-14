@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="squashfs-tools-ng"
+ver="1.2.0"
+url="https://infraroot.at/pub/squashfs/squashfs-tools-ng-1.2.0.tar.gz"
+sum="6d7bba3edd644fa02298aad9bc2804a89405e3895d31a04e24c7e7f4d9b69279"
+cnt="attr bzip2 lz4 make pigz xz zstd"
