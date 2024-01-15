@@ -34,7 +34,9 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --disable-doxygen-doc
+    --disable-doxygen-doc \
+    --disable-doxygen-html \
+    --without-symlink
 }
 
 build() {
