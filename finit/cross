@@ -7,8 +7,8 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.sub .
+  $RSYNC $CERD/binutils/config.guess aux
+  $RSYNC $CERD/binutils/config.sub aux
 }
 
 configure() {
@@ -34,9 +34,10 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --enable-auto-reload \
-    --enable-progress \
+    --disable-logrotate \
     --disable-doc \
     --disable-contrib \
+    --disable-rescue \
     --with-heading="glaucus $ARCH $(date +%Y%m%d)" \
     --with-fifo=/var/run/initctl \
     --with-hostname=glaucus
