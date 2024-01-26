@@ -1,5 +1,5 @@
 set timeout=0
 menuentry glaucus {
-  linux /boot/vmlinuz init=/usr/bin/init quiet ro root=live:LABEL=GLAUCUS rd.live.dir=/boot rd.live.squashimg=rootfs.squashfs rd.live.overlay.overlayfs=1
+  linux /boot/vmlinuz quiet ro
   initrd /boot/initramfs
 }
