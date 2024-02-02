@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mpdecimal"
-ver="2.5.1"
-url="https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-2.5.1.tar.gz"
-sum="ea032da5988ba2ad60f2cae53a7a9d0a406b5a90942acfaa3f042caf29657d74"
+ver="4.0.0"
+url="https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.0.tar.gz"
+sum="2a4f664a0fc32e67311f14ed767009400a7578e503719e5559637320315d3ed7"
 cnt="make"
