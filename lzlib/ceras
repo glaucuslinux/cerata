@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="lzlib"
-ver="1.13"
-url="https://download.savannah.nongnu.org/releases/lzip/lzlib/lzlib-1.13.tar.gz"
-sum="2cfcccfb66ea894d9ed591a0e30da384e119b0ffecbdf54625bfeb4e386742f1"
+ver="1.14"
+url="https://download.savannah.nongnu.org/releases/lzip/lzlib/lzlib-1.14.tar.gz"
+sum="13aa886b4bda36cbd7a86f53236c544b1a404df7ce2b83f53920dcd83c91ac14"
 cnt="make"
