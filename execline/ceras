@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="execline"
-ver="2.9.3.0"
-url="https://skarnet.org/software/execline/execline-2.9.3.0.tar.gz"
-sum="4a7db2def9c5f2c8a5aa5519d9384f6131e09ba48e1aaa524608da618caee7a3"
+ver="2.9.4.0"
+url="https://skarnet.org/software/execline/execline-2.9.4.0.tar.gz"
+sum="f3b1e7efa1c52998b97298eb4b57fa85ae9250b0366d5d76e05e216910e33411"
 cnt="make skalibs"
 cys="skalibs"
