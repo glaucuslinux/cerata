@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="acl"
-ver="2.3.1"
-url="https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.gz"
-sum="c2020838d12792da7d42a8cc2d826367241f2b11f42d1f158d63052b0dfb26f5"
+ver="2.3.2"
+url="https://download.savannah.nongnu.org/releases/acl/acl-2.3.2.tar.gz"
+sum="dcdc2457033d689819cb4390e8a25cb75d7c078a58bb00393c8382df92115dbd"
 cnt="attr make"
