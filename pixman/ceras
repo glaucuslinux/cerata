@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pixman"
-ver="0.42.2"
-url="https://www.cairographics.org/releases/pixman-0.42.2.tar.gz"
-sum="40f8a5cb809ae218ef33c75499d0fed6cbe625b26d78e88822304947cc07f183"
+ver="0.43.2"
+url="https://www.cairographics.org/releases/pixman-0.43.2.tar.gz"
+sum="7450aeb7849ee317594e7d3885fc4826be880d2babfef5498641814ce07f07f3"
 cnt="libpng make"
