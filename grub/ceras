@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="grub"
-ver="2.06"
-url="https://ftpmirror.gnu.org/grub/grub-2.06.tar.gz"
-sum="d07257dae744654cf974ffb8556c9d4b580b563f9a36332dff8576d06144f7fa"
+ver="2.12"
+url="https://ftpmirror.gnu.org/grub/grub-2.12.tar.gz"
+sum="727f6d0d3422461b90d3421cf08cfd405cdbd31ab5c45edce1d3d88a43ce461d"
 cnt="autoconf automake make"
