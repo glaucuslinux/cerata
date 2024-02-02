@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libxml2"
-ver="2.11.6"
-url="https://download.gnome.org/sources/libxml2/2.11/libxml2-2.11.6.tar.xz"
-sum="4a7853e5660e25279bfdb2a53fa9d513bedf27f3d891744452140457679a114f"
+ver="2.12.4"
+url="https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.4.tar.xz"
+sum="a3fa1f65b560cfd5c22341ce4399db55eb42d6d79e502053eef245307872239d"
 cnt="libedit make netbsd-curses python xz zlib-ng"
