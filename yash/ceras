@@ -5,6 +5,6 @@
 
 nom="yash"
 ver="2.55"
-url="https://osdn.net/dl/yash/yash-2.55.tar.gz"
+url="https://github.com/magicant/yash/releases/download/2.55/yash-2.55.tar.gz"
 sum="bdade87d88c1a021838a8dab2e69df23e967f8a327d99fc56a98d3a44ef735f6"
 cnt="make netbsd-curses"
