@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="s6"
-ver="2.11.3.2"
-url="https://skarnet.org/software/s6/s6-2.11.3.2.tar.gz"
-sum="fc187ad1c9bf298fd96d430e64c058f2655db27f8797cb6acb9287ad844fdb2d"
+ver="2.12.0.3"
+url="https://skarnet.org/software/s6/s6-2.12.0.3.tar.gz"
+sum="92cdda5eb088e2e2d0d866c46c2af7ba225f35100a4391c8f3ed0fe11c798c60"
 cnt="execline make skalibs"
 cys="execline skalibs"
