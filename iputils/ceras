@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="iputils"
-ver="20221126"
-url="https://github.com/iputils/iputils/archive/20221126.tar.gz"
-sum="0cb053033e0d6f034bd41a5255e3680ff1f8cc09546ab0468377f1765c7545f8"
+ver="20240117"
+url="https://github.com/iputils/iputils/releases/download/20240117/iputils-20240117.tar.gz"
+sum="be61c96a0fdf0ade0c4e0f78cbd938605d911555f37886e4373fb0e67966b37a"
 cnt="libcap muon samurai"
