@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libcap-ng"
-ver="0.8.3"
-url="https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.3.tar.gz"
-sum="b0357296a150e29d25ac49bc092a224e646003ade758a7d053f846e2ee852eaa"
+ver="0.8.4"
+url="https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.4.tar.gz"
+sum="9a3a7de2a21265fa3291b4f812d9f30ece2c4bfe715a88d8be65e8521e6f5119"
 cnt="make"
