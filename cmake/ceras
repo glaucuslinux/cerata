@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="cmake"
-ver="3.27.5"
-url="https://cmake.org/files/v3.27/cmake-3.27.5.tar.gz"
-sum="938bb095b8465988ee3a43f831ef119ab9ea27fe2a6acbab7205478933a10cca"
+ver="3.28.2"
+url="https://cmake.org/files/v3.28/cmake-3.28.2.tar.gz"
+sum="3ae4d3b32d266769b009f965fe1b4ee75a5cd5d4e8a5bd19bec11961a411809f"
 cnt="samurai"
