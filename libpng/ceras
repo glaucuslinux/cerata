@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libpng"
-ver="1.6.40"
-url="https://github.com/glennrp/libpng/archive/v1.6.40.tar.gz"
-sum="99d2b2684b045a128210230a8b5437066b68d162f38923a27a925d37ce101bd4"
+ver="1.6.42"
+url="https://github.com/glennrp/libpng/archive/v1.6.42.tar.gz"
+sum="74018331e0c60f74559e0922be0c57c955c398bd938f26eeffabae2bcb4b1f1e"
 cnt="make zlib-ng"
