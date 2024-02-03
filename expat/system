@@ -32,6 +32,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
+    --with-pic \
     --without-examples \
     --without-tests \
     --without-docbook
