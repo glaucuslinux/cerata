@@ -48,6 +48,7 @@ configure() {
     --disable-doc \
     --with-linux-crypto \
     --without-included-regex \
+    --with-pic \
     --with-ssl=openssl \
     --without-libpsl \
     --without-libhsts \
