@@ -41,6 +41,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-manpages \
     --disable-test-modules \
+    --with-pic \
     --with-rootlibdir=/usr/lib \
     --with-zstd \
     --with-xz \
