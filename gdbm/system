@@ -33,7 +33,8 @@ configure() {
     --enable-libgdbm-compat \
     --disable-static \
     --disable-nls \
-    --disable-rpath
+    --disable-rpath \
+    --with-pic
 }
 
 build() {
