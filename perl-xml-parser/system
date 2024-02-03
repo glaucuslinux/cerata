@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  perl Makefile.PL
+  perl Makefile.PL INSTALLDIRS=vendor
 }
 
 build() {
@@ -24,4 +24,7 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install
+
+  $RM $VNMD/$nom/sac/usr/lib/perl5/5.38/core_perl/perllocal.pod
+  $RM $VNMD/$nom/sac/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
 }
