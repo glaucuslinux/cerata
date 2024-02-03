@@ -22,7 +22,6 @@ configure() {
     --with-lib=$SYSD/usr/lib \
     --with-dynlib=$SYSD/usr/lib \
     --disable-static \
-    --disable-all-pic \
     --with-sysdep-devurandom=yes \
     --with-sysdep-posixspawnearlyreturn=no
 }
