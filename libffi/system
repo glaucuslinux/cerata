@@ -36,6 +36,7 @@ configure() {
     --disable-exec-static-tramp \
     --disable-multi-os-directory \
     --disable-symvers \
+    --with-pic \
     --with-gcc-arch=$ARCH
 }
 
