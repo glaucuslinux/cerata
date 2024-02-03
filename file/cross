@@ -33,7 +33,8 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-libseccomp \
-    --enable-fsect-man5
+    --enable-fsect-man5 \
+    --with-pic
 }
 
 build() {
