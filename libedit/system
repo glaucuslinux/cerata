@@ -32,7 +32,8 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --disable-examples
+    --disable-examples \
+    --with-pic
 }
 
 build() {
