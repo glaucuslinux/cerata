@@ -10,8 +10,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.rpath build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
-
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 }
 
 configure() {
