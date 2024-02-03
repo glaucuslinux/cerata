@@ -34,7 +34,8 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --enable-threads=posix \
     --disable-static \
-    --disable-rpath
+    --disable-rpath \
+    --with-pic
 }
 
 build() {
