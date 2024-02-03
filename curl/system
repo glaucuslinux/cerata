@@ -39,6 +39,7 @@ configure() {
     --enable-pthreads \
     --enable-websockets \
     --with-openssl \
+    --with-pic \
     --with-zlib \
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
