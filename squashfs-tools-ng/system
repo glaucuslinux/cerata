@@ -32,6 +32,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
+    --with-pic \
     --with-bzip2 \
     --with-xz \
     --with-lzo \
