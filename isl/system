@@ -35,7 +35,8 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --with-gcc-arch=$ARCH
+    --with-gcc-arch=$ARCH \
+    --with-pic
 }
 
 build() {
