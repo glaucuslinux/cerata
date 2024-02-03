@@ -25,8 +25,7 @@ configure() {
     --with-dynlib=$SYSD/usr/lib \
     --enable-shared \
     --disable-static \
-    --disable-allstatic \
-    --disable-all-pic
+    --disable-allstatic
 }
 
 build() {
