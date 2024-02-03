@@ -55,6 +55,7 @@ configure() {
     --disable-use-tty-group \
     --enable-usrdir-path \
     --disable-makeinstall-chown \
+    --with-pic \
     --with-readline \
     --without-systemd \
     --without-systemdsystemunitdir \
