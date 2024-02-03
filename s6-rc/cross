@@ -27,8 +27,7 @@ configure() {
     --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
-    --disable-allstatic \
-    --disable-all-pic
+    --disable-allstatic
 }
 
 build() {
