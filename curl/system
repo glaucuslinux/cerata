@@ -42,7 +42,8 @@ configure() {
     --with-zlib \
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
-    --with-libidn2
+    --with-libidn2 \
+    --with-openssl-quic
 }
 
 build() {
