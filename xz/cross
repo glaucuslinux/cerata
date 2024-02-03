@@ -43,7 +43,8 @@ configure() {
     --disable-doc \
     --disable-static \
     --disable-nls \
-    --disable-rpath
+    --disable-rpath \
+    --with-pic
 
   # Further disable rpath
   $PATCH -p0 -i $CERD/$nom/patches/alpine/0001-disable-rpath.patch
