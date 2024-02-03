@@ -42,6 +42,7 @@ configure() {
     --disable-rpath \
     --enable-xattr \
     --enable-acl \
+    --with-pic \
     --without-nettle \
     --without-xml2
 }
