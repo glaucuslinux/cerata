@@ -24,7 +24,8 @@ configure() {
     --with-dynlib=$CRSD/usr/lib \
     --disable-static \
     --disable-all-pic \
-    --with-sysdep-devurandom=yes
+    --with-sysdep-devurandom=yes \
+    --with-sysdep-posixspawnearlyreturn=no
 }
 
 build() {
