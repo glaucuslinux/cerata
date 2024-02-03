@@ -39,7 +39,8 @@ configure() {
     --enable-jit \
     --enable-pcre2grep-libz \
     --enable-pcre2grep-libbz2 \
-    --enable-pcre2test-libedit
+    --enable-pcre2test-libedit \
+    --with-pic
 }
 
 build() {
