@@ -39,6 +39,7 @@ configure() {
     --disable-static \
     --disable-tests \
     --enable-nc \
+    --with-pic \
     --with-openssldir=/etc/ssl
 }
 
