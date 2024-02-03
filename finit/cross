@@ -38,6 +38,7 @@ configure() {
     --disable-doc \
     --disable-contrib \
     --disable-rescue \
+    --with-pic \
     --with-heading="glaucus $ARCH $(date +%Y%m%d)" \
     --with-fifo=/var/run/initctl \
     --with-hostname=glaucus
