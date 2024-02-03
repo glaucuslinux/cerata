@@ -40,7 +40,8 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-static \
     --disable-nls \
-    --disable-rpath
+    --disable-rpath \
+    --with-pic
 }
 
 build() {
