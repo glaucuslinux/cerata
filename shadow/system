@@ -42,6 +42,7 @@ configure() {
     --disable-logind \
     --disable-nls \
     --disable-rpath \
+    --with-pic \
     --without-audit \
     --without-libpam \
     --without-selinux \
