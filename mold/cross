@@ -4,17 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
+  cd $XSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/xxhash.patch
 
-  $MKDIR $SBLD/$nom
+  $MKDIR $XBLD/$nom
 }
 
 configure() {
   cmake \
-    -B $SBLD/$nom \
+    -B $XBLD/$nom \
     -DBUILD_TESTING=OFF \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_BINDIR=/usr/bin \
@@ -42,7 +42,7 @@ configure() {
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C $XBLD/$nom
 }
 
 check() {
@@ -50,11 +50,11 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$CRSD \
   samu \
-    -C $SBLD/$nom \
+    -C $XBLD/$nom \
     install/strip
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/ld
-  $LN $nom $VNMD/$nom/sac/usr/bin/ld.$nom
+  $LN $nom $CRSD/usr/bin/ld
+  $LN $nom $CRSD/usr/bin/ld.$nom
 }
