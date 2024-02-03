@@ -1,6 +1,6 @@
 # ltdl.m4 - Configure ltdl for the target system. -*-Autoconf-*-
 #
-#   Copyright (C) 1999-2008, 2011-2019, 2021-2022 Free Software
+#   Copyright (C) 1999-2008, 2011-2019, 2021-2024 Free Software
 #   Foundation, Inc.
 #   Written by Thomas Tanner, 1999
 #
@@ -8,7 +8,7 @@
 # unlimited permission to copy and/or distribute it, with or without
 # modifications, as long as this notice is preserved.
 
-# serial 21 LTDL_INIT
+# serial 22 LTDL_INIT
 
 # LT_CONFIG_LTDL_DIR(DIRECTORY, [LTDL-MODE])
 # ------------------------------------------
@@ -466,9 +466,6 @@ AC_CACHE_CHECK([whether deplibs are loaded by dlopen],
       ;;
     esac
     ;;
-  bitrig*)
-    lt_cv_sys_dlopen_deplibs=yes
-    ;;
   darwin*)
     # Assuming the user has installed a libdl from somewhere, this is true
     # If you are looking for one http://www.opendarwin.org/projects/dlcompat
@@ -713,7 +710,7 @@ darwin[[1567]].*)
 beos*)
   LT_DLLOADERS="$LT_DLLOADERS ${lt_dlopen_dir+$lt_dlopen_dir/}load_add_on.la"
   ;;
-cygwin* | mingw* | pw32*)
+cygwin* | mingw* | windows* | pw32*)
   AC_CHECK_DECLS([cygwin_conv_path], [], [], [[#include <sys/cygwin.h>]])
   LT_DLLOADERS="$LT_DLLOADERS ${lt_dlopen_dir+$lt_dlopen_dir/}loadlibrary.la"
   ;;
