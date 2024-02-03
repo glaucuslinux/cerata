@@ -36,6 +36,7 @@ configure() {
     --disable-rpath \
     --disable-nls \
     --disable-doc \
+    --with-pic \
     --with-packager="glaucus $ARCH $(date +%Y%m%d)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
