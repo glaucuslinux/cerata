@@ -34,7 +34,8 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --enable-ltdl-install
+    --enable-ltdl-install \
+    --with-pic
 }
 
 build() {
