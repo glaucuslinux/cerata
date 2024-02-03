@@ -36,7 +36,8 @@ configure() {
     --disable-rpath \
     --enable-optional-progs \
     --disable-vlock \
-    --disable-tests
+    --disable-tests \
+    --with-pic
 }
 
 build() {
