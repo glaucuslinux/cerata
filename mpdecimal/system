@@ -31,7 +31,8 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
-    --enable-profile
+    --disable-static \
+    --disable-doc
 }
 
 build() {
@@ -45,9 +46,5 @@ check() {
 install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
-    install-strip
-
-  # Manually remove the static libraries
-  $RM $VNMD/$nom/sac/usr/lib/libmpdec.a
-  $RM $VNMD/$nom/sac/usr/lib/libmpdec++.a
+    install
 }
