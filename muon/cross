@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  # Use `samurai` provided by the host system
+  # Use `meson` provided by the host system
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross \
     -Dlibcurl=disabled \
