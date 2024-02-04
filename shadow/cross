@@ -11,7 +11,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-musl-fix.patch
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-undefined-reference.patch
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
