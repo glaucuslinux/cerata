@@ -37,7 +37,7 @@ configure() {
     --disable-multi-os-directory \
     --disable-symvers \
     --with-pic \
-    --with-gcc-arch=$ARCH
+    --with-gcc-arch=$CARCH
 }
 
 build() {
