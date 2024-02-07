@@ -29,7 +29,9 @@ configure() {
     --with-dynlib=$CRSD/usr/lib \
     --enable-shared \
     --disable-static \
-    --disable-allstatic
+    --disable-allstatic \
+    --enable-nsss \
+    --enable-utmps
 }
 
 build() {

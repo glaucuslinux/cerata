@@ -1,0 +1,11 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="nsss"
+ver="0.2.0.4"
+url="https://skarnet.org/software/nsss/nsss-0.2.0.4.tar.gz"
+sum="b64020a336f78e2961f5a88aa12c28ffe09da3f3cdc81212e10756d9277e6c45"
+cnt="make skalibs"
+cys="s6 skalibs"

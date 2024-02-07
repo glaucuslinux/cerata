@@ -6,6 +6,9 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
+
+  # Provide `utmps/utmp.h` which includes `utmpx.h` (same directory)
+  $RSYNC $CERD/$nom/utmp.h src/include/$nom
 }
 
 configure() {
@@ -26,7 +29,9 @@ configure() {
     --enable-shared \
     --disable-static \
     --disable-allstatic \
-    --enable-nsss
+    --disable-all-pic \
+    --enable-nsss \
+    --enable-libc-includes
 }
 
 build() {
@@ -42,4 +47,11 @@ install() {
   $MAKE \
     DESTDIR=$VNMD/$nom/sac \
     install
+
+  # Provide `utmp.h` which includes `utmpx.h` (same directory) which in turn
+  # includes `utmps/utmpx.h`
+  $LN $nom/utmp.h $VNMD/$nom/sac/usr/include
+
+  $MKDIR $VNMD/$nom/sac/usr/lib/pkgconfig
+  $RSYNC $CERD/$nom/$nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig
 }
