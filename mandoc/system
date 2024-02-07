@@ -18,7 +18,7 @@ configure() {
   echo "MANPATH_BASE=/usr/share/man
 MANPATH_DEFAULT=/usr/share/man
 OSENUM=MANDOC_OS_OTHER
-OSNAME='glaucus $ARCH $(date +%Y%m%d)'
+OSNAME='glaucus $CARCH $(date +%Y%m%d)'
 UTF8_LOCALE=C.UTF-8
 
 AR=$AR
