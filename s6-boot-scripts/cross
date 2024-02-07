@@ -30,6 +30,11 @@ install() {
 
   $MKDIR -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $CRSD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $CRSD/etc/s6/skel
+
   $RSYNC $CERD/$nom/modules-load $CRSD/usr/bin
 
   $RSYNC $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8

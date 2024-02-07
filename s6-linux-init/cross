@@ -47,9 +47,4 @@ install() {
   $MAKE \
     DESTDIR=$CRSD \
     install
-
-  $RSYNC $CERD/$nom/rc.init $CRSD/etc/s6/skel
-  $RSYNC $CERD/$nom/rc.shutdown $CRSD/etc/s6/skel
-  $RSYNC $CERD/$nom/rc.shutdown.final $CRSD/etc/s6/skel
-  $RSYNC $CERD/$nom/runlevel $CRSD/etc/s6/skel
 }

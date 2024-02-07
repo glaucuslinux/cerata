@@ -30,6 +30,11 @@ install() {
 
   $MKDIR -m 02750 $VNMD/$nom/sac/etc/s6/current/run-image/uncaught-logs
 
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $VNMD/$nom/sac/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $VNMD/$nom/sac/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $VNMD/$nom/sac/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $VNMD/$nom/sac/etc/s6/skel
+
   s6-rc-compile $VNMD/$nom/sac/etc/s6/rc/compiled $VNMD/$nom/sac/etc/s6/sv
 
   $RSYNC $CERD/$nom/modules-load $VNMD/$nom/sac/usr/bin
