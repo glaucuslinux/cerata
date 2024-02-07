@@ -71,7 +71,7 @@ configure() {
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
-    --with-pkgversion="glaucus $ARCH $(date +%Y%m%d)" \
+    --with-pkgversion="glaucus $CARCH $(date +%Y%m%d)" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
     --with-system-zlib \
