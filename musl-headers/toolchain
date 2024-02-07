@@ -37,4 +37,8 @@ install() {
 
   # BSD compatibility header
   $RSYNC $CERD/musl/queue.h $CRSD/usr/include/sys
+
+  # Possible non-stub utmp backends in the future:
+  # https://wiki.musl-libc.org/roadmap.html
+  $RM $CRSD/usr/include/utmpx.h
 }
