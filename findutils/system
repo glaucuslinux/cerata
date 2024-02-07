@@ -37,7 +37,7 @@ configure() {
     --disable-nls \
     --disable-rpath \
     --without-selinux \
-    --with-packager="glaucus $ARCH $(date +%Y%m%d)" \
+    --with-packager="glaucus $CARCH $(date +%Y%m%d)" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
