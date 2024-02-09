@@ -11,14 +11,14 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-musl-fix.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
 
+  LIBS='-lutmps -lskarnet' \
+  shadow_cv_utmpdir=/run/utmps \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -39,7 +39,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --disable-logind \
+    --enable-utmpx \
     --disable-nls \
     --disable-rpath \
     --with-pic \
@@ -52,7 +52,6 @@ configure() {
     --with-yescrypt \
     --without-nscd \
     --without-su \
-    --without-libbsd \
     --with-fcaps
 }
 

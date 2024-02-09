@@ -11,14 +11,14 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-undefined-reference.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
 
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
 
+  LIBS='-lutmps -lskarnet' \
+  shadow_cv_utmpdir=/run/utmps \
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -41,7 +41,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --disable-logind \
+    --enable-utmpx \
     --disable-nls \
     --disable-rpath \
     --with-pic \
@@ -53,8 +53,7 @@ configure() {
     --without-tcb \
     --with-yescrypt \
     --without-nscd \
-    --without-su \
-    --without-libbsd
+    --without-su
 }
 
 build() {
