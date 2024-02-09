@@ -38,4 +38,8 @@ install() {
   $RSYNC $CERD/$nom/modules-load $CRSD/usr/bin
 
   $RSYNC $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8
+
+  $LN wtmpd/wtmp $CRSD/var/log/wtmp
+  $MKDIR $CRSD/var/log/wtmpd
+  $CHOWN 20:20 $CRSD/var/log/wtmpd
 }
