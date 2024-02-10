@@ -7,7 +7,9 @@ prepare() {
   $RSYNC $SRCD/$nom/procps-v$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-netbsd-curses-compatibility.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
 
   ./autogen.sh
 
