@@ -1,0 +1,179 @@
+--- man/uptime.1
++++ man/uptime.1
+@@ -48,7 +48,7 @@
+ display version information and exit
+ .SH FILES
+ .TP
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ information about who is currently logged on
+ .TP
+ .I /proc
+--- man/w.1
++++ man/w.1
+@@ -87,7 +87,7 @@
+ Override the default width of the from column.  Defaults to 16.
+ .SH FILES
+ .TP
+-.I /var/run/utmp
++.I /run/utmps/utmp
+ information about who is currently logged on
+ .TP
+ .I /proc
+--- NEWS
++++ NEWS
+@@ -666,7 +666,7 @@
+ top: multiple -p options work again
+ top: fixed 4 GB wrap-around
+ ps: has a set of tests to ensure correctness
+-man page: /var/run/utmp, not /etc/utmp           #206583
++man page: /run/utmps/utmp, not /etc/utmp         #206583
+ required flags moved out of CFLAGS               #205429
+ RPM generation handles /lib64
+ WCHAN skips leading '.'
+--- po-man/de.po
++++ po-man/de.po
+@@ -2877,8 +2877,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+@@ -16100,8 +16100,8 @@
+ #~ msgid "FILES        "
+ #~ msgstr "DATEIEN"
+ 
+-#~ msgid "I</var/run/utmp> "
+-#~ msgstr "I</var/run/utmp> "
++#~ msgid "I</run/utmps/utmp> "
++#~ msgstr "I</run/utmps/utmp> "
+ 
+ #~ msgid "information about who is currently logged on "
+ #~ msgstr "Informationen darüber, wer aktuell angemeldet ist"
+--- po-man/fr.po
++++ po-man/fr.po
+@@ -3602,8 +3602,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/pl.po
++++ po-man/pl.po
+@@ -3400,8 +3400,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/procps-man.pot
++++ po-man/procps-man.pot
+@@ -3115,7 +3115,7 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
+--- po-man/pt_BR.po
++++ po-man/pt_BR.po
+@@ -3582,8 +3582,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/ro.po
++++ po-man/ro.po
+@@ -2891,8 +2891,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+@@ -16834,8 +16834,8 @@
+ #~ msgid "FILES        "
+ #~ msgstr "FIȘIERE        "
+ 
+-#~ msgid "I</var/run/utmp> "
+-#~ msgstr "I</var/run/utmp> "
++#~ msgid "I</run/utmps/utmp> "
++#~ msgstr "I</run/utmps/utmp> "
+ 
+ #~ msgid "information about who is currently logged on "
+ #~ msgstr "informații despre cine este conectat în prezent "
+--- po-man/sv.po
++++ po-man/sv.po
+@@ -2855,8 +2855,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+--- po-man/uk.po
++++ po-man/uk.po
+@@ -2849,8 +2849,8 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
+-msgstr "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
++msgstr "I</run/utmps/utmp>"
+ 
+ #. type: Plain text
+ #: ../man/uptime.1:53 ../man/w.1:92
+@@ -16520,8 +16520,8 @@
+ #~ msgid "FILES        "
+ #~ msgstr "ФАЙЛИ    "
+ 
+-#~ msgid "I</var/run/utmp> "
+-#~ msgstr "I</var/run/utmp> "
++#~ msgid "I</run/utmps/utmp> "
++#~ msgstr "I</run/utmps/utmp> "
+ 
+ #~ msgid "information about who is currently logged on "
+ #~ msgstr "Дані щодо тих, хто зараз працює у системі. "
+--- po-man/zh_CN.po
++++ po-man/zh_CN.po
+@@ -3124,7 +3124,7 @@
+ #. type: TP
+ #: ../man/uptime.1:50 ../man/w.1:89
+ #, no-wrap
+-msgid "I</var/run/utmp>"
++msgid "I</run/utmps/utmp>"
+ msgstr ""
+ 
+ #. type: Plain text
