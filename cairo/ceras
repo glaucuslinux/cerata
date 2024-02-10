@@ -5,6 +5,6 @@
 
 nom="cairo"
 ver="1.18.0"
-url="https://www.cairographics.org/releases/cairo-1.18.0.tar.xz"
+url="https://cairographics.org/releases/cairo-1.18.0.tar.xz"
 sum="55b4b6406668e08dd6b816beba82c86df8e9a5468352c66597badb4f6583930e"
 cnt="libpng muon samurai"
