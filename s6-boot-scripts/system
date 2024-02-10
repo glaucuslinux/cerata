@@ -42,6 +42,7 @@ install() {
   $RSYNC $CERD/$nom/modules-load.8 $VNMD/$nom/sac/usr/share/man/man8
 
   $MKDIR $VNMD/$nom/sac/var/log/wtmpd
+  $LN wtmpd/btmp $VNMD/$nom/sac/var/log/btmp
   $LN wtmpd/wtmp $VNMD/$nom/sac/var/log/wtmp
   $CHOWN 20:20 $VNMD/$nom/sac/var/log/wtmpd
 }
