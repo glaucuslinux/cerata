@@ -57,6 +57,7 @@ configure() {
     --enable-terminal \
     --enable-multibyte \
     --disable-gui \
+    --disable-gtktest \
     --disable-canberra \
     --disable-libsodium \
     --disable-gpm \
@@ -66,6 +67,7 @@ configure() {
     --with-compiledby="glaucus $CARCH $(date +%Y%m%d)" \
     --with-luajit \
     --without-x \
+    --without-gnome \
     --with-tlib=ncursesw
 }
 
