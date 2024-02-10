@@ -7,11 +7,17 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
   cd $XSRC/$nom
 
+  $RSYNC $CERD/$nom/ttydefaults.h include
+
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
+
+  $AUTORECONF
+
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
 configure() {
