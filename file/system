@@ -32,6 +32,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-libseccomp \
     --enable-fsect-man5 \
+    --disable-static \
     --with-pic
 }
 
