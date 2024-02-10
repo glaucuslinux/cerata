@@ -20,7 +20,6 @@ configure() {
     --datadir=/usr/share \
     --mandir=/usr/share/man \
     --sysconfdir=/etc \
-    --without-pam \
     --with-timestamp
 }
 
