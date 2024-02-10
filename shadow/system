@@ -44,7 +44,6 @@ configure() {
     --disable-rpath \
     --with-pic \
     --without-audit \
-    --without-libpam \
     --without-selinux \
     --with-acl \
     --with-attr \
