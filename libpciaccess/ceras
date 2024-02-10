@@ -5,6 +5,6 @@
 
 nom="libpciaccess"
 ver="0.17"
-url="https://www.x.org/releases/individual/lib/libpciaccess-0.17.tar.gz"
+url="https://x.org/releases/individual/lib/libpciaccess-0.17.tar.gz"
 sum="cc4529bf6a2ce21d63ecdb6b5b6c5e7a8c3223a13444829cda4fd39d074b750c"
 cnt="make"
