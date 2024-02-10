@@ -5,6 +5,6 @@
 
 nom="pixman"
 ver="0.43.2"
-url="https://www.cairographics.org/releases/pixman-0.43.2.tar.gz"
+url="https://cairographics.org/releases/pixman-0.43.2.tar.gz"
 sum="7450aeb7849ee317594e7d3885fc4826be880d2babfef5498641814ce07f07f3"
 cnt="libpng make"
