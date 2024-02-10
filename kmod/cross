@@ -39,6 +39,7 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
+    --disable-static \
     --disable-manpages \
     --disable-test-modules \
     --with-pic \
