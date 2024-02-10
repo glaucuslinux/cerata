@@ -74,10 +74,10 @@
  PREFIX?=/usr
 -SBINDIR?=/sbin
 +BINDIR?=/bin
- CONF_ETC_DIR?=/etc/iproute2
- CONF_USR_DIR?=$(PREFIX)/lib/iproute2
  NETNS_RUN_DIR?=/var/run/netns
-@@ -101,7 +101,7 @@
+ NETNS_ETC_DIR?=/etc/netns
+ DATADIR?=$(PREFIX)/share
+@@ -102,7 +102,7 @@
  	fi
  
  install: all
@@ -114,7 +114,7 @@
  clean:
 --- tc/Makefile
 +++ tc/Makefile
-@@ -147,7 +147,7 @@
+@@ -139,7 +139,7 @@
  
  install: all
  	mkdir -p $(MODDESTDIR)
