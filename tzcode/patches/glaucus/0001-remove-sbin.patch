@@ -1,6 +1,6 @@
 --- Makefile
 +++ Makefile
-@@ -103,7 +103,7 @@
+@@ -121,7 +121,7 @@
  ZDUMPDIR = $(BINDIR)
  
  # The "zic" command goes in:
