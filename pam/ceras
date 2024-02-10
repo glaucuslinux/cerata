@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="pam"
+ver="1.6.0"
+url="https://github.com/linux-pam/linux-pam/releases/download/v1.6.0/Linux-PAM-1.6.0.tar.xz"
+sum="5e7159f0b78d7ce062dbb0766107dd5f8124b7424c8eb97c97b86cd34b192af8"
+cnt="flex make utmps"
