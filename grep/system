@@ -37,7 +37,7 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --disable-nls \
-    --with-packager="glaucus $CARCH $(date +%Y%m%d)" \
+    --with-packager="$PRETTY_NAME" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
