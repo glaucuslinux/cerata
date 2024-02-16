@@ -17,7 +17,7 @@ configure() {
     -des \
     -Darchlib=/usr/lib/${nom}5/core_$nom \
     -Dcc=$CC \
-    -Dcf_by="glaucus $CARCH $(date +%Y%m%d)" \
+    -Dcf_by="$PRETTY_NAME" \
     -Dinc_version_list=none \
     -Dinstallusrbinperl \
     -Dlocincpth= \
