@@ -34,7 +34,7 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-rpath \
     --disable-nls \
-    --with-packager="glaucus $CARCH $(date +%Y%m%d)" \
+    --with-packager="$PRETTY_NAME" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
