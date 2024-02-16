@@ -79,7 +79,7 @@ configure() {
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
     --with-sysroot=$CRSD \
-    --with-pkgversion="glaucus $CARCH $(date +%Y%m%d)" \
+    --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
     --with-system-zlib \
