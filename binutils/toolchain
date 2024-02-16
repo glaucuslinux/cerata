@@ -57,7 +57,7 @@ configure() {
     --with-pic \
     --with-mmap \
     --with-sysroot=$CRSD \
-    --with-pkgversion="glaucus $CARCH $(date +%Y%m%d)" \
+    --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
     --with-system-zlib
