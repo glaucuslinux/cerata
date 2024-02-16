@@ -65,8 +65,8 @@ configure() {
     --disable-gpm \
     --disable-sysmouse \
     --disable-nls \
-    --with-modified-by="glaucus $CARCH $(date +%Y%m%d)" \
-    --with-compiledby="glaucus $CARCH $(date +%Y%m%d)" \
+    --with-modified-by="$PRETTY_NAME" \
+    --with-compiledby="$PRETTY_NAME" \
     --without-x \
     --without-gnome \
     --with-tlib=ncursesw
