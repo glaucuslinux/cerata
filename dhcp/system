@@ -89,9 +89,9 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $MV $VNMD/$nom/sac/etc/$nom/dhclient.conf.example $VNMD/$nom/sac/etc/$nom/dhclient.conf
+  mv $VNMD/$nom/sac/etc/$nom/dhclient.conf.example $VNMD/$nom/sac/etc/$nom/dhclient.conf
   $RSYNC doc/examples/dhclient-${nom}v6.conf $VNMD/$nom/sac/etc/dhclient6.conf
-  $MV $VNMD/$nom/sac/etc/$nom/${nom}d.conf.example $VNMD/$nom/sac/etc/$nom/${nom}d.conf
+  mv $VNMD/$nom/sac/etc/$nom/${nom}d.conf.example $VNMD/$nom/sac/etc/$nom/${nom}d.conf
   $RSYNC doc/examples/${nom}d-${nom}v6.conf $VNMD/$nom/sac/etc/${nom}d6.conf
 
   $RSYNC client/scripts/linux $VNMD/$nom/sac/usr/bin/dhclient-script
