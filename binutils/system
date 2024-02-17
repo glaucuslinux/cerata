@@ -76,8 +76,6 @@ install() {
     DESTDIR=$VNMD/$nom/sac \
     install-strip
 
-  $LN ld.bfd $VNMD/$nom/sac/usr/bin/ld
-
   # Manually remove the static libraries
   $RM $VNMD/$nom/sac/usr/lib/libbfd.a
   $RM $VNMD/$nom/sac/usr/lib/libctf.a
