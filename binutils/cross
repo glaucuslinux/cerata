@@ -79,9 +79,6 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  # This symlink will be updated by cross `mold`
-  $LN ld.bfd $CRSD/usr/bin/ld
-
   # Manually remove the static libraries
   $RM $CRSD/usr/lib/libbfd.a
   $RM $CRSD/usr/lib/libctf.a
