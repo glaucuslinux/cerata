@@ -71,7 +71,7 @@ install() {
     install-strip \
     install-libs
 
-  $MV $VNMD/$nom/sac/usr/lib/e2initrd_helper $VNMD/$nom/sac/usr/bin
+  mv $VNMD/$nom/sac/usr/lib/e2initrd_helper $VNMD/$nom/sac/usr/bin
 
   $RM $VNMD/$nom/sac/usr/lib/libcom_err.a
   $RM $VNMD/$nom/sac/usr/lib/libe2p.a
