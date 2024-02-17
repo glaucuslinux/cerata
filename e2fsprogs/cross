@@ -73,7 +73,7 @@ install() {
     install-strip \
     install-libs
 
-  $MV $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
+  mv $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
 
   $RM $CRSD/usr/lib/libcom_err.a
   $RM $CRSD/usr/lib/libe2p.a
