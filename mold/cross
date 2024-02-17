@@ -56,5 +56,4 @@ install() {
     install/strip
 
   $LN $nom $CRSD/usr/bin/ld
-  $LN $nom $CRSD/usr/bin/ld.$nom
 }
