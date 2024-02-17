@@ -56,5 +56,4 @@ install() {
     install/strip
 
   $LN $nom $VNMD/$nom/sac/usr/bin/ld
-  $LN $nom $VNMD/$nom/sac/usr/bin/ld.$nom
 }

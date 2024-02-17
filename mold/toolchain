@@ -54,6 +54,8 @@ install() {
     -C $TBLD/$nom \
     install/strip
 
+  $LN $nom $TLCD/usr/bin/$TGT-ld
+
   $LN ../../bin/$nom $TLCD/usr/$TGT/bin/ld
   $LN ../../bin/$nom $TLCD/usr/$TGT/bin/ld.$nom
 }
