@@ -42,5 +42,4 @@ install() {
   $LN wtmpd/btmp $CRSD/var/log/btmp
   $LN wtmpd/wtmp $CRSD/var/log/wtmp
   $MKDIR $CRSD/var/log/wtmpd
-  $CHOWN 20:20 $CRSD/var/log/wtmpd
 }
