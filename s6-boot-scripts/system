@@ -44,5 +44,5 @@ install() {
   $MKDIR $VNMD/$nom/sac/var/log/wtmpd
   $LN wtmpd/btmp $VNMD/$nom/sac/var/log/btmp
   $LN wtmpd/wtmp $VNMD/$nom/sac/var/log/wtmp
-  $CHOWN 20:20 $VNMD/$nom/sac/var/log/wtmpd
+  chown 20:20 $VNMD/$nom/sac/var/log/wtmpd
 }
