@@ -13,7 +13,7 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
 
-  $AUTORECONF
+  ./autogen.sh
 
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
