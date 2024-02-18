@@ -9,7 +9,6 @@ objdump = 'x86_64-glaucus-linux-musl-objdump'
 ranlib = 'x86_64-glaucus-linux-musl-gcc-ranlib'
 readelf = 'x86_64-glaucus-linux-musl-readelf'
 size = 'x86_64-glaucus-linux-musl-size'
-strings = 'x86_64-glaucus-linux-musl-strings'
 strip = 'x86_64-glaucus-linux-musl-strip'
 
 [host_machine]
