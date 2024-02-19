@@ -11,6 +11,8 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath .
   $RSYNC $CERD/binutils/config.sub .
 
+  $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-undefined-reference.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
 
@@ -39,11 +41,13 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --disable-static \
-    --enable-utmpx \
+    --enable-lastlog \
+    --disable-logind \
     --disable-nls \
     --disable-rpath \
     --with-pic \
     --without-audit \
+    --without-libpam \
     --without-selinux \
     --with-acl \
     --with-attr \
@@ -51,6 +55,7 @@ configure() {
     --with-yescrypt \
     --without-nscd \
     --without-su \
+    --without-libbsd \
     --with-fcaps
 }
 
