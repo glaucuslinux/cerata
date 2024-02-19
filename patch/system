@@ -52,8 +52,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $RM $VNMD/$nom/sac/usr/lib/charset.alias
+  $RM $SACD/usr/lib/charset.alias
 }

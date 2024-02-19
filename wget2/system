@@ -70,12 +70,12 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/wget
-  $RM $VNMD/$nom/sac/usr/bin/${nom}_noinstall
+  $LN $nom $SACD/usr/bin/wget
+  $RM $SACD/usr/bin/${nom}_noinstall
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/libwget.la
+  $RM $SACD/usr/lib/libwget.la
 }

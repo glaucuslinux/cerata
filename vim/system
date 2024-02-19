@@ -81,10 +81,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $RSYNC $CERD/$nom/${nom}rc $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/${nom}rc $SACD/etc
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/vi
+  $LN $nom $SACD/usr/bin/vi
 }

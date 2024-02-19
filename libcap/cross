@@ -16,6 +16,7 @@ configure() {
 
 build() {
   # `libcap` does not support parallel build!
+  BUILD_CC=gcc \
   MAKEFLAGS=-j1 \
   $MAKE \
     DESTDIR=$CRSD \

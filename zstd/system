@@ -38,19 +38,19 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     PREFIX=/usr \
     install
 
   # Install parallel zstd as well
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     PREFIX=/usr \
     -C contrib/p$nom \
     install
 
   # Manually remove the static library
-  $RM $VNMD/$nom/sac/usr/lib/lib$nom.a
+  $RM $SACD/usr/lib/lib$nom.a
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/p${nom}.1
+  $LN $nom.1 $SACD/usr/share/man/man1/p${nom}.1
 }

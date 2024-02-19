@@ -37,9 +37,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $MKDIR $VNMD/$nom/sac/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig
+  $MKDIR $SACD/usr/lib/pkgconfig
+  $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
 }

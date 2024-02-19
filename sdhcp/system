@@ -37,6 +37,6 @@ install() {
   $MAKE \
     PREFIX=/usr \
     MANPREFIX=/usr/share/man \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 }

@@ -51,15 +51,15 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $VNMD/$nom/sac/usr/lib/libcrypto.la
-  $RM $VNMD/$nom/sac/usr/lib/libssl.la
-  $RM $VNMD/$nom/sac/usr/lib/libtls.la
+  $RM $SACD/usr/lib/libcrypto.la
+  $RM $SACD/usr/lib/libssl.la
+  $RM $SACD/usr/lib/libtls.la
 
-  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libcrypto.so.52.0.0
-  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libssl.so.55.0.0
-  $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libtls.so.28.0.0
+  $CHMOD 0755 $SACD/usr/lib/libcrypto.so.52.0.0
+  $CHMOD 0755 $SACD/usr/lib/libssl.so.55.0.0
+  $CHMOD 0755 $SACD/usr/lib/libtls.so.28.0.0
 }

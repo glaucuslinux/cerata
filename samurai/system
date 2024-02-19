@@ -30,10 +30,10 @@ install() {
     PREFIX=/usr \
     BINDIR=/usr/bin \
     MANDIR=/usr/share/man \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $LN samu $VNMD/$nom/sac/usr/bin/ninja
+  $LN samu $SACD/usr/bin/ninja
 
-  $LN samu.1 $VNMD/$nom/sac/usr/share/man/man1/ninja
+  $LN samu.1 $SACD/usr/share/man/man1/ninja
 }

@@ -22,11 +22,11 @@ check() {
 }
 
 install() {
-  $MKDIR $VNMD/$nom/sac/usr/bin
-  $RSYNC gencat $VNMD/$nom/sac/usr/bin
-  $RSYNC getent $VNMD/$nom/sac/usr/bin
+  $MKDIR $SACD/usr/bin
+  $RSYNC gencat $SACD/usr/bin
+  $RSYNC getent $SACD/usr/bin
 
-  $MKDIR $VNMD/$nom/sac/usr/share/man/man1
-  $RSYNC $CERD/musl/gencat.1 $VNMD/$nom/sac/usr/share/man/man1
-  $RSYNC $CERD/musl/getent.1 $VNMD/$nom/sac/usr/share/man/man1
+  $MKDIR $SACD/usr/share/man/man1
+  $RSYNC $CERD/musl/gencat.1 $SACD/usr/share/man/man1
+  $RSYNC $CERD/musl/getent.1 $SACD/usr/share/man/man1
 }

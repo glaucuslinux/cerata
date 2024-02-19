@@ -46,8 +46,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $RSYNC $CERD/$nom/${nom}d.conf $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/${nom}d.conf $SACD/etc
 }

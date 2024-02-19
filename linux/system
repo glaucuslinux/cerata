@@ -20,6 +20,6 @@ check() {
 }
 
 install() {
-  $RSYNC /boot/vmlinuz-linux $VNMD/$nom/sac/boot/vmlinuz
-  $RSYNC /usr/lib/modules $VNMD/$nom/sac/usr/lib
+  $RSYNC /boot/vmlinuz-linux $SACD/boot/vmlinuz
+  $RSYNC /usr/lib/modules $SACD/usr/lib
 }

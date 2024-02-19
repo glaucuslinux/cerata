@@ -24,14 +24,14 @@ check() {
 
 install() {
   # `pigz` and `unpigz` are symbolic links
-  $MKDIR $VNMD/$nom/sac/usr/bin
-  $RSYNC $nom $VNMD/$nom/sac/usr/bin
-  $LN $nom $VNMD/$nom/sac/usr/bin/gunzip
-  $LN $nom $VNMD/$nom/sac/usr/bin/gzcat
-  $LN $nom $VNMD/$nom/sac/usr/bin/gzip
-  $LN $nom $VNMD/$nom/sac/usr/bin/un$nom
-  $LN $nom $VNMD/$nom/sac/usr/bin/zcat
+  $MKDIR $SACD/usr/bin
+  $RSYNC $nom $SACD/usr/bin
+  $LN $nom $SACD/usr/bin/gunzip
+  $LN $nom $SACD/usr/bin/gzcat
+  $LN $nom $SACD/usr/bin/gzip
+  $LN $nom $SACD/usr/bin/un$nom
+  $LN $nom $SACD/usr/bin/zcat
 
-  $MKDIR $VNMD/$nom/sac/usr/share/man/man1
-  $RSYNC $nom.1 $VNMD/$nom/sac/usr/share/man/man1
+  $MKDIR $SACD/usr/share/man/man1
+  $RSYNC $nom.1 $SACD/usr/share/man/man1
 }

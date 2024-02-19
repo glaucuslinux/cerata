@@ -30,24 +30,24 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   muon \
     -C $SBLD/$nom \
     install
 
-  $RSYNC $CERD/$nom/updatedb.conf $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/updatedb.conf $SACD/etc
 
   # Compatibility symlinks
-  $LN $nom $VNMD/$nom/sac/usr/bin/locate
-  $LN $nom $VNMD/$nom/sac/usr/bin/mlocate
-  $LN $nom $VNMD/$nom/sac/usr/bin/slocate
-  $LN pupdatedb $VNMD/$nom/sac/usr/bin/updatedb
+  $LN $nom $SACD/usr/bin/locate
+  $LN $nom $SACD/usr/bin/mlocate
+  $LN $nom $SACD/usr/bin/slocate
+  $LN pupdatedb $SACD/usr/bin/updatedb
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/locate.1
-  $LN ../man8/pupdatedb.8 $VNMD/$nom/sac/usr/share/man/man1/pupdatedb.1
-  $LN ../man8/pupdatedb.8 $VNMD/$nom/sac/usr/share/man/man1/updatedb.1
+  $LN $nom.1 $SACD/usr/share/man/man1/locate.1
+  $LN ../man8/pupdatedb.8 $SACD/usr/share/man/man1/pupdatedb.1
+  $LN ../man8/pupdatedb.8 $SACD/usr/share/man/man1/updatedb.1
 
-  $LN pupdatedb.conf.5 $VNMD/$nom/sac/usr/share/man/man5/updatedb.conf.5
+  $LN pupdatedb.conf.5 $SACD/usr/share/man/man5/updatedb.conf.5
 
-  $LN $nom $VNMD/$nom/sac/var/lib/locate
+  $LN $nom $SACD/var/lib/locate
 }

@@ -27,11 +27,11 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   muon \
     -C $SBLD/$nom \
     install
 
-  $LN ping $VNMD/$nom/sac/usr/bin/ping6
-  $LN tracepath $VNMD/$nom/sac/usr/bin/tracepath6
+  $LN ping $SACD/usr/bin/ping6
+  $LN tracepath $SACD/usr/bin/tracepath6
 }

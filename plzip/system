@@ -31,11 +31,11 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $VNMD/$nom/sac/usr/bin/lzip
+  $LN $nom $SACD/usr/bin/lzip
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/lzip.1
+  $LN $nom.1 $SACD/usr/share/man/man1/lzip.1
 }

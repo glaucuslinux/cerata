@@ -49,7 +49,7 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   samu \
     -C $SBLD/$nom \
     install/strip

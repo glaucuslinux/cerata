@@ -20,11 +20,11 @@ check() {
 }
 
 install() {
-  $MKDIR $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-5x8.psfu $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-6x12.psfu $VNMD/$nom/sac/usr/share/consolefonts
-  $RSYNC $SRCD/$nom/$nom-$ver/$nom-8x16.psfu $VNMD/$nom/sac/usr/share/consolefonts
+  $MKDIR $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-5x8.psfu $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-6x12.psfu $SACD/usr/share/consolefonts
+  $RSYNC $SRCD/$nom/$nom-$ver/$nom-8x16.psfu $SACD/usr/share/consolefonts
 }

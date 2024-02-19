@@ -58,9 +58,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/liblzma.la
+  $RM $SACD/usr/lib/liblzma.la
 }

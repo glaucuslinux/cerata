@@ -47,11 +47,11 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $MKDIR $VNMD/$nom/sac/usr/include/$nom
-  $LN ../dbm.h $VNMD/$nom/sac/usr/include/$nom/dbm.h
-  $LN ../$nom.h $VNMD/$nom/sac/usr/include/$nom/$nom.h
-  $LN ../ndbm.h $VNMD/$nom/sac/usr/include/$nom/ndbm.h
+  $MKDIR $SACD/usr/include/$nom
+  $LN ../dbm.h $SACD/usr/include/$nom/dbm.h
+  $LN ../$nom.h $SACD/usr/include/$nom/$nom.h
+  $LN ../ndbm.h $SACD/usr/include/$nom/ndbm.h
 }

@@ -49,10 +49,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $VNMD/$nom/sac/usr/lib/$nom.la
-  $RM $VNMD/$nom/sac/usr/lib/python3.11/site-packages/${nom}mod.la
+  $RM $SACD/usr/lib/$nom.la
+  $RM $SACD/usr/lib/python3.11/site-packages/${nom}mod.la
 }

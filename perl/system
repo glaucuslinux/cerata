@@ -56,11 +56,11 @@ install() {
   fi
 
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/$nom$ver
-  $LN ${nom}bug $VNMD/$nom/sac/usr/bin/${nom}thanks
+  $LN $nom $SACD/usr/bin/$nom$ver
+  $LN ${nom}bug $SACD/usr/bin/${nom}thanks
 
-  $LN ${nom}bug.1 $VNMD/$nom/sac/usr/share/man/man1/${nom}thanks.1
+  $LN ${nom}bug.1 $SACD/usr/share/man/man1/${nom}thanks.1
 }

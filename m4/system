@@ -50,10 +50,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/g$nom
+  $LN $nom $SACD/usr/bin/g$nom
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/g$nom.1
+  $LN $nom.1 $SACD/usr/share/man/man1/g$nom.1
 }

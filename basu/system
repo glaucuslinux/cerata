@@ -25,7 +25,7 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   muon \
     -C $SBLD/$nom \
     install

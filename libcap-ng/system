@@ -49,10 +49,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $VNMD/$nom/sac/usr/lib/$nom.la
-  $RM $VNMD/$nom/sac/usr/lib/libdrop_ambient.la
+  $RM $SACD/usr/lib/$nom.la
+  $RM $SACD/usr/lib/libdrop_ambient.la
 }

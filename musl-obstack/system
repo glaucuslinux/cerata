@@ -46,8 +46,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN $nom.pc $VNMD/$nom/sac/usr/lib/libobstack.pc
+  $LN $nom.pc $SACD/usr/lib/libobstack.pc
 }

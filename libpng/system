@@ -53,13 +53,13 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $VNMD/$nom/sac/usr/lib/$nom.la
-  $RM $VNMD/$nom/sac/usr/lib/${nom}16.la
+  $RM $SACD/usr/lib/$nom.la
+  $RM $SACD/usr/lib/${nom}16.la
 
-  $RSYNC contrib/pngminus/png2pnm $VNMD/$nom/sac/usr/bin
-  $RSYNC contrib/pngminus/pnm2png $VNMD/$nom/sac/usr/bin
+  $RSYNC contrib/pngminus/png2pnm $SACD/usr/bin
+  $RSYNC contrib/pngminus/pnm2png $SACD/usr/bin
 }

@@ -31,10 +31,10 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   $nom \
     -C $SBLD/$nom \
     install
 
-  $RSYNC $CERD/$nom/glaucus-$nom $VNMD/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/glaucus-$nom $SACD/usr/bin
 }

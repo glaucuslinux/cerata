@@ -22,16 +22,16 @@ check() {
 }
 
 install() {
-  $MKDIR $VNMD/$nom/sac/usr/include
-  $RSYNC bzlib.h $VNMD/$nom/sac/usr/include
+  $MKDIR $SACD/usr/include
+  $RSYNC bzlib.h $SACD/usr/include
 
-  $MKDIR $VNMD/$nom/sac/usr/lib
-  $RSYNC libbz2.so.$ver $VNMD/$nom/sac/usr/lib
-  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so
-  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so.1
-  $LN libbz2.so.$ver $VNMD/$nom/sac/usr/lib/libbz2.so.1.0
+  $MKDIR $SACD/usr/lib
+  $RSYNC libbz2.so.$ver $SACD/usr/lib
+  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so
+  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
+  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
-  $MKDIR $VNMD/$nom/sac/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig
-  $LN $nom.pc $VNMD/$nom/sac/usr/lib/pkgconfig/libbz2.pc
+  $MKDIR $SACD/usr/lib/pkgconfig
+  $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
+  $LN $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }

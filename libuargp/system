@@ -28,10 +28,10 @@ install() {
     libdir=/usr/lib \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS" \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  mv $VNMD/$nom/sac/usr/lib/libargp.so $VNMD/$nom/sac/usr/lib/libargp.so.0.0.0
-  $LN libargp.so.0.0.0 $VNMD/$nom/sac/usr/lib/libargp.so
-  $LN libargp.so.0.0.0 $VNMD/$nom/sac/usr/lib/libargp.so.0
+  mv $SACD/usr/lib/libargp.so $SACD/usr/lib/libargp.so.0.0.0
+  $LN libargp.so.0.0.0 $SACD/usr/lib/libargp.so
+  $LN libargp.so.0.0.0 $SACD/usr/lib/libargp.so.0
 }

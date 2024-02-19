@@ -41,17 +41,17 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN lbunzip2 $VNMD/$nom/sac/usr/bin/bunzip2
-  $LN lbzcat $VNMD/$nom/sac/usr/bin/bzcat
-  $LN $nom $VNMD/$nom/sac/usr/bin/bzip2
-  $LN $nom $VNMD/$nom/sac/usr/bin/pbzip2
+  $LN lbunzip2 $SACD/usr/bin/bunzip2
+  $LN lbzcat $SACD/usr/bin/bzcat
+  $LN $nom $SACD/usr/bin/bzip2
+  $LN $nom $SACD/usr/bin/pbzip2
 
-  $LN lbunzip2.1 $VNMD/$nom/sac/usr/share/man/man1/bunzip2.1
-  $LN lbzcat.1 $VNMD/$nom/sac/usr/share/man/man1/bzcat.1
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/bzip2.1
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/lbzcat.1
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/lbunzip2.1
+  $LN lbunzip2.1 $SACD/usr/share/man/man1/bunzip2.1
+  $LN lbzcat.1 $SACD/usr/share/man/man1/bzcat.1
+  $LN $nom.1 $SACD/usr/share/man/man1/bzip2.1
+  $LN $nom.1 $SACD/usr/share/man/man1/lbzcat.1
+  $LN $nom.1 $SACD/usr/share/man/man1/lbunzip2.1
 }

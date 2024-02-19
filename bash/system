@@ -63,9 +63,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/r$nom
-  $LN $nom $VNMD/$nom/sac/usr/bin/sh
+  $LN $nom $SACD/usr/bin/r$nom
+  $LN $nom $SACD/usr/bin/sh
 }

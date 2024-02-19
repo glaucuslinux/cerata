@@ -28,14 +28,14 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $RSYNC $CERD/$nom/ksh.kshrc $VNMD/$nom/sac/etc
+  $RSYNC $CERD/$nom/ksh.kshrc $SACD/etc
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/ksh
-  $LN $nom $VNMD/$nom/sac/usr/bin/rksh
+  $LN $nom $SACD/usr/bin/ksh
+  $LN $nom $SACD/usr/bin/rksh
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/ksh.1
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/rksh.1
+  $LN $nom.1 $SACD/usr/share/man/man1/ksh.1
+  $LN $nom.1 $SACD/usr/share/man/man1/rksh.1
 }

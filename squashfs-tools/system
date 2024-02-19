@@ -28,9 +28,9 @@ check() {
 
 install() {
   $MAKE \
-    INSTALL_PREFIX=$VNMD/$nom/sac/usr \
-    INSTALL_DIR=$VNMD/$nom/sac/usr/bin \
-    INSTALL_MANPAGES_DIR=$VNMD/$nom/sac/usr/share/man/man1 \
+    INSTALL_PREFIX=$SACD/usr \
+    INSTALL_DIR=$SACD/usr/bin \
+    INSTALL_MANPAGES_DIR=$SACD/usr/share/man/man1 \
     -C $nom \
     install
 }

@@ -20,29 +20,29 @@ check() {
 }
 
 install() {
-  $RSYNC $SRCD/$nom/etc $VNMD/$nom/sac --delete
-  $RSYNC $SRCD/$nom/usr $VNMD/$nom/sac --delete
+  $RSYNC $SRCD/$nom/etc $SACD --delete
+  $RSYNC $SRCD/$nom/usr $SACD --delete
 
-  $MKDIR $VNMD/$nom/sac/etc/s6/current/env
+  $MKDIR $SACD/etc/s6/current/env
 
-  mkfifo -m 0600 $VNMD/$nom/sac/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
-  mkfifo -m 0600 $VNMD/$nom/sac/etc/s6/current/run-image/service/s6-svscan-log/fifo
+  mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
+  mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  $MKDIR -m 02750 $VNMD/$nom/sac/etc/s6/current/run-image/uncaught-logs
+  $MKDIR -m 02750 $SACD/etc/s6/current/run-image/uncaught-logs
 
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $VNMD/$nom/sac/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $VNMD/$nom/sac/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $VNMD/$nom/sac/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $VNMD/$nom/sac/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
+  $RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
 
-  s6-rc-compile $VNMD/$nom/sac/etc/s6/rc/compiled $VNMD/$nom/sac/etc/s6/sv
+  s6-rc-compile $SACD/etc/s6/rc/compiled $SACD/etc/s6/sv
 
-  $RSYNC $CERD/$nom/modules-load $VNMD/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/modules-load $SACD/usr/bin
 
-  $RSYNC $CERD/$nom/modules-load.8 $VNMD/$nom/sac/usr/share/man/man8
+  $RSYNC $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
 
-  $MKDIR $VNMD/$nom/sac/var/log/wtmpd
-  $LN wtmpd/btmp $VNMD/$nom/sac/var/log/btmp
-  $LN wtmpd/wtmp $VNMD/$nom/sac/var/log/wtmp
-  chown 20:20 $VNMD/$nom/sac/var/log/wtmpd
+  $MKDIR $SACD/var/log/wtmpd
+  $LN wtmpd/btmp $SACD/var/log/btmp
+  $LN wtmpd/wtmp $SACD/var/log/wtmp
+  chown 20:20 $SACD/var/log/wtmpd
 }
