@@ -40,6 +40,6 @@ install() {
   $CHMOD 0755 $CRSD/usr/lib/libpanel.so
   $CHMOD 0755 $CRSD/usr/lib/libterminfo.so
 
-  # Some cerata (e.g. yash) link against this symlink
+  # Some cerata (e.g. `util-linux` and `yash`) link against this symlink
   $LN libterminfo.so $CRSD/usr/lib/libtinfo.so
 }

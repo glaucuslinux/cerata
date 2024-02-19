@@ -40,6 +40,6 @@ install() {
   $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libpanel.so
   $CHMOD 0755 $VNMD/$nom/sac/usr/lib/libterminfo.so
 
-  # Some cerata (e.g. yash) link against this symlink
+  # Some cerata (e.g. `util-linux` and `yash`) link against this symlink
   $LN libterminfo.so $VNMD/$nom/sac/usr/lib/libtinfo.so
 }
