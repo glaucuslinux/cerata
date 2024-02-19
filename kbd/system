@@ -50,13 +50,13 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN openvt $VNMD/$nom/sac/usr/bin/open
+  $LN openvt $SACD/usr/bin/open
 
-  $RM $VNMD/$nom/sac/usr/share/keymaps/amiga
-  $RM $VNMD/$nom/sac/usr/share/keymaps/atari
-  $RM $VNMD/$nom/sac/usr/share/keymaps/i386/qwerty/ro_win.map.gz
-  $RM $VNMD/$nom/sac/usr/share/keymaps/sun
+  $RM $SACD/usr/share/keymaps/amiga
+  $RM $SACD/usr/share/keymaps/atari
+  $RM $SACD/usr/share/keymaps/i386/qwerty/ro_win.map.gz
+  $RM $SACD/usr/share/keymaps/sun
 }

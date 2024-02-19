@@ -23,6 +23,6 @@ check() {
 }
 
 install() {
-  $MKDIR $VNMD/$nom/sac/boot
-  $RSYNC $nom.img $VNMD/$nom/sac/boot
+  $MKDIR $SACD/boot
+  $RSYNC $nom.img $SACD/boot
 }

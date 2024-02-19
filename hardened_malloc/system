@@ -24,7 +24,7 @@ check() {
 }
 
 install() {
-  $MKDIR $VNMD/$nom/sac/usr/lib
-  $RSYNC out/libhardened_malloc.so $VNMD/$nom/sac/usr/lib
-  $RSYNC out-light/libhardened_malloc-light.so $VNMD/$nom/sac/usr/lib
+  $MKDIR $SACD/usr/lib
+  $RSYNC out/libhardened_malloc.so $SACD/usr/lib
+  $RSYNC out-light/libhardened_malloc-light.so $SACD/usr/lib
 }

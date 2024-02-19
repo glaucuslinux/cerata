@@ -33,10 +33,10 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $LN doas $VNMD/$nom/sac/usr/bin/$nom
+  $LN doas $SACD/usr/bin/$nom
 
-  $LN doas.1 $VNMD/$nom/sac/usr/share/man/man1/$nom.1
+  $LN doas.1 $SACD/usr/share/man/man1/$nom.1
 }

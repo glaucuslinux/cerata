@@ -48,17 +48,17 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $VNMD/$nom/sac/usr/bin/pkg-config
-  $LN $nom $VNMD/$nom/sac/usr/bin/$TGT-$nom
-  $LN $nom $VNMD/$nom/sac/usr/bin/$TGT-pkg-config
+  $LN $nom $SACD/usr/bin/pkg-config
+  $LN $nom $SACD/usr/bin/$TGT-$nom
+  $LN $nom $SACD/usr/bin/$TGT-pkg-config
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
+  $RM $SACD/usr/lib/lib$nom.la
 
-  $LN pkg.m4 $VNMD/$nom/sac/usr/share/aclocal/$nom.m4
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/pkg-config.1
+  $LN pkg.m4 $SACD/usr/share/aclocal/$nom.m4
+  $LN $nom.1 $SACD/usr/share/man/man1/pkg-config.1
 }

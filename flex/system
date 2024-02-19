@@ -50,13 +50,13 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/lex
+  $LN $nom $SACD/usr/bin/lex
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/libfl.la
+  $RM $SACD/usr/lib/libfl.la
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/lex.1
+  $LN $nom.1 $SACD/usr/share/man/man1/lex.1
 }

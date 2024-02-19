@@ -58,24 +58,24 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $MKDIR $VNMD/$nom/sac/etc/depmod.d
-  $MKDIR $VNMD/$nom/sac/etc/modprobe.d
+  $MKDIR $SACD/etc/depmod.d
+  $MKDIR $SACD/etc/modprobe.d
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/depmod
-  $LN $nom $VNMD/$nom/sac/usr/bin/insmod
-  $LN $nom $VNMD/$nom/sac/usr/bin/lsmod
-  $LN $nom $VNMD/$nom/sac/usr/bin/modinfo
-  $LN $nom $VNMD/$nom/sac/usr/bin/modprobe
-  $LN $nom $VNMD/$nom/sac/usr/bin/rmmod
+  $LN $nom $SACD/usr/bin/depmod
+  $LN $nom $SACD/usr/bin/insmod
+  $LN $nom $SACD/usr/bin/lsmod
+  $LN $nom $SACD/usr/bin/modinfo
+  $LN $nom $SACD/usr/bin/modprobe
+  $LN $nom $SACD/usr/bin/rmmod
 
-  $MKDIR $VNMD/$nom/sac/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/search.conf $VNMD/$nom/sac/usr/lib/depmod.d
+  $MKDIR $SACD/usr/lib/depmod.d
+  $RSYNC $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/lib$nom.la
+  $RM $SACD/usr/lib/lib$nom.la
 
-  $MKDIR $VNMD/$nom/sac/usr/lib/modprobe.d
+  $MKDIR $SACD/usr/lib/modprobe.d
 }

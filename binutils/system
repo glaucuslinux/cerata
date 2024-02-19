@@ -73,25 +73,25 @@ check() {
 install() {
   $MAKE \
     tooldir=/usr \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Manually remove the static libraries
-  $RM $VNMD/$nom/sac/usr/lib/libbfd.a
-  $RM $VNMD/$nom/sac/usr/lib/libctf.a
-  $RM $VNMD/$nom/sac/usr/lib/libctf-nobfd.a
-  $RM $VNMD/$nom/sac/usr/lib/libopcodes.a
-  $RM $VNMD/$nom/sac/usr/lib/libsframe.a
+  $RM $SACD/usr/lib/libbfd.a
+  $RM $SACD/usr/lib/libctf.a
+  $RM $SACD/usr/lib/libctf-nobfd.a
+  $RM $SACD/usr/lib/libopcodes.a
+  $RM $SACD/usr/lib/libsframe.a
 
   # Remove libtool archive (.la) files
-  $RM $VNMD/$nom/sac/usr/lib/libbfd.la
-  $RM $VNMD/$nom/sac/usr/lib/libctf.la
-  $RM $VNMD/$nom/sac/usr/lib/libctf-nobfd.la
-  $RM $VNMD/$nom/sac/usr/lib/libopcodes.la
-  $RM $VNMD/$nom/sac/usr/lib/libsframe.la
+  $RM $SACD/usr/lib/libbfd.la
+  $RM $SACD/usr/lib/libctf.la
+  $RM $SACD/usr/lib/libctf-nobfd.la
+  $RM $SACD/usr/lib/libopcodes.la
+  $RM $SACD/usr/lib/libsframe.la
 
   # Remove unnecessary manpages
-  $RM $VNMD/$nom/sac/usr/share/man/man1/dlltool.1
-  $RM $VNMD/$nom/sac/usr/share/man/man1/windmc.1
-  $RM $VNMD/$nom/sac/usr/share/man/man1/windres.1
+  $RM $SACD/usr/share/man/man1/dlltool.1
+  $RM $SACD/usr/share/man/man1/windmc.1
+  $RM $SACD/usr/share/man/man1/windres.1
 }

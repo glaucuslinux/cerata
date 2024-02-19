@@ -55,12 +55,12 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $LN bsdcpio $VNMD/$nom/sac/usr/bin/cpio
-  $LN bsdtar $VNMD/$nom/sac/usr/bin/tar
+  $LN bsdcpio $SACD/usr/bin/cpio
+  $LN bsdtar $SACD/usr/bin/tar
 
   # Remove libtool archive (.la) file
-  $RM $VNMD/$nom/sac/usr/lib/$nom.la
+  $RM $SACD/usr/lib/$nom.la
 }

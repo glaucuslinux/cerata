@@ -48,7 +48,7 @@ install() {
       install/strip
   fi
 
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   samu \
     install/strip
 }

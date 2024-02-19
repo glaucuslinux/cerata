@@ -45,7 +45,7 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install_bin \
     install_include \
     install_lib_shared

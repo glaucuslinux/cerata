@@ -41,9 +41,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
   # Provide compatibility symlink as `more` is disabled in `util-linux`
-  $LN $nom $VNMD/$nom/sac/usr/bin/more
+  $LN $nom $SACD/usr/bin/more
 }

@@ -52,27 +52,27 @@ check() {
 }
 
 install() {
-  DESTDIR=$VNMD/$nom/sac \
+  DESTDIR=$SACD \
   samu \
     -C $SBLD/$nom \
     install/strip
 
   # Hardcoded `gcc` version number
-  $MKDIR $VNMD/$nom/sac/usr/lib/$nom
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/c++
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/c89
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/c99
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/cc
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/cpp
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/g++
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/gcc
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/gcc-13.2.0
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-c++
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-c89
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-c99
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-cc
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-cpp
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-g++
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-gcc
-  $LN ../../bin/$nom $VNMD/$nom/sac/usr/lib/$nom/$TGT-gcc-13.2.0
+  $MKDIR $SACD/usr/lib/$nom
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/c++
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/c89
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/c99
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/cc
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/cpp
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/g++
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/gcc
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/gcc-13.2.0
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c++
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c89
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c99
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cc
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cpp
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-g++
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc
+  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc-13.2.0
 }

@@ -22,7 +22,7 @@ check() {
 }
 
 install() {
-  $RSYNC $nom $VNMD/$nom/sac/usr/bin
-  $LN $nom $VNMD/$nom/sac/usr/bin/ksh
-  $LN $nom $VNMD/$nom/sac/usr/bin/rksh
+  $RSYNC $nom $SACD/usr/bin
+  $LN $nom $SACD/usr/bin/ksh
+  $LN $nom $SACD/usr/bin/rksh
 }

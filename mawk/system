@@ -43,8 +43,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/awk
+  $LN $nom $SACD/usr/bin/awk
 }

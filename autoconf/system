@@ -43,8 +43,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $RM $VNMD/$nom/sac/usr/share/info/standards.info
+  $RM $SACD/usr/share/info/standards.info
 }

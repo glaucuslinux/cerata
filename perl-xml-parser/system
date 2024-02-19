@@ -22,9 +22,9 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $RM $VNMD/$nom/sac/usr/lib/perl5/5.38/core_perl/perllocal.pod
-  $RM $VNMD/$nom/sac/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
+  $RM $SACD/usr/lib/perl5/5.38/core_perl/perllocal.pod
+  $RM $SACD/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
 }

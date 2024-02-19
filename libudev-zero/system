@@ -33,7 +33,7 @@ install() {
     LIBDIR=/usr/lib \
     INCLUDEDIR=/usr/include \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-shared
 
   $RSYNC $nom-helper $CRSD/usr/bin

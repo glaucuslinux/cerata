@@ -42,12 +42,12 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install
 
-  $LN $nom $VNMD/$nom/sac/usr/bin/bison
-  $LN $nom $VNMD/$nom/sac/usr/bin/yacc
+  $LN $nom $SACD/usr/bin/bison
+  $LN $nom $SACD/usr/bin/yacc
 
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/bison.1
-  $LN $nom.1 $VNMD/$nom/sac/usr/share/man/man1/yacc.1
+  $LN $nom.1 $SACD/usr/share/man/man1/bison.1
+  $LN $nom.1 $SACD/usr/share/man/man1/yacc.1
 }

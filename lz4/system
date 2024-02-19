@@ -15,7 +15,7 @@ configure() {
 build() {
   $MAKE \
     BUILD_STATIC=no \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     PREFIX=/usr \
     EXEC_PREFIX=/usr \
     BINDIR=/usr/bin \
@@ -31,7 +31,7 @@ check() {
 install() {
   $MAKE \
     BUILD_STATIC=no \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     PREFIX=/usr \
     EXEC_PREFIX=/usr \
     BINDIR=/usr/bin \

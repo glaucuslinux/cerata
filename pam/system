@@ -54,8 +54,8 @@ check() {
 
 install() {
   $MAKE \
-    DESTDIR=$VNMD/$nom/sac \
+    DESTDIR=$SACD \
     install-strip
 
-  $CHMOD 4755 $VNMD/$nom/sac/usr/bin/unix_chkpwd
+  $CHMOD 4755 $SACD/usr/bin/unix_chkpwd
 }

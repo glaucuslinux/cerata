@@ -24,10 +24,10 @@ check() {
 install() {
   python3 setup.py \
     install \
-    --root=$VNMD/$nom/sac \
+    --root=$SACD \
     --optimize=2 \
     --force \
     --skip-build
 
-  $RSYNC $CERD/$nom/glaucus-$nom $VNMD/$nom/sac/usr/bin
+  $RSYNC $CERD/$nom/glaucus-$nom $SACD/usr/bin
 }
