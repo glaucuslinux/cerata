@@ -1,8 +1,3 @@
-umask 022
-
-LD_PRELOAD=/usr/lib/libmimalloc.so
+export LD_PRELOAD=/usr/lib/libmimalloc.so
 
 PATH=/usr/bin:/bin
-
-alias ls='ls -F --color=auto'
-alias grep='grep --color=auto'
