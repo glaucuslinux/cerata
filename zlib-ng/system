@@ -19,8 +19,7 @@ configure() {
     --libdir=/usr/lib \
     --sharedlibdir=/usr/lib \
     --includedir=/usr/include \
-    --zlib-compat \
-    --native
+    --zlib-compat
 }
 
 build() {
