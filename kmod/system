@@ -14,7 +14,7 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/void/stdout.patch
+  $PATCH -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
 configure() {
