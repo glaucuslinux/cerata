@@ -66,11 +66,6 @@ check() {
 }
 
 install() {
-  if [ $BOOTSTRAP = yes ]; then
-    $MAKE \
-      install
-  fi
-
   $MAKE \
     DESTDIR=$SACD \
     install
