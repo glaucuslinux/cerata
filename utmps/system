@@ -6,9 +6,6 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
   cd $SSRC/$nom
-
-  # Provide `utmps/utmp.h` which includes `utmpx.h` (same directory)
-  $RSYNC $CERD/$nom/utmp.h src/include/$nom
 }
 
 configure() {
@@ -46,10 +43,6 @@ install() {
   $MAKE \
     DESTDIR=$SACD \
     install
-
-  # Provide `utmp.h` which includes `utmpx.h` (same directory) which in turn
-  # includes `utmps/utmpx.h`
-  $LN $nom/utmp.h $SACD/usr/include
 
   $MKDIR $SACD/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
