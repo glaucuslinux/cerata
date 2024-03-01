@@ -79,6 +79,8 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
+  $LN ld.bfd $CRSD/usr/bin/ld
+
   # Manually remove the static libraries
   $RM $CRSD/usr/lib/libbfd.a
   $RM $CRSD/usr/lib/libctf.a
