@@ -80,8 +80,11 @@ install() {
     install-strip-gas \
     install-strip-ld
 
+  $LN $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
+
   $LN ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
   $LN ../../bin/$TGT-as $TLCD/usr/$TGT/bin/as
+  $LN ../../bin/$TGT-ld $TLCD/usr/$TGT/bin/ld
   $LN ../../bin/$TGT-ld.bfd $TLCD/usr/$TGT/bin/ld.bfd
   $LN ../../bin/$TGT-nm $TLCD/usr/$TGT/bin/nm
   $LN ../../bin/$TGT-objcopy $TLCD/usr/$TGT/bin/objcopy

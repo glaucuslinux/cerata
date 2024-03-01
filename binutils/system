@@ -76,6 +76,8 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
+  $LN ld.bfd $SACD/usr/bin/ld
+
   # Manually remove the static libraries
   $RM $SACD/usr/lib/libbfd.a
   $RM $SACD/usr/lib/libctf.a
