@@ -21,5 +21,6 @@ check() {
 
 install() {
   $RSYNC /boot/vmlinuz-linux $CRSD/boot/vmlinuz
+
   $RSYNC /usr/lib/modules $CRSD/usr/lib
 }
