@@ -5,6 +5,6 @@
 
 nom="radula"
 ver="git"
-cmt="659cfa7"
+cmt="a38baa9"
 url="https://github.com/glaucuslinux/radula"
 cys="erofs-utils libarchive rsync toybox wget2 yash zstd"
