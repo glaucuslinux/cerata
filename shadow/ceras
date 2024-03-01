@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="shadow"
-ver="4.13"
-url="https://github.com/shadow-maint/shadow/releases/download/4.13/shadow-4.13.tar.gz"
-sum="0aca34806eb8ca4018fb777c990f69f102fe60fc63725f191f5d898f1d45a4f4"
+ver="4.15.0-rc3"
+url="https://github.com/shadow-maint/shadow/releases/download/4.15.0-rc3/shadow-4.15.0-rc3.tar.gz"
+sum="ab6d58b4cb4fd32bcf8cc63dd2530b41daef9d620061f01d7b8d38ce2e36b7c2"
 cnt="acl attr libcap linux-headers make pam utmps"
 cys="pam utmps"

@@ -19,8 +19,6 @@ prepare() {
 configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
 
-  ./autogen.sh
-
   LIBS='-lutmps -lskarnet' \
   shadow_cv_utmpdir=/run/utmps \
   ./configure \
