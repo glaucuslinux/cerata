@@ -39,6 +39,7 @@ install() {
 
   $RSYNC $CERD/$nom/modules-load $SACD/usr/bin
 
+  $MKDIR $SACD/usr/share/man/man8
   $RSYNC $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
 
   $MKDIR $SACD/var/log/wtmpd
