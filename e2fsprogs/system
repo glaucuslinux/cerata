@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
 
   $RSYNC $CERD/binutils/config.guess config
   $RSYNC $CERD/binutils/config.rpath config
@@ -18,12 +18,12 @@ prepare() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-misc-makefile-error.patch
 
   # `INSTALL` documentation recommends building out of tree
-  $MKDIR $SBLD/$nom
-  cd $SBLD/$nom
+  $MKDIR $TBLD/$nom
+  cd $TBLD/$nom
 }
 
 configure() {
-  $SSRC/$nom/configure \
+  $TSRC/$nom/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \

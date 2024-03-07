@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom
+  cd $TSRC/$nom
 }
 
 configure() {

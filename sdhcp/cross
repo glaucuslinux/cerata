@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $XSRC --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom $TSRC --delete
+  cd $TSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 

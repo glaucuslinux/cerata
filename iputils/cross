@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
+  $MKDIR $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
@@ -15,12 +15,12 @@ configure() {
     -DBUILD_MANS=false \
     -DUSE_GETTEXT=false \
     -DSKIP_TESTS=true \
-    $XBLD/$nom
+    $TBLD/$nom
 }
 
 build() {
   samu \
-    -C $XBLD/$nom
+    -C $TBLD/$nom
 }
 
 check() {
@@ -30,7 +30,7 @@ check() {
 install() {
   DESTDIR=$CRSD \
   muon \
-    -C $XBLD/$nom \
+    -C $TBLD/$nom \
     install
 
   $LN ping $CRSD/usr/bin/ping6

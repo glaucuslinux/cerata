@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $MKDIR $TBLD/$nom
 
   cd $SRCD/linux/linux-$ver
 
@@ -27,7 +27,7 @@ check() {
 
 install() {
   $MAKE \
-    O=$SBLD/$nom \
+    O=$TBLD/$nom \
     ARCH=x86_64 \
     INSTALL_HDR_PATH=$SACD/usr \
     headers_install

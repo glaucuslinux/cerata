@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom $SSRC --delete \
+  $RSYNC $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
-  $RSYNC $SRCD/tzdata/ $SSRC/$nom \
+  $RSYNC $SRCD/tzdata/ $TSRC/$nom \
     --exclude $nom$ver.tar.gz
-  cd $SSRC/$nom
+  cd $TSRC/$nom
 }
 
 configure() {
