@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $XBLD/$nom
-  cd $XBLD/$nom
+  $MKDIR $TBLD/$nom
+  cd $TBLD/$nom
 }
 
 configure() {

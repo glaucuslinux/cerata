@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $MKDIR $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
@@ -18,12 +18,12 @@ configure() {
     -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
-    $SBLD/$nom
+    $TBLD/$nom
 }
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C $TBLD/$nom
 }
 
 check() {
@@ -33,7 +33,7 @@ check() {
 install() {
   DESTDIR=$SACD \
   $nom \
-    -C $SBLD/$nom \
+    -C $TBLD/$nom \
     install
 
   $RSYNC $CERD/$nom/glaucus-$nom $SACD/usr/bin

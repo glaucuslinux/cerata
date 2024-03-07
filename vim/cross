@@ -5,8 +5,8 @@
 
 prepare() {
   # vim doesn't build out of tree
-  $RSYNC $SRCD/$nom/$nom-$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
 }
 
 configure() {

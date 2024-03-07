@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $SSRC/$nom --delete
-  cd $SSRC/$nom
+  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
 
-  $MKDIR $SBLD/$nom
+  $MKDIR $TBLD/$nom
 }
 
 configure() {
   cmake \
-    -B $SBLD/$nom \
+    -B $TBLD/$nom \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_BINDIR=/usr/bin \
     -DCMAKE_INSTALL_DATADIR=/usr/share \
@@ -44,7 +44,7 @@ configure() {
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C $TBLD/$nom
 }
 
 check() {
@@ -54,7 +54,7 @@ check() {
 install() {
   DESTDIR=$SACD \
   samu \
-    -C $SBLD/$nom \
+    -C $TBLD/$nom \
     install/strip
 
   # Hardcoded `gcc` version number

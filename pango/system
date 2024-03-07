@@ -4,19 +4,19 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $SBLD/$nom
+  $MKDIR $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
 configure() {
   glaucus-muon \
-    $SBLD/$nom
+    $TBLD/$nom
 }
 
 build() {
   samu \
-    -C $SBLD/$nom
+    -C $TBLD/$nom
 }
 
 check() {
@@ -26,6 +26,6 @@ check() {
 install() {
   DESTDIR=$SACD \
   muon \
-    -C $SBLD/$nom \
+    -C $TBLD/$nom \
     install
 }

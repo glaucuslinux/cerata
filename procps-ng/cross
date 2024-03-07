@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $RSYNC $SRCD/$nom/procps-v$ver/ $XSRC/$nom --delete
-  cd $XSRC/$nom
+  $RSYNC $SRCD/$nom/procps-v$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
