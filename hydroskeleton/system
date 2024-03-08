@@ -20,69 +20,69 @@ check() {
 }
 
 install() {
-  $LN usr/bin $SYSD/bin
+  $LN usr/bin $SACD/bin
 
-  $MKDIR $SYSD/boot
+  $MKDIR $SACD/boot
 
-  $MKDIR $SYSD/dev
+  $MKDIR $SACD/dev
 
-  $MKDIR $SYSD/etc
-  $RSYNC $CERD/$nom/fstab $SYSD/etc
-  $LN lsb-release $SYSD/etc/glaucus-release
-  $RSYNC $CERD/$nom/group $SYSD/etc
-  $RSYNC $CERD/$nom/hostname $SYSD/etc
-  $RSYNC $CERD/$nom/hosts $SYSD/etc
-  $RSYNC $CERD/$nom/issue $SYSD/etc
-  $RSYNC $CERD/$nom/lsb-release $SYSD/etc
+  $MKDIR $SACD/etc
+  $RSYNC $CERD/$nom/fstab $SACD/etc
+  $LN lsb-release $SACD/etc/glaucus-release
+  $RSYNC $CERD/$nom/group $SACD/etc
+  $RSYNC $CERD/$nom/hostname $SACD/etc
+  $RSYNC $CERD/$nom/hosts $SACD/etc
+  $RSYNC $CERD/$nom/issue $SACD/etc
+  $RSYNC $CERD/$nom/lsb-release $SACD/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
-    -i $SYSD/etc/lsb-release
-  $LN ../usr/lib/os-release $SYSD/etc/os-release
-  $RSYNC $CERD/$nom/passwd $SYSD/etc
-  $RSYNC $CERD/$nom/profile $SYSD/etc
-  $RSYNC $CERD/$nom/resolv.conf $SYSD/etc
-  $RSYNC $CERD/$nom/shadow $SYSD/etc
-  $RSYNC $CERD/$nom/shells $SYSD/etc
+    -i $SACD/etc/lsb-release
+  $LN ../usr/lib/os-release $SACD/etc/os-release
+  $RSYNC $CERD/$nom/passwd $SACD/etc
+  $RSYNC $CERD/$nom/profile $SACD/etc
+  $RSYNC $CERD/$nom/resolv.conf $SACD/etc
+  $RSYNC $CERD/$nom/shadow $SACD/etc
+  $RSYNC $CERD/$nom/shells $SACD/etc
 
-  $MKDIR $SYSD/home
+  $MKDIR $SACD/home
 
-  $LN usr/lib $SYSD/lib
+  $LN usr/lib $SACD/lib
 
-  $MKDIR $SYSD/mnt
+  $MKDIR $SACD/mnt
 
-  $MKDIR $SYSD/proc
+  $MKDIR $SACD/proc
 
-  $MKDIR -m 0750 $SYSD/root
+  $MKDIR -m 0750 $SACD/root
 
-  $MKDIR $SYSD/run
+  $MKDIR $SACD/run
 
-  $MKDIR $SYSD/sys
+  $MKDIR $SACD/sys
 
-  $LN run/tmp $SYSD/tmp
+  $LN run/tmp $SACD/tmp
 
-  $MKDIR $SYSD/usr/lib
-  $RSYNC $CERD/$nom/os-release $SYSD/usr/lib
+  $MKDIR $SACD/usr/lib
+  $RSYNC $CERD/$nom/os-release $SACD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
-    -i $SYSD/usr/lib/os-release
+    -i $SACD/usr/lib/os-release
   $MKDIR $PKG_CONFIG_LIBDIR
-  $MKDIR $SYSD/usr/share
+  $MKDIR $SACD/usr/share
 
-  $MKDIR $SYSD/var/cache/radula/bin
-  $MKDIR $SYSD/var/cache/radula/src
-  $MKDIR $SYSD/var/cache/radula/venom
-  $MKDIR $SYSD/var/db/radula/clusters/glaucus
-  $MKDIR $SYSD/var/lib/hwclock
-  $MKDIR $SYSD/var/lib/misc
-  $MKDIR $SYSD/var/lib/radula
-  $LN ../run/lock $SYSD/var/lock
-  $MKDIR $SYSD/var/log/radula
-  $MKDIR $SYSD/var/mail
-  $LN ../run $SYSD/var/run
-  $MKDIR $SYSD/var/spool
-  $LN ../mail $SYSD/var/spool/mail
-  $MKDIR $SYSD/var/tmp/radula/cross
-  $MKDIR $SYSD/var/tmp/radula/system
-  $MKDIR $SYSD/var/tmp/radula/toolchain
+  $MKDIR $SACD/var/cache/radula/bin
+  $MKDIR $SACD/var/cache/radula/src
+  $MKDIR $SACD/var/cache/radula/venom
+  $MKDIR $SACD/var/db/radula/clusters/glaucus
+  $MKDIR $SACD/var/lib/hwclock
+  $MKDIR $SACD/var/lib/misc
+  $MKDIR $SACD/var/lib/radula
+  $LN ../run/lock $SACD/var/lock
+  $MKDIR $SACD/var/log/radula
+  $MKDIR $SACD/var/mail
+  $LN ../run $SACD/var/run
+  $MKDIR $SACD/var/spool
+  $LN ../mail $SACD/var/spool/mail
+  $MKDIR $SACD/var/tmp/radula/cross
+  $MKDIR $SACD/var/tmp/radula/system
+  $MKDIR $SACD/var/tmp/radula/toolchain
 }
