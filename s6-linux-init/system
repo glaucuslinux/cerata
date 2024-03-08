@@ -22,10 +22,10 @@ configure() {
     --skeldir=/etc/s6/skel \
     --tmpfsdir=/run \
     --scandir=service \
-    --with-sysdeps=$SYSD/usr/lib/skalibs/sysdeps \
-    --with-include=$SYSD/usr/include \
-    --with-lib=$SYSD/usr/lib \
-    --with-dynlib=$SYSD/usr/lib \
+    --with-sysdeps=/usr/lib/skalibs/sysdeps \
+    --with-include=/usr/include \
+    --with-lib=/usr/lib \
+    --with-dynlib=/usr/lib \
     --enable-shared \
     --disable-static \
     --disable-allstatic \
