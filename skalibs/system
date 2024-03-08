@@ -18,9 +18,9 @@ configure() {
     --includedir=/usr/include \
     --datadir=/etc \
     --sysdepdir=/usr/lib/$nom/sysdeps \
-    --with-include=$SYSD/usr/include \
-    --with-lib=$SYSD/usr/lib \
-    --with-dynlib=$SYSD/usr/lib \
+    --with-include=/usr/include \
+    --with-lib=/usr/lib \
+    --with-dynlib=/usr/lib \
     --disable-static \
     --with-sysdep-devurandom=yes \
     --with-sysdep-posixspawnearlyreturn=no
