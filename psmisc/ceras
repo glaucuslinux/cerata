@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="psmisc"
-ver="23.6"
-url="https://gitlab.com/psmisc/psmisc/-/archive/v23.6/psmisc-v23.6.tar.gz"
-sum="14d6f40ef40967a21cca42f43d4f0d670959f6df893509ffe5f95a0878d9724f"
+ver="23.7"
+url="https://gitlab.com/psmisc/psmisc/-/archive/v23.7/psmisc-v23.7.tar.gz"
+sum="3e213023c51dfcbbad4f51af77c8488d5ff5ee6f8bd08fa1ede77ae6ac56f7a5"
 cnt="autoconf automake gettext-tiny make netbsd-curses"
