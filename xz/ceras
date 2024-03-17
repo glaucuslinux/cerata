@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="xz"
-ver="5.4.6"
-url="https://github.com/tukaani-project/xz/releases/download/v5.4.6/xz-5.4.6.tar.zst"
-sum="3e9971d6d6e9d7a411b2e9414c181a5f904f860f149591b6ac55628e1aa2263d"
+ver="5.6.1"
+url="https://github.com/tukaani-project/xz/releases/download/v5.6.1/xz-5.6.1.tar.zst"
+sum="9a520835fd020f271eff449ac891f6600078f72aa700b96fa9017a59c8bd1653"
 cnt="autoconf automake make"
