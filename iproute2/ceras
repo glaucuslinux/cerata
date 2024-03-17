@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="iproute2"
-ver="6.7.0"
-url="https://cdn.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.7.0.tar.gz"
-sum="4f94c85f899740425b439983d965c7983d7a150635063e52842ff729f8c0df42"
+ver="6.8.0"
+url="https://cdn.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.8.0.tar.gz"
+sum="81788d08788cfa5a01b91e58b4820dec5f54e72882cd0f19dc218aae0a5ceeab"
 cnt="libcap make"
