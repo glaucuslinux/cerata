@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libpciaccess"
-ver="0.17"
-url="https://x.org/releases/individual/lib/libpciaccess-0.17.tar.gz"
-sum="cc4529bf6a2ce21d63ecdb6b5b6c5e7a8c3223a13444829cda4fd39d074b750c"
+ver="0.18"
+url="https://x.org/releases/individual/lib/libpciaccess-0.18.tar.xz"
+sum="992630496a0933969c45d17e1f32d80db70cd36415259e015dc1aefc34eb5dc1"
 cnt="make"
