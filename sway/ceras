@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="sway"
-ver="1.8.1"
-url="https://github.com/swaywm/sway/releases/download/1.8.1/sway-1.8.1.tar.gz"
-sum="4705cae9c99f28b56f12152cc11e0cc53669f59b94b6f9dada052d6fadc5821"
+ver="1.9"
+url="https://github.com/swaywm/sway/releases/download/1.9/sway-1.9.tar.gz"
+sum="6ae892f82daedef76d26e32c64ebd09cc454ae71f416d2179a512f7764138268"
 cnt="cairo json-c muon samurai wayland wayland-protocols wlroots"
