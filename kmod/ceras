@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="kmod"
-ver="31"
-url="https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-31.tar.gz"
-sum="b22520edf4b9e684686613ff1b3840c565ec4f1135ce21a249b15c69783c7349"
+ver="32"
+url="https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-32.tar.gz"
+sum="94abc3acb0889437b1dea3e5f3e3765cced1a57ac7e262816ca00301051c57bc"
 cnt="libressl make xz zlib-ng zstd"
