@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libunistring"
-ver="1.1"
-url="https://ftpmirror.gnu.org/libunistring/libunistring-1.1.tar.gz"
-sum="a1df9867ce4cf10d66702242549c746a14dd705612c71c987704119bd1e90a36"
+ver="1.2"
+url="https://ftpmirror.gnu.org/libunistring/libunistring-1.2.tar.gz"
+sum="a7d7a9785fa62bef4b3fa5dba98792aaaf74ad7166ed6cd059bbbb45d5770dbe"
 cnt="make"
