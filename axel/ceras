@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="axel"
-ver="2.17.12"
-url="https://github.com/axel-download-accelerator/axel/releases/download/v2.17.12/axel-2.17.12.tar.gz"
-sum="d89cfc753fe54e4bd748f4748ff55e796036c6c4328db1e6366bcab39deb48dd"
+ver="2.17.13"
+url="https://github.com/axel-download-accelerator/axel/releases/download/v2.17.13/axel-2.17.13.tar.gz"
+sum="4f3d0aebb5c702c84322eaead25aafd9c2430da3e318383d45c9ae14e0713a43"
 cnt="libressl make"
