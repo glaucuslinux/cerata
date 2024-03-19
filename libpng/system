@@ -10,7 +10,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/$nom-1.6.39-apng.patch
+  $PATCH -p1 -i $CERD/$nom/patches/upstream/$nom-$ver-apng.patch
 }
 
 configure() {
