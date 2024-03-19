@@ -7,8 +7,6 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/pread.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
