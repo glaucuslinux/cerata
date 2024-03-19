@@ -67,13 +67,6 @@ install() {
   $MKDIR $CRSD/etc/depmod.d
   $MKDIR $CRSD/etc/modprobe.d
 
-  $LN $nom $CRSD/usr/bin/depmod
-  $LN $nom $CRSD/usr/bin/insmod
-  $LN $nom $CRSD/usr/bin/lsmod
-  $LN $nom $CRSD/usr/bin/modinfo
-  $LN $nom $CRSD/usr/bin/modprobe
-  $LN $nom $CRSD/usr/bin/rmmod
-
   $MKDIR $CRSD/usr/lib/depmod.d
   $RSYNC $CERD/$nom/search.conf $CRSD/usr/lib/depmod.d
 
