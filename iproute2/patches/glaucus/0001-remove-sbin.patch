@@ -31,17 +31,6 @@
  	done
  
  clean:
---- doc/actions/ifb-README
-+++ doc/actions/ifb-README
-@@ -41,7 +41,7 @@
- An example, to provide functionality that most people use IMQ for below:
- 
- --------
--export TC="/sbin/tc"
-+export TC="/bin/tc"
- 
- $TC qdisc add dev ifb0 root handle 1: prio
- $TC qdisc add dev ifb0 parent 1:1 handle 10: sfq
 --- genl/Makefile
 +++ genl/Makefile
 @@ -22,7 +22,7 @@
@@ -114,7 +103,7 @@
  clean:
 --- tc/Makefile
 +++ tc/Makefile
-@@ -139,7 +139,7 @@
+@@ -127,7 +127,7 @@
  
  install: all
  	mkdir -p $(MODDESTDIR)
