@@ -44,6 +44,7 @@ configure() {
     --disable-test-modules \
     --with-pic \
     --with-rootlibdir=/usr/lib \
+    --with-module-directory=/usr/lib/modules \
     --with-zstd \
     --with-xz \
     --with-zlib \
