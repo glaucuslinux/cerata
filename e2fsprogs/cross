@@ -11,11 +11,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.rpath config
   $RSYNC $CERD/binutils/config.sub config
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
-
   $PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-misc-makefile-error.patch
 
   # `INSTALL` documentation recommends building out of tree
   $MKDIR $TBLD/$nom
