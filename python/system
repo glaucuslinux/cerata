@@ -11,7 +11,6 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub .
 
   $PATCH -p1 -i $CERD/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
-  $PATCH -p1 -i $CERD/$nom/patches/clear/0003-Force-config-to-always-be-shared.patch
 
   # Force use the system copy of various libraries
   $RM Modules/_ctypes/darwin
@@ -45,6 +44,7 @@ configure() {
     --enable-optimizations \
     --enable-loadable-sqlite-extensions \
     --enable-ipv6 \
+    --without-static-libpython \
     --with-lto \
     --with-tzpath=/usr/share/zoneinfo \
     --with-system-expat \
