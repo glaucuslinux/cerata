@@ -9,8 +9,7 @@ prepare() {
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-paths.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
 
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
@@ -72,6 +71,7 @@ HAVE_WCHAR=1
 
 PREFIX=/usr
 BINDIR=/usr/bin
+SBINDIR=/usr/bin
 INCLUDEDIR=/usr/include
 LIBDIR=/usr/lib
 MANDIR=/usr/share/man

@@ -1,39 +1,3 @@
---- INSTALL
-+++ INSTALL
-@@ -43,9 +43,8 @@
- functionality as your system's "catman", if your operating
- system contains one.
- 
--3. Define MANPATH_DEFAULT in configure.local
--if /usr/share/man:/usr/X11R6/man:/usr/local/man is not appropriate
--for your operating system.
-+3. Define MANPATH_DEFAULT in configure.local if /usr/share/man is not
-+appropriate for your operating system.
- 
- 4. Run "./configure".
- This script attempts autoconfiguration of mandoc for your system.
---- NEWS
-+++ NEWS
-@@ -612,7 +612,7 @@
-  * roff(7): Implement \\$* (interpolate all arguments).
-  * roff(7): Parse and ignore \, and \/ (italic corrections).
-  * When there is no -m, no -M, no MANPATH and no /etc/man.conf,
--   fall back to /usr/share/man:/usr/X11R6/man:/usr/local/man.
-+   fall back to /usr/share/man.
-  * man(1): Give manuals in purely numerical sections priority over
-    manuals of the same name in sections with an alphabetical suffix.
-  * man.cgi(8): Support "header.html" and "footer.html".
---- TODO
-+++ TODO
-@@ -449,7 +449,7 @@
-   by syntax tree nodes.
-   loc **  exist *  algo **  size *  imp **
- 
--- formatting /usr/local/man/man1/latex2man.1 with groff and mandoc
-+- formatting /usr/share/man/man1/latex2man.1 with groff and mandoc
-   reveals lots of bugs both in groff and mandoc...
-   reported by bentley@  Wed, 22 May 2013 23:49:30 -0600
- 
 --- configure
 +++ configure
 @@ -35,8 +35,8 @@
@@ -54,8 +18,8 @@
 -PREFIX="/usr/local"
 +PREFIX=/usr
  BINDIR=
- INCLUDEDIR=
- LIBDIR=
+ SBINDIR=
+ BIN_FROM_SBIN=
 --- configure.local.example
 +++ configure.local.example
 @@ -73,12 +73,12 @@
@@ -80,9 +44,9 @@
 -PREFIX="/usr/local"
 +PREFIX=/usr
  BINDIR="${PREFIX}/bin"
+ SBINDIR="${PREFIX}/sbin"
  MANDIR="${PREFIX}/man"
- 
-@@ -216,7 +216,7 @@
+@@ -224,7 +224,7 @@
  # of a colon-separated path:
  
  # Homebrow package manager on Mac OS X:
@@ -91,7 +55,7 @@
  READ_ALLOWED_PATH="${PREFIX}/Cellar"
  
  # Nix package manager and/or NixOS Linux distribution:
-@@ -226,7 +226,7 @@
+@@ -234,7 +234,7 @@
  READ_ALLOWED_PATH="/gnu/store"
  
  # If multiple package managers are used concurrently:
@@ -110,6 +74,20 @@
    EQN="neqn"
    ROFF="nroff"
    MOPT="-Ios=BSD -Tascii $MOPT"
+--- INSTALL
++++ INSTALL
+@@ -43,9 +43,8 @@
+ functionality as your system's "catman", if your operating
+ system contains one.
+ 
+-3. Define MANPATH_DEFAULT in configure.local
+-if /usr/share/man:/usr/X11R6/man:/usr/local/man is not appropriate
+-for your operating system.
++3. Define MANPATH_DEFAULT in configure.local if /usr/share/man is not
++appropriate for your operating system.
+ 
+ 4. Run "./configure".
+ This script attempts autoconfiguration of mandoc for your system.
 --- man.1
 +++ man.1
 @@ -224,7 +224,7 @@
@@ -168,6 +146,17 @@
  .El
  .Pp
  A program to dump
+--- NEWS
++++ NEWS
+@@ -612,7 +612,7 @@
+  * roff(7): Implement \\$* (interpolate all arguments).
+  * roff(7): Parse and ignore \, and \/ (italic corrections).
+  * When there is no -m, no -M, no MANPATH and no /etc/man.conf,
+-   fall back to /usr/share/man:/usr/X11R6/man:/usr/local/man.
++   fall back to /usr/share/man.
+  * man(1): Give manuals in purely numerical sections priority over
+    manuals of the same name in sections with an alphabetical suffix.
+  * man.cgi(8): Support "header.html" and "footer.html".
 --- regress/roff/de/Makefile
 +++ regress/roff/de/Makefile
 @@ -41,10 +41,10 @@
@@ -183,3 +172,14 @@
  
  groff-clean-opt:
  	rm -f TH.out_ascii_opt Dd.out_ascii_opt
+--- TODO
++++ TODO
+@@ -449,7 +449,7 @@
+   by syntax tree nodes.
+   loc **  exist *  algo **  size *  imp **
+ 
+-- formatting /usr/local/man/man1/latex2man.1 with groff and mandoc
++- formatting /usr/share/man/man1/latex2man.1 with groff and mandoc
+   reveals lots of bugs both in groff and mandoc...
+   reported by bentley@  Wed, 22 May 2013 23:49:30 -0600
+ 
