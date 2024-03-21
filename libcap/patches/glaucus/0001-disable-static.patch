@@ -84,7 +84,7 @@
  	install -m 0755 $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MINCAPLIBNAME)
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
 @@ -197,9 +176,6 @@
- 	-/bin/ldconfig
+ 	-/sbin/ldconfig
  endif
  
 -install-static-psx: install-common-psx $(STAPSXLIBNAME)
