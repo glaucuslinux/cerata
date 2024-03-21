@@ -10,7 +10,7 @@
  
 @@ -104,7 +103,6 @@
  install: all
- 	install -m 0755 -d $(DESTDIR)$(BINDIR)
+ 	install -m 0755 -d $(DESTDIR)$(SBINDIR)
  	install -m 0755 -d $(DESTDIR)$(CONF_USR_DIR)
 -	install -m 0755 -d $(DESTDIR)$(ARPDDIR)
  	install -m 0755 -d $(DESTDIR)$(HDRDIR)
