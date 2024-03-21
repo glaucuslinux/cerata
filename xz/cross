@@ -9,7 +9,6 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
-  $PATCH -p1 -i $CERD/$nom/patches/clear/minor-optimization.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
 
   $AUTORECONF
