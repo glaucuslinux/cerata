@@ -56,6 +56,8 @@ install() {
 
   $MKDIR $CRSD/run
 
+  $LN usr/bin $CRSD/sbin
+
   $MKDIR $CRSD/sys
 
   $LN run/tmp $CRSD/tmp
@@ -67,6 +69,7 @@ install() {
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $CRSD/usr/lib/os-release
   $MKDIR $PKG_CONFIG_LIBDIR
+  $LN bin $CRSD/usr/sbin
   $MKDIR $CRSD/usr/share
 
   $MKDIR $CRSD/var/cache/radula/bin
