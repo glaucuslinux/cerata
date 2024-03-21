@@ -6,12 +6,10 @@
 prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-sbin.patch
 }
 
 configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-chown.patch
+  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-chown.patch
 
   ./configure \
     --prefix=/usr \
