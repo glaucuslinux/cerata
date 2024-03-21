@@ -30,7 +30,8 @@ configure() {
     --infodir=/usr/share/info \
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom
+    --docdir=/usr/share/doc/$nom \
+    --with-bzip3
 }
 
 build() {
