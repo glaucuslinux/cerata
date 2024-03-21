@@ -9,7 +9,7 @@
  #MAIL_FILE	.mail
  
  #
-@@ -334,7 +334,7 @@
+@@ -329,7 +329,7 @@
  # Note: If you use PAM, it is recommended to use a value consistent with
  # the PAM modules configuration.
  #
@@ -18,7 +18,7 @@
  
  #
  # Only works if ENCRYPT_METHOD is set to SHA256 or SHA512.
-@@ -379,7 +379,7 @@
+@@ -374,7 +374,7 @@
  # If not specified, a cost factor of 5 will be used.
  # The value must be within the 1-11 range.
  #
