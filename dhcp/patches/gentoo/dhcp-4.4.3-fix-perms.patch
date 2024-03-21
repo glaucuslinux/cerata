@@ -1,5 +1,5 @@
---- server/dhcpd.c
-+++ server/dhcpd.c
+--- a/server/dhcpd.c
++++ b/server/dhcpd.c
 @@ -892,6 +892,12 @@
  	if (lftest)
  		exit (0);
