@@ -13,30 +13,22 @@ prepare() {
   # bind mess
   tar xvf bind/bind.tar.gz -C bind
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14/contrib/dnsperf-2.1.0.0-1
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14/contrib/dnsperf-2.1.0.0-1
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.14/contrib/idn/idnkit-1.0-src
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.14/contrib/idn/idnkit-1.0-src
+  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
+  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/segfault-fix.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/gentoo/$nom-3.0-fix-perms.patch.patch
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-fno-common.patch
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.2-variable-name.patch
-
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-conf-paths.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-remove-sbin.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-iproute2-and-shell-compat.patch
+  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
 
   $PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
 configure() {
-  CFLAGS="$CFLAGS -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"' -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"' -D_PATH_DHCLIENT_SCRIPT='\"/usr/bin/dhclient-script\"'" \
+  CFLAGS="$CFLAGS -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"' -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"'" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -57,7 +49,6 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --enable-dhcpv4o6 \
     --enable-paranoia \
-    --enable-early-chroot \
     --enable-log-pid \
     --enable-binary-leases \
     --with-srv-conf-file=/etc/$nom/${nom}d.conf \
@@ -70,8 +61,7 @@ configure() {
     --with-cli-pid-file=/run/$nom/dhclient.pid \
     --with-cli6-pid-file=/run/$nom/dhclient6.pid \
     --with-relay-pid-file=/run/$nom/dhcrelay.pid \
-    --with-relay6-pid-file=/run/$nom/dhcrelay6.pid \
-    --with-randomdev
+    --with-relay6-pid-file=/run/$nom/dhcrelay6.pid
 }
 
 build() {
@@ -90,9 +80,9 @@ install() {
     install-strip
 
   mv $SACD/etc/$nom/dhclient.conf.example $SACD/etc/$nom/dhclient.conf
-  $RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/dhclient6.conf
+  $RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
   mv $SACD/etc/$nom/${nom}d.conf.example $SACD/etc/$nom/${nom}d.conf
-  $RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/${nom}d6.conf
+  $RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
 
   $RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script
 
