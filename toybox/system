@@ -8,6 +8,8 @@ prepare() {
   cd $TSRC/$nom
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-extend-long-iso-format.patch
+
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-fix-install-mode.patch
 }
 
 configure() {
