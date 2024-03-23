@@ -33,6 +33,6 @@ install() {
     -C $TBLD/$nom \
     install
 
-  $LN ping $CRSD/usr/bin/ping6
-  $LN tracepath $CRSD/usr/bin/tracepath6
+  ln -sfnv ping $CRSD/usr/bin/ping6
+  ln -sfnv tracepath $CRSD/usr/bin/tracepath6
 }

@@ -79,7 +79,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN ld.bfd $CRSD/usr/bin/ld
+  ln -sfnv ld.bfd $CRSD/usr/bin/ld
 
   # Manually remove the static libraries
   rm -frv \

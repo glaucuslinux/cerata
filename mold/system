@@ -55,5 +55,5 @@ install() {
     -C $TBLD/$nom \
     install/strip
 
-  $LN $nom $SACD/usr/bin/ld
+  ln -sfnv $nom $SACD/usr/bin/ld
 }

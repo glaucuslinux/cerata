@@ -44,14 +44,14 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN lbunzip2 $SACD/usr/bin/bunzip2
-  $LN lbzcat $SACD/usr/bin/bzcat
-  $LN $nom $SACD/usr/bin/bzip2
-  $LN $nom $SACD/usr/bin/pbzip2
+  ln -sfnv lbunzip2 $SACD/usr/bin/bunzip2
+  ln -sfnv lbzcat $SACD/usr/bin/bzcat
+  ln -sfnv $nom $SACD/usr/bin/bzip2
+  ln -sfnv $nom $SACD/usr/bin/pbzip2
 
-  $LN lbunzip2.1 $SACD/usr/share/man/man1/bunzip2.1
-  $LN lbzcat.1 $SACD/usr/share/man/man1/bzcat.1
-  $LN $nom.1 $SACD/usr/share/man/man1/bzip2.1
-  $LN $nom.1 $SACD/usr/share/man/man1/lbzcat.1
-  $LN $nom.1 $SACD/usr/share/man/man1/lbunzip2.1
+  ln -sfnv lbunzip2.1 $SACD/usr/share/man/man1/bunzip2.1
+  ln -sfnv lbzcat.1 $SACD/usr/share/man/man1/bzcat.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/bzip2.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/lbzcat.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/lbunzip2.1
 }

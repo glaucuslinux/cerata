@@ -110,7 +110,7 @@ install() {
     install-strip-$nom \
     install-strip-target-lib$nom
 
-  $LN $TGT-g++ $TLCD/usr/bin/$TGT-c++
+  ln -sfnv $TGT-g++ $TLCD/usr/bin/$TGT-c++
 
   $RSYNC $CERD/$nom/c89 $TLCD/usr/bin/$TGT-c89
   $RSYNC $CERD/$nom/c99 $TLCD/usr/bin/$TGT-c99
@@ -120,11 +120,11 @@ install() {
   sed "s/$nom/$TGT-&/" \
     -i $TLCD/usr/bin/$TGT-c99
 
-  $LN $TGT-$nom $TLCD/usr/bin/$TGT-cc
-  $LN $TGT-$nom $TLCD/usr/bin/$TGT-$nom-$ver
+  ln -sfnv $TGT-$nom $TLCD/usr/bin/$TGT-cc
+  ln -sfnv $TGT-$nom $TLCD/usr/bin/$TGT-$nom-$ver
 
   # `$TLCD/usr/lib/bfd-plugins` is already provided by `binutils`
-  $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
+  ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
 
   # Remove libtool archive (.la) files
   rm -frv \
@@ -134,7 +134,7 @@ install() {
     $TLCD/usr/$TGT/lib/libsupc++.la
 
   # Compatibility symlink
-  $LN ../bin/$TGT-cpp $TLCD/usr/lib/$TGT-cpp
+  ln -sfnv ../bin/$TGT-cpp $TLCD/usr/lib/$TGT-cpp
 
-  $LN $TGT-$nom.1 $TLCD/usr/share/man/man1/$TGT-g++.1
+  ln -sfnv $TGT-$nom.1 $TLCD/usr/share/man/man1/$TGT-g++.1
 }

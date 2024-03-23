@@ -58,15 +58,15 @@ install() {
   $MKDIR $CRSD/usr/include/readline
   touch $CRSD/usr/include/readline/history.h
   touch $CRSD/usr/include/readline/tilde.h
-  $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
+  ln -sfnv ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
   # Remove libtool archive (.la) file
   rm -frv $CRSD/usr/lib/$nom.la
 
-  $LN $nom.so $CRSD/usr/lib/libreadline.so
+  ln -sfnv $nom.so $CRSD/usr/lib/libreadline.so
 
-  $LN $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
+  ln -sfnv $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
 
-  $LN editline.3 $CRSD/usr/share/man/man3/el.3
-  $LN editline.3 $CRSD/usr/share/man/man3/$nom.3
+  ln -sfnv editline.3 $CRSD/usr/share/man/man3/el.3
+  ln -sfnv editline.3 $CRSD/usr/share/man/man3/$nom.3
 }

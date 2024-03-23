@@ -23,7 +23,7 @@ check() {
 
 install() {
   # Don't run `make install` as it builds and installs unnecessary stuff
-  $LN $SACD/usr/share/zoneinfo/Asia/Damascus $SACD/etc/localtime
+  ln -sfnv $SACD/usr/share/zoneinfo/Asia/Damascus $SACD/etc/localtime
 
   zic -b fat -d $SACD/usr/share/zoneinfo africa antarctica asia australasia \
     backward backzone etcetera europe factory northamerica southamerica

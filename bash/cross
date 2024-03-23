@@ -67,6 +67,6 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/r$nom
-  $LN $nom $CRSD/usr/bin/sh
+  ln -sfnv $nom $CRSD/usr/bin/r$nom
+  ln -sfnv $nom $CRSD/usr/bin/sh
 }

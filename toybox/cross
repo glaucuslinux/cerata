@@ -28,93 +28,93 @@ check() {
 install() {
   $RSYNC $nom $CRSD/usr/bin
 
-  $LN $nom $CRSD/usr/bin/[
-  $LN $nom $CRSD/usr/bin/base32
-  $LN $nom $CRSD/usr/bin/base64
-  $LN $nom $CRSD/usr/bin/basename
-  $LN $nom $CRSD/usr/bin/cat
-  $LN $nom $CRSD/usr/bin/chgrp
-  $LN $nom $CRSD/usr/bin/chmod
-  $LN $nom $CRSD/usr/bin/chown
-  $LN $nom $CRSD/usr/bin/chroot
-  $LN $nom $CRSD/usr/bin/cksum
-  $LN $nom $CRSD/usr/bin/comm
-  $LN $nom $CRSD/usr/bin/cp
-  $LN $nom $CRSD/usr/bin/cut
-  $LN $nom $CRSD/usr/bin/date
-  $LN $nom $CRSD/usr/bin/dd
-  $LN $nom $CRSD/usr/bin/df
-  $LN $nom $CRSD/usr/bin/dirname
-  $LN $nom $CRSD/usr/bin/du
-  $LN $nom $CRSD/usr/bin/echo
-  $LN $nom $CRSD/usr/bin/env
-  $LN $nom $CRSD/usr/bin/expand
-  $LN $nom $CRSD/usr/bin/expr
-  $LN $nom $CRSD/usr/bin/factor
-  $LN $nom $CRSD/usr/bin/false
-  $LN $nom $CRSD/usr/bin/fmt
-  $LN $nom $CRSD/usr/bin/fold
-  $LN $nom $CRSD/usr/bin/getconf
-  $LN $nom $CRSD/usr/bin/head
-  $LN $nom $CRSD/usr/bin/hostid
-  $LN $nom $CRSD/usr/bin/hostname
-  $LN $nom $CRSD/usr/bin/iconv
-  $LN $nom $CRSD/usr/bin/id
-  $LN $nom $CRSD/usr/bin/install
-  $LN $nom $CRSD/usr/bin/link
-  $LN $nom $CRSD/usr/bin/ln
-  $LN $nom $CRSD/usr/bin/logname
-  $LN $nom $CRSD/usr/bin/ls
-  $LN $nom $CRSD/usr/bin/md5sum
-  $LN $nom $CRSD/usr/bin/mkdir
-  $LN $nom $CRSD/usr/bin/mkfifo
-  $LN $nom $CRSD/usr/bin/mknod
-  $LN $nom $CRSD/usr/bin/mktemp
-  $LN $nom $CRSD/usr/bin/mv
-  $LN $nom $CRSD/usr/bin/nice
-  $LN $nom $CRSD/usr/bin/nl
-  $LN $nom $CRSD/usr/bin/nohup
-  $LN $nom $CRSD/usr/bin/nproc
-  $LN $nom $CRSD/usr/bin/od
-  $LN $nom $CRSD/usr/bin/paste
-  $LN $nom $CRSD/usr/bin/printenv
-  $LN $nom $CRSD/usr/bin/printf
-  $LN $nom $CRSD/usr/bin/pwd
-  $LN $nom $CRSD/usr/bin/readlink
-  $LN $nom $CRSD/usr/bin/realpath
-  $LN $nom $CRSD/usr/bin/rm
-  $LN $nom $CRSD/usr/bin/rmdir
-  $LN $nom $CRSD/usr/bin/seq
-  $LN $nom $CRSD/usr/bin/sha1sum
-  $LN $nom $CRSD/usr/bin/sha224sum
-  $LN $nom $CRSD/usr/bin/sha256sum
-  $LN $nom $CRSD/usr/bin/sha384sum
-  $LN $nom $CRSD/usr/bin/sha512sum
-  $LN $nom $CRSD/usr/bin/shred
-  $LN $nom $CRSD/usr/bin/shuf
-  $LN $nom $CRSD/usr/bin/sleep
-  $LN $nom $CRSD/usr/bin/sort
-  $LN $nom $CRSD/usr/bin/split
-  $LN $nom $CRSD/usr/bin/stat
-  $LN $nom $CRSD/usr/bin/stty
-  $LN $nom $CRSD/usr/bin/sync
-  $LN $nom $CRSD/usr/bin/tac
-  $LN $nom $CRSD/usr/bin/tail
-  $LN $nom $CRSD/usr/bin/tee
-  $LN $nom $CRSD/usr/bin/test
-  $LN $nom $CRSD/usr/bin/time
-  $LN $nom $CRSD/usr/bin/timeout
-  $LN $nom $CRSD/usr/bin/touch
-  $LN $nom $CRSD/usr/bin/tr
-  $LN $nom $CRSD/usr/bin/true
-  $LN $nom $CRSD/usr/bin/truncate
-  $LN $nom $CRSD/usr/bin/tty
-  $LN $nom $CRSD/usr/bin/uname
-  $LN $nom $CRSD/usr/bin/uniq
-  $LN $nom $CRSD/usr/bin/unlink
-  $LN $nom $CRSD/usr/bin/wc
-  $LN $nom $CRSD/usr/bin/which
-  $LN $nom $CRSD/usr/bin/who
-  $LN $nom $CRSD/usr/bin/whoami
-  $LN $nom $CRSD/usr/bin/yes
+  ln -sfnv $nom $CRSD/usr/bin/[
+  ln -sfnv $nom $CRSD/usr/bin/base32
+  ln -sfnv $nom $CRSD/usr/bin/base64
+  ln -sfnv $nom $CRSD/usr/bin/basename
+  ln -sfnv $nom $CRSD/usr/bin/cat
+  ln -sfnv $nom $CRSD/usr/bin/chgrp
+  ln -sfnv $nom $CRSD/usr/bin/chmod
+  ln -sfnv $nom $CRSD/usr/bin/chown
+  ln -sfnv $nom $CRSD/usr/bin/chroot
+  ln -sfnv $nom $CRSD/usr/bin/cksum
+  ln -sfnv $nom $CRSD/usr/bin/comm
+  ln -sfnv $nom $CRSD/usr/bin/cp
+  ln -sfnv $nom $CRSD/usr/bin/cut
+  ln -sfnv $nom $CRSD/usr/bin/date
+  ln -sfnv $nom $CRSD/usr/bin/dd
+  ln -sfnv $nom $CRSD/usr/bin/df
+  ln -sfnv $nom $CRSD/usr/bin/dirname
+  ln -sfnv $nom $CRSD/usr/bin/du
+  ln -sfnv $nom $CRSD/usr/bin/echo
+  ln -sfnv $nom $CRSD/usr/bin/env
+  ln -sfnv $nom $CRSD/usr/bin/expand
+  ln -sfnv $nom $CRSD/usr/bin/expr
+  ln -sfnv $nom $CRSD/usr/bin/factor
+  ln -sfnv $nom $CRSD/usr/bin/false
+  ln -sfnv $nom $CRSD/usr/bin/fmt
+  ln -sfnv $nom $CRSD/usr/bin/fold
+  ln -sfnv $nom $CRSD/usr/bin/getconf
+  ln -sfnv $nom $CRSD/usr/bin/head
+  ln -sfnv $nom $CRSD/usr/bin/hostid
+  ln -sfnv $nom $CRSD/usr/bin/hostname
+  ln -sfnv $nom $CRSD/usr/bin/iconv
+  ln -sfnv $nom $CRSD/usr/bin/id
+  ln -sfnv $nom $CRSD/usr/bin/install
+  ln -sfnv $nom $CRSD/usr/bin/link
+  ln -sfnv $nom $CRSD/usr/bin/ln
+  ln -sfnv $nom $CRSD/usr/bin/logname
+  ln -sfnv $nom $CRSD/usr/bin/ls
+  ln -sfnv $nom $CRSD/usr/bin/md5sum
+  ln -sfnv $nom $CRSD/usr/bin/mkdir
+  ln -sfnv $nom $CRSD/usr/bin/mkfifo
+  ln -sfnv $nom $CRSD/usr/bin/mknod
+  ln -sfnv $nom $CRSD/usr/bin/mktemp
+  ln -sfnv $nom $CRSD/usr/bin/mv
+  ln -sfnv $nom $CRSD/usr/bin/nice
+  ln -sfnv $nom $CRSD/usr/bin/nl
+  ln -sfnv $nom $CRSD/usr/bin/nohup
+  ln -sfnv $nom $CRSD/usr/bin/nproc
+  ln -sfnv $nom $CRSD/usr/bin/od
+  ln -sfnv $nom $CRSD/usr/bin/paste
+  ln -sfnv $nom $CRSD/usr/bin/printenv
+  ln -sfnv $nom $CRSD/usr/bin/printf
+  ln -sfnv $nom $CRSD/usr/bin/pwd
+  ln -sfnv $nom $CRSD/usr/bin/readlink
+  ln -sfnv $nom $CRSD/usr/bin/realpath
+  ln -sfnv $nom $CRSD/usr/bin/rm
+  ln -sfnv $nom $CRSD/usr/bin/rmdir
+  ln -sfnv $nom $CRSD/usr/bin/seq
+  ln -sfnv $nom $CRSD/usr/bin/sha1sum
+  ln -sfnv $nom $CRSD/usr/bin/sha224sum
+  ln -sfnv $nom $CRSD/usr/bin/sha256sum
+  ln -sfnv $nom $CRSD/usr/bin/sha384sum
+  ln -sfnv $nom $CRSD/usr/bin/sha512sum
+  ln -sfnv $nom $CRSD/usr/bin/shred
+  ln -sfnv $nom $CRSD/usr/bin/shuf
+  ln -sfnv $nom $CRSD/usr/bin/sleep
+  ln -sfnv $nom $CRSD/usr/bin/sort
+  ln -sfnv $nom $CRSD/usr/bin/split
+  ln -sfnv $nom $CRSD/usr/bin/stat
+  ln -sfnv $nom $CRSD/usr/bin/stty
+  ln -sfnv $nom $CRSD/usr/bin/sync
+  ln -sfnv $nom $CRSD/usr/bin/tac
+  ln -sfnv $nom $CRSD/usr/bin/tail
+  ln -sfnv $nom $CRSD/usr/bin/tee
+  ln -sfnv $nom $CRSD/usr/bin/test
+  ln -sfnv $nom $CRSD/usr/bin/time
+  ln -sfnv $nom $CRSD/usr/bin/timeout
+  ln -sfnv $nom $CRSD/usr/bin/touch
+  ln -sfnv $nom $CRSD/usr/bin/tr
+  ln -sfnv $nom $CRSD/usr/bin/true
+  ln -sfnv $nom $CRSD/usr/bin/truncate
+  ln -sfnv $nom $CRSD/usr/bin/tty
+  ln -sfnv $nom $CRSD/usr/bin/uname
+  ln -sfnv $nom $CRSD/usr/bin/uniq
+  ln -sfnv $nom $CRSD/usr/bin/unlink
+  ln -sfnv $nom $CRSD/usr/bin/wc
+  ln -sfnv $nom $CRSD/usr/bin/which
+  ln -sfnv $nom $CRSD/usr/bin/who
+  ln -sfnv $nom $CRSD/usr/bin/whoami
+  ln -sfnv $nom $CRSD/usr/bin/yes
 }

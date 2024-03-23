@@ -59,20 +59,20 @@ install() {
 
   # Hardcoded `gcc` version number
   $MKDIR $SACD/usr/lib/$nom
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/c++
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/c89
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/c99
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/cc
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/cpp
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/g++
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/gcc
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/gcc-13.2.0
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c++
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c89
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c99
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cc
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cpp
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-g++
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc
-  $LN ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc-13.2.0
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c++
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c89
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c99
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/cc
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/cpp
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/g++
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/gcc
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/gcc-13.2.0
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c++
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c89
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c99
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cc
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cpp
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-g++
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc-13.2.0
 }

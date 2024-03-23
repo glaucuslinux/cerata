@@ -27,11 +27,11 @@ install() {
 
   $MKDIR $SACD/usr/lib
   $RSYNC libbz2.so.$ver $SACD/usr/lib
-  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so
-  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
-  $LN libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
+  ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so
+  ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
+  ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
   $MKDIR $SACD/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
-  $LN $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
+  ln -sfnv $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }

@@ -51,7 +51,7 @@ install() {
     install-strip
 
   $MKDIR $SACD/usr/include/$nom
-  $LN ../dbm.h $SACD/usr/include/$nom/dbm.h
-  $LN ../$nom.h $SACD/usr/include/$nom/$nom.h
-  $LN ../ndbm.h $SACD/usr/include/$nom/ndbm.h
+  ln -sfnv ../dbm.h $SACD/usr/include/$nom/dbm.h
+  ln -sfnv ../$nom.h $SACD/usr/include/$nom/$nom.h
+  ln -sfnv ../ndbm.h $SACD/usr/include/$nom/ndbm.h
 }

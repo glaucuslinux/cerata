@@ -71,8 +71,8 @@ install() {
     install-strip
 
   # `pidwait` and `pkill` are identical to `pgrep`
-  $LN pgrep $CRSD/usr/bin/pidwait
-  $LN pgrep $CRSD/usr/bin/pkill
+  ln -sfnv pgrep $CRSD/usr/bin/pidwait
+  ln -sfnv pgrep $CRSD/usr/bin/pkill
 
   # Remove libtool archive (.la) file
   rm -frv $CRSD/usr/lib/libproc2.la

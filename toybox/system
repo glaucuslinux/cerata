@@ -28,93 +28,93 @@ install() {
   $MKDIR $SACD/usr/bin
   $RSYNC $nom $SACD/usr/bin
 
-  $LN $nom $SACD/usr/bin/[
-  $LN $nom $SACD/usr/bin/base32
-  $LN $nom $SACD/usr/bin/base64
-  $LN $nom $SACD/usr/bin/basename
-  $LN $nom $SACD/usr/bin/cat
-  $LN $nom $SACD/usr/bin/chgrp
-  $LN $nom $SACD/usr/bin/chmod
-  $LN $nom $SACD/usr/bin/chown
-  $LN $nom $SACD/usr/bin/chroot
-  $LN $nom $SACD/usr/bin/cksum
-  $LN $nom $SACD/usr/bin/comm
-  $LN $nom $SACD/usr/bin/cp
-  $LN $nom $SACD/usr/bin/cut
-  $LN $nom $SACD/usr/bin/date
-  $LN $nom $SACD/usr/bin/dd
-  $LN $nom $SACD/usr/bin/df
-  $LN $nom $SACD/usr/bin/dirname
-  $LN $nom $SACD/usr/bin/du
-  $LN $nom $SACD/usr/bin/echo
-  $LN $nom $SACD/usr/bin/env
-  $LN $nom $SACD/usr/bin/expand
-  $LN $nom $SACD/usr/bin/expr
-  $LN $nom $SACD/usr/bin/factor
-  $LN $nom $SACD/usr/bin/false
-  $LN $nom $SACD/usr/bin/fmt
-  $LN $nom $SACD/usr/bin/fold
-  $LN $nom $SACD/usr/bin/getconf
-  $LN $nom $SACD/usr/bin/head
-  $LN $nom $SACD/usr/bin/hostid
-  $LN $nom $SACD/usr/bin/hostname
-  $LN $nom $SACD/usr/bin/iconv
-  $LN $nom $SACD/usr/bin/id
-  $LN $nom $SACD/usr/bin/install
-  $LN $nom $SACD/usr/bin/link
-  $LN $nom $SACD/usr/bin/ln
-  $LN $nom $SACD/usr/bin/logname
-  $LN $nom $SACD/usr/bin/ls
-  $LN $nom $SACD/usr/bin/md5sum
-  $LN $nom $SACD/usr/bin/mkdir
-  $LN $nom $SACD/usr/bin/mkfifo
-  $LN $nom $SACD/usr/bin/mknod
-  $LN $nom $SACD/usr/bin/mktemp
-  $LN $nom $SACD/usr/bin/mv
-  $LN $nom $SACD/usr/bin/nice
-  $LN $nom $SACD/usr/bin/nl
-  $LN $nom $SACD/usr/bin/nohup
-  $LN $nom $SACD/usr/bin/nproc
-  $LN $nom $SACD/usr/bin/od
-  $LN $nom $SACD/usr/bin/paste
-  $LN $nom $SACD/usr/bin/printenv
-  $LN $nom $SACD/usr/bin/printf
-  $LN $nom $SACD/usr/bin/pwd
-  $LN $nom $SACD/usr/bin/readlink
-  $LN $nom $SACD/usr/bin/realpath
-  $LN $nom $SACD/usr/bin/rm
-  $LN $nom $SACD/usr/bin/rmdir
-  $LN $nom $SACD/usr/bin/seq
-  $LN $nom $SACD/usr/bin/sha1sum
-  $LN $nom $SACD/usr/bin/sha224sum
-  $LN $nom $SACD/usr/bin/sha256sum
-  $LN $nom $SACD/usr/bin/sha384sum
-  $LN $nom $SACD/usr/bin/sha512sum
-  $LN $nom $SACD/usr/bin/shred
-  $LN $nom $SACD/usr/bin/shuf
-  $LN $nom $SACD/usr/bin/sleep
-  $LN $nom $SACD/usr/bin/sort
-  $LN $nom $SACD/usr/bin/split
-  $LN $nom $SACD/usr/bin/stat
-  $LN $nom $SACD/usr/bin/stty
-  $LN $nom $SACD/usr/bin/sync
-  $LN $nom $SACD/usr/bin/tac
-  $LN $nom $SACD/usr/bin/tail
-  $LN $nom $SACD/usr/bin/tee
-  $LN $nom $SACD/usr/bin/test
-  $LN $nom $SACD/usr/bin/time
-  $LN $nom $SACD/usr/bin/timeout
-  $LN $nom $SACD/usr/bin/touch
-  $LN $nom $SACD/usr/bin/tr
-  $LN $nom $SACD/usr/bin/true
-  $LN $nom $SACD/usr/bin/truncate
-  $LN $nom $SACD/usr/bin/tty
-  $LN $nom $SACD/usr/bin/uname
-  $LN $nom $SACD/usr/bin/uniq
-  $LN $nom $SACD/usr/bin/unlink
-  $LN $nom $SACD/usr/bin/wc
-  $LN $nom $SACD/usr/bin/which
-  $LN $nom $SACD/usr/bin/who
-  $LN $nom $SACD/usr/bin/whoami
-  $LN $nom $SACD/usr/bin/yes
+  ln -sfnv $nom $SACD/usr/bin/[
+  ln -sfnv $nom $SACD/usr/bin/base32
+  ln -sfnv $nom $SACD/usr/bin/base64
+  ln -sfnv $nom $SACD/usr/bin/basename
+  ln -sfnv $nom $SACD/usr/bin/cat
+  ln -sfnv $nom $SACD/usr/bin/chgrp
+  ln -sfnv $nom $SACD/usr/bin/chmod
+  ln -sfnv $nom $SACD/usr/bin/chown
+  ln -sfnv $nom $SACD/usr/bin/chroot
+  ln -sfnv $nom $SACD/usr/bin/cksum
+  ln -sfnv $nom $SACD/usr/bin/comm
+  ln -sfnv $nom $SACD/usr/bin/cp
+  ln -sfnv $nom $SACD/usr/bin/cut
+  ln -sfnv $nom $SACD/usr/bin/date
+  ln -sfnv $nom $SACD/usr/bin/dd
+  ln -sfnv $nom $SACD/usr/bin/df
+  ln -sfnv $nom $SACD/usr/bin/dirname
+  ln -sfnv $nom $SACD/usr/bin/du
+  ln -sfnv $nom $SACD/usr/bin/echo
+  ln -sfnv $nom $SACD/usr/bin/env
+  ln -sfnv $nom $SACD/usr/bin/expand
+  ln -sfnv $nom $SACD/usr/bin/expr
+  ln -sfnv $nom $SACD/usr/bin/factor
+  ln -sfnv $nom $SACD/usr/bin/false
+  ln -sfnv $nom $SACD/usr/bin/fmt
+  ln -sfnv $nom $SACD/usr/bin/fold
+  ln -sfnv $nom $SACD/usr/bin/getconf
+  ln -sfnv $nom $SACD/usr/bin/head
+  ln -sfnv $nom $SACD/usr/bin/hostid
+  ln -sfnv $nom $SACD/usr/bin/hostname
+  ln -sfnv $nom $SACD/usr/bin/iconv
+  ln -sfnv $nom $SACD/usr/bin/id
+  ln -sfnv $nom $SACD/usr/bin/install
+  ln -sfnv $nom $SACD/usr/bin/link
+  ln -sfnv $nom $SACD/usr/bin/ln
+  ln -sfnv $nom $SACD/usr/bin/logname
+  ln -sfnv $nom $SACD/usr/bin/ls
+  ln -sfnv $nom $SACD/usr/bin/md5sum
+  ln -sfnv $nom $SACD/usr/bin/mkdir
+  ln -sfnv $nom $SACD/usr/bin/mkfifo
+  ln -sfnv $nom $SACD/usr/bin/mknod
+  ln -sfnv $nom $SACD/usr/bin/mktemp
+  ln -sfnv $nom $SACD/usr/bin/mv
+  ln -sfnv $nom $SACD/usr/bin/nice
+  ln -sfnv $nom $SACD/usr/bin/nl
+  ln -sfnv $nom $SACD/usr/bin/nohup
+  ln -sfnv $nom $SACD/usr/bin/nproc
+  ln -sfnv $nom $SACD/usr/bin/od
+  ln -sfnv $nom $SACD/usr/bin/paste
+  ln -sfnv $nom $SACD/usr/bin/printenv
+  ln -sfnv $nom $SACD/usr/bin/printf
+  ln -sfnv $nom $SACD/usr/bin/pwd
+  ln -sfnv $nom $SACD/usr/bin/readlink
+  ln -sfnv $nom $SACD/usr/bin/realpath
+  ln -sfnv $nom $SACD/usr/bin/rm
+  ln -sfnv $nom $SACD/usr/bin/rmdir
+  ln -sfnv $nom $SACD/usr/bin/seq
+  ln -sfnv $nom $SACD/usr/bin/sha1sum
+  ln -sfnv $nom $SACD/usr/bin/sha224sum
+  ln -sfnv $nom $SACD/usr/bin/sha256sum
+  ln -sfnv $nom $SACD/usr/bin/sha384sum
+  ln -sfnv $nom $SACD/usr/bin/sha512sum
+  ln -sfnv $nom $SACD/usr/bin/shred
+  ln -sfnv $nom $SACD/usr/bin/shuf
+  ln -sfnv $nom $SACD/usr/bin/sleep
+  ln -sfnv $nom $SACD/usr/bin/sort
+  ln -sfnv $nom $SACD/usr/bin/split
+  ln -sfnv $nom $SACD/usr/bin/stat
+  ln -sfnv $nom $SACD/usr/bin/stty
+  ln -sfnv $nom $SACD/usr/bin/sync
+  ln -sfnv $nom $SACD/usr/bin/tac
+  ln -sfnv $nom $SACD/usr/bin/tail
+  ln -sfnv $nom $SACD/usr/bin/tee
+  ln -sfnv $nom $SACD/usr/bin/test
+  ln -sfnv $nom $SACD/usr/bin/time
+  ln -sfnv $nom $SACD/usr/bin/timeout
+  ln -sfnv $nom $SACD/usr/bin/touch
+  ln -sfnv $nom $SACD/usr/bin/tr
+  ln -sfnv $nom $SACD/usr/bin/true
+  ln -sfnv $nom $SACD/usr/bin/truncate
+  ln -sfnv $nom $SACD/usr/bin/tty
+  ln -sfnv $nom $SACD/usr/bin/uname
+  ln -sfnv $nom $SACD/usr/bin/uniq
+  ln -sfnv $nom $SACD/usr/bin/unlink
+  ln -sfnv $nom $SACD/usr/bin/wc
+  ln -sfnv $nom $SACD/usr/bin/which
+  ln -sfnv $nom $SACD/usr/bin/who
+  ln -sfnv $nom $SACD/usr/bin/whoami
+  ln -sfnv $nom $SACD/usr/bin/yes
 }

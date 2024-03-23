@@ -71,6 +71,6 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN ${nom}3 $SACD/usr/bin/$nom
-  $LN ${nom}3-config $SACD/usr/bin/$nom-config
+  ln -sfnv ${nom}3 $SACD/usr/bin/$nom
+  ln -sfnv ${nom}3-config $SACD/usr/bin/$nom-config
 }

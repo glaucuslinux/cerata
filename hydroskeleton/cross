@@ -20,7 +20,7 @@ check() {
 }
 
 install() {
-  $LN usr/bin $CRSD/bin
+  ln -sfnv usr/bin $CRSD/bin
 
   $MKDIR $CRSD/boot
 
@@ -28,7 +28,7 @@ install() {
 
   # `$CRSD/etc` is already created by toolchain `musl`
   $RSYNC $CERD/$nom/fstab $CRSD/etc
-  $LN lsb-release $CRSD/etc/glaucus-release
+  ln -sfnv lsb-release $CRSD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $CRSD/etc
   $RSYNC $CERD/$nom/hostname $CRSD/etc
   $RSYNC $CERD/$nom/hosts $CRSD/etc
@@ -37,7 +37,7 @@ install() {
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
     -i $CRSD/etc/lsb-release
-  $LN ../usr/lib/os-release $CRSD/etc/os-release
+  ln -sfnv ../usr/lib/os-release $CRSD/etc/os-release
   $RSYNC $CERD/$nom/passwd $CRSD/etc
   $RSYNC $CERD/$nom/profile $CRSD/etc
   $RSYNC $CERD/$nom/resolv.conf $CRSD/etc
@@ -46,7 +46,7 @@ install() {
 
   $MKDIR $CRSD/home
 
-  $LN usr/lib $CRSD/lib
+  ln -sfnv usr/lib $CRSD/lib
 
   $MKDIR $CRSD/mnt
 
@@ -56,11 +56,11 @@ install() {
 
   $MKDIR $CRSD/run
 
-  $LN usr/bin $CRSD/sbin
+  ln -sfnv usr/bin $CRSD/sbin
 
   $MKDIR $CRSD/sys
 
-  $LN run/tmp $CRSD/tmp
+  ln -sfnv run/tmp $CRSD/tmp
 
   # `$CRSD/usr` is already created in toolchain
   $RSYNC $CERD/$nom/os-release $CRSD/usr/lib
@@ -69,7 +69,7 @@ install() {
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $CRSD/usr/lib/os-release
   $MKDIR $PKG_CONFIG_LIBDIR
-  $LN bin $CRSD/usr/sbin
+  ln -sfnv bin $CRSD/usr/sbin
   $MKDIR $CRSD/usr/share
 
   $MKDIR $CRSD/var/cache/radula/bin
@@ -79,11 +79,11 @@ install() {
   $MKDIR $CRSD/var/lib/hwclock
   $MKDIR $CRSD/var/lib/misc
   $MKDIR $CRSD/var/lib/radula
-  $LN ../run/lock $CRSD/var/lock
+  ln -sfnv ../run/lock $CRSD/var/lock
   $MKDIR $CRSD/var/log/radula
   $MKDIR $CRSD/var/mail
-  $LN ../run $CRSD/var/run
+  ln -sfnv ../run $CRSD/var/run
   $MKDIR $CRSD/var/spool
-  $LN ../mail $CRSD/var/spool/mail
+  ln -sfnv ../mail $CRSD/var/spool/mail
   $MKDIR $CRSD/var/tmp/radula
 }

@@ -35,5 +35,5 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN fts.3 $SACD/usr/share/man/man3/$nom.3
+  ln -sfnv fts.3 $SACD/usr/share/man/man3/$nom.3
 }

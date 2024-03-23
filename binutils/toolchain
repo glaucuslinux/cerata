@@ -80,18 +80,18 @@ install() {
     install-strip-gas \
     install-strip-ld
 
-  $LN $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
+  ln -sfnv $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
 
-  $LN ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
-  $LN ../../bin/$TGT-as $TLCD/usr/$TGT/bin/as
-  $LN ../../bin/$TGT-ld $TLCD/usr/$TGT/bin/ld
-  $LN ../../bin/$TGT-ld.bfd $TLCD/usr/$TGT/bin/ld.bfd
-  $LN ../../bin/$TGT-nm $TLCD/usr/$TGT/bin/nm
-  $LN ../../bin/$TGT-objcopy $TLCD/usr/$TGT/bin/objcopy
-  $LN ../../bin/$TGT-objdump $TLCD/usr/$TGT/bin/objdump
-  $LN ../../bin/$TGT-ranlib $TLCD/usr/$TGT/bin/ranlib
-  $LN ../../bin/$TGT-readelf $TLCD/usr/$TGT/bin/readelf
-  $LN ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
+  ln -sfnv ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
+  ln -sfnv ../../bin/$TGT-as $TLCD/usr/$TGT/bin/as
+  ln -sfnv ../../bin/$TGT-ld $TLCD/usr/$TGT/bin/ld
+  ln -sfnv ../../bin/$TGT-ld.bfd $TLCD/usr/$TGT/bin/ld.bfd
+  ln -sfnv ../../bin/$TGT-nm $TLCD/usr/$TGT/bin/nm
+  ln -sfnv ../../bin/$TGT-objcopy $TLCD/usr/$TGT/bin/objcopy
+  ln -sfnv ../../bin/$TGT-objdump $TLCD/usr/$TGT/bin/objdump
+  ln -sfnv ../../bin/$TGT-ranlib $TLCD/usr/$TGT/bin/ranlib
+  ln -sfnv ../../bin/$TGT-readelf $TLCD/usr/$TGT/bin/readelf
+  ln -sfnv ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
 
   # Remove unnecessary manpages
   rm -frv \

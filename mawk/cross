@@ -48,5 +48,5 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $LN $nom $CRSD/usr/bin/awk
+  ln -sfnv $nom $CRSD/usr/bin/awk
 }

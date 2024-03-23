@@ -38,16 +38,16 @@ install() {
   $RSYNC $CERD/$nom/updatedb.conf $SACD/etc
 
   # Compatibility symlinks
-  $LN $nom $SACD/usr/bin/locate
-  $LN $nom $SACD/usr/bin/mlocate
-  $LN $nom $SACD/usr/bin/slocate
-  $LN pupdatedb $SACD/usr/bin/updatedb
+  ln -sfnv $nom $SACD/usr/bin/locate
+  ln -sfnv $nom $SACD/usr/bin/mlocate
+  ln -sfnv $nom $SACD/usr/bin/slocate
+  ln -sfnv pupdatedb $SACD/usr/bin/updatedb
 
-  $LN $nom.1 $SACD/usr/share/man/man1/locate.1
-  $LN ../man8/pupdatedb.8 $SACD/usr/share/man/man1/pupdatedb.1
-  $LN ../man8/pupdatedb.8 $SACD/usr/share/man/man1/updatedb.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/locate.1
+  ln -sfnv ../man8/pupdatedb.8 $SACD/usr/share/man/man1/pupdatedb.1
+  ln -sfnv ../man8/pupdatedb.8 $SACD/usr/share/man/man1/updatedb.1
 
-  $LN pupdatedb.conf.5 $SACD/usr/share/man/man5/updatedb.conf.5
+  ln -sfnv pupdatedb.conf.5 $SACD/usr/share/man/man5/updatedb.conf.5
 
-  $LN $nom $SACD/var/lib/locate
+  ln -sfnv $nom $SACD/var/lib/locate
 }

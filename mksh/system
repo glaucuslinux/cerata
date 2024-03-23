@@ -23,6 +23,6 @@ check() {
 
 install() {
   $RSYNC $nom $SACD/usr/bin
-  $LN $nom $SACD/usr/bin/ksh
-  $LN $nom $SACD/usr/bin/rksh
+  ln -sfnv $nom $SACD/usr/bin/ksh
+  ln -sfnv $nom $SACD/usr/bin/rksh
 }

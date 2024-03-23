@@ -26,11 +26,11 @@ check() {
 install() {
   # `pigz` and `unpigz` are symbolic links
   $RSYNC $nom $CRSD/usr/bin
-  $LN $nom $CRSD/usr/bin/gunzip
-  $LN $nom $CRSD/usr/bin/gzcat
-  $LN $nom $CRSD/usr/bin/gzip
-  $LN $nom $CRSD/usr/bin/un$nom
-  $LN $nom $CRSD/usr/bin/zcat
+  ln -sfnv $nom $CRSD/usr/bin/gunzip
+  ln -sfnv $nom $CRSD/usr/bin/gzcat
+  ln -sfnv $nom $CRSD/usr/bin/gzip
+  ln -sfnv $nom $CRSD/usr/bin/un$nom
+  ln -sfnv $nom $CRSD/usr/bin/zcat
 
   $RSYNC $nom.1 $CRSD/usr/share/man/man1
 }

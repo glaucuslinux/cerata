@@ -60,8 +60,8 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN bsdcpio $CRSD/usr/bin/cpio
-  $LN bsdtar $CRSD/usr/bin/tar
+  ln -sfnv bsdcpio $CRSD/usr/bin/cpio
+  ln -sfnv bsdtar $CRSD/usr/bin/tar
 
   # Remove libtool archive (.la) file
   rm -frv $CRSD/usr/lib/$nom.la

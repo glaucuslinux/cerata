@@ -35,7 +35,7 @@ install() {
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $SACD/usr/bin/lzip
+  ln -sfnv $nom $SACD/usr/bin/lzip
 
-  $LN $nom.1 $SACD/usr/share/man/man1/lzip.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/lzip.1
 }

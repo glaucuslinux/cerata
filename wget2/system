@@ -73,7 +73,7 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $SACD/usr/bin/wget
+  ln -sfnv $nom $SACD/usr/bin/wget
   rm -frv $SACD/usr/bin/${nom}_noinstall
 
   # Remove libtool archive (.la) file

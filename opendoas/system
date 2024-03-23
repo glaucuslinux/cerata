@@ -34,7 +34,7 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN doas $SACD/usr/bin/$nom
+  ln -sfnv doas $SACD/usr/bin/$nom
 
-  $LN doas.1 $SACD/usr/share/man/man1/$nom.1
+  ln -sfnv doas.1 $SACD/usr/share/man/man1/$nom.1
 }

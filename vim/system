@@ -86,5 +86,5 @@ install() {
 
   $RSYNC $CERD/$nom/${nom}rc $SACD/etc
 
-  $LN $nom $SACD/usr/bin/vi
+  ln -sfnv $nom $SACD/usr/bin/vi
 }
