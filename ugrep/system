@@ -47,5 +47,5 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $SACD/usr/bin/grep
+  ln -sfnv $nom $SACD/usr/bin/grep
 }

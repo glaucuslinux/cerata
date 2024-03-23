@@ -76,7 +76,7 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN ld.bfd $SACD/usr/bin/ld
+  ln -sfnv ld.bfd $SACD/usr/bin/ld
 
   # Manually remove the static libraries
   rm -frv \

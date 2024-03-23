@@ -45,5 +45,5 @@ install() {
     install-strip
 
   # Provide compatibility symlink as `more` is disabled in `util-linux`
-  $LN $nom $SACD/usr/bin/more
+  ln -sfnv $nom $SACD/usr/bin/more
 }

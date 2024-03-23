@@ -44,7 +44,7 @@ install() {
   rm -frv $CRSD/lib
 
   $MKDIR $CRSD/usr/bin
-  $LN ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd
+  ln -sfnv ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd
 
-  $LN libc.so $CRSD/usr/lib/ld-$nom-x86_64.so.1
+  ln -sfnv libc.so $CRSD/usr/lib/ld-$nom-x86_64.so.1
 }

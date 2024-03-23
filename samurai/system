@@ -33,7 +33,7 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN samu $SACD/usr/bin/ninja
+  ln -sfnv samu $SACD/usr/bin/ninja
 
-  $LN samu.1 $SACD/usr/share/man/man1/ninja
+  ln -sfnv samu.1 $SACD/usr/share/man/man1/ninja
 }

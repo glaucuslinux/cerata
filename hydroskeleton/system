@@ -20,7 +20,7 @@ check() {
 }
 
 install() {
-  $LN usr/bin $SACD/bin
+  ln -sfnv usr/bin $SACD/bin
 
   $MKDIR $SACD/boot
 
@@ -28,7 +28,7 @@ install() {
 
   $MKDIR $SACD/etc
   $RSYNC $CERD/$nom/fstab $SACD/etc
-  $LN lsb-release $SACD/etc/glaucus-release
+  ln -sfnv lsb-release $SACD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $SACD/etc
   $RSYNC $CERD/$nom/hostname $SACD/etc
   $RSYNC $CERD/$nom/hosts $SACD/etc
@@ -37,7 +37,7 @@ install() {
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
     -i $SACD/etc/lsb-release
-  $LN ../usr/lib/os-release $SACD/etc/os-release
+  ln -sfnv ../usr/lib/os-release $SACD/etc/os-release
   $RSYNC $CERD/$nom/passwd $SACD/etc
   $RSYNC $CERD/$nom/profile $SACD/etc
   $RSYNC $CERD/$nom/resolv.conf $SACD/etc
@@ -46,7 +46,7 @@ install() {
 
   $MKDIR $SACD/home
 
-  $LN usr/lib $SACD/lib
+  ln -sfnv usr/lib $SACD/lib
 
   $MKDIR $SACD/mnt
 
@@ -56,11 +56,11 @@ install() {
 
   $MKDIR $SACD/run
 
-  $LN usr/bin $SACD/sbin
+  ln -sfnv usr/bin $SACD/sbin
 
   $MKDIR $SACD/sys
 
-  $LN run/tmp $SACD/tmp
+  ln -sfnv run/tmp $SACD/tmp
 
   $MKDIR $SACD/usr/lib
   $RSYNC $CERD/$nom/os-release $SACD/usr/lib
@@ -69,7 +69,7 @@ install() {
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $SACD/usr/lib/os-release
   $MKDIR $PKG_CONFIG_LIBDIR
-  $LN bin $SACD/usr/sbin
+  ln -sfnv bin $SACD/usr/sbin
   $MKDIR $SACD/usr/share
 
   $MKDIR $SACD/var/cache/radula/bin
@@ -79,11 +79,11 @@ install() {
   $MKDIR $SACD/var/lib/hwclock
   $MKDIR $SACD/var/lib/misc
   $MKDIR $SACD/var/lib/radula
-  $LN ../run/lock $SACD/var/lock
+  ln -sfnv ../run/lock $SACD/var/lock
   $MKDIR $SACD/var/log/radula
   $MKDIR $SACD/var/mail
-  $LN ../run $SACD/var/run
+  ln -sfnv ../run $SACD/var/run
   $MKDIR $SACD/var/spool
-  $LN ../mail $SACD/var/spool/mail
+  ln -sfnv ../mail $SACD/var/spool/mail
   $MKDIR $SACD/var/tmp/radula
 }

@@ -30,8 +30,8 @@ install() {
     DESTDIR=$CRSD \
     install-dynamic
 
-  $LN tic $CRSD/usr/bin/captoinfo
-  $LN tic $CRSD/usr/bin/infotocap
+  ln -sfnv tic $CRSD/usr/bin/captoinfo
+  ln -sfnv tic $CRSD/usr/bin/infotocap
 
   $CHMOD 0755 $CRSD/usr/lib/libcurses.so
   $CHMOD 0755 $CRSD/usr/lib/libform.so
@@ -40,5 +40,5 @@ install() {
   $CHMOD 0755 $CRSD/usr/lib/libterminfo.so
 
   # Some cerata (e.g. `util-linux` and `yash`) link against this symlink
-  $LN libterminfo.so $CRSD/usr/lib/libtinfo.so
+  ln -sfnv libterminfo.so $CRSD/usr/lib/libtinfo.so
 }

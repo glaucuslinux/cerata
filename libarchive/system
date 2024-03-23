@@ -58,8 +58,8 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN bsdcpio $SACD/usr/bin/cpio
-  $LN bsdtar $SACD/usr/bin/tar
+  ln -sfnv bsdcpio $SACD/usr/bin/cpio
+  ln -sfnv bsdtar $SACD/usr/bin/tar
 
   # Remove libtool archive (.la) file
   rm -frv $SACD/usr/lib/$nom.la

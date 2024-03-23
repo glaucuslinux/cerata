@@ -33,9 +33,9 @@ install() {
 
   $RSYNC $CERD/$nom/ksh.kshrc $SACD/etc
 
-  $LN $nom $SACD/usr/bin/ksh
-  $LN $nom $SACD/usr/bin/rksh
+  ln -sfnv $nom $SACD/usr/bin/ksh
+  ln -sfnv $nom $SACD/usr/bin/rksh
 
-  $LN $nom.1 $SACD/usr/share/man/man1/ksh.1
-  $LN $nom.1 $SACD/usr/share/man/man1/rksh.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/ksh.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/rksh.1
 }

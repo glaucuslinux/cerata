@@ -49,5 +49,5 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN $nom.pc $SACD/usr/lib/libobstack.pc
+  ln -sfnv $nom.pc $SACD/usr/lib/libobstack.pc
 }

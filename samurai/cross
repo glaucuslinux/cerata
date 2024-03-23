@@ -33,7 +33,7 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $LN samu $CRSD/usr/bin/ninja
+  ln -sfnv samu $CRSD/usr/bin/ninja
 
-  $LN samu.1 $CRSD/usr/share/man/man1/ninja.1
+  ln -sfnv samu.1 $CRSD/usr/share/man/man1/ninja.1
 }

@@ -53,7 +53,7 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN openvt $SACD/usr/bin/open
+  ln -sfnv openvt $SACD/usr/bin/open
 
   rm -frv \
     $SACD/usr/share/keymaps/amiga \

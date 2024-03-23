@@ -102,28 +102,28 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN g++ $CRSD/usr/bin/c++
+  ln -sfnv g++ $CRSD/usr/bin/c++
 
   $RSYNC $CERD/$nom/c89 $CRSD/usr/bin
   $RSYNC $CERD/$nom/c99 $CRSD/usr/bin
 
-  $LN $nom $CRSD/usr/bin/cc
-  $LN $nom $CRSD/usr/bin/$nom-$ver
+  ln -sfnv $nom $CRSD/usr/bin/cc
+  ln -sfnv $nom $CRSD/usr/bin/$nom-$ver
 
-  $LN $TGT-g++ $CRSD/usr/bin/$TGT-c++
+  ln -sfnv $TGT-g++ $CRSD/usr/bin/$TGT-c++
 
-  $LN $TGT-$nom $CRSD/usr/bin/$TGT-cc
-  $LN $TGT-$nom $CRSD/usr/bin/$TGT-$nom-$ver
+  ln -sfnv $TGT-$nom $CRSD/usr/bin/$TGT-cc
+  ln -sfnv $TGT-$nom $CRSD/usr/bin/$TGT-$nom-$ver
 
-  $LN g++ $CRSD/usr/bin/$TGT-g++
-  $LN $nom $CRSD/usr/bin/$TGT-$nom
+  ln -sfnv g++ $CRSD/usr/bin/$TGT-g++
+  ln -sfnv $nom $CRSD/usr/bin/$TGT-$nom
 
-  $LN $nom-ar $CRSD/usr/bin/$TGT-$nom-ar
-  $LN $nom-nm $CRSD/usr/bin/$TGT-$nom-nm
-  $LN $nom-ranlib $CRSD/usr/bin/$TGT-$nom-ranlib
+  ln -sfnv $nom-ar $CRSD/usr/bin/$TGT-$nom-ar
+  ln -sfnv $nom-nm $CRSD/usr/bin/$TGT-$nom-nm
+  ln -sfnv $nom-ranlib $CRSD/usr/bin/$TGT-$nom-ranlib
 
   # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
-  $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
+  ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries
   rm -frv \
@@ -151,7 +151,7 @@ install() {
     $CRSD/usr/lib/libsupc++.la
 
   # Compatibility symlink
-  $LN ../bin/cpp $CRSD/usr/lib/cpp
+  ln -sfnv ../bin/cpp $CRSD/usr/lib/cpp
 
-  $LN $nom.1 $CRSD/usr/share/man/man1/g++.1
+  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/g++.1
 }

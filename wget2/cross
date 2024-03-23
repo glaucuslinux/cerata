@@ -75,7 +75,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/wget
+  ln -sfnv $nom $CRSD/usr/bin/wget
   rm -frv $CRSD/usr/bin/${nom}_noinstall
 
   # Remove libtool archive (.la) file

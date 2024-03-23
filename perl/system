@@ -59,8 +59,8 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN $nom $SACD/usr/bin/$nom$ver
-  $LN ${nom}bug $SACD/usr/bin/${nom}thanks
+  ln -sfnv $nom $SACD/usr/bin/$nom$ver
+  ln -sfnv ${nom}bug $SACD/usr/bin/${nom}thanks
 
-  $LN ${nom}bug.1 $SACD/usr/share/man/man1/${nom}thanks.1
+  ln -sfnv ${nom}bug.1 $SACD/usr/share/man/man1/${nom}thanks.1
 }

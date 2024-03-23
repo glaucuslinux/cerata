@@ -45,9 +45,9 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $LN $nom $SACD/usr/bin/bison
-  $LN $nom $SACD/usr/bin/yacc
+  ln -sfnv $nom $SACD/usr/bin/bison
+  ln -sfnv $nom $SACD/usr/bin/yacc
 
-  $LN $nom.1 $SACD/usr/share/man/man1/bison.1
-  $LN $nom.1 $SACD/usr/share/man/man1/yacc.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/bison.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/yacc.1
 }

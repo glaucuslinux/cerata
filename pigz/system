@@ -26,11 +26,11 @@ install() {
   # `pigz` and `unpigz` are symbolic links
   $MKDIR $SACD/usr/bin
   $RSYNC $nom $SACD/usr/bin
-  $LN $nom $SACD/usr/bin/gunzip
-  $LN $nom $SACD/usr/bin/gzcat
-  $LN $nom $SACD/usr/bin/gzip
-  $LN $nom $SACD/usr/bin/un$nom
-  $LN $nom $SACD/usr/bin/zcat
+  ln -sfnv $nom $SACD/usr/bin/gunzip
+  ln -sfnv $nom $SACD/usr/bin/gzcat
+  ln -sfnv $nom $SACD/usr/bin/gzip
+  ln -sfnv $nom $SACD/usr/bin/un$nom
+  ln -sfnv $nom $SACD/usr/bin/zcat
 
   $MKDIR $SACD/usr/share/man/man1
   $RSYNC $nom.1 $SACD/usr/share/man/man1

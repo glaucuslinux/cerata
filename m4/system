@@ -53,7 +53,7 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN $nom $SACD/usr/bin/g$nom
+  ln -sfnv $nom $SACD/usr/bin/g$nom
 
-  $LN $nom.1 $SACD/usr/share/man/man1/g$nom.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/g$nom.1
 }

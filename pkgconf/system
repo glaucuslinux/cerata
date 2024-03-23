@@ -52,13 +52,13 @@ install() {
     install-strip
 
   # Compatibility symlinks
-  $LN $nom $SACD/usr/bin/pkg-config
-  $LN $nom $SACD/usr/bin/$TGT-$nom
-  $LN $nom $SACD/usr/bin/$TGT-pkg-config
+  ln -sfnv $nom $SACD/usr/bin/pkg-config
+  ln -sfnv $nom $SACD/usr/bin/$TGT-$nom
+  ln -sfnv $nom $SACD/usr/bin/$TGT-pkg-config
 
   # Remove libtool archive (.la) file
   rm -frv $SACD/usr/lib/lib$nom.la
 
-  $LN pkg.m4 $SACD/usr/share/aclocal/$nom.m4
-  $LN $nom.1 $SACD/usr/share/man/man1/pkg-config.1
+  ln -sfnv pkg.m4 $SACD/usr/share/aclocal/$nom.m4
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/pkg-config.1
 }

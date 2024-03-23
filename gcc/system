@@ -94,28 +94,28 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $LN g++ $SACD/usr/bin/c++
+  ln -sfnv g++ $SACD/usr/bin/c++
 
   $RSYNC $CERD/$nom/c89 $SACD/usr/bin
   $RSYNC $CERD/$nom/c99 $SACD/usr/bin
 
-  $LN $nom $SACD/usr/bin/cc
-  $LN $nom $SACD/usr/bin/$nom-$ver
+  ln -sfnv $nom $SACD/usr/bin/cc
+  ln -sfnv $nom $SACD/usr/bin/$nom-$ver
 
-  $LN $TGT-g++ $SACD/usr/bin/$TGT-c++
+  ln -sfnv $TGT-g++ $SACD/usr/bin/$TGT-c++
 
-  $LN $TGT-$nom $SACD/usr/bin/$TGT-cc
-  $LN $TGT-$nom $SACD/usr/bin/$TGT-$nom-$ver
+  ln -sfnv $TGT-$nom $SACD/usr/bin/$TGT-cc
+  ln -sfnv $TGT-$nom $SACD/usr/bin/$TGT-$nom-$ver
 
-  $LN g++ $SACD/usr/bin/$TGT-g++
-  $LN $nom $SACD/usr/bin/$TGT-$nom
+  ln -sfnv g++ $SACD/usr/bin/$TGT-g++
+  ln -sfnv $nom $SACD/usr/bin/$TGT-$nom
 
-  $LN $nom-ar $SACD/usr/bin/$TGT-$nom-ar
-  $LN $nom-nm $SACD/usr/bin/$TGT-$nom-nm
-  $LN $nom-ranlib $SACD/usr/bin/$TGT-$nom-ranlib
+  ln -sfnv $nom-ar $SACD/usr/bin/$TGT-$nom-ar
+  ln -sfnv $nom-nm $SACD/usr/bin/$TGT-$nom-nm
+  ln -sfnv $nom-ranlib $SACD/usr/bin/$TGT-$nom-ranlib
 
   $MKDIR $SACD/usr/lib/bfd-plugins
-  $LN ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
+  ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries
   rm -frv \
@@ -146,7 +146,7 @@ install() {
     $SACD/usr/lib/libsupc++.la
 
   # Compatibility symlink
-  $LN ../bin/cpp $SACD/usr/lib/cpp
+  ln -sfnv ../bin/cpp $SACD/usr/lib/cpp
 
-  $LN $nom.1 $SACD/usr/share/man/man1/g++.1
+  ln -sfnv $nom.1 $SACD/usr/share/man/man1/g++.1
 }

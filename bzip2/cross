@@ -25,10 +25,10 @@ install() {
   $RSYNC bzlib.h $CRSD/usr/include
 
   $RSYNC libbz2.so.$ver $CRSD/usr/lib
-  $LN libbz2.so.$ver $CRSD/usr/lib/libbz2.so
-  $LN libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1
-  $LN libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1.0
+  ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so
+  ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1
+  ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1.0
 
   $RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
-  $LN $nom.pc $PKG_CONFIG_LIBDIR/libbz2.pc
+  ln -sfnv $nom.pc $PKG_CONFIG_LIBDIR/libbz2.pc
 }

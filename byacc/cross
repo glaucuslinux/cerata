@@ -47,9 +47,9 @@ install() {
     DESTDIR=$CRSD \
     install
 
-  $LN $nom $CRSD/usr/bin/bison
-  $LN $nom $CRSD/usr/bin/yacc
+  ln -sfnv $nom $CRSD/usr/bin/bison
+  ln -sfnv $nom $CRSD/usr/bin/yacc
 
-  $LN $nom.1 $CRSD/usr/share/man/man1/bison.1
-  $LN $nom.1 $CRSD/usr/share/man/man1/yacc.1
+  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/bison.1
+  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/yacc.1
 }

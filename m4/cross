@@ -55,7 +55,7 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $LN $nom $CRSD/usr/bin/g$nom
+  ln -sfnv $nom $CRSD/usr/bin/g$nom
 
-  $LN $nom.1 $CRSD/usr/share/man/man1/g$nom.1
+  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/g$nom.1
 }

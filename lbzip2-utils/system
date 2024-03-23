@@ -45,30 +45,30 @@ install() {
     install-strip
 
   # Compatibility symlinks
-  $LN lbzcmp $SACD/usr/bin/bzcmp
-  $LN lbzdiff $SACD/usr/bin/bzdiff
-  $LN lbzegrep $SACD/usr/bin/bzegrep
-  $LN lbzexe $SACD/usr/bin/bzexe
-  $LN lbzfgrep $SACD/usr/bin/bzfgrep
-  $LN lbzforce $SACD/usr/bin/bzforce
-  $LN lbzgrep $SACD/usr/bin/bzgrep
-  $LN lbzrecover $SACD/usr/bin/bzip2recover
-  $LN lbzless $SACD/usr/bin/bzless
-  $LN lbzmerge $SACD/usr/bin/bzmerge
-  $LN lbzmore $SACD/usr/bin/bzmore
+  ln -sfnv lbzcmp $SACD/usr/bin/bzcmp
+  ln -sfnv lbzdiff $SACD/usr/bin/bzdiff
+  ln -sfnv lbzegrep $SACD/usr/bin/bzegrep
+  ln -sfnv lbzexe $SACD/usr/bin/bzexe
+  ln -sfnv lbzfgrep $SACD/usr/bin/bzfgrep
+  ln -sfnv lbzforce $SACD/usr/bin/bzforce
+  ln -sfnv lbzgrep $SACD/usr/bin/bzgrep
+  ln -sfnv lbzrecover $SACD/usr/bin/bzip2recover
+  ln -sfnv lbzless $SACD/usr/bin/bzless
+  ln -sfnv lbzmerge $SACD/usr/bin/bzmerge
+  ln -sfnv lbzmore $SACD/usr/bin/bzmore
 
-  $LN lbzcmp.1 $SACD/usr/share/man/man1/bzcmp.1
-  $LN lbzdiff.1 $SACD/usr/share/man/man1/bzdiff.1
-  $LN lbzegrep.1 $SACD/usr/share/man/man1/bzegrep.1
-  $LN lbzexe.1 $SACD/usr/share/man/man1/bzexe.1
-  $LN lbzfgrep.1 $SACD/usr/share/man/man1/bzfgrep.1
-  $LN lbzforce.1 $SACD/usr/share/man/man1/bzforce.1
-  $LN lbzgrep.1 $SACD/usr/share/man/man1/bzgrep.1
-  $LN lbzrecover.1 $SACD/usr/share/man/man1/bzip2recover.1
-  $LN lbzless.1 $SACD/usr/share/man/man1/bzless.1
-  $LN lbzmerge.1 $SACD/usr/share/man/man1/bzmerge.1
-  $LN lbzmore.1 $SACD/usr/share/man/man1/bzmore.1
-  $LN lbzdiff.1 $SACD/usr/share/man/man1/lbzcmp.1
-  $LN lbzgrep.1 $SACD/usr/share/man/man1/lbzegrep.1
-  $LN lbzgrep.1 $SACD/usr/share/man/man1/lbzfgrep.1
+  ln -sfnv lbzcmp.1 $SACD/usr/share/man/man1/bzcmp.1
+  ln -sfnv lbzdiff.1 $SACD/usr/share/man/man1/bzdiff.1
+  ln -sfnv lbzegrep.1 $SACD/usr/share/man/man1/bzegrep.1
+  ln -sfnv lbzexe.1 $SACD/usr/share/man/man1/bzexe.1
+  ln -sfnv lbzfgrep.1 $SACD/usr/share/man/man1/bzfgrep.1
+  ln -sfnv lbzforce.1 $SACD/usr/share/man/man1/bzforce.1
+  ln -sfnv lbzgrep.1 $SACD/usr/share/man/man1/bzgrep.1
+  ln -sfnv lbzrecover.1 $SACD/usr/share/man/man1/bzip2recover.1
+  ln -sfnv lbzless.1 $SACD/usr/share/man/man1/bzless.1
+  ln -sfnv lbzmerge.1 $SACD/usr/share/man/man1/bzmerge.1
+  ln -sfnv lbzmore.1 $SACD/usr/share/man/man1/bzmore.1
+  ln -sfnv lbzdiff.1 $SACD/usr/share/man/man1/lbzcmp.1
+  ln -sfnv lbzgrep.1 $SACD/usr/share/man/man1/lbzegrep.1
+  ln -sfnv lbzgrep.1 $SACD/usr/share/man/man1/lbzfgrep.1
 }

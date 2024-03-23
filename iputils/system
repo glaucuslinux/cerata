@@ -32,6 +32,6 @@ install() {
     -C $TBLD/$nom \
     install
 
-  $LN ping $SACD/usr/bin/ping6
-  $LN tracepath $SACD/usr/bin/tracepath6
+  ln -sfnv ping $SACD/usr/bin/ping6
+  ln -sfnv tracepath $SACD/usr/bin/tracepath6
 }
