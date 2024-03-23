@@ -22,7 +22,7 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
-  $MKDIR $TBLD/$nom
+  install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
@@ -114,7 +114,7 @@ install() {
   ln -sfnv $nom-nm $SACD/usr/bin/$TGT-$nom-nm
   ln -sfnv $nom-ranlib $SACD/usr/bin/$TGT-$nom-ranlib
 
-  $MKDIR $SACD/usr/lib/bfd-plugins
+  install -dv $SACD/usr/lib/bfd-plugins
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries

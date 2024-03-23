@@ -38,12 +38,12 @@ install() {
     install-libs \
     install-tools
 
-  $MKDIR $CRSD/etc
+  install -dv $CRSD/etc
   $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-x86_64.path
 
   rm -frv $CRSD/lib
 
-  $MKDIR $CRSD/usr/bin
+  install -dv $CRSD/usr/bin
   ln -sfnv ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd
 
   ln -sfnv libc.so $CRSD/usr/lib/ld-$nom-x86_64.so.1

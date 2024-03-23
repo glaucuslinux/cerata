@@ -20,7 +20,7 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/usr/share/consolefonts
+  install -dv $SACD/usr/share/consolefonts
   $RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
   $RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts
   $RSYNC $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $SACD/usr/share/consolefonts

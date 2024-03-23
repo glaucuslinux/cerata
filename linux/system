@@ -20,9 +20,9 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/boot
+  install -dv $SACD/boot
   $RSYNC /boot/vmlinuz $SACD/boot
 
-  $MKDIR $SACD/usr/lib
+  install -dv $SACD/usr/lib
   $RSYNC /usr/lib/modules $SACD/usr/lib
 }

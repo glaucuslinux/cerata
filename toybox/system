@@ -25,7 +25,7 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/usr/bin
+  install -dv $SACD/usr/bin
   $RSYNC $nom $SACD/usr/bin
 
   ln -sfnv $nom $SACD/usr/bin/[

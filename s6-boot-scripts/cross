@@ -23,12 +23,12 @@ install() {
   $RSYNC $SRCD/$nom/etc $CRSD
   $RSYNC $SRCD/$nom/usr $CRSD
 
-  $MKDIR $CRSD/etc/s6/current/env
+  install -dv $CRSD/etc/s6/current/env
 
   mkfifo -m 0600 $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
   mkfifo -m 0600 $CRSD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  $MKDIR -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
+  install -dv -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
   $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
   $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
@@ -41,5 +41,5 @@ install() {
 
   ln -sfnv wtmpd/btmp $CRSD/var/log/btmp
   ln -sfnv wtmpd/wtmp $CRSD/var/log/wtmp
-  $MKDIR $CRSD/var/log/wtmpd
+  install -dv $CRSD/var/log/wtmpd
 }

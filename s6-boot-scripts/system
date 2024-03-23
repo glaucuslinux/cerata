@@ -23,12 +23,12 @@ install() {
   $RSYNC $SRCD/$nom/etc $SACD --delete
   $RSYNC $SRCD/$nom/usr $SACD --delete
 
-  $MKDIR $SACD/etc/s6/current/env
+  install -dv $SACD/etc/s6/current/env
 
   mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
   mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  $MKDIR -m 02750 $SACD/etc/s6/current/run-image/uncaught-logs
+  install -dv -m 02750 $SACD/etc/s6/current/run-image/uncaught-logs
 
   $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
   $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
@@ -39,10 +39,10 @@ install() {
 
   $RSYNC $CERD/$nom/modules-load $SACD/usr/bin
 
-  $MKDIR $SACD/usr/share/man/man8
+  install -dv $SACD/usr/share/man/man8
   $RSYNC $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
 
-  $MKDIR $SACD/var/log/wtmpd
+  install -dv $SACD/var/log/wtmpd
   ln -sfnv wtmpd/btmp $SACD/var/log/btmp
   ln -sfnv wtmpd/wtmp $SACD/var/log/wtmp
   chown 20:20 $SACD/var/log/wtmpd

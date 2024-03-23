@@ -20,6 +20,6 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/var/db/radula/clusters
+  install -dv $SACD/var/db/radula/clusters
   $RSYNC $CERD/ $SACD/var/db/radula/clusters/glaucus --delete
 }

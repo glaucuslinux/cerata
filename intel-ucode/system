@@ -9,7 +9,7 @@ prepare() {
 }
 
 configure() {
-  $MKDIR kernel/x86/microcode
+  install -dv kernel/x86/microcode
 }
 
 build() {
@@ -23,6 +23,6 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/boot
+  install -dv $SACD/boot
   $RSYNC $nom.img $SACD/boot
 }

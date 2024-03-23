@@ -91,6 +91,6 @@ install() {
     $SACD/usr/lib/lib${nom}ctl.a \
     $SACD/usr/lib/libomapi.a
 
-  $MKDIR $SACD/run/$nom
-  $MKDIR $SACD/var/lib/$nom
+  install -dv $SACD/run/$nom
+  install -dv $SACD/var/lib/$nom
 }

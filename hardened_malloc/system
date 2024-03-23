@@ -24,7 +24,7 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/usr/lib
+  install -dv $SACD/usr/lib
   $RSYNC out/libhardened_malloc.so $SACD/usr/lib
   $RSYNC out-light/libhardened_malloc-light.so $SACD/usr/lib
 }

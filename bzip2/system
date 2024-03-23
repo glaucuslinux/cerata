@@ -22,16 +22,16 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/usr/include
+  install -dv $SACD/usr/include
   $RSYNC bzlib.h $SACD/usr/include
 
-  $MKDIR $SACD/usr/lib
+  install -dv $SACD/usr/lib
   $RSYNC libbz2.so.$ver $SACD/usr/lib
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
-  $MKDIR $SACD/usr/lib/pkgconfig
+  install -dv $SACD/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
   ln -sfnv $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }

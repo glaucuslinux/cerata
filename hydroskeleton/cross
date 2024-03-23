@@ -22,9 +22,9 @@ check() {
 install() {
   ln -sfnv usr/bin $CRSD/bin
 
-  $MKDIR $CRSD/boot
+  install -dv $CRSD/boot
 
-  $MKDIR $CRSD/dev
+  install -dv $CRSD/dev
 
   # `$CRSD/etc` is already created by toolchain `musl`
   $RSYNC $CERD/$nom/fstab $CRSD/etc
@@ -44,21 +44,21 @@ install() {
   $RSYNC $CERD/$nom/shadow $CRSD/etc
   $RSYNC $CERD/$nom/shells $CRSD/etc
 
-  $MKDIR $CRSD/home
+  install -dv $CRSD/home
 
   ln -sfnv usr/lib $CRSD/lib
 
-  $MKDIR $CRSD/mnt
+  install -dv $CRSD/mnt
 
-  $MKDIR $CRSD/proc
+  install -dv $CRSD/proc
 
-  $MKDIR -m 0750 $CRSD/root
+  install -dv -m 0750 $CRSD/root
 
-  $MKDIR $CRSD/run
+  install -dv $CRSD/run
 
   ln -sfnv usr/bin $CRSD/sbin
 
-  $MKDIR $CRSD/sys
+  install -dv $CRSD/sys
 
   ln -sfnv run/tmp $CRSD/tmp
 
@@ -68,22 +68,22 @@ install() {
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $CRSD/usr/lib/os-release
-  $MKDIR $PKG_CONFIG_LIBDIR
+  install -dv $PKG_CONFIG_LIBDIR
   ln -sfnv bin $CRSD/usr/sbin
-  $MKDIR $CRSD/usr/share
+  install -dv $CRSD/usr/share
 
-  $MKDIR $CRSD/var/cache/radula/bin
-  $MKDIR $CRSD/var/cache/radula/src
-  $MKDIR $CRSD/var/cache/radula/venom
-  $MKDIR $CRSD/var/db/radula/clusters/glaucus
-  $MKDIR $CRSD/var/lib/hwclock
-  $MKDIR $CRSD/var/lib/misc
-  $MKDIR $CRSD/var/lib/radula
+  install -dv $CRSD/var/cache/radula/bin
+  install -dv $CRSD/var/cache/radula/src
+  install -dv $CRSD/var/cache/radula/venom
+  install -dv $CRSD/var/db/radula/clusters/glaucus
+  install -dv $CRSD/var/lib/hwclock
+  install -dv $CRSD/var/lib/misc
+  install -dv $CRSD/var/lib/radula
   ln -sfnv ../run/lock $CRSD/var/lock
-  $MKDIR $CRSD/var/log/radula
-  $MKDIR $CRSD/var/mail
+  install -dv $CRSD/var/log/radula
+  install -dv $CRSD/var/mail
   ln -sfnv ../run $CRSD/var/run
-  $MKDIR $CRSD/var/spool
+  install -dv $CRSD/var/spool
   ln -sfnv ../mail $CRSD/var/spool/mail
-  $MKDIR $CRSD/var/tmp/radula
+  install -dv $CRSD/var/tmp/radula
 }
