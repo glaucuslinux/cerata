@@ -12,6 +12,8 @@ prepare() {
 
   $PATCH -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
 
+  $PATCH -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
+
   $PATCH -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
