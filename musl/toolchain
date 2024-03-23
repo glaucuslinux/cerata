@@ -41,7 +41,7 @@ install() {
   $MKDIR $CRSD/etc
   $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-x86_64.path
 
-  $RM $CRSD/lib
+  rm -frv $CRSD/lib
 
   $MKDIR $CRSD/usr/bin
   $LN ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd

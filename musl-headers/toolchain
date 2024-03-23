@@ -39,5 +39,5 @@ install() {
   $RSYNC $CERD/musl/queue.h $CRSD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
-  $RM $CRSD/usr/include/utmpx.h
+  rm -frv $CRSD/usr/include/utmpx.h
 }

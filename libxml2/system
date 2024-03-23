@@ -53,6 +53,7 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/$nom.la
-  $RM $SACD/usr/lib/python3.11/site-packages/${nom}mod.la
+  rm -frv \
+    $SACD/usr/lib/$nom.la \
+    $SACD/usr/lib/python3.11/site-packages/${nom}mod.la
 }

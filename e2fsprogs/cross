@@ -71,8 +71,9 @@ install() {
 
   mv $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
 
-  $RM $CRSD/usr/lib/libcom_err.a
-  $RM $CRSD/usr/lib/libe2p.a
-  $RM $CRSD/usr/lib/libext2fs.a
-  $RM $CRSD/usr/lib/libss.a
+  rm -frv \
+    $CRSD/usr/lib/libcom_err.a \
+    $CRSD/usr/lib/libe2p.a \
+    $CRSD/usr/lib/libext2fs.a \
+    $CRSD/usr/lib/libss.a
 }

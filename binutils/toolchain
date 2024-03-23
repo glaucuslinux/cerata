@@ -94,7 +94,8 @@ install() {
   $LN ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
 
   # Remove unnecessary manpages
-  $RM $TLCD/usr/share/man/man1/$TGT-dlltool.1
-  $RM $TLCD/usr/share/man/man1/$TGT-windmc.1
-  $RM $TLCD/usr/share/man/man1/$TGT-windres.1
+  rm -frv \
+    $TLCD/usr/share/man/man1/$TGT-dlltool.1 \
+    $TLCD/usr/share/man/man1/$TGT-windmc.1 \
+    $TLCD/usr/share/man/man1/$TGT-windres.1
 }

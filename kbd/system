@@ -55,8 +55,9 @@ install() {
 
   $LN openvt $SACD/usr/bin/open
 
-  $RM $SACD/usr/share/keymaps/amiga
-  $RM $SACD/usr/share/keymaps/atari
-  $RM $SACD/usr/share/keymaps/i386/qwerty/ro_win.map.gz
-  $RM $SACD/usr/share/keymaps/sun
+  rm -frv \
+    $SACD/usr/share/keymaps/amiga \
+    $SACD/usr/share/keymaps/atari \
+    $SACD/usr/share/keymaps/i386/qwerty/ro_win.map.gz \
+    $SACD/usr/share/keymaps/sun
 }

@@ -49,5 +49,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/libbzip3.la
+  rm -frv $SACD/usr/lib/libbzip3.la
 }

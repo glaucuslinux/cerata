@@ -52,5 +52,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/libltdl.la
+  rm -frv $CRSD/usr/lib/libltdl.la
 }

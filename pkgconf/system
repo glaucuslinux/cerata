@@ -57,7 +57,7 @@ install() {
   $LN $nom $SACD/usr/bin/$TGT-pkg-config
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/lib$nom.la
+  rm -frv $SACD/usr/lib/lib$nom.la
 
   $LN pkg.m4 $SACD/usr/share/aclocal/$nom.m4
   $LN $nom.1 $SACD/usr/share/man/man1/pkg-config.1

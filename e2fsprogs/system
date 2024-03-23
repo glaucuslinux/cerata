@@ -69,8 +69,9 @@ install() {
 
   mv $SACD/usr/lib/e2initrd_helper $SACD/usr/bin
 
-  $RM $SACD/usr/lib/libcom_err.a
-  $RM $SACD/usr/lib/libe2p.a
-  $RM $SACD/usr/lib/libext2fs.a
-  $RM $SACD/usr/lib/libss.a
+  rm -frv \
+    $SACD/usr/lib/libcom_err.a \
+    $SACD/usr/lib/libe2p.a \
+    $SACD/usr/lib/libext2fs.a \
+    $SACD/usr/lib/libss.a
 }

@@ -53,7 +53,7 @@ install() {
       install-strip
 
     # Remove libtool archive (.la) file
-    $RM /usr/lib/lib$nom.la
+    rm -frv /usr/lib/lib$nom.la
   fi
 
   $MAKE \
@@ -61,7 +61,7 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/lib$nom.la
+  rm -frv $SACD/usr/lib/lib$nom.la
 
-  $RM $SACD/usr/lib/lib$nom.so.23.2.0-gdb.py
+  rm -frv $SACD/usr/lib/lib$nom.so.23.2.0-gdb.py
 }

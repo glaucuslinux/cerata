@@ -74,8 +74,8 @@ install() {
     install-strip
 
   $LN $nom $SACD/usr/bin/wget
-  $RM $SACD/usr/bin/${nom}_noinstall
+  rm -frv $SACD/usr/bin/${nom}_noinstall
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/libwget.la
+  rm -frv $SACD/usr/lib/libwget.la
 }

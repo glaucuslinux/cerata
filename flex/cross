@@ -60,7 +60,7 @@ install() {
   $LN $nom $CRSD/usr/bin/lex
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/libfl.la
+  rm -frv $CRSD/usr/lib/libfl.la
 
   $LN $nom.1 $CRSD/usr/share/man/man1/lex.1
 }

@@ -79,21 +79,24 @@ install() {
   $LN ld.bfd $SACD/usr/bin/ld
 
   # Manually remove the static libraries
-  $RM $SACD/usr/lib/libbfd.a
-  $RM $SACD/usr/lib/libctf.a
-  $RM $SACD/usr/lib/libctf-nobfd.a
-  $RM $SACD/usr/lib/libopcodes.a
-  $RM $SACD/usr/lib/libsframe.a
+  rm -frv \
+    $SACD/usr/lib/libbfd.a \
+    $SACD/usr/lib/libctf.a \
+    $SACD/usr/lib/libctf-nobfd.a \
+    $SACD/usr/lib/libopcodes.a \
+    $SACD/usr/lib/libsframe.a
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/libbfd.la
-  $RM $SACD/usr/lib/libctf.la
-  $RM $SACD/usr/lib/libctf-nobfd.la
-  $RM $SACD/usr/lib/libopcodes.la
-  $RM $SACD/usr/lib/libsframe.la
+  rm -frv \
+    $SACD/usr/lib/libbfd.la \
+    $SACD/usr/lib/libctf.la \
+    $SACD/usr/lib/libctf-nobfd.la \
+    $SACD/usr/lib/libopcodes.la \
+    $SACD/usr/lib/libsframe.la
 
   # Remove unnecessary manpages
-  $RM $SACD/usr/share/man/man1/dlltool.1
-  $RM $SACD/usr/share/man/man1/windmc.1
-  $RM $SACD/usr/share/man/man1/windres.1
+  rm -frv \
+    $SACD/usr/share/man/man1/dlltool.1 \
+    $SACD/usr/share/man/man1/windmc.1 \
+    $SACD/usr/share/man/man1/windres.1
 }

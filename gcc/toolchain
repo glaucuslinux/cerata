@@ -127,10 +127,11 @@ install() {
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
 
   # Remove libtool archive (.la) files
-  $RM $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
-  $RM $TLCD/usr/$TGT/lib/libstdc++.la
-  $RM $TLCD/usr/$TGT/lib/libstdc++fs.la
-  $RM $TLCD/usr/$TGT/lib/libsupc++.la
+  rm -frv \
+    $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
+    $TLCD/usr/$TGT/lib/libstdc++.la \
+    $TLCD/usr/$TGT/lib/libstdc++fs.la \
+    $TLCD/usr/$TGT/lib/libsupc++.la
 
   # Compatibility symlink
   $LN ../bin/$TGT-cpp $TLCD/usr/lib/$TGT-cpp

@@ -57,8 +57,9 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $CRSD/usr/lib/lib${nom}-8.la
-  $RM $CRSD/usr/lib/lib${nom}-16.la
-  $RM $CRSD/usr/lib/lib${nom}-32.la
-  $RM $CRSD/usr/lib/lib${nom}-posix.la
+  rm -frv \
+    $CRSD/usr/lib/lib${nom}-8.la \
+    $CRSD/usr/lib/lib${nom}-16.la \
+    $CRSD/usr/lib/lib${nom}-32.la \
+    $CRSD/usr/lib/lib${nom}-posix.la
 }

@@ -46,5 +46,5 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $RM $SACD/usr/share/info/standards.info
+  rm -frv $SACD/usr/share/info/standards.info
 }

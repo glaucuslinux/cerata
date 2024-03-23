@@ -61,7 +61,7 @@ install() {
   $LN ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/$nom.la
+  rm -frv $CRSD/usr/lib/$nom.la
 
   $LN $nom.so $CRSD/usr/lib/libreadline.so
 

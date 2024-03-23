@@ -55,5 +55,5 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $RM $SACD/usr/lib/charset.alias
+  rm -frv $SACD/usr/lib/charset.alias
 }

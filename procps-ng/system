@@ -71,5 +71,5 @@ install() {
   $LN pgrep $SACD/usr/bin/pkill
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/libproc2.la
+  rm -frv $SACD/usr/lib/libproc2.la
 }

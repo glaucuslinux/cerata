@@ -49,8 +49,9 @@ install() {
       install-strip
 
     # Remove libtool archive (.la) files
-    $RM /usr/lib/lib$nom.la
-    $RM /usr/lib/lib${nom}xx.la
+    rm -frv \
+      /usr/lib/lib$nom.la \
+      /usr/lib/lib${nom}xx.la
   fi
 
   $MAKE \
@@ -58,6 +59,7 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/lib$nom.la
-  $RM $SACD/usr/lib/lib${nom}xx.la
+  rm -frv \
+    $SACD/usr/lib/lib$nom.la \
+    $SACD/usr/lib/lib${nom}xx.la
 }

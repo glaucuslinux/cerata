@@ -49,8 +49,9 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/libpam.la
-  $RM $SACD/usr/lib/pam_deny.la
-  $RM $SACD/usr/lib/pam_permit.la
-  $RM $SACD/usr/lib/pam_return.la
+  rm -frv \
+    $SACD/usr/lib/libpam.la \
+    $SACD/usr/lib/pam_deny.la \
+    $SACD/usr/lib/pam_permit.la \
+    $SACD/usr/lib/pam_return.la
 }

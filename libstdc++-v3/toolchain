@@ -25,14 +25,16 @@ install() {
     install-strip-target-$nom
 
   # Manually remove the static libraries
-  $RM $TLCD/usr/$TGT/lib/libstdc++.a
-  $RM $TLCD/usr/$TGT/lib/libstdc++exp.a
-  $RM $TLCD/usr/$TGT/lib/libstdc++fs.a
-  $RM $TLCD/usr/$TGT/lib/libsupc++.a
+  rm -frv \
+    $TLCD/usr/$TGT/lib/libstdc++.a \
+    $TLCD/usr/$TGT/lib/libstdc++exp.a \
+    $TLCD/usr/$TGT/lib/libstdc++fs.a \
+    $TLCD/usr/$TGT/lib/libsupc++.a
 
   # Remove libtool archive (.la) files
-  $RM $TLCD/usr/$TGT/lib/libstdc++.la
-  $RM $TLCD/usr/$TGT/lib/libstdc++exp.la
-  $RM $TLCD/usr/$TGT/lib/libstdc++fs.la
-  $RM $TLCD/usr/$TGT/lib/libsupc++.la
+  rm -frv \
+    $TLCD/usr/$TGT/lib/libstdc++.la \
+    $TLCD/usr/$TGT/lib/libstdc++exp.la \
+    $TLCD/usr/$TGT/lib/libstdc++fs.la \
+    $TLCD/usr/$TGT/lib/libsupc++.la
 }

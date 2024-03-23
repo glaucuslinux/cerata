@@ -50,5 +50,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/libmagic.la
+  rm -frv $SACD/usr/lib/libmagic.la
 }

@@ -63,5 +63,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/liblzma.la
+  rm -frv $CRSD/usr/lib/liblzma.la
 }

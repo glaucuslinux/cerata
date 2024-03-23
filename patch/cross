@@ -57,5 +57,5 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $RM $CRSD/usr/lib/charset.alias
+  rm -frv $CRSD/usr/lib/charset.alias
 }

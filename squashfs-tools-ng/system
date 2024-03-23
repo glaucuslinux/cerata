@@ -58,5 +58,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/libsquashfs.la
+  rm -frv $CRSD/usr/lib/libsquashfs.la
 }

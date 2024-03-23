@@ -29,6 +29,7 @@ install() {
     install-strip-target-$nom
 
   # Manually remove the static libraries
-  $RM $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a
-  $RM $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a
+  rm -frv \
+    $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a \
+    $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a
 }
