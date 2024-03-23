@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $AUTORECONF
+  autoreconf -vfis
 
   $RSYNC $CERD/binutils/config.guess .
   $RSYNC $CERD/binutils/config.sub .

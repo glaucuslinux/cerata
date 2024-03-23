@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom $TSRC --delete
   cd $TSRC/$nom
 
-  $AUTORECONF
+  autoreconf -vfis
 }
 
 configure() {
