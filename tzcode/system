@@ -38,6 +38,6 @@ install() {
   $RSYNC zdump.8 $SACD/usr/share/man/man8
   $RSYNC zic.8 $SACD/usr/share/man/man8
 
-  $MKDIR $SACD/usr/share/zoneinfo/posix
-  $MKDIR $SACD/usr/share/zoneinfo/right
+  install -dv $SACD/usr/share/zoneinfo/posix
+  install -dv $SACD/usr/share/zoneinfo/right
 }

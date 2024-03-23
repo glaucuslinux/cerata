@@ -62,14 +62,14 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $MKDIR $SACD/etc/depmod.d
-  $MKDIR $SACD/etc/modprobe.d
+  install -dv $SACD/etc/depmod.d
+  install -dv $SACD/etc/modprobe.d
 
-  $MKDIR $SACD/usr/lib/depmod.d
+  install -dv $SACD/usr/lib/depmod.d
   $RSYNC $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
 
   # Remove libtool archive (.la) file
   rm -frv $SACD/usr/lib/lib$nom.la
 
-  $MKDIR $SACD/usr/lib/modprobe.d
+  install -dv $SACD/usr/lib/modprobe.d
 }

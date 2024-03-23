@@ -9,7 +9,7 @@ prepare() {
 
   $PATCH -p1 -i $CERD/$nom/patches/glaucus/musl-stacksize.patch
 
-  $MKDIR $TBLD/$nom
+  install -dv $TBLD/$nom
 }
 
 configure() {

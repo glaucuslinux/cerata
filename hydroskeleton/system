@@ -22,11 +22,11 @@ check() {
 install() {
   ln -sfnv usr/bin $SACD/bin
 
-  $MKDIR $SACD/boot
+  install -dv $SACD/boot
 
-  $MKDIR $SACD/dev
+  install -dv $SACD/dev
 
-  $MKDIR $SACD/etc
+  install -dv $SACD/etc
   $RSYNC $CERD/$nom/fstab $SACD/etc
   ln -sfnv lsb-release $SACD/etc/glaucus-release
   $RSYNC $CERD/$nom/group $SACD/etc
@@ -44,46 +44,46 @@ install() {
   $RSYNC $CERD/$nom/shadow $SACD/etc
   $RSYNC $CERD/$nom/shells $SACD/etc
 
-  $MKDIR $SACD/home
+  install -dv $SACD/home
 
   ln -sfnv usr/lib $SACD/lib
 
-  $MKDIR $SACD/mnt
+  install -dv $SACD/mnt
 
-  $MKDIR $SACD/proc
+  install -dv $SACD/proc
 
-  $MKDIR -m 0750 $SACD/root
+  install -dv -m 0750 $SACD/root
 
-  $MKDIR $SACD/run
+  install -dv $SACD/run
 
   ln -sfnv usr/bin $SACD/sbin
 
-  $MKDIR $SACD/sys
+  install -dv $SACD/sys
 
   ln -sfnv run/tmp $SACD/tmp
 
-  $MKDIR $SACD/usr/lib
+  install -dv $SACD/usr/lib
   $RSYNC $CERD/$nom/os-release $SACD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $SACD/usr/lib/os-release
-  $MKDIR $PKG_CONFIG_LIBDIR
+  install -dv $PKG_CONFIG_LIBDIR
   ln -sfnv bin $SACD/usr/sbin
-  $MKDIR $SACD/usr/share
+  install -dv $SACD/usr/share
 
-  $MKDIR $SACD/var/cache/radula/bin
-  $MKDIR $SACD/var/cache/radula/src
-  $MKDIR $SACD/var/cache/radula/venom
-  $MKDIR $SACD/var/db/radula/clusters/glaucus
-  $MKDIR $SACD/var/lib/hwclock
-  $MKDIR $SACD/var/lib/misc
-  $MKDIR $SACD/var/lib/radula
+  install -dv $SACD/var/cache/radula/bin
+  install -dv $SACD/var/cache/radula/src
+  install -dv $SACD/var/cache/radula/venom
+  install -dv $SACD/var/db/radula/clusters/glaucus
+  install -dv $SACD/var/lib/hwclock
+  install -dv $SACD/var/lib/misc
+  install -dv $SACD/var/lib/radula
   ln -sfnv ../run/lock $SACD/var/lock
-  $MKDIR $SACD/var/log/radula
-  $MKDIR $SACD/var/mail
+  install -dv $SACD/var/log/radula
+  install -dv $SACD/var/mail
   ln -sfnv ../run $SACD/var/run
-  $MKDIR $SACD/var/spool
+  install -dv $SACD/var/spool
   ln -sfnv ../mail $SACD/var/spool/mail
-  $MKDIR $SACD/var/tmp/radula
+  install -dv $SACD/var/tmp/radula
 }

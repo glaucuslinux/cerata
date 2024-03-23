@@ -40,6 +40,6 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $MKDIR $SACD/usr/lib/pkgconfig
+  install -dv $SACD/usr/lib/pkgconfig
   $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
 }

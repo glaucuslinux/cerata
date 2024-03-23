@@ -7,7 +7,7 @@ prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $MKDIR $TBLD/$nom
+  install -dv $TBLD/$nom
 }
 
 configure() {

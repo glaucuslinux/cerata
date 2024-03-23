@@ -53,7 +53,7 @@ install() {
   $RSYNC $CERD/$nom/inputrc $SACD/etc
 
   # Use libedit as a drop-in replacement for `readline`
-  $MKDIR $SACD/usr/include/readline
+  install -dv $SACD/usr/include/readline
   touch $SACD/usr/include/readline/history.h
   touch $SACD/usr/include/readline/tilde.h
   ln -sfnv ../editline/readline.h $SACD/usr/include/readline/readline.h

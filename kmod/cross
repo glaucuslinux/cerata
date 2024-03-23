@@ -64,14 +64,14 @@ install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $MKDIR $CRSD/etc/depmod.d
-  $MKDIR $CRSD/etc/modprobe.d
+  install -dv $CRSD/etc/depmod.d
+  install -dv $CRSD/etc/modprobe.d
 
-  $MKDIR $CRSD/usr/lib/depmod.d
+  install -dv $CRSD/usr/lib/depmod.d
   $RSYNC $CERD/$nom/search.conf $CRSD/usr/lib/depmod.d
 
   # Remove libtool archive (.la) file
   rm -frv $CRSD/usr/lib/lib$nom.la
 
-  $MKDIR $CRSD/usr/lib/modprobe.d
+  install -dv $CRSD/usr/lib/modprobe.d
 }

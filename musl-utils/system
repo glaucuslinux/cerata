@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  $MKDIR $TBLD/$nom
+  install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
@@ -22,11 +22,11 @@ check() {
 }
 
 install() {
-  $MKDIR $SACD/usr/bin
+  install -dv $SACD/usr/bin
   $RSYNC gencat $SACD/usr/bin
   $RSYNC getent $SACD/usr/bin
 
-  $MKDIR $SACD/usr/share/man/man1
+  install -dv $SACD/usr/share/man/man1
   $RSYNC $CERD/musl/gencat.1 $SACD/usr/share/man/man1
   $RSYNC $CERD/musl/getent.1 $SACD/usr/share/man/man1
 }

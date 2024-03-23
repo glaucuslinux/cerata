@@ -10,7 +10,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
   $PATCH -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
 
-  $MKDIR $TBLD/$nom
+  install -dv $TBLD/$nom
 }
 
 configure() {
@@ -58,7 +58,7 @@ install() {
     install/strip
 
   # Hardcoded `gcc` version number
-  $MKDIR $SACD/usr/lib/$nom
+  install -dv $SACD/usr/lib/$nom
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c++
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c89
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c99
