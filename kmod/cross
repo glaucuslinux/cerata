@@ -71,7 +71,7 @@ install() {
   $RSYNC $CERD/$nom/search.conf $CRSD/usr/lib/depmod.d
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/lib$nom.la
+  rm -frv $CRSD/usr/lib/lib$nom.la
 
   $MKDIR $CRSD/usr/lib/modprobe.d
 }

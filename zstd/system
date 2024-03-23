@@ -50,7 +50,7 @@ install() {
     install
 
   # Manually remove the static library
-  $RM $SACD/usr/lib/lib$nom.a
+  rm -frv $SACD/usr/lib/lib$nom.a
 
   $LN $nom.1 $SACD/usr/share/man/man1/p${nom}.1
 }

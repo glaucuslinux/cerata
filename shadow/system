@@ -69,5 +69,5 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/libsubid.la
+  rm -frv $SACD/usr/lib/libsubid.la
 }

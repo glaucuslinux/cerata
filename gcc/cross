@@ -126,27 +126,29 @@ install() {
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries
-  $RM $CRSD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a
-  $RM $CRSD/usr/lib/$nom/$TGT/$ver/libgcov.a
-  $RM $CRSD/usr/lib/libatomic.a
-  $RM $CRSD/usr/lib/libgomp.a
-  $RM $CRSD/usr/lib/libitm.a
-  $RM $CRSD/usr/lib/libquadmath.a
-  $RM $CRSD/usr/lib/libstdc++.a
-  $RM $CRSD/usr/lib/libstdc++exp.a
-  $RM $CRSD/usr/lib/libstdc++fs.a
-  $RM $CRSD/usr/lib/libsupc++.a
+  rm -frv \
+    $CRSD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
+    $CRSD/usr/lib/$nom/$TGT/$ver/libgcov.a \
+    $CRSD/usr/lib/libatomic.a \
+    $CRSD/usr/lib/libgomp.a \
+    $CRSD/usr/lib/libitm.a \
+    $CRSD/usr/lib/libquadmath.a \
+    $CRSD/usr/lib/libstdc++.a \
+    $CRSD/usr/lib/libstdc++exp.a \
+    $CRSD/usr/lib/libstdc++fs.a \
+    $CRSD/usr/lib/libsupc++.a
 
   # Remove libtool archive (.la) files
-  $RM $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
-  $RM $CRSD/usr/lib/libatomic.la
-  $RM $CRSD/usr/lib/libgomp.la
-  $RM $CRSD/usr/lib/libitm.la
-  $RM $CRSD/usr/lib/libquadmath.la
-  $RM $CRSD/usr/lib/libstdc++.la
-  $RM $CRSD/usr/lib/libstdc++exp.la
-  $RM $CRSD/usr/lib/libstdc++fs.la
-  $RM $CRSD/usr/lib/libsupc++.la
+  rm -frv \
+    $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
+    $CRSD/usr/lib/libatomic.la \
+    $CRSD/usr/lib/libgomp.la \
+    $CRSD/usr/lib/libitm.la \
+    $CRSD/usr/lib/libquadmath.la \
+    $CRSD/usr/lib/libstdc++.la \
+    $CRSD/usr/lib/libstdc++exp.la \
+    $CRSD/usr/lib/libstdc++fs.la \
+    $CRSD/usr/lib/libsupc++.la
 
   # Compatibility symlink
   $LN ../bin/cpp $CRSD/usr/lib/cpp

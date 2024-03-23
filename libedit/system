@@ -59,7 +59,7 @@ install() {
   $LN ../editline/readline.h $SACD/usr/include/readline/readline.h
 
   # Remove libtool archive (.la) file
-  $RM $SACD/usr/lib/$nom.la
+  rm -frv $SACD/usr/lib/$nom.la
 
   $LN $nom.so $SACD/usr/lib/libreadline.so
 

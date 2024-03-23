@@ -57,9 +57,10 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $CRSD/usr/lib/libcrypto.la
-  $RM $CRSD/usr/lib/libssl.la
-  $RM $CRSD/usr/lib/libtls.la
+  rm -frv \
+    $CRSD/usr/lib/libcrypto.la \
+    $CRSD/usr/lib/libssl.la \
+    $CRSD/usr/lib/libtls.la
 
   $CHMOD 0755 $CRSD/usr/lib/libcrypto.so.53.0.0
   $CHMOD 0755 $CRSD/usr/lib/libssl.so.56.0.0

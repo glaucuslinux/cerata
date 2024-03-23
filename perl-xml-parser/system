@@ -25,6 +25,7 @@ install() {
     DESTDIR=$SACD \
     install
 
-  $RM $SACD/usr/lib/perl5/5.38/core_perl/perllocal.pod
-  $RM $SACD/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
+  rm -frv \
+    $SACD/usr/lib/perl5/5.38/core_perl/perllocal.pod \
+    $SACD/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
 }

@@ -64,5 +64,5 @@ install() {
   $LN bsdtar $CRSD/usr/bin/tar
 
   # Remove libtool archive (.la) file
-  $RM $CRSD/usr/lib/$nom.la
+  rm -frv $CRSD/usr/lib/$nom.la
 }

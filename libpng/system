@@ -57,8 +57,9 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/$nom.la
-  $RM $SACD/usr/lib/${nom}16.la
+  rm -frv \
+    $SACD/usr/lib/$nom.la \
+    $SACD/usr/lib/${nom}16.la
 
   $RSYNC contrib/pngminus/png2pnm $SACD/usr/bin
   $RSYNC contrib/pngminus/pnm2png $SACD/usr/bin

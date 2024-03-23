@@ -118,30 +118,32 @@ install() {
   $LN ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
 
   # Manually remove the static libraries
-  $RM $SACD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a
-  $RM $SACD/usr/lib/$nom/$TGT/$ver/libgcov.a
-  $RM $SACD/usr/lib/libatomic.a
-  $RM $SACD/usr/lib/libgomp.a
-  $RM $SACD/usr/lib/libitm.a
-  $RM $SACD/usr/lib/libquadmath.a
-  $RM $SACD/usr/lib/libstdc++.a
-  $RM $SACD/usr/lib/libstdc++exp.a
-  $RM $SACD/usr/lib/libstdc++fs.a
-  $RM $SACD/usr/lib/libsupc++.a
+  rm -frv \
+    $SACD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
+    $SACD/usr/lib/$nom/$TGT/$ver/libgcov.a \
+    $SACD/usr/lib/libatomic.a \
+    $SACD/usr/lib/libgomp.a \
+    $SACD/usr/lib/libitm.a \
+    $SACD/usr/lib/libquadmath.a \
+    $SACD/usr/lib/libstdc++.a \
+    $SACD/usr/lib/libstdc++exp.a \
+    $SACD/usr/lib/libstdc++fs.a \
+    $SACD/usr/lib/libsupc++.a
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la
-  $RM $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la
-  $RM $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcp1plugin.la
-  $RM $SACD/usr/lib/libatomic.la
-  $RM $SACD/usr/lib/libcc1.la
-  $RM $SACD/usr/lib/libgomp.la
-  $RM $SACD/usr/lib/libitm.la
-  $RM $SACD/usr/lib/libquadmath.la
-  $RM $SACD/usr/lib/libstdc++.la
-  $RM $SACD/usr/lib/libstdc++exp.la
-  $RM $SACD/usr/lib/libstdc++fs.la
-  $RM $SACD/usr/lib/libsupc++.la
+  rm -frv \
+    $SACD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
+    $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la \
+    $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcp1plugin.la \
+    $SACD/usr/lib/libatomic.la \
+    $SACD/usr/lib/libcc1.la \
+    $SACD/usr/lib/libgomp.la \
+    $SACD/usr/lib/libitm.la \
+    $SACD/usr/lib/libquadmath.la \
+    $SACD/usr/lib/libstdc++.la \
+    $SACD/usr/lib/libstdc++exp.la \
+    $SACD/usr/lib/libstdc++fs.la \
+    $SACD/usr/lib/libsupc++.la
 
   # Compatibility symlink
   $LN ../bin/cpp $SACD/usr/lib/cpp

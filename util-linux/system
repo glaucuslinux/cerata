@@ -83,9 +83,10 @@ install() {
     install-strip
 
   # Remove libtool archive (.la) files
-  $RM $SACD/usr/lib/libblkid.la
-  $RM $SACD/usr/lib/libfdisk.la
-  $RM $SACD/usr/lib/libmount.la
-  $RM $SACD/usr/lib/libsmartcols.la
-  $RM $SACD/usr/lib/libuuid.la
+  rm -frv \
+    $SACD/usr/lib/libblkid.la \
+    $SACD/usr/lib/libfdisk.la \
+    $SACD/usr/lib/libmount.la \
+    $SACD/usr/lib/libsmartcols.la \
+    $SACD/usr/lib/libuuid.la
 }

@@ -86,9 +86,10 @@ install() {
 
   $RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script
 
-  $RM $SACD/usr/lib/lib${nom}.a
-  $RM $SACD/usr/lib/lib${nom}ctl.a
-  $RM $SACD/usr/lib/libomapi.a
+  rm -frv \
+    $SACD/usr/lib/lib${nom}.a \
+    $SACD/usr/lib/lib${nom}ctl.a \
+    $SACD/usr/lib/libomapi.a
 
   $MKDIR $SACD/run/$nom
   $MKDIR $SACD/var/lib/$nom
