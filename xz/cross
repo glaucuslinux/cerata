@@ -11,7 +11,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
   $PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
 
-  $AUTORECONF
+  autoreconf -vfis
 
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.rpath build-aux

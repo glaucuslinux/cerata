@@ -15,7 +15,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13638.$nom
   $PATCH -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-20633.$nom
 
-  $AUTORECONF
+  autoreconf -vfis
 
   $RSYNC $CERD/binutils/config.guess build-aux
   $RSYNC $CERD/binutils/config.sub build-aux
