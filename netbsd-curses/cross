@@ -33,11 +33,12 @@ install() {
   ln -sfnv tic $CRSD/usr/bin/captoinfo
   ln -sfnv tic $CRSD/usr/bin/infotocap
 
-  $CHMOD 0755 $CRSD/usr/lib/libcurses.so
-  $CHMOD 0755 $CRSD/usr/lib/libform.so
-  $CHMOD 0755 $CRSD/usr/lib/libmenu.so
-  $CHMOD 0755 $CRSD/usr/lib/libpanel.so
-  $CHMOD 0755 $CRSD/usr/lib/libterminfo.so
+  chmod -Rv 0755 \
+    $CRSD/usr/lib/libcurses.so \
+    $CRSD/usr/lib/libform.so \
+    $CRSD/usr/lib/libmenu.so \
+    $CRSD/usr/lib/libpanel.so \
+    $CRSD/usr/lib/libterminfo.so
 
   # Some cerata (e.g. `util-linux` and `yash`) link against this symlink
   ln -sfnv libterminfo.so $CRSD/usr/lib/libtinfo.so

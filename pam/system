@@ -57,5 +57,5 @@ install() {
     DESTDIR=$SACD \
     install-strip
 
-  $CHMOD 4755 $SACD/usr/bin/unix_chkpwd
+  chmod -Rv 4755 $SACD/usr/bin/unix_chkpwd
 }
