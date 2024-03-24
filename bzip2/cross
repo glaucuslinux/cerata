@@ -3,25 +3,25 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p1 -i $CERD/$nom/patches/void/soname.patch
 }
 
-build() {
+ceras_build() {
   $MAKE \
     -f Makefile-libbz2_so
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $RSYNC bzlib.h $CRSD/usr/include
 
   $RSYNC libbz2.so.$ver $CRSD/usr/lib

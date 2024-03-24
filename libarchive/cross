@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -16,7 +16,7 @@ prepare() {
   $PATCH -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
 }
 
-configure() {
+ceras_configure() {
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -47,15 +47,15 @@ configure() {
     --without-xml2
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip

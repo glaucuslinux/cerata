@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/procps-v$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub .
 }
 
-configure() {
+ceras_configure() {
   # `ncurses` support is enabled by default
   # `systemd` support is disabled by default
   LIBS='-lutmps -lskarnet' \
@@ -53,15 +53,15 @@ configure() {
     --disable-whining
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     install-strip

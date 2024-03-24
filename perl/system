@@ -3,14 +3,14 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch
 }
 
-configure() {
+ceras_configure() {
   BUILD_ZLIB=False \
   BUILD_BZIP2=0 \
   ./Configure \
@@ -41,15 +41,15 @@ configure() {
     -Dvendorscript=/usr/bin/vendor_$nom
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   if [ $BOOTSTRAP = yes ]; then
     $MAKE \
       install

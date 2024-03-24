@@ -3,28 +3,28 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
-configure() {
+ceras_configure() {
   glaucus-muon \
     -Dsystem-bus-address=unix:path=/run/dbus/system_bus_socket \
     $TBLD/$nom
 }
 
-build() {
+ceras_build() {
   samu \
     -C $TBLD/$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   DESTDIR=$SACD \
   muon \
     -C $TBLD/$nom \

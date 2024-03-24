@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   $SRCD/$nom/$nom-$ver/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -31,15 +31,15 @@ configure() {
     --with-libedit
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     install-strip

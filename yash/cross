@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -11,7 +11,7 @@ prepare() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-fix-cross-compile.patch
 
   ./configure \
@@ -36,7 +36,7 @@ configure() {
     --enable-ulimit
 }
 
-build() {
+ceras_build() {
   # Build `makesignum` using host's compiler
   $MAKE \
     CC=$HOSTCC \
@@ -45,11 +45,11 @@ build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip

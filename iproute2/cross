@@ -3,28 +3,28 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   $PATCH -p1 -i $CERD/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-remove-arpd.patch
 
   ./configure
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     BINDIR=/usr/bin \
     DESTDIR=$CRSD \

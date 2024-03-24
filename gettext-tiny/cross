@@ -3,16 +3,16 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   $MAKE \
     prefix=/usr \
     sysconfdir=/etc \
@@ -21,11 +21,11 @@ build() {
     LDFLAGS="$LDFLAGS"
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     prefix=/usr \
     sysconfdir=/etc \

@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   # `CC`, `AR`, `CFLAGS` and `LDFLAGS` have to be specified, otherwise they
   # won't be read, and `--disable-static` implies `--enable-shared`.
   $SRCD/$nom/$nom-$ver/configure \
@@ -27,15 +27,15 @@ configure() {
     LDFLAGS="$LDFLAGS"
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   # `install-bin-strip` ensures that the `minilzip` binary is installed
   $MAKE \
     DESTDIR=$SACD \

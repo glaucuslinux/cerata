@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/upstream/0001-libressl-compatibility.patch
 }
 
-configure() {
+ceras_configure() {
   # `--with-openssl` doesn't work with `libressl`
   ./configure \
     --build=$BLD \
@@ -62,15 +62,15 @@ configure() {
     --without-libmicrohttpd
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip

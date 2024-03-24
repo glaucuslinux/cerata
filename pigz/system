@@ -3,26 +3,26 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   sed -e "s/CFLAGS=.*/CFLAGS=$CFLAGS/" \
     -e "s/LDFLAGS=/&$LDFLAGS/" \
     -i Makefile
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   # `pigz` and `unpigz` are symbolic links
   install -dv $SACD/usr/bin
   $RSYNC $nom $SACD/usr/bin

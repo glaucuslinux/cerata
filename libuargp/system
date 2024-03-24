@@ -3,24 +3,24 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom $TSRC --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     prefix=/usr \
     bindir=/usr/bin \

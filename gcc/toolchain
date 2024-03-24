@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -31,7 +31,7 @@ prepare() {
   cd $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$BLD \
@@ -87,7 +87,7 @@ configure() {
     --with-linker-hash-style=gnu
 }
 
-build() {
+ceras_build() {
   # Disable parallel build!
   MAKEFLAGS=-j1 \
   $MAKE \
@@ -101,11 +101,11 @@ build() {
     all-target-lib$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     install-strip-$nom \
     install-strip-target-lib$nom
