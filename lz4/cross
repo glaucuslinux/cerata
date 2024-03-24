@@ -3,16 +3,16 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   $MAKE \
     BUILD_STATIC=no \
     DESTDIR=$CRSD \
@@ -24,11 +24,11 @@ build() {
     MAN1DIR=/usr/share/man/man1
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     BUILD_STATIC=no \
     DESTDIR=$CRSD \

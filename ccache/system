@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -13,7 +13,7 @@ prepare() {
   install -dv $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   cmake \
     -B $TBLD/$nom \
     -DCMAKE_BUILD_TYPE=Release \
@@ -42,16 +42,16 @@ configure() {
     -G Ninja
 }
 
-build() {
+ceras_build() {
   samu \
     -C $TBLD/$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   DESTDIR=$SACD \
   samu \
     -C $TBLD/$nom \

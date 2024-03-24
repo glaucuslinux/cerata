@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -20,7 +20,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub config
 }
 
-configure() {
+ceras_configure() {
   LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   ./configure \
@@ -68,15 +68,15 @@ configure() {
     --without-python
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     usrsbin_execdir=/usr/bin \

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
 
   cd $SRCD/linux/linux-$ver
@@ -13,19 +13,19 @@ prepare() {
     mrproper
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   :
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     O=$TBLD/$nom \
     ARCH=x86_64 \

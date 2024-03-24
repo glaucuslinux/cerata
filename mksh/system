@@ -3,25 +3,25 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   sh $SRCD/$nom/$nom/Build.sh \
     -r
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $RSYNC $nom $SACD/usr/bin
   ln -sfnv $nom $SACD/usr/bin/ksh
   ln -sfnv $nom $SACD/usr/bin/rksh

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,23 +12,23 @@ prepare() {
   install -dv $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   glaucus-muon \
     -Dpng=enabled \
     -Dtests=disabled \
     $TBLD/$nom
 }
 
-build() {
+ceras_build() {
   samu \
     -C $TBLD/$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   DESTDIR=$SACD \
   muon \
     -C $TBLD/$nom \

@@ -3,23 +3,23 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   :
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   :
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   install -dv $SACD/usr/share/consolefonts
   $RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
   $RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts

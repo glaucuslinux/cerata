@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,7 +12,7 @@ prepare() {
   $RSYNC $CERD/binutils/config.sub build-aux
 }
 
-configure() {
+ceras_configure() {
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -40,15 +40,15 @@ configure() {
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
     install-strip

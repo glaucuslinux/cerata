@@ -3,23 +3,23 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   :
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   :
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   install -dv $SACD/var/db/radula/clusters
   $RSYNC $CERD/ $SACD/var/db/radula/clusters/glaucus --delete
 }

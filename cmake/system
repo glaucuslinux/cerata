@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   CXXFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   MAKE= \
@@ -34,15 +34,15 @@ configure() {
     --no-system-libuv
 }
 
-build() {
+ceras_build() {
   samu
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   if [ $BOOTSTRAP = yes ]; then
     samu \
       install/strip

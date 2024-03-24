@@ -3,13 +3,13 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   install -dv $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
-configure() {
+ceras_configure() {
   $CERD/$nom/glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \
@@ -21,16 +21,16 @@ configure() {
     $TBLD/$nom
 }
 
-build() {
+ceras_build() {
   samu \
     -C $TBLD/$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   DESTDIR=$SACD \
   $nom \
     -C $TBLD/$nom \

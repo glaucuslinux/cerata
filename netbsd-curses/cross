@@ -3,28 +3,28 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
 
   $PATCH -p1 -i $CERD/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
 }
 
-build() {
+ceras_build() {
   $MAKE \
     PREFIX=/usr \
     all-dynamic
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     PREFIX=/usr \
     DESTDIR=$CRSD \

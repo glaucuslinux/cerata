@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -14,7 +14,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
 }
 
-configure() {
+ceras_configure() {
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -41,15 +41,15 @@ configure() {
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     install-strip

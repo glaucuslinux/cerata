@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -13,7 +13,7 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
 }
 
-configure() {
+ceras_configure() {
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -36,15 +36,15 @@ configure() {
     --without-x
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD
 }

@@ -3,16 +3,16 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   $MAKE \
     XZ_SUPPORT=1 \
     LZO_SUPPORT=1 \
@@ -22,11 +22,11 @@ build() {
     -C $nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     INSTALL_PREFIX=$SACD/usr \
     INSTALL_DIR=$SACD/usr/bin \

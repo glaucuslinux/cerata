@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ prepare() {
   cd $TBLD/$nom
 }
 
-configure() {
+ceras_configure() {
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$TGT \
@@ -64,16 +64,16 @@ configure() {
     --with-system-zlib
 }
 
-build() {
+ceras_build() {
   $MAKE \
     tooldir=/usr
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     tooldir=/usr \
     DESTDIR=$CRSD \

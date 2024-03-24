@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-configure() {
+ceras_configure() {
   $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
 
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
@@ -81,15 +81,15 @@ LN='$LN'" > configure.local
   ./configure
 }
 
-build() {
+ceras_build() {
   $MAKE
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     install

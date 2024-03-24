@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
+ceras_prepare() {
   $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,11 +12,11 @@ prepare() {
   $PATCH -p1 -i $CERD/$nom/patches/opensuse/p${nom}.1.patch
 }
 
-configure() {
+ceras_configure() {
   :
 }
 
-build() {
+ceras_build() {
   $MAKE \
     HAVE_PTHREAD=1 \
     ZSTD_LEGACY_SUPPORT=0 \
@@ -32,11 +32,11 @@ build() {
     -C contrib/p$nom
 }
 
-check() {
+ceras_check() {
   :
 }
 
-install() {
+ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
     PREFIX=/usr \
