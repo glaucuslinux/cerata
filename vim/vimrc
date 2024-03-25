@@ -10,7 +10,6 @@ set cmdheight=1
 set colorcolumn=80
 set completeopt=menuone,noinsert,noselect
 set confirm
-set cursorcolumn
 set cursorline
 set display+=lastline
 set encoding=UTF-8
@@ -25,7 +24,6 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
-set list
 set mat=2
 set modifiable
 set mouse=a
@@ -46,7 +44,6 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=0
-set spell
 set tabstop=2
 set t_Co=256
 set textwidth=80
