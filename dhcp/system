@@ -79,9 +79,9 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  mv $SACD/etc/$nom/dhclient.conf.example $SACD/etc/$nom/dhclient.conf
+  mv -fv $SACD/etc/$nom/dhclient.conf.example $SACD/etc/$nom/dhclient.conf
   $RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
-  mv $SACD/etc/$nom/${nom}d.conf.example $SACD/etc/$nom/${nom}d.conf
+  mv -fv $SACD/etc/$nom/${nom}d.conf.example $SACD/etc/$nom/${nom}d.conf
   $RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
 
   $RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script

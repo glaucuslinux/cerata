@@ -69,7 +69,7 @@ ceras_install() {
     install-strip \
     install-libs
 
-  mv $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
+  mv -fv $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
 
   rm -frv \
     $CRSD/usr/lib/libcom_err.a \

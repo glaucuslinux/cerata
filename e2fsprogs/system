@@ -67,7 +67,7 @@ ceras_install() {
     install-strip \
     install-libs
 
-  mv $SACD/usr/lib/e2initrd_helper $SACD/usr/bin
+  mv -fv $SACD/usr/lib/e2initrd_helper $SACD/usr/bin
 
   rm -frv \
     $SACD/usr/lib/libcom_err.a \
