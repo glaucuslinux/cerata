@@ -1,7 +1,7 @@
 --- configure
 +++ configure
 @@ -288,7 +288,7 @@
- 	-o "${tempout}" "${tempo}" "$@" ${LDLIBS-${ldlibs}}
+         -o "${tempout}" "${tempo}" "$@" ${LDLIBS-${ldlibs}}
  }
  tryexec () {
 -    checkby "${tempout}"
