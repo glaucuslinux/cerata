@@ -13,7 +13,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
 
   ./configure \
     --build=$BLD \

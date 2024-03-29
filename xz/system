@@ -7,9 +7,9 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/default-threading.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/io-size.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/speedup.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/clear/default-threading.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/clear/io-size.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/clear/speedup.patch
 
   autoreconf -vfis
 
@@ -44,7 +44,7 @@ ceras_configure() {
     --with-pic
 
   # Further disable rpath
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/alpine/0001-disable-rpath.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/alpine/0001-disable-rpath.patch
 }
 
 ceras_build() {

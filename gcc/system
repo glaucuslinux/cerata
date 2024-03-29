@@ -11,16 +11,15 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath .
   $RADULA_RSYNC $CERD/binutils/config.sub .
 
-  # Apply alpine `gcc` patches
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
   install -dv $TBLD/$nom
   cd $TBLD/$nom

@@ -22,9 +22,9 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
   $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
 ceras_configure() {

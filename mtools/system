@@ -10,7 +10,7 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.guess .
   $RADULA_RSYNC $CERD/binutils/config.sub .
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
 }
 
 ceras_configure() {

@@ -7,7 +7,7 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/0001-Lower-test-timeout.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/clear/0001-Lower-test-timeout.patch
 
   autoreconf -vfis
 

@@ -7,7 +7,7 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  $RADULA_PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
 }
 
 ceras_configure() {

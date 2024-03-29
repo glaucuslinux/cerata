@@ -11,7 +11,7 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath config
   $RADULA_RSYNC $CERD/binutils/config.sub config
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/void/cross.patch
 
   # `INSTALL` documentation recommends building out of tree
   install -dv $TBLD/$nom

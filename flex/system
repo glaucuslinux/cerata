@@ -14,7 +14,7 @@ ceras_prepare() {
 
 ceras_configure() {
   # This patch will be part of flex-2.6.5 release
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
 
   ./configure \
     --prefix=/usr \

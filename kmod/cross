@@ -10,11 +10,11 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.guess build-aux
   $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/void/stdout.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
 ceras_configure() {

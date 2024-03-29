@@ -9,7 +9,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 ceras_build() {
