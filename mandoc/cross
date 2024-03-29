@@ -89,6 +89,6 @@ ceras_check() {
 
 ceras_install() {
   $MAKE \
-    DESTDIR=$SACD \
+    DESTDIR=$CRSD \
     install
 }
