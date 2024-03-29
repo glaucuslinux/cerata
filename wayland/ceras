@@ -5,6 +5,6 @@
 
 nom="wayland"
 ver="1.22.0"
-url="https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.22.0/downloads/wayland-1.22.0.tar.xz"
-sum="81c50b673472657ac334a73340ec17448136162c943bfff7bd9677d64ea286c7"
+url="https://gitlab.freedesktop.org/wayland/wayland/-/archive/1.22.0/wayland-1.22.0.tar.gz"
+sum="c0cd4a5af43a0ee2cb9a1962286760e8e38048eecf7ee3efa3ef5d570562e7a9"
 cnt="expat libffi muon python samurai"
