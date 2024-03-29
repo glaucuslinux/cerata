@@ -7,12 +7,12 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0003-fix-cross-compile.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0003-fix-cross-compile.patch
 
   ./configure \
     --prefix=/usr \

@@ -9,7 +9,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/void/soname.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/void/soname.patch
 }
 
 ceras_build() {
