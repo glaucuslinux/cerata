@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="spleen"
-ver="2.0.2"
-url="https://github.com/fcambus/spleen/releases/download/2.0.2/spleen-2.0.2.tar.gz"
-sum="c902f904e887282d776e1dd8e49751df73054175584450485d488a9886119288"
+ver="2.1.0"
+url="https://github.com/fcambus/spleen/releases/download/2.1.0/spleen-2.1.0.tar.gz"
+sum="ec70f5c5e4fa005de8c69fdc38cede71434a5e3d001d40d013dd621fdf18df35"
 cnt="make"
 cys="kbd"
