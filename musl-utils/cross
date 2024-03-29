@@ -22,10 +22,10 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC gencat $CRSD/usr/bin
-  $RSYNC getent $CRSD/usr/bin
+  $RADULA_RSYNC gencat $CRSD/usr/bin
+  $RADULA_RSYNC getent $CRSD/usr/bin
 
   install -dv $CRSD/usr/share/man/man1
-  $RSYNC $CERD/musl/gencat.1 $CRSD/usr/share/man/man1
-  $RSYNC $CERD/musl/getent.1 $CRSD/usr/share/man/man1
+  $RADULA_RSYNC $CERD/musl/gencat.1 $CRSD/usr/share/man/man1
+  $RADULA_RSYNC $CERD/musl/getent.1 $CRSD/usr/share/man/man1
 }

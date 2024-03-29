@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -21,7 +21,7 @@ ceras_configure() {
     --mandir=/usr/share/man \
     --disable-blacklist
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
 
 ceras_build() {
@@ -37,5 +37,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  $RSYNC $CERD/$nom/sdio.ids $SACD/usr/share/$nom
+  $RADULA_RSYNC $CERD/$nom/sdio.ids $SACD/usr/share/$nom
 }

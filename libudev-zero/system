@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom
   cd $TSRC/$nom
 }
 
@@ -36,5 +36,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install-shared
 
-  $RSYNC $nom-helper $CRSD/usr/bin
+  $RADULA_RSYNC $nom-helper $CRSD/usr/bin
 }

@@ -21,6 +21,6 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/protocols $SACD/etc
-  $RSYNC $SRCD/$nom/$nom-$ver/services $SACD/etc
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/protocols $SACD/etc
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/services $SACD/etc
 }

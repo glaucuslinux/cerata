@@ -5,7 +5,7 @@
 
 ceras_prepare() {
   # vim doesn't build out of tree
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -84,7 +84,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  $RSYNC $CERD/$nom/${nom}rc $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/${nom}rc $SACD/etc
 
   ln -sfnv $nom $SACD/usr/bin/vi
 }

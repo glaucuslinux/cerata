@@ -4,17 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
+  $RADULA_RSYNC $CERD/binutils/config.guess build-aux
+  $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 
-  $PATCH -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/void/stdout.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
 ceras_configure() {
@@ -66,7 +66,7 @@ ceras_install() {
   install -dv $SACD/etc/modprobe.d
 
   install -dv $SACD/usr/lib/depmod.d
-  $RSYNC $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
+  $RADULA_RSYNC $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
 
   # Remove libtool archive (.la) file
   rm -frv $SACD/usr/lib/lib$nom.la

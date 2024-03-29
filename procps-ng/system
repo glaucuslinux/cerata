@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/procps-v$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/procps-v$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
 
   ./autogen.sh
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.rpath .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.rpath .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 }
 
 ceras_configure() {

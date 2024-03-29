@@ -39,7 +39,7 @@ ceras_install() {
     install-tools
 
   install -dv $CRSD/etc
-  $RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-x86_64.path
+  $RADULA_RSYNC $CERD/$nom/ld-$nom.path $CRSD/etc/ld-$nom-x86_64.path
 
   install -dv $CRSD/usr/bin
   ln -sfnv ../lib/ld-$nom-x86_64.so.1 $CRSD/usr/bin/ldd

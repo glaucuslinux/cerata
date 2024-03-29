@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom $TSRC --delete \
+  $RADULA_RSYNC $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
-  $RSYNC $SRCD/tzdata/ $TSRC/$nom \
+  $RADULA_RSYNC $SRCD/tzdata/ $TSRC/$nom \
     --exclude $nom$ver.tar.gz
   cd $TSRC/$nom
 }
 
 ceras_configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 ceras_build() {
@@ -30,13 +30,13 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC tzselect $SACD/usr/bin
-  $RSYNC zdump $SACD/usr/bin
-  $RSYNC zic $SACD/usr/bin
+  $RADULA_RSYNC tzselect $SACD/usr/bin
+  $RADULA_RSYNC zdump $SACD/usr/bin
+  $RADULA_RSYNC zic $SACD/usr/bin
 
-  $RSYNC tzselect.8 $SACD/usr/share/man/man8
-  $RSYNC zdump.8 $SACD/usr/share/man/man8
-  $RSYNC zic.8 $SACD/usr/share/man/man8
+  $RADULA_RSYNC tzselect.8 $SACD/usr/share/man/man8
+  $RADULA_RSYNC zdump.8 $SACD/usr/share/man/man8
+  $RADULA_RSYNC zic.8 $SACD/usr/share/man/man8
 
   install -dv $SACD/usr/share/zoneinfo/posix
   install -dv $SACD/usr/share/zoneinfo/right

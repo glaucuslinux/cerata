@@ -4,14 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.rpath build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
+  $RADULA_RSYNC $CERD/binutils/config.guess build-aux
+  $RADULA_RSYNC $CERD/binutils/config.rpath build-aux
+  $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 
-  $PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
 }
 
 ceras_configure() {

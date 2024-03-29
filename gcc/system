@@ -4,23 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.rpath .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.rpath .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 
   # Apply alpine `gcc` patches
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
   install -dv $TBLD/$nom
   cd $TBLD/$nom
@@ -96,8 +96,8 @@ ceras_install() {
 
   ln -sfnv g++ $SACD/usr/bin/c++
 
-  $RSYNC $CERD/$nom/c89 $SACD/usr/bin
-  $RSYNC $CERD/$nom/c99 $SACD/usr/bin
+  $RADULA_RSYNC $CERD/$nom/c89 $SACD/usr/bin
+  $RADULA_RSYNC $CERD/$nom/c99 $SACD/usr/bin
 
   ln -sfnv $nom $SACD/usr/bin/cc
   ln -sfnv $nom $SACD/usr/bin/$nom-$ver

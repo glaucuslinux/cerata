@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom $TSRC --delete
+  $RADULA_RSYNC $SRCD/$nom $TSRC --delete
   cd $TSRC/$nom
 
-  $PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 
-  $PATCH -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
-  $PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
 }
 
 ceras_configure() {

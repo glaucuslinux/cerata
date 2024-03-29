@@ -20,8 +20,8 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC $SRCD/$nom/etc $SACD --delete
-  $RSYNC $SRCD/$nom/usr $SACD --delete
+  $RADULA_RSYNC $SRCD/$nom/etc $SACD --delete
+  $RADULA_RSYNC $SRCD/$nom/usr $SACD --delete
 
   install -dv $SACD/etc/s6/current/env
 
@@ -30,17 +30,17 @@ ceras_install() {
 
   install -dv -m 02750 $SACD/etc/s6/current/run-image/uncaught-logs
 
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
-  $RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
+  $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
+  $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
+  $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
+  $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
 
   s6-rc-compile $SACD/etc/s6/rc/compiled $SACD/etc/s6/sv
 
-  $RSYNC $CERD/$nom/modules-load $SACD/usr/bin
+  $RADULA_RSYNC $CERD/$nom/modules-load $SACD/usr/bin
 
   install -dv $SACD/usr/share/man/man8
-  $RSYNC $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
+  $RADULA_RSYNC $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
 
   install -dv $SACD/var/log/wtmpd
   ln -sfnv wtmpd/btmp $SACD/var/log/btmp

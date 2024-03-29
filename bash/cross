@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess support
-  $RSYNC $CERD/binutils/config.rpath support
-  $RSYNC $CERD/binutils/config.sub support
+  $RADULA_RSYNC $CERD/binutils/config.guess support
+  $RADULA_RSYNC $CERD/binutils/config.rpath support
+  $RADULA_RSYNC $CERD/binutils/config.sub support
 }
 
 ceras_configure() {
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
 
   ./configure \
     --build=$BLD \

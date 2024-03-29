@@ -4,10 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
+  $RADULA_RSYNC $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  $PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
+  $RADULA_PATCH -p0 -i $CERD/musl/patches/glaucus/0001-fix-paths.patch
 }
 
 ceras_configure() {
@@ -36,7 +36,7 @@ ceras_install() {
     install-headers
 
   # BSD compatibility header
-  $RSYNC $CERD/musl/queue.h $CRSD/usr/include/sys
+  $RADULA_RSYNC $CERD/musl/queue.h $CRSD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
   rm -frv $CRSD/usr/include/utmpx.h

@@ -20,7 +20,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC $CERD/ $CRSD/var/db/radula/clusters/glaucus --exclude .$ver \
+  $RADULA_RSYNC $CERD/ $CRSD/var/db/radula/clusters/glaucus --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \
     --exclude README.md \

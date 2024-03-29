@@ -4,15 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess lib
-  $RSYNC $CERD/binutils/config.sub lib
+  $RADULA_RSYNC $CERD/binutils/config.guess lib
+  $RADULA_RSYNC $CERD/binutils/config.sub lib
 }
 
 ceras_configure() {
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-python3.10.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/$nom-python3.10.patch
 
   ./configure \
     --build=$BLD \

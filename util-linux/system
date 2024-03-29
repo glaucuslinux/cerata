@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/$nom/ttydefaults.h include
+  $RADULA_RSYNC $CERD/$nom/ttydefaults.h include
 
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
 
   ./autogen.sh
 
-  $RSYNC $CERD/binutils/config.guess config
-  $RSYNC $CERD/binutils/config.rpath config
-  $RSYNC $CERD/binutils/config.sub config
+  $RADULA_RSYNC $CERD/binutils/config.guess config
+  $RADULA_RSYNC $CERD/binutils/config.rpath config
+  $RADULA_RSYNC $CERD/binutils/config.sub config
 }
 
 ceras_configure() {
