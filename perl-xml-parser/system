@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/XML-Parser-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/XML-Parser-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 

@@ -4,17 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.rpath build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
+  $RADULA_RSYNC $CERD/binutils/config.guess build-aux
+  $RADULA_RSYNC $CERD/binutils/config.rpath build-aux
+  $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 }
 
 ceras_configure() {
   # This patch will be part of flex-2.6.5 release
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
 
   ac_cv_func_malloc_0_nonnull=yes \
   ac_cv_func_realloc_0_nonnull=yes \

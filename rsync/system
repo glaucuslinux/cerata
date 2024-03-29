@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 }
 
 ceras_configure() {
@@ -48,9 +48,9 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  $RSYNC $CERD/$nom/${nom}d.conf $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/${nom}d.conf $SACD/etc
 
-  $RSYNC support/r$nom $SACD/usr/bin
+  $RADULA_RSYNC support/r$nom $SACD/usr/bin
 
-  $RSYNC r$nom.1 $SACD/usr/share/man/man1
+  $RADULA_RSYNC r$nom.1 $SACD/usr/share/man/man1
 }

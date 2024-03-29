@@ -4,14 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess config
-  $RSYNC $CERD/binutils/config.rpath config
-  $RSYNC $CERD/binutils/config.sub config
+  $RADULA_RSYNC $CERD/binutils/config.guess config
+  $RADULA_RSYNC $CERD/binutils/config.rpath config
+  $RADULA_RSYNC $CERD/binutils/config.sub config
 
-  $PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/void/cross.patch
 
   # `INSTALL` documentation recommends building out of tree
   install -dv $TBLD/$nom

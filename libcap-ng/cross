@@ -4,13 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 
-  $PATCH -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
 }
 
 ceras_configure() {

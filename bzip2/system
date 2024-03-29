@@ -4,12 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
 ceras_configure() {
-  $PATCH -p1 -i $CERD/$nom/patches/void/soname.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/void/soname.patch
 }
 
 ceras_build() {
@@ -23,15 +23,15 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/include
-  $RSYNC bzlib.h $SACD/usr/include
+  $RADULA_RSYNC bzlib.h $SACD/usr/include
 
   install -dv $SACD/usr/lib
-  $RSYNC libbz2.so.$ver $SACD/usr/lib
+  $RADULA_RSYNC libbz2.so.$ver $SACD/usr/lib
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
   install -dv $SACD/usr/lib/pkgconfig
-  $RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
+  $RADULA_RSYNC $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
   ln -sfnv $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }

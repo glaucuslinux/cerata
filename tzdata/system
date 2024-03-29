@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom $TSRC --delete \
+  $RADULA_RSYNC $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
   cd $TSRC/$nom
 }
@@ -36,8 +36,8 @@ ceras_install() {
 
   zic -d $SACD/usr/share/zoneinfo -p Asia/Damascus
 
-  $RSYNC iso3166.tab $SACD/usr/share/zoneinfo
-  $RSYNC leap-seconds.list $SACD/usr/share/zoneinfo
-  $RSYNC zone1970.tab $SACD/usr/share/zoneinfo
-  $RSYNC zone.tab $SACD/usr/share/zoneinfo
+  $RADULA_RSYNC iso3166.tab $SACD/usr/share/zoneinfo
+  $RADULA_RSYNC leap-seconds.list $SACD/usr/share/zoneinfo
+  $RADULA_RSYNC zone1970.tab $SACD/usr/share/zoneinfo
+  $RADULA_RSYNC zone.tab $SACD/usr/share/zoneinfo
 }

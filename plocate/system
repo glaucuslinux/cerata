@@ -4,14 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   install -dv $TBLD/$nom
 }
 
 ceras_configure() {
-  $PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
+  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
   glaucus-muon \
     -Dinstall_systemd=false \
@@ -35,7 +35,7 @@ ceras_install() {
     -C $TBLD/$nom \
     install
 
-  $RSYNC $CERD/$nom/updatedb.conf $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/updatedb.conf $SACD/etc
 
   # Compatibility symlinks
   ln -sfnv $nom $SACD/usr/bin/locate

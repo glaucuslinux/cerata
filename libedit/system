@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 }
 
 ceras_configure() {
@@ -49,8 +49,8 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  $RSYNC $CERD/$nom/editrc $SACD/etc
-  $RSYNC $CERD/$nom/inputrc $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/editrc $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/inputrc $SACD/etc
 
   # Use libedit as a drop-in replacement for `readline`
   install -dv $SACD/usr/include/readline

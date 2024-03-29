@@ -22,7 +22,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC $nom $SACD/usr/bin
+  $RADULA_RSYNC $nom $SACD/usr/bin
   ln -sfnv $nom $SACD/usr/bin/ksh
   ln -sfnv $nom $SACD/usr/bin/rksh
 }

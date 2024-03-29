@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -29,5 +29,5 @@ ceras_install() {
     --force \
     --skip-build
 
-  $RSYNC $CERD/$nom/glaucus-$nom $SACD/usr/bin
+  $RADULA_RSYNC $CERD/$nom/glaucus-$nom $SACD/usr/bin
 }

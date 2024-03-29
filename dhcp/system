@@ -4,27 +4,27 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 
   # bind mess
   tar xvf bind/bind.tar.gz -C bind
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36
+  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36
+  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
+  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
+  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
 
-  $RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
-  $RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
+  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
+  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
 
-  $PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
 
-  $PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
 ceras_configure() {
@@ -80,11 +80,11 @@ ceras_install() {
     install-strip
 
   mv -fv $SACD/etc/$nom/dhclient.conf.example $SACD/etc/$nom/dhclient.conf
-  $RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
+  $RADULA_RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
   mv -fv $SACD/etc/$nom/${nom}d.conf.example $SACD/etc/$nom/${nom}d.conf
-  $RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
+  $RADULA_RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
 
-  $RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script
+  $RADULA_RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script
 
   rm -frv \
     $SACD/usr/lib/lib${nom}.a \

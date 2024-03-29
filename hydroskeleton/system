@@ -27,22 +27,22 @@ ceras_install() {
   install -dv $SACD/dev
 
   install -dv $SACD/etc
-  $RSYNC $CERD/$nom/fstab $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/fstab $SACD/etc
   ln -sfnv lsb-release $SACD/etc/glaucus-release
-  $RSYNC $CERD/$nom/group $SACD/etc
-  $RSYNC $CERD/$nom/hostname $SACD/etc
-  $RSYNC $CERD/$nom/hosts $SACD/etc
-  $RSYNC $CERD/$nom/issue $SACD/etc
-  $RSYNC $CERD/$nom/lsb-release $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/group $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/hostname $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/hosts $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/issue $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/lsb-release $SACD/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
     -i $SACD/etc/lsb-release
   ln -sfnv ../usr/lib/os-release $SACD/etc/os-release
-  $RSYNC $CERD/$nom/passwd $SACD/etc
-  $RSYNC $CERD/$nom/profile $SACD/etc
-  $RSYNC $CERD/$nom/resolv.conf $SACD/etc
-  $RSYNC $CERD/$nom/shadow $SACD/etc
-  $RSYNC $CERD/$nom/shells $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/passwd $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/profile $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/resolv.conf $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/shadow $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/shells $SACD/etc
 
   install -dv $SACD/home
 
@@ -63,7 +63,7 @@ ceras_install() {
   ln -sfnv run/tmp $SACD/tmp
 
   install -dv $SACD/usr/lib
-  $RSYNC $CERD/$nom/os-release $SACD/usr/lib
+  $RADULA_RSYNC $CERD/$nom/os-release $SACD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \

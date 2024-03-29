@@ -4,18 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RSYNC $CERD/binutils/config.guess .
-  $RSYNC $CERD/binutils/config.rpath .
-  $RSYNC $CERD/binutils/config.sub .
+  $RADULA_RSYNC $CERD/binutils/config.guess .
+  $RADULA_RSYNC $CERD/binutils/config.rpath .
+  $RADULA_RSYNC $CERD/binutils/config.sub .
 
-  $RSYNC $CERD/binutils/config.guess build-aux
-  $RSYNC $CERD/binutils/config.rpath build-aux
-  $RSYNC $CERD/binutils/config.sub build-aux
+  $RADULA_RSYNC $CERD/binutils/config.guess build-aux
+  $RADULA_RSYNC $CERD/binutils/config.rpath build-aux
+  $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 
-  $PATCH -p1 -i $CERD/$nom/patches/upstream/0001-libressl-compatibility.patch
+  $RADULA_PATCH -p1 -i $CERD/$nom/patches/upstream/0001-libressl-compatibility.patch
 }
 
 ceras_configure() {

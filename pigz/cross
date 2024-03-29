@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -25,12 +25,12 @@ ceras_check() {
 
 ceras_install() {
   # `pigz` and `unpigz` are symbolic links
-  $RSYNC $nom $CRSD/usr/bin
+  $RADULA_RSYNC $nom $CRSD/usr/bin
   ln -sfnv $nom $CRSD/usr/bin/gunzip
   ln -sfnv $nom $CRSD/usr/bin/gzcat
   ln -sfnv $nom $CRSD/usr/bin/gzip
   ln -sfnv $nom $CRSD/usr/bin/un$nom
   ln -sfnv $nom $CRSD/usr/bin/zcat
 
-  $RSYNC $nom.1 $CRSD/usr/share/man/man1
+  $RADULA_RSYNC $nom.1 $CRSD/usr/share/man/man1
 }

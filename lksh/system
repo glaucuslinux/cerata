@@ -24,5 +24,5 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC $nom $SACD/usr/bin
+  $RADULA_RSYNC $nom $SACD/usr/bin
 }

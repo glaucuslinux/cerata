@@ -20,7 +20,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RSYNC /boot/vmlinuz-linux $CRSD/boot/vmlinuz
+  $RADULA_RSYNC /boot/vmlinuz-linux $CRSD/boot/vmlinuz
 
-  $RSYNC /usr/lib/modules $CRSD/usr/lib
+  $RADULA_RSYNC /usr/lib/modules $CRSD/usr/lib
 }
