@@ -9,7 +9,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-remove-chown.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-chown.patch
 
   ./configure \
     --prefix=/usr \

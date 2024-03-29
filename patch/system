@@ -7,13 +7,13 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/0001-Allow-input-files-to-be-missing-for-ed-style-${nom}es.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/0002-Fix-arbitrary-command-execution-in-ed-style-${nom}es-.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2018-6951.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2018-6952.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13636.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13638.$nom
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-20633.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/0001-Allow-input-files-to-be-missing-for-ed-style-${nom}es.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/0002-Fix-arbitrary-command-execution-in-ed-style-${nom}es-.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2018-6951.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2018-6952.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13636.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-13638.$nom
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/${nom}es/alpine/CVE-2019-20633.$nom
 
   autoreconf -vfis
 

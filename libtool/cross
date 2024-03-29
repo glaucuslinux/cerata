@@ -12,7 +12,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/$nom-fix-cross-compile.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-fix-cross-compile.patch
 
   ./configure \
     --build=$BLD \

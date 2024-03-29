@@ -9,9 +9,9 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
 
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
 }
 
 ceras_build() {

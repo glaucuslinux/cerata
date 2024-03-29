@@ -7,7 +7,7 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/glaucus/musl-stacksize.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/glaucus/musl-stacksize.patch
 
   install -dv $TBLD/$nom
 }

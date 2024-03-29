@@ -7,8 +7,8 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
 
   install -dv $TBLD/$nom
 }

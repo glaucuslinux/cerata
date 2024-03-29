@@ -11,7 +11,7 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath .
   $RADULA_RSYNC $CERD/binutils/config.sub .
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
 
 ceras_configure() {

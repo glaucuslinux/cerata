@@ -7,12 +7,12 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom $TSRC --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
 
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
-  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
 }
 
 ceras_configure() {

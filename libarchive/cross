@@ -11,9 +11,9 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath build/autoconf
   $RADULA_RSYNC $CERD/binutils/config.sub build/autoconf
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
 }
 
 ceras_configure() {

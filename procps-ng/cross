@@ -7,9 +7,9 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/procps-v$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
-  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-use-utmpx.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0003-netbsd-curses-compatibility.patch
 
   ./autogen.sh
 
