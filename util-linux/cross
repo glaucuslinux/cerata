@@ -9,9 +9,9 @@ ceras_prepare() {
 
   $RADULA_RSYNC $CERD/$nom/ttydefaults.h include
 
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
 
   ./autogen.sh
 

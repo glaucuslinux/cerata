@@ -9,7 +9,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
 
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.

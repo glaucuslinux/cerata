@@ -11,7 +11,7 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath build-aux
   $RADULA_RSYNC $CERD/binutils/config.sub build-aux
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/clear/prime.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/clear/prime.patch
 }
 
 ceras_configure() {

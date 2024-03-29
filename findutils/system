@@ -14,7 +14,7 @@ ceras_prepare() {
 
 ceras_configure() {
   # Disable locate because we're using plocate
-  $RADULA_PATCH -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
+  patch --no-backup-if-mismatch --verbose -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
 
   ./configure \
     --prefix=/usr \

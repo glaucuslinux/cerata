@@ -11,8 +11,8 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath config
   $RADULA_RSYNC $CERD/binutils/config.sub config
 
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
-  $RADULA_PATCH -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  patch --no-backup-if-mismatch --verbose -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
 }
 
 ceras_configure() {
