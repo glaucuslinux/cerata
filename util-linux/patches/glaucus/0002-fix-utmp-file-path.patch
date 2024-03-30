@@ -11,39 +11,6 @@
  	Fix in login.c for CPU eating bug when a remote telnet client dies
 --- include/pathnames.h
 +++ include/pathnames.h
-@@ -20,17 +20,17 @@
- #undef _PATH_DEFPATH
- 
- #ifdef USE_USRDIR_PATHS_ONLY
--# define _PATH_DEFPATH	        "/usr/local/bin:/usr/bin"
-+# define _PATH_DEFPATH	        "/usr/bin:/bin"
- #else
--# define _PATH_DEFPATH	        "/usr/local/bin:/bin:/usr/bin"
-+# define _PATH_DEFPATH	        "/usr/bin:/bin"
- #endif
- 
- #undef _PATH_DEFPATH_ROOT
- 
- #ifdef USE_USRDIR_PATHS_ONLY
--# define _PATH_DEFPATH_ROOT	"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
-+# define _PATH_DEFPATH_ROOT	"/usr/bin:/bin"
- #else
--# define _PATH_DEFPATH_ROOT	"/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
-+# define _PATH_DEFPATH_ROOT	"/usr/bin:/bin"
- #endif
- 
- #define	_PATH_HUSHLOGIN		".hushlogin"
-@@ -50,8 +50,8 @@
- #ifndef _PATH_LOGIN
- # define _PATH_LOGIN		"/bin/login"
- #endif
--#define _PATH_SHUTDOWN		"/sbin/shutdown"
--#define _PATH_POWEROFF		"/sbin/poweroff"
-+#define _PATH_SHUTDOWN		"/bin/shutdown"
-+#define _PATH_POWEROFF		"/bin/poweroff"
- 
- #define _PATH_TERMCOLORS_DIRNAME "terminal-colors.d"
- #define _PATH_TERMCOLORS_DIR	"/etc/" _PATH_TERMCOLORS_DIRNAME
 @@ -67,9 +67,12 @@
  # define _PATH_TMP		"/tmp/"
  #endif
@@ -60,21 +27,6 @@
  
  #define _PATH_ISSUE_FILENAME	"issue"
  #define _PATH_ISSUE_DIRNAME	_PATH_ISSUE_FILENAME ".d"
-@@ -167,7 +170,7 @@
- #ifdef CONFIG_ADJTIME_PATH
- # define _PATH_ADJTIME		CONFIG_ADJTIME_PATH
- #else
--# define _PATH_ADJTIME		"/etc/adjtime"
-+# define _PATH_ADJTIME		"/var/lib/hwclock/adjtime"
- #endif
- 
- #ifdef __ia64__
-@@ -226,5 +229,4 @@
- #define _PATH_DEV_RFKILL	"/dev/rfkill"
- #define _PATH_SYS_RFKILL	"/sys/class/rfkill"
- 
--
- #endif /* PATHNAMES_H */
 --- login-utils/login.1
 +++ login-utils/login.1
 @@ -178,7 +178,7 @@
@@ -86,7 +38,7 @@
  \fI/var/log/wtmp\fP,
  \fI/var/log/lastlog\fP,
  \fI/var/spool/mail/*\fP,
-@@ -220,4 +220,4 @@
+@@ -230,4 +230,4 @@
  .SH "AVAILABILITY"
  .sp
  The \fBlogin\fP command is part of the util\-linux package which can be downloaded from \c
@@ -106,7 +58,7 @@
  _/var/spool/mail/*_,
 --- login-utils/login.c
 +++ login-utils/login.c
-@@ -71,6 +71,9 @@
+@@ -72,6 +72,9 @@
  # include <libaudit.h>
  #endif
  
@@ -116,7 +68,7 @@
  #include "c.h"
  #include "pathnames.h"
  #include "strutils.h"
-@@ -619,7 +622,7 @@
+@@ -630,7 +633,7 @@
  			       sizeof(ut.ut_addr_v6));
  	}
  
@@ -125,7 +77,7 @@
  }
  
  #ifdef HAVE_LIBAUDIT
-@@ -732,7 +735,7 @@
+@@ -743,7 +746,7 @@
  
  	/* Find pid in utmp.
  	 *
@@ -134,7 +86,7 @@
  	 * confusing sysvinit. I added a test for the entry type, and the
  	 * problem was gone. (In a runlevel entry, st_pid is not really a pid
  	 * but some number calculated from the previous and current runlevel.)
-@@ -790,7 +793,7 @@
+@@ -801,7 +804,7 @@
  	pututxline(&ut);
  	endutxent();
  
@@ -156,7 +108,7 @@
  1) This is primarily a quick bug-fix release for version 2.1
 --- po-man/cs.po
 +++ po-man/cs.po
-@@ -9364,7 +9364,7 @@
+@@ -9518,7 +9518,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -165,7 +117,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -40912,7 +40912,7 @@
+@@ -42236,7 +42236,7 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -176,7 +128,7 @@
  #. type: Plain text
 --- po-man/de.po
 +++ po-man/de.po
-@@ -10981,11 +10981,11 @@
+@@ -11840,11 +11840,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -190,7 +142,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -48615,8 +48615,8 @@
+@@ -52645,8 +52645,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -203,7 +155,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/es.po
 +++ po-man/es.po
-@@ -9878,11 +9878,11 @@
+@@ -10340,11 +10340,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -217,7 +169,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -42704,8 +42704,8 @@
+@@ -44941,8 +44941,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -228,7 +180,7 @@
  
  #. type: Plain text
  #: ../term-utils/agetty.8.adoc:309
-@@ -51154,7 +51154,7 @@
+@@ -53611,7 +53611,7 @@
  #~ "utmp y wtmp. Solo el superusuario podrá usar esta opción."
  
  #~ msgid ""
@@ -237,7 +189,7 @@
  #~ "I</var/log/wtmp>\n"
  #~ "I</var/log/lastlog>\n"
  #~ "I</var/spool/mail/*>\n"
-@@ -51166,7 +51166,7 @@
+@@ -53623,7 +53623,7 @@
  #~ "I</etc/hushlogins>\n"
  #~ "I<.hushlogin>\n"
  #~ msgstr ""
@@ -248,7 +200,7 @@
  #~ "I</var/spool/mail/*>\n"
 --- po-man/fr.po
 +++ po-man/fr.po
-@@ -11012,11 +11012,11 @@
+@@ -11872,11 +11872,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -262,7 +214,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -48465,8 +48465,8 @@
+@@ -51897,8 +51897,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -299,7 +251,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/pt_BR.po
 +++ po-man/pt_BR.po
-@@ -10530,7 +10530,7 @@
+@@ -11099,7 +11099,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -308,7 +260,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -42457,8 +42457,8 @@
+@@ -44107,8 +44107,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -321,7 +273,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/ro.po
 +++ po-man/ro.po
-@@ -8176,8 +8176,8 @@
+@@ -8268,8 +8268,8 @@
  
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
@@ -330,9 +282,9 @@
 +msgid "_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
 +msgstr "_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
- #. type: Plain text
- #: ../login-utils/login.1.adoc:154
-@@ -33939,8 +33939,8 @@
+ #. type: Title ==
+ #: ../login-utils/login.1.adoc:151 ../term-utils/agetty.8.adoc:322
+@@ -34977,8 +34977,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -345,7 +297,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/sr.po
 +++ po-man/sr.po
-@@ -10696,11 +10696,11 @@
+@@ -11516,11 +11516,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -359,7 +311,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -47389,8 +47389,8 @@
+@@ -51361,8 +51361,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -372,7 +324,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/uk.po
 +++ po-man/uk.po
-@@ -10819,11 +10819,11 @@
+@@ -11663,11 +11663,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -386,7 +338,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -46934,8 +46934,8 @@
+@@ -50284,8 +50284,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -399,7 +351,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/util-linux-man.pot
 +++ po-man/util-linux-man.pot
-@@ -9344,7 +9344,7 @@
+@@ -9159,7 +9159,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -408,7 +360,7 @@
  "_/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, "
  "_/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -40512,7 +40512,7 @@
+@@ -40631,7 +40631,7 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -428,7 +380,7 @@
  .RS 4
  the system status file.
  .RE
-@@ -600,4 +600,4 @@
+@@ -610,4 +610,4 @@
  .SH "AVAILABILITY"
  .sp
  The \fBagetty\fP command is part of the util\-linux package which can be downloaded from \c

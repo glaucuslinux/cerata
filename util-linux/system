@@ -7,8 +7,6 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_RSYNC $CERD/$nom/ttydefaults.h include
-
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
