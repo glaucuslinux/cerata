@@ -7,7 +7,8 @@ ceras_prepare() {
   $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
 
@@ -45,6 +46,8 @@ ceras_configure() {
     --disable-nls \
     --disable-rpath \
     --disable-asciidoc \
+    --disable-liblastlog2 \
+    --disable-pam-lastlog2 \
     --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
