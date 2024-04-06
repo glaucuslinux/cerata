@@ -52,7 +52,7 @@ ceras_install() {
 
   install -dv $SACD/proc
 
-  install -dv -m 0750 $SACD/root
+  install -dvm 0750 $SACD/root
 
   install -dv $SACD/run
 
