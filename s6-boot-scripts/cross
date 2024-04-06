@@ -29,7 +29,7 @@ ceras_install() {
     $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
     $CRSD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  install -dv -m 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
+  install -dvm 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
@@ -43,5 +43,11 @@ ceras_install() {
   ln -sfnv wtmpd/btmp $CRSD/var/log/btmp
   ln -sfnv wtmpd/lastlog $CRSD/var/log/lastlog
   ln -sfnv wtmpd/wtmp $CRSD/var/log/wtmp
+
   install -dv $CRSD/var/log/wtmpd
+
+  touch \
+    $CRSD/var/log/wtmpd/btmp \
+    $CRSD/var/log/wtmpd/lastlog \
+    $CRSD/var/log/wtmpd/wtmp
 }
