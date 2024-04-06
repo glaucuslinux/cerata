@@ -52,7 +52,7 @@ ceras_install() {
 
   install -dv $CRSD/proc
 
-  install -dv -m 0750 $CRSD/root
+  install -dvm 0750 $CRSD/root
 
   install -dv $CRSD/run
 
