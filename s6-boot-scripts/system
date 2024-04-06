@@ -25,8 +25,9 @@ ceras_install() {
 
   install -dv $SACD/etc/s6/current/env
 
-  mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo
-  mkfifo -m 0600 $SACD/etc/s6/current/run-image/service/s6-svscan-log/fifo
+  mkfifo -m 0600 \
+    $SACD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
+    $SACD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
   install -dv -m 02750 $SACD/etc/s6/current/run-image/uncaught-logs
 
