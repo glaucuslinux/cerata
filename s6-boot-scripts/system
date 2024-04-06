@@ -45,6 +45,7 @@ ceras_install() {
 
   install -dv $SACD/var/log/wtmpd
   ln -sfnv wtmpd/btmp $SACD/var/log/btmp
+  ln -sfnv wtmpd/lastlog $SACD/var/log/lastlog
   ln -sfnv wtmpd/wtmp $SACD/var/log/wtmp
   chown 20:20 $SACD/var/log/wtmpd
 }
