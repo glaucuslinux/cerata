@@ -31,6 +31,16 @@ ceras_check() {
 }
 
 ceras_install() {
+  if [ $BOOTSTRAP = yes ]; then
+    $MAKE \
+      install
+
+    # Use `utmpx.h` provided by cross `utmps`
+    rm -frv /usr/include/utmpx.h
+
+    ln -sfnv libc.so /usr/lib/ld-$nom-x86_64.so.1
+  fi
+
   $MAKE \
     DESTDIR=$SACD \
     install
