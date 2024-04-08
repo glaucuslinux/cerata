@@ -1,0 +1,51 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+ceras_prepare() {
+  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
+
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
+}
+
+ceras_configure() {
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --syslibdir=/usr/lib \
+    --disable-wrapper \
+    --disable-static
+}
+
+ceras_build() {
+  $MAKE
+}
+
+ceras_check() {
+  :
+}
+
+ceras_install() {
+  $MAKE \
+    DESTDIR=$SACD \
+    install
+
+  install -dv $SACD/etc
+  $RADULA_RSYNC $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
+
+  install -dv $SACD/usr/bin
+  ln -sfnv ../lib/libc.so $SACD/usr/bin/ldd
+
+  # BSD compatibility header
+  $RADULA_RSYNC $CERD/$nom/queue.h $SACD/usr/include/sys
+
+  # Use `utmpx.h` provided by cross `utmps`
+  rm -frv $SACD/usr/include/utmpx.h
+
+  ln -sfnv libc.so $SACD/usr/lib/ld-$nom-x86_64.so.1
+}
