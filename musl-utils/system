@@ -26,6 +26,8 @@ ceras_install() {
   $RADULA_RSYNC gencat $SACD/usr/bin
   $RADULA_RSYNC getent $SACD/usr/bin
 
+  ln -sfnv true $SACD/usr/bin/ldconfig
+
   install -dv $SACD/usr/share/man/man1
   $RADULA_RSYNC $CERD/musl/gencat.1 $SACD/usr/share/man/man1
   $RADULA_RSYNC $CERD/musl/getent.1 $SACD/usr/share/man/man1
