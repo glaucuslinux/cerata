@@ -35,8 +35,7 @@ ceras_check() {
 ceras_install() {
   $MAKE \
     DESTDIR=$CRSD \
-    install-libs \
-    install-tools
+    install-libs
 
   install -dv $CRSD/etc
   $RADULA_RSYNC $CERD/$nom/ld-$nom-x86_64.path $CRSD/etc
