@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="texinfo"
+ver="7.1"
+url="https://ftpmirror.gnu.org/texinfo/texinfo-7.1.tar.gz"
+sum="6ec19fb137359ae6828c753d5cf87f53b0c80e89d1bd3a79624be7d17cddad8b"
+cnt="make"
