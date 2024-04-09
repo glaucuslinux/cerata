@@ -5,4 +5,4 @@
 
 nom="libgcc"
 ver="13.2.0"
-cnt="make"
+bld="make"
