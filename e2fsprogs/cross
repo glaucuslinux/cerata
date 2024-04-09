@@ -13,8 +13,6 @@ ceras_prepare() {
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/cross.patch
-
   # `INSTALL` documentation recommends building out of tree
   install -dv $TBLD/$nom
   cd $TBLD/$nom
