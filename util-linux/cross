@@ -10,8 +10,6 @@ ceras_prepare() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/irq-sort.patch
-
   ./autogen.sh
 
   $RADULA_RSYNC $CERD/binutils/config.guess config
