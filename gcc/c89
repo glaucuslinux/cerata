@@ -8,7 +8,7 @@ f=-std=c89
 for i; do
   case $i in
     -ansi | $f | -std=iso9899:1990) f= ;;
-    -std=*) echo "c89 called with non ANSI/ISO C option $i" >&2 && exit 1 ;;
+    -std=*) echo "c89 called with non ANSI/ISO C option $i" >&2; exit 1 ;;
   esac
 done
 
