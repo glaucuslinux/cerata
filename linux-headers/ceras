@@ -5,4 +5,4 @@
 
 nom="linux-headers"
 ver="6.8.2"
-cnt="make"
+bld="make"
