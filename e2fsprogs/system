@@ -11,7 +11,7 @@ ceras_prepare() {
   $RADULA_RSYNC $CERD/binutils/config.rpath config
   $RADULA_RSYNC $CERD/binutils/config.sub config
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/cross.patch
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 
   # `INSTALL` documentation recommends building out of tree
   install -dv $TBLD/$nom
@@ -50,10 +50,13 @@ ceras_configure() {
     --disable-nls \
     --disable-rpath \
     --enable-lto \
-    --with-udev-rules-dir=/usr/lib/udev/rules.d
+    --without-udev-rules-dir \
+    --without-systemd-unit-dir
 }
 
 ceras_build() {
+  # Disable parallel build!
+  MAKEFLAGS=-j1 \
   $MAKE
 }
 
