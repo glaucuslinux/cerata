@@ -50,11 +50,22 @@ ceras_check() {
 }
 
 ceras_install() {
+  if [ $BOOTSTRAP = yes ]; then
+    $MAKE \
+      install-strip
+
+    # Remove libtool archive (.la) files
+    rm -frv \
+      /usr/lib/$nom/MiscXS.la \
+      /usr/lib/$nom/Parsetexi.la \
+      /usr/lib/$nom/XSParagraph.la
+  fi
+
   $MAKE \
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive (.la) files
   rm -frv \
     $SACD/usr/lib/$nom/MiscXS.la \
     $SACD/usr/lib/$nom/Parsetexi.la \
