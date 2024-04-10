@@ -4,4 +4,4 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="musl-utils"
-bld="musl-headers"
+dep="musl-headers"

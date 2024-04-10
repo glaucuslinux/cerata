@@ -5,4 +5,4 @@
 
 nom="musl-headers"
 ver="1.2.5"
-bld="make"
+dep="make"
