@@ -47,4 +47,5 @@ ceras_install() {
     install
 
   ln -sfnv $nom $SACD/usr/bin/awk
+  ln -sfnv $nom $SACD/usr/bin/gawk
 }
