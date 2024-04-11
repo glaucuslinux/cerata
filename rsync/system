@@ -48,6 +48,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
+  install -dv $SACD/etc
   $RADULA_RSYNC $CERD/$nom/${nom}d.conf $SACD/etc
 
   $RADULA_RSYNC support/r$nom $SACD/usr/bin
