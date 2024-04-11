@@ -21,5 +21,9 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/var/db/radula/clusters
-  $RADULA_RSYNC $CERD/ $SACD/var/db/radula/clusters/glaucus --delete
+  $RADULA_RSYNC $CERD/ $SACD/var/db/radula/clusters/glaucus --exclude .$ver \
+    --exclude .${ver}attributes \
+    --exclude LICENSE \
+    --exclude README.md \
+    --delete
 }
