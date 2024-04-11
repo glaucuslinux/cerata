@@ -91,4 +91,8 @@ ceras_install() {
   $MAKE \
     DESTDIR=$SACD \
     install
+
+  if [ $BOOTSTRAP = yes ]; then
+    makewhatis /usr/share/man
+  fi
 }
