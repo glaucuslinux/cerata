@@ -31,6 +31,7 @@ ceras_install() {
 
   install -dvm 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
+  # `$CRSD/etc/s6/skel` is already created by `s6-linux-init`
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $CRSD/etc/s6/skel
