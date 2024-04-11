@@ -31,11 +31,13 @@ ceras_install() {
 
   install -dvm 02750 $SACD/etc/s6/current/run-image/uncaught-logs
 
+  install -dv $SACD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
   $RADULA_RSYNC $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
 
+  rm -frv $SACD/etc/s6/rc/compiled
   s6-rc-compile $SACD/etc/s6/rc/compiled $SACD/etc/s6/sv
 
   $RADULA_RSYNC $CERD/$nom/modules-load $SACD/usr/bin
