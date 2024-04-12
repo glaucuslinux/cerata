@@ -20,8 +20,8 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RADULA_RSYNC $SRCD/$nom/etc $SACD --delete
-  $RADULA_RSYNC $SRCD/$nom/usr $SACD --delete
+  $RADULA_RSYNC $SRCD/$nom/etc $SACD
+  $RADULA_RSYNC $SRCD/$nom/usr $SACD
 
   install -dv $SACD/etc/s6/current/env
 
