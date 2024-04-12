@@ -62,6 +62,7 @@ ceras_install() {
 
   ln -sfnv run/tmp $SACD/tmp
 
+  install -dv $SACD/usr/bin
   install -dv $SACD/usr/lib
   $RADULA_RSYNC $CERD/$nom/os-release $SACD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
