@@ -16,14 +16,9 @@ ceras_configure() {
     --dynlibdir=/usr/lib \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --datadir=/etc \
+    --sysconfdir=/etc \
     --sysdepdir=/usr/lib/$nom/sysdeps \
-    --with-include=/usr/include \
-    --with-lib=/usr/lib \
-    --with-dynlib=/usr/lib \
-    --disable-static \
-    --with-sysdep-devurandom=yes \
-    --with-sysdep-posixspawnearlyreturn=no
+    --disable-static
 }
 
 ceras_build() {
