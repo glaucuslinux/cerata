@@ -67,5 +67,4 @@ ceras_install() {
     install-strip
 
   ln -sfnv $nom $SACD/usr/bin/r$nom
-  ln -sfnv $nom $SACD/usr/bin/sh
 }
