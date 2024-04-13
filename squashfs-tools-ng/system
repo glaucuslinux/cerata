@@ -57,6 +57,6 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $CRSD/usr/lib/libsquashfs.la
 }

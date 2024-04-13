@@ -68,7 +68,7 @@ ceras_install() {
   install -dv $SACD/usr/lib/depmod.d
   rsync $RADULA_RSYNC_FLAGS $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $SACD/usr/lib/lib$nom.la
 
   install -dv $SACD/usr/lib/modprobe.d

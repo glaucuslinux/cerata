@@ -52,7 +52,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $SACD/usr/lib/$nom.la \
     $SACD/usr/lib/python3.11/site-packages/${nom}mod.la

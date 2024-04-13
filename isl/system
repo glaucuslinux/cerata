@@ -52,7 +52,7 @@ ceras_install() {
     make \
       install-strip
 
-    # Remove libtool archive (.la) file
+    # Remove libtool archive
     rm -frv /usr/lib/lib$nom.la
   fi
 
@@ -60,7 +60,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $SACD/usr/lib/lib$nom.la
 
   rm -frv $SACD/usr/lib/lib$nom.so.23.2.0-gdb.py

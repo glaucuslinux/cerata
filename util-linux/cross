@@ -83,7 +83,7 @@ ceras_install() {
     usrsbin_execdir=/usr/bin \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $CRSD/usr/lib/libblkid.la \
     $CRSD/usr/lib/libfdisk.la \

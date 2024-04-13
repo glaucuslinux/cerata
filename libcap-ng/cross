@@ -54,7 +54,7 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $CRSD/usr/lib/$nom.la \
     $CRSD/usr/lib/libdrop_ambient.la

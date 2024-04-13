@@ -49,7 +49,7 @@ ceras_install() {
     -C contrib/p$nom \
     install
 
-  # Manually remove the static library
+  # Remove static library
   rm -frv $SACD/usr/lib/lib$nom.a
 
   ln -sfnv $nom.1 $SACD/usr/share/man/man1/p${nom}.1

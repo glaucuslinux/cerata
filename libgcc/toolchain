@@ -28,7 +28,7 @@ ceras_install() {
   make \
     install-strip-target-$nom
 
-  # Manually remove the static libraries
+  # Remove static libraries
   rm -frv \
     $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a \
     $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a

@@ -125,7 +125,7 @@ ceras_install() {
   # `$TLCD/usr/lib/bfd-plugins` is already provided by `binutils`
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
     $TLCD/usr/$TGT/lib/libstdc++.la \

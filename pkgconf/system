@@ -56,7 +56,7 @@ ceras_install() {
   ln -sfnv $nom $SACD/usr/bin/$TGT-$nom
   ln -sfnv $nom $SACD/usr/bin/$TGT-pkg-config
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $SACD/usr/lib/lib$nom.la
 
   ln -sfnv pkg.m4 $SACD/usr/share/aclocal/$nom.m4
