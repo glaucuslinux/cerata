@@ -32,7 +32,7 @@ ceras_check() {
 
 ceras_install() {
   DESTDIR=$SACD \
-  $nom \
+  muon \
     -C $TBLD/$nom \
     install
 
