@@ -5,6 +5,6 @@
 
 nom="cerata"
 ver="git"
-cmt="5218643a"
+cmt="ef825a34"
 url="https://github.com/glaucuslinux/cerata"
 dep="hydroskeleton"
