@@ -14,7 +14,7 @@ ceras_configure() {
 
 ceras_build() {
   # Disable support for compressed ids
-  $MAKE \
+  make \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \
@@ -36,7 +36,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \

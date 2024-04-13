@@ -48,7 +48,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -56,7 +56,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-strip
 }

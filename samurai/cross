@@ -16,7 +16,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     BINDIR=/usr/bin \
     MANDIR=/usr/share/man
 }
@@ -26,7 +26,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     PREFIX=/usr \
     BINDIR=/usr/bin \
     MANDIR=/usr/share/man \

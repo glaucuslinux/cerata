@@ -89,7 +89,7 @@ ceras_configure() {
 ceras_build() {
   # Disable parallel build!
   MAKEFLAGS=-j1 \
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -97,7 +97,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$CRSD \
     install-strip
 

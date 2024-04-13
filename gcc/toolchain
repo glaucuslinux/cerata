@@ -89,13 +89,13 @@ ceras_configure() {
 ceras_build() {
   # Disable parallel build!
   MAKEFLAGS=-j1 \
-  $MAKE \
+  make \
     all-$nom
 
   CFLAGS='-pipe -g0 -O0' \
   CXXFLAGS='-pipe -g0 -O0' \
   LDFLAGS=-Wl,-s \
-  $MAKE \
+  make \
     enable_shared=no \
     all-target-lib$nom
 }
@@ -105,7 +105,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     install-strip-$nom \
     install-strip-target-lib$nom
 

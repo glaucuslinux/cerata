@@ -49,13 +49,13 @@ ceras_configure() {
 
 ceras_build() {
   # parallel build workarounds
-  $MAKE \
+  make \
     y.tab.c
 
-  $MAKE \
+  make \
     builtins/libbuiltins.a
 
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -63,7 +63,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-strip
 

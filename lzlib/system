@@ -28,7 +28,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -37,7 +37,7 @@ ceras_check() {
 
 ceras_install() {
   # `install-bin-strip` ensures that the `minilzip` binary is installed
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-bin-strip \
     install-strip

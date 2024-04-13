@@ -33,7 +33,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install
 

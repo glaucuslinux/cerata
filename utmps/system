@@ -27,7 +27,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     strip
 }
 
@@ -36,7 +36,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install
 

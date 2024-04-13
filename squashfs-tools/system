@@ -13,7 +13,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     XZ_SUPPORT=1 \
     LZO_SUPPORT=1 \
     LZ4_SUPPORT=1 \
@@ -27,7 +27,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     INSTALL_PREFIX=$SACD/usr \
     INSTALL_DIR=$SACD/usr/bin \
     INSTALL_MANPAGES_DIR=$SACD/usr/share/man/man1 \

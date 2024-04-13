@@ -13,7 +13,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     -f Makefile-libbz2_so
 }
 
