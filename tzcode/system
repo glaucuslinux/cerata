@@ -4,9 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom $TSRC --delete \
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
-  $RADULA_RSYNC $SRCD/tzdata/ $TSRC/$nom \
+  rsync $RADULA_RSYNC_FLAGS $SRCD/tzdata/ $TSRC/$nom \
     --exclude $nom$ver.tar.gz
   cd $TSRC/$nom
 }
@@ -30,13 +30,13 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RADULA_RSYNC tzselect $SACD/usr/bin
-  $RADULA_RSYNC zdump $SACD/usr/bin
-  $RADULA_RSYNC zic $SACD/usr/bin
+  rsync $RADULA_RSYNC_FLAGS tzselect $SACD/usr/bin
+  rsync $RADULA_RSYNC_FLAGS zdump $SACD/usr/bin
+  rsync $RADULA_RSYNC_FLAGS zic $SACD/usr/bin
 
-  $RADULA_RSYNC tzselect.8 $SACD/usr/share/man/man8
-  $RADULA_RSYNC zdump.8 $SACD/usr/share/man/man8
-  $RADULA_RSYNC zic.8 $SACD/usr/share/man/man8
+  rsync $RADULA_RSYNC_FLAGS tzselect.8 $SACD/usr/share/man/man8
+  rsync $RADULA_RSYNC_FLAGS zdump.8 $SACD/usr/share/man/man8
+  rsync $RADULA_RSYNC_FLAGS zic.8 $SACD/usr/share/man/man8
 
   install -dv $SACD/usr/share/zoneinfo/posix
   install -dv $SACD/usr/share/zoneinfo/right

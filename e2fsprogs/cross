@@ -4,12 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_RSYNC $CERD/binutils/config.guess config
-  $RADULA_RSYNC $CERD/binutils/config.rpath config
-  $RADULA_RSYNC $CERD/binutils/config.sub config
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess config
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath config
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub config
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 

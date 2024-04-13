@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-extend-long-iso-format.patch
@@ -13,7 +13,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  $RADULA_RSYNC $CERD/$nom/glaucus.config .config
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/glaucus.config .config
 }
 
 ceras_build() {
@@ -26,7 +26,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RADULA_RSYNC $nom $CRSD/usr/bin
+  rsync $RADULA_RSYNC_FLAGS $nom $CRSD/usr/bin
 
   ln -sfnv $nom $CRSD/usr/bin/[
   ln -sfnv $nom $CRSD/usr/bin/base32

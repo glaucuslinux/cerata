@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_RSYNC $CERD/binutils/config.guess .
-  $RADULA_RSYNC $CERD/binutils/config.sub .
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
 }
 
 ceras_configure() {
@@ -50,9 +50,9 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  $RADULA_RSYNC $CERD/$nom/${nom}d.conf $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/${nom}d.conf $CRSD/etc
 
-  $RADULA_RSYNC support/r$nom $CRSD/usr/bin
+  rsync $RADULA_RSYNC_FLAGS support/r$nom $CRSD/usr/bin
 
-  $RADULA_RSYNC r$nom.1 $CRSD/usr/share/man/man1
+  rsync $RADULA_RSYNC_FLAGS r$nom.1 $CRSD/usr/share/man/man1
 }

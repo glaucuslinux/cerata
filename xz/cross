@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/clear/default-threading.patch
@@ -13,9 +13,9 @@ ceras_prepare() {
 
   autoreconf -vfis
 
-  $RADULA_RSYNC $CERD/binutils/config.guess build-aux
-  $RADULA_RSYNC $CERD/binutils/config.rpath build-aux
-  $RADULA_RSYNC $CERD/binutils/config.sub build-aux
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess build-aux
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath build-aux
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub build-aux
 }
 
 ceras_configure() {

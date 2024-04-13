@@ -4,23 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  $RADULA_RSYNC $CERD/binutils/config.guess .
-  $RADULA_RSYNC $CERD/binutils/config.sub .
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
 
   # bind mess
   tar xvf bind/bind.tar.gz -C bind
 
-  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36
-  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess bind/bind-9.11.36
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub bind/bind-9.11.36
 
-  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
-  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub bind/bind-9.11.36/contrib/dnsperf-2.1.0.0-1
 
-  $RADULA_RSYNC $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
-  $RADULA_RSYNC $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
+  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub bind/bind-9.11.36/contrib/idn/idnkit-1.0-src
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/gentoo/$nom-4.4.3-fix-perms.patch.patch
 
@@ -80,11 +80,11 @@ ceras_install() {
     install-strip
 
   mv -fv $SACD/etc/$nom/dhclient.conf.example $SACD/etc/$nom/dhclient.conf
-  $RADULA_RSYNC doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
+  rsync $RADULA_RSYNC_FLAGS doc/examples/dhclient-${nom}v6.conf $SACD/etc/$nom/dhclient6.conf
   mv -fv $SACD/etc/$nom/${nom}d.conf.example $SACD/etc/$nom/${nom}d.conf
-  $RADULA_RSYNC doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
+  rsync $RADULA_RSYNC_FLAGS doc/examples/${nom}d-${nom}v6.conf $SACD/etc/$nom/${nom}d6.conf
 
-  $RADULA_RSYNC client/scripts/linux $SACD/usr/bin/dhclient-script
+  rsync $RADULA_RSYNC_FLAGS client/scripts/linux $SACD/usr/bin/dhclient-script
 
   rm -frv \
     $SACD/usr/lib/lib${nom}.a \
