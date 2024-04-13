@@ -12,6 +12,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
+  LIBS='-lnsss -lskarnet' \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \

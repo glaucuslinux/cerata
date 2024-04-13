@@ -12,6 +12,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
+  LIBS='-lnsss -lskarnet' \
   ./configure \
     --build=$BLD \
     --host=$TGT \
