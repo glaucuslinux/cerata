@@ -2,8 +2,13 @@
 /usr/bin/dash
 /usr/bin/ksh
 /usr/bin/lksh
+/usr/bin/loksh
 /usr/bin/mksh
+/usr/bin/oils-for-unix
 /usr/bin/oksh
+/usr/bin/osh
 /usr/bin/rksh
 /usr/bin/sh
 /usr/bin/yash
+/usr/bin/ysh
+/usr/bin/zsh
