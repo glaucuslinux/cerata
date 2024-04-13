@@ -17,6 +17,8 @@ ceras_configure() {
 
   LIBS='-lnsss -lskarnet' \
   ./configure \
+    --build=$BLD \
+    --host=$TGT \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -43,7 +45,6 @@ ceras_configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
-    --with-installed-readline \
     --without-included-gettext
 }
 
@@ -64,9 +65,9 @@ ceras_check() {
 
 ceras_install() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR=$CRSD \
     install-strip
 
-  ln -sfnv $nom $SACD/usr/bin/r$nom
-  ln -sfnv $nom $SACD/usr/bin/sh
+  ln -sfnv $nom $CRSD/usr/bin/r$nom
+  ln -sfnv $nom $CRSD/usr/bin/sh
 }
