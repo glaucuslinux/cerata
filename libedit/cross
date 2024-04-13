@@ -60,7 +60,7 @@ ceras_install() {
   touch $CRSD/usr/include/readline/tilde.h
   ln -sfnv ../editline/readline.h $CRSD/usr/include/readline/readline.h
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $CRSD/usr/lib/$nom.la
 
   ln -sfnv $nom.so $CRSD/usr/lib/libreadline.so

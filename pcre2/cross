@@ -56,7 +56,7 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $CRSD/usr/lib/lib${nom}-8.la \
     $CRSD/usr/lib/lib${nom}-16.la \

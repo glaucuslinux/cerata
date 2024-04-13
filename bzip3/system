@@ -48,6 +48,6 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $SACD/usr/lib/libbzip3.la
 }

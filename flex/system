@@ -55,7 +55,7 @@ ceras_install() {
 
   ln -sfnv $nom $SACD/usr/bin/lex
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $SACD/usr/lib/libfl.la
 
   ln -sfnv $nom.1 $SACD/usr/share/man/man1/lex.1

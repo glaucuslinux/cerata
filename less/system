@@ -44,6 +44,6 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Provide compatibility symlink as `more` is disabled in `util-linux`
+  # Compatibility symlink
   ln -sfnv $nom $SACD/usr/bin/more
 }

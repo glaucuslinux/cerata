@@ -124,7 +124,7 @@ ceras_install() {
   # `$CRSD/usr/lib/bfd-plugins` is already provided by `binutils`
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $CRSD/usr/lib/bfd-plugins
 
-  # Manually remove the static libraries
+  # Remove static libraries
   rm -frv \
     $CRSD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
     $CRSD/usr/lib/$nom/$TGT/$ver/libgcov.a \
@@ -137,7 +137,7 @@ ceras_install() {
     $CRSD/usr/lib/libstdc++fs.a \
     $CRSD/usr/lib/libsupc++.a
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $CRSD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
     $CRSD/usr/lib/libatomic.la \

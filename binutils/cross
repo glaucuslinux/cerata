@@ -81,7 +81,7 @@ ceras_install() {
 
   ln -sfnv ld.bfd $CRSD/usr/bin/ld
 
-  # Manually remove the static libraries
+  # Remove static libraries
   rm -frv \
     $CRSD/usr/lib/libbfd.a \
     $CRSD/usr/lib/libctf.a \
@@ -89,7 +89,7 @@ ceras_install() {
     $CRSD/usr/lib/libopcodes.a \
     $CRSD/usr/lib/libsframe.a
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $CRSD/usr/lib/libbfd.la \
     $CRSD/usr/lib/libctf.la \

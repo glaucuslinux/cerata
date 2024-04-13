@@ -74,6 +74,6 @@ ceras_install() {
   ln -sfnv pgrep $CRSD/usr/bin/pidwait
   ln -sfnv pgrep $CRSD/usr/bin/pkill
 
-  # Remove libtool archive (.la) file
+  # Remove libtool archive
   rm -frv $CRSD/usr/lib/libproc2.la
 }

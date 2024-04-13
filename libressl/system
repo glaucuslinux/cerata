@@ -54,7 +54,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $SACD/usr/lib/libcrypto.la \
     $SACD/usr/lib/libssl.la \

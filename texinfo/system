@@ -54,7 +54,7 @@ ceras_install() {
     make \
       install-strip
 
-    # Remove libtool archive (.la) files
+    # Remove libtool archives
     rm -frv \
       /usr/lib/$nom/MiscXS.la \
       /usr/lib/$nom/Parsetexi.la \
@@ -65,7 +65,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $SACD/usr/lib/$nom/MiscXS.la \
     $SACD/usr/lib/$nom/Parsetexi.la \

@@ -54,7 +54,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  # Remove libtool archive (.la) files
+  # Remove libtool archives
   rm -frv \
     $SACD/usr/lib/lib${nom}-8.la \
     $SACD/usr/lib/lib${nom}-16.la \
