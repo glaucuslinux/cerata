@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -22,13 +22,13 @@ ceras_check() {
 }
 
 ceras_install() {
-  $RADULA_RSYNC bzlib.h $CRSD/usr/include
+  rsync $RADULA_RSYNC_FLAGS bzlib.h $CRSD/usr/include
 
-  $RADULA_RSYNC libbz2.so.$ver $CRSD/usr/lib
+  rsync $RADULA_RSYNC_FLAGS libbz2.so.$ver $CRSD/usr/lib
   ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver $CRSD/usr/lib/libbz2.so.1.0
 
-  $RADULA_RSYNC $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
   ln -sfnv $nom.pc $PKG_CONFIG_LIBDIR/libbz2.pc
 }

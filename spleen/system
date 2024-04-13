@@ -21,10 +21,10 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-5x8.psfu $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-6x12.psfu $SACD/usr/share/consolefonts
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/$nom-8x16.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-5x8.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-6x12.psfu $SACD/usr/share/consolefonts
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/$nom-8x16.psfu $SACD/usr/share/consolefonts
 }

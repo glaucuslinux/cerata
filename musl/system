@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
@@ -44,13 +44,13 @@ ceras_install() {
     install
 
   install -dv $SACD/etc
-  $RADULA_RSYNC $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
 
   install -dv $SACD/usr/bin
   ln -sfnv ../lib/libc.so $SACD/usr/bin/ldd
 
   # BSD compatibility header
-  $RADULA_RSYNC $CERD/$nom/queue.h $SACD/usr/include/sys
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/queue.h $SACD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
   rm -frv $SACD/usr/include/utmpx.h

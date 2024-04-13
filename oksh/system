@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -31,7 +31,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  $RADULA_RSYNC $CERD/$nom/ksh.kshrc $SACD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/ksh.kshrc $SACD/etc
 
   ln -sfnv $nom $SACD/usr/bin/ksh
   ln -sfnv $nom $SACD/usr/bin/rksh

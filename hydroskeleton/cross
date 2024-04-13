@@ -27,22 +27,22 @@ ceras_install() {
   install -dv $CRSD/dev
 
   # `$CRSD/etc` is already created by toolchain `musl`
-  $RADULA_RSYNC $CERD/$nom/fstab $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/fstab $CRSD/etc
   ln -sfnv lsb-release $CRSD/etc/glaucus-release
-  $RADULA_RSYNC $CERD/$nom/group $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/hostname $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/hosts $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/issue $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/lsb-release $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/group $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/hostname $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/hosts $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/issue $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/lsb-release $CRSD/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
     -i $CRSD/etc/lsb-release
   ln -sfnv ../usr/lib/os-release $CRSD/etc/os-release
-  $RADULA_RSYNC $CERD/$nom/passwd $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/profile $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/resolv.conf $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/shadow $CRSD/etc
-  $RADULA_RSYNC $CERD/$nom/shells $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/passwd $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/profile $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/resolv.conf $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/shadow $CRSD/etc
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/shells $CRSD/etc
 
   install -dv $CRSD/home
 
@@ -63,7 +63,7 @@ ceras_install() {
   ln -sfnv run/tmp $CRSD/tmp
 
   # `$CRSD/usr` is already created in toolchain
-  $RADULA_RSYNC $CERD/$nom/os-release $CRSD/usr/lib
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/os-release $CRSD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \

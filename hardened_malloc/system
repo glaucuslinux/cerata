@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  $RADULA_RSYNC $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
@@ -25,6 +25,6 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/lib
-  $RADULA_RSYNC out/libhardened_malloc.so $SACD/usr/lib
-  $RADULA_RSYNC out-light/libhardened_malloc-light.so $SACD/usr/lib
+  rsync $RADULA_RSYNC_FLAGS out/libhardened_malloc.so $SACD/usr/lib
+  rsync $RADULA_RSYNC_FLAGS out-light/libhardened_malloc-light.so $SACD/usr/lib
 }
