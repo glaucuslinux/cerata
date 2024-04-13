@@ -67,7 +67,7 @@ ceras_configure() {
 ceras_build() {
   # `dhcp` does not support parallel build!
   MAKEFLAGS=-j1 \
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -75,7 +75,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-strip
 

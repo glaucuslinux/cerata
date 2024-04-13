@@ -43,11 +43,11 @@ ceras_configure() {
 
 ceras_build() {
   # Disable locate because we're using plocate
-  $MAKE \
+  make \
     -C locate \
     dblocation.texi
 
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -55,7 +55,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-strip
 }

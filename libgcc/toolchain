@@ -6,7 +6,7 @@
 ceras_prepare() {
   cd $TBLD/gcc
 
-  $MAKE \
+  make \
     -C $TGT/$nom \
     distclean
 }
@@ -16,7 +16,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     all-target-$nom
 }
 
@@ -25,7 +25,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     install-strip-target-$nom
 
   # Manually remove the static libraries

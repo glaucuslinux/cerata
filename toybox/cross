@@ -18,7 +18,7 @@ ceras_configure() {
 
 ceras_build() {
   CROSS_COMPILE= \
-  $MAKE
+  make
 }
 
 ceras_check() {

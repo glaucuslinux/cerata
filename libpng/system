@@ -39,9 +39,9 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE
+  make
 
-  $MAKE \
+  make \
     -C contrib/pngminus \
     png2pnm \
     pnm2png
@@ -52,7 +52,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install-strip
 

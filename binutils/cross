@@ -65,7 +65,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE \
+  make \
     tooldir=/usr
 }
 
@@ -74,7 +74,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     tooldir=/usr \
     DESTDIR=$CRSD \
     install-strip

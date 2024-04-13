@@ -16,7 +16,7 @@ ceras_build() {
   # `libcap` does not support parallel build!
   BUILD_CC=gcc \
   MAKEFLAGS=-j1 \
-  $MAKE \
+  make \
     DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \
@@ -42,7 +42,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$CRSD \
     lib=lib \
     prefix=/usr \

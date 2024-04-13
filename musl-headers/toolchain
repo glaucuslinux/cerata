@@ -24,7 +24,7 @@ ceras_check() {
 
 ceras_install() {
   # Order according to Makefile
-  $MAKE \
+  make \
     exec_prefix=/usr \
     bindir=/usr/bin \
     prefix=/usr \

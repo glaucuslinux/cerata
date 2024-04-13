@@ -15,7 +15,7 @@ ceras_configure() {
 ceras_build() {
   # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     lib=lib \
     prefix=/usr \
@@ -40,7 +40,7 @@ ceras_check() {
 }
 
 ceras_install() {
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     lib=lib \
     prefix=/usr \

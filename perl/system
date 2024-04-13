@@ -42,7 +42,7 @@ ceras_configure() {
 }
 
 ceras_build() {
-  $MAKE
+  make
 }
 
 ceras_check() {
@@ -51,11 +51,11 @@ ceras_check() {
 
 ceras_install() {
   if [ $BOOTSTRAP = yes ]; then
-    $MAKE \
+    make \
       install
   fi
 
-  $MAKE \
+  make \
     DESTDIR=$SACD \
     install
 
