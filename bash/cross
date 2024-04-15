@@ -15,7 +15,6 @@ ceras_prepare() {
 ceras_configure() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
 
-  LIBS='-lnsss -lskarnet' \
   ./configure \
     --build=$BLD \
     --host=$TGT \
