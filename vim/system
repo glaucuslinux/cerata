@@ -85,7 +85,9 @@ ceras_install() {
     install
 
   install -dv $SACD/etc
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/${nom}rc $SACD/etc
+  ln -sfnv ../usr/share/$nom/${nom}rc $SACD/etc
 
   ln -sfnv $nom $SACD/usr/bin/vi
+
+  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/${nom}rc $SACD/usr/share/$nom
 }
