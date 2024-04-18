@@ -20,25 +20,24 @@ ceras_configure() {
     -Dcf_by="$PRETTY_NAME" \
     -Dinc_version_list=none \
     -Dinstallusrbinperl \
-    -Dlocincpth= \
     -Dman1dir=/usr/share/man/man1 \
     -Dman3dir=/usr/share/man/man3 \
     -Dman1ext=1pm \
     -Dman3ext=3pm \
     -Doptimize="$CFLAGS" \
-    -Dpager='/usr/bin/less -isR' \
+    -Dpager='/usr/bin/less -I' \
     -Dprefix=/usr \
     -Dprivlib=/usr/share/${nom}5/core_$nom \
-    -Dscriptdir=/usr/bin/core_$nom \
+    -Dscriptdir=/usr/bin \
     -Dsitearch=/usr/lib/${nom}5/site_$nom \
     -Dsitelib=/usr/share/${nom}5/site_$nom \
-    -Dsitescript=/usr/bin/site_$nom \
+    -Dsitescript=/usr/bin \
     -Duseshrplib \
     -Dusethreads \
     -Dvendorarch=/usr/lib/${nom}5/vendor_$nom \
     -Dvendorlib=/usr/share/${nom}5/vendor_$nom \
     -Dvendorprefix=/usr \
-    -Dvendorscript=/usr/bin/vendor_$nom
+    -Dvendorscript=/usr/bin
 }
 
 ceras_build() {
@@ -52,12 +51,12 @@ ceras_check() {
 ceras_install() {
   if [ $BOOTSTRAP = yes ]; then
     make \
-      install
+      install-strip
   fi
 
   make \
     DESTDIR=$SACD \
-    install
+    install-strip
 
   ln -sfnv $nom $SACD/usr/bin/$nom$ver
   ln -sfnv ${nom}bug $SACD/usr/bin/${nom}thanks
