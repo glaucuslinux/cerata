@@ -46,6 +46,4 @@ ceras_install() {
   make \
     DESTDIR=$SACD \
     install-strip
-
-  ln -sfnv $nom $SACD/usr/bin/grep
 }
