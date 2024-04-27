@@ -74,7 +74,9 @@ BINDIR=/usr/bin
 SBINDIR=/usr/bin
 INCLUDEDIR=/usr/include
 LIBDIR=/usr/lib
-MANDIR=/usr/share/man" > configure.local
+MANDIR=/usr/share/man
+
+LN='ln -sfn'" > configure.local
 
   ./configure
 }
