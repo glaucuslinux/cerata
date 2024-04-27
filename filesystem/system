@@ -50,7 +50,7 @@ ceras_install() {
 
   install -dv $SACD/mnt
 
-  install -dv $SACD/proc
+  install -dvm 0555 $SACD/proc
 
   install -dvm 0750 $SACD/root
 
@@ -58,7 +58,7 @@ ceras_install() {
 
   ln -sfnv usr/bin $SACD/sbin
 
-  install -dv $SACD/sys
+  install -dvm 0555 $SACD/sys
 
   ln -sfnv run/tmp $SACD/tmp
 
