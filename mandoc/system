@@ -9,8 +9,6 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-paths.patch
-
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
   # LD_RECVMSG is used to prevent catman from linking against libsocket.
@@ -76,7 +74,7 @@ INCLUDEDIR=/usr/include
 LIBDIR=/usr/lib
 MANDIR=/usr/share/man
 
-LN='ln -sfn'" > configure.local
+LN='ln -sfnv'" > configure.local
 
   ./configure
 }
