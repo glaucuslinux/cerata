@@ -60,7 +60,7 @@ ceras_install() {
 
   install -dvm 555 $SACD/sys
 
-  ln -sfnv run/tmp $SACD/tmp
+  install -dvm 1777 $SACD/tmp
 
   install -dv $SACD/usr/bin
   install -dv $SACD/usr/lib
@@ -86,5 +86,6 @@ ceras_install() {
   ln -sfnv ../run $SACD/var/run
   install -dv $SACD/var/spool
   ln -sfnv ../mail $SACD/var/spool/mail
+  install -dvm 1777 $SACD/var/tmp
   install -dv $SACD/var/tmp/radula
 }

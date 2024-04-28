@@ -60,7 +60,7 @@ ceras_install() {
 
   install -dvm 555 $CRSD/sys
 
-  ln -sfnv run/tmp $CRSD/tmp
+  install -dvm 1777 $CRSD/tmp
 
   # `$CRSD/usr` is already created in toolchain
   rsync $RADULA_RSYNC_FLAGS $CERD/$nom/os-release $CRSD/usr/lib
@@ -85,5 +85,6 @@ ceras_install() {
   ln -sfnv ../run $CRSD/var/run
   install -dv $CRSD/var/spool
   ln -sfnv ../mail $CRSD/var/spool/mail
+  install -dvm 1777 $CRSD/var/tmp
   install -dv $CRSD/var/tmp/radula
 }
