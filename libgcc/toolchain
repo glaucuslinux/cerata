@@ -29,7 +29,7 @@ ceras_install() {
     install-strip-target-$nom
 
   # Remove static libraries
-  rm -frv \
+  rm -fv \
     $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a \
     $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a
 }

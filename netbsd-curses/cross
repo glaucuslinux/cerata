@@ -33,7 +33,7 @@ ceras_install() {
   ln -sfnv tic $CRSD/usr/bin/captoinfo
   ln -sfnv tic $CRSD/usr/bin/infotocap
 
-  chmod -Rv 0755 \
+  chmod -v 755 \
     $CRSD/usr/lib/libcurses.so \
     $CRSD/usr/lib/libform.so \
     $CRSD/usr/lib/libmenu.so \

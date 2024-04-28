@@ -74,8 +74,8 @@ ceras_install() {
     install-strip
 
   ln -sfnv $nom $SACD/usr/bin/wget
-  rm -frv $SACD/usr/bin/${nom}_noinstall
+  rm -fv $SACD/usr/bin/${nom}_noinstall
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/libwget.la
+  rm -fv $SACD/usr/lib/libwget.la
 }

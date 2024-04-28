@@ -70,5 +70,5 @@ ceras_install() {
     install-strip
 
   # Remove libtool archive
-  rm -frv $CRSD/usr/lib/libsubid.la
+  rm -fv $CRSD/usr/lib/libsubid.la
 }

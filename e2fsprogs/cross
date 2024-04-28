@@ -74,7 +74,7 @@ ceras_install() {
 
   mv -fv $CRSD/usr/lib/e2initrd_helper $CRSD/usr/bin
 
-  rm -frv \
+  rm -fv \
     $CRSD/usr/lib/libcom_err.a \
     $CRSD/usr/lib/libe2p.a \
     $CRSD/usr/lib/libext2fs.a \

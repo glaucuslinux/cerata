@@ -86,7 +86,7 @@ ceras_install() {
 
   rsync $RADULA_RSYNC_FLAGS client/scripts/linux $SACD/usr/bin/dhclient-script
 
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/lib${nom}.a \
     $SACD/usr/lib/lib${nom}ctl.a \
     $SACD/usr/lib/libomapi.a

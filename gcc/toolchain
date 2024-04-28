@@ -126,7 +126,7 @@ ceras_install() {
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $TLCD/usr/lib/bfd-plugins
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $TLCD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
     $TLCD/usr/$TGT/lib/libstdc++.la \
     $TLCD/usr/$TGT/lib/libstdc++fs.la \

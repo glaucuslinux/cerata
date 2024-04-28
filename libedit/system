@@ -60,7 +60,7 @@ ceras_install() {
   ln -sfnv ../editline/readline.h $SACD/usr/include/readline/readline.h
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/$nom.la
+  rm -fv $SACD/usr/lib/$nom.la
 
   ln -sfnv $nom.so $SACD/usr/lib/libreadline.so
 

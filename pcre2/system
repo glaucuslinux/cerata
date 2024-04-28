@@ -55,7 +55,7 @@ ceras_install() {
     install-strip
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/lib${nom}-8.la \
     $SACD/usr/lib/lib${nom}-16.la \
     $SACD/usr/lib/lib${nom}-32.la \

@@ -72,7 +72,7 @@ ceras_install() {
 
   mv -fv $SACD/usr/lib/e2initrd_helper $SACD/usr/bin
 
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/libcom_err.a \
     $SACD/usr/lib/libe2p.a \
     $SACD/usr/lib/libext2fs.a \

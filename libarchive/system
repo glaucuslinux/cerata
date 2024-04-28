@@ -62,5 +62,5 @@ ceras_install() {
   ln -sfnv bsdtar $SACD/usr/bin/tar
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/$nom.la
+  rm -fv $SACD/usr/lib/$nom.la
 }

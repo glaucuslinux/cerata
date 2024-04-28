@@ -55,5 +55,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  rm -frv $SACD/usr/lib/charset.alias
+  rm -fv $SACD/usr/lib/charset.alias
 }

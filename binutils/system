@@ -79,7 +79,7 @@ ceras_install() {
   ln -sfnv ld.bfd $SACD/usr/bin/ld
 
   # Remove static libraries
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/libbfd.a \
     $SACD/usr/lib/libctf.a \
     $SACD/usr/lib/libctf-nobfd.a \
@@ -87,7 +87,7 @@ ceras_install() {
     $SACD/usr/lib/libsframe.a
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/libbfd.la \
     $SACD/usr/lib/libctf.la \
     $SACD/usr/lib/libctf-nobfd.la \
@@ -95,7 +95,7 @@ ceras_install() {
     $SACD/usr/lib/libsframe.la
 
   # Remove unnecessary manpages
-  rm -frv \
+  rm -fv \
     $SACD/usr/share/man/man1/dlltool.1 \
     $SACD/usr/share/man/man1/windmc.1 \
     $SACD/usr/share/man/man1/windres.1
