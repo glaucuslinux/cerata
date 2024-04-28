@@ -50,15 +50,15 @@ ceras_install() {
 
   install -dv $CRSD/mnt
 
-  install -dvm 0555 $CRSD/proc
+  install -dvm 555 $CRSD/proc
 
-  install -dvm 0750 $CRSD/root
+  install -dvm 750 $CRSD/root
 
   install -dv $CRSD/run
 
   ln -sfnv usr/bin $CRSD/sbin
 
-  install -dvm 0555 $CRSD/sys
+  install -dvm 555 $CRSD/sys
 
   ln -sfnv run/tmp $CRSD/tmp
 
