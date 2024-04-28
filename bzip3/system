@@ -49,5 +49,5 @@ ceras_install() {
     install-strip
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/libbzip3.la
+  rm -fv $SACD/usr/lib/libbzip3.la
 }

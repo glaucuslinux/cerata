@@ -46,5 +46,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  rm -frv $SACD/usr/share/info/standards.info
+  rm -fv $SACD/usr/share/info/standards.info
 }

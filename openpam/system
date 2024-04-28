@@ -49,7 +49,7 @@ ceras_install() {
     install-strip
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/libpam.la \
     $SACD/usr/lib/pam_deny.la \
     $SACD/usr/lib/pam_permit.la \

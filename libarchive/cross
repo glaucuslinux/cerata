@@ -64,5 +64,5 @@ ceras_install() {
   ln -sfnv bsdtar $CRSD/usr/bin/tar
 
   # Remove libtool archive
-  rm -frv $CRSD/usr/lib/$nom.la
+  rm -fv $CRSD/usr/lib/$nom.la
 }

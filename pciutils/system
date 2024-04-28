@@ -56,7 +56,7 @@ ceras_install() {
     install-lib
 
   # Fix library permissions
-  chmod -Rv 0755 $SACD/usr/lib/libpci.so.$ver
+  chmod -v 755 $SACD/usr/lib/libpci.so.$ver
 
   # ids are provided by the `hwdata` ceras
   rm -frv $SACD/usr/share/hwdata

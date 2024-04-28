@@ -48,5 +48,5 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  rm -frv $CRSD/usr/share/info/standards.info
+  rm -fv $CRSD/usr/share/info/standards.info
 }

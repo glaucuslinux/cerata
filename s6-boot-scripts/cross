@@ -25,11 +25,11 @@ ceras_install() {
 
   install -dv $CRSD/etc/s6/current/env
 
-  mkfifo -m 0600 \
+  mkfifo -m 600 \
     $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
     $CRSD/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  install -dvm 02750 $CRSD/etc/s6/current/run-image/uncaught-logs
+  install -dvm 2750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
   # `$CRSD/etc/s6/skel` is already created by `s6-linux-init`
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel

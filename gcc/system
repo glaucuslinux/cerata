@@ -117,7 +117,7 @@ ceras_install() {
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
 
   # Remove static libraries
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
     $SACD/usr/lib/$nom/$TGT/$ver/libgcov.a \
     $SACD/usr/lib/libatomic.a \
@@ -130,7 +130,7 @@ ceras_install() {
     $SACD/usr/lib/libsupc++.a
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
     $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la \
     $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcp1plugin.la \

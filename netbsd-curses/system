@@ -33,7 +33,7 @@ ceras_install() {
   ln -sfnv tic $SACD/usr/bin/captoinfo
   ln -sfnv tic $SACD/usr/bin/infotocap
 
-  chmod -Rv 0755 \
+  chmod -v 755 \
     $SACD/usr/lib/libcurses.so \
     $SACD/usr/lib/libform.so \
     $SACD/usr/lib/libmenu.so \

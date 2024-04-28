@@ -57,5 +57,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install-strip
 
-  chmod -Rv 4755 $SACD/usr/bin/unix_chkpwd
+  chmod -v 4755 $SACD/usr/bin/unix_chkpwd
 }

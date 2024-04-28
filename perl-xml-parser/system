@@ -25,7 +25,7 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/perl5/5.38/core_perl/perllocal.pod \
     $SACD/usr/lib/perl5/5.38/vendor_perl/auto/XML/Parser/.packlist
 }

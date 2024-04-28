@@ -50,7 +50,7 @@ ceras_install() {
     install
 
   # Remove static library
-  rm -frv $SACD/usr/lib/lib$nom.a
+  rm -fv $SACD/usr/lib/lib$nom.a
 
   ln -sfnv $nom.1 $SACD/usr/share/man/man1/p${nom}.1
 }

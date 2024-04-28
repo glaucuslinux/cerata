@@ -53,7 +53,7 @@ ceras_install() {
   rsync $RADULA_RSYNC_FLAGS $CERD/$nom/queue.h $SACD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
-  rm -frv $SACD/usr/include/utmpx.h
+  rm -fv $SACD/usr/include/utmpx.h
 
   ln -sfnv libc.so $SACD/usr/lib/ld-$nom-x86_64.so.1
 }

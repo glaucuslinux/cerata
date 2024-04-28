@@ -48,7 +48,7 @@ ceras_install() {
       install-strip
 
     # Remove libtool archive
-    rm -frv /usr/lib/lib$nom.la
+    rm -fv /usr/lib/lib$nom.la
   fi
 
   make \
@@ -56,5 +56,5 @@ ceras_install() {
     install-strip
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/lib$nom.la
+  rm -fv $SACD/usr/lib/lib$nom.la
 }

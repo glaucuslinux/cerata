@@ -57,12 +57,12 @@ ceras_install() {
     install-strip
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $CRSD/usr/lib/libcrypto.la \
     $CRSD/usr/lib/libssl.la \
     $CRSD/usr/lib/libtls.la
 
-  chmod -Rv 0755 \
+  chmod -v 755 \
     $CRSD/usr/lib/libcrypto.so.53.0.0 \
     $CRSD/usr/lib/libssl.so.56.0.0 \
     $CRSD/usr/lib/libtls.so.29.0.0

@@ -25,14 +25,14 @@ ceras_install() {
     install-strip-target-$nom
 
   # Remove static libraries
-  rm -frv \
+  rm -fv \
     $TLCD/usr/$TGT/lib/libstdc++.a \
     $TLCD/usr/$TGT/lib/libstdc++exp.a \
     $TLCD/usr/$TGT/lib/libstdc++fs.a \
     $TLCD/usr/$TGT/lib/libsupc++.a
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $TLCD/usr/$TGT/lib/libstdc++.la \
     $TLCD/usr/$TGT/lib/libstdc++exp.la \
     $TLCD/usr/$TGT/lib/libstdc++fs.la \

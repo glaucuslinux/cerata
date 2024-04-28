@@ -94,7 +94,7 @@ ceras_install() {
   ln -sfnv ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
 
   # Remove unnecessary manpages
-  rm -frv \
+  rm -fv \
     $TLCD/usr/share/man/man1/$TGT-dlltool.1 \
     $TLCD/usr/share/man/man1/$TGT-windmc.1 \
     $TLCD/usr/share/man/man1/$TGT-windres.1

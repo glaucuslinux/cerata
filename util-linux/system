@@ -82,7 +82,7 @@ ceras_install() {
     install-strip
 
   # Remove libtool archives
-  rm -frv \
+  rm -fv \
     $SACD/usr/lib/libblkid.la \
     $SACD/usr/lib/libfdisk.la \
     $SACD/usr/lib/libmount.la \

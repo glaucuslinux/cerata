@@ -61,5 +61,5 @@ ceras_install() {
     install-strip
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/liblzma.la
+  rm -fv $SACD/usr/lib/liblzma.la
 }

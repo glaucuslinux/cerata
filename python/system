@@ -13,7 +13,7 @@ ceras_prepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
 
   # Force use the system copy of various libraries
-  rm -frv \
+  rm -fv \
     Modules/_ctypes/darwin \
     Modules/_ctypes/libffi_osx \
     Modules/_decimal/libmpdec \

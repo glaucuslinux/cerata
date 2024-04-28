@@ -71,5 +71,5 @@ ceras_install() {
   ln -sfnv pgrep $SACD/usr/bin/pkill
 
   # Remove libtool archive
-  rm -frv $SACD/usr/lib/libproc2.la
+  rm -fv $SACD/usr/lib/libproc2.la
 }

@@ -39,5 +39,5 @@ ceras_install() {
   rsync $RADULA_RSYNC_FLAGS $CERD/musl/queue.h $CRSD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
-  rm -frv $CRSD/usr/include/utmpx.h
+  rm -fv $CRSD/usr/include/utmpx.h
 }

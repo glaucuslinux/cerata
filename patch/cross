@@ -57,5 +57,5 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  rm -frv $CRSD/usr/lib/charset.alias
+  rm -fv $CRSD/usr/lib/charset.alias
 }
