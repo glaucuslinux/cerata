@@ -50,15 +50,15 @@ ceras_install() {
 
   install -dv $SACD/mnt
 
-  install -dvm 0555 $SACD/proc
+  install -dvm 555 $SACD/proc
 
-  install -dvm 0750 $SACD/root
+  install -dvm 750 $SACD/root
 
   install -dv $SACD/run
 
   ln -sfnv usr/bin $SACD/sbin
 
-  install -dvm 0555 $SACD/sys
+  install -dvm 555 $SACD/sys
 
   ln -sfnv run/tmp $SACD/tmp
 
