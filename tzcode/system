@@ -30,13 +30,13 @@ ceras_check() {
 }
 
 ceras_install() {
-  rsync $RADULA_RSYNC_FLAGS tzselect $SACD/usr/bin
-  rsync $RADULA_RSYNC_FLAGS zdump $SACD/usr/bin
-  rsync $RADULA_RSYNC_FLAGS zic $SACD/usr/bin
+  cp -afv tzselect $SACD/usr/bin
+  cp -afv zdump $SACD/usr/bin
+  cp -afv zic $SACD/usr/bin
 
-  rsync $RADULA_RSYNC_FLAGS tzselect.8 $SACD/usr/share/man/man8
-  rsync $RADULA_RSYNC_FLAGS zdump.8 $SACD/usr/share/man/man8
-  rsync $RADULA_RSYNC_FLAGS zic.8 $SACD/usr/share/man/man8
+  cp -afv tzselect.8 $SACD/usr/share/man/man8
+  cp -afv zdump.8 $SACD/usr/share/man/man8
+  cp -afv zic.8 $SACD/usr/share/man/man8
 
   install -dv $SACD/usr/share/zoneinfo/posix
   install -dv $SACD/usr/share/zoneinfo/right

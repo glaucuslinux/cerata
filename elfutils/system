@@ -7,9 +7,9 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess config
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath config
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub config
+  cp -afv $CERD/binutils/config.guess config
+  cp -afv $CERD/binutils/config.rpath config
+  cp -afv $CERD/binutils/config.sub config
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch

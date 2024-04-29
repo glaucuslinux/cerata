@@ -24,5 +24,5 @@ ceras_check() {
 }
 
 ceras_install() {
-  rsync $RADULA_RSYNC_FLAGS $nom $SACD/usr/bin
+  cp -afv $nom $SACD/usr/bin
 }

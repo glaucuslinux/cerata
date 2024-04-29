@@ -38,7 +38,7 @@ ceras_install() {
     install-libs
 
   install -dv $CRSD/etc
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/ld-$nom-x86_64.path $CRSD/etc
+  cp -afv $CERD/$nom/ld-$nom-x86_64.path $CRSD/etc
 
   install -dv $CRSD/usr/bin
   ln -sfnv ../lib/libc.so $CRSD/usr/bin/ldd

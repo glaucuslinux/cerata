@@ -48,5 +48,5 @@ ceras_install() {
     install-strip
 
   install -dv $SACD/etc
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/${nom}rc $SACD/etc
+  cp -afv $CERD/$nom/${nom}rc $SACD/etc
 }

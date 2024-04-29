@@ -9,8 +9,8 @@ ceras_prepare() {
 
   autoreconf -vfis
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
+  cp -afv $CERD/binutils/config.guess .
+  cp -afv $CERD/binutils/config.sub .
 }
 
 ceras_configure() {

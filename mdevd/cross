@@ -44,5 +44,5 @@ ceras_install() {
     DESTDIR=$CRSD \
     install
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/mdev.conf $CRSD/etc
+  cp -afv $CERD/$nom/mdev.conf $CRSD/etc
 }

@@ -45,5 +45,5 @@ ceras_install() {
     DESTDIR=$CRSD \
     install
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
+  cp -afv $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
 }

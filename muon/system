@@ -36,5 +36,5 @@ ceras_install() {
     -C $TBLD/$nom \
     install
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/glaucus-$nom $SACD/usr/bin
+  cp -afv $CERD/$nom/glaucus-$nom $SACD/usr/bin
 }

@@ -36,7 +36,7 @@ ceras_install() {
     install-headers
 
   # BSD compatibility header
-  rsync $RADULA_RSYNC_FLAGS $CERD/musl/queue.h $CRSD/usr/include/sys
+  cp -afv $CERD/musl/queue.h $CRSD/usr/include/sys
 
   # Use `utmpx.h` provided by cross `utmps`
   rm -fv $CRSD/usr/include/utmpx.h

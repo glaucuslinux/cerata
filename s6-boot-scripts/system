@@ -20,8 +20,8 @@ ceras_check() {
 }
 
 ceras_install() {
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc $SACD
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/usr $SACD
+  cp -afRv $SRCD/$nom/etc $SACD
+  cp -afRv $SRCD/$nom/usr $SACD
 
   install -dv $SACD/etc/s6/current/env
 
@@ -32,18 +32,18 @@ ceras_install() {
   install -dvm 2750 $SACD/etc/s6/current/run-image/uncaught-logs
 
   install -dv $SACD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.init $SACD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $SACD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $SACD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/runlevel $SACD/etc/s6/skel
 
   rm -frv $SACD/etc/s6/rc/compiled
   s6-rc-compile $SACD/etc/s6/rc/compiled $SACD/etc/s6/sv
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/modules-load $SACD/usr/bin
+  cp -afv $CERD/$nom/modules-load $SACD/usr/bin
 
   install -dv $SACD/usr/share/man/man8
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
+  cp -afv $CERD/$nom/modules-load.8 $SACD/usr/share/man/man8
 
   install -dvg 20 -o 20 $SACD/var/log/wtmpd
 

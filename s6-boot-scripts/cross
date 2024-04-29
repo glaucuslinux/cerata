@@ -20,8 +20,8 @@ ceras_check() {
 }
 
 ceras_install() {
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc $CRSD
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/usr $CRSD
+  cp -afRv $SRCD/$nom/etc $CRSD
+  cp -afRv $SRCD/$nom/usr $CRSD
 
   install -dv $CRSD/etc/s6/current/env
 
@@ -32,14 +32,14 @@ ceras_install() {
   install -dvm 2750 $CRSD/etc/s6/current/run-image/uncaught-logs
 
   # `$CRSD/etc/s6/skel` is already created by `s6-linux-init`
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $CRSD/etc/s6/skel
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/etc/s6/current/scripts/runlevel $CRSD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $CRSD/etc/s6/skel
+  cp -afv $SRCD/$nom/etc/s6/current/scripts/runlevel $CRSD/etc/s6/skel
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/modules-load $CRSD/usr/bin
+  cp -afv $CERD/$nom/modules-load $CRSD/usr/bin
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8
+  cp -afv $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8
 
   ln -sfnv wtmpd/btmp $CRSD/var/log/btmp
   ln -sfnv wtmpd/faillog $CRSD/var/log/faillog

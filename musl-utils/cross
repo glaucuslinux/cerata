@@ -22,12 +22,12 @@ ceras_check() {
 }
 
 ceras_install() {
-  rsync $RADULA_RSYNC_FLAGS gencat $CRSD/usr/bin
-  rsync $RADULA_RSYNC_FLAGS getent $CRSD/usr/bin
+  cp -afv gencat $CRSD/usr/bin
+  cp -afv getent $CRSD/usr/bin
 
   ln -sfnv true $CRSD/usr/bin/ldconfig
 
   install -dv $CRSD/usr/share/man/man1
-  rsync $RADULA_RSYNC_FLAGS $CERD/musl/gencat.1 $CRSD/usr/share/man/man1
-  rsync $RADULA_RSYNC_FLAGS $CERD/musl/getent.1 $CRSD/usr/share/man/man1
+  cp -afv $CERD/musl/gencat.1 $CRSD/usr/share/man/man1
+  cp -afv $CERD/musl/getent.1 $CRSD/usr/share/man/man1
 }

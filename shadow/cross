@@ -7,9 +7,9 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
+  cp -afv $CERD/binutils/config.guess .
+  cp -afv $CERD/binutils/config.rpath .
+  cp -afv $CERD/binutils/config.sub .
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
