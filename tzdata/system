@@ -36,8 +36,8 @@ ceras_install() {
 
   zic -d $SACD/usr/share/zoneinfo -p Asia/Damascus
 
-  rsync $RADULA_RSYNC_FLAGS iso3166.tab $SACD/usr/share/zoneinfo
-  rsync $RADULA_RSYNC_FLAGS leap-seconds.list $SACD/usr/share/zoneinfo
-  rsync $RADULA_RSYNC_FLAGS zone1970.tab $SACD/usr/share/zoneinfo
-  rsync $RADULA_RSYNC_FLAGS zone.tab $SACD/usr/share/zoneinfo
+  cp -afv iso3166.tab $SACD/usr/share/zoneinfo
+  cp -afv leap-seconds.list $SACD/usr/share/zoneinfo
+  cp -afv zone1970.tab $SACD/usr/share/zoneinfo
+  cp -afv zone.tab $SACD/usr/share/zoneinfo
 }

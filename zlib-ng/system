@@ -7,7 +7,7 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub tools
+  cp -afv $CERD/binutils/config.sub tools
 }
 
 ceras_configure() {

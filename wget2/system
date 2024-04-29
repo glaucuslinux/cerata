@@ -7,13 +7,13 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
+  cp -afv $CERD/binutils/config.guess .
+  cp -afv $CERD/binutils/config.rpath .
+  cp -afv $CERD/binutils/config.sub .
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess build-aux
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath build-aux
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub build-aux
+  cp -afv $CERD/binutils/config.guess build-aux
+  cp -afv $CERD/binutils/config.rpath build-aux
+  cp -afv $CERD/binutils/config.sub build-aux
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/upstream/0001-libressl-compatibility.patch
 }

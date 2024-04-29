@@ -12,9 +12,9 @@ ceras_prepare() {
 
   ./autogen.sh
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess config
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath config
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub config
+  cp -afv $CERD/binutils/config.guess config
+  cp -afv $CERD/binutils/config.rpath config
+  cp -afv $CERD/binutils/config.sub config
 }
 
 ceras_configure() {

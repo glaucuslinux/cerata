@@ -7,9 +7,9 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/config.guess .
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/config.rpath .
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/config.sub .
+  cp -afv $CERD/$nom/config.guess .
+  cp -afv $CERD/$nom/config.rpath .
+  cp -afv $CERD/$nom/config.sub .
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch

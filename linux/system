@@ -21,8 +21,8 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/boot
-  rsync $RADULA_RSYNC_FLAGS /boot/vmlinuz $SACD/boot
+  cp -afv /boot/vmlinuz $SACD/boot
 
   install -dv $SACD/usr/lib
-  rsync $RADULA_RSYNC_FLAGS /usr/lib/modules $SACD/usr/lib
+  cp -afRv /usr/lib/modules $SACD/usr/lib
 }

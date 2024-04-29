@@ -7,9 +7,9 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess build/autoconf
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath build/autoconf
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub build/autoconf
+  cp -afv $CERD/binutils/config.guess build/autoconf
+  cp -afv $CERD/binutils/config.rpath build/autoconf
+  cp -afv $CERD/binutils/config.sub build/autoconf
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 

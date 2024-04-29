@@ -25,6 +25,6 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/lib
-  rsync $RADULA_RSYNC_FLAGS out/libhardened_malloc.so $SACD/usr/lib
-  rsync $RADULA_RSYNC_FLAGS out-light/libhardened_malloc-light.so $SACD/usr/lib
+  cp -afv out/libhardened_malloc.so $SACD/usr/lib
+  cp -afv out-light/libhardened_malloc-light.so $SACD/usr/lib
 }

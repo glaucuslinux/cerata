@@ -11,9 +11,9 @@ ceras_prepare() {
 
   autoreconf -vfis
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess build-aux
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.rpath build-aux
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub build-aux
+  cp -afv $CERD/binutils/config.guess build-aux
+  cp -afv $CERD/binutils/config.rpath build-aux
+  cp -afv $CERD/binutils/config.sub build-aux
 }
 
 ceras_configure() {

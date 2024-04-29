@@ -25,12 +25,12 @@ ceras_check() {
 
 ceras_install() {
   # `pigz` and `unpigz` are symbolic links
-  rsync $RADULA_RSYNC_FLAGS $nom $CRSD/usr/bin
+  cp -afv $nom $CRSD/usr/bin
   ln -sfnv $nom $CRSD/usr/bin/gunzip
   ln -sfnv $nom $CRSD/usr/bin/gzcat
   ln -sfnv $nom $CRSD/usr/bin/gzip
   ln -sfnv $nom $CRSD/usr/bin/un$nom
   ln -sfnv $nom $CRSD/usr/bin/zcat
 
-  rsync $RADULA_RSYNC_FLAGS $nom.1 $CRSD/usr/share/man/man1
+  cp -afv $nom.1 $CRSD/usr/share/man/man1
 }

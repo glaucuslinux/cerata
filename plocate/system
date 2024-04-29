@@ -35,7 +35,7 @@ ceras_install() {
     -C $TBLD/$nom \
     install
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/updatedb.conf $SACD/etc
+  cp -afv $CERD/$nom/updatedb.conf $SACD/etc
 
   # Compatibility symlinks
   ln -sfnv $nom $SACD/usr/bin/locate

@@ -30,5 +30,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  rsync $RADULA_RSYNC_FLAGS include/libnetlink.h $SACD/usr/include
+  cp -afv include/libnetlink.h $SACD/usr/include
 }

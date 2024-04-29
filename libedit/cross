@@ -7,8 +7,8 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.guess .
-  rsync $RADULA_RSYNC_FLAGS $CERD/binutils/config.sub .
+  cp -afv $CERD/binutils/config.guess .
+  cp -afv $CERD/binutils/config.sub .
 }
 
 ceras_configure() {
@@ -51,8 +51,8 @@ ceras_install() {
     DESTDIR=$CRSD \
     install-strip
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/editrc $CRSD/etc
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/inputrc $CRSD/etc
+  cp -afv $CERD/$nom/editrc $CRSD/etc
+  cp -afv $CERD/$nom/inputrc $CRSD/etc
 
   # Use libedit as a drop-in replacement for `readline`
   install -dv $CRSD/usr/include/readline

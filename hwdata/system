@@ -37,5 +37,5 @@ ceras_install() {
     DESTDIR=$SACD \
     install
 
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/sdio.ids $SACD/usr/share/$nom
+  cp -afv $CERD/$nom/sdio.ids $SACD/usr/share/$nom
 }

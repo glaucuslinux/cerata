@@ -13,7 +13,7 @@ ceras_prepare() {
 }
 
 ceras_configure() {
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/glaucus.config .config
+  cp -afv $CERD/$nom/glaucus.config .config
 }
 
 ceras_build() {
@@ -26,7 +26,7 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/bin
-  rsync $RADULA_RSYNC_FLAGS $nom $SACD/usr/bin
+  cp -afv $nom $SACD/usr/bin
 
   ln -sfnv $nom $SACD/usr/bin/[
   ln -sfnv $nom $SACD/usr/bin/base32

@@ -41,5 +41,5 @@ ceras_install() {
     install
 
   install -dv $SACD/usr/lib/pkgconfig
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
+  cp -afv $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
 }

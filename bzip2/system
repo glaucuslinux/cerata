@@ -23,15 +23,15 @@ ceras_check() {
 
 ceras_install() {
   install -dv $SACD/usr/include
-  rsync $RADULA_RSYNC_FLAGS bzlib.h $SACD/usr/include
+  cp -afv bzlib.h $SACD/usr/include
 
   install -dv $SACD/usr/lib
-  rsync $RADULA_RSYNC_FLAGS libbz2.so.$ver $SACD/usr/lib
+  cp -afv libbz2.so.$ver $SACD/usr/lib
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
   install -dv $SACD/usr/lib/pkgconfig
-  rsync $RADULA_RSYNC_FLAGS $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
+  cp -afv $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
   ln -sfnv $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }
