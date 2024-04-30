@@ -7,7 +7,7 @@ ceras_prepare() {
   rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  cp -afv cp -afv guess build-aux
+  cp -afv $CERD/binutils/config.guess build-aux
   cp -afv $CERD/binutils/config.sub build-aux
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
