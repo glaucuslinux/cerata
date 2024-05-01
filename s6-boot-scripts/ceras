@@ -5,6 +5,6 @@
 
 nom="s6-boot-scripts"
 ver="git"
-cmt=""
+cmt="93d2240"
 url="https://github.com/glaucuslinux/s6-boot-scripts"
 run="procps-ng toybox util-linux"
