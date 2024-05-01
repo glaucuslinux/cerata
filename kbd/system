@@ -55,7 +55,7 @@ ceras_install() {
 
   ln -sfnv openvt $SACD/usr/bin/open
 
-  rm -fv \
+  rm -frv \
     $SACD/usr/share/keymaps/amiga \
     $SACD/usr/share/keymaps/atari \
     $SACD/usr/share/keymaps/i386/qwerty/ro_win.map.gz \
