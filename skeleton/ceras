@@ -4,4 +4,4 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="skeleton"
-dep="acl attr bash bzip2 cerata diffutils e2fsprogs execline expat file filesystem findutils gcc gmp grep hwdata iana-etc iproute2 iputils isl kbd kmod libarchive libcap libcap-ng libedit libressl libudev-zero linux lz4 mawk mdevd mpfr musl netbsd-curses nsss opendoas pciutils pcre2 pigz procps-ng psmisc radula s6 s6-boot-scripts s6-linux-init s6-rc sed shadow skalibs toybox util-linux utmps xz zlib-ng zstd"
+dep="acl attr bash bzip2 cerata diffutils e2fsprogs execline expat file filesystem findutils gcc gmp grep hwdata iana-etc iproute2 iputils isl kbd kmod libarchive libcap libcap-ng libedit libressl libudev-zero linux lz4 mawk mdevd mpfr musl netbsd-curses nsss opendoas pciutils pcre2 pigz procps-ng psmisc radula s6 s6-boot-scripts s6-linux-init s6-rc sed shadow skalibs toybox tzcode tzdata util-linux utmps xz zlib-ng zstd"
