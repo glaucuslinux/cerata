@@ -25,6 +25,9 @@ ceras_configure() {
 
 ceras_build() {
   make
+
+  $CC $CFLAGS $LDFLAGS $CERD/$nom/gencat.c -o gencat
+  $CC $CFLAGS $LDFLAGS $CERD/$nom/getent.c -o getent
 }
 
 ceras_check() {
@@ -47,6 +50,9 @@ ceras_install() {
   cp -afv $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
 
   install -dv $SACD/usr/bin
+  cp -afv gencat $SACD/usr/bin
+  cp -afv getent $SACD/usr/bin
+  cp -afv $CERD/$nom/ldconfig $CRSD/usr/bin
   ln -sfnv ../lib/libc.so $SACD/usr/bin/ldd
 
   # BSD compatibility header
@@ -56,4 +62,8 @@ ceras_install() {
   rm -fv $SACD/usr/include/utmpx.h
 
   ln -sfnv libc.so $SACD/usr/lib/ld-$nom-x86_64.so.1
+
+  install -dv $SACD/usr/share/man/man1
+  cp -afv $CERD/$nom/gencat.1 $SACD/usr/share/man/man1
+  cp -afv $CERD/$nom/getent.1 $SACD/usr/share/man/man1
 }
