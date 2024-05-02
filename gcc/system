@@ -119,7 +119,6 @@ ceras_install() {
   # Remove static libraries
   rm -fv \
     $SACD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
-    $SACD/usr/lib/$nom/$TGT/$ver/libgcov.a \
     $SACD/usr/lib/libatomic.a \
     $SACD/usr/lib/libgomp.a \
     $SACD/usr/lib/libitm.a \
