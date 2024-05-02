@@ -6,7 +6,7 @@
 ceras_prepare() {
   install -dv $TBLD/$nom
 
-  cd $SRCD/$nom/$nom-$ver
+  cd $SRCD/$nom/$nom-v$ver
 }
 
 ceras_configure() {
