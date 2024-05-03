@@ -5,6 +5,6 @@
 
 nom="rad"
 ver="git"
-cmt="69d3134"
+cmt="692bd1f"
 url="https://github.com/glaucuslinux/rad"
 run="erofs-utils libarchive rsync toybox wget2 zstd"
