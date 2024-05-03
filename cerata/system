@@ -20,8 +20,8 @@ ceras_check() {
 }
 
 ceras_install() {
-  install -dv $SACD/var/db/radula/clusters
-  rsync $RADULA_RSYNC_FLAGS $CERD/ $SACD/var/db/radula/clusters/glaucus --exclude .$ver \
+  install -dv $SACD/var/lib/rad/clusters
+  rsync $RAD_RSYNC_FLAGS $CERD/ $SACD/var/lib/rad/clusters/glaucus --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \
     --exclude README.md \

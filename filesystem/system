@@ -73,19 +73,18 @@ ceras_install() {
   ln -sfnv bin $SACD/usr/sbin
   install -dv $SACD/usr/share
 
-  install -dv $SACD/var/cache/radula/bin
-  install -dv $SACD/var/cache/radula/src
-  install -dv $SACD/var/cache/radula/venom
-  install -dv $SACD/var/db/radula/clusters/glaucus
+  install -dv $SACD/var/cache/rad/bin
+  install -dv $SACD/var/cache/rad/src
+  install -dv $SACD/var/cache/rad/venom
   install -dv $SACD/var/lib/hwclock
   install -dv $SACD/var/lib/misc
-  install -dv $SACD/var/lib/radula
+  install -dv $SACD/var/lib/rad/clusters/glaucus
   ln -sfnv ../run/lock $SACD/var/lock
-  install -dv $SACD/var/log/radula
+  install -dv $SACD/var/log/rad
   install -dv $SACD/var/mail
   ln -sfnv ../run $SACD/var/run
   install -dv $SACD/var/spool
   ln -sfnv ../mail $SACD/var/spool/mail
   install -dvm 1777 $SACD/var/tmp
-  install -dv $SACD/var/tmp/radula
+  install -dv $SACD/var/tmp/rad
 }
