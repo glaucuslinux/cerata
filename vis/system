@@ -17,9 +17,9 @@ ceras_configure() {
     --sharedir=/usr/share \
     --docdir=/usr/share/doc/$nom \
     --mandir=/usr/share/man \
+    --enable-lua \
     --disable-selinux \
-    --enable-acl \
-    --disable-help
+    --enable-acl
 }
 
 ceras_build() {
