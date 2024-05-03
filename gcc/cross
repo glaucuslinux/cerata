@@ -4,13 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  rsync $RADULA_RSYNC_FLAGS $SRCD/gmp/gmp-6.3.0/ gmp --delete
-  rsync $RADULA_RSYNC_FLAGS $SRCD/mpfr/mpfr-4.2.1/ mpfr --delete
-  rsync $RADULA_RSYNC_FLAGS $SRCD/mpc/mpc-1.3.1/ mpc --delete
-  rsync $RADULA_RSYNC_FLAGS $SRCD/isl/isl-0.26/ isl --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/gmp/gmp-6.3.0/ gmp --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/mpfr/mpfr-4.2.1/ mpfr --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/mpc/mpc-1.3.1/ mpc --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/isl/isl-0.26/ isl --delete
 
   cp -afv $CERD/binutils/config.guess .
   cp -afv $CERD/binutils/config.rpath .

@@ -3,8 +3,8 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-nom="radula"
+nom="rad"
 ver="git"
 cmt="69d3134"
-url="https://github.com/glaucuslinux/radula"
+url="https://github.com/glaucuslinux/rad"
 run="erofs-utils libarchive rsync toybox wget2 zstd"

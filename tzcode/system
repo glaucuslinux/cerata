@@ -4,9 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 ceras_prepare() {
-  rsync $RADULA_RSYNC_FLAGS $SRCD/$nom $TSRC --delete \
+  rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
-  rsync $RADULA_RSYNC_FLAGS $SRCD/tzdata/ $TSRC/$nom \
+  rsync $RAD_RSYNC_FLAGS $SRCD/tzdata/ $TSRC/$nom \
     --exclude $nom$ver.tar.gz
   cd $TSRC/$nom
 }
