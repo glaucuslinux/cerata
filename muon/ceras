@@ -7,4 +7,4 @@ nom="muon"
 ver="0.2.0"
 url="https://git.sr.ht/~lattis/muon/archive/0.2.0.tar.gz"
 sum="574a14ad4a82f2d1b2d8147b4126ae6eae202e239a3784a4affd940b260329b4"
-dep='acl bzip2 expat libarchive libedit libressl lz4 pkgconf samurai zlib-ng zstd'
+bld='acl bzip2 expat libarchive libedit libressl lz4 pkgconf samurai zlib-ng zstd'
