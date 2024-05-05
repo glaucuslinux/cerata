@@ -1,4 +1,4 @@
+*/build.cross linguist-language=Shell
+*/build.native linguist-language=Shell
+*/build.toolchain linguist-language=Shell
 */ceras linguist-language=TOML
-*/cross linguist-language=Shell
-*/system linguist-language=Shell
-*/toolchain linguist-language=Shell
