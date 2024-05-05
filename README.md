@@ -2,7 +2,7 @@
 [![Repository status](https://repology.org/badge/repository-big/glaucus.svg)](
 https://repology.org/repository/glaucus)
 
-glaucus cerata
+glaucus packages
 
 ## Community
 * [Discord](https://discord.gg/nDKNmNc)
