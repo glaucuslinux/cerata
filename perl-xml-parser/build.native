@@ -3,24 +3,24 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/XML-Parser-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   perl Makefile.PL INSTALLDIRS=vendor
 }
 
-ceras_build() {
+cerasBuild() {
   make
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$SACD \
     install

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,20 +12,20 @@ ceras_prepare() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/upstream/0001-fix-install-mode.patch
 }
 
-ceras_configure() {
+cerasConfigure() {
   cp -afv $CERD/$nom/glaucus.config .config
 }
 
-ceras_build() {
+cerasBuild() {
   CROSS_COMPILE= \
   make
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   cp -afv $nom $CRSD/usr/bin
 
   ln -sfnv $nom $CRSD/usr/bin/[

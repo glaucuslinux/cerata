@@ -3,26 +3,26 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/Intel-Linux-Processor-Microcode-Data-Files-microcode-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   install -dv kernel/x86/microcode
 }
 
-ceras_build() {
+cerasBuild() {
   iucode_tool \
     --write-earlyfw=$nom.img $nom/ $nom-with-caveats/ \
     --overwrite
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   install -dv $SACD/boot
   cp -afv $nom.img $SACD/boot
 }

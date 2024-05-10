@@ -3,23 +3,23 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   :
 }
 
-ceras_configure() {
+cerasConfigure() {
   :
 }
 
-ceras_build() {
+cerasBuild() {
   :
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   ln -sfnv usr/bin $SACD/bin
 
   install -dv $SACD/boot

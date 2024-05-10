@@ -3,16 +3,16 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
-ceras_build() {
+cerasBuild() {
   # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
   make \
@@ -35,11 +35,11 @@ ceras_build() {
     GOLANG=no
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$SACD \
     lib=lib \

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,7 +12,7 @@ ceras_prepare() {
   cp -afv $CERD/binutils/config.sub build-aux
 }
 
-ceras_configure() {
+cerasConfigure() {
   # This patch will be part of flex-2.6.5 release
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
 
@@ -44,15 +44,15 @@ ceras_configure() {
     --with-pic
 }
 
-ceras_build() {
+cerasBuild() {
   make
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$CRSD \
     install-strip

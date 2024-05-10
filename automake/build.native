@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -11,7 +11,7 @@ ceras_prepare() {
   cp -afv $CERD/binutils/config.sub lib
 }
 
-ceras_configure() {
+cerasConfigure() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-python3.10.patch
 
   ./configure \
@@ -35,15 +35,15 @@ ceras_configure() {
     --docdir=/usr/share/doc/$nom
 }
 
-ceras_build() {
+cerasBuild() {
   make
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$SACD \
     install-strip

@@ -3,25 +3,25 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   :
 }
 
-ceras_build() {
+cerasBuild() {
   python3 setup.py \
     build
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   python3 setup.py \
     install \
     --root=$SACD \

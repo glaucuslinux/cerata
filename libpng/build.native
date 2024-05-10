@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -13,7 +13,7 @@ ceras_prepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/upstream/$nom-$ver-apng.patch
 }
 
-ceras_configure() {
+cerasConfigure() {
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -38,7 +38,7 @@ ceras_configure() {
     --with-pic
 }
 
-ceras_build() {
+cerasBuild() {
   make
 
   make \
@@ -47,11 +47,11 @@ ceras_build() {
     pnm2png
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$SACD \
     install-strip
