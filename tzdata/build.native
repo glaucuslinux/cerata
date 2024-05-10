@@ -3,25 +3,25 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   :
 }
 
-ceras_build() {
+cerasBuild() {
   :
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   # Don't run `make install` as it builds and installs unnecessary stuff
   ln -sfnv $SACD/usr/share/zoneinfo/Asia/Damascus $SACD/etc/localtime
 

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ ceras_prepare() {
   cd $TBLD/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   $TSRC/$nom/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -61,16 +61,16 @@ ceras_configure() {
     --with-system-zlib
 }
 
-ceras_build() {
+cerasBuild() {
   make \
     tooldir=/usr
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     tooldir=/usr \
     DESTDIR=$SACD \

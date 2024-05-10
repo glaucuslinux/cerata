@@ -3,13 +3,13 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   install -dv $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
-ceras_configure() {
+cerasConfigure() {
   glaucus-muon \
     -Dlibseat-logind=disabled \
     -Dlibseat-builtin=enabled \
@@ -17,16 +17,16 @@ ceras_configure() {
     $TBLD/$nom
 }
 
-ceras_build() {
+cerasBuild() {
   samu \
     -C $TBLD/$nom
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   DESTDIR=$SACD \
   muon \
     -C $TBLD/$nom \

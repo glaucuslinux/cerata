@@ -3,16 +3,16 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver-mk2/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
-ceras_build() {
+cerasBuild() {
   make \
     PREFIX=/usr \
     BINDIR=/usr/bin \
@@ -21,11 +21,11 @@ ceras_build() {
     MANDIR=/usr/share/man/man3
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     PREFIX=/usr \
     BINDIR=/usr/bin \

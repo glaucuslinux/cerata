@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,7 +12,7 @@ ceras_prepare() {
   cp -afv $CERD/binutils/config.sub support
 }
 
-ceras_configure() {
+cerasConfigure() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
 
   LIBS='-lnsss -lskarnet' \
@@ -47,7 +47,7 @@ ceras_configure() {
     --without-included-gettext
 }
 
-ceras_build() {
+cerasBuild() {
   # parallel build workarounds
   make \
     y.tab.c
@@ -58,11 +58,11 @@ ceras_build() {
   make
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   make \
     DESTDIR=$SACD \
     install-strip

@@ -3,25 +3,25 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   install -dv $TBLD/$nom
   cd $TBLD/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   :
 }
 
-ceras_build() {
+cerasBuild() {
   $CC $CFLAGS $LDFLAGS $CERD/musl/gencat.c -o gencat
   $CC $CFLAGS $LDFLAGS $CERD/musl/getent.c -o getent
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   cp -afv gencat $CRSD/usr/bin
   cp -afv getent $CRSD/usr/bin
   cp -afv $CERD/musl/ldconfig $CRSD/usr/bin

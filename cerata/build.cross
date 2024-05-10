@@ -3,23 +3,23 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   :
 }
 
-ceras_configure() {
+cerasConfigure() {
   :
 }
 
-ceras_build() {
+cerasBuild() {
   :
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   rsync $RAD_RSYNC_FLAGS $CERD/ $CRSD/var/lib/rad/clusters/glaucus --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \

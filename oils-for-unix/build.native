@@ -3,27 +3,27 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-ceras_prepare() {
+cerasPrepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-ceras_configure() {
+cerasConfigure() {
   ./configure \
     --prefix=/usr \
     --datarootdir=/usr/share \
     --with-readline
 }
 
-ceras_build() {
+cerasBuild() {
   _build/oils.sh
 }
 
-ceras_check() {
+cerasCheck() {
   :
 }
 
-ceras_install() {
+cerasInstall() {
   DESTDIR=$SACD \
   ./install
 }
