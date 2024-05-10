@@ -21,7 +21,7 @@ cerasCheck() {
 
 cerasInstall() {
   install -dv $SACD/var/lib/rad/clusters
-  rsync $RAD_RSYNC_FLAGS $CERD/ $SACD/var/lib/rad/clusters/glaucus --exclude .$ver \
+  rsync $RAD_RSYNC_FLAGS $CERD $SACD/var/lib/rad/clusters --exclude .$ver \
     --exclude .${ver}attributes \
     --exclude LICENSE \
     --exclude README.md \
