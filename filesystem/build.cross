@@ -73,8 +73,8 @@ cerasInstall() {
   install -dv $CRSD/usr/share
 
   install -dv $CRSD/var/cache/rad/bin
+  install -dv $CRSD/var/cache/rad/local
   install -dv $CRSD/var/cache/rad/src
-  install -dv $CRSD/var/cache/rad/venom
   install -dv $CRSD/var/lib/hwclock
   install -dv $CRSD/var/lib/misc
   install -dv $CRSD/var/lib/rad/clusters/glaucus

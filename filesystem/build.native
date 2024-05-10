@@ -74,8 +74,8 @@ cerasInstall() {
   install -dv $SACD/usr/share
 
   install -dv $SACD/var/cache/rad/bin
+  install -dv $SACD/var/cache/rad/local
   install -dv $SACD/var/cache/rad/src
-  install -dv $SACD/var/cache/rad/venom
   install -dv $SACD/var/lib/hwclock
   install -dv $SACD/var/lib/misc
   install -dv $SACD/var/lib/rad/clusters/glaucus
