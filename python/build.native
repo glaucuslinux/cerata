@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/Python-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ cerasPrepare() {
     Modules/expat
 }
 
-cerasConfigure() {
+configure() {
   ax_cv_c_float_words_bigendian=no \
   ./configure \
     --prefix=/usr \
@@ -56,15 +56,15 @@ cerasConfigure() {
     --without-ensurepip
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install

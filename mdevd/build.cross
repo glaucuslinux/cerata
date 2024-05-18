@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 
   ./configure \
@@ -30,16 +30,16 @@ cerasConfigure() {
     --enable-nsss
 }
 
-cerasBuild() {
+build() {
   make \
     strip
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$CRSD \
     install

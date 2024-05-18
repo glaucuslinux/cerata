@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ cerasPrepare() {
   cd $TBLD/$nom
 }
 
-cerasConfigure() {
+configure() {
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$BLD \
@@ -63,18 +63,18 @@ cerasConfigure() {
     --with-system-zlib
 }
 
-cerasBuild() {
+build() {
   make \
     all-$nom \
     all-gas \
     all-ld
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     install-strip-$nom \
     install-strip-gas \

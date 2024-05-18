@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete
   cd $TSRC/$nom
 
@@ -15,11 +15,11 @@ cerasPrepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
 }
 
-cerasConfigure() {
+configure() {
   :
 }
 
-cerasBuild() {
+build() {
   make \
     PREFIX=/usr \
     MANPREFIX=/usr/share/man \
@@ -28,11 +28,11 @@ cerasBuild() {
     LDFLAGS="$LDFLAGS"
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     PREFIX=/usr \
     MANPREFIX=/usr/share/man \

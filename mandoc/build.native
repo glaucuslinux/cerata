@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   # Environment variables (e.g. CFLAGS) have to be explicitly specified.
   # INCLUDEDIR and LIBDIR are only needed when libmandoc.a is being installed.
   # LD_RECVMSG is used to prevent catman from linking against libsocket.
@@ -79,15 +79,15 @@ LN='ln -sfnv'" > configure.local
   ./configure
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install

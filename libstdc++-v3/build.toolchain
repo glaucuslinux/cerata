@@ -3,24 +3,24 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   cd $TBLD/gcc
 }
 
-cerasConfigure() {
+configure() {
   :
 }
 
-cerasBuild() {
+build() {
   make \
     all-target-$nom
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     install-strip-target-$nom
 

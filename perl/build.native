@@ -3,14 +3,14 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch
 }
 
-cerasConfigure() {
+configure() {
   BUILD_ZLIB=False \
   BUILD_BZIP2=0 \
   ./Configure \
@@ -40,15 +40,15 @@ cerasConfigure() {
     -Dvendorscript=/usr/bin
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   if [ $BOOTSTRAP = yes ]; then
     make \
       install-strip

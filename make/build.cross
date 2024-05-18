@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -12,7 +12,7 @@ cerasPrepare() {
   cp -afv $CERD/binutils/config.sub build-aux
 }
 
-cerasConfigure() {
+configure() {
   ./configure \
     --build=$BLD \
     --host=$TGT \
@@ -39,15 +39,15 @@ cerasConfigure() {
     --without-guile
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$CRSD \
     install-strip

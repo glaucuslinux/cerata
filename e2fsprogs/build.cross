@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -18,7 +18,7 @@ cerasPrepare() {
   cd $TBLD/$nom
 }
 
-cerasConfigure() {
+configure() {
   $TSRC/$nom/configure \
     --build=$BLD \
     --host=$TGT \
@@ -56,17 +56,17 @@ cerasConfigure() {
     --without-systemd-unit-dir
 }
 
-cerasBuild() {
+build() {
   # Disable parallel build!
   MAKEFLAGS=-j1 \
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$CRSD \
     install-strip \

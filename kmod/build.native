@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -17,7 +17,7 @@ cerasPrepare() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
-cerasConfigure() {
+configure() {
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -49,15 +49,15 @@ cerasConfigure() {
     --with-openssl
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install-strip

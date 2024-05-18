@@ -3,27 +3,27 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   :
 }
 
-cerasBuild() {
+build() {
   make
 
   make \
     VARIANT=light
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   install -dv $SACD/usr/lib
   cp -afv out/libhardened_malloc.so $SACD/usr/lib
   cp -afv out-light/libhardened_malloc-light.so $SACD/usr/lib

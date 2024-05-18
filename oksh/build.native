@@ -3,12 +3,12 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   ./configure \
     --prefix=/usr \
     --bindir=/usr/bin \
@@ -16,17 +16,17 @@ cerasConfigure() {
     --enable-lto
 }
 
-cerasBuild() {
+build() {
   # netbsd-curses compatibility
   LIBS=-lterminfo \
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install

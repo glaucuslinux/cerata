@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete \
     --exclude $nom$ver.tar.gz
   rsync $RAD_RSYNC_FLAGS $SRCD/tzdata/ $TSRC/$nom \
@@ -11,11 +11,11 @@ cerasPrepare() {
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
 }
 
-cerasBuild() {
+build() {
   make \
     CC=$CC \
     CFLAGS="$CFLAGS" \
@@ -25,11 +25,11 @@ cerasBuild() {
     zic
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   cp -afv tzselect $SACD/usr/bin
   cp -afv zdump $SACD/usr/bin
   cp -afv zic $SACD/usr/bin

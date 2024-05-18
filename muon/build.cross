@@ -3,13 +3,13 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   install -dv $TBLD/$nom
 
   cd $SRCD/$nom/$nom-$ver
 }
 
-cerasConfigure() {
+configure() {
   # Use `meson` provided by the host system
   $CERD/meson/glaucus-meson \
     --cross-file $CERD/meson/meson.cross \
@@ -23,16 +23,16 @@ cerasConfigure() {
     $TBLD/$nom
 }
 
-cerasBuild() {
+build() {
   samu \
     -C $TBLD/$nom
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   DESTDIR=$CRSD \
   samu \
     -C $TBLD/$nom \
