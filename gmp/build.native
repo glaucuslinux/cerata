@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -11,7 +11,7 @@ cerasPrepare() {
   cp -afv $CERD/binutils/config.sub configfsf.sub
 }
 
-cerasConfigure() {
+configure() {
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -35,15 +35,15 @@ cerasConfigure() {
     --with-pic
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   if [ $BOOTSTRAP = yes ]; then
     make \
       install-strip

@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -27,7 +27,7 @@ cerasPrepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/openembedded/0001-workaround-busybox-limitation-in-linux-dhclient-script.patch
 }
 
-cerasConfigure() {
+configure() {
   CFLAGS="$CFLAGS -D_PATH_DHCPD_CONF='\"/etc/$nom/${nom}d.conf\"' -D_PATH_DHCLIENT_CONF='\"/etc/$nom/dhclient.conf\"'" \
   ./configure \
     --prefix=/usr \
@@ -64,17 +64,17 @@ cerasConfigure() {
     --with-relay6-pid-file=/run/$nom/dhcrelay6.pid
 }
 
-cerasBuild() {
+build() {
   # `dhcp` does not support parallel build!
   MAKEFLAGS=-j1 \
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install-strip

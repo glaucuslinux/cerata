@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-v$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -14,7 +14,7 @@ cerasPrepare() {
   cp -afv $CERD/binutils/config.sub .
 }
 
-cerasConfigure() {
+configure() {
   ac_cv_func_malloc_0_nonnull=yes \
   ac_cv_func_realloc_0_nonnull=yes \
   ./configure \
@@ -43,15 +43,15 @@ cerasConfigure() {
     --disable-rpath
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$CRSD \
     install-strip

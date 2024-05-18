@@ -3,23 +3,23 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   :
 }
 
-cerasConfigure() {
+configure() {
   :
 }
 
-cerasBuild() {
+build() {
   :
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   cp -afRv $SRCD/$nom/etc $CRSD
   cp -afRv $SRCD/$nom/usr $CRSD
 

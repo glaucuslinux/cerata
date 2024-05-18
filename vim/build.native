@@ -3,13 +3,13 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   # vim doesn't build out of tree
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
-cerasConfigure() {
+configure() {
   LIBS=-lterminfo \
   ac_cv_sizeof_int=4 \
   ac_cv_small_wchar_t=no \
@@ -71,15 +71,15 @@ cerasConfigure() {
     --with-tlib=ncursesw
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install

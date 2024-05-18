@@ -3,7 +3,7 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
@@ -13,7 +13,7 @@ cerasPrepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
 }
 
-cerasConfigure() {
+configure() {
   ac_cv_prog_swig_found=no \
   ./configure \
     --build=$BLD \
@@ -41,15 +41,15 @@ cerasConfigure() {
     --without-python3
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$CRSD \
     install-strip

@@ -3,14 +3,14 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/detect_init-remove-irrelevant.patch
 }
 
-cerasConfigure() {
+configure() {
   ./configure \
     --disable-debug \
     --prefix=/usr \
@@ -28,15 +28,15 @@ cerasConfigure() {
     --infodir=/usr/share/info
 }
 
-cerasBuild() {
+build() {
   make
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   make \
     DESTDIR=$SACD \
     install

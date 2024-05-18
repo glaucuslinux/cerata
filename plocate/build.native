@@ -3,14 +3,14 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-cerasPrepare() {
+prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
   install -dv $TBLD/$nom
 }
 
-cerasConfigure() {
+configure() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
   glaucus-muon \
@@ -20,16 +20,16 @@ cerasConfigure() {
     $TBLD/$nom
 }
 
-cerasBuild() {
+build() {
   samu \
     -C $TBLD/$nom
 }
 
-cerasCheck() {
+check() {
   :
 }
 
-cerasInstall() {
+package() {
   DESTDIR=$SACD \
   muon \
     -C $TBLD/$nom \
