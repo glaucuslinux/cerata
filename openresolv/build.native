@@ -12,20 +12,20 @@ cerasPrepare() {
 
 cerasConfigure() {
   ./configure \
+    --disable-debug \
     --prefix=/usr \
+    --sysconfdir=/etc \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
+    --libexecdir=/usr/lib/resolvconf \
     --statedir=/var \
     --localstatedir=/var \
-    --runstatedir=/run \
+    --rundir=/run \
+    --mandir=/usr/share/man \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --mandir=/usr/share/man \
-    --disable-debug
+    --infodir=/usr/share/info
 }
 
 cerasBuild() {
