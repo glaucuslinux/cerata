@@ -1,0 +1,43 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+cerasPrepare() {
+  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  cd $TSRC/$nom
+
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/detect_init-remove-irrelevant.patch
+}
+
+cerasConfigure() {
+  ./configure \
+    --prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --statedir=/var \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --mandir=/usr/share/man \
+    --disable-debug
+}
+
+cerasBuild() {
+  make
+}
+
+cerasCheck() {
+  :
+}
+
+cerasInstall() {
+  make \
+    DESTDIR=$SACD \
+    install
+}
