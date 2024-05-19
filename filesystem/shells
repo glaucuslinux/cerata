@@ -1,5 +1,6 @@
 /usr/bin/bash
 /usr/bin/dash
+/usr/bin/fish
 /usr/bin/ksh
 /usr/bin/lksh
 /usr/bin/loksh
@@ -7,6 +8,7 @@
 /usr/bin/oils-for-unix
 /usr/bin/oksh
 /usr/bin/osh
+/usr/bin/rbash
 /usr/bin/rksh
 /usr/bin/sh
 /usr/bin/yash
