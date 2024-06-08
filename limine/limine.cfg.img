@@ -4,6 +4,7 @@ QUIET=yes
 TIMEOUT=0
 
 :glaucus
+    COMMENT=glaucus
     PROTOCOL=linux
     CMDLINE=init=/usr/bin/init quiet ro root=/dev/sda1 rootfstype=ext4
     KERNEL_PATH=boot:///vmlinuz
