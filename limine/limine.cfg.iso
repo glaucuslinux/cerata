@@ -4,6 +4,7 @@ QUIET=yes
 TIMEOUT=0
 
 :glaucus
+    COMMENT=glaucus
     PROTOCOL=linux
     CMDLINE=quiet ro
     KERNEL_PATH=boot:///vmlinuz

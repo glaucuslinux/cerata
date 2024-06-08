@@ -32,6 +32,7 @@ configure() {
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
     --enable-bios-cd \
+    --enable-bios-pxe \
     --enable-bios \
     --enable-uefi-x86-64 \
     --enable-uefi-cd
