@@ -1,0 +1,10 @@
+INTERFACE_BRANDING=glaucus
+INTERFACE_BRANDING_COLOUR=4
+QUIET=yes
+TIMEOUT=0
+
+:glaucus
+    PROTOCOL=linux
+    CMDLINE=init=/usr/bin/init quiet ro root=/dev/sda1 rootfstype=ext4
+    KERNEL_PATH=boot:///vmlinuz
+    MODULE_PATH=boot:///initramfs
