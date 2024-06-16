@@ -1,6 +1,0 @@
-set timeout=0
-
-menuentry glaucus {
-  linux /boot/vmlinuz quiet ro
-  initrd /boot/initramfs
-}
