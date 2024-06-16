@@ -1,6 +1,0 @@
-set timeout=0
-
-menuentry glaucus {
-  linux /boot/vmlinuz init=/usr/bin/init quiet ro root=/dev/sda1 rootfstype=ext4
-  initrd /boot/initramfs
-}
