@@ -72,12 +72,12 @@ package() {
   ln -sfnv bin $CRSD/usr/sbin
   install -dv $CRSD/usr/share
 
-  install -dv $CRSD/var/cache/rad/bin
   install -dv $CRSD/var/cache/rad/local
+  install -dv $CRSD/var/cache/rad/pkg
   install -dv $CRSD/var/cache/rad/src
   install -dv $CRSD/var/lib/hwclock
   install -dv $CRSD/var/lib/misc
-  install -dv $CRSD/var/lib/rad/clusters/glaucus
+  install -dv $CRSD/var/lib/rad/clusters
   ln -sfnv ../run/lock $CRSD/var/lock
   install -dv $CRSD/var/log/rad
   install -dv $CRSD/var/mail
