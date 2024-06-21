@@ -73,12 +73,12 @@ package() {
   ln -sfnv bin $SACD/usr/sbin
   install -dv $SACD/usr/share
 
-  install -dv $SACD/var/cache/rad/bin
   install -dv $SACD/var/cache/rad/local
+  install -dv $SACD/var/cache/rad/pkg
   install -dv $SACD/var/cache/rad/src
   install -dv $SACD/var/lib/hwclock
   install -dv $SACD/var/lib/misc
-  install -dv $SACD/var/lib/rad/clusters/glaucus
+  install -dv $SACD/var/lib/rad/clusters
   ln -sfnv ../run/lock $SACD/var/lock
   install -dv $SACD/var/log/rad
   install -dv $SACD/var/mail
