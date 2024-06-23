@@ -49,5 +49,5 @@ package() {
     install-strip
 
   # Remove libtool archive
-  rm -fv $SACD/usr/lib/libbzip3.la
+  rm -fv $SACD/usr/lib/lib${nom}.la
 }
