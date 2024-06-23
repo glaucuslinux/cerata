@@ -25,6 +25,6 @@ check() {
 
 package() {
   install -dv $SACD/usr/lib
-  cp -afv out/libhardened_malloc.so $SACD/usr/lib
-  cp -afv out-light/libhardened_malloc-light.so $SACD/usr/lib
+  cp -afv out/lib${nom}.so $SACD/usr/lib
+  cp -afv out-light/lib${nom}-light.so $SACD/usr/lib
 }
