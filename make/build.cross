@@ -40,7 +40,7 @@ configure() {
 }
 
 build() {
-  make
+  $nom
 }
 
 check() {
@@ -48,7 +48,7 @@ check() {
 }
 
 package() {
-  make \
+  $nom \
     DESTDIR=$CRSD \
     install-strip
 

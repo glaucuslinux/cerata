@@ -38,7 +38,7 @@ configure() {
 }
 
 build() {
-  make
+  $nom
 }
 
 check() {
@@ -46,7 +46,7 @@ check() {
 }
 
 package() {
-  make \
+  $nom \
     DESTDIR=$SACD \
     install-strip
 
