@@ -20,7 +20,7 @@ check() {
 }
 
 package() {
-  install -dv $SACD/usr/share/consolefonts
+  mkdir -pv $SACD/usr/share/consolefonts
   cp -afv $SRCD/$nom/$nom-$ver/$nom-12x24.psfu $SACD/usr/share/consolefonts
   cp -afv $SRCD/$nom/$nom-$ver/$nom-16x32.psfu $SACD/usr/share/consolefonts
   cp -afv $SRCD/$nom/$nom-$ver/$nom-32x64.psfu $SACD/usr/share/consolefonts

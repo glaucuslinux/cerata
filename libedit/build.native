@@ -49,12 +49,12 @@ package() {
     DESTDIR=$SACD \
     install-strip
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   cp -afv $CERD/$nom/editrc $SACD/etc
   cp -afv $CERD/$nom/inputrc $SACD/etc
 
   # Use libedit as a drop-in replacement for `readline`
-  install -dv $SACD/usr/include/readline
+  mkdir -pv $SACD/usr/include/readline
   touch $SACD/usr/include/readline/history.h
   touch $SACD/usr/include/readline/tilde.h
   ln -sfnv ../editline/readline.h $SACD/usr/include/readline/readline.h

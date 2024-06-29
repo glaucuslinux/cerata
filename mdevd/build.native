@@ -39,6 +39,6 @@ package() {
     DESTDIR=$SACD \
     install
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   cp -afv $CERD/$nom/mdev.conf $SACD/etc
 }

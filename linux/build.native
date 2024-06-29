@@ -20,9 +20,9 @@ check() {
 }
 
 package() {
-  install -dv $SACD/boot
+  mkdir -pv $SACD/boot
   cp -afv /boot/vmlinuz $SACD/boot
 
-  install -dv $SACD/usr/lib
+  mkdir -pv $SACD/usr/lib
   cp -afRv /usr/lib/modules $SACD/usr/lib
 }

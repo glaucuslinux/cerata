@@ -22,11 +22,11 @@ check() {
 package() {
   ln -sfnv usr/bin $SACD/bin
 
-  install -dv $SACD/boot
+  mkdir -pv $SACD/boot
 
-  install -dv $SACD/dev
+  mkdir -pv $SACD/dev
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   cp -afv $CERD/$nom/fstab $SACD/etc
   ln -sfnv lsb-release $SACD/etc/glaucus-release
   cp -afv $CERD/$nom/group $SACD/etc
@@ -44,47 +44,47 @@ package() {
   cp -afv $CERD/$nom/shadow $SACD/etc
   cp -afv $CERD/$nom/shells $SACD/etc
 
-  install -dv $SACD/home
+  mkdir -pv $SACD/home
 
   ln -sfnv usr/lib $SACD/lib
 
-  install -dv $SACD/mnt
+  mkdir -pv $SACD/mnt
 
-  install -dvm 555 $SACD/proc
+  mkdir -pvm 555 $SACD/proc
 
-  install -dvm 750 $SACD/root
+  mkdir -pvm 750 $SACD/root
 
-  install -dv $SACD/run
+  mkdir -pv $SACD/run
 
   ln -sfnv usr/bin $SACD/sbin
 
-  install -dvm 555 $SACD/sys
+  mkdir -pvm 555 $SACD/sys
 
-  install -dvm 1777 $SACD/tmp
+  mkdir -pvm 1777 $SACD/tmp
 
-  install -dv $SACD/usr/bin
-  install -dv $SACD/usr/lib
+  mkdir -pv $SACD/usr/bin
+  mkdir -pv $SACD/usr/lib
   cp -afv $CERD/$nom/os-release $SACD/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $SACD/usr/lib/os-release
-  install -dv $PKG_CONFIG_LIBDIR
+  mkdir -pv $PKG_CONFIG_LIBDIR
   ln -sfnv bin $SACD/usr/sbin
-  install -dv $SACD/usr/share
+  mkdir -pv $SACD/usr/share
 
-  install -dv $SACD/var/cache/rad/local
-  install -dv $SACD/var/cache/rad/pkg
-  install -dv $SACD/var/cache/rad/src
-  install -dv $SACD/var/lib/hwclock
-  install -dv $SACD/var/lib/misc
-  install -dv $SACD/var/lib/rad/clusters
+  mkdir -pv $SACD/var/cache/rad/local
+  mkdir -pv $SACD/var/cache/rad/pkg
+  mkdir -pv $SACD/var/cache/rad/src
+  mkdir -pv $SACD/var/lib/hwclock
+  mkdir -pv $SACD/var/lib/misc
+  mkdir -pv $SACD/var/lib/rad/clusters
   ln -sfnv ../run/lock $SACD/var/lock
-  install -dv $SACD/var/log/rad
-  install -dv $SACD/var/mail
+  mkdir -pv $SACD/var/log/rad
+  mkdir -pv $SACD/var/mail
   ln -sfnv ../run $SACD/var/run
-  install -dv $SACD/var/spool
+  mkdir -pv $SACD/var/spool
   ln -sfnv ../mail $SACD/var/spool/mail
-  install -dvm 1777 $SACD/var/tmp
-  install -dv $SACD/var/tmp/rad
+  mkdir -pvm 1777 $SACD/var/tmp
+  mkdir -pv $SACD/var/tmp/rad
 }

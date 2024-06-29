@@ -24,7 +24,7 @@ check() {
 }
 
 package() {
-  install -dv $SACD/usr/lib
+  mkdir -pv $SACD/usr/lib
   cp -afv out/lib${nom}.so $SACD/usr/lib
   cp -afv out-light/lib${nom}-light.so $SACD/usr/lib
 }

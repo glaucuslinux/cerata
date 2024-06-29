@@ -46,10 +46,10 @@ package() {
     DESTDIR=$SACD \
     install
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   cp -afv $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
 
-  install -dv $SACD/usr/bin
+  mkdir -pv $SACD/usr/bin
   cp -afv gencat $SACD/usr/bin
   cp -afv getent $SACD/usr/bin
   cp -afv $CERD/$nom/ldconfig $CRSD/usr/bin
@@ -63,7 +63,7 @@ package() {
 
   ln -sfnv libc.so $SACD/usr/lib/ld-$nom-x86_64.so.1
 
-  install -dv $SACD/usr/share/man/man1
+  mkdir -pv $SACD/usr/share/man/man1
   cp -afv $CERD/$nom/gencat.1 $SACD/usr/share/man/man1
   cp -afv $CERD/$nom/getent.1 $SACD/usr/share/man/man1
 }

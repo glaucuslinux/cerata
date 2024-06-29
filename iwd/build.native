@@ -54,6 +54,6 @@ package() {
     DESTDIR=$SACD \
     install-strip
 
-  install -dv $SACD/etc/$nom
+  mkdir -pv $SACD/etc/$nom
   cp -afv $CERD/$nom/main.conf $SACD/etc/$nom
 }

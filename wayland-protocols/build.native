@@ -7,7 +7,7 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  install -dv $TBLD/$nom
+  mkdir -pv $TBLD/$nom
 }
 
 configure() {

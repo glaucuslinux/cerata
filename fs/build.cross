@@ -22,9 +22,9 @@ check() {
 package() {
   ln -sfnv usr/bin $CRSD/bin
 
-  install -dv $CRSD/boot
+  mkdir -pv $CRSD/boot
 
-  install -dv $CRSD/dev
+  mkdir -pv $CRSD/dev
 
   # `$CRSD/etc` is already created by toolchain `musl`
   cp -afv $CERD/$nom/fstab $CRSD/etc
@@ -44,23 +44,23 @@ package() {
   cp -afv $CERD/$nom/shadow $CRSD/etc
   cp -afv $CERD/$nom/shells $CRSD/etc
 
-  install -dv $CRSD/home
+  mkdir -pv $CRSD/home
 
   ln -sfnv usr/lib $CRSD/lib
 
-  install -dv $CRSD/mnt
+  mkdir -pv $CRSD/mnt
 
-  install -dvm 555 $CRSD/proc
+  mkdir -pvm 555 $CRSD/proc
 
-  install -dvm 750 $CRSD/root
+  mkdir -pvm 750 $CRSD/root
 
-  install -dv $CRSD/run
+  mkdir -pv $CRSD/run
 
   ln -sfnv usr/bin $CRSD/sbin
 
-  install -dvm 555 $CRSD/sys
+  mkdir -pvm 555 $CRSD/sys
 
-  install -dvm 1777 $CRSD/tmp
+  mkdir -pvm 1777 $CRSD/tmp
 
   # `$CRSD/usr` is already created in toolchain
   cp -afv $CERD/$nom/os-release $CRSD/usr/lib
@@ -68,22 +68,22 @@ package() {
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i $CRSD/usr/lib/os-release
-  install -dv $PKG_CONFIG_LIBDIR
+  mkdir -pv $PKG_CONFIG_LIBDIR
   ln -sfnv bin $CRSD/usr/sbin
-  install -dv $CRSD/usr/share
+  mkdir -pv $CRSD/usr/share
 
-  install -dv $CRSD/var/cache/rad/local
-  install -dv $CRSD/var/cache/rad/pkg
-  install -dv $CRSD/var/cache/rad/src
-  install -dv $CRSD/var/lib/hwclock
-  install -dv $CRSD/var/lib/misc
-  install -dv $CRSD/var/lib/rad/clusters
+  mkdir -pv $CRSD/var/cache/rad/local
+  mkdir -pv $CRSD/var/cache/rad/pkg
+  mkdir -pv $CRSD/var/cache/rad/src
+  mkdir -pv $CRSD/var/lib/hwclock
+  mkdir -pv $CRSD/var/lib/misc
+  mkdir -pv $CRSD/var/lib/rad/clusters
   ln -sfnv ../run/lock $CRSD/var/lock
-  install -dv $CRSD/var/log/rad
-  install -dv $CRSD/var/mail
+  mkdir -pv $CRSD/var/log/rad
+  mkdir -pv $CRSD/var/mail
   ln -sfnv ../run $CRSD/var/run
-  install -dv $CRSD/var/spool
+  mkdir -pv $CRSD/var/spool
   ln -sfnv ../mail $CRSD/var/spool/mail
-  install -dvm 1777 $CRSD/var/tmp
-  install -dv $CRSD/var/tmp/rad
+  mkdir -pvm 1777 $CRSD/var/tmp
+  mkdir -pv $CRSD/var/tmp/rad
 }

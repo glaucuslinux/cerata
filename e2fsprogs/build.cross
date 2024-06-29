@@ -14,7 +14,7 @@ prepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/lfs64.patch
 
   # `INSTALL` documentation recommends building out of tree
-  install -dv $TBLD/$nom
+  mkdir -pv $TBLD/$nom
   cd $TBLD/$nom
 }
 

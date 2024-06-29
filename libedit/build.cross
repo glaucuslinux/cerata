@@ -55,7 +55,7 @@ package() {
   cp -afv $CERD/$nom/inputrc $CRSD/etc
 
   # Use libedit as a drop-in replacement for `readline`
-  install -dv $CRSD/usr/include/readline
+  mkdir -pv $CRSD/usr/include/readline
   touch $CRSD/usr/include/readline/history.h
   touch $CRSD/usr/include/readline/tilde.h
   ln -sfnv ../editline/readline.h $CRSD/usr/include/readline/readline.h

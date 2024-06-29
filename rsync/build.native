@@ -48,7 +48,7 @@ package() {
     DESTDIR=$SACD \
     install-strip
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   cp -afv $CERD/$nom/${nom}d.conf $SACD/etc
 
   cp -afv support/r$nom $SACD/usr/bin
