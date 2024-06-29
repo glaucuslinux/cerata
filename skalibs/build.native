@@ -35,6 +35,6 @@ package() {
     DESTDIR=$SACD \
     install
 
-  install -dv $SACD/usr/lib/pkgconfig
+  mkdir -pv $SACD/usr/lib/pkgconfig
   cp -afv $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
 }

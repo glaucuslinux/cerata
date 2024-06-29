@@ -9,7 +9,7 @@ prepare() {
 
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/glaucus/musl-stacksize.patch
 
-  install -dv $TBLD/$nom
+  mkdir -pv $TBLD/$nom
 }
 
 configure() {

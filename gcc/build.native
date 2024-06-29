@@ -21,7 +21,7 @@ prepare() {
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
-  install -dv $TBLD/$nom
+  mkdir -pv $TBLD/$nom
   cd $TBLD/$nom
 }
 
@@ -113,7 +113,7 @@ package() {
   ln -sfnv $nom-nm $SACD/usr/bin/$TGT-$nom-nm
   ln -sfnv $nom-ranlib $SACD/usr/bin/$TGT-$nom-ranlib
 
-  install -dv $SACD/usr/lib/bfd-plugins
+  mkdir -pv $SACD/usr/lib/bfd-plugins
   ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
 
   # Remove static libraries

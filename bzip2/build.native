@@ -22,16 +22,16 @@ check() {
 }
 
 package() {
-  install -dv $SACD/usr/include
+  mkdir -pv $SACD/usr/include
   cp -afv bzlib.h $SACD/usr/include
 
-  install -dv $SACD/usr/lib
+  mkdir -pv $SACD/usr/lib
   cp -afv libbz2.so.$ver $SACD/usr/lib
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver $SACD/usr/lib/libbz2.so.1.0
 
-  install -dv $SACD/usr/lib/pkgconfig
+  mkdir -pv $SACD/usr/lib/pkgconfig
   cp -afv $CERD/$nom/$nom.pc $SACD/usr/lib/pkgconfig
   ln -sfnv $nom.pc $SACD/usr/lib/pkgconfig/libbz2.pc
 }

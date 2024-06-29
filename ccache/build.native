@@ -10,7 +10,7 @@ prepare() {
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/system-xxhash.patch
   patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/ioctl.patch
 
-  install -dv $TBLD/$nom
+  mkdir -pv $TBLD/$nom
 }
 
 configure() {
@@ -58,7 +58,7 @@ package() {
     install/strip
 
   # Hardcoded `gcc` version number
-  install -dv $SACD/usr/lib/$nom
+  mkdir -pv $SACD/usr/lib/$nom
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c++
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c89
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/c99

@@ -24,7 +24,7 @@ check() {
 
 package() {
   # `pigz` and `unpigz` are symbolic links
-  install -dv $SACD/usr/bin
+  mkdir -pv $SACD/usr/bin
   cp -afv $nom $SACD/usr/bin
   ln -sfnv $nom $SACD/usr/bin/gunzip
   ln -sfnv $nom $SACD/usr/bin/gzcat
@@ -32,6 +32,6 @@ package() {
   ln -sfnv $nom $SACD/usr/bin/un$nom
   ln -sfnv $nom $SACD/usr/bin/zcat
 
-  install -dv $SACD/usr/share/man/man1
+  mkdir -pv $SACD/usr/share/man/man1
   cp -afv $nom.1 $SACD/usr/share/man/man1
 }

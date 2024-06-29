@@ -84,7 +84,7 @@ package() {
     DESTDIR=$SACD \
     install
 
-  install -dv $SACD/etc
+  mkdir -pv $SACD/etc
   ln -sfnv ../usr/share/$nom/${nom}rc $SACD/etc
 
   ln -sfnv $nom $SACD/usr/bin/vi

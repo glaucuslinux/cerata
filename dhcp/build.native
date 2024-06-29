@@ -91,6 +91,6 @@ package() {
     $SACD/usr/lib/lib${nom}ctl.a \
     $SACD/usr/lib/libomapi.a
 
-  install -dv $SACD/run/$nom
-  install -dv $SACD/var/lib/$nom
+  mkdir -pv $SACD/run/$nom
+  mkdir -pv $SACD/var/lib/$nom
 }

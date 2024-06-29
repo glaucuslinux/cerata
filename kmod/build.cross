@@ -64,14 +64,14 @@ package() {
     DESTDIR=$CRSD \
     install-strip
 
-  install -dv $CRSD/etc/depmod.d
-  install -dv $CRSD/etc/modprobe.d
+  mkdir -pv $CRSD/etc/depmod.d
+  mkdir -pv $CRSD/etc/modprobe.d
 
-  install -dv $CRSD/usr/lib/depmod.d
+  mkdir -pv $CRSD/usr/lib/depmod.d
   cp -afv $CERD/$nom/search.conf $CRSD/usr/lib/depmod.d
 
   # Remove libtool archive
   rm -fv $CRSD/usr/lib/lib$nom.la
 
-  install -dv $CRSD/usr/lib/modprobe.d
+  mkdir -pv $CRSD/usr/lib/modprobe.d
 }

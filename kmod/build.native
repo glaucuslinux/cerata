@@ -62,14 +62,14 @@ package() {
     DESTDIR=$SACD \
     install-strip
 
-  install -dv $SACD/etc/depmod.d
-  install -dv $SACD/etc/modprobe.d
+  mkdir -pv $SACD/etc/depmod.d
+  mkdir -pv $SACD/etc/modprobe.d
 
-  install -dv $SACD/usr/lib/depmod.d
+  mkdir -pv $SACD/usr/lib/depmod.d
   cp -afv $CERD/$nom/search.conf $SACD/usr/lib/depmod.d
 
   # Remove libtool archive
   rm -fv $SACD/usr/lib/lib$nom.la
 
-  install -dv $SACD/usr/lib/modprobe.d
+  mkdir -pv $SACD/usr/lib/modprobe.d
 }
