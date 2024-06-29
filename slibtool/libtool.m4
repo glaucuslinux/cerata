@@ -32,7 +32,7 @@ m4_define([_LT_COPYING], [dnl
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ])
 
-# serial 60 LT_INIT
+# serial 61 LT_INIT
 
 
 # LT_PREREQ(VERSION)
@@ -3452,7 +3452,6 @@ lt_cv_deplibs_check_method='unknown'
 # 'none' -- dependencies not supported.
 # 'unknown' -- same as none, but documents that we really don't know.
 # 'pass_all' -- all dependencies passed with no checks.
-# 'test_compile' -- check by making test program.
 # 'file_magic [[regex]]' -- check by looking for files in library path
 # that responds to the $file_magic_cmd with a given extended regex.
 # If you have 'file' or equivalent on your system and you're not sure
@@ -8217,7 +8216,7 @@ AC_SUBST([DLLTOOL])
 # ----------------
 # Check for a file(cmd) program that can be used to detect file type and magic
 m4_defun([_LT_DECL_FILECMD],
-[AC_CHECK_PROG([FILECMD], [file], [:])
+[AC_CHECK_PROG([FILECMD], [file], [file], [:])
 _LT_DECL([], [FILECMD], [1], [A file(cmd) program that detects file types])
 ])# _LD_DECL_FILECMD
 
