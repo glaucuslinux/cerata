@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libcap"
-ver="2.69"
-url="https://cdn.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.69.tar.gz"
-sum="e3f875d4323c1b4b6540c80a5a07af6ec185d3ff2f97c152e01a0e4de5c780cb"
+ver="2.70"
+url="https://cdn.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.70.tar.gz"
+sum="84e666d725cbd4a6084a4f4742795926870e25adf219bd83e3ed913bab4005fc"
 bld="bash linux-headers make"
 run="pam"
