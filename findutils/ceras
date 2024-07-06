@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="findutils"
-ver="4.9.0"
-url="https://ftpmirror.gnu.org/findutils/findutils-4.9.0.tar.xz"
-sum="c1bd89ebea8e131e0b5271162b026667bce693ea834ff4b74b42890694ee0905"
+ver="4.10.0"
+url="https://ftpmirror.gnu.org/findutils/findutils-4.10.0.tar.xz"
+sum="e8cb4d84891ae4d58a877c0834527b7d0e3d1c76c0bd228834856a26d6cbfd5a"
 bld="make"
