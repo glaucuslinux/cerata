@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="iwd"
-ver="2.17"
-url="https://cdn.kernel.org/pub/linux/network/wireless/iwd-2.17.tar.gz"
-sum="d6902216398921f09532a3d052201f798807a561fc73f6a37b250e76aa9085e0"
+ver="2.18"
+url="https://cdn.kernel.org/pub/linux/network/wireless/iwd-2.18.tar.gz"
+sum="de9351afae1786a3c81b28f814c4c63bf25956a1f7153c7b393ba2c248c1c863"
 bld="dbus libedit make"
