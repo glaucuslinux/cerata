@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="e2fsprogs"
-ver="1.47.0"
-url="https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz"
-sum="9f3a41b2ad84c02014ebcf35d416c640ea9ff417aa0d35ade5fa988f50fd62d4"
+ver="1.47.1"
+url="https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.1/e2fsprogs-1.47.1.tar.gz"
+sum="5ffd85208756954f50b7f358dab9ec0275b6361213fec994c214640c8acd5822"
 bld="libedit libudev-zero linux-headers make netbsd-curses util-linux zlib-ng"
