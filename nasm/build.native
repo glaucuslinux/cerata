@@ -7,10 +7,8 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
-
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  cp -afv $CERD/binutils/config.guess autoconf/helpers
+  cp -afv $CERD/binutils/config.sub autoconf/helpers
 }
 
 configure() {
@@ -33,7 +31,7 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
-    --without-x
+    --enable-lto
 }
 
 build() {
@@ -46,5 +44,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD
+    DESTDIR=$SACD \
+    install
 }
