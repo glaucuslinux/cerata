@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mimalloc"
-ver="2.1.2"
-url="https://github.com/microsoft/mimalloc/archive/v2.1.2.tar.gz"
-sum="0fc37b61fb00e4a45711e42285b1133e5018f3504d6793f04ebd78b8a84e67b8"
+ver="2.1.7"
+url="https://github.com/microsoft/mimalloc/archive/v2.1.7.tar.gz"
+sum="32cb3ee903ca6f906c3bd949471d2e7894b5afcfc67d799cdf4f6466995501b8"
 bld="cmake samurai"
