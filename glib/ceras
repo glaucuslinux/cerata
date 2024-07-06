@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="glib"
-ver="2.80.0"
-url="https://download.gnome.org/sources/glib/2.80/glib-2.80.0.tar.xz"
-sum="4915c4686ad7c2a4c518dd7bb98334c4a6f847f9c7455f389156fa23abf7578d"
+ver="2.81.0"
+url="https://download.gnome.org/sources/glib/2.81/glib-2.81.0.tar.xz"
+sum="80911c2cd0f0a4474e1c6c9df2ec0bd52802ff7fe1c1fdaf78307bbd80027573"
 bld="muon samurai"
