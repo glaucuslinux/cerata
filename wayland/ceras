@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="wayland"
-ver="1.22.0"
-url="https://gitlab.freedesktop.org/wayland/wayland/-/archive/1.22.0/wayland-1.22.0.tar.gz"
-sum="c0cd4a5af43a0ee2cb9a1962286760e8e38048eecf7ee3efa3ef5d570562e7a9"
+ver="1.23.0"
+url="https://gitlab.freedesktop.org/wayland/wayland/-/archive/1.23.0/wayland-1.23.0.tar.gz"
+sum="6dbfe29803004a6a887b00cd19cc3d69c9395b033124a01b4c89826b413e4488"
 bld="expat libffi muon python samurai"
