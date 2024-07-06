@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libdrm"
-ver="2.4.120"
-url="https://dri.freedesktop.org/libdrm/libdrm-2.4.120.tar.xz"
-sum="0b1353717e4eaa3c1e232a6f16b7f0c96329dbd52760bfb1d401ef01fbc2fee9"
+ver="2.4.122"
+url="https://dri.freedesktop.org/libdrm/libdrm-2.4.122.tar.xz"
+sum="89230a96981090cd3578846c446b58b030d868d83604de2c0b936c314271f461"
 bld="libpciaccess muon samurai"
