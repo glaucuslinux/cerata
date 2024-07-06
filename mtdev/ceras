@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mtdev"
-ver="1.1.6"
-url="https://bitmath.org/code/mtdev/mtdev-1.1.6.tar.gz"
-sum="0d0a717757eceb063a915372790c6ee0da690795559309aa0151e3d737fce390"
+ver="1.1.7"
+url="https://bitmath.org/code/mtdev/mtdev-1.1.7.tar.gz"
+sum="dae1dc42c7e28f510c1c9a2da9d4b2025826208ddcfd6949a7b0316d77474f81"
 bld="make"
