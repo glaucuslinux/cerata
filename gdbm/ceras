@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="gdbm"
-ver="1.23"
-url="https://ftpmirror.gnu.org/gdbm/gdbm-1.23.tar.gz"
-sum="bdecc03f90511a4ec34de72427d3ebe5f3be56a993dce295d064f2100ff7510b"
+ver="1.24"
+url="https://ftpmirror.gnu.org/gdbm/gdbm-1.24.tar.gz"
+sum="011063c6efd626f4d3e113af52a694710717f43691585717f1df0190982fc6ef"
 bld="make"
