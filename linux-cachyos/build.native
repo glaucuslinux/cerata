@@ -1,0 +1,26 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  :
+}
+
+check() {
+  :
+}
+
+package() {
+  mkdir -pv $SACD/boot
+  cp -afRv $SRCD/$nom/usr $SACD
+  cp -afRv $SRCD/$nom/usr/lib/modules/$ver-cachyos/vmlinuz $SACD/boot
+}
