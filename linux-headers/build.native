@@ -31,4 +31,6 @@ package() {
     ARCH=x86_64 \
     INSTALL_HDR_PATH=$SACD/usr \
     headers_install
+
+  rm -frv $SACD/usr/include/drm
 }
