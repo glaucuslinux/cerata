@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
+  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver-mk2/ $TSRC/$nom --delete
   cd $TSRC/$nom
 }
 
