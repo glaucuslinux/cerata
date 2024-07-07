@@ -20,7 +20,5 @@ check() {
 }
 
 package() {
-  cp -afv /boot/vmlinuz-linux $CRSD/boot/vmlinuz
-
-  cp -afRv /usr/lib/modules $CRSD/usr/lib
+  :
 }
