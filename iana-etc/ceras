@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="iana-etc"
-ver="20240612"
-url="https://github.com/Mic92/iana-etc/releases/download/20240612/iana-etc-20240612.tar.gz"
-sum="f6a12b288560b5fdee63791387a2cc97ae2c0dd952cefb1061446635f141e107"
+ver="20240701"
+url="https://github.com/Mic92/iana-etc/releases/download/20240701/iana-etc-20240701.tar.gz"
+sum="769fe55da2f4b7523965064a5b182397ed265db2e5b58ab0698f93fb133eb841"
