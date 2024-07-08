@@ -13,7 +13,7 @@ prepare() {
 }
 
 configure() {
-  # Disable locate because we're using plocate
+  # Disable locate because we're using `plocate`
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-locate-updatedb-and-frcode.patch
 
   ./configure \
