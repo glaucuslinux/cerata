@@ -1,6 +1,6 @@
 --- libarchive/archive_write_add_filter_xz.c
 +++ libarchive/archive_write_add_filter_xz.c
-@@ -152,7 +152,7 @@
+@@ -150,7 +150,7 @@
  	}
  	f->data = data;
  	data->compression_level = LZMA_PRESET_DEFAULT;
