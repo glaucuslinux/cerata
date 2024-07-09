@@ -36,7 +36,8 @@ configure() {
     --without-debug \
     --with-history \
     --with-zlib \
-    --with-lzma
+    --with-lzma \
+    --with-tls
 }
 
 build() {
