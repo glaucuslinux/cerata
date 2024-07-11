@@ -48,5 +48,5 @@ package() {
     install-strip
 
   # Remove libtool archive
-  rm -fv $SACD/usr/lib/$nom.la
+  rm -fv $SACD/usr/lib/lib$nom.la
 }
