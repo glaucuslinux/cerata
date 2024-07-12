@@ -13,7 +13,6 @@ configure() {
   glaucus-muon \
     -Dtests=false \
     -Ddocumentation=false \
-    -Ddtd_validation=false \
     $TBLD/$nom
 }
 
