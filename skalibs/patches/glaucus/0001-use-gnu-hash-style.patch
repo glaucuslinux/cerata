@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -572,7 +572,7 @@
+@@ -587,7 +587,7 @@
  tryldflag LDFLAGS_AUTO -Wl,--sort-section=alignment
  tryldflag LDFLAGS_AUTO -Wl,--sort-common
  if $shared ; then
