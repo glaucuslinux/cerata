@@ -65,7 +65,7 @@ package() {
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/cpp
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/g++
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/gcc
-  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/gcc-13.2.0
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/gcc-14.1.0
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c++
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c89
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-c99
@@ -73,5 +73,5 @@ package() {
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-cpp
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-g++
   ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc
-  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc-13.2.0
+  ln -sfnv ../../bin/$nom $SACD/usr/lib/$nom/$TGT-gcc-14.1.0
 }
