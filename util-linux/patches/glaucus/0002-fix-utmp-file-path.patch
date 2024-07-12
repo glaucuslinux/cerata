@@ -97,7 +97,7 @@
  static void log_syslog(struct login_context *cxt)
 --- NEWS
 +++ NEWS
-@@ -1643,7 +1643,7 @@
+@@ -1655,7 +1655,7 @@
  
          /var/log/wtmp       /var/adm/wtmp
          /var/log/lastlog    /var/adm/lastlog
@@ -128,7 +128,7 @@
  #. type: Plain text
 --- po-man/de.po
 +++ po-man/de.po
-@@ -11840,11 +11840,11 @@
+@@ -11048,11 +11048,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -142,7 +142,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -52645,8 +52645,8 @@
+@@ -49892,8 +49892,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -180,7 +180,7 @@
  
  #. type: Plain text
  #: ../term-utils/agetty.8.adoc:309
-@@ -53611,7 +53611,7 @@
+@@ -53612,7 +53612,7 @@
  #~ "utmp y wtmp. Solo el superusuario podrá usar esta opción."
  
  #~ msgid ""
@@ -189,7 +189,7 @@
  #~ "I</var/log/wtmp>\n"
  #~ "I</var/log/lastlog>\n"
  #~ "I</var/spool/mail/*>\n"
-@@ -53623,7 +53623,7 @@
+@@ -53624,7 +53624,7 @@
  #~ "I</etc/hushlogins>\n"
  #~ "I<.hushlogin>\n"
  #~ msgstr ""
@@ -200,7 +200,7 @@
  #~ "I</var/spool/mail/*>\n"
 --- po-man/fr.po
 +++ po-man/fr.po
-@@ -11872,11 +11872,11 @@
+@@ -11880,11 +11880,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -227,7 +227,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/ko.po
 +++ po-man/ko.po
-@@ -8254,8 +8254,8 @@
+@@ -7744,8 +7744,8 @@
  
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
@@ -236,9 +236,9 @@
 +msgid "_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
 +msgstr "_/run/utmps/utmp_, _/var/log/wtmp_, _/var/log/lastlog_, _/var/spool/mail/*_, _/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
- #. type: Plain text
- #: ../login-utils/login.1.adoc:154
-@@ -34421,8 +34421,8 @@
+ #. type: Title ==
+ #: ../login-utils/login.1.adoc:151 ../term-utils/agetty.8.adoc:322
+@@ -33348,8 +33348,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -251,7 +251,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/pt_BR.po
 +++ po-man/pt_BR.po
-@@ -11099,7 +11099,7 @@
+@@ -11107,7 +11107,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -260,7 +260,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -44107,8 +44107,8 @@
+@@ -44115,8 +44115,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -273,7 +273,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/ro.po
 +++ po-man/ro.po
-@@ -8268,8 +8268,8 @@
+@@ -7791,8 +7791,8 @@
  
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
@@ -284,7 +284,7 @@
  
  #. type: Title ==
  #: ../login-utils/login.1.adoc:151 ../term-utils/agetty.8.adoc:322
-@@ -34977,8 +34977,8 @@
+@@ -33519,8 +33519,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -297,7 +297,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/sr.po
 +++ po-man/sr.po
-@@ -11516,11 +11516,11 @@
+@@ -11524,11 +11524,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -311,7 +311,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -51361,8 +51361,8 @@
+@@ -51366,8 +51366,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -324,7 +324,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/uk.po
 +++ po-man/uk.po
-@@ -11663,11 +11663,11 @@
+@@ -11671,11 +11671,11 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -338,7 +338,7 @@
  "etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, _/etc/pam.d/"
  "remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  
-@@ -50284,8 +50284,8 @@
+@@ -50289,8 +50289,8 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap
@@ -351,7 +351,7 @@
  #: ../term-utils/agetty.8.adoc:309
 --- po-man/util-linux-man.pot
 +++ po-man/util-linux-man.pot
-@@ -9159,7 +9159,7 @@
+@@ -9160,7 +9160,7 @@
  #. type: Plain text
  #: ../login-utils/login.1.adoc:150
  msgid ""
@@ -360,7 +360,7 @@
  "_/etc/motd_, _/etc/passwd_, _/etc/nologin_, _/etc/pam.d/login_, "
  "_/etc/pam.d/remote_, _/etc/hushlogins_, _$HOME/.hushlogin_"
  msgstr ""
-@@ -40631,7 +40631,7 @@
+@@ -40632,7 +40632,7 @@
  #. type: Labeled list
  #: ../term-utils/agetty.8.adoc:307
  #, no-wrap

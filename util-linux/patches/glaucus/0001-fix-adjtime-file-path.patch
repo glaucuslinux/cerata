@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -2496,7 +2496,7 @@
+@@ -2497,7 +2497,7 @@
    SOLIB_LDFLAGS
                LDFLAGS used for shared libraries
    ADJTIME_PATH
@@ -9,7 +9,7 @@
  
  Use these variables to override the choices made by `configure' or to help
  it to find libraries and programs with nonstandard names/locations.
-@@ -43530,7 +43530,7 @@
+@@ -43610,7 +43610,7 @@
  
  if test "x$ADJTIME_PATH" = x
  then :
@@ -20,7 +20,7 @@
  printf "%s\n" "#define CONFIG_ADJTIME_PATH \"$ADJTIME_PATH\"" >>confdefs.h
 --- configure.ac
 +++ configure.ac
-@@ -2922,8 +2922,8 @@
+@@ -2927,8 +2927,8 @@
  	   [LDFLAGS used for shared libraries])
  
  AC_ARG_VAR([ADJTIME_PATH],
@@ -91,7 +91,7 @@
  #ifdef __ia64__
 --- meson.build
 +++ meson.build
-@@ -72,8 +72,8 @@
+@@ -76,8 +76,8 @@
  conf.set_quoted('_PATH_SYSCONFSTATICDIR', sysconfstaticdir)
  conf.set_quoted('_PATH_RUNSTATEDIR', runstatedir)
  conf.set_quoted('_PATH_LOCALSTATEDIR', localstatedir)
@@ -100,9 +100,9 @@
 +conf.set_quoted('CONFIG_ADJTIME_PATH', '/var/lib/hwclock/adjtime')
 +conf.set_quoted('ADJTIME_PATH', '/var/lib/hwclock/adjtime') # yes, both are used :(
  
- conf.set_quoted('_PATH_VENDORDIR', vendordir)
- conf.set('USE_VENDORDIR', vendordir == '' ? false : 1)
-@@ -3662,7 +3662,7 @@
+ if vendordir != ''
+   conf.set_quoted('_PATH_VENDORDIR', vendordir)
+@@ -3763,7 +3763,7 @@
  	  '-b', 'manpage',
  	  '-a', 'VERSION=' + meson.project_version(),
  	  '-a', 'release-version=' + meson.project_version(),
@@ -113,7 +113,7 @@
            '--destination-dir=' + meson.current_build_dir(),
 --- NEWS
 +++ NEWS
-@@ -1127,7 +1127,7 @@
+@@ -1139,7 +1139,7 @@
  util-linux 2.10m:
  
  * chfn fix when PAM is used (Martin-D. Lacasse)
@@ -122,7 +122,7 @@
  * mount status return from smb or ncp fix (Mark Peloquin)
  * mount new option -l: also print label when listing mounts
  * mount add heuristic for xfs (Martin K. Petersen)
-@@ -1234,7 +1234,7 @@
+@@ -1246,7 +1246,7 @@
  * Fix unit display in cfdisk
  * Do not redefine _PATH_MAILDIR (so that recent systems can have /var/mail)
  * Added --localtime option to hwclock;
@@ -133,7 +133,7 @@
  util-linux 2.9z:
 --- po/cs.po
 +++ po/cs.po
-@@ -31076,10 +31076,10 @@
+@@ -31072,10 +31072,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -146,7 +146,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -31112,11 +31112,11 @@
+@@ -31108,11 +31108,11 @@
  #~ "       --badyear      ignoruje rok z RTC, protože BIOS je rozbitý\n"
  #~ "       --date         čas, na který budou nastaveny hodiny reálného času\n"
  #~ "       --epoch=ROK    určuje rok, kdy začíná epocha hodin reálného času\n"
@@ -162,7 +162,7 @@
  #~ "  -D | --debug        ladicí režim\n"
 --- po/et.po
 +++ po/et.po
-@@ -29186,10 +29186,10 @@
+@@ -29191,10 +29191,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -175,7 +175,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -29220,7 +29220,7 @@
+@@ -29225,7 +29225,7 @@
  #~ "  --date        annab aja, mis riistvaralise kella v��rtuseks panna\n"
  #~ "  --epoch=aasta annab aasta, mida hakata lugema riistvaralise kella\n"
  #~ "                epohhi alguseks\n"
@@ -186,7 +186,7 @@
  #~ msgid "can't malloc initstring"
 --- po/fi.po
 +++ po/fi.po
-@@ -30719,10 +30719,10 @@
+@@ -30726,10 +30726,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -199,7 +199,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -30757,9 +30757,9 @@
+@@ -30764,9 +30764,9 @@
  #~ "       --date         aika, johon laitteistokello asetetaan\n"
  #~ "       --epoch=vuosi  vuosi, joka on laitteistokellon\n"
  #~ "                      epoch-arvon nollakohta\n"
@@ -213,7 +213,7 @@
  #~ "  -D | --debug        vianetsintätila\n"
 --- po/hu.po
 +++ po/hu.po
-@@ -31027,10 +31027,10 @@
+@@ -31034,10 +31034,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -226,7 +226,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -31061,10 +31061,10 @@
+@@ -31068,10 +31068,10 @@
  #~ "  --badyear     az rtc év értékének figyelmen kívül hagyása, mert a BIOS hibás\n"
  #~ "  --date        megadja azt az időt, amelyre a hardverórát be kell állítani\n"
  #~ "  --epoch=év    megadja azz az évet, amelyet a hardveróra epoch-ként kezel\n"
@@ -241,7 +241,7 @@
  #~ msgstr "nem lehet lefoglalni a kiinduló szöveget"
 --- po/id.po
 +++ po/id.po
-@@ -31272,10 +31272,10 @@
+@@ -31279,10 +31279,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -254,7 +254,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -31308,10 +31308,10 @@
+@@ -31315,10 +31315,10 @@
  #~ "       --date         spesifikasikan waktu untuk menset hardware clock\n"
  #~ "       --epoch=tahun  spesifikasikan tahun dimana awal dari nilai dari\n"
  #~ "                      nilai epoch hardware clock\n"
@@ -269,7 +269,7 @@
  #~ "  -D | --debug        mode penelusuran\n"
 --- po/it.po
 +++ po/it.po
-@@ -30627,10 +30627,10 @@
+@@ -30634,10 +30634,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -282,7 +282,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -30660,7 +30660,7 @@
+@@ -30667,7 +30667,7 @@
  #~ "  --badyear     ignora l'anno rtc perché il bios è danneggiato\n"
  #~ "  --date        specifica l'ora sulla quale impostare il clock hardware \n"
  #~ "  --epoch=anno  specifica l'anno di inizio del valore epoch del clock hardware\n"
@@ -293,7 +293,7 @@
  #~ msgstr " malloc initstring impossibile"
 --- po/nl.po
 +++ po/nl.po
-@@ -26929,7 +26929,7 @@
+@@ -26943,7 +26943,7 @@
  #~ msgstr "De systeemklok wordt niet ingesteld -- in testmodus.\n"
  
  #~ msgid "Not updating adjtime file because of testing mode.\n"
@@ -302,7 +302,7 @@
  
  #~ msgid ""
  #~ "Would have written the following to %s:\n"
-@@ -31284,10 +31284,10 @@
+@@ -31298,10 +31298,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -315,7 +315,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -31317,9 +31317,9 @@
+@@ -31331,9 +31331,9 @@
  #~ "     --badyear     het jaartal van de hardwareklok negeren omdat de BIOS stuk is\n"
  #~ "     --date=TIJD   de tijd waarop de hardwareklok moet worden ingesteld\n"
  #~ "     --epoch=JAAR  het jaartal dat het tijdperkbegin voor de hardwareklok is\n"
@@ -329,7 +329,7 @@
  
 --- po/pt_BR.po
 +++ po/pt_BR.po
-@@ -30714,10 +30714,10 @@
+@@ -30737,10 +30737,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -344,7 +344,7 @@
  #~ "  -D | --debug        debug mode\n"
 --- po/sl.po
 +++ po/sl.po
-@@ -30683,10 +30683,10 @@
+@@ -30690,10 +30690,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -357,7 +357,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -30716,7 +30716,7 @@
+@@ -30723,7 +30723,7 @@
  #~ "  --badyear     prezri rtcjevo leto, zato ker je bios po�kodovan\n"
  #~ "  --date        poda �as, na katerega je nastavljena strojna ura\n"
  #~ "  --epoch=leto  podaj leto, ki je za�etna vrednost epohe strojne ure\n"
@@ -368,7 +368,7 @@
  #~ msgid "can't malloc initstring"
 --- po/sv.po
 +++ po/sv.po
-@@ -28654,10 +28654,10 @@
+@@ -28677,10 +28677,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -381,7 +381,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -28688,7 +28688,7 @@
+@@ -28711,7 +28711,7 @@
  #~ "  --badyear     ignorera året i rtc:n eftersom bioset är trasigt\n"
  #~ "  --date        anger tiden som hårdvaruklockan ska ställas till\n"
  #~ "  --epoch=år    anger det år som är början på hårdvaruklockans epokvärde\n"
@@ -392,7 +392,7 @@
  #~ msgid ""
 --- po/vi.po
 +++ po/vi.po
-@@ -31916,10 +31916,10 @@
+@@ -31931,10 +31931,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -405,7 +405,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -31952,10 +31952,10 @@
+@@ -31967,10 +31967,10 @@
  #~ "       --badyear      lờ đi năm của rtc vì BIOS bị hỏng\n"
  #~ "       --date         ghi rõ thời gian cần đặt trong đồng hồ phần cứng\n"
  #~ "       --epoch=năm   ghi rõ năm là đầu của giá trị thời điểm đồng hồ phần cứng\n"
@@ -420,7 +420,7 @@
  #~ "  -D | --debug        chế độ gỡ lỗi\n"
 --- po/zh_TW.po
 +++ po/zh_TW.po
-@@ -32422,10 +32422,10 @@
+@@ -32429,10 +32429,10 @@
  #~ "       --date         specifies the time to which to set the hardware clock\n"
  #~ "       --epoch=year   specifies the year which is the beginning of the \n"
  #~ "                      hardware clock's epoch value\n"
@@ -433,7 +433,7 @@
  #~ "       --test         do everything except actually updating the hardware\n"
  #~ "                      clock or anything else\n"
  #~ "  -D | --debug        debug mode\n"
-@@ -32459,7 +32459,7 @@
+@@ -32466,7 +32466,7 @@
  #~ "       --date         指定時間為該項以設定硬體時鐘\n"
  #~ "       --epoch=year   指定硬體時鐘時期值\n"
  #~ "                      的開始年分\n"
@@ -442,6 +442,74 @@
  #~ "                      --utc 抑或 --localtime\n"
  #~ "       --adjfile=路徑 指定路徑到調整檔案 (預設是\n"
  #~ "                      /等項/adjtime)\n"
+--- po-man/cs.po
++++ po-man/cs.po
+@@ -22529,13 +22529,13 @@
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+ #, fuzzy
+ #| msgid "_/etc/pam.d/su_"
+-msgid "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
+ msgstr "_/etc/pam.d/su_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+@@ -22555,7 +22555,7 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
+--- po-man/de.po
++++ po-man/de.po
+@@ -25787,17 +25787,17 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+-"Die Datei _/etc/adjtime_ enthält beschreibende Informationen zur "
++"Die Datei _/var/lib/hwclock/adjtime_ enthält beschreibende Informationen zur "
+ "Hardwaremodus-Uhreinstellung und der Abweichungsrate der Uhr. Die Datei wird "
+ "durch *hwclock*(8) gelesen und geschrieben. Außerdem wird sie von Programmen "
+ "wie Rtcwake gelesen, um den Zeitmodus der Echtzeituhr zu ermitteln."
+@@ -25822,14 +25822,14 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
+ "Die Hardwareuhr ist üblicherweise nicht besonders genau. Dennoch ist deren "
+ "Ungenauigkeit größtenteils vorhersagbar - sie geht jeden Tag um den gleichen "
+ "Betrag vor oder nach. Dies nennt man die systematische Abweichung. Das "
+-"Dienstprogramm *hwclock*(8) verwaltet die Datei _/etc/adjtime_, in der "
++"Dienstprogramm *hwclock*(8) verwaltet die Datei _/var/lib/hwclock/adjtime_, in der "
+ "einige historische Informationen gespeichert werden. Weitere Details finden "
+ "Sie in den Abschnitten »*Die Adjust-Funktion*« und »*Die Datei Adjtime*« in "
+ "der Handbuchseite zu *hwclock*(8)."
 --- po-man/es.po
 +++ po-man/es.po
 @@ -23817,13 +23817,13 @@
@@ -486,7 +554,7 @@
  "alguna información histórica. Este fichero se llama el fichero adjtime."
  
  #. type: Plain text
-@@ -53154,13 +53154,13 @@
+@@ -53155,13 +53155,13 @@
  
  #, fuzzy
  #~| msgid ""
@@ -505,7 +573,7 @@
  
 --- po-man/fr.po
 +++ po-man/fr.po
-@@ -27045,13 +27045,13 @@
+@@ -27053,13 +27053,13 @@
  
  #. type: Plain text
  #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
@@ -522,7 +590,7 @@
  "mode clock setting and clock drift factor. The file is read and write by "
  "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
  msgstr ""
-@@ -27078,7 +27078,7 @@
+@@ -27086,7 +27086,7 @@
  "The Hardware Clock is usually not very accurate. However, much of its "
  "inaccuracy is completely predictable - it gains or loses the same amount of "
  "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
@@ -531,7 +599,7 @@
  "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
  "from *hwclock*(8) man page."
  msgstr ""
-@@ -65244,19 +65244,19 @@
+@@ -65258,19 +65258,19 @@
  #, fuzzy
  #~| msgid ""
  #~| "The B<--get> function also applies drift correction to the time read, "
@@ -554,7 +622,7 @@
  #~ "fonction si l’horloge matérielle est modifiée par autre chose que la "
  #~ "commande B<\\%hwclock> du système d’exploitation actuel, comme le « mode "
  #~ "11 minutes » ou par un autre système d’exploitation en multiboot."
-@@ -65395,14 +65395,14 @@
+@@ -65409,14 +65409,14 @@
  
  #, fuzzy
  #~| msgid ""
@@ -572,7 +640,7 @@
  
  #, fuzzy
  #~| msgid ""
-@@ -65437,7 +65437,7 @@
+@@ -65451,7 +65451,7 @@
  #~| msgid ""
  #~| "Having B<\\%hwclock> calculate the drift factor is a good starting "
  #~| "point, but for optimal results it will likely need to be adjusted by "
@@ -581,7 +649,7 @@
  #~| "a machine's optimal drift factor is crafted it should not need to be "
  #~| "changed.  Therefore, the old behavior to automatically (re)calculate "
  #~| "drift was changed and now requires this option to be used.  See the "
-@@ -65445,7 +65445,7 @@
+@@ -65459,7 +65459,7 @@
  #~ msgid ""
  #~ "Having B<hwclock> calculate the drift factor is a good starting point, "
  #~ "but for optimal results it will likely need to be adjusted by directly "
@@ -590,7 +658,7 @@
  #~ "machine\\(cqs optimal drift factor is crafted it should not need to be "
  #~ "changed. Therefore, the old behavior to automatically (re)calculate drift "
  #~ "was changed and now requires this option to be used. See the discussion "
-@@ -65453,7 +65453,7 @@
+@@ -65467,7 +65467,7 @@
  #~ msgstr ""
  #~ "Laisser B<\\%hwclock> calculer le facteur de dérive est un bon point de "
  #~ "départ, mais pour des résultats optimaux, il faudra probablement "
@@ -599,7 +667,7 @@
  #~ "plupart des configurations, une fois qu’un facteur de dérive optimal est "
  #~ "mis en place, ce n’est plus la peine de le modifier. Ainsi, le "
  #~ "comportement précédent de (re)calculer la dérive a été modifié, et cette "
-@@ -66068,7 +66068,7 @@
+@@ -66082,7 +66082,7 @@
  #~ "configured for the system.  If the Hardware Clock is kept in local time "
  #~ "then the time read from it must be shifted to the UTC timescale before "
  #~ "using it to set the System Clock.  The B<\\%--hctosys> function does this "
@@ -608,7 +676,7 @@
  #~ "line arguments B<\\%--localtime> and B<--utc>.  Note: no daylight saving "
  #~ "adjustment is made.  See the discussion below, under B<LOCAL vs UTC>."
  #~ msgstr ""
-@@ -66077,7 +66077,7 @@
+@@ -66091,7 +66091,7 @@
  #~ "configuré sur le système. Si l’horloge matérielle est conservée en heure "
  #~ "locale, alors l’heure qui y est lue doit être convertie en UTC avant de "
  #~ "l’utiliser pour définir l’horloge système. La fonction B<\\%--hctosys> le "
@@ -617,7 +685,7 @@
  #~ "arguments B<\\%--localtime> et B<--utc> en ligne de commande. Remarque : "
  #~ "aucun ajustement d’heure d’été n’est réalisé. Consultez la discussion ci-"
  #~ "dessous sous B<LOCALE ou UTC>."
-@@ -66104,7 +66104,7 @@
+@@ -66118,7 +66118,7 @@
  #~ "update-drift> option is not used with B<\\%--systohc> at shutdown (or "
  #~ "anywhere else).  Another way to inhibit this is by using the B<\\%--"
  #~ "noadjfile> option when calling the B<\\%--hctosys> function.  A third "
@@ -626,7 +694,7 @@
  #~ "default to using the UTC timescale for the Hardware Clock.  If the "
  #~ "Hardware Clock is ticking local time it will need to be defined in the "
  #~ "file.  This can be done by calling B<hwclock\\ --localtime\\ --adjust>; "
-@@ -66113,11 +66113,11 @@
+@@ -66127,11 +66127,11 @@
  #~ "drift factor of zero."
  #~ msgstr ""
  #~ "La compensation de dérive peut être inhibée en définissant le facteur de "
@@ -640,7 +708,7 @@
  #~ "B<hwclock> utilisera alors UTC par défaut pour l’horloge matérielle. Si "
  #~ "l’horloge matérielle est à l’heure locale, elle devra être définie dans "
  #~ "le fichier. Cela peut être fait en appelant B<hwclock\\ --localtime\\ --"
-@@ -66127,12 +66127,12 @@
+@@ -66141,12 +66141,12 @@
  
  #~ msgid ""
  #~ "Set the Hardware Clock to the time given by the B<--date> option, and "
@@ -655,7 +723,7 @@
  #~ "update-drift>, recalculer le facteur de dérive. À essayer sans cette "
  #~ "option si B<\\%--set> échoue. Consulter B<\\%--update-drift> ci-après."
  
-@@ -66185,12 +66185,12 @@
+@@ -66199,12 +66199,12 @@
  
  #~ msgid ""
  #~ "Set the Hardware Clock from the System Clock, and update the timestamps "
@@ -670,7 +738,7 @@
  #~ "(re)calculer le facteur de dérive. À essayer sans l’option si B<\\%--"
  #~ "systohc> échoue. Consulter B<\\%--update-drift> ci-après."
  
-@@ -66325,12 +66325,12 @@
+@@ -66339,12 +66339,12 @@
  #~ msgid ""
  #~ "If you specify neither B<--utc> nor B<\\%--localtime> then the one last "
  #~ "given with a set function (B<--set>, B<\\%--systohc>, or B<\\%--adjust>), "
@@ -685,7 +753,7 @@
  #~ "utilisée. Si le fichier d'ajustement n'existe pas, UTC est choisie."
  
  #~ msgid ""
-@@ -66343,20 +66343,20 @@
+@@ -66357,20 +66357,20 @@
  #~ "discussion ci-dessous sous B<LOCALE ou UTC>."
  
  #~ msgid ""
@@ -710,7 +778,7 @@
  #~ "cette option)."
  
  #~ msgid ""
-@@ -66557,11 +66557,11 @@
+@@ -66571,11 +66571,11 @@
  #~ "systématique à l’horloge matérielle."
  
  #~ msgid ""
@@ -724,7 +792,7 @@
  #~ "fichier d'ajustement (I<adjtime>)."
  
  #~ msgid ""
-@@ -66604,14 +66604,14 @@
+@@ -66618,14 +66618,14 @@
  #~ "fully drift corrected current Hardware Clock time with the new set time, "
  #~ "from that it derives the 24 hour drift rate based on the last calibrated "
  #~ "timestamp from the adjtime file.  This updated drift factor is then saved "
@@ -741,7 +809,7 @@
  
  #~ msgid ""
  #~ "A small amount of error creeps in when the Hardware Clock is set, so B<\\"
-@@ -66829,7 +66829,7 @@
+@@ -66843,7 +66843,7 @@
  #~ msgid ""
  #~ "Having B<hwclock> calculate the drift factor is a good starting point, "
  #~ "but for optimal results it will likely need to be adjusted by directly "
@@ -750,7 +818,7 @@
  #~ "factor until the Hardware Clock is corrected properly at startup.  To "
  #~ "check this, first make sure that the System Time is correct before "
  #~ "shutdown and then use B<\\%sntp>, or B<\\%date\\ -Ins> and a precision "
-@@ -66837,7 +66837,7 @@
+@@ -66851,7 +66851,7 @@
  #~ msgstr ""
  #~ "Laisser B<hwclock> calculer le facteur de dérive est un bon point de "
  #~ "départ, mais pour obtenir des résultats optimaux, modifier directement le "
@@ -759,6 +827,193 @@
  #~ "et affiner les ajustements jusqu’à ce que l’horloge matérielle soit "
  #~ "corrigée correctement au démarrage. Pour vérifier cela, assurez-vous que "
  #~ "l’heure système soit correcte avant l’arrêt puis utilisez B<\\%sntp>, ou "
+--- po-man/ko.po
++++ po-man/ko.po
+@@ -18126,12 +18126,12 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+-msgid "The file _/etc/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode."
++msgid "The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+ 
+ #. type: Plain text
+@@ -18141,7 +18141,7 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:24
+-msgid "The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/etc/adjtime_, that keeps some historical information. For more details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections from *hwclock*(8) man page."
++msgid "The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections from *hwclock*(8) man page."
+ msgstr ""
+ 
+ #. type: Plain text
+--- po-man/pt_BR.po
++++ po-man/pt_BR.po
+@@ -24046,13 +24046,13 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+@@ -24072,7 +24072,7 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
+--- po-man/ro.po
++++ po-man/ro.po
+@@ -18216,13 +18216,13 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+-msgid "The file _/etc/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+-msgstr "Fișierul _/etc/adjtime_ conține informații descriptive despre configurarea ceasului în modul hardware și despre factorul de abatere a ceasului. Fișierul este citit și scris de *hwclock*(8); și citit de programe precum «rtcwake» pentru a obține modul de timp RTC."
++msgid "The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode."
++msgstr "Fișierul _/var/lib/hwclock/adjtime_ conține informații descriptive despre configurarea ceasului în modul hardware și despre factorul de abatere a ceasului. Fișierul este citit și scris de *hwclock*(8); și citit de programe precum «rtcwake» pentru a obține modul de timp RTC."
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:22
+@@ -18231,8 +18231,8 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:24
+-msgid "The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/etc/adjtime_, that keeps some historical information. For more details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections from *hwclock*(8) man page."
+-msgstr "Ceasul hardware nu este, de obicei, foarte precis. Cu toate acestea, o mare parte din inexactitatea sa este complet previzibilă - acesta câștigă sau pierde aceeași cantitate de timp în fiecare zi. Acest lucru se numește abatere sistematică. Aplicația *hwclock*(8) păstrează fișierul _/etc/adjtime_, care păstrează unele informații istorice. Pentru mai multe detalii, consultați secțiunile \"*Funcția de reglare*\" și \"*Fișierul adjtime*\" din pagina de manual *hwclock*(8)."
++msgid "The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections from *hwclock*(8) man page."
++msgstr "Ceasul hardware nu este, de obicei, foarte precis. Cu toate acestea, o mare parte din inexactitatea sa este complet previzibilă - acesta câștigă sau pierde aceeași cantitate de timp în fiecare zi. Acest lucru se numește abatere sistematică. Aplicația *hwclock*(8) păstrează fișierul _/var/lib/hwclock/adjtime_, care păstrează unele informații istorice. Pentru mai multe detalii, consultați secțiunile \"*Funcția de reglare*\" și \"*Fișierul adjtime*\" din pagina de manual *hwclock*(8)."
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:26
+--- po-man/sr.po
++++ po-man/sr.po
+@@ -26912,17 +26912,17 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+-"Датотека _/etc/adjtime_ садржи описне информације о поставци режима "
++"Датотека _/var/lib/hwclock/adjtime_ садржи описне информације о поставци режима "
+ "хардверског сата и чиниоцу одступања сата. Датотеку чита и уписује "
+ "*hwclock*(8); и читају је програми као „rtcwake“ да прибаве режим RTC "
+ "времена."
+@@ -26946,7 +26946,7 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
+--- po-man/uk.po
++++ po-man/uk.po
+@@ -26827,17 +26827,17 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
+-msgstr "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
++msgstr "_/var/lib/hwclock/adjtime_"
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+-"Файл _/etc/adjtime_ містить описові відомості щодо параметра апаратного "
++"Файл _/var/lib/hwclock/adjtime_ містить описові відомості щодо параметра апаратного "
+ "режиму годинника і коефіцієнт відхилення годинника. Файл є придатним до "
+ "читання і запису з боку *hwclock*(8) і читання з боку програм, подібних до "
+ "rtcwake, для отримання режиму часу годинника реального часу."
+@@ -26861,14 +26861,14 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
+ "Апаратний годинник, зазвичай, не є дуже точним. Втім, більшу частину похибок "
+ "можна повністю передбачити - годинник поспішає або запізнюється на той самий "
+ "проміжок часу кожного дня. Таке відхилення називається систематичним. "
+-"Програма *hwclock*(8) зберігає певні історичні дані у файлі _/etc/adjtime_. "
++"Програма *hwclock*(8) зберігає певні історичні дані у файлі _/var/lib/hwclock/adjtime_. "
+ "Щоб дізнатися більше, ознайомитеся із розділами «*Функція Adjust*» та «*The "
+ "Adjtime File*» зі сторінки підручника щодо *hwclock*(8)."
+ 
+--- po-man/util-linux-man.pot
++++ po-man/util-linux-man.pot
+@@ -21479,13 +21479,13 @@
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:16 ../sys-utils/adjtime_config.5.adoc:53
+-msgid "_/etc/adjtime_"
++msgid "_/var/lib/hwclock/adjtime_"
+ msgstr ""
+ 
+ #. type: Plain text
+ #: ../sys-utils/adjtime_config.5.adoc:20
+ msgid ""
+-"The file _/etc/adjtime_ contains descriptive information about the hardware "
++"The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware "
+ "mode clock setting and clock drift factor. The file is read and write by "
+ "*hwclock*(8); and read by programs like rtcwake to get RTC time mode."
+ msgstr ""
+@@ -21505,7 +21505,7 @@
+ "The Hardware Clock is usually not very accurate. However, much of its "
+ "inaccuracy is completely predictable - it gains or loses the same amount of "
+ "time every day. This is called systematic drift. The util *hwclock*(8) keeps "
+-"the file _/etc/adjtime_, that keeps some historical information. For more "
++"the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more "
+ "details see \"*The Adjust Function*\" and \"*The Adjtime File*\" sections "
+ "from *hwclock*(8) man page."
+ msgstr ""
 --- sys-utils/adjtime_config.5
 +++ sys-utils/adjtime_config.5
 @@ -31,14 +31,14 @@
@@ -788,6 +1043,36 @@
  .SH "SEE ALSO"
  .sp
  \fBhwclock\fP(8),
+--- sys-utils/adjtime_config.5.adoc
++++ sys-utils/adjtime_config.5.adoc
+@@ -12,15 +12,15 @@
+ 
+ == SYNOPSIS
+ 
+-_/etc/adjtime_
++_/var/lib/hwclock/adjtime_
+ 
+ == DESCRIPTION
+ 
+-The file _/etc/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode.
++The file _/var/lib/hwclock/adjtime_ contains descriptive information about the hardware mode clock setting and clock drift factor. The file is read and write by *hwclock*(8); and read by programs like rtcwake to get RTC time mode.
+ 
+ The file is usually located in _/etc_, but tools like *hwclock*(8) or *rtcwake*(8) can use alternative location by command line options if write access to _/etc_ is unwanted. The default clock mode is "UTC" if the file is missing.
+ 
+-The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/etc/adjtime_, that keeps some historical information. For more details see "*The Adjust Function*" and "*The Adjtime File*" sections from *hwclock*(8) man page.
++The Hardware Clock is usually not very accurate. However, much of its inaccuracy is completely predictable - it gains or loses the same amount of time every day. This is called systematic drift. The util *hwclock*(8) keeps the file _/var/lib/hwclock/adjtime_, that keeps some historical information. For more details see "*The Adjust Function*" and "*The Adjtime File*" sections from *hwclock*(8) man page.
+ 
+ The _adjtime_ file is formatted in ASCII.
+ 
+@@ -49,7 +49,7 @@
+ 
+ == FILES
+ 
+-_/etc/adjtime_
++_/var/lib/hwclock/adjtime_
+ 
+ == SEE ALSO
+ 
 --- sys-utils/hwclock.8
 +++ sys-utils/hwclock.8
 @@ -70,7 +70,7 @@
