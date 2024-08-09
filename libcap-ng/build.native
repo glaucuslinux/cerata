@@ -35,7 +35,6 @@ configure() {
     --docdir=/usr/share/doc/$nom \
     --disable-static \
     --with-pic \
-    --without-python \
     --without-python3
 }
 
