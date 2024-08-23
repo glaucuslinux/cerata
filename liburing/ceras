@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="liburing"
-ver="2.6"
-url="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.6.tar.gz"
-sum="dbe546bcf491c94316cd0a9d0c154cfe5d48edb972286a2753b31f8dab8ebeb4"
+ver="2.7"
+url="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.7.tar.gz"
+sum="7f29895cdb24868e4b89bd7d66c0a2a96540e3548dc2ff7f1439f0f00e0c38e7"
 bld="make"
