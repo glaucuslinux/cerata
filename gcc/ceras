@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="gcc"
-ver="14.1.0"
-url="https://ftpmirror.gnu.org/gcc/gcc-14.1.0/gcc-14.1.0.tar.gz"
-sum="cc42491235ce0e3e06ef123cf5fb29974411a0eb0c52e74d337342db8da5dc4e"
+ver="14.2.0"
+url="https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.gz"
+sum="d57cd70a1f0c740214ec673c4fe981c072a22c43c8626b74d3dc7852ded15673"
 bld="binutils gmp isl libarchive make mpc mpfr zstd"
