@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="yash"
-ver="2.56.1"
-url="https://github.com/magicant/yash/releases/download/2.56.1/yash-2.56.1.tar.gz"
-sum="69a949881477a0bf3f099c207b7872a656189088beae9759b087bdebb7b11c71"
+ver="2.57"
+url="https://github.com/magicant/yash/releases/download/2.57/yash-2.57.tar.zst"
+sum="ab98535f0cf38e7c03103f168174cada867915343f629a890f086239773af3e6"
 bld="make netbsd-curses"
