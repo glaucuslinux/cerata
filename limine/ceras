@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="limine"
-ver="7.9.2"
-url="https://github.com/limine-bootloader/limine/releases/download/v7.9.2/limine-7.9.2.tar.zst"
-sum="5335ede924c56f06ef1e4dddbf040f1af49aa009f182fcb7351f63f268fc4239"
+ver="8.0.5"
+url="https://github.com/limine-bootloader/limine/releases/download/v8.0.5/limine-8.0.5.tar.zst"
+sum="686a40e1a06388c71553c44877157a190346ee63ad8af2ffd10b3d7696bf6b87"
 bld="make mtools nasm"
