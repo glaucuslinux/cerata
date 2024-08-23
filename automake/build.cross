@@ -12,8 +12,6 @@ prepare() {
 }
 
 configure() {
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-python3.10.patch
-
   ./configure \
     --build=$BLD \
     --host=$TGT \
