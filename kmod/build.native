@@ -12,8 +12,6 @@ prepare() {
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/alpine/strndupa.patch
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/upstream/portable-basename.patch
-
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/stdout.patch
 }
 
@@ -37,9 +35,9 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
-    --disable-static \
     --disable-manpages \
     --disable-test-modules \
+    --disable-gtk-doc-html \
     --with-pic \
     --with-rootlibdir=/usr/lib \
     --with-module-directory=/usr/lib/modules \
