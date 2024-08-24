@@ -1,6 +1,6 @@
 --- shared/util.c
 +++ shared/util.c
-@@ -403,7 +403,9 @@
+@@ -389,7 +389,9 @@
  {
  	char *start, *end;
  
