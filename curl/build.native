@@ -59,4 +59,7 @@ package() {
   make \
     DESTDIR=$SACD \
     install-strip
+
+  # Remove libtool archive
+  rm -fv $SACD/usr/lib/lib$nom.la
 }
