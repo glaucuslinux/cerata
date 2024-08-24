@@ -12,6 +12,7 @@ prepare() {
 configure() {
   glaucus-muon \
     -Dselinux=disabled \
+    -Dman-pages=disabled \
     -Dtests=false \
     -Dnls=disabled \
     -Dglib_debug=disabled \
