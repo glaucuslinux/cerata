@@ -1,9 +1,0 @@
-QUIET=yes
-TIMEOUT=0
-
-:glaucus
-    COMMENT=glaucus
-    PROTOCOL=linux
-    CMDLINE=init=/usr/bin/init quiet ro root=/dev/sda2 rootfstype=ext4
-    KERNEL_PATH=boot:///vmlinuz
-    MODULE_PATH=boot:///initramfs
