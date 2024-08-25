@@ -1,0 +1,9 @@
+timeout: 0
+quiet: yes
+
+/glaucus
+    comment: glaucus
+    protocol: linux
+    cmdline: quiet ro
+    kernel_path: boot():/vmlinuz
+    module_path: boot():/initramfs
