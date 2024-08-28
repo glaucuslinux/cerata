@@ -9,6 +9,8 @@ prepare() {
 
   cp -afv $CERD/binutils/config.guess lib
   cp -afv $CERD/binutils/config.sub lib
+
+  ./bootstrap
 }
 
 configure() {
