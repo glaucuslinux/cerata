@@ -30,6 +30,10 @@ check() {
 }
 
 package() {
+  if [ $BOOTSTRAP = yes ]; then
+    cp -afv zic /usr/bin
+  fi
+
   mkdir -pv $SACD/usr/bin
   cp -afv tzselect $SACD/usr/bin
   cp -afv zdump $SACD/usr/bin
