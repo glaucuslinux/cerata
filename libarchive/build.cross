@@ -14,6 +14,8 @@ prepare() {
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 
   patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
+
+  autoreconf -vfis
 }
 
 configure() {
