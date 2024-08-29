@@ -10,6 +10,8 @@ prepare() {
   cp -afv $CERD/binutils/config.guess build-aux
   cp -afv $CERD/binutils/config.rpath build-aux
   cp -afv $CERD/binutils/config.sub build-aux
+
+  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-basename.patch
 }
 
 configure() {
