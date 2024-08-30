@@ -4,14 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  cd "$TSRC"/$nom
 
-  cp -afv $CERD/binutils/config.guess build-aux
-  cp -afv $CERD/binutils/config.rpath build-aux
-  cp -afv $CERD/binutils/config.sub build-aux
+  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/alpine/$nom-basename.patch
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-basename.patch
+  autoreconf -vfis
 }
 
 configure() {
@@ -26,8 +23,10 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -50,9 +49,9 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
   # Remove libtool archive
-  rm -fv $CRSD/usr/lib/lib$nom.la
+  rm -fv "$CRSD"/usr/lib/lib$nom.la
 }
