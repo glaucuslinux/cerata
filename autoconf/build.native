@@ -4,11 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  cd "$TSRC"/$nom
 
-  cp -afv $CERD/binutils/config.guess build-aux
-  cp -afv $CERD/binutils/config.sub build-aux
+  autoreconf -vfis
 }
 
 configure() {
@@ -38,7 +36,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
@@ -48,8 +47,8 @@ package() {
   fi
 
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
-  rm -fv $SACD/usr/share/info/standards.info
+  rm -fv "$SACD"/usr/share/info/standards.info
 }
