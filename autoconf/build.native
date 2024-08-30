@@ -50,5 +50,5 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  rm -fv "$SACD"/usr/share/info/standards.info
+  rm -frv "$SACD"/usr/share/info
 }
