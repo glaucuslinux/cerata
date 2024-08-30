@@ -4,11 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess lib
-  cp -afv $CERD/binutils/config.sub lib
+  cd "$TSRC"/$nom
 
   ./bootstrap
 }
@@ -40,15 +36,21 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
+  if [ $BOOTSTRAP = yes ]; then
+    make \
+      install-strip
+  fi
+
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
   # Replace hard links with symbolic links
-  ln -sfnv aclocal $SACD/usr/bin/aclocal-1.17
-  ln -sfnv $nom $SACD/usr/bin/$nom-1.17
+  ln -sfnv aclocal "$SACD"/usr/bin/aclocal-1.17
+  ln -sfnv $nom "$SACD"/usr/bin/$nom-1.17
 }
