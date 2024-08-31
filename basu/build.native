@@ -4,20 +4,20 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-
-  cd $SRCD/$nom/$nom-v$ver
+  mkdir -v "$TBLD"/$nom
 }
 
 configure() {
   glaucus-muon \
     -Dsystem-bus-address=unix:path=/run/dbus/system_bus_socket \
-    $TBLD/$nom
+    -Daudit=disabled \
+    -Dlibcap=enabled \
+    "$TBLD"/$nom
 }
 
 build() {
   samu \
-    -C $TBLD/$nom
+    -C "$TBLD"/$nom
 }
 
 check() {
@@ -25,8 +25,8 @@ check() {
 }
 
 package() {
-  DESTDIR=$SACD \
+  DESTDIR="$SACD" \
   muon \
-    -C $TBLD/$nom \
+    -C "$TBLD"/$nom \
     install
 }
