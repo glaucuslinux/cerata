@@ -4,8 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd "$TSRC"/$nom
-
   autoreconf -vfis
 }
 
