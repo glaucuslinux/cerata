@@ -20,9 +20,5 @@ check() {
 }
 
 package() {
-  rsync $RAD_RSYNC_FLAGS $CERD $CRSD/var/lib/rad/clusters --exclude .$ver \
-    --exclude .${ver}attributes \
-    --exclude LICENSE \
-    --exclude README.md \
-    --delete
+  cp -afv "$CERD" "$CRSD"/var/lib/rad/clusters
 }
