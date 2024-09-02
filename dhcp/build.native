@@ -87,7 +87,7 @@ package() {
   cp -afv client/scripts/linux $SACD/usr/bin/dhclient-script
 
   rm -fv \
-    $SACD/usr/lib/lib${nom}.a \
+    $SACD/usr/lib/lib$nom.a \
     $SACD/usr/lib/lib${nom}ctl.a \
     $SACD/usr/lib/libomapi.a
 
