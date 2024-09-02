@@ -4,7 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/glaucus/musl-stacksize.patch
+  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/alpine/musl-stacksize.patch
+  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/buildroot/0001-$nom-ft-private.h-fix-missing-FT_Color-error.patch
 
   mkdir -pv "$TBLD"/$nom
 }
