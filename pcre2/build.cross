@@ -60,8 +60,8 @@ package() {
 
   # Remove libtool archives
   rm -fv \
-    $CRSD/usr/lib/lib${nom}-8.la \
-    $CRSD/usr/lib/lib${nom}-16.la \
-    $CRSD/usr/lib/lib${nom}-32.la \
-    $CRSD/usr/lib/lib${nom}-posix.la
+    $CRSD/usr/lib/lib$nom-8.la \
+    $CRSD/usr/lib/lib$nom-16.la \
+    $CRSD/usr/lib/lib$nom-32.la \
+    $CRSD/usr/lib/lib$nom-posix.la
 }
