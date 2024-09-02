@@ -58,8 +58,8 @@ package() {
 
   # Remove libtool archives
   rm -fv \
-    $SACD/usr/lib/lib${nom}-8.la \
-    $SACD/usr/lib/lib${nom}-16.la \
-    $SACD/usr/lib/lib${nom}-32.la \
-    $SACD/usr/lib/lib${nom}-posix.la
+    $SACD/usr/lib/lib$nom-8.la \
+    $SACD/usr/lib/lib$nom-16.la \
+    $SACD/usr/lib/lib$nom-32.la \
+    $SACD/usr/lib/lib$nom-posix.la
 }
