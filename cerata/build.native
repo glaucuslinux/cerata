@@ -20,10 +20,6 @@ check() {
 }
 
 package() {
-  mkdir -pv $SACD/var/lib/rad/clusters
-  rsync $RAD_RSYNC_FLAGS $CERD $SACD/var/lib/rad/clusters --exclude .$ver \
-    --exclude .${ver}attributes \
-    --exclude LICENSE \
-    --exclude README.md \
-    --delete
+  mkdir -pv "$SACD"/var/lib/rad/clusters
+  cp -afv "$CERD" "$SACD"/var/lib/rad/clusters
 }
