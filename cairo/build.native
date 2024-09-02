@@ -4,24 +4,32 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/glaucus/musl-stacksize.patch
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/glaucus/musl-stacksize.patch
-
-  mkdir -pv $TBLD/$nom
+  mkdir -pv "$TBLD"/$nom
 }
 
 configure() {
   glaucus-muon \
+    -Ddwrite=disabled \
+    -Dfontconfig=enabled \
+    -Dfreetype=enabled \
     -Dpng=enabled \
+    -Dquartz=disabled \
+    -Dtee=enabled \
+    -Dxcb=disabled \
+    -Dxlib=disabled \
+    -Dzlib=enabled \
     -Dtests=disabled \
-    $TBLD/$nom
+    -Dglib=enabled \
+    -Dspectre=disabled \
+    -Dsymbol-lookup=disabled \
+    "$TBLD"/$nom
 }
 
 build() {
   samu \
-    -C $TBLD/$nom
+    -C "$TBLD"/$nom
 }
 
 check() {
@@ -29,8 +37,8 @@ check() {
 }
 
 package() {
-  DESTDIR=$SACD \
+  DESTDIR="$SACD" \
   muon \
-    -C $TBLD/$nom \
+    -C "$TBLD"/$nom \
     install
 }
