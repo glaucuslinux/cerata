@@ -42,15 +42,18 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/dirname
   ln -sfnv $nom "$SACD"/usr/bin/du
   ln -sfnv $nom "$SACD"/usr/bin/echo
+  ln -sfnv $nom "$SACD"/usr/bin/egrep
   ln -sfnv $nom "$SACD"/usr/bin/env
   ln -sfnv $nom "$SACD"/usr/bin/expand
   ln -sfnv $nom "$SACD"/usr/bin/expr
   ln -sfnv $nom "$SACD"/usr/bin/factor
   ln -sfnv $nom "$SACD"/usr/bin/false
+  ln -sfnv $nom "$SACD"/usr/bin/fgrep
   ln -sfnv $nom "$SACD"/usr/bin/file
   ln -sfnv $nom "$SACD"/usr/bin/fmt
   ln -sfnv $nom "$SACD"/usr/bin/fold
   ln -sfnv $nom "$SACD"/usr/bin/getconf
+  ln -sfnv $nom "$SACD"/usr/bin/grep
   ln -sfnv $nom "$SACD"/usr/bin/head
   ln -sfnv $nom "$SACD"/usr/bin/hostid
   ln -sfnv $nom "$SACD"/usr/bin/hostname

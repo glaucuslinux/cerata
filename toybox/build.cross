@@ -42,15 +42,18 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/dirname
   ln -sfnv $nom "$CRSD"/usr/bin/du
   ln -sfnv $nom "$CRSD"/usr/bin/echo
+  ln -sfnv $nom "$CRSD"/usr/bin/egrep
   ln -sfnv $nom "$CRSD"/usr/bin/env
   ln -sfnv $nom "$CRSD"/usr/bin/expand
   ln -sfnv $nom "$CRSD"/usr/bin/expr
   ln -sfnv $nom "$CRSD"/usr/bin/factor
   ln -sfnv $nom "$CRSD"/usr/bin/false
+  ln -sfnv $nom "$CRSD"/usr/bin/fgrep
   ln -sfnv $nom "$CRSD"/usr/bin/file
   ln -sfnv $nom "$CRSD"/usr/bin/fmt
   ln -sfnv $nom "$CRSD"/usr/bin/fold
   ln -sfnv $nom "$CRSD"/usr/bin/getconf
+  ln -sfnv $nom "$CRSD"/usr/bin/grep
   ln -sfnv $nom "$CRSD"/usr/bin/head
   ln -sfnv $nom "$CRSD"/usr/bin/hostid
   ln -sfnv $nom "$CRSD"/usr/bin/hostname
