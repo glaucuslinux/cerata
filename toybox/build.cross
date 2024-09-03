@@ -47,6 +47,7 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/expr
   ln -sfnv $nom "$CRSD"/usr/bin/factor
   ln -sfnv $nom "$CRSD"/usr/bin/false
+  ln -sfnv $nom "$CRSD"/usr/bin/file
   ln -sfnv $nom "$CRSD"/usr/bin/fmt
   ln -sfnv $nom "$CRSD"/usr/bin/fold
   ln -sfnv $nom "$CRSD"/usr/bin/getconf

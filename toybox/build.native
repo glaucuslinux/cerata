@@ -47,6 +47,7 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/expr
   ln -sfnv $nom "$SACD"/usr/bin/factor
   ln -sfnv $nom "$SACD"/usr/bin/false
+  ln -sfnv $nom "$SACD"/usr/bin/file
   ln -sfnv $nom "$SACD"/usr/bin/fmt
   ln -sfnv $nom "$SACD"/usr/bin/fold
   ln -sfnv $nom "$SACD"/usr/bin/getconf
