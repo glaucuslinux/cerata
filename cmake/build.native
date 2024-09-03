@@ -4,8 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-pure64.patch
 }
 
 configure() {
@@ -20,6 +19,7 @@ configure() {
     --mandir=/share/man \
     --parallel=2 \
     --generator=Ninja \
+    --system-libs \
     --no-system-cppdap \
     --no-system-curl \
     --system-expat \
@@ -39,7 +39,7 @@ build() {
 }
 
 check() {
-  :
+  bin/ctest
 }
 
 package() {
@@ -48,7 +48,7 @@ package() {
       install/strip
   fi
 
-  DESTDIR=$SACD \
+  DESTDIR="$SACD" \
   samu \
     install/strip
 }
