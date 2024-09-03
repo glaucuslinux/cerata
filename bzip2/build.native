@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/void/soname.patch
 }
 
 configure() {
-  patch --no-backup-if-mismatch -p1 -i "$CERD"/$nom/patches/void/soname.patch
+  :
 }
 
 build() {
@@ -24,13 +24,13 @@ package() {
   mkdir -pv "$SACD"/usr/include
   cp -afv bzlib.h "$SACD"/usr/include
 
-  mkdir -pv "$SACD"/usr/lib
+  mkdir -v "$SACD"/usr/lib
   cp -afv libbz2.so.$ver "$SACD"/usr/lib
   ln -sfnv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so
   ln -sfnv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so.1
   ln -sfnv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so.1.0
 
-  mkdir -pv "$SACD"/usr/lib/pkgconfig
+  mkdir -v "$SACD"/usr/lib/pkgconfig
   cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
   ln -sfnv $nom.pc "$SACD"/usr/lib/pkgconfig/libbz2.pc
 }
