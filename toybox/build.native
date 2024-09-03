@@ -4,14 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-extend-long-iso-format.patch
+  patch --no-backup-if-mismatch -p0 -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch
 }
 
 configure() {
-  cp -afv $CERD/$nom/glaucus.config .config
+  cp -afv "$CERD"/$nom/glaucus.config .config
 }
 
 build() {
@@ -23,96 +20,98 @@ check() {
 }
 
 package() {
-  mkdir -pv $SACD/usr/bin
-  cp -afv $nom $SACD/usr/bin
+  mkdir -pv "$SACD"/usr/bin
+  cp -afv $nom "$SACD"/usr/bin
 
-  ln -sfnv $nom $SACD/usr/bin/[
-  ln -sfnv $nom $SACD/usr/bin/base32
-  ln -sfnv $nom $SACD/usr/bin/base64
-  ln -sfnv $nom $SACD/usr/bin/basename
-  ln -sfnv $nom $SACD/usr/bin/cat
-  ln -sfnv $nom $SACD/usr/bin/chgrp
-  ln -sfnv $nom $SACD/usr/bin/chmod
-  ln -sfnv $nom $SACD/usr/bin/chown
-  ln -sfnv $nom $SACD/usr/bin/chroot
-  ln -sfnv $nom $SACD/usr/bin/cksum
-  ln -sfnv $nom $SACD/usr/bin/comm
-  ln -sfnv $nom $SACD/usr/bin/cp
-  ln -sfnv $nom $SACD/usr/bin/cut
-  ln -sfnv $nom $SACD/usr/bin/date
-  ln -sfnv $nom $SACD/usr/bin/dd
-  ln -sfnv $nom $SACD/usr/bin/df
-  ln -sfnv $nom $SACD/usr/bin/dirname
-  ln -sfnv $nom $SACD/usr/bin/du
-  ln -sfnv $nom $SACD/usr/bin/echo
-  ln -sfnv $nom $SACD/usr/bin/env
-  ln -sfnv $nom $SACD/usr/bin/expand
-  ln -sfnv $nom $SACD/usr/bin/expr
-  ln -sfnv $nom $SACD/usr/bin/factor
-  ln -sfnv $nom $SACD/usr/bin/false
-  ln -sfnv $nom $SACD/usr/bin/fmt
-  ln -sfnv $nom $SACD/usr/bin/fold
-  ln -sfnv $nom $SACD/usr/bin/getconf
-  ln -sfnv $nom $SACD/usr/bin/head
-  ln -sfnv $nom $SACD/usr/bin/hostid
-  ln -sfnv $nom $SACD/usr/bin/hostname
-  ln -sfnv $nom $SACD/usr/bin/iconv
-  ln -sfnv $nom $SACD/usr/bin/id
-  ln -sfnv $nom $SACD/usr/bin/install
-  ln -sfnv $nom $SACD/usr/bin/link
-  ln -sfnv $nom $SACD/usr/bin/ln
-  ln -sfnv $nom $SACD/usr/bin/logname
-  ln -sfnv $nom $SACD/usr/bin/ls
-  ln -sfnv $nom $SACD/usr/bin/md5sum
-  ln -sfnv $nom $SACD/usr/bin/mkdir
-  ln -sfnv $nom $SACD/usr/bin/mkfifo
-  ln -sfnv $nom $SACD/usr/bin/mknod
-  ln -sfnv $nom $SACD/usr/bin/mktemp
-  ln -sfnv $nom $SACD/usr/bin/mv
-  ln -sfnv $nom $SACD/usr/bin/nice
-  ln -sfnv $nom $SACD/usr/bin/nl
-  ln -sfnv $nom $SACD/usr/bin/nohup
-  ln -sfnv $nom $SACD/usr/bin/nproc
-  ln -sfnv $nom $SACD/usr/bin/od
-  ln -sfnv $nom $SACD/usr/bin/paste
-  ln -sfnv $nom $SACD/usr/bin/printenv
-  ln -sfnv $nom $SACD/usr/bin/printf
-  ln -sfnv $nom $SACD/usr/bin/pwd
-  ln -sfnv $nom $SACD/usr/bin/readlink
-  ln -sfnv $nom $SACD/usr/bin/realpath
-  ln -sfnv $nom $SACD/usr/bin/rm
-  ln -sfnv $nom $SACD/usr/bin/rmdir
-  ln -sfnv $nom $SACD/usr/bin/seq
-  ln -sfnv $nom $SACD/usr/bin/sha1sum
-  ln -sfnv $nom $SACD/usr/bin/sha224sum
-  ln -sfnv $nom $SACD/usr/bin/sha256sum
-  ln -sfnv $nom $SACD/usr/bin/sha384sum
-  ln -sfnv $nom $SACD/usr/bin/sha512sum
-  ln -sfnv $nom $SACD/usr/bin/shred
-  ln -sfnv $nom $SACD/usr/bin/shuf
-  ln -sfnv $nom $SACD/usr/bin/sleep
-  ln -sfnv $nom $SACD/usr/bin/sort
-  ln -sfnv $nom $SACD/usr/bin/split
-  ln -sfnv $nom $SACD/usr/bin/stat
-  ln -sfnv $nom $SACD/usr/bin/stty
-  ln -sfnv $nom $SACD/usr/bin/sync
-  ln -sfnv $nom $SACD/usr/bin/tac
-  ln -sfnv $nom $SACD/usr/bin/tail
-  ln -sfnv $nom $SACD/usr/bin/tee
-  ln -sfnv $nom $SACD/usr/bin/test
-  ln -sfnv $nom $SACD/usr/bin/time
-  ln -sfnv $nom $SACD/usr/bin/timeout
-  ln -sfnv $nom $SACD/usr/bin/touch
-  ln -sfnv $nom $SACD/usr/bin/tr
-  ln -sfnv $nom $SACD/usr/bin/true
-  ln -sfnv $nom $SACD/usr/bin/truncate
-  ln -sfnv $nom $SACD/usr/bin/tty
-  ln -sfnv $nom $SACD/usr/bin/uname
-  ln -sfnv $nom $SACD/usr/bin/uniq
-  ln -sfnv $nom $SACD/usr/bin/unlink
-  ln -sfnv $nom $SACD/usr/bin/wc
-  ln -sfnv $nom $SACD/usr/bin/which
-  ln -sfnv $nom $SACD/usr/bin/who
-  ln -sfnv $nom $SACD/usr/bin/whoami
-  ln -sfnv $nom $SACD/usr/bin/yes
+  ln -sfnv $nom "$SACD"/usr/bin/[
+  ln -sfnv $nom "$SACD"/usr/bin/base32
+  ln -sfnv $nom "$SACD"/usr/bin/base64
+  ln -sfnv $nom "$SACD"/usr/bin/basename
+  ln -sfnv $nom "$SACD"/usr/bin/cat
+  ln -sfnv $nom "$SACD"/usr/bin/chgrp
+  ln -sfnv $nom "$SACD"/usr/bin/chmod
+  ln -sfnv $nom "$SACD"/usr/bin/chown
+  ln -sfnv $nom "$SACD"/usr/bin/chroot
+  ln -sfnv $nom "$SACD"/usr/bin/cksum
+  ln -sfnv $nom "$SACD"/usr/bin/comm
+  ln -sfnv $nom "$SACD"/usr/bin/cp
+  ln -sfnv $nom "$SACD"/usr/bin/cut
+  ln -sfnv $nom "$SACD"/usr/bin/date
+  ln -sfnv $nom "$SACD"/usr/bin/dd
+  ln -sfnv $nom "$SACD"/usr/bin/df
+  ln -sfnv $nom "$SACD"/usr/bin/dirname
+  ln -sfnv $nom "$SACD"/usr/bin/du
+  ln -sfnv $nom "$SACD"/usr/bin/echo
+  ln -sfnv $nom "$SACD"/usr/bin/env
+  ln -sfnv $nom "$SACD"/usr/bin/expand
+  ln -sfnv $nom "$SACD"/usr/bin/expr
+  ln -sfnv $nom "$SACD"/usr/bin/factor
+  ln -sfnv $nom "$SACD"/usr/bin/false
+  ln -sfnv $nom "$SACD"/usr/bin/fmt
+  ln -sfnv $nom "$SACD"/usr/bin/fold
+  ln -sfnv $nom "$SACD"/usr/bin/getconf
+  ln -sfnv $nom "$SACD"/usr/bin/head
+  ln -sfnv $nom "$SACD"/usr/bin/hostid
+  ln -sfnv $nom "$SACD"/usr/bin/hostname
+  ln -sfnv $nom "$SACD"/usr/bin/iconv
+  ln -sfnv $nom "$SACD"/usr/bin/id
+  ln -sfnv $nom "$SACD"/usr/bin/install
+  ln -sfnv $nom "$SACD"/usr/bin/link
+  ln -sfnv $nom "$SACD"/usr/bin/ln
+  ln -sfnv $nom "$SACD"/usr/bin/logname
+  ln -sfnv $nom "$SACD"/usr/bin/ls
+  ln -sfnv $nom "$SACD"/usr/bin/md5sum
+  ln -sfnv $nom "$SACD"/usr/bin/mkdir
+  ln -sfnv $nom "$SACD"/usr/bin/mkfifo
+  ln -sfnv $nom "$SACD"/usr/bin/mknod
+  ln -sfnv $nom "$SACD"/usr/bin/mktemp
+  ln -sfnv $nom "$SACD"/usr/bin/mv
+  ln -sfnv $nom "$SACD"/usr/bin/nice
+  ln -sfnv $nom "$SACD"/usr/bin/nl
+  ln -sfnv $nom "$SACD"/usr/bin/nohup
+  ln -sfnv $nom "$SACD"/usr/bin/nproc
+  ln -sfnv $nom "$SACD"/usr/bin/od
+  ln -sfnv $nom "$SACD"/usr/bin/paste
+  ln -sfnv $nom "$SACD"/usr/bin/printenv
+  ln -sfnv $nom "$SACD"/usr/bin/printf
+  ln -sfnv $nom "$SACD"/usr/bin/pwd
+  ln -sfnv $nom "$SACD"/usr/bin/readlink
+  ln -sfnv $nom "$SACD"/usr/bin/realpath
+  ln -sfnv $nom "$SACD"/usr/bin/rm
+  ln -sfnv $nom "$SACD"/usr/bin/rmdir
+  ln -sfnv $nom "$SACD"/usr/bin/sed
+  ln -sfnv $nom "$SACD"/usr/bin/seq
+  ln -sfnv $nom "$SACD"/usr/bin/sha1sum
+  ln -sfnv $nom "$SACD"/usr/bin/sha224sum
+  ln -sfnv $nom "$SACD"/usr/bin/sha256sum
+  ln -sfnv $nom "$SACD"/usr/bin/sha384sum
+  ln -sfnv $nom "$SACD"/usr/bin/sha512sum
+  ln -sfnv $nom "$SACD"/usr/bin/shred
+  ln -sfnv $nom "$SACD"/usr/bin/shuf
+  ln -sfnv $nom "$SACD"/usr/bin/sleep
+  ln -sfnv $nom "$SACD"/usr/bin/sort
+  ln -sfnv $nom "$SACD"/usr/bin/split
+  ln -sfnv $nom "$SACD"/usr/bin/stat
+  ln -sfnv $nom "$SACD"/usr/bin/stty
+  ln -sfnv $nom "$SACD"/usr/bin/sync
+  ln -sfnv $nom "$SACD"/usr/bin/tac
+  ln -sfnv $nom "$SACD"/usr/bin/tail
+  ln -sfnv $nom "$SACD"/usr/bin/tee
+  ln -sfnv $nom "$SACD"/usr/bin/test
+  ln -sfnv $nom "$SACD"/usr/bin/time
+  ln -sfnv $nom "$SACD"/usr/bin/timeout
+  ln -sfnv $nom "$SACD"/usr/bin/touch
+  ln -sfnv $nom "$SACD"/usr/bin/tr
+  ln -sfnv $nom "$SACD"/usr/bin/true
+  ln -sfnv $nom "$SACD"/usr/bin/truncate
+  ln -sfnv $nom "$SACD"/usr/bin/tsort
+  ln -sfnv $nom "$SACD"/usr/bin/tty
+  ln -sfnv $nom "$SACD"/usr/bin/uname
+  ln -sfnv $nom "$SACD"/usr/bin/uniq
+  ln -sfnv $nom "$SACD"/usr/bin/unlink
+  ln -sfnv $nom "$SACD"/usr/bin/wc
+  ln -sfnv $nom "$SACD"/usr/bin/which
+  ln -sfnv $nom "$SACD"/usr/bin/who
+  ln -sfnv $nom "$SACD"/usr/bin/whoami
+  ln -sfnv $nom "$SACD"/usr/bin/yes
 }
