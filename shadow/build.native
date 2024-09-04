@@ -11,7 +11,7 @@ prepare() {
   cp -afv $CERD/binutils/config.rpath .
   cp -afv $CERD/binutils/config.sub .
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-customize-login-defaults.patch
 }
 
 configure() {
