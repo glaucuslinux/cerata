@@ -4,18 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess build-aux
-  cp -afv $CERD/binutils/config.rpath build-aux
-  cp -afv $CERD/binutils/config.sub build-aux
+  ./autogen.sh
 }
 
 configure() {
-  # This patch will be part of flex-2.6.5 release
-  patch -p1 -i $CERD/$nom/patches/gentoo/$nom-$ver-libobjdir.patch
-
   ac_cv_func_malloc_0_nonnull=yes \
   ac_cv_func_realloc_0_nonnull=yes \
   ./configure \
@@ -54,13 +46,13 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv $nom $CRSD/usr/bin/lex
+  ln -sfnv $nom "$CRSD"/usr/bin/lex
 
   # Remove libtool archive
-  rm -fv $CRSD/usr/lib/libfl.la
+  rm -fv "$CRSD"/usr/lib/libfl.la
 
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/lex.1
+  ln -sfnv $nom.1 "$CRSD"/usr/share/man/man1/lex.1
 }
