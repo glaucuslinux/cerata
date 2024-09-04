@@ -21,7 +21,7 @@ configure() {
     --mandir=/usr/share/man \
     --disable-blacklist
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
 
 build() {
