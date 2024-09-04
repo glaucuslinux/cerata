@@ -77,6 +77,7 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/nproc
   ln -sfnv $nom "$CRSD"/usr/bin/od
   ln -sfnv $nom "$CRSD"/usr/bin/paste
+  ln -sfnv $nom "$CRSD"/usr/bin/patch
   ln -sfnv $nom "$CRSD"/usr/bin/printenv
   ln -sfnv $nom "$CRSD"/usr/bin/printf
   ln -sfnv $nom "$CRSD"/usr/bin/pwd
