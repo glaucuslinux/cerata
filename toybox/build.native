@@ -50,6 +50,7 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/false
   ln -sfnv $nom "$SACD"/usr/bin/fgrep
   ln -sfnv $nom "$SACD"/usr/bin/file
+  ln -sfnv $nom "$SACD"/usr/bin/find
   ln -sfnv $nom "$SACD"/usr/bin/fmt
   ln -sfnv $nom "$SACD"/usr/bin/fold
   ln -sfnv $nom "$SACD"/usr/bin/getconf
@@ -117,5 +118,6 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/which
   ln -sfnv $nom "$SACD"/usr/bin/who
   ln -sfnv $nom "$SACD"/usr/bin/whoami
+  ln -sfnv $nom "$SACD"/usr/bin/xargs
   ln -sfnv $nom "$SACD"/usr/bin/yes
 }
