@@ -20,70 +20,70 @@ check() {
 }
 
 package() {
-  ln -sfnv usr/bin $CRSD/bin
+  ln -sfnv usr/bin "$CRSD"/bin
 
-  mkdir -pv $CRSD/boot
+  mkdir -pv "$CRSD"/boot
 
-  mkdir -pv $CRSD/dev
+  mkdir -pv "$CRSD"/dev
 
-  # `$CRSD/etc` is already created by toolchain `musl`
-  cp -afv $CERD/$nom/fstab $CRSD/etc
-  ln -sfnv lsb-release $CRSD/etc/glaucus-release
-  cp -afv $CERD/$nom/group $CRSD/etc
-  cp -afv $CERD/$nom/hostname $CRSD/etc
-  cp -afv $CERD/$nom/hosts $CRSD/etc
-  cp -afv $CERD/$nom/issue $CRSD/etc
-  cp -afv $CERD/$nom/lsb-release $CRSD/etc
+  # `"$CRSD"/etc` was already created by toolchain `musl`
+  cp -afv "$CERD"/$nom/fstab "$CRSD"/etc
+  ln -sfnv lsb-release "$CRSD"/etc/glaucus-release
+  cp -afv "$CERD"/$nom/group "$CRSD"/etc
+  cp -afv "$CERD"/$nom/hostname "$CRSD"/etc
+  cp -afv "$CERD"/$nom/hosts "$CRSD"/etc
+  cp -afv "$CERD"/$nom/issue "$CRSD"/etc
+  cp -afv "$CERD"/$nom/lsb-release "$CRSD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
-    -i $CRSD/etc/lsb-release
-  ln -sfnv ../usr/lib/os-release $CRSD/etc/os-release
-  cp -afv $CERD/$nom/passwd $CRSD/etc
-  cp -afv $CERD/$nom/profile $CRSD/etc
-  cp -afv $CERD/$nom/resolv.conf $CRSD/etc
-  cp -afv $CERD/$nom/shadow $CRSD/etc
-  cp -afv $CERD/$nom/shells $CRSD/etc
+    -i "$CRSD"/etc/lsb-release
+  ln -sfnv ../usr/lib/os-release "$CRSD"/etc/os-release
+  cp -afv "$CERD"/$nom/passwd "$CRSD"/etc
+  cp -afv "$CERD"/$nom/profile "$CRSD"/etc
+  cp -afv "$CERD"/$nom/resolv.conf "$CRSD"/etc
+  cp -afv "$CERD"/$nom/shadow "$CRSD"/etc
+  cp -afv "$CERD"/$nom/shells "$CRSD"/etc
 
-  mkdir -pv $CRSD/home
+  mkdir -pv "$CRSD"/home
 
-  ln -sfnv usr/lib $CRSD/lib
+  ln -sfnv usr/lib "$CRSD"/lib
 
-  mkdir -pv $CRSD/mnt
+  mkdir -pv "$CRSD"/mnt
 
-  mkdir -pvm 555 $CRSD/proc
+  mkdir -pvm 555 "$CRSD"/proc
 
-  mkdir -pvm 750 $CRSD/root
+  mkdir -pvm 750 "$CRSD"/root
 
-  mkdir -pv $CRSD/run
+  mkdir -pv "$CRSD"/run
 
-  ln -sfnv usr/bin $CRSD/sbin
+  ln -sfnv usr/bin "$CRSD"/sbin
 
-  mkdir -pvm 555 $CRSD/sys
+  mkdir -pvm 555 "$CRSD"/sys
 
-  mkdir -pvm 1777 $CRSD/tmp
+  mkdir -pvm 1777 "$CRSD"/tmp
 
-  # `$CRSD/usr` is already created in toolchain
-  cp -afv $CERD/$nom/os-release $CRSD/usr/lib
+  # `"$CRSD"/usr` is already created in toolchain
+  cp -afv "$CERD"/$nom/os-release "$CRSD"/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
-    -i $CRSD/usr/lib/os-release
-  mkdir -pv $PKG_CONFIG_LIBDIR
-  ln -sfnv bin $CRSD/usr/sbin
-  mkdir -pv $CRSD/usr/share
+    -i "$CRSD"/usr/lib/os-release
+  mkdir -pv "$PKG_CONFIG_LIBDIR"
+  ln -sfnv bin "$CRSD"/usr/sbin
+  mkdir -pv "$CRSD"/usr/share
 
-  mkdir -pv $CRSD/var/cache/rad/local
-  mkdir -pv $CRSD/var/cache/rad/pkg
-  mkdir -pv $CRSD/var/cache/rad/src
-  mkdir -pv $CRSD/var/lib/hwclock
-  mkdir -pv $CRSD/var/lib/misc
-  mkdir -pv $CRSD/var/lib/rad/clusters
-  ln -sfnv ../run/lock $CRSD/var/lock
-  mkdir -pv $CRSD/var/log/rad
-  mkdir -pv $CRSD/var/mail
-  ln -sfnv ../run $CRSD/var/run
-  mkdir -pv $CRSD/var/spool
-  ln -sfnv ../mail $CRSD/var/spool/mail
-  mkdir -pvm 1777 $CRSD/var/tmp
-  mkdir -pv $CRSD/var/tmp/rad
+  mkdir -pv "$CRSD"/var/cache/rad/local
+  mkdir -pv "$CRSD"/var/cache/rad/pkg
+  mkdir -pv "$CRSD"/var/cache/rad/src
+  mkdir -pv "$CRSD"/var/lib/hwclock
+  mkdir -pv "$CRSD"/var/lib/misc
+  mkdir -pv "$CRSD"/var/lib/rad/clusters
+  ln -sfnv ../run/lock "$CRSD"/var/lock
+  mkdir -pv "$CRSD"/var/log/rad
+  mkdir -pv "$CRSD"/var/mail
+  ln -sfnv ../run "$CRSD"/var/run
+  mkdir -pv "$CRSD"/var/spool
+  ln -sfnv ../mail "$CRSD"/var/spool/mail
+  mkdir -pvm 1777 "$CRSD"/var/tmp
+  mkdir -pv "$CRSD"/var/tmp/rad
 }

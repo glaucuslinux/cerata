@@ -20,71 +20,71 @@ check() {
 }
 
 package() {
-  ln -sfnv usr/bin $SACD/bin
+  ln -sfnv usr/bin "$SACD"/bin
 
-  mkdir -pv $SACD/boot
+  mkdir -pv "$SACD"/boot
 
-  mkdir -pv $SACD/dev
+  mkdir -pv "$SACD"/dev
 
-  mkdir -pv $SACD/etc
-  cp -afv $CERD/$nom/fstab $SACD/etc
-  ln -sfnv lsb-release $SACD/etc/glaucus-release
-  cp -afv $CERD/$nom/group $SACD/etc
-  cp -afv $CERD/$nom/hostname $SACD/etc
-  cp -afv $CERD/$nom/hosts $SACD/etc
-  cp -afv $CERD/$nom/issue $SACD/etc
-  cp -afv $CERD/$nom/lsb-release $SACD/etc
+  mkdir -pv "$SACD"/etc
+  cp -afv "$CERD"/$nom/fstab "$SACD"/etc
+  ln -sfnv lsb-release "$SACD"/etc/glaucus-release
+  cp -afv "$CERD"/$nom/group "$SACD"/etc
+  cp -afv "$CERD"/$nom/hostname "$SACD"/etc
+  cp -afv "$CERD"/$nom/hosts "$SACD"/etc
+  cp -afv "$CERD"/$nom/issue "$SACD"/etc
+  cp -afv "$CERD"/$nom/lsb-release "$SACD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
-    -i $SACD/etc/lsb-release
-  ln -sfnv ../usr/lib/os-release $SACD/etc/os-release
-  cp -afv $CERD/$nom/passwd $SACD/etc
-  cp -afv $CERD/$nom/profile $SACD/etc
-  cp -afv $CERD/$nom/resolv.conf $SACD/etc
-  cp -afv $CERD/$nom/shadow $SACD/etc
-  cp -afv $CERD/$nom/shells $SACD/etc
+    -i "$SACD"/etc/lsb-release
+  ln -sfnv ../usr/lib/os-release "$SACD"/etc/os-release
+  cp -afv "$CERD"/$nom/passwd "$SACD"/etc
+  cp -afv "$CERD"/$nom/profile "$SACD"/etc
+  cp -afv "$CERD"/$nom/resolv.conf "$SACD"/etc
+  cp -afv "$CERD"/$nom/shadow "$SACD"/etc
+  cp -afv "$CERD"/$nom/shells "$SACD"/etc
 
-  mkdir -pv $SACD/home
+  mkdir -pv "$SACD"/home
 
-  ln -sfnv usr/lib $SACD/lib
+  ln -sfnv usr/lib "$SACD"/lib
 
-  mkdir -pv $SACD/mnt
+  mkdir -pv "$SACD"/mnt
 
-  mkdir -pvm 555 $SACD/proc
+  mkdir -pvm 555 "$SACD"/proc
 
-  mkdir -pvm 750 $SACD/root
+  mkdir -pvm 750 "$SACD"/root
 
-  mkdir -pv $SACD/run
+  mkdir -pv "$SACD"/run
 
-  ln -sfnv usr/bin $SACD/sbin
+  ln -sfnv usr/bin "$SACD"/sbin
 
-  mkdir -pvm 555 $SACD/sys
+  mkdir -pvm 555 "$SACD"/sys
 
-  mkdir -pvm 1777 $SACD/tmp
+  mkdir -pvm 1777 "$SACD"/tmp
 
-  mkdir -pv $SACD/usr/bin
-  mkdir -pv $SACD/usr/lib
-  cp -afv $CERD/$nom/os-release $SACD/usr/lib
+  mkdir -pv "$SACD"/usr/bin
+  mkdir -pv "$SACD"/usr/lib
+  cp -afv "$CERD"/$nom/os-release "$SACD"/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
-    -i $SACD/usr/lib/os-release
-  mkdir -pv $PKG_CONFIG_LIBDIR
-  ln -sfnv bin $SACD/usr/sbin
-  mkdir -pv $SACD/usr/share
+    -i "$SACD"/usr/lib/os-release
+  mkdir -pv "$PKG_CONFIG_LIBDIR"
+  ln -sfnv bin "$SACD"/usr/sbin
+  mkdir -pv "$SACD"/usr/share
 
-  mkdir -pv $SACD/var/cache/rad/local
-  mkdir -pv $SACD/var/cache/rad/pkg
-  mkdir -pv $SACD/var/cache/rad/src
-  mkdir -pv $SACD/var/lib/hwclock
-  mkdir -pv $SACD/var/lib/misc
-  mkdir -pv $SACD/var/lib/rad/clusters
-  ln -sfnv ../run/lock $SACD/var/lock
-  mkdir -pv $SACD/var/log/rad
-  mkdir -pv $SACD/var/mail
-  ln -sfnv ../run $SACD/var/run
-  mkdir -pv $SACD/var/spool
-  ln -sfnv ../mail $SACD/var/spool/mail
-  mkdir -pvm 1777 $SACD/var/tmp
-  mkdir -pv $SACD/var/tmp/rad
+  mkdir -pv "$SACD"/var/cache/rad/local
+  mkdir -pv "$SACD"/var/cache/rad/pkg
+  mkdir -pv "$SACD"/var/cache/rad/src
+  mkdir -pv "$SACD"/var/lib/hwclock
+  mkdir -pv "$SACD"/var/lib/misc
+  mkdir -pv "$SACD"/var/lib/rad/clusters
+  ln -sfnv ../run/lock "$SACD"/var/lock
+  mkdir -pv "$SACD"/var/log/rad
+  mkdir -pv "$SACD"/var/mail
+  ln -sfnv ../run "$SACD"/var/run
+  mkdir -pv "$SACD"/var/spool
+  ln -sfnv ../mail "$SACD"/var/spool/mail
+  mkdir -pvm 1777 "$SACD"/var/tmp
+  mkdir -pv "$SACD"/var/tmp/rad
 }
