@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-man-page.patch
 
   glaucus-muon \
     -Dinstall_systemd=false \
