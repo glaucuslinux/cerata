@@ -7,7 +7,7 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/musl/musl-$ver/ $TSRC/musl --delete
   cd $TSRC/musl
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/musl/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p0 -i $CERD/musl/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
 configure() {
