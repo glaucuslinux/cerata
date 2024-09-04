@@ -10,7 +10,7 @@ prepare() {
   cp -afv $CERD/binutils/config.guess .
   cp -afv $CERD/binutils/config.sub .
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/apply-disable.patch
 
   autoreconf -vfis
 }
