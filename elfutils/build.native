@@ -11,8 +11,8 @@ prepare() {
   cp -afv $CERD/binutils/config.rpath config
   cp -afv $CERD/binutils/config.sub config
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/musl-macros.patch
 }
 
 configure() {
