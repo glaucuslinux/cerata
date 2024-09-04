@@ -4,11 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess conftools
-  cp -afv $CERD/binutils/config.sub conftools
+  ./buildconf.sh
 }
 
 configure() {
@@ -43,14 +39,15 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
   # Remove libtool archive
-  rm -fv $SACD/usr/lib/lib$nom.la
+  rm -fv "$SACD"/usr/lib/lib$nom.la
 }
