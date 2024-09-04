@@ -7,8 +7,8 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
 }
 
 configure() {
