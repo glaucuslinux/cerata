@@ -16,15 +16,15 @@ prepare() {
   cp -afv $CERD/binutils/config.rpath .
   cp -afv $CERD/binutils/config.sub .
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
   mkdir -pv $TBLD/$nom
   cd $TBLD/$nom
