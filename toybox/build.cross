@@ -53,6 +53,7 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/find
   ln -sfnv $nom "$CRSD"/usr/bin/fmt
   ln -sfnv $nom "$CRSD"/usr/bin/fold
+  ln -sfnv $nom "$CRSD"/usr/bin/free
   ln -sfnv $nom "$CRSD"/usr/bin/getconf
   ln -sfnv $nom "$CRSD"/usr/bin/grep
   ln -sfnv $nom "$CRSD"/usr/bin/head
@@ -78,9 +79,15 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/od
   ln -sfnv $nom "$CRSD"/usr/bin/paste
   ln -sfnv $nom "$CRSD"/usr/bin/patch
+  ln -sfnv $nom "$CRSD"/usr/bin/pgrep
+  ln -sfnv $nom "$CRSD"/usr/bin/pidof
+  ln -sfnv $nom "$CRSD"/usr/bin/pkill
+  ln -sfnv $nom "$CRSD"/usr/bin/pmap
   ln -sfnv $nom "$CRSD"/usr/bin/printenv
   ln -sfnv $nom "$CRSD"/usr/bin/printf
+  ln -sfnv $nom "$CRSD"/usr/bin/ps
   ln -sfnv $nom "$CRSD"/usr/bin/pwd
+  ln -sfnv $nom "$CRSD"/usr/bin/pwdx
   ln -sfnv $nom "$CRSD"/usr/bin/readlink
   ln -sfnv $nom "$CRSD"/usr/bin/realpath
   ln -sfnv $nom "$CRSD"/usr/bin/rm
@@ -100,12 +107,14 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/stat
   ln -sfnv $nom "$CRSD"/usr/bin/stty
   ln -sfnv $nom "$CRSD"/usr/bin/sync
+  ln -sfnv $nom "$CRSD"/usr/bin/sysctl
   ln -sfnv $nom "$CRSD"/usr/bin/tac
   ln -sfnv $nom "$CRSD"/usr/bin/tail
   ln -sfnv $nom "$CRSD"/usr/bin/tee
   ln -sfnv $nom "$CRSD"/usr/bin/test
   ln -sfnv $nom "$CRSD"/usr/bin/time
   ln -sfnv $nom "$CRSD"/usr/bin/timeout
+  ln -sfnv $nom "$CRSD"/usr/bin/top
   ln -sfnv $nom "$CRSD"/usr/bin/touch
   ln -sfnv $nom "$CRSD"/usr/bin/tr
   ln -sfnv $nom "$CRSD"/usr/bin/true
@@ -115,6 +124,9 @@ package() {
   ln -sfnv $nom "$CRSD"/usr/bin/uname
   ln -sfnv $nom "$CRSD"/usr/bin/uniq
   ln -sfnv $nom "$CRSD"/usr/bin/unlink
+  ln -sfnv $nom "$CRSD"/usr/bin/vmstat
+  ln -sfnv $nom "$CRSD"/usr/bin/w
+  ln -sfnv $nom "$CRSD"/usr/bin/watch
   ln -sfnv $nom "$CRSD"/usr/bin/wc
   ln -sfnv $nom "$CRSD"/usr/bin/which
   ln -sfnv $nom "$CRSD"/usr/bin/who
