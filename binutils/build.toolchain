@@ -11,8 +11,8 @@ prepare() {
   cp -afv $CERD/$nom/config.rpath .
   cp -afv $CERD/$nom/config.sub .
 
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
+  patch -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
 
   mkdir -pv $TBLD/$nom
   cd $TBLD/$nom
