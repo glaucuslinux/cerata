@@ -20,8 +20,8 @@ check() {
 }
 
 package() {
-  cp -afRv $SRCD/$nom/etc $SACD
-  cp -afRv $SRCD/$nom/usr $SACD
+  cp -afv $SRCD/$nom/etc $SACD
+  cp -afv $SRCD/$nom/usr $SACD
 
   mkdir -pv $SACD/etc/s6/current/env
 
