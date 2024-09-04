@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 
   glaucus-muon \
     -Dtests=false \
