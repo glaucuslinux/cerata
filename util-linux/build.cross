@@ -7,10 +7,8 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
-
-  ./autogen.sh
+  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
+  patch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 
   cp -afv $CERD/binutils/config.guess config
   cp -afv $CERD/binutils/config.rpath config
