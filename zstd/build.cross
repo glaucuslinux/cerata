@@ -7,9 +7,9 @@ prepare() {
   rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
   cd $TSRC/$nom
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/clear/multi-thread-default.patch
+  patch -p0 -i $CERD/$nom/patches/clear/multi-thread-default.patch
 
-  patch --no-backup-if-mismatch -p0 -i $CERD/$nom/patches/opensuse/p${nom}.1.patch
+  patch -p0 -i $CERD/$nom/patches/opensuse/p$nom.1.patch
 }
 
 configure() {
@@ -52,5 +52,5 @@ package() {
   # Remove static library
   rm -fv $CRSD/usr/lib/lib$nom.a
 
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/p${nom}.1
+  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/p$nom.1
 }
