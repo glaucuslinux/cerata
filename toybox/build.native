@@ -53,6 +53,7 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/find
   ln -sfnv $nom "$SACD"/usr/bin/fmt
   ln -sfnv $nom "$SACD"/usr/bin/fold
+  ln -sfnv $nom "$SACD"/usr/bin/free
   ln -sfnv $nom "$SACD"/usr/bin/getconf
   ln -sfnv $nom "$SACD"/usr/bin/grep
   ln -sfnv $nom "$SACD"/usr/bin/head
@@ -78,9 +79,15 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/od
   ln -sfnv $nom "$SACD"/usr/bin/paste
   ln -sfnv $nom "$SACD"/usr/bin/patch
+  ln -sfnv $nom "$SACD"/usr/bin/pgrep
+  ln -sfnv $nom "$SACD"/usr/bin/pidof
+  ln -sfnv $nom "$SACD"/usr/bin/pkill
+  ln -sfnv $nom "$SACD"/usr/bin/pmap
   ln -sfnv $nom "$SACD"/usr/bin/printenv
   ln -sfnv $nom "$SACD"/usr/bin/printf
+  ln -sfnv $nom "$SACD"/usr/bin/ps
   ln -sfnv $nom "$SACD"/usr/bin/pwd
+  ln -sfnv $nom "$SACD"/usr/bin/pwdx
   ln -sfnv $nom "$SACD"/usr/bin/readlink
   ln -sfnv $nom "$SACD"/usr/bin/realpath
   ln -sfnv $nom "$SACD"/usr/bin/rm
@@ -100,12 +107,14 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/stat
   ln -sfnv $nom "$SACD"/usr/bin/stty
   ln -sfnv $nom "$SACD"/usr/bin/sync
+  ln -sfnv $nom "$SACD"/usr/bin/sysctl
   ln -sfnv $nom "$SACD"/usr/bin/tac
   ln -sfnv $nom "$SACD"/usr/bin/tail
   ln -sfnv $nom "$SACD"/usr/bin/tee
   ln -sfnv $nom "$SACD"/usr/bin/test
   ln -sfnv $nom "$SACD"/usr/bin/time
   ln -sfnv $nom "$SACD"/usr/bin/timeout
+  ln -sfnv $nom "$SACD"/usr/bin/top
   ln -sfnv $nom "$SACD"/usr/bin/touch
   ln -sfnv $nom "$SACD"/usr/bin/tr
   ln -sfnv $nom "$SACD"/usr/bin/true
@@ -115,6 +124,9 @@ package() {
   ln -sfnv $nom "$SACD"/usr/bin/uname
   ln -sfnv $nom "$SACD"/usr/bin/uniq
   ln -sfnv $nom "$SACD"/usr/bin/unlink
+  ln -sfnv $nom "$SACD"/usr/bin/vmstat
+  ln -sfnv $nom "$SACD"/usr/bin/w
+  ln -sfnv $nom "$SACD"/usr/bin/watch
   ln -sfnv $nom "$SACD"/usr/bin/wc
   ln -sfnv $nom "$SACD"/usr/bin/which
   ln -sfnv $nom "$SACD"/usr/bin/who
