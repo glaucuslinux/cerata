@@ -4,12 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess build-aux
-  cp -afv $CERD/binutils/config.rpath build-aux
-  cp -afv $CERD/binutils/config.sub build-aux
+  autoreconf -vfis
 }
 
 configure() {
@@ -22,8 +17,10 @@ configure() {
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --runstatedir=/run \
     --libdir=/usr/lib \
     --includedir=/usr/include \
+    --oldincludedir=/usr/include \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/share/info \
@@ -42,16 +39,22 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
-  mkdir -pv $SACD/usr/include/$nom
-  ln -sfnv ../dbm.h $SACD/usr/include/$nom/dbm.h
-  ln -sfnv ../$nom.h $SACD/usr/include/$nom/$nom.h
-  ln -sfnv ../ndbm.h $SACD/usr/include/$nom/ndbm.h
+  mkdir -pv "$SACD"/usr/include/$nom
+  ln -sfnv ../dbm.h "$SACD"/usr/include/$nom/dbm.h
+  ln -sfnv ../$nom.h "$SACD"/usr/include/$nom/$nom.h
+  ln -sfnv ../ndbm.h "$SACD"/usr/include/$nom/ndbm.h
+
+  # Remove libtool archives
+  rm -fv \
+    $SACD/usr/lib/lib$nom.la \
+    $SACD/usr/lib/lib${nom}_compat.la
 }
