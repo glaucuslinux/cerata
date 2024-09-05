@@ -4,12 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  mkdir -pv "$TBLD"/$nom
+  cd "$TBLD"/$nom
 }
 
 configure() {
-  $SRCD/$nom/$nom-$ver/configure \
+  "$SRCD"/$nom/$nom-$ver/configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -34,11 +34,12 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 }
