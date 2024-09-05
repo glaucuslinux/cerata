@@ -4,18 +4,39 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
 
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-adjtime-file-path.patch
-  patch -p0 -i $CERD/$nom/patches/glaucus/0002-fix-utmp-file-path.patch
-
-  cp -afv $CERD/binutils/config.guess config
-  cp -afv $CERD/binutils/config.rpath config
-  cp -afv $CERD/binutils/config.sub config
+  ./autogen.sh
 }
 
 configure() {
+  build_blkdiscard=no \
+  build_blockdev=no \
+  build_flock=no \
+  build_fsfreeze=no \
+  build_getopt=no \
+  build_hexdump=no \
+  build_mcookie=no \
+  build_mkswap=no \
+  build_renice=no \
+  build_rev=no \
+  build_rtcwake=no \
+  build_setsid=no \
+  build_uclampset=no \
+  enable_blkdiscard=no \
+  enable_blockdev=no \
+  enable_flock=no \
+  enable_fsfreeze=no \
+  enable_getopt=no \
+  enable_hexdump=no \
+  enable_mcookie=no \
+  enable_mkswap=no \
+  enable_renice=no \
+  enable_rev=no \
+  enable_rtcwake=no \
+  enable_setsid=no \
+  enable_uclampset=no \
   LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   ./configure \
@@ -46,13 +67,39 @@ configure() {
     --disable-asciidoc \
     --disable-liblastlog2 \
     --disable-pam-lastlog2 \
+    --disable-mount \
+    --disable-losetup \
+    --disable-fsck \
+    --disable-uuidgen \
+    --disable-blkid \
+    --disable-mountpoint \
+    --disable-nsenter \
+    --disable-eject \
+    --disable-cramfs \
+    --disable-bfs \
+    --disable-minix \
+    --disable-hwclock \
+    --disable-hwclock-cmos \
+    --disable-hwclock-gplv3 \
+    --disable-swapon \
+    --disable-cal \
+    --disable-logger \
+    --disable-switch_root \
+    --disable-pivot_root \
+    --disable-ipcrm \
+    --disable-ipcs \
+    --disable-rfkill \
+    --disable-kill \
+    --disable-last \
     --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
     --disable-nologin \
+    --disable-sulogin \
     --disable-su \
     --disable-runuser \
     --disable-more \
+    --disable-schedutils \
     --disable-bash-completion \
     --disable-pylibmount \
     --enable-fs-paths-default=/usr/bin \
@@ -77,15 +124,15 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     usrsbin_execdir=/usr/bin \
     install-strip
 
   # Remove libtool archives
   rm -fv \
-    $CRSD/usr/lib/libblkid.la \
-    $CRSD/usr/lib/libfdisk.la \
-    $CRSD/usr/lib/libmount.la \
-    $CRSD/usr/lib/libsmartcols.la \
-    $CRSD/usr/lib/libuuid.la
+    "$CRSD"/usr/lib/libblkid.la \
+    "$CRSD"/usr/lib/libfdisk.la \
+    "$CRSD"/usr/lib/libmount.la \
+    "$CRSD"/usr/lib/libsmartcols.la \
+    "$CRSD"/usr/lib/libuuid.la
 }
