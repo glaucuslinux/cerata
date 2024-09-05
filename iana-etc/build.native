@@ -20,7 +20,9 @@ check() {
 }
 
 package() {
-  mkdir -pv $SACD/etc
-  cp -afv $SRCD/$nom/$nom-$ver/protocols $SACD/etc
-  cp -afv $SRCD/$nom/$nom-$ver/services $SACD/etc
+  mkdir -pv "$SACD"/etc
+  cp -afv \
+    "$SRCD"/$nom/$nom-$ver/protocols \
+    "$SRCD"/$nom/$nom-$ver/services \
+    "$SACD"/etc
 }
