@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  autoreconf -vfis
 }
 
 configure() {
-  $SRCD/$nom/$nom-$ver/configure \
+  ./configure \
     --build=$BLD \
     --host=$TGT \
     --prefix=/usr \
@@ -43,6 +42,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 }
