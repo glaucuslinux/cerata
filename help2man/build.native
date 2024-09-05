@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  autoreconf -vfis
 }
 
 configure() {
-  $SRCD/$nom/$nom-$ver/configure \
+  ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -41,6 +40,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 }
