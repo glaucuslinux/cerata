@@ -4,33 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess config
-  cp -afv $CERD/binutils/config.rpath config
-  cp -afv $CERD/binutils/config.sub config
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --disable-static \
     --disable-nls \
     --disable-rpath \
@@ -45,19 +23,20 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
-  ln -sfnv openvt $SACD/usr/bin/open
+  ln -sfnv openvt "$SACD"/usr/bin/open
 
   rm -frv \
-    $SACD/usr/share/keymaps/amiga \
-    $SACD/usr/share/keymaps/atari \
-    $SACD/usr/share/keymaps/i386/qwerty/ro_win.map.gz \
-    $SACD/usr/share/keymaps/sun
+    "$SACD"/usr/share/keymaps/amiga \
+    "$SACD"/usr/share/keymaps/atari \
+    "$SACD"/usr/share/keymaps/i386/qwerty/ro_win.map.gz \
+    "$SACD"/usr/share/keymaps/sun
 }
