@@ -7,7 +7,7 @@ prepare() {
   patch -p1 -i "$CERD"/$nom/patches/alpine/musl-stacksize.patch
   patch -p1 -i "$CERD"/$nom/patches/buildroot/0001-$nom-ft-private.h-fix-missing-FT_Color-error.patch
 
-  mkdir -v "$TBLD"/$nom
+  mkdir -pv "$TBLD"/$nom
 }
 
 configure() {
