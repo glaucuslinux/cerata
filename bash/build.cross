@@ -4,38 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess support
-  cp -afv $CERD/binutils/config.rpath support
-  cp -afv $CERD/binutils/config.sub support
+  autoreconf -vfis
 }
 
 configure() {
-  patch --no-backup-if-mismatch -p1 -i $CERD/$nom/patches/alpine/$nom-noinfo.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-noinfo.patch
 
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --enable-extended-glob \
     --enable-history \
     --enable-job-control \
@@ -44,6 +21,7 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
+    --with-installed-readline \
     --without-included-gettext
 }
 
@@ -64,9 +42,9 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv $nom $CRSD/usr/bin/r$nom
-  ln -sfnv $nom $CRSD/usr/bin/sh
+  ln -sfnv $nom "$CRSD"/usr/bin/r$nom
+  ln -sfnv $nom "$CRSD"/usr/bin/sh
 }
