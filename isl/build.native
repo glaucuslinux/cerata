@@ -4,36 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
-
-  cp -afv $CERD/binutils/config.guess interface
-  cp -afv $CERD/binutils/config.sub interface
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --disable-static \
     --with-gcc-arch=$CARCH \
     --with-pic
@@ -44,7 +19,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
@@ -63,5 +39,5 @@ package() {
   # Remove libtool archive
   rm -fv $SACD/usr/lib/lib$nom.la
 
-  rm -fv $SACD/usr/lib/lib$nom.so.23.2.0-gdb.py
+  rm -fv $SACD/usr/lib/lib$nom.so.23.3.0-gdb.py
 }
