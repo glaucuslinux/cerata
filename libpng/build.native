@@ -4,37 +4,14 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
-
-  patch -p1 -i $CERD/$nom/patches/upstream/$nom-$ver-apng.patch
+  patch -p1 -i "$CERD"/$nom/patches/upstream/$nom-$ver-apng.patch
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --disable-static \
     --disable-tests \
+    --enable-intel-sse \
     --with-pic
 }
 
@@ -48,19 +25,22 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
+
+  cp -afv \
+    contrib/pngminus/png2pnm \
+    contrib/pngminus/pnm2png \
+    "$SACD"/usr/bin
 
   # Remove libtool archives
   rm -fv \
-    $SACD/usr/lib/$nom.la \
-    $SACD/usr/lib/${nom}16.la
-
-  cp -afv contrib/pngminus/png2pnm $SACD/usr/bin
-  cp -afv contrib/pngminus/pnm2png $SACD/usr/bin
+    "$SACD"/usr/lib/$nom.la \
+    "$SACD"/usr/lib/${nom}16.la
 }
