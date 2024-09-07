@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd $TBLD/gcc
+  cd "$TBLD"/gcc
 }
 
 configure() {
@@ -26,15 +26,15 @@ package() {
 
   # Remove static libraries
   rm -fv \
-    $TLCD/usr/$TGT/lib/libstdc++.a \
-    $TLCD/usr/$TGT/lib/libstdc++exp.a \
-    $TLCD/usr/$TGT/lib/libstdc++fs.a \
-    $TLCD/usr/$TGT/lib/libsupc++.a
+    "$TLCD"/usr/$TGT/lib/libstdc++.a \
+    "$TLCD"/usr/$TGT/lib/libstdc++exp.a \
+    "$TLCD"/usr/$TGT/lib/libstdc++fs.a \
+    "$TLCD"/usr/$TGT/lib/libsupc++.a
 
   # Remove libtool archives
   rm -fv \
-    $TLCD/usr/$TGT/lib/libstdc++.la \
-    $TLCD/usr/$TGT/lib/libstdc++exp.la \
-    $TLCD/usr/$TGT/lib/libstdc++fs.la \
-    $TLCD/usr/$TGT/lib/libsupc++.la
+    "$TLCD"/usr/$TGT/lib/libstdc++.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++exp.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++fs.la \
+    "$TLCD"/usr/$TGT/lib/libsupc++.la
 }
