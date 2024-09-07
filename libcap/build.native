@@ -4,19 +4,18 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  :
 }
 
 build() {
   # `libcap` does not support parallel build!
   MAKEFLAGS=-j1 \
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \
@@ -31,6 +30,7 @@ build() {
     KERNEL_HEADERS=/usr/include \
     DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
+    PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no
 }
@@ -41,7 +41,7 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \
@@ -56,6 +56,7 @@ package() {
     KERNEL_HEADERS=/usr/include \
     DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
+    PAM_CAP=no \
     DYNAMIC=yes \
     GOLANG=no \
     install

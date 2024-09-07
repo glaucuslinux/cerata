@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  :
 }
 
 build() {
@@ -17,7 +16,7 @@ build() {
   BUILD_CC=gcc \
   MAKEFLAGS=-j1 \
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \
@@ -29,7 +28,7 @@ build() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    KERNEL_HEADERS=$CRSD/usr/include \
+    KERNEL_HEADERS="$CRSD"/usr/include \
     DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
@@ -43,7 +42,7 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     lib=lib \
     prefix=/usr \
     exec_prefix=/usr \
@@ -55,7 +54,7 @@ package() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    KERNEL_HEADERS=$CRSD/usr/include \
+    KERNEL_HEADERS="$CRSD"/usr/include \
     DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
