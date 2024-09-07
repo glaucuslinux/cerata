@@ -4,48 +4,26 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 
-  cp -afv $CERD/binutils/config.guess build/autoconf
-  cp -afv $CERD/binutils/config.rpath build/autoconf
-  cp -afv $CERD/binutils/config.sub build/autoconf
+  patch -p0 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
 
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
-
-  patch -p0 -i $CERD/$nom/patches/void/filter-xz-enable-threads.patch
-
-  autoreconf -vfis
+  ./build/autogen.sh
 }
 
 configure() {
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --disable-static \
+    --disable-bsdcpio \
     --disable-rpath \
     --enable-xattr \
     --enable-acl \
     --with-pic \
-    --without-nettle \
+    --without-libb2 \
+    --without-iconv \
+    --without-cng \
     --without-xml2
 }
 
@@ -59,12 +37,11 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv bsdcpio $CRSD/usr/bin/cpio
-  ln -sfnv bsdtar $CRSD/usr/bin/tar
+  ln -sfnv bsdtar "$CRSD"/usr/bin/tar
 
   # Remove libtool archive
-  rm -fv $CRSD/usr/lib/$nom.la
+  rm -fv "$CRSD"/usr/lib/$nom.la
 }
