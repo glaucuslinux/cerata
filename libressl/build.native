@@ -4,38 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
-
-  cp -afv $CERD/binutils/config.guess scripts
-  cp -afv $CERD/binutils/config.sub scripts
-
   autoreconf -vfis
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --disable-static \
     --disable-tests \
     --enable-nc \
@@ -48,22 +21,23 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
   # Remove libtool archives
   rm -fv \
-    $SACD/usr/lib/libcrypto.la \
-    $SACD/usr/lib/libssl.la \
-    $SACD/usr/lib/libtls.la
+    "$SACD"/usr/lib/libcrypto.la \
+    "$SACD"/usr/lib/libssl.la \
+    "$SACD"/usr/lib/libtls.la
 
   chmod -v 755 \
-    $SACD/usr/lib/libcrypto.so.53.0.0 \
-    $SACD/usr/lib/libssl.so.56.0.0 \
-    $SACD/usr/lib/libtls.so.29.0.0
+    "$SACD"/usr/lib/libcrypto.so.53.0.0 \
+    "$SACD"/usr/lib/libssl.so.56.0.0 \
+    "$SACD"/usr/lib/libtls.so.29.0.0
 }
