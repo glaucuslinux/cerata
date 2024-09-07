@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd $TBLD/gcc
+  cd "$TBLD"/gcc
 
   make \
     -C $TGT/$nom \
@@ -30,6 +30,6 @@ package() {
 
   # Remove static libraries
   rm -fv \
-    $TLCD/usr/lib/gcc/$TGT/$ver/${nom}_eh.a \
-    $TLCD/usr/lib/gcc/$TGT/$ver/libgcov.a
+    "$TLCD"/usr/lib/gcc/$TGT/$ver/${nom}_eh.a \
+    "$TLCD"/usr/lib/gcc/$TGT/$ver/libgcov.a
 }
