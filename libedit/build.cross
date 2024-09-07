@@ -4,35 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --disable-static \
     --disable-examples \
     --with-pic
@@ -43,30 +21,31 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  cp -afv $CERD/$nom/editrc $CRSD/etc
-  cp -afv $CERD/$nom/inputrc $CRSD/etc
+  cp -afv "$CERD"/$nom/editrc "$CRSD"/etc
+  cp -afv "$CERD"/$nom/inputrc "$CRSD"/etc
 
   # Use libedit as a drop-in replacement for `readline`
-  mkdir -pv $CRSD/usr/include/readline
-  touch $CRSD/usr/include/readline/history.h
-  touch $CRSD/usr/include/readline/tilde.h
-  ln -sfnv ../editline/readline.h $CRSD/usr/include/readline/readline.h
+  mkdir -pv "$CRSD"/usr/include/readline
+  touch "$CRSD"/usr/include/readline/history.h
+  touch "$CRSD"/usr/include/readline/tilde.h
+  ln -sfnv ../editline/readline.h "$CRSD"/usr/include/readline/readline.h
 
   # Remove libtool archive
-  rm -fv $CRSD/usr/lib/$nom.la
+  rm -fv "$CRSD"/usr/lib/$nom.la
 
-  ln -sfnv $nom.so $CRSD/usr/lib/libreadline.so
+  ln -sfnv $nom.so "$CRSD"/usr/lib/libreadline.so
 
-  ln -sfnv $nom.pc $PKG_CONFIG_LIBDIR/readline.pc
+  ln -sfnv $nom.pc "$PKG_CONFIG_LIBDIR"/readline.pc
 
-  ln -sfnv editline.3 $CRSD/usr/share/man/man3/el.3
-  ln -sfnv editline.3 $CRSD/usr/share/man/man3/$nom.3
+  ln -sfnv editline.3 "$CRSD"/usr/share/man/man3/el.3
+  ln -sfnv editline.3 "$CRSD"/usr/share/man/man3/$nom.3
 }
