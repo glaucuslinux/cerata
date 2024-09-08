@@ -4,10 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-
-  cd $SRCD/linux/linux-$ver
-
   make \
     ARCH=x86_64 \
     mrproper
@@ -18,7 +14,9 @@ configure() {
 }
 
 build() {
-  :
+  make \
+    ARCH=x86_64 \
+    headers
 }
 
 check() {
@@ -26,11 +24,9 @@ check() {
 }
 
 package() {
-  make \
-    O=$TBLD/$nom \
-    ARCH=x86_64 \
-    INSTALL_HDR_PATH=$SACD/usr \
-    headers_install
+  find usr/include ! -name '*.h' -type f -delete
 
-  rm -frv $SACD/usr/include/drm
+  mkdir -pv "$SACD"/usr
+  cp -afv usr/include "$SACD"/usr
+  rm -frv "$SACD"/usr/include/drm
 }

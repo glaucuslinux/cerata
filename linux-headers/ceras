@@ -5,4 +5,5 @@
 
 nom="linux-headers"
 ver="6.10.6"
-bld="make"
+url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.10.6.tar.gz"
+sum="204471e8207c72db3920b3e2c08a95989782c8adb38ae09ba148e476ad40a589"
