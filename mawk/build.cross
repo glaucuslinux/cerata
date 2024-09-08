@@ -4,33 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --infodir=/usr/share/info \
-    --mandir=/usr/share/man \
     --without-man2html \
     --without-builtin-regex
 }
@@ -45,12 +25,9 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 
-  ln -sfnv $nom $CRSD/usr/bin/awk
-  ln -sfnv $nom $CRSD/usr/bin/gawk
-
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/awk.1
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/gawk.1
+  ln -fnrsv $nom "$CRSD"/usr/bin/awk
+  ln -fnrsv $nom "$CRSD"/usr/bin/gawk
 }
