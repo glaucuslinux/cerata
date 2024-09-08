@@ -4,36 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess build-aux
-  cp -afv $CERD/binutils/config.rpath build-aux
-  cp -afv $CERD/binutils/config.sub build-aux
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --disable-nls \
     --disable-rpath \
     --without-guile
@@ -49,10 +26,8 @@ check() {
 
 package() {
   $nom \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv $nom $CRSD/usr/bin/g$nom
-
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/g$nom.1
+  ln -fnrsv $nom "$CRSD"/usr/bin/g$nom
 }
