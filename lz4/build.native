@@ -4,8 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
@@ -15,7 +14,7 @@ configure() {
 build() {
   make \
     BUILD_STATIC=no \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     PREFIX=/usr \
     EXEC_PREFIX=/usr \
     BINDIR=/usr/bin \
@@ -25,13 +24,14 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
     BUILD_STATIC=no \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     PREFIX=/usr \
     EXEC_PREFIX=/usr \
     BINDIR=/usr/bin \
