@@ -4,32 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
-  ./configure \
+  glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --disable-static
 }
 
@@ -43,6 +24,37 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
+
+  ln -fnrsv $nom "$CRSD"/usr/bin/libtool
+  # ln -fnrsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
+  # cp -afv "$CERD"/$nom/libtoolize "$CRSD"/usr/bin
+  ln -fnrsv ${nom}ize "$CRSD"/usr/bin/libtoolize
+
+  mkdir -pv \
+    "$CRSD"/usr/share/aclocal \
+    "$CRSD"/usr/share/libtool/build-aux
+
+  cp -afv \
+    "$CERD"/$nom/libtool.m4 \
+    "$CERD"/$nom/ltargz.m4 \
+    "$CERD"/$nom/ltdl.m4 \
+    "$CERD"/$nom/lt~obsolete.m4 \
+    "$CERD"/$nom/ltoptions.m4 \
+    "$CERD"/$nom/ltsugar.m4 \
+    "$CERD"/$nom/ltversion.m4 \
+    "$CRSD"/usr/share/aclocal
+
+  cp -afv \
+    "$CERD"/$nom/compile \
+    "$CERD"/$nom/config.guess \
+    "$CERD"/$nom/config.sub \
+    "$CERD"/$nom/depcomp \
+    "$CERD"/$nom/install-sh \
+    "$CERD"/$nom/ltmain.sh \
+    "$CERD"/$nom/missing \
+    "$CRSD"/usr/share/libtool/build-aux
+
+  # ln -fnrsv "$CRSD"/usr/share/$nom/$nom.m4 "$CRSD"/usr/share/aclocal
 }
