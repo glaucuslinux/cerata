@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 build() {
@@ -28,10 +27,10 @@ package() {
     libdir=/usr/lib \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS" \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 
-  mv -fv $SACD/usr/lib/libargp.so $SACD/usr/lib/libargp.so.0.0.0
-  ln -sfnv libargp.so.0.0.0 $SACD/usr/lib/libargp.so
-  ln -sfnv libargp.so.0.0.0 $SACD/usr/lib/libargp.so.0
+  mv -fv "$SACD"/usr/lib/libargp.so "$SACD"/usr/lib/libargp.so.0.0.0
+  ln -fnrsv libargp.so.0.0.0 "$SACD"/usr/lib/libargp.so
+  ln -fnrsv libargp.so.0.0.0 "$SACD"/usr/lib/libargp.so.0
 }
