@@ -4,31 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --infodir=/usr/share/info \
-    --mandir=/usr/share/man \
+  glaucus-configure \
     --without-man2html \
     --without-builtin-regex
 }
@@ -43,12 +23,9 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 
-  ln -sfnv $nom $SACD/usr/bin/awk
-  ln -sfnv $nom $SACD/usr/bin/gawk
-
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/awk.1
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/gawk.1
+  ln -fnrsv $nom "$SACD"/usr/bin/awk
+  ln -fnrsv $nom "$SACD"/usr/bin/gawk
 }
