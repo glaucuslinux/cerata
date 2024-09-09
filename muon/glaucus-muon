@@ -17,9 +17,12 @@ exec muon setup \
   -Dsbindir=/usr/bin \
   -Dsharedstatedir=/var/lib \
   -Dsysconfdir=/etc \
+  -Dauto_features=enabled \
   -Dbackend=ninja \
   -Dbuildtype=release \
+  -Ddebug=false \
   -Ddefault_library=shared \
+  -Doptimization=2 \
   -Dstdsplit=true \
   -Dstrip=true \
   -Dwrap_mode=nodownload \

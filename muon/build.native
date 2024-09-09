@@ -4,13 +4,19 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
+  mkdir -pv "$TBLD/$nom"
 
-  cd $SRCD/$nom/$nom-$ver
+  if [ $BOOTSTRAP = yes ]; then
+    ./bootstrap.sh "$TBLD"/$nom
+  fi
 }
 
 configure() {
-  $CERD/$nom/glaucus-$nom \
+  if [ $BOOTSTRAP = yes ]; then
+    PATH="$TBLD/$nom:$PATH"
+  fi
+
+  glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \
     -Dlibpkgconf=enabled \
@@ -18,12 +24,12 @@ configure() {
     -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
-    $TBLD/$nom
+    "$TBLD"/$nom
 }
 
 build() {
   samu \
-    -C $TBLD/$nom
+    -C "$TBLD"/$nom
 }
 
 check() {
@@ -31,10 +37,10 @@ check() {
 }
 
 package() {
-  DESTDIR=$SACD \
+  DESTDIR="$SACD" \
   $nom \
-    -C $TBLD/$nom \
+    -C "$TBLD"/$nom \
     install
 
-  cp -afv $CERD/$nom/glaucus-$nom $SACD/usr/bin
+  cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
 }
