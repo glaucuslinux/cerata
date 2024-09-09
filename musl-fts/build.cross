@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver-mk2/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 build() {
@@ -32,8 +31,6 @@ package() {
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     MANDIR=/usr/share/man/man3 \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
-
-  ln -sfnv fts.3 $CRSD/usr/share/man/man3/$nom.3
 }
