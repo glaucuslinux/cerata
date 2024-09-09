@@ -20,36 +20,38 @@ check() {
 }
 
 package() {
-  cp -afv $SRCD/$nom/etc $CRSD
-  cp -afv $SRCD/$nom/usr $CRSD
+  cp -afv "$SRCD"/$nom/etc "$CRSD"
+  cp -afv "$SRCD"/$nom/usr "$CRSD"
 
-  mkdir -pv $CRSD/etc/s6/current/env
+  mkdir -pv "$CRSD"/etc/s6/current/env
 
   mkfifo -m 600 \
-    $CRSD/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
-    $CRSD/etc/s6/current/run-image/service/s6-svscan-log/fifo
+    "$CRSD"/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
+    "$CRSD"/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  mkdir -pvm 2750 $CRSD/etc/s6/current/run-image/uncaught-logs
+  mkdir -pvm 2750 "$CRSD"/etc/s6/current/run-image/uncaught-logs
 
   # `$CRSD/etc/s6/skel` is already created by `s6-linux-init`
-  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.init $CRSD/etc/s6/skel
-  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown $CRSD/etc/s6/skel
-  cp -afv $SRCD/$nom/etc/s6/current/scripts/rc.shutdown.final $CRSD/etc/s6/skel
-  cp -afv $SRCD/$nom/etc/s6/current/scripts/runlevel $CRSD/etc/s6/skel
+  cp -afv \
+    "$SRCD"/$nom/etc/s6/current/scripts/rc.init \
+    "$SRCD"/$nom/etc/s6/current/scripts/rc.shutdown \
+    "$SRCD"/$nom/etc/s6/current/scripts/rc.shutdown.final \
+    "$SRCD"/$nom/etc/s6/current/scripts/runlevel \
+    "$CRSD"/etc/s6/skel
 
-  cp -afv $CERD/$nom/modules-load $CRSD/usr/bin
+  cp -afv "$CERD"/$nom/modules-load "$CRSD"/usr/bin
 
-  cp -afv $CERD/$nom/modules-load.8 $CRSD/usr/share/man/man8
+  cp -afv "$CERD"/$nom/modules-load.8 "$CRSD"/usr/share/man/man8
 
-  ln -sfnv wtmpd/btmp $CRSD/var/log/btmp
-  ln -sfnv wtmpd/faillog $CRSD/var/log/faillog
-  ln -sfnv wtmpd/lastlog $CRSD/var/log/lastlog
-  ln -sfnv wtmpd/wtmp $CRSD/var/log/wtmp
+  ln -fnrsv wtmpd/btmp "$CRSD"/var/log/btmp
+  ln -fnrsv wtmpd/faillog "$CRSD"/var/log/faillog
+  ln -fnrsv wtmpd/lastlog "$CRSD"/var/log/lastlog
+  ln -fnrsv wtmpd/wtmp "$CRSD"/var/log/wtmp
 
-  mkdir -pv $CRSD/var/log/wtmpd
+  mkdir -pv "$CRSD"/var/log/wtmpd
   touch \
-    $CRSD/var/log/wtmpd/btmp \
-    $CRSD/var/log/wtmpd/faillog \
-    $CRSD/var/log/wtmpd/lastlog \
-    $CRSD/var/log/wtmpd/wtmp
+    "$CRSD"/var/log/wtmpd/btmp \
+    "$CRSD"/var/log/wtmpd/faillog \
+    "$CRSD"/var/log/wtmpd/lastlog \
+    "$CRSD"/var/log/wtmpd/wtmp
 }
