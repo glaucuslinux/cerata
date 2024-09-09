@@ -4,13 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
-
   ./configure \
     --host=$TGT \
     --prefix=/usr \
@@ -23,10 +20,10 @@ configure() {
     --skeldir=/etc/s6/skel \
     --tmpfsdir=/run \
     --scandir=service \
-    --with-sysdeps=$CRSD/usr/lib/skalibs/sysdeps \
-    --with-include=$CRSD/usr/include \
-    --with-lib=$CRSD/usr/lib \
-    --with-dynlib=$CRSD/usr/lib \
+    --with-sysdeps="$CRSD"/usr/lib/skalibs/sysdeps \
+    --with-include="$CRSD"/usr/include \
+    --with-lib="$CRSD"/usr/lib \
+    --with-dynlib="$CRSD"/usr/lib \
     --enable-shared \
     --disable-static \
     --disable-allstatic \
@@ -45,6 +42,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 }
