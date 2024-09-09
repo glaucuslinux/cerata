@@ -4,10 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  patch -p1 -i $CERD/$nom/patches/alpine/detect_init-remove-irrelevant.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/detect_init-remove-irrelevant.patch
 }
 
 configure() {
@@ -24,8 +21,7 @@ configure() {
     --mandir=/usr/share/man \
     --libdir=/usr/lib \
     --includedir=/usr/include \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info
+    --disable-debug
 }
 
 build() {
@@ -38,6 +34,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 }
