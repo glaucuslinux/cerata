@@ -4,35 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p1 -i "$CERD"/$nom/patches/alpine/fix-uninitialized.patch
 
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.sub .
-
-  patch -p1 -i $CERD/$nom/patches/alpine/fix-uninitialized.patch
+  autoreconf -vfis
 }
 
 configure() {
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --runstatedir=/run \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --without-x
 }
 
@@ -41,10 +19,12 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR=$SACD
+    DESTDIR="$SACD" \
+    install
 }
