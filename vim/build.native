@@ -4,9 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  # vim doesn't build out of tree
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
@@ -22,24 +20,7 @@ configure() {
   vim_cv_tgetent=zero \
   vim_cv_timer_create=yes \
   vim_cv_toupper_broken=no \
-  ./configure \
-    --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
-    --sysconfdir=/etc \
-    --sharedstatedir=/var/lib \
-    --localstatedir=/var \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
+  glaucus-configure \
     --disable-darwin \
     --disable-smack \
     --disable-selinux \
@@ -81,13 +62,13 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 
-  mkdir -pv $SACD/etc
-  ln -sfnv ../usr/share/$nom/${nom}rc $SACD/etc
+  mkdir -pv "$SACD"/etc
+  ln -fnrsv ../usr/share/$nom/${nom}rc "$SACD"/etc
 
-  ln -sfnv $nom $SACD/usr/bin/vi
+  ln -fnrsv $nom "$SACD"/usr/bin/vi
 
-  cp -afv $CERD/$nom/${nom}rc $SACD/usr/share/$nom
+  cp -afv "$CERD"/$nom/${nom}rc "$SACD"/usr/share/$nom
 }
