@@ -4,13 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/alpine/rowhammer.patch
+
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-chown.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-chown.patch
-
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -18,6 +17,7 @@ configure() {
     --datadir=/usr/share \
     --mandir=/usr/share/man \
     --sysconfdir=/etc \
+    --without-pam \
     --with-timestamp
 }
 
@@ -31,10 +31,9 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 
-  ln -sfnv doas $SACD/usr/bin/$nom
-
-  ln -sfnv doas.1 $SACD/usr/share/man/man1/$nom.1
+  ln -fnrsv doas "$SACD"/usr/bin/$nom
+  ln -fnrsv doas "$SACD"/usr/bin/sudo
 }
