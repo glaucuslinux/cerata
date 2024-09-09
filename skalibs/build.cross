@@ -4,13 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
-
   ./configure \
     --host=$TGT \
     --prefix=/usr \
@@ -19,9 +16,9 @@ configure() {
     --includedir=/usr/include \
     --sysconfdir=/etc \
     --sysdepdir=/usr/lib/$nom/sysdeps \
-    --with-include=$CRSD/usr/include \
-    --with-lib=$CRSD/usr/lib \
-    --with-dynlib=$CRSD/usr/lib \
+    --with-include="$CRSD"/usr/include \
+    --with-lib="$CRSD"/usr/lib \
+    --with-dynlib="$CRSD"/usr/lib \
     --disable-static \
     --with-sysdep-devurandom=yes \
     --with-sysdep-posixspawnearlyreturn=no
@@ -38,8 +35,8 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 
-  cp -afv $CERD/$nom/$nom.pc $PKG_CONFIG_LIBDIR
+  cp -afv "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
 }
