@@ -4,15 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom $TSRC --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
 
-  patch -p0 -i $CERD/$nom/patches/smaclennan/0001-optimize-strlcpy.patch
+  patch -p0 -i "$CERD"/$nom/patches/upstream/0001-statify-some-variables.patch
 
-  patch -p0 -i $CERD/$nom/patches/upstream/0001-statify-some-variables.patch
-
-  patch -p1 -i $CERD/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
-  patch -p1 -i $CERD/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
+  patch -p1 -i "$CERD"/$nom/patches/zeppe-lin/0001-remove-congratz-message.patch
+  patch -p1 -i "$CERD"/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
 }
 
 configure() {
@@ -36,6 +33,6 @@ package() {
   make \
     PREFIX=/usr \
     MANPREFIX=/usr/share/man \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 }
