@@ -4,10 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
 configure() {
@@ -26,8 +23,8 @@ configure() {
 build() {
   make
 
-  $CC $CFLAGS $LDFLAGS $CERD/$nom/gencat.c -o gencat
-  $CC $CFLAGS $LDFLAGS $CERD/$nom/getent.c -o getent
+  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/gencat.c -o gencat
+  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/getent.c -o getent
 }
 
 check() {
@@ -39,31 +36,35 @@ package() {
     make \
       install-libs
 
-    ln -sfnv libc.so /usr/lib/ld-$nom-x86_64.so.1
+    ln -fnrsv libc.so /usr/lib/ld-$nom-x86_64.so.1
   fi
 
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install
 
-  mkdir -pv $SACD/etc
-  cp -afv $CERD/$nom/ld-$nom-x86_64.path $SACD/etc
+  mkdir -pv "$SACD"/etc
+  cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$SACD"/etc
 
   mkdir -pv $SACD/usr/bin
-  cp -afv gencat $SACD/usr/bin
-  cp -afv getent $SACD/usr/bin
-  cp -afv $CERD/$nom/ldconfig $CRSD/usr/bin
-  ln -sfnv ../lib/libc.so $SACD/usr/bin/ldd
+  cp -afv \
+    gencat \
+    getent \
+    "$CERD"/$nom/ldconfig \
+    "$SACD"/usr/bin
+  ln -fnrsv ../lib/libc.so "$SACD"/usr/bin/ldd
 
   # BSD compatibility header
-  cp -afv $CERD/$nom/queue.h $SACD/usr/include/sys
+  cp -afv "$CERD"/$nom/queue.h "$SACD"/usr/include/sys
 
-  # Use `utmpx.h` provided by cross `utmps`
-  rm -fv $SACD/usr/include/utmpx.h
+  # `utmps` provides `utmpx.h`
+  rm -fv "$SACD"/usr/include/utmpx.h
 
-  ln -sfnv libc.so $SACD/usr/lib/ld-$nom-x86_64.so.1
+  ln -fnrsv libc.so "$SACD"/usr/lib/ld-$nom-x86_64.so.1
 
-  mkdir -pv $SACD/usr/share/man/man1
-  cp -afv $CERD/$nom/gencat.1 $SACD/usr/share/man/man1
-  cp -afv $CERD/$nom/getent.1 $SACD/usr/share/man/man1
+  mkdir -pv "$SACD"/usr/share/man/man1
+  cp -afv \
+    $CERD/$nom/gencat.1 \
+    $CERD/$nom/getent.1 \
+    $SACD/usr/share/man/man1
 }

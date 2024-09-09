@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd $TSRC/$nom
+  :
 }
 
 configure() {
@@ -34,14 +34,14 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-libs
 
-  mkdir -pv $CRSD/etc
-  cp -afv $CERD/$nom/ld-$nom-x86_64.path $CRSD/etc
+  mkdir -pv "$CRSD"/etc
+  cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$CRSD"/etc
 
-  mkdir -pv $CRSD/usr/bin
-  ln -sfnv ../lib/libc.so $CRSD/usr/bin/ldd
+  mkdir -pv "$CRSD"/usr/bin
+  ln -fnrsv ../lib/libc.so "$CRSD"/usr/bin/ldd
 
-  ln -sfnv libc.so $CRSD/usr/lib/ld-$nom-x86_64.so.1
+  ln -fnrsv libc.so "$CRSD"/usr/lib/ld-$nom-x86_64.so.1
 }
