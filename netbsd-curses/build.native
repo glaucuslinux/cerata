@@ -4,14 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-optimize-more.patch
+
+  patch -p1 -i "$CERD"/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-optimize-more.patch
-
-  patch -p1 -i $CERD/$nom/patches/upstream/0001-explicitly-add-required-CPPFLAGS-for-tic.patch
+  :
 }
 
 build() {
@@ -27,19 +26,19 @@ check() {
 package() {
   make \
     PREFIX=/usr \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-dynamic
 
-  ln -sfnv tic $SACD/usr/bin/captoinfo
-  ln -sfnv tic $SACD/usr/bin/infotocap
+  ln -fnrsv tic "$SACD"/usr/bin/captoinfo
+  ln -fnrsv tic "$SACD"/usr/bin/infotocap
 
   chmod -v 755 \
-    $SACD/usr/lib/libcurses.so \
-    $SACD/usr/lib/libform.so \
-    $SACD/usr/lib/libmenu.so \
-    $SACD/usr/lib/libpanel.so \
-    $SACD/usr/lib/libterminfo.so
+    "$SACD"/usr/lib/libcurses.so \
+    "$SACD"/usr/lib/libform.so \
+    "$SACD"/usr/lib/libmenu.so \
+    "$SACD"/usr/lib/libpanel.so \
+    "$SACD"/usr/lib/libterminfo.so
 
   # Some cerata (e.g. `util-linux` and `yash`) link against this
-  ln -sfnv libterminfo.so $SACD/usr/lib/libtinfo.so
+  ln -fnrsv libterminfo.so "$SACD"/usr/lib/libtinfo.so
 }
