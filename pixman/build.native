@@ -4,14 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv $TBLD/$nom
-
-  cd $SRCD/$nom/$nom-$ver
+  mkdir -pv "$TBLD"/$nom
 }
 
 configure() {
   glaucus-muon \
     -Dloongson-mmi=disabled \
+    -Dmmx=enabled \
+    -Dsse2=enabled \
+    -Dssse3=enabled \
     -Dvmx=disabled \
     -Darm-simd=disabled \
     -Dneon=disabled \
@@ -19,17 +20,19 @@ configure() {
     -Diwmmxt=disabled \
     -Diwmmxt2=false \
     -Dmips-dspr2=disabled \
+    -Dgnu-inline-asm=enabled \
     -Dtls=enabled \
     -Dopenmp=disabled \
     -Dgtk=disabled \
+    -Dlibpng=enabled \
     -Dtests=disabled \
     -Ddemos=disabled \
-    $TBLD/$nom
+    "$TBLD"/$nom
 }
 
 build() {
   samu \
-    -C $TBLD/$nom
+    -C "$TBLD"/$nom
 }
 
 check() {
@@ -37,8 +40,8 @@ check() {
 }
 
 package() {
-  DESTDIR=$SACD \
+  DESTDIR="$SACD" \
   muon \
-    -C $TBLD/$nom \
+    -C "$TBLD"/$nom \
     install
 }
