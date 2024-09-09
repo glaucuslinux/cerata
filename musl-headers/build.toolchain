@@ -4,10 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/musl/musl-$ver/ $TSRC/musl --delete
-  cd $TSRC/musl
+  cd "$TSRC"/musl
 
-  patch -p0 -i $CERD/musl/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p0 -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch
 }
 
 configure() {
@@ -23,7 +22,6 @@ check() {
 }
 
 package() {
-  # Order according to Makefile
   make \
     exec_prefix=/usr \
     bindir=/usr/bin \
@@ -32,12 +30,12 @@ package() {
     libdir=/usr/lib \
     syslibdir=/usr/lib \
     ARCH=x86_64 \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-headers
 
   # BSD compatibility header
-  cp -afv $CERD/musl/queue.h $CRSD/usr/include/sys
+  cp -afv "$CERD"/musl/queue.h "$CRSD"/usr/include/sys
 
-  # Use `utmpx.h` provided by cross `utmps`
-  rm -fv $CRSD/usr/include/utmpx.h
+  # `utmps` provides `utmpx.h`
+  rm -fv "$CRSD"/usr/include/utmpx.h
 }
