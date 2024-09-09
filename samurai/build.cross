@@ -4,11 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  patch -p1 -i $CERD/$nom/patches/alpine/CVE-2021-30218.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/CVE-2021-30219.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/CVE-2021-30218.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/CVE-2021-30219.patch
 }
 
 configure() {
@@ -30,10 +27,8 @@ package() {
     PREFIX=/usr \
     BINDIR=/usr/bin \
     MANDIR=/usr/share/man \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 
-  ln -sfnv samu $CRSD/usr/bin/ninja
-
-  ln -sfnv samu.1 $CRSD/usr/share/man/man1/ninja.1
+  ln -fnrsv samu "$CRSD"/usr/bin/ninja
 }
