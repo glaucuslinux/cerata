@@ -4,11 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-remove-introduction.patch
-  patch -p0 -i $CERD/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-introduction.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
 }
 
 configure() {
@@ -39,14 +36,15 @@ build() {
 }
 
 check() {
-  :
+  make \
+    test
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
-  mkdir -pv $SACD/etc
-  cp -afv $CERD/$nom/${nom}rc $SACD/etc
+  mkdir -pv "$SACD"/etc
+  cp -afv "$CERD"/$nom/${nom}rc "$SACD"/etc
 }
