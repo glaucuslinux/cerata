@@ -4,15 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
-
-  cp -afv $CERD/binutils/config.sub tools
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
 configure() {
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-disable-static.patch
-
   CHOST="$TGT" \
   ./configure \
     --prefix=/usr \
@@ -20,7 +15,8 @@ configure() {
     --libdir=/usr/lib \
     --sharedlibdir=/usr/lib \
     --includedir=/usr/include \
-    --zlib-compat
+    --zlib-compat \
+    --without-unaligned
 }
 
 build() {
@@ -33,6 +29,6 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 }
