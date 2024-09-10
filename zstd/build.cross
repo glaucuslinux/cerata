@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/clear/multi-thread-default.patch
 
-  patch -p0 -i $CERD/$nom/patches/clear/multi-thread-default.patch
+  patch -p0 -i "$CERD"/$nom/patches/opensuse/p$nom.1.patch
 
-  patch -p0 -i $CERD/$nom/patches/opensuse/p$nom.1.patch
+  patch -p1 -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch
 }
 
 configure() {
@@ -38,19 +37,19 @@ check() {
 
 package() {
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     PREFIX=/usr \
     install
 
   # Install parallel zstd as well
   make \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     PREFIX=/usr \
     -C contrib/p$nom \
     install
 
   # Remove static library
-  rm -fv $CRSD/usr/lib/lib$nom.a
+  rm -fv "$CRSD"/usr/lib/lib$nom.a
 
-  ln -sfnv $nom.1 $CRSD/usr/share/man/man1/p$nom.1
+  ln -fnrsv $nom.1 "$CRSD"/usr/share/man/man1/p$nom.1
 }

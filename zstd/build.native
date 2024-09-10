@@ -4,12 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p0 -i "$CERD"/$nom/patches/clear/multi-thread-default.patch
 
-  patch -p0 -i $CERD/$nom/patches/clear/multi-thread-default.patch
+  patch -p0 -i "$CERD"/$nom/patches/opensuse/p$nom.1.patch
 
-  patch -p0 -i $CERD/$nom/patches/opensuse/p$nom.1.patch
+  patch -p1 -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch
 }
 
 configure() {
@@ -33,24 +32,25 @@ build() {
 }
 
 check() {
-  :
+  make \
+    shortest
 }
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     PREFIX=/usr \
     install
 
   # Install parallel zstd as well
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     PREFIX=/usr \
     -C contrib/p$nom \
     install
 
   # Remove static library
-  rm -fv $SACD/usr/lib/lib$nom.a
+  rm -fv "$SACD"/usr/lib/lib$nom.a
 
-  ln -sfnv $nom.1 $SACD/usr/share/man/man1/p$nom.1
+  ln -fnrsv $nom.1 "$SACD"/usr/share/man/man1/p$nom.1
 }
