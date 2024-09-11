@@ -4,22 +4,15 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
 
-  cp -afv $CERD/$nom/config.guess .
-  cp -afv $CERD/$nom/config.rpath .
-  cp -afv $CERD/$nom/config.sub .
-
-  patch -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
-
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  mkdir -pv build
+  cd build
 }
 
 configure() {
-  $TSRC/$nom/configure \
+  ../configure \
     --build=$BLD \
     --host=$TGT \
     --target=$TGT \
@@ -76,30 +69,24 @@ check() {
 package() {
   make \
     tooldir=/usr \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv ld.bfd $CRSD/usr/bin/ld
+  ln -fnsv ld.bfd "$CRSD"/usr/bin/ld
 
   # Remove static libraries
   rm -fv \
-    $CRSD/usr/lib/libbfd.a \
-    $CRSD/usr/lib/libctf.a \
-    $CRSD/usr/lib/libctf-nobfd.a \
-    $CRSD/usr/lib/libopcodes.a \
-    $CRSD/usr/lib/libsframe.a
+    "$CRSD"/usr/lib/libbfd.a \
+    "$CRSD"/usr/lib/libctf.a \
+    "$CRSD"/usr/lib/libctf-nobfd.a \
+    "$CRSD"/usr/lib/libopcodes.a \
+    "$CRSD"/usr/lib/libsframe.a
 
   # Remove libtool archives
   rm -fv \
-    $CRSD/usr/lib/libbfd.la \
-    $CRSD/usr/lib/libctf.la \
-    $CRSD/usr/lib/libctf-nobfd.la \
-    $CRSD/usr/lib/libopcodes.la \
-    $CRSD/usr/lib/libsframe.la
-
-  # Remove unnecessary manpages
-  rm -fv \
-    $CRSD/usr/share/man/man1/dlltool.1 \
-    $CRSD/usr/share/man/man1/windmc.1 \
-    $CRSD/usr/share/man/man1/windres.1
+    "$CRSD"/usr/lib/libbfd.la \
+    "$CRSD"/usr/lib/libctf.la \
+    "$CRSD"/usr/lib/libctf-nobfd.la \
+    "$CRSD"/usr/lib/libopcodes.la \
+    "$CRSD"/usr/lib/libsframe.la
 }
