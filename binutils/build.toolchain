@@ -4,42 +4,35 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
 
-  cp -afv $CERD/$nom/config.guess .
-  cp -afv $CERD/$nom/config.rpath .
-  cp -afv $CERD/$nom/config.sub .
-
-  patch -p1 -i $CERD/$nom/patches/alpine/0001-Revert-PR25882-.gnu.attributes-are-not-checked-for-s.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
-
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  mkdir -pv build
+  cd build
 }
 
 configure() {
-  $TSRC/$nom/configure \
+  ../configure \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
-    --prefix=$TLCD/usr \
-    --exec-prefix=$TLCD/usr \
-    --bindir=$TLCD/usr/bin \
-    --sbindir=$TLCD/usr/bin \
-    --libexecdir=$TLCD/usr/lib/$nom \
-    --sysconfdir=$TLCD/etc \
-    --sharedstatedir=$TLCD/var/lib \
-    --localstatedir=$TLCD/var \
-    --libdir=$TLCD/usr/lib \
-    --includedir=$TLCD/usr/include \
-    --oldincludedir=$TLCD/usr/include \
-    --datarootdir=$TLCD/usr/share \
-    --datadir=$TLCD/usr/share \
-    --infodir=$TLCD/usr/share/info \
-    --localedir=$TLCD/usr/share/locale \
-    --mandir=$TLCD/usr/share/man \
-    --docdir=$TLCD/usr/share/doc/$nom \
+    --prefix="$TLCD"/usr \
+    --exec-prefix="$TLCD"/usr \
+    --bindir="$TLCD"/usr/bin \
+    --sbindir="$TLCD"/usr/bin \
+    --libexecdir="$TLCD"/usr/lib/$nom \
+    --sysconfdir="$TLCD"/etc \
+    --sharedstatedir="$TLCD"/var/lib \
+    --localstatedir="$TLCD"/var \
+    --libdir="$TLCD"/usr/lib \
+    --includedir="$TLCD"/usr/include \
+    --oldincludedir="$TLCD"/usr/include \
+    --datarootdir="$TLCD"/usr/share \
+    --datadir="$TLCD"/usr/share \
+    --infodir="$TLCD"/usr/share/info \
+    --localedir="$TLCD"/usr/share/locale \
+    --mandir="$TLCD"/usr/share/man \
+    --docdir="$TLCD"/usr/share/doc/$nom \
     --disable-multilib \
     --enable-plugins \
     --enable-targets=x86_64-pep \
@@ -56,7 +49,7 @@ configure() {
     --disable-gprofng \
     --with-pic \
     --with-mmap \
-    --with-sysroot=$CRSD \
+    --with-sysroot="$CRSD" \
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
@@ -80,22 +73,16 @@ package() {
     install-strip-gas \
     install-strip-ld
 
-  ln -sfnv $TGT-ld.bfd $TLCD/usr/bin/$TGT-ld
+  ln -fnsv $TGT-ld.bfd "$TLCD"/usr/bin/$TGT-ld
 
-  ln -sfnv ../../bin/$TGT-ar $TLCD/usr/$TGT/bin/ar
-  ln -sfnv ../../bin/$TGT-as $TLCD/usr/$TGT/bin/as
-  ln -sfnv ../../bin/$TGT-ld $TLCD/usr/$TGT/bin/ld
-  ln -sfnv ../../bin/$TGT-ld.bfd $TLCD/usr/$TGT/bin/ld.bfd
-  ln -sfnv ../../bin/$TGT-nm $TLCD/usr/$TGT/bin/nm
-  ln -sfnv ../../bin/$TGT-objcopy $TLCD/usr/$TGT/bin/objcopy
-  ln -sfnv ../../bin/$TGT-objdump $TLCD/usr/$TGT/bin/objdump
-  ln -sfnv ../../bin/$TGT-ranlib $TLCD/usr/$TGT/bin/ranlib
-  ln -sfnv ../../bin/$TGT-readelf $TLCD/usr/$TGT/bin/readelf
-  ln -sfnv ../../bin/$TGT-strip $TLCD/usr/$TGT/bin/strip
-
-  # Remove unnecessary manpages
-  rm -fv \
-    $TLCD/usr/share/man/man1/$TGT-dlltool.1 \
-    $TLCD/usr/share/man/man1/$TGT-windmc.1 \
-    $TLCD/usr/share/man/man1/$TGT-windres.1
+  ln -fnsv ../../bin/$TGT-ar "$TLCD"/usr/$TGT/bin/ar
+  ln -fnsv ../../bin/$TGT-ld "$TLCD"/usr/$TGT/bin/ld
+  ln -fnsv ../../bin/$TGT-ld.bfd "$TLCD"/usr/$TGT/bin/ld.bfd
+  ln -fnsv ../../bin/$TGT-nm "$TLCD"/usr/$TGT/bin/nm
+  ln -fnsv ../../bin/$TGT-as "$TLCD"/usr/$TGT/bin/as
+  ln -fnsv ../../bin/$TGT-objcopy "$TLCD"/usr/$TGT/bin/objcopy
+  ln -fnsv ../../bin/$TGT-objdump "$TLCD"/usr/$TGT/bin/objdump
+  ln -fnsv ../../bin/$TGT-ranlib "$TLCD"/usr/$TGT/bin/ranlib
+  ln -fnsv ../../bin/$TGT-readelf "$TLCD"/usr/$TGT/bin/readelf
+  ln -fnsv ../../bin/$TGT-strip "$TLCD"/usr/$TGT/bin/strip
 }
