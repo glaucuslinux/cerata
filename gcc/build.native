@@ -4,30 +4,23 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  rsync $RAD_RSYNC_FLAGS $SRCD/$nom/$nom-$ver/ $TSRC/$nom --delete
-  cd $TSRC/$nom
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0001-posix_memalign.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0012-lib${nom}_s.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
 
-  cp -afv $CERD/binutils/config.guess .
-  cp -afv $CERD/binutils/config.rpath .
-  cp -afv $CERD/binutils/config.sub .
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
-  patch -p1 -i $CERD/$nom/patches/alpine/0001-posix_memalign.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0012-lib${nom}_s.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-
-  patch -p0 -i $CERD/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
-
-  mkdir -pv $TBLD/$nom
-  cd $TBLD/$nom
+  mkdir -pv build
+  cd build
 }
 
 configure() {
   CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
-  $TSRC/$nom/configure \
+  ../configure \
     --prefix=/usr \
     --exec-prefix=/usr \
     --bindir=/usr/bin \
@@ -93,58 +86,43 @@ package() {
     DESTDIR=$SACD \
     install-strip
 
-  ln -sfnv g++ $SACD/usr/bin/c++
+  ln -fnsv g++ "$SACD"/usr/bin/c++
 
-  cp -afv $CERD/$nom/c89 $SACD/usr/bin
-  cp -afv $CERD/$nom/c99 $SACD/usr/bin
+  cp -afv \
+    "$CERD"/$nom/c89 \
+    "$CERD"/$nom/c99 \
+    "$SACD"/usr/bin
 
-  ln -sfnv $nom $SACD/usr/bin/cc
-  ln -sfnv $nom $SACD/usr/bin/$nom-$ver
+  ln -fnsv $nom "$SACD"/usr/bin/cc
+  ln -fnsv $nom "$SACD"/usr/bin/$nom-$ver
 
-  ln -sfnv $TGT-g++ $SACD/usr/bin/$TGT-c++
+  ln -fnsv $TGT-g++ "$SACD"/usr/bin/$TGT-c++
 
-  ln -sfnv $TGT-$nom $SACD/usr/bin/$TGT-cc
-  ln -sfnv $TGT-$nom $SACD/usr/bin/$TGT-$nom-$ver
+  ln -fnsv $TGT-$nom "$SACD"/usr/bin/$TGT-cc
+  ln -fnsv $TGT-$nom "$SACD"/usr/bin/$TGT-$nom-$ver
 
-  ln -sfnv g++ $SACD/usr/bin/$TGT-g++
-  ln -sfnv $nom $SACD/usr/bin/$TGT-$nom
+  ln -fnsv g++ "$SACD"/usr/bin/$TGT-g++
+  ln -fnsv $nom "$SACD"/usr/bin/$TGT-$nom
 
-  ln -sfnv $nom-ar $SACD/usr/bin/$TGT-$nom-ar
-  ln -sfnv $nom-nm $SACD/usr/bin/$TGT-$nom-nm
-  ln -sfnv $nom-ranlib $SACD/usr/bin/$TGT-$nom-ranlib
+  ln -fnsv $nom-ar "$SACD"/usr/bin/$TGT-$nom-ar
+  ln -fnsv $nom-nm "$SACD"/usr/bin/$TGT-$nom-nm
+  ln -fnsv $nom-ranlib "$SACD"/usr/bin/$TGT-$nom-ranlib
 
-  mkdir -pv $SACD/usr/lib/bfd-plugins
-  ln -sfnv ../$nom/$TGT/$ver/liblto_plugin.so $SACD/usr/lib/bfd-plugins
+  mkdir -pv "$SACD"/usr/lib/bfd-plugins
+  ln -fnsv ../$nom/$TGT/$ver/liblto_plugin.so "$SACD"/usr/lib/bfd-plugins
 
   # Remove static libraries
   rm -fv \
-    $SACD/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
-    $SACD/usr/lib/libatomic.a \
-    $SACD/usr/lib/libgomp.a \
-    $SACD/usr/lib/libitm.a \
-    $SACD/usr/lib/libquadmath.a \
-    $SACD/usr/lib/libstdc++.a \
-    $SACD/usr/lib/libstdc++exp.a \
-    $SACD/usr/lib/libstdc++fs.a \
-    $SACD/usr/lib/libsupc++.a
+    "$SACD"/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
+    "$SACD"/usr/lib/libatomic.a \
+    "$SACD"/usr/lib/libgomp.a \
+    "$SACD"/usr/lib/libitm.a \
+    "$SACD"/usr/lib/libquadmath.a \
+    "$SACD"/usr/lib/libstdc++.a \
+    "$SACD"/usr/lib/libstdc++exp.a \
+    "$SACD"/usr/lib/libstdc++fs.a \
+    "$SACD"/usr/lib/libsupc++.a"
 
-  # Remove libtool archives
-  rm -fv \
-    $SACD/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
-    $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcc1plugin.la \
-    $SACD/usr/lib/$nom/$TGT/$ver/plugin/libcp1plugin.la \
-    $SACD/usr/lib/libatomic.la \
-    $SACD/usr/lib/libcc1.la \
-    $SACD/usr/lib/libgomp.la \
-    $SACD/usr/lib/libitm.la \
-    $SACD/usr/lib/libquadmath.la \
-    $SACD/usr/lib/libstdc++.la \
-    $SACD/usr/lib/libstdc++exp.la \
-    $SACD/usr/lib/libstdc++fs.la \
-    $SACD/usr/lib/libsupc++.la
-
-  # Compatibility symlink
-  ln -sfnv ../bin/cpp $SACD/usr/lib/cpp
-
-  ln -sfnv $nom.1 $SACD/usr/share/man/man1/g++.1
+  #" Compatibility symlink
+  ln -fnsv ../bin/cpp "$SACD"/usr/lib/cpp
 }
