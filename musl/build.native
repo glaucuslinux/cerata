@@ -36,7 +36,7 @@ package() {
     make \
       install-libs
 
-    ln -fnrsv libc.so /usr/lib/ld-$nom-x86_64.so.1
+    ln -fnsv libc.so /usr/lib/ld-$nom-x86_64.so.1
   fi
 
   make \
@@ -52,7 +52,7 @@ package() {
     getent \
     "$CERD"/$nom/ldconfig \
     "$SACD"/usr/bin
-  ln -fnrsv ../lib/libc.so "$SACD"/usr/bin/ldd
+  ln -fnsv ../lib/libc.so "$SACD"/usr/bin/ldd
 
   # BSD compatibility header
   cp -afv "$CERD"/$nom/queue.h "$SACD"/usr/include/sys
@@ -60,11 +60,5 @@ package() {
   # `utmps` provides `utmpx.h`
   rm -fv "$SACD"/usr/include/utmpx.h
 
-  ln -fnrsv libc.so "$SACD"/usr/lib/ld-$nom-x86_64.so.1
-
-  mkdir -pv "$SACD"/usr/share/man/man1
-  cp -afv \
-    $CERD/$nom/gencat.1 \
-    $CERD/$nom/getent.1 \
-    $SACD/usr/share/man/man1
+  ln -fnsv libc.so "$SACD"/usr/lib/ld-$nom-x86_64.so.1
 }
