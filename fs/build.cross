@@ -20,7 +20,7 @@ check() {
 }
 
 package() {
-  ln -sfnv usr/bin "$CRSD"/bin
+  ln -fnsv usr/bin "$CRSD"/bin
 
   mkdir -pv \
     "$CRSD"/boot \
@@ -28,7 +28,7 @@ package() {
 
   # `"$CRSD"/etc` was already created by toolchain `musl`
   cp -afv "$CERD"/$nom/fstab "$CRSD"/etc
-  ln -sfnv lsb-release "$CRSD"/etc/glaucus-release
+  ln -fnsv lsb-release "$CRSD"/etc/glaucus-release
   cp -afv \
     "$CERD"/$nom/group \
     "$CERD"/$nom/hostname \
@@ -39,7 +39,7 @@ package() {
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
     -i "$CRSD"/etc/lsb-release
-  ln -sfnv ../usr/lib/os-release "$CRSD"/etc/os-release
+  ln -fnsv ../usr/lib/os-release "$CRSD"/etc
   cp -afv \
     "$CERD"/$nom/passwd \
     "$CERD"/$nom/profile \
@@ -50,7 +50,7 @@ package() {
 
   mkdir -pv "$CRSD"/home
 
-  ln -sfnv usr/lib "$CRSD"/lib
+  ln -fnsv usr/lib "$CRSD"/lib
 
   mkdir -pv "$CRSD"/mnt
 
@@ -60,7 +60,7 @@ package() {
 
   mkdir -pv "$CRSD"/run
 
-  ln -sfnv usr/bin "$CRSD"/sbin
+  ln -fnsv usr/bin "$CRSD"/sbin
 
   mkdir -pvm 555 "$CRSD"/sys
 
@@ -73,7 +73,7 @@ package() {
     -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
     -i "$CRSD"/usr/lib/os-release
   mkdir -pv "$PKG_CONFIG_LIBDIR"
-  ln -sfnv bin "$CRSD"/usr/sbin
+  ln -fnsv bin "$CRSD"/usr/sbin
   mkdir -pv "$CRSD"/usr/share
 
   mkdir -pv \
@@ -83,13 +83,13 @@ package() {
     "$CRSD"/var/lib/hwclock \
     "$CRSD"/var/lib/misc \
     "$CRSD"/var/lib/rad/clusters
-  ln -sfnv ../run/lock "$CRSD"/var/lock
+  ln -fnsv ../run/lock "$CRSD"/var/lock
   mkdir -pv \
     "$CRSD"/var/log/rad \
     "$CRSD"/var/mail
-  ln -sfnv ../run "$CRSD"/var/run
+  ln -fnsv ../run "$CRSD"/var/run
   mkdir -pv "$CRSD"/var/spool
-  ln -sfnv ../mail "$CRSD"/var/spool/mail
+  ln -fnsv ../mail "$CRSD"/var/spool/mail
   mkdir -pvm 1777 "$CRSD"/var/tmp
   mkdir -pv "$CRSD"/var/tmp/rad
 }
