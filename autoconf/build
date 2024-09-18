@@ -29,6 +29,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  rm -frv "$SACD"/usr/share/info
 }
