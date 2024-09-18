@@ -8,9 +8,7 @@ prepare() {
 }
 
 configure() {
-  "$CERD"/autoconf/glaucus-configure \
-    --build=$BLD \
-    --host=$TGT \
+  glaucus-configure \
     --disable-static \
     --with-pic \
     --without-xmlwf \
@@ -24,14 +22,12 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR="$CRSD" \
+    DESTDIR="$SACD" \
     install-strip
-
-  # Remove libtool archive
-  rm -fv "$CRSD"/usr/lib/lib$nom.la
 }
