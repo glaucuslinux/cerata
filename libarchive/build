@@ -6,7 +6,7 @@
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 
-  patch -p0 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
+  patch -p1 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
 
   ./build/autogen.sh
 }
@@ -39,8 +39,5 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -sfnv bsdtar "$SACD"/usr/bin/tar
-
-  # Remove libtool archive
-  rm -fv "$SACD"/usr/lib/$nom.la
+  ln -fnsv bsdtar "$SACD"/usr/bin/tar
 }

@@ -6,13 +6,13 @@
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
 
-  patch -p0 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
+  patch -p1 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
 
   ./build/autogen.sh
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --disable-static \
@@ -40,7 +40,7 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv bsdtar "$CRSD"/usr/bin/tar
+  ln -fnsv bsdtar "$CRSD"/usr/bin/tar
 
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/$nom.la
