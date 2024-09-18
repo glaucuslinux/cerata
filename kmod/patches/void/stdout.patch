@@ -1,6 +1,9 @@
---- tools/static-nodes.c
-+++ tools/static-nodes.c
-@@ -144,7 +144,7 @@
+Use /proc/self/fd/1 instead of /dev/stdout, so we can use
+`kmod static-nodes` before udev is running.
+
+--- a/tools/static-nodes.c
++++ b/tools/static-nodes.c
+@@ -156,7 +156,7 @@
  {
  	struct utsname kernel;
  	char modules[PATH_MAX], buf[4096];

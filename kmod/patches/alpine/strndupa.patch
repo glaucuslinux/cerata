@@ -1,6 +1,7 @@
---- shared/util.c
-+++ shared/util.c
-@@ -389,7 +389,9 @@
+diff --git a/libkmod/libkmod-util.c b/libkmod/libkmod-util.c
+--- a/shared/util.c
++++ b/shared/util.c
+@@ -389,7 +389,9 @@ int mkdir_p(const char *path, int len, m
  {
  	char *start, *end;
  

@@ -12,9 +12,7 @@ prepare() {
 }
 
 configure() {
-  "$CERD"/autoconf/glaucus-configure \
-    --build=$BLD \
-    --host=$TGT \
+  glaucus-configure \
     --disable-manpages \
     --disable-test-modules \
     --disable-gtk-doc-html \
@@ -37,17 +35,14 @@ check() {
 
 package() {
   make \
-    DESTDIR="$CRSD" \
+    DESTDIR="$SACD" \
     install-strip
 
   mkdir -pv \
-    "$CRSD"/etc/depmod.d \
-    "$CRSD"/etc/modprobe.d \
-    "$CRSD"/usr/lib/depmod.d \
-    "$CRSD"/usr/lib/modprobe.d
+    "$SACD"/etc/depmod.d \
+    "$SACD"/etc/modprobe.d \
+    "$SACD"/usr/lib/depmod.d \
+    "$SACD"/usr/lib/modprobe.d
 
-  cp -afv "$CERD"/$nom/search.conf "$CRSD"/usr/lib/depmod.d
-
-  # Remove libtool archive
-  rm -fv "$CRSD"/usr/lib/lib$nom.la
+  cp -afv "$CERD"/$nom/search.conf "$SACD"/usr/lib/depmod.d
 }
