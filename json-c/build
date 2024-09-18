@@ -4,12 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv "$TBLD"/$nom
+  mkdir -pv build
 }
 
 configure() {
   glaucus-cmake \
-    -B "$TBLD"/$nom \
+    -B build \
     -DBUILD_APPS=OFF \
     -DBUILD_STATIC_LIBS=OFF \
     -DBUILD_TESTING=OFF \
@@ -20,16 +20,19 @@ configure() {
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
-  :
+  muon \
+    test \
+    -R \
+    -C build
 }
 
 package() {
   DESTDIR="$SACD" \
   samu \
-    -C "$TBLD"/$nom \
+    -C build \
     install/strip
 }
