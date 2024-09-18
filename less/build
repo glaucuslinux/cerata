@@ -27,5 +27,5 @@ package() {
     install-strip
 
   # Compatibility symlink
-  ln -sfnv $nom "$SACD"/usr/bin/more
+  ln -fnsv $nom "$SACD"/usr/bin/more
 }
