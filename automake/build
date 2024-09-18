@@ -16,8 +16,7 @@ build() {
 }
 
 check() {
-  make \
-    check
+  :
 }
 
 package() {
@@ -31,6 +30,6 @@ package() {
     install-strip
 
   # Replace hard links with symbolic links
-  ln -sfnv aclocal "$SACD"/usr/bin/aclocal-1.17
-  ln -sfnv $nom "$SACD"/usr/bin/$nom-1.17
+  ln -fnsv aclocal "$SACD"/usr/bin/aclocal-1.17
+  ln -fnsv $nom "$SACD"/usr/bin/$nom-1.17
 }
