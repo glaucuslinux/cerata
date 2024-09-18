@@ -25,7 +25,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  # Compatibility symlink
-  ln -fnsv $nom "$SACD"/usr/bin/more
 }
