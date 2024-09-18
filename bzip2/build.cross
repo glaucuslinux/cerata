@@ -24,10 +24,9 @@ package() {
   cp -afv bzlib.h "$CRSD"/usr/include
 
   cp -afv libbz2.so.$ver "$CRSD"/usr/lib
-  ln -sfnv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so
-  ln -sfnv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so.1
-  ln -sfnv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so.1.0
+  ln -fnsv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so
+  ln -fnsv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so.1
+  ln -fnsv libbz2.so.$ver "$CRSD"/usr/lib/libbz2.so.1.0
 
   cp -afv "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
-  ln -sfnv $nom.pc "$PKG_CONFIG_LIBDIR"/libbz2.pc
 }
