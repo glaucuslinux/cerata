@@ -29,9 +29,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  mkdir -pv "$SACD"/usr/include/$nom
-  ln -fnsv ../dbm.h "$SACD"/usr/include/$nom/dbm.h
-  ln -fnsv ../$nom.h "$SACD"/usr/include/$nom/$nom.h
-  ln -fnsv ../ndbm.h "$SACD"/usr/include/$nom/ndbm.h
 }
