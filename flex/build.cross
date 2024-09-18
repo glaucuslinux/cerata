@@ -34,7 +34,4 @@ package() {
     install-strip
 
   ln -fnsv $nom "$CRSD"/usr/bin/lex
-
-  # Remove libtool archive
-  rm -fv "$CRSD"/usr/lib/libfl.la
 }
