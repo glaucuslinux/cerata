@@ -26,9 +26,6 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  ln -sfnv $nom "$SACD"/usr/bin/bison
-  ln -sfnv $nom "$SACD"/usr/bin/yacc
-
-  ln -sfnv $nom.1 "$SACD"/usr/share/man/man1/bison.1
-  ln -sfnv $nom.1 "$SACD"/usr/share/man/man1/yacc.1
+  ln -fnsv $nom "$SACD"/usr/bin/bison
+  ln -fnsv $nom "$SACD"/usr/bin/yacc
 }
