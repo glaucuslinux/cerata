@@ -8,9 +8,7 @@ prepare() {
 }
 
 configure() {
-  "$CERD"/autoconf/glaucus-configure \
-    --build=$BLD \
-    --host=$TGT \
+  glaucus-configure \
     --enable-symlink-install \
     --enable-relative-symlinks \
     --enable-symlink-build \
@@ -33,23 +31,24 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR="$CRSD" \
+    DESTDIR="$SACD" \
     install-strip \
     install-libs
 
   rm -fv \
-    "$CRSD"/usr/bin/chattr \
-    "$CRSD"/usr/bin/lsattr \
-    "$CRSD"/usr/lib/libcom_err.a \
-    "$CRSD"/usr/lib/libe2p.a \
-    "$CRSD"/usr/lib/libext2fs.a \
-    "$CRSD"/usr/lib/libss.a
+    "$SACD"/usr/bin/chattr \
+    "$SACD"/usr/bin/lsattr \
+    "$SACD"/usr/lib/libcom_err.a \
+    "$SACD"/usr/lib/libe2p.a \
+    "$SACD"/usr/lib/libext2fs.a \
+    "$SACD"/usr/lib/libss.a
 
-  mv -fv "$CRSD"/usr/lib/e2initrd_helper "$CRSD"/usr/bin
-  ln -fnsv ../bin/e2initrd_helper "$CRSD"/usr/lib
+  mv -fv "$SACD"/usr/lib/e2initrd_helper "$SACD"/usr/bin
+  ln -fnsv ../bin/e2initrd_helper "$SACD"/usr/lib
 }
