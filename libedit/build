@@ -1,0 +1,46 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  autoreconf -vfis
+}
+
+configure() {
+  glaucus-configure \
+    --disable-static \
+    --disable-examples \
+    --with-pic
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+
+  mkdir -pv "$SACD"/etc
+  cp -afv \
+    "$CERD"/$nom/editrc \
+    "$CERD"/$nom/inputrc \
+    "$SACD"/etc
+
+  # Use libedit as a drop-in replacement for `readline`
+  mkdir -pv "$SACD"/usr/include/readline
+  touch \
+    "$SACD"/usr/include/readline/history.h \
+    "$SACD"/usr/include/readline/tilde.h
+  ln -fnsv ../editline/readline.h "$SACD"/usr/include/readline
+
+  ln -fnsv $nom.so "$SACD"/usr/lib/libreadline.so
+
+  ln -fnsv $nom.pc "$SACD"/usr/lib/pkgconfig/readline.pc
+}
