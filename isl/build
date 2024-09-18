@@ -27,17 +27,11 @@ package() {
   if [ $BOOTSTRAP = yes ]; then
     make \
       install-strip
-
-    # Remove libtool archive
-    rm -fv /usr/lib/lib$nom.la
   fi
 
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
-  # Remove libtool archive
-  rm -fv $SACD/usr/lib/lib$nom.la
-
-  rm -fv $SACD/usr/lib/lib$nom.so.23.3.0-gdb.py
+  rm -fv "$SACD"/usr/lib/lib$nom.so.23.3.0-gdb.py
 }
