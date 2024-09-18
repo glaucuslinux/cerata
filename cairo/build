@@ -7,7 +7,7 @@ prepare() {
   patch -p1 -i "$CERD"/$nom/patches/alpine/musl-stacksize.patch
   patch -p1 -i "$CERD"/$nom/patches/buildroot/0001-$nom-ft-private.h-fix-missing-FT_Color-error.patch
 
-  mkdir -pv "$TBLD"/$nom
+  mkdir -pv build
 }
 
 configure() {
@@ -25,21 +25,24 @@ configure() {
     -Dglib=enabled \
     -Dspectre=disabled \
     -Dsymbol-lookup=disabled \
-    "$TBLD"/$nom
+    build
 }
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
-  :
+  muon \
+    test \
+    -R \
+    -C build
 }
 
 package() {
   DESTDIR="$SACD" \
   muon \
-    -C "$TBLD"/$nom \
+    -C build \
     install
 }
