@@ -1,0 +1,36 @@
+Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  autoreconf -vfis
+}
+
+configure() {
+  glaucus-configure \
+    --enable-cxx \
+    --enable-fat \
+    --disable-static \
+    --with-pic
+}
+
+build() {
+  make
+}
+
+check() {
+  make \
+    check
+}
+
+package() {
+  if [ $BOOTSTRAP = yes ]; then
+    make \
+      install-strip
+  fi
+
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+}
