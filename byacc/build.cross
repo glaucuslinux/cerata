@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --program-prefix=b
@@ -27,9 +27,6 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -sfnv $nom "$CRSD"/usr/bin/bison
-  ln -sfnv $nom "$CRSD"/usr/bin/yacc
-
-  ln -sfnv $nom.1 "$CRSD"/usr/share/man/man1/bison.1
-  ln -sfnv $nom.1 "$CRSD"/usr/share/man/man1/yacc.1
+  ln -fnsv $nom "$CRSD"/usr/bin/bison
+  ln -fnsv $nom "$CRSD"/usr/bin/yacc
 }
