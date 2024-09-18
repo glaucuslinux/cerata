@@ -36,6 +36,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install
-
-  cp -afv "$CERD"/$nom/sdio.ids "$SACD"/usr/share/$nom
 }
