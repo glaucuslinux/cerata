@@ -30,5 +30,5 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  ln -fnrsv samu "$SACD"/usr/bin/ninja
+  ln -fnsv samu "$SACD"/usr/bin/ninja
 }

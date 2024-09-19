@@ -30,5 +30,5 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -fnrsv samu "$CRSD"/usr/bin/ninja
+  ln -fnsv samu "$CRSD"/usr/bin/ninja
 }
