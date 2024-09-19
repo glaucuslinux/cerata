@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="neatvi"
+ver="16"
+url="https://github.com/aligrudi/neatvi/archive/16.tar.gz"
+sum="28f22a5474efb8f69df7da46d21f4a0001bd6845cb5cd07810c35e47b57b245f"
