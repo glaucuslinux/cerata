@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --disable-static \
