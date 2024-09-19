@@ -20,6 +20,6 @@ check() {
 }
 
 package() {
-  cp -afRv $SRCD/$nom/usr $CRSD
-  cp -afRv $SRCD/$nom/usr/lib/modules/$ver-cachyos/vmlinuz $CRSD/boot
+  mv -fv "$TMPD"/$nom/usr "$CRSD"
+  cp -afv "$CRSD"/usr/lib/modules/$ver-cachyos/vmlinuz "$CRSD"/boot
 }
