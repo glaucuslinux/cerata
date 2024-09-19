@@ -23,8 +23,7 @@ configure() {
     --with-dynlib="$CRSD"/usr/lib \
     --enable-shared \
     --disable-static \
-    --disable-allstatic \
-    --enable-libc-includes
+    --disable-allstatic
 }
 
 build() {
@@ -40,4 +39,6 @@ package() {
   make \
     DESTDIR="$CRSD" \
     install
+
+  cp -afv "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
 }
