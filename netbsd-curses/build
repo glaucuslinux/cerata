@@ -29,8 +29,8 @@ package() {
     DESTDIR="$SACD" \
     install-dynamic
 
-  ln -fnrsv tic "$SACD"/usr/bin/captoinfo
-  ln -fnrsv tic "$SACD"/usr/bin/infotocap
+  ln -fnsv tic "$SACD"/usr/bin/captoinfo
+  ln -fnsv tic "$SACD"/usr/bin/infotocap
 
   chmod -v 755 \
     "$SACD"/usr/lib/libcurses.so \
@@ -40,5 +40,5 @@ package() {
     "$SACD"/usr/lib/libterminfo.so
 
   # Some cerata (e.g. `util-linux` and `yash`) link against this
-  ln -fnrsv libterminfo.so "$SACD"/usr/lib/libtinfo.so
+  ln -fnsv libterminfo.so "$SACD"/usr/lib/libtinfo.so
 }
