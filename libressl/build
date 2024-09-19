@@ -30,12 +30,6 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  # Remove libtool archives
-  rm -fv \
-    "$SACD"/usr/lib/libcrypto.la \
-    "$SACD"/usr/lib/libssl.la \
-    "$SACD"/usr/lib/libtls.la
-
   chmod -v 755 \
     "$SACD"/usr/lib/libcrypto.so.53.0.0 \
     "$SACD"/usr/lib/libssl.so.56.0.0 \
