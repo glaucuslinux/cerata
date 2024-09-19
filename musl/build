@@ -43,15 +43,17 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  mkdir -pv "$SACD"/etc
+  mkdir -pv \
+    "$SACD"/etc \
+    "$SACD"/usr/bin
+
   cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$SACD"/etc
 
-  mkdir -pv $SACD/usr/bin
-  cp -afv \
+  mv -fv \
     gencat \
     getent \
-    "$CERD"/$nom/ldconfig \
     "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/ldconfig "$SACD"/usr/bin
   ln -fnsv ../lib/libc.so "$SACD"/usr/bin/ldd
 
   # BSD compatibility header

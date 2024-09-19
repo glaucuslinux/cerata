@@ -37,10 +37,12 @@ package() {
     DESTDIR="$CRSD" \
     install-libs
 
-  mkdir -pv "$CRSD"/etc
+  mkdir -pv \
+    "$CRSD"/etc \
+    "$CRSD"/usr/bin
+
   cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$CRSD"/etc
 
-  mkdir -pv "$CRSD"/usr/bin
   ln -fnsv ../lib/libc.so "$CRSD"/usr/bin/ldd
 
   ln -fnsv libc.so "$CRSD"/usr/lib/ld-$nom-x86_64.so.1
