@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --disable-static \
@@ -32,12 +32,10 @@ package() {
     install-strip
 
   # Compatibility symlinks
-  ln -fnrsv $nom "$CRSD"/usr/bin/pkg-config
-  ln -fnrsv $nom "$CRSD"/usr/bin/$TGT-$nom
-  ln -fnrsv $nom "$CRSD"/usr/bin/$TGT-pkg-config
+  ln -fnsv $nom "$CRSD"/usr/bin/pkg-config
+  ln -fnsv $nom "$CRSD"/usr/bin/$TGT-$nom
+  ln -fnsv $nom "$CRSD"/usr/bin/$TGT-pkg-config
 
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/lib$nom.la
-
-  ln -fnrsv pkg.m4 "$CRSD"/usr/share/aclocal/$nom.m4
 }

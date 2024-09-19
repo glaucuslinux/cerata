@@ -31,12 +31,7 @@ package() {
     install-strip
 
   # Compatibility symlinks
-  ln -fnrsv $nom "$SACD"/usr/bin/pkg-config
-  ln -fnrsv $nom "$SACD"/usr/bin/$TGT-$nom
-  ln -fnrsv $nom "$SACD"/usr/bin/$TGT-pkg-config
-
-  # Remove libtool archive
-  rm -fv "$SACD"/usr/lib/lib$nom.la
-
-  ln -fnrsv pkg.m4 "$SACD"/usr/share/aclocal/$nom.m4
+  ln -fnsv $nom "$SACD"/usr/bin/pkg-config
+  ln -fnsv $nom "$SACD"/usr/bin/$TGT-$nom
+  ln -fnsv $nom "$SACD"/usr/bin/$TGT-pkg-config
 }
