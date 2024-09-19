@@ -6,27 +6,30 @@
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 
-  mkdir -pv "$TBLD"/$nom
+  mkdir -pv build
 }
 
 configure() {
   glaucus-muon \
     -Dtests=false \
-    "$TBLD"/$nom
+    build
 }
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
-  :
+  muon \
+    test \
+    -R \
+    -C build
 }
 
 package() {
   DESTDIR="$SACD" \
   muon \
-    -C "$TBLD"/$nom \
+    -C build \
     install
 }
