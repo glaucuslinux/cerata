@@ -51,4 +51,6 @@ package() {
   DESTDIR="$SACD" \
   samu \
     install/strip
+
+  cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
 }
