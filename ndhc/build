@@ -1,0 +1,25 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-CFLAGS-and-LDFLAGS.patch
+}
+
+configure() {
+  :
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  mkdir -pv "$SACD"/usr/bin
+  cp -afv $nom "$SACD"/usr/bin
+}
