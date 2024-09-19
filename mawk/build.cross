@@ -4,11 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  autoreconf -vfis
+  :
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --without-man2html \
@@ -28,6 +28,6 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -fnrsv $nom "$CRSD"/usr/bin/awk
-  ln -fnrsv $nom "$CRSD"/usr/bin/gawk
+  ln -fnsv $nom "$CRSD"/usr/bin/awk
+  ln -fnsv $nom "$CRSD"/usr/bin/gawk
 }

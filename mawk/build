@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  autoreconf -vfis
+  :
 }
 
 configure() {
@@ -18,7 +18,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
@@ -26,6 +27,6 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  ln -fnrsv $nom "$SACD"/usr/bin/awk
-  ln -fnrsv $nom "$SACD"/usr/bin/gawk
+  ln -fnsv $nom "$SACD"/usr/bin/awk
+  ln -fnsv $nom "$SACD"/usr/bin/gawk
 }
