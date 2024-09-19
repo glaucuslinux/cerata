@@ -28,6 +28,6 @@ check() {
 package() {
   find usr/include ! -name '*.h' -type f -delete
 
-  cp -afv usr/include "$CRSD"/usr
+  mv -fv usr/include "$CRSD"/usr
   rm -frv "$CRSD"/usr/include/drm
 }
