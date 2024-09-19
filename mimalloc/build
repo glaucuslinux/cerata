@@ -4,22 +4,21 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv "$TBLD"/$nom
+  mkdir -pv build
 }
 
 configure() {
   glaucus-cmake \
-    -B "$TBLD"/$nom \
+    -B build \
     -DMI_BUILD_STATIC=OFF \
     -DMI_BUILD_TESTS=OFF \
     -DMI_INSTALL_TOPLEVEL=ON \
-    -DMI_LIBC_MUSL=ON \
-    -G Ninja
+    -DMI_LIBC_MUSL=ON
 }
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
@@ -29,6 +28,6 @@ check() {
 package() {
   DESTDIR="$SACD" \
   samu \
-    -C "$TBLD"/$nom \
+    -C build \
     install/strip
 }
