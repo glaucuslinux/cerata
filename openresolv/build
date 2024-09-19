@@ -20,8 +20,7 @@ configure() {
     --rundir=/run \
     --mandir=/usr/share/man \
     --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --disable-debug
+    --includedir=/usr/include
 }
 
 build() {
