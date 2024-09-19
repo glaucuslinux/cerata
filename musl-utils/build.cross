@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv "$TBLD"/$nom
-  cd "$TBLD"/$nom
+  mkdir -pv "$TMPD"/$nom
+  cd "$TMPD"/$nom
 }
 
 configure() {
@@ -22,15 +22,10 @@ check() {
 }
 
 package() {
-  cp -afv \
+  mv -fv \
     gencat \
     getent \
-    "$CERD"/musl/ldconfig \
     "$CRSD"/usr/bin
 
-  mkdir -pv "$CRSD"/usr/share/man/man1
-  cp -afv \
-    "$CERD"/musl/gencat.1 \
-    "$CERD"/musl/getent.1 \
-    "$CRSD"/usr/share/man/man1
+  cp -afv "$CERD"/musl/ldconfig "$CRSD"/usr/bin
 }
