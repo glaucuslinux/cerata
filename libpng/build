@@ -21,6 +21,8 @@ build() {
   make
 
   make \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
     -C contrib/pngminus \
     png2pnm \
     pnm2png
@@ -36,7 +38,7 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  cp -afv \
+  mv -fv \
     contrib/pngminus/png2pnm \
     contrib/pngminus/pnm2png \
     "$SACD"/usr/bin
