@@ -51,6 +51,4 @@ package() {
 
   # Remove static library
   rm -fv "$SACD"/usr/lib/lib$nom.a
-
-  ln -fnrsv $nom.1 "$SACD"/usr/share/man/man1/p$nom.1
 }
