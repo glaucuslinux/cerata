@@ -5,6 +5,8 @@
 
 prepare() {
   patch -p1 -i "$CERD"/$nom/patches/upstream/$nom-$ver-apng.patch
+
+  autoreconf -vfis
 }
 
 configure() {
@@ -38,9 +40,4 @@ package() {
     contrib/pngminus/png2pnm \
     contrib/pngminus/pnm2png \
     "$SACD"/usr/bin
-
-  # Remove libtool archives
-  rm -fv \
-    "$SACD"/usr/lib/$nom.la \
-    "$SACD"/usr/lib/${nom}16.la
 }
