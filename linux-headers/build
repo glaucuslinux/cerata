@@ -29,6 +29,6 @@ package() {
   find usr/include ! -name '*.h' -type f -delete
 
   mkdir -pv "$SACD"/usr
-  cp -afv usr/include "$SACD"/usr
+  mv -afv usr/include "$SACD"/usr
   rm -frv "$SACD"/usr/include/drm
 }
