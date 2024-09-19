@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd "$TMPD"/gcc-$ver/build
+  cd "$TMPD"/gcc/gcc-$ver/build
 }
 
 configure() {
@@ -24,17 +24,14 @@ package() {
   make \
     install-strip-target-$nom
 
-  # Remove static libraries
+  # Remove static libraries and libtool archives
   rm -fv \
     "$TLCD"/usr/$TGT/lib/libstdc++.a \
-    "$TLCD"/usr/$TGT/lib/libstdc++exp.a \
-    "$TLCD"/usr/$TGT/lib/libstdc++fs.a \
-    "$TLCD"/usr/$TGT/lib/libsupc++.a
-
-  # Remove libtool archives
-  rm -fv \
     "$TLCD"/usr/$TGT/lib/libstdc++.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++exp.a \
     "$TLCD"/usr/$TGT/lib/libstdc++exp.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++fs.a \
     "$TLCD"/usr/$TGT/lib/libstdc++fs.la \
+    "$TLCD"/usr/$TGT/lib/libsupc++.a \
     "$TLCD"/usr/$TGT/lib/libsupc++.la
 }
