@@ -27,6 +27,4 @@ package() {
   $nom \
     DESTDIR="$SACD" \
     install-strip
-
-  ln -fnrsv $nom "$SACD"/usr/bin/g$nom
 }
