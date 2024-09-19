@@ -18,8 +18,7 @@ configure() {
     --includedir=/usr/include \
     --enable-shared \
     --disable-static \
-    --disable-allstatic \
-    --enable-libc-includes
+    --disable-allstatic
 }
 
 build() {
@@ -35,4 +34,7 @@ package() {
   make \
     DESTDIR="$SACD" \
     install
+
+  mkdir -pv "$SACD"/usr/lib/pkgconfig
+  cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
 }
