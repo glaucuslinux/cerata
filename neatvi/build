@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  patch -p0 -i "$CERD"/$nom/patches/alpine/conf.patch
 }
 
 configure() {
@@ -22,8 +22,12 @@ check() {
 }
 
 package() {
-  mkdir -pv "$SACD"/usr/bin
-  mv -fv vi "$SACD"/usr/bin
+  mkdir -pv \
+    "$SACD"/usr/bin \
+    "$SACD"/usr/share/$nom
 
+  mv -fv vi "$SACD"/usr/bin
   ln -fnsv vi "$SACD"/usr/bin/ex
+
+  mv -fv ecmd.sh "$SACD"/usr/share/$nom
 }
