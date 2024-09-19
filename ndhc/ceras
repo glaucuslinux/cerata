@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="ndhc"
+ver="2024-05-24"
+url="https://github.com/niklata/ndhc/archive/refs/tags/v2024-05-24.tar.gz"
+sum="a64f80aea67cfb3900e0e776f98c7fae3e45efae674a1a8cb2835db039f4a692"
