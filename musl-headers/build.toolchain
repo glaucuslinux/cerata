@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd "$TMPD"/musl-$ver
+  cd "$TMPD"/musl/musl-$ver
 
   patch -p0 -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch
 }
