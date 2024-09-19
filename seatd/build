@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv "$TBLD"/$nom
+  mkdir -pv build
 }
 
 configure() {
@@ -12,21 +12,24 @@ configure() {
     -Dlibseat-logind=disabled \
     -Dlibseat-builtin=enabled \
     -Dman-pages=disabled \
-    "$TBLD"/$nom
+    build
 }
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
-  :
+  muon \
+    test \
+    -R \
+    -C build
 }
 
 package() {
   DESTDIR="$SACD" \
   muon \
-    -C "$TBLD"/$nom \
+    -C build \
     install
 }
