@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="gettext-tiny"
-ver="0.3.2"
-url="https://ftp.barfooze.de/pub/sabotage/tarballs/gettext-tiny-0.3.2.tar.xz"
-sum="3ffa81c44fcbb472ff739a52bf4b70f15a5d4e66df4c0bc83d819a8c2d9a2003"
+ver="git"
+cmt="070f01d"
+url="https://github.com/sabotage-linux/gettext-tiny"
