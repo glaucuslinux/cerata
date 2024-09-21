@@ -8,7 +8,23 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/$nom \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --infodir=/usr/share/info \
+    --mandir=/usr/share/man \
     --without-man2html \
     --without-builtin-regex
 }
