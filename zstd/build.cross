@@ -41,7 +41,6 @@ package() {
     PREFIX=/usr \
     install
 
-  # Install parallel zstd as well
   make \
     DESTDIR="$CRSD" \
     PREFIX=/usr \
