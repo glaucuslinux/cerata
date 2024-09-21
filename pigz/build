@@ -18,11 +18,13 @@ build() {
 }
 
 check() {
-  :
+  make \
+    tests
 }
 
 package() {
-  mv -fv $nom "$CRSD"/usr/bin
-  ln -fnsv $nom "$CRSD"/usr/bin/gzip
-  ln -fnsv $nom "$CRSD"/usr/bin/un$nom
+  mkdir -pv "$SACD"/usr/bin
+  mv -fv $nom "$SACD"/usr/bin
+  ln -fnsv $nom "$SACD"/usr/bin/gzip
+  ln -fnsv $nom "$SACD"/usr/bin/un$nom
 }
