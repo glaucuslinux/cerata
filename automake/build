@@ -16,7 +16,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
