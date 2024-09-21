@@ -76,14 +76,14 @@ package() {
 
   ln -fnsv $TGT-ld.bfd "$TLCD"/usr/bin/$TGT-ld
 
-  ln -fnsv ../../bin/$TGT-ar "$TLCD"/usr/$TGT/bin/ar
+  ln -fnsv ../../bin/$TGT-gcc-ar "$TLCD"/usr/$TGT/bin/ar
+  ln -fnsv ../../bin/$TGT-as "$TLCD"/usr/$TGT/bin/as
   ln -fnsv ../../bin/$TGT-ld "$TLCD"/usr/$TGT/bin/ld
   ln -fnsv ../../bin/$TGT-ld.bfd "$TLCD"/usr/$TGT/bin/ld.bfd
-  ln -fnsv ../../bin/$TGT-nm "$TLCD"/usr/$TGT/bin/nm
-  ln -fnsv ../../bin/$TGT-as "$TLCD"/usr/$TGT/bin/as
+  ln -fnsv ../../bin/$TGT-gcc-nm "$TLCD"/usr/$TGT/bin/nm
   ln -fnsv ../../bin/$TGT-objcopy "$TLCD"/usr/$TGT/bin/objcopy
   ln -fnsv ../../bin/$TGT-objdump "$TLCD"/usr/$TGT/bin/objdump
-  ln -fnsv ../../bin/$TGT-ranlib "$TLCD"/usr/$TGT/bin/ranlib
+  ln -fnsv ../../bin/$TGT-gcc-ranlib "$TLCD"/usr/$TGT/bin/ranlib
   ln -fnsv ../../bin/$TGT-readelf "$TLCD"/usr/$TGT/bin/readelf
   ln -fnsv ../../bin/$TGT-strip "$TLCD"/usr/$TGT/bin/strip
 }
