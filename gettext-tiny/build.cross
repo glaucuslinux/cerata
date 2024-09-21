@@ -29,6 +29,6 @@ package() {
     prefix=/usr \
     sysconfdir=/etc \
     LIBINTL=MUSL \
-    DESTDIR=$CRSD \
+    DESTDIR="$CRSD" \
     install
 }
