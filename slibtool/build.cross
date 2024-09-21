@@ -8,9 +8,26 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  ./configure \
     --build=$BLD \
     --host=$TGT \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --mandir=/usr/share/man \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
     --disable-static
 }
 
@@ -27,8 +44,8 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -fnrsv $nom "$CRSD"/usr/bin/libtool
-  # ln -fnrsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
+  ln -fnsv $nom "$CRSD"/usr/bin/libtool
+  # ln -fnsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
   # cp -afv "$CERD"/$nom/libtoolize "$CRSD"/usr/bin
   ln -fnrsv ${nom}ize "$CRSD"/usr/bin/libtoolize
 
@@ -56,5 +73,5 @@ package() {
     "$CERD"/$nom/missing \
     "$CRSD"/usr/share/libtool/build-aux
 
-  # ln -fnrsv "$CRSD"/usr/share/$nom/$nom.m4 "$CRSD"/usr/share/aclocal
+  # ln -fnsv "$CRSD"/usr/share/$nom/$nom.m4 "$CRSD"/usr/share/aclocal
 }
