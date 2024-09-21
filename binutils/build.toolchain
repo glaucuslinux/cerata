@@ -76,11 +76,7 @@ package() {
 
   ln -fnsv $TGT-ld.bfd "$TLCD"/usr/bin/$TGT-ld
 
-  for i in ar nm ranlib; do
-    ln -fnsv ../../bin/$TGT-gcc-$i "$TLCD"/usr/$TGT/bin/$i
-  done
-
-  for i in as ld ld.bfd objcopy objdump readelf strip; do
+  for i in ar as ld ld.bfd nm objcopy objdump ranlib readelf strip; do
     ln -fnsv ../../bin/$TGT-$i "$TLCD"/usr/$TGT/bin/$i
   done
 }
