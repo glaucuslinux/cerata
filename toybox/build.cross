@@ -21,116 +21,35 @@ check() {
 }
 
 package() {
-  cp -afv $nom "$CRSD"/usr/bin
+  mv -fv $nom "$CRSD"/usr/bin
 
-  ln -sfnv $nom "$CRSD"/usr/bin/[
-  ln -sfnv $nom "$CRSD"/usr/bin/base32
-  ln -sfnv $nom "$CRSD"/usr/bin/base64
-  ln -sfnv $nom "$CRSD"/usr/bin/basename
-  ln -sfnv $nom "$CRSD"/usr/bin/cat
-  ln -sfnv $nom "$CRSD"/usr/bin/chgrp
-  ln -sfnv $nom "$CRSD"/usr/bin/chmod
-  ln -sfnv $nom "$CRSD"/usr/bin/chown
-  ln -sfnv $nom "$CRSD"/usr/bin/chroot
-  ln -sfnv $nom "$CRSD"/usr/bin/cksum
-  ln -sfnv $nom "$CRSD"/usr/bin/comm
-  ln -sfnv $nom "$CRSD"/usr/bin/cp
-  ln -sfnv $nom "$CRSD"/usr/bin/cut
-  ln -sfnv $nom "$CRSD"/usr/bin/date
-  ln -sfnv $nom "$CRSD"/usr/bin/dd
-  ln -sfnv $nom "$CRSD"/usr/bin/df
-  ln -sfnv $nom "$CRSD"/usr/bin/dirname
-  ln -sfnv $nom "$CRSD"/usr/bin/du
-  ln -sfnv $nom "$CRSD"/usr/bin/echo
-  ln -sfnv $nom "$CRSD"/usr/bin/egrep
-  ln -sfnv $nom "$CRSD"/usr/bin/env
-  ln -sfnv $nom "$CRSD"/usr/bin/expand
-  ln -sfnv $nom "$CRSD"/usr/bin/expr
-  ln -sfnv $nom "$CRSD"/usr/bin/factor
-  ln -sfnv $nom "$CRSD"/usr/bin/false
-  ln -sfnv $nom "$CRSD"/usr/bin/fgrep
-  ln -sfnv $nom "$CRSD"/usr/bin/file
-  ln -sfnv $nom "$CRSD"/usr/bin/find
-  ln -sfnv $nom "$CRSD"/usr/bin/fmt
-  ln -sfnv $nom "$CRSD"/usr/bin/fold
-  ln -sfnv $nom "$CRSD"/usr/bin/free
-  ln -sfnv $nom "$CRSD"/usr/bin/getconf
-  ln -sfnv $nom "$CRSD"/usr/bin/grep
-  ln -sfnv $nom "$CRSD"/usr/bin/head
-  ln -sfnv $nom "$CRSD"/usr/bin/hostid
-  ln -sfnv $nom "$CRSD"/usr/bin/hostname
-  ln -sfnv $nom "$CRSD"/usr/bin/iconv
-  ln -sfnv $nom "$CRSD"/usr/bin/id
-  ln -sfnv $nom "$CRSD"/usr/bin/install
-  ln -sfnv $nom "$CRSD"/usr/bin/link
-  ln -sfnv $nom "$CRSD"/usr/bin/ln
-  ln -sfnv $nom "$CRSD"/usr/bin/logname
-  ln -sfnv $nom "$CRSD"/usr/bin/ls
-  ln -sfnv $nom "$CRSD"/usr/bin/md5sum
-  ln -sfnv $nom "$CRSD"/usr/bin/mkdir
-  ln -sfnv $nom "$CRSD"/usr/bin/mkfifo
-  ln -sfnv $nom "$CRSD"/usr/bin/mknod
-  ln -sfnv $nom "$CRSD"/usr/bin/mktemp
-  ln -sfnv $nom "$CRSD"/usr/bin/mv
-  ln -sfnv $nom "$CRSD"/usr/bin/nice
-  ln -sfnv $nom "$CRSD"/usr/bin/nl
-  ln -sfnv $nom "$CRSD"/usr/bin/nohup
-  ln -sfnv $nom "$CRSD"/usr/bin/nproc
-  ln -sfnv $nom "$CRSD"/usr/bin/od
-  ln -sfnv $nom "$CRSD"/usr/bin/paste
-  ln -sfnv $nom "$CRSD"/usr/bin/patch
-  ln -sfnv $nom "$CRSD"/usr/bin/pgrep
-  ln -sfnv $nom "$CRSD"/usr/bin/pidof
-  ln -sfnv $nom "$CRSD"/usr/bin/pkill
-  ln -sfnv $nom "$CRSD"/usr/bin/pmap
-  ln -sfnv $nom "$CRSD"/usr/bin/printenv
-  ln -sfnv $nom "$CRSD"/usr/bin/printf
-  ln -sfnv $nom "$CRSD"/usr/bin/ps
-  ln -sfnv $nom "$CRSD"/usr/bin/pwd
-  ln -sfnv $nom "$CRSD"/usr/bin/pwdx
-  ln -sfnv $nom "$CRSD"/usr/bin/readlink
-  ln -sfnv $nom "$CRSD"/usr/bin/realpath
-  ln -sfnv $nom "$CRSD"/usr/bin/rm
-  ln -sfnv $nom "$CRSD"/usr/bin/rmdir
-  ln -sfnv $nom "$CRSD"/usr/bin/sed
-  ln -sfnv $nom "$CRSD"/usr/bin/seq
-  ln -sfnv $nom "$CRSD"/usr/bin/sha1sum
-  ln -sfnv $nom "$CRSD"/usr/bin/sha224sum
-  ln -sfnv $nom "$CRSD"/usr/bin/sha256sum
-  ln -sfnv $nom "$CRSD"/usr/bin/sha384sum
-  ln -sfnv $nom "$CRSD"/usr/bin/sha512sum
-  ln -sfnv $nom "$CRSD"/usr/bin/shred
-  ln -sfnv $nom "$CRSD"/usr/bin/shuf
-  ln -sfnv $nom "$CRSD"/usr/bin/sleep
-  ln -sfnv $nom "$CRSD"/usr/bin/sort
-  ln -sfnv $nom "$CRSD"/usr/bin/split
-  ln -sfnv $nom "$CRSD"/usr/bin/stat
-  ln -sfnv $nom "$CRSD"/usr/bin/stty
-  ln -sfnv $nom "$CRSD"/usr/bin/sync
-  ln -sfnv $nom "$CRSD"/usr/bin/sysctl
-  ln -sfnv $nom "$CRSD"/usr/bin/tac
-  ln -sfnv $nom "$CRSD"/usr/bin/tail
-  ln -sfnv $nom "$CRSD"/usr/bin/tee
-  ln -sfnv $nom "$CRSD"/usr/bin/test
-  ln -sfnv $nom "$CRSD"/usr/bin/time
-  ln -sfnv $nom "$CRSD"/usr/bin/timeout
-  ln -sfnv $nom "$CRSD"/usr/bin/top
-  ln -sfnv $nom "$CRSD"/usr/bin/touch
-  ln -sfnv $nom "$CRSD"/usr/bin/tr
-  ln -sfnv $nom "$CRSD"/usr/bin/true
-  ln -sfnv $nom "$CRSD"/usr/bin/truncate
-  ln -sfnv $nom "$CRSD"/usr/bin/tsort
-  ln -sfnv $nom "$CRSD"/usr/bin/tty
-  ln -sfnv $nom "$CRSD"/usr/bin/uname
-  ln -sfnv $nom "$CRSD"/usr/bin/uniq
-  ln -sfnv $nom "$CRSD"/usr/bin/unlink
-  ln -sfnv $nom "$CRSD"/usr/bin/vmstat
-  ln -sfnv $nom "$CRSD"/usr/bin/w
-  ln -sfnv $nom "$CRSD"/usr/bin/watch
-  ln -sfnv $nom "$CRSD"/usr/bin/wc
-  ln -sfnv $nom "$CRSD"/usr/bin/which
-  ln -sfnv $nom "$CRSD"/usr/bin/who
-  ln -sfnv $nom "$CRSD"/usr/bin/whoami
-  ln -sfnv $nom "$CRSD"/usr/bin/xargs
-  ln -sfnv $nom "$CRSD"/usr/bin/yes
+  for i in \
+  [ \
+  arping \
+  base32 base64 basename blkdiscard blockdev \
+  cal cat chattr chgrp chmod chown chroot chrt cksum cmp comm cp cpio cut \
+  date dd df dhcp dhcp6 dhcpd diff dirname du \
+  echo egrep eject env expand expr \
+  factor fallocate false fgrep file find flock fmt fold free fsck fsfreeze \
+  getconf getopt grep \
+  head hexdump hostid hostname hwclock \
+  iconv id install ionice ip ipaddr ipcrm ipcs iplink iprule iptunnel \
+  kill killall killall5 \
+  last link ln logger logname losetup ls lsattr lspci lsusb \
+  mcookie md5sum mkdir mkfifo mknod mkswap mktemp more mountpoint mv \
+  nice nl nohup nproc nsenter \
+  od \
+  paste patch pgrep pidof ping ping6 pivot_root pkill pmap printenv printf ps \
+  pwd pwdx \
+  readlink realpath renice rev rfkill rm rmdir rtcwake \
+  sed seq setsid sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf \
+  sleep sort split stat stty sulogin swapoff swapon switch_root sync sysctl \
+  tac tail taskset tee test time timeout top touch tr true truncate tsort tty \
+  uclampset umount uname uniq unlink uptime uuidgen \
+  vmstat \
+  w watch wc which who whoami \
+  xargs \
+  yes; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
 }
