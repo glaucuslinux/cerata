@@ -22,5 +22,5 @@ check() {
 package() {
   mkdir -pv "$SACD"/boot
   mv -fv "$TMPD"/$nom/usr "$SACD"
-  mv -afv "$SACD"/$nom/usr/lib/modules/$ver-cachyos/vmlinuz "$SACD"/boot
+  mv -fv "$SACD"/$nom/usr/lib/modules/$ver-cachyos/vmlinuz "$SACD"/boot
 }
