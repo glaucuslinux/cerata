@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  cd "$TMPD"/gcc-$ver/build
+  cd "$TMPD"/gcc/gcc-$ver/build
 
   make \
     -C $TGT/$nom \
