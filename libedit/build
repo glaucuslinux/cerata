@@ -34,7 +34,7 @@ package() {
     "$CERD"/$nom/inputrc \
     "$SACD"/etc
 
-  # Use libedit as a drop-in replacement for `readline`
+  # Replace `readline`
   mkdir -pv "$SACD"/usr/include/readline
   touch \
     "$SACD"/usr/include/readline/history.h \

@@ -8,7 +8,6 @@ prepare() {
 }
 
 configure() {
-LIBS=-lnsss \
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
@@ -34,7 +33,7 @@ package() {
     "$CERD"/$nom/inputrc \
     "$CRSD"/etc
 
-  # Use libedit as a drop-in replacement for `readline`
+  # Replace `readline`
   mkdir -pv "$CRSD"/usr/include/readline
   touch \
     "$CRSD"/usr/include/readline/history.h \
@@ -44,7 +43,6 @@ package() {
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/$nom.la
 
-  ln -fnsv $nom.a "$CRSD"/usr/lib/libreadline.a
   ln -fnsv $nom.so "$CRSD"/usr/lib/libreadline.so
 
   ln -fnsv $nom.pc "$PKG_CONFIG_LIBDIR"/readline.pc
