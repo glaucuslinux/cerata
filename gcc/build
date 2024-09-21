@@ -11,6 +11,7 @@ prepare() {
   patch -p1 -i "$CERD"/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
   patch -p1 -i "$CERD"/$nom/patches/alpine/0012-lib${nom}_s.patch
   patch -p1 -i "$CERD"/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
 
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
@@ -54,6 +55,7 @@ configure() {
     --disable-libsanitizer \
     --disable-libssp \
     --enable-default-ssp \
+    --enable-link-serialization=1 \
     --enable-default-pie \
     --disable-bootstrap \
     --disable-symvers \
@@ -72,8 +74,6 @@ configure() {
 }
 
 build() {
-  # Disable parallel build!
-  MAKEFLAGS=-j1 \
   make
 }
 
@@ -83,7 +83,7 @@ check() {
 
 package() {
   make \
-    DESTDIR=$SACD \
+    DESTDIR="$SACD" \
     install-strip
 
   ln -fnsv g++ "$SACD"/usr/bin/c++
@@ -121,8 +121,8 @@ package() {
     "$SACD"/usr/lib/libstdc++.a \
     "$SACD"/usr/lib/libstdc++exp.a \
     "$SACD"/usr/lib/libstdc++fs.a \
-    "$SACD"/usr/lib/libsupc++.a"
+    "$SACD"/usr/lib/libsupc++.a
 
-  #" Compatibility symlink
+  # Compatibility symlink
   ln -fnsv ../bin/cpp "$SACD"/usr/lib/cpp
 }
