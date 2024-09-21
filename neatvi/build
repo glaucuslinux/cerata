@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/alpine/conf.patch
+  patch -p1 -i "$CERD"/$nom/patches/alpine/conf.patch
 }
 
 configure() {
