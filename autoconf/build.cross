@@ -8,7 +8,9 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure
+  "$CERD"/$nom/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT
 }
 
 build() {
@@ -22,8 +24,8 @@ check() {
 
 package() {
   make \
-    DESTDIR="$SACD" \
+    DESTDIR="$CRSD" \
     install-strip
 
-  cp -afv "$CERD"/$nom/glaucus-configure "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/glaucus-configure "$CRSD"/usr/bin
 }
