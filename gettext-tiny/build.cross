@@ -31,4 +31,8 @@ package() {
     LIBINTL=MUSL \
     DESTDIR="$CRSD" \
     install
+
+  cp -afv "$CERD"/$nom/config.rpath "$CRSD"/usr/share/$nom
+
+  ln -fnsv $nom "$CRSD"/usr/share/gettext
 }
