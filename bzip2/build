@@ -22,13 +22,14 @@ check() {
 
 package() {
   mkdir -pv "$SACD"/usr/include
-  cp -afv bzlib.h "$SACD"/usr/include
+  mv -fv bzlib.h "$SACD"/usr/include
 
   mkdir -pv "$SACD"/usr/lib
-  cp -afv libbz2.so.$ver "$SACD"/usr/lib
-  ln -fnsv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so
-  ln -fnsv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so.1
-  ln -fnsv libbz2.so.$ver "$SACD"/usr/lib/libbz2.so.1.0
+  mv -fv libbz2.so.$ver "$SACD"/usr/lib
+
+  for i in libbz2.so libbz2.so.1 libbz2.so.1.0; do
+    ln -fnsv libbz2.so.$ver "$SACD"/usr/lib/$i
+  done
 
   mkdir -pv "$SACD"/usr/lib/pkgconfig
   cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
