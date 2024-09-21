@@ -31,4 +31,8 @@ package() {
     LIBINTL=MUSL \
     DESTDIR="$SACD" \
     install
+
+  cp -afv "$CERD"/$nom/config.rpath "$SACD"/usr/share/$nom
+
+  ln -fnsv $nom "$SACD"/usr/share/gettext
 }
