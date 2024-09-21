@@ -31,7 +31,7 @@ package() {
     install-strip
 
   # Compatibility symlinks
-  ln -fnsv $nom "$SACD"/usr/bin/pkg-config
-  ln -fnsv $nom "$SACD"/usr/bin/$TGT-$nom
-  ln -fnsv $nom "$SACD"/usr/bin/$TGT-pkg-config
+  for i in pkg-config $TGT-$nom $TGT-pkg-config; do
+    ln -fnsv $nom "$SACD"/usr/bin/$i
+  done
 }
