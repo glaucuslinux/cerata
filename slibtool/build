@@ -8,7 +8,24 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  ./configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --mandir=/usr/share/man \
+    --libexecdir=/usr/lib/$nom \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --runstatedir=/run \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
     --disable-static
 }
 
@@ -25,8 +42,8 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  ln -fnrsv $nom "$SACD"/usr/bin/libtool
-  # ln -fnrsv "$SACD"/usr/share/$nom/$nom.sh "$SACD"/usr/bin/libtool
+  ln -fnsv $nom "$SACD"/usr/bin/libtool
+  # ln -fnsv "$SACD"/usr/share/$nom/$nom.sh "$SACD"/usr/bin/libtool
   # cp -afv "$SACD"/$nom/libtoolize "$SACD"/usr/bin
   ln -fnrsv ${nom}ize "$SACD"/usr/bin/libtoolize
 
@@ -54,5 +71,5 @@ package() {
     "$CERD"/$nom/missing \
     "$SACD"/usr/share/libtool/build-aux
 
-  # ln -fnrsv "$SACD"/usr/share/$nom/$nom.m4 "$SACD"/usr/share/aclocal
+  # ln -fnsv "$SACD"/usr/share/$nom/$nom.m4 "$SACD"/usr/share/aclocal
 }
