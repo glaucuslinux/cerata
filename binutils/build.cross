@@ -38,16 +38,17 @@ configure() {
     --enable-plugins \
     --enable-targets=x86_64-pep \
     --enable-deterministic-archives \
+    --enable-colored-disassembly \
+    --disable-gprofng \
     --disable-compressed-debug-sections \
     --enable-new-dtags \
     --enable-relro \
     --disable-default-execstack \
     --enable-default-hash-style=gnu \
+    --disable-initfini-array \
     --disable-werror \
     --disable-nls \
     --disable-rpath \
-    --disable-initfini-array \
-    --disable-gprofng \
     --with-pic \
     --with-mmap \
     --with-lib-path=/usr/lib \
