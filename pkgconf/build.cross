@@ -32,9 +32,9 @@ package() {
     install-strip
 
   # Compatibility symlinks
-  ln -fnsv $nom "$CRSD"/usr/bin/pkg-config
-  ln -fnsv $nom "$CRSD"/usr/bin/$TGT-$nom
-  ln -fnsv $nom "$CRSD"/usr/bin/$TGT-pkg-config
+  for i in pkg-config $TGT-$nom $TGT-pkg-config; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
 
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/lib$nom.la
