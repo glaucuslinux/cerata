@@ -4,14 +4,17 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0001-posix_memalign.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0003-specs-turn-on-Wl-z-now-by-default.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0005-On-linux-targets-pass-as-needed-by-default-to-the-li.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0006-Enable-Wformat-and-Wformat-security-by-default.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0007-Enable-Wtrampolines-by-default.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0012-lib${nom}_s.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0015-build-fix-CXXFLAGS_FOR_BUILD-passing.patch
-  patch -p1 -i "$CERD"/$nom/patches/alpine/0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on.patch
+  for i in \
+  0001-posix_memalign \
+  0003-specs-turn-on-Wl-z-now-by-default \
+  0005-On-linux-targets-pass-as-needed-by-default-to-the-li \
+  0006-Enable-Wformat-and-Wformat-security-by-default \
+  0007-Enable-Wtrampolines-by-default \
+  0012-lib${nom}_s \
+  0015-build-fix-CXXFLAGS_FOR_BUILD-passing \
+  0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on; do
+    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+  done
 
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
 
@@ -20,7 +23,6 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   ../configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -57,7 +59,6 @@ configure() {
     --enable-default-ssp \
     --enable-link-serialization=1 \
     --enable-default-pie \
-    --disable-bootstrap \
     --disable-symvers \
     --disable-cet \
     --disable-werror \
@@ -65,11 +66,12 @@ configure() {
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
+    --with-build-config=bootstrap-lto \
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
-    --with-system-zlib \
     --with-pic \
+    --with-system-zlib \
     --with-linker-hash-style=gnu
 }
 
@@ -104,9 +106,9 @@ package() {
   ln -fnsv g++ "$SACD"/usr/bin/$TGT-g++
   ln -fnsv $nom "$SACD"/usr/bin/$TGT-$nom
 
-  ln -fnsv $nom-ar "$SACD"/usr/bin/$TGT-$nom-ar
-  ln -fnsv $nom-nm "$SACD"/usr/bin/$TGT-$nom-nm
-  ln -fnsv $nom-ranlib "$SACD"/usr/bin/$TGT-$nom-ranlib
+  for i in ar nm ranlib; do
+    ln -fnsv $nom-$i "$SACD"/usr/bin/$TGT-$nom-$i
+  done
 
   mkdir -pv "$SACD"/usr/lib/bfd-plugins
   ln -fnsv ../$nom/$TGT/$ver/liblto_plugin.so "$SACD"/usr/lib/bfd-plugins
