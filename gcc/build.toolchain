@@ -85,8 +85,8 @@ configure() {
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
-    --with-system-zlib \
     --with-pic \
+    --with-system-zlib \
     --with-linker-hash-style=gnu
 }
 
