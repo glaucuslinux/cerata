@@ -34,7 +34,7 @@ prepare() {
 }
 
 configure() {
-    CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
+  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   ../configure \
     --build=$BLD \
     --host=$TGT \
