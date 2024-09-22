@@ -83,7 +83,7 @@ build() {
     BOOT_LDFLAGS="$LDFLAGS" \
     LDFLAGS_FOR_TARGET="$LDFLAGS" \
     STAGE1_CFLAGS="$CFLAGS" \
-    STAGE1_LDFLAGS="$CFLAGS" \
+    STAGE1_LDFLAGS="$LDFLAGS" \
     bootstrap
 }
 
