@@ -34,6 +34,7 @@ prepare() {
 }
 
 configure() {
+    CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   ../configure \
     --build=$BLD \
     --host=$TGT \
@@ -73,6 +74,7 @@ configure() {
     --enable-default-ssp \
     --enable-link-serialization=1 \
     --enable-default-pie \
+    --disable-bootstrap \
     --disable-symvers \
     --disable-cet \
     --disable-werror \
@@ -80,7 +82,6 @@ configure() {
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
-    --with-build-config=bootstrap-lto \
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
