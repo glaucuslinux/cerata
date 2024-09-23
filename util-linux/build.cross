@@ -29,8 +29,10 @@ configure() {
     --enable-line \
     --enable-vipw \
     --enable-newgrp \
-    --enable-login-chown-vcs \
-    --enable-login-stat-mail \
+    --disable-chfn-chsh \
+    --disable-login \
+    --disable-su \
+    --disable-runuser \
     --enable-pg \
     --enable-write \
     --disable-bash-completion \
