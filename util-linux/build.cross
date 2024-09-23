@@ -27,10 +27,9 @@ configure() {
     --enable-fdformat \
     --enable-tunelp \
     --enable-line \
-    --enable-vipw \
-    --enable-newgrp \
     --disable-chfn-chsh \
     --disable-login \
+    --disable-nologin \
     --disable-su \
     --disable-runuser \
     --enable-pg \
