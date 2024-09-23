@@ -13,6 +13,7 @@ configure() {
 
 build() {
   CROSS_COMPILE= \
+  LDFLAGS="$LDFLAGS -lutmps -lskarnet" \
   make
 }
 
@@ -26,26 +27,25 @@ package() {
   for i in \
   [ \
   arping \
-  base32 base64 basename blkdiscard blockdev \
-  cal cat chattr chgrp chmod chown chroot chrt cksum cmp comm cp cpio cut \
+  base32 base64 basename \
+  cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
   date dd df dhcp dhcp6 dhcpd diff dirname du \
-  echo egrep eject env expand expr \
-  factor fallocate false fgrep file find flock fmt fold free fsck fsfreeze \
-  getconf getopt grep \
-  head hexdump hostid hostname hwclock \
-  iconv id install ionice ip ipaddr ipcrm ipcs iplink iprule iptunnel \
-  kill killall killall5 \
-  last link ln logger logname losetup ls lsattr lspci lsusb \
-  mcookie md5sum mkdir mkfifo mknod mkswap mktemp more mountpoint mv \
-  nice nl nohup nproc nsenter \
+  echo egrep env expand expr \
+  factor false fgrep file find fmt fold free \
+  getconf grep \
+  head hostid hostname \
+  iconv id install ip ipaddr iplink iproute iprule iptunnel \
+  killall \
+  link ln logname ls lsattr lspci lsusb \
+  md5sum mkdir mkfifo mknod mktemp mv \
+  nice nl nohup nproc \
   od \
-  paste patch pgrep pidof ping ping6 pivot_root pkill pmap printenv printf ps \
-  pwd pwdx \
-  readlink realpath renice rev rfkill rm rmdir rtcwake \
-  sed seq setsid sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf \
-  sleep sort split stat stty sulogin swapoff swapon switch_root sync sysctl \
-  tac tail taskset tee test time timeout top touch tr true truncate tsort tty \
-  uclampset umount uname uniq unlink uptime uuidgen \
+  paste patch pgrep pidof ping ping6 pkill pmap printenv printf ps pwd pwdx \
+  readlink realpath rm rmdir \
+  sed seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep \
+  sort split stat stty sync sysctl \
+  tac tail tee test time timeout top touch tr true truncate tsort tty \
+  uname uniq unlink uptime \
   vmstat \
   w watch wc which who whoami \
   xargs \
