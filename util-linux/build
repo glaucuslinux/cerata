@@ -12,9 +12,7 @@ prepare() {
 configure() {
   LIBS='-lutmps -lskarnet' \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
-  "$CERD"/autoconf/glaucus-configure \
-    --build=$BLD \
-    --host=$TGT \
+  glaucus-configure \
     --disable-static \
     --disable-symvers \
     --disable-nls \
@@ -51,20 +49,13 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
   make \
-    DESTDIR="$CRSD" \
+    DESTDIR="$SACD" \
     usrsbin_execdir=/usr/bin \
     install-strip
-
-  # Remove libtool archives
-  rm -fv \
-    "$CRSD"/usr/lib/libblkid.la \
-    "$CRSD"/usr/lib/libfdisk.la \
-    "$CRSD"/usr/lib/libmount.la \
-    "$CRSD"/usr/lib/libsmartcols.la \
-    "$CRSD"/usr/lib/libuuid.la
 }
