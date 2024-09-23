@@ -43,7 +43,7 @@ package() {
   paste patch pgrep pidof ping ping6 pkill pmap printenv printf ps pwd pwdx \
   readlink realpath rm rmdir \
   sed seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep \
-  sort split stat stty sync sysctl \
+  sort split stat stty su sync sysctl \
   tac tail tee test time timeout top touch tr true truncate tsort tty \
   uname uniq unlink uptime \
   vmstat \
