@@ -4,10 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/clear/default-threading.patch
-  patch -p1 -i "$CERD"/$nom/patches/clear/io-size.patch
-  patch -p1 -i "$CERD"/$nom/patches/clear/minor-optimization.patch
-  patch -p1 -i "$CERD"/$nom/patches/clear/speedup.patch
+  for i in default-threading io-size minor-optimization speedup; do
+    patch -p1 -i "$CERD"/$nom/patches/clear/$i.patch
+  done
 
   ./autogen.sh --no-po4a
 }
