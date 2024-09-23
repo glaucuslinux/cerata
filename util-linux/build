@@ -29,6 +29,7 @@ configure() {
     --enable-newgrp \
     --disable-chfn-chsh \
     --disable-login \
+    --disable-nologin \
     --disable-su \
     --disable-runuser \
     --enable-pg \
