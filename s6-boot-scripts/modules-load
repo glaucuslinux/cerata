@@ -1,7 +1,7 @@
 #!/bin/sh
 # modules-load [-n] [-v] - modules-load.d(5) compatible kernel module loader
 
-export PATH=/usr/bin:/bin
+export PATH=/usr/bin
 
 {
   # Parameters passed as modules-load= or rd.modules-load= in kernel command line.
