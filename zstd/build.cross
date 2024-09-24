@@ -5,9 +5,6 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/clear/multi-thread-default.patch
-
-  patch -p0 -i "$CERD"/$nom/patches/opensuse/p$nom.1.patch
-
   patch -p1 -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch
 }
 
