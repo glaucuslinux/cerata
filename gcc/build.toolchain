@@ -35,9 +35,6 @@ prepare() {
 
 configure() {
   ../configure \
-    --build=$BLD \
-    --host=$BLD \
-    --target=$TGT \
     --prefix="$TLCD"/usr \
     --exec-prefix="$TLCD"/usr \
     --bindir="$TLCD"/usr/bin \
@@ -55,17 +52,21 @@ configure() {
     --localedir="$TLCD"/usr/share/locale \
     --mandir="$TLCD"/usr/share/man \
     --docdir="$TLCD"/usr/share/doc/$nom \
+    --build=$BLD \
+    --host=$BLD \
+    --target=$TGT \
+    --disable-bootstrap \
+    --enable-checking=release \
     --disable-multilib \
     --enable-__cxa_atexit \
     --disable-fixed-point \
     --enable-threads=posix \
     --enable-tls \
-    --disable-nls \
     --enable-languages=c,c++ \
     --disable-rpath \
+    --disable-nls \
     --disable-gnu-indirect-function \
     --disable-initfini-array \
-    --with-arch=$CARCH \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
@@ -73,14 +74,14 @@ configure() {
     --enable-default-ssp \
     --enable-link-serialization=1 \
     --enable-default-pie \
-    --disable-bootstrap \
-    --disable-symvers \
     --disable-cet \
     --disable-werror \
+    --disable-symvers \
     --disable-libstdcxx-pch \
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
+    --with-arch=$CARCH \
     --with-sysroot="$CRSD" \
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \

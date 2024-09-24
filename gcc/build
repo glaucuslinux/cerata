@@ -41,17 +41,17 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
+    --enable-checking=release \
     --disable-multilib \
     --enable-__cxa_atexit \
     --disable-fixed-point \
     --enable-threads=posix \
     --enable-tls \
-    --disable-nls \
     --enable-languages=c,c++ \
     --disable-rpath \
+    --disable-nls \
     --disable-gnu-indirect-function \
     --disable-initfini-array \
-    --with-arch=$CARCH \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
@@ -59,13 +59,14 @@ configure() {
     --enable-default-ssp \
     --enable-link-serialization=1 \
     --enable-default-pie \
-    --disable-symvers \
     --disable-cet \
     --disable-werror \
+    --disable-symvers \
     --disable-libstdcxx-pch \
     --enable-clocale=generic \
     --enable-libstdcxx-time=rt \
     --enable-libstdcxx-threads \
+    --with-arch=$CARCH \
     --with-stage1-ldflags="$LDFLAGS" \
     --with-boot-ldflags="$LDFLAGS" \
     --with-build-config=bootstrap-lto \
