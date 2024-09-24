@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="netbsd-curses"
-ver="0.3.2"
-url="https://ftp.barfooze.de/pub/sabotage/tarballs/netbsd-curses-0.3.2.tar.xz"
-sum="47578a772db38af45d355a37cc4e10898b52aacba1520e20901dbd2ac04acfbf"
+ver="git"
+cmt="51d179d"
+url="https://github.com/sabotage-linux/netbsd-curses"
