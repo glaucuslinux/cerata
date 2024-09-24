@@ -52,7 +52,8 @@ configure() {
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
-    --with-system-zlib
+    --with-system-zlib \
+    --with-zstd
 }
 
 build() {

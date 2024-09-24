@@ -13,9 +13,6 @@ prepare() {
 
 configure() {
   ../configure \
-    --build=$BLD \
-    --host=$BLD \
-    --target=$TGT \
     --prefix="$TLCD"/usr \
     --exec-prefix="$TLCD"/usr \
     --bindir="$TLCD"/usr/bin \
@@ -33,6 +30,9 @@ configure() {
     --localedir="$TLCD"/usr/share/locale \
     --mandir="$TLCD"/usr/share/man \
     --docdir="$TLCD"/usr/share/doc/$nom \
+    --build=$BLD \
+    --host=$BLD \
+    --target=$TGT \
     --disable-multilib \
     --enable-plugins \
     --enable-targets=x86_64-pep \
@@ -54,7 +54,8 @@ configure() {
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --without-debuginfod \
-    --with-system-zlib
+    --with-system-zlib \
+    --with-zstd
 }
 
 build() {
