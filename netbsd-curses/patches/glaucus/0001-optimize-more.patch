@@ -1,6 +1,6 @@
 --- GNUmakefile
 +++ GNUmakefile
-@@ -382,7 +382,7 @@
+@@ -384,7 +384,7 @@
  tabs/%.o: tabs/%.c
  	$(CC) $(CPPFLAGS) -I. -I./libterminfo $(CFLAGS) -c -o $@ $<
  nbperf/%.o: nbperf/%.c
@@ -9,7 +9,7 @@
  
  ifeq ($(CROSSCOMPILING),0)
  tic/%.ho: tic/%.o
-@@ -392,7 +392,7 @@
+@@ -394,7 +394,7 @@
  	$(LN) -sf $(notdir $<) $@
  else
  tic/%.ho: tic/%.c
