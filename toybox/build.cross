@@ -32,7 +32,7 @@ package() {
   date dd df dhcp dhcp6 dhcpd diff dirname du \
   echo egrep env expand expr \
   factor false fgrep file find fmt fold free \
-  getconf grep \
+  getconf grep groups \
   head hostid hostname \
   iconv id install ip ipaddr iplink iproute iprule iptunnel \
   killall \
