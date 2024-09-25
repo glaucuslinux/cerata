@@ -4,16 +4,16 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv "$TBLD/$nom"
+  mkdir -pv build
 
   if [ $BOOTSTRAP = yes ]; then
-    ./bootstrap.sh "$TBLD"/$nom
+    ./bootstrap.sh build
   fi
 }
 
 configure() {
   if [ $BOOTSTRAP = yes ]; then
-    PATH="$TBLD/$nom:$PATH"
+    PATH="build:$PATH"
   fi
 
   glaucus-$nom \
@@ -24,12 +24,12 @@ configure() {
     -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
-    "$TBLD"/$nom
+    build
 }
 
 build() {
   samu \
-    -C "$TBLD"/$nom
+    -C build
 }
 
 check() {
@@ -39,7 +39,7 @@ check() {
 package() {
   DESTDIR="$SACD" \
   $nom \
-    -C "$TBLD"/$nom \
+    -C build \
     install
 
   cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
