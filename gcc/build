@@ -58,6 +58,9 @@ configure() {
     --disable-libssp \
     --enable-default-ssp \
     --enable-link-serialization=1 \
+    --enable-host-shared \
+    --enable-host-pie \
+    --enable-host-bind-now \
     --enable-default-pie \
     --disable-cet \
     --disable-werror \
