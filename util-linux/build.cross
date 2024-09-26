@@ -27,6 +27,7 @@ configure() {
     --enable-fdformat \
     --enable-tunelp \
     --enable-line \
+    --disable-raw \
     --disable-chfn-chsh \
     --disable-login \
     --disable-nologin \
