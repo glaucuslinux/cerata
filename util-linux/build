@@ -31,6 +31,7 @@ configure() {
     --disable-nologin \
     --disable-su \
     --disable-runuser \
+    --disable-more \
     --enable-write \
     --disable-bash-completion \
     --disable-pylibmount \
