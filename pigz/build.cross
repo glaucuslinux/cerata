@@ -13,6 +13,7 @@ configure() {
 
 build() {
   make \
+    CC=$CC \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS"
 }
