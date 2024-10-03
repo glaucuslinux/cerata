@@ -12,7 +12,6 @@ configure() {
     --enable-thread-safe \
     --enable-shared-cache \
     --enable-float128 \
-    --enable-lto \
     --disable-static \
     --with-pic
 }
