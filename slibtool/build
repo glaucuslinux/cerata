@@ -44,8 +44,7 @@ package() {
 
   ln -fnsv $nom "$SACD"/usr/bin/libtool
   # ln -fnsv "$SACD"/usr/share/$nom/$nom.sh "$SACD"/usr/bin/libtool
-  # cp -afv "$SACD"/$nom/libtoolize "$SACD"/usr/bin
-  ln -fnrsv ${nom}ize "$SACD"/usr/bin/libtoolize
+  cp -afv "$SACD"/$nom/libtoolize "$SACD"/usr/bin
 
   mkdir -pv \
     "$SACD"/usr/share/aclocal \
