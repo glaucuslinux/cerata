@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="wolfssl"
+ver="5.7.2"
+url="https://github.com/wolfSSL/wolfssl/archive/v5.7.2-stable.tar.gz"
+sum="96706b329e514573ab7bb3ff606b04daf71f670f6537849d4c4282741f615e3c"
