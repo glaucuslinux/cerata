@@ -1,0 +1,29 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  ./autogen.sh
+}
+
+configure() {
+  glaucus-configure \
+    --enable-opensslall \
+    --enable-opensslextra
+}
+
+build() {
+  make
+}
+
+check() {
+  make \
+    check
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+}
