@@ -23,6 +23,7 @@ prepare() {
 }
 
 configure() {
+  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   ../configure \
     --prefix=/usr \
     --exec-prefix=/usr \
@@ -41,6 +42,7 @@ configure() {
     --localedir=/usr/share/locale \
     --mandir=/usr/share/man \
     --docdir=/usr/share/doc/$nom \
+    --disable-bootstrap \
     --enable-checking=release \
     --disable-multilib \
     --enable-__cxa_atexit \
@@ -71,8 +73,6 @@ configure() {
     --enable-libstdcxx-threads \
     --with-arch=$CARCH \
     --with-stage1-ldflags="$LDFLAGS" \
-    --with-boot-ldflags="$LDFLAGS" \
-    --with-build-config=bootstrap-lto \
     --with-pkgversion="$PRETTY_NAME" \
     --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
     --with-zstd \
@@ -83,12 +83,9 @@ configure() {
 
 build() {
   make \
-    BOOT_CFLAGS="$CFLAGS" \
-    BOOT_LDFLAGS="$LDFLAGS" \
     LDFLAGS_FOR_TARGET="$LDFLAGS" \
     STAGE1_CFLAGS="$CFLAGS" \
-    STAGE1_LDFLAGS="$LDFLAGS" \
-    bootstrap
+    STAGE1_LDFLAGS="$LDFLAGS"
 }
 
 check() {
