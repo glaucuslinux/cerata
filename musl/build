@@ -53,7 +53,7 @@ package() {
     gencat \
     getent \
     "$SACD"/usr/bin
-  cp -afv "$CERD"/$nom/ldconfig "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/true "$SACD"/usr/bin/ldconfig
   ln -fnsv ../lib/libc.so "$SACD"/usr/bin/ldd
 
   # BSD compatibility header
