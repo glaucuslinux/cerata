@@ -23,4 +23,4 @@ exec cmake \
   -DCMAKE_INSTALL_SHAREDSTATEDIR=/var/lib \
   -DCMAKE_INSTALL_SYSCONFDIR=/etc \
   -G Ninja \
-  $@
+  "$@"
