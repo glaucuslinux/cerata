@@ -29,4 +29,4 @@ exec muon setup \
   -Db_lto=true \
   -Db_lto_mode=thin \
   -Db_pie=true \
-  $@
+  "$@"
