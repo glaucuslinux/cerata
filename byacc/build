@@ -22,6 +22,14 @@ check() {
 }
 
 package() {
+  if [ $BOOTSTRAP = yes ]; then
+    make \
+      install
+
+    ln -fnsv $nom /usr/bin/bison
+    ln -fnsv $nom /usr/bin/yacc
+  fi
+
   make \
     DESTDIR="$SACD" \
     install
