@@ -12,4 +12,4 @@ for i; do
   esac
 done
 
-exec gcc $f $@
+exec gcc $f "$@"
