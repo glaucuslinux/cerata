@@ -6,7 +6,7 @@
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
 
-  ./autogen.sh
+  autoreconf -vfis
 }
 
 configure() {
