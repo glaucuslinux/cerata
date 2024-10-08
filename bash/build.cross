@@ -4,13 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  autoreconf -vfis
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-noinfo.patch
 }
 
 configure() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-noinfo.patch
-
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
     --enable-extended-glob \
@@ -21,7 +19,6 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
-    --with-installed-readline \
     --without-included-gettext
 }
 
@@ -45,6 +42,7 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -sfnv $nom "$CRSD"/usr/bin/r$nom
-  ln -sfnv $nom "$CRSD"/usr/bin/sh
+  for i in r$nom sh yash; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
 }
