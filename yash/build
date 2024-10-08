@@ -47,4 +47,6 @@ package() {
 
   mkdir -pv "$SACD"/etc
   cp -afv "$CERD"/$nom/${nom}rc "$SACD"/etc
+
+  ln -fnsv $nom "$SACD"/usr/bin/sh
 }
