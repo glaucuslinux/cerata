@@ -45,5 +45,4 @@ package() {
     install-strip
 
   ln -fnsv $nom "$SACD"/usr/bin/r$nom
-  ln -fnsv $nom "$SACD"/usr/bin/sh
 }
