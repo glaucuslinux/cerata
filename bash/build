@@ -4,13 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  autoreconf -vfis
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-noinfo.patch
 }
 
 configure() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-noinfo.patch
-
-  LIBS='-lnsss -lskarnet' \
+  LIBS=-lterminfo \
   glaucus-configure \
     --enable-extended-glob \
     --enable-history \
@@ -20,6 +18,7 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
+    --with-curses \
     --with-installed-readline \
     --without-included-gettext
 }
@@ -36,7 +35,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    test
 }
 
 package() {
@@ -44,6 +44,6 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -sfnv $nom "$SACD"/usr/bin/r$nom
-  ln -sfnv $nom "$SACD"/usr/bin/sh
+  ln -fnsv $nom "$SACD"/usr/bin/r$nom
+  ln -fnsv $nom "$SACD"/usr/bin/sh
 }
