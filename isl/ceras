@@ -6,5 +6,5 @@
 nom="isl"
 ver="0.27"
 url="https://libisl.sourceforge.io/isl-0.27.tar.gz"
-sum="a3183b9be25d067f0f5fa1ef7e7899672e7fae01a87ada1c1998e7847109a5f0"
+sum="98e79ed974e33a7c9e6c5bfd0a9dd30b"
 bld="gmp"

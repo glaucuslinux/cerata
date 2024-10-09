@@ -6,5 +6,5 @@
 nom="libxml2"
 ver="2.13.3"
 url="https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.3.tar.xz"
-sum="93836ade1d546378f0bde4741eb214ae6736462dc08ded55939e611a6f28c64c"
-bld="libedit make netbsd-curses python xz zlib-ng"
+sum="35dbc48173d9627ef0d4d68a785c794a"
+bld="libedit netbsd-curses python xz zlib-ng"
