@@ -6,5 +6,5 @@
 nom="python"
 ver="3.12.5"
 url="https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz"
-sum="e07f260b149e0d4f3d786b807ea3d436"
+sum="0057a43463b25c4be61454474d4f90acaabfe881feb2106129e03e826e975803"
 bld="expat gcc libffi make mpdecimal tzdata"

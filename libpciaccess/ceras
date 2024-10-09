@@ -6,5 +6,5 @@
 nom="libpciaccess"
 ver="0.18.1"
 url="https://x.org/releases/individual/lib/libpciaccess-0.18.1.tar.xz"
-sum="cef6ef8b2f3743ea1d75fc8b82e2def0"
+sum="ea20d4e12331620d1921edb6a5a043410416037869dc63264990861b23d0323b"
 bld="muon samurai zlib-ng"

@@ -6,5 +6,5 @@
 nom="kmod"
 ver="33"
 url="https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-33.tar.gz"
-sum="62e5445182a012bd15954eaf4d5827d7"
+sum="f19b999a98c351806f7d5c097451bf1d84b141427daa9b6276309c4be510611d"
 bld="libressl xz zlib-ng zstd"

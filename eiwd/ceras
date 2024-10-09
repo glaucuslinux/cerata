@@ -6,5 +6,5 @@
 nom="eiwd"
 ver="2.16"
 url="https://github.com/illiliti/eiwd/releases/download/2.16-1/iwd-2.16.tar.xz"
-sum="d9ac6795831620ebee7333f6561e81fd"
+sum="76c979524beaed639115fb90f9ce95ea7697b098d788f82ca80a618bea17871d"
 bld="libedit"

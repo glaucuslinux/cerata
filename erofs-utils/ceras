@@ -6,5 +6,5 @@
 nom="erofs-utils"
 ver="1.8.1"
 url="https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.1.tar.gz"
-sum="88aba699b9e1f6a0a8412c0d4a2ee3d0"
+sum="bed9c9bac5d3c8f3c7c2d3c3a9d899b48f4b17fbd50178ce6785373010681a48"
 bld="lz4 util-linux xz zlib-ng zstd"

@@ -6,5 +6,5 @@
 nom="libevdev"
 ver="1.13.2"
 url="https://freedesktop.org/software/libevdev/libevdev-1.13.2.tar.xz"
-sum="8b9a4f0a316cfe951da7b6f699c1444c"
+sum="8da3c941818c4e865a2462b6c0af9689b3cb57ad42c28794e8a54e68cb2c8a7a"
 bld="python"

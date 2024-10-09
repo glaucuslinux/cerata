@@ -6,6 +6,6 @@
 nom="nsss"
 ver="0.2.0.4"
 url="https://skarnet.org/software/nsss/nsss-0.2.0.4.tar.gz"
-sum="882f9b773628369f6f09945bde0a3eb2"
+sum="b64020a336f78e2961f5a88aa12c28ffe09da3f3cdc81212e10756d9277e6c45"
 bld="skalibs"
 run="s6 skalibs"

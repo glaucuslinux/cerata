@@ -6,5 +6,5 @@
 nom="glib"
 ver="2.81.2"
 url="https://download.gnome.org/sources/glib/2.81/glib-2.81.2.tar.xz"
-sum="c9f7491067caa02fb0f24902e559c1da"
+sum="a3bd7be77f3b0d60909a77536b731f10ce742709cc02ae2dc9bc37f84aa69106"
 bld="muon samurai"

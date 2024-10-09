@@ -6,5 +6,5 @@
 nom="libdrm"
 ver="2.4.122"
 url="https://dri.freedesktop.org/libdrm/libdrm-2.4.122.tar.xz"
-sum="0b163cd69e9469a6eeb78f87bae418f9"
+sum="89230a96981090cd3578846c446b58b030d868d83604de2c0b936c314271f461"
 bld="libpciaccess linux-headers muon samurai"

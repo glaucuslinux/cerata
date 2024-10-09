@@ -6,5 +6,5 @@
 nom="slibtool"
 ver="0.6.0"
 url="https://dl.foss21.org/slibtool/slibtool-0.6.0.tar.gz"
-sum="c708904989b68dd0479c27c7a8b0aa54"
+sum="1cb6d20c8cbf478a99d6725061f4f55465c9412d7157436e2eb5af8634d6cb8d"
 bld="m4"

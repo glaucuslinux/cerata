@@ -6,6 +6,6 @@
 nom="s6-rc"
 ver="0.5.4.3"
 url="https://skarnet.org/software/s6-rc/s6-rc-0.5.4.3.tar.gz"
-sum="eaa808555a39c6124cc49901243f705d"
+sum="627381ede5d686d65743e2e2438a11219f336b6d83a01678217a8621415f397a"
 bld="execline s6 skalibs"
 run="execline s6 skalibs"
