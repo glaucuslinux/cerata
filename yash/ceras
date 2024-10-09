@@ -6,5 +6,5 @@
 nom="yash"
 ver="2.57"
 url="https://github.com/magicant/yash/releases/download/2.57/yash-2.57.tar.zst"
-sum="f5705d80b75c0b29e8c347d989c1cd28"
+sum="ab98535f0cf38e7c03103f168174cada867915343f629a890f086239773af3e6"
 bld="netbsd-curses"

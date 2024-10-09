@@ -6,6 +6,6 @@
 nom="utmps"
 ver="0.1.2.2"
 url="https://skarnet.org/software/utmps/utmps-0.1.2.2.tar.gz"
-sum="41ce38db524d85a67b29b56d137fa91b"
+sum="e16a1c2e350131698738dc1faee330fef1b5104a20088a0c6a51951ce5ea17ec"
 bld="execline nsss skalibs"
 run="execline nsss s6 skalibs"

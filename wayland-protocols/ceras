@@ -6,5 +6,5 @@
 nom="wayland-protocols"
 ver="1.36"
 url="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.36/wayland-protocols-1.36.tar.gz"
-sum="267dfab6dc013cd5768e25bd952f1031"
+sum="6e54cb6e2c1eaac73ab11fe5726667fd86184192186f10117880807c9a569836"
 bld="muon samurai"

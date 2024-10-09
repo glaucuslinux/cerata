@@ -6,5 +6,5 @@
 nom="e2fsprogs"
 ver="1.47.1"
 url="https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.1/e2fsprogs-1.47.1.tar.gz"
-sum="cdf0c781e73557d690098924ee7cbf2a"
+sum="5ffd85208756954f50b7f358dab9ec0275b6361213fec994c214640c8acd5822"
 bld="util-linux"
