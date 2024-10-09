@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2024, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="iana-etc"
-ver="20240813"
-url="https://github.com/Mic92/iana-etc/releases/download/20240813/iana-etc-20240813.tar.gz"
-sum="91cfc4bd5d2cd78d2d966b4da9d7115d74bd65481e3fc29a92d6f258e83f8b19"

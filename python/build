@@ -1,0 +1,50 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i $CERD/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
+
+  # Force use the system copy of various libraries
+  rm -frv \
+    Modules/_decimal/libmpdec \
+    Modules/expat
+}
+
+configure() {
+  ax_cv_c_float_words_bigendian=no \
+  glaucus-configure \
+    --enable-shared \
+    --enable-optimizations \
+    --enable-loadable-sqlite-extensions \
+    --enable-ipv6 \
+    --without-static-libpython \
+    --with-lto \
+    --with-tzpath=/usr/share/zoneinfo \
+    --with-system-expat \
+    --with-system-ffi \
+    --with-system-libmpdec \
+    --with-dbmliborder=gdbm:ndbm \
+    --without-doc-strings \
+    --with-pymalloc \
+    --with-computed-gotos \
+    --without-ensurepip
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install
+
+  ln -fnsv ${nom}3 "$SACD"/usr/bin/$nom
+  ln -fnsv ${nom}3-config "$SACD"/usr/bin/$nom-config
+}
