@@ -1,0 +1,62 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch
+}
+
+configure() {
+  BUILD_ZLIB=False \
+  BUILD_BZIP2=0 \
+  ./Configure \
+    -des \
+    -Darchlib=/usr/lib/${nom}5/core_$nom \
+    -Dcc=$CC \
+    -Dcf_by="$PRETTY_NAME" \
+    -Dinc_version_list=none \
+    -Dinstallusrbinperl \
+    -Dman1dir=/usr/share/man/man1 \
+    -Dman3dir=/usr/share/man/man3 \
+    -Dman1ext=1pm \
+    -Dman3ext=3pm \
+    -Doptimize="$CFLAGS" \
+    -Dpager='/usr/bin/less -I' \
+    -Dprefix=/usr \
+    -Dprivlib=/usr/share/${nom}5/core_$nom \
+    -Dscriptdir=/usr/bin \
+    -Dsitearch=/usr/lib/${nom}5/site_$nom \
+    -Dsitelib=/usr/share/${nom}5/site_$nom \
+    -Dsitescript=/usr/bin \
+    -Duseshrplib \
+    -Dusethreads \
+    -Dvendorarch=/usr/lib/${nom}5/vendor_$nom \
+    -Dvendorlib=/usr/share/${nom}5/vendor_$nom \
+    -Dvendorprefix=/usr \
+    -Dvendorscript=/usr/bin
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  if [ $BOOTSTRAP = yes ]; then
+    make \
+      install-strip
+  fi
+
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+
+  ln -fnsv $nom "$SACD"/usr/bin/$nom$ver
+  ln -fnsv ${nom}bug "$SACD"/usr/bin/${nom}thanks
+
+  ln -fnsv ${nom}bug.1 "$SACD"/usr/share/man/man1/${nom}thanks.1
+}

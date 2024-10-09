@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2024, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="mksh"
-ver="R59c"
-url="http://www.mirbsd.org/MirOS/dist/mir/mksh/mksh-R59c.tgz"
-sum="d322e91ec2dc79637c6c3d45df57361d4b387a8da844fb1d1a3bad009ce6d669"
