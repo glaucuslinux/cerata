@@ -6,5 +6,5 @@
 nom="wget2"
 ver="2.1.0"
 url="https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz"
-sum="1ec6ecc23b574c5f9790c8d4b7a34c73f591eecf16fb9b6e62236c7f599c280f"
-bld="bzip2 libressl lzlib make netbsd-curses pcre2 xz zlib-ng zstd"
+sum="4966c9303c633d5e353f897ef67c1015"
+bld="bzip2 libressl make netbsd-curses pcre2 xz zlib-ng zstd"

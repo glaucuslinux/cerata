@@ -6,6 +6,6 @@
 nom="libarchive"
 ver="3.7.4"
 url="https://libarchive.org/downloads/libarchive-3.7.4.tar.gz"
-sum="94886b9e49311cd9a9ee34b89c293efb132d527dc02e176cfa327fa8d0791517"
+sum="2c16859a33f4f7a4c7bf3c1cc1176230"
 bld="acl attr bzip2 expat libressl lz4 xz zlib-ng zstd"
 run="expat"

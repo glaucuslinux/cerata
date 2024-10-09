@@ -6,5 +6,5 @@
 nom="bc"
 ver="7.0.0"
 url="https://git.gavinhoward.com/gavin/bc/releases/download/7.0.0/bc-7.0.0.tar.gz"
-sum="770287a9d261dd9d9072dabd5cd89c0af073030920799da5a655fb4a99189fb0"
+sum="23e7d980129becd930b72d1cde0d3fad"
 bld="libedit netbsd-curses"

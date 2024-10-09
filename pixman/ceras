@@ -6,5 +6,5 @@
 nom="pixman"
 ver="0.43.4"
 url="https://cairographics.org/releases/pixman-0.43.4.tar.gz"
-sum="5684101dfc5c79380e39716ff630017e476b0e54770059edbef036443ee78c06"
+sum="245077a1f67cb64f62a7786e53884a79"
 bld="libpng muon samurai"

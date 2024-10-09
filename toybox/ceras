@@ -6,5 +6,5 @@
 nom="toybox"
 ver="0.8.11"
 url="https://landley.net/toybox/downloads/toybox-0.8.11.tar.gz"
-sum="953ba7c32af88b16d4c6601680e59f7a44033fa30308b61aa3c2249ce0e511f1"
+sum="163fbf49df654c774e41797dd900bab0"
 bld="libressl"

@@ -6,5 +6,5 @@
 nom="pango"
 ver="1.54.0"
 url="https://download.gnome.org/sources/pango/1.54/pango-1.54.0.tar.xz"
-sum="1d025a3d857cbfcb1eb93244e1b9a6bd76b120c260096a4ec3554333e4fbef1a"
+sum="cd111e40437b95479c92f74f099f3bac"
 bld="cairo glib muon samurai"
