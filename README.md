@@ -14,5 +14,4 @@ glaucus packages
 ## Mirrors
 - [Codeberg](https://codeberg.org/glaucuslinux/cerata)
 - [GitHub](https://github.com/glaucuslinux/cerata)
-- [GitLab](https://gitlab.com/glaucuslinux/cerata)
 - [SourceHut](https://git.sr.ht/~glaucuslinux/cerata)
