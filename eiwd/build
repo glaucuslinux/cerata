@@ -19,12 +19,7 @@ configure() {
     --enable-hwsim \
     --enable-tools \
     --enable-ofono \
-    --with-pic \
-    --without-dbus-datadir \
-    --without-dbus-busdir \
-    --without-systemd-unitdir \
-    --without-systemd-networkdir \
-    --without-systemd-modloaddir
+    --with-pic
 }
 
 build() {
