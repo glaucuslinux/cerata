@@ -1,3 +1,3 @@
-modules: e1000,erofs,loop
+modules: e1000
 compression: zstd
 strip: true
