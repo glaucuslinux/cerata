@@ -21,9 +21,7 @@ configure() {
     --disable-uuidd \
     --disable-nls \
     --disable-rpath \
-    --enable-lto \
-    --without-udev-rules-dir \
-    --without-systemd-unit-dir
+    --enable-lto
 }
 
 build() {
