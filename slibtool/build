@@ -70,5 +70,5 @@ package() {
     "$CERD"/$nom/missing \
     "$SACD"/usr/share/libtool/build-aux
 
-  # ln -fnsv "$SACD"/usr/share/$nom/$nom.m4 "$SACD"/usr/share/aclocal
+  ln -fnsv ../$nom/$nom.m4 "$SACD"/usr/share/aclocal
 }

@@ -48,9 +48,8 @@ package() {
   # ln -fnsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
   cp -afv "$CERD"/$nom/libtoolize "$CRSD"/usr/bin
 
-  mkdir -pv \
-    "$CRSD"/usr/share/aclocal \
-    "$CRSD"/usr/share/libtool/build-aux
+  # `"$CRSD"/usr/share/aclocal` was already created by cross `gettext-tiny`
+  mkdir -pv "$CRSD"/usr/share/libtool/build-aux
 
   cp -afv \
     "$CERD"/$nom/libtool.m4 \
@@ -72,5 +71,5 @@ package() {
     "$CERD"/$nom/missing \
     "$CRSD"/usr/share/libtool/build-aux
 
-  # ln -fnsv "$CRSD"/usr/share/$nom/$nom.m4 "$CRSD"/usr/share/aclocal
+  ln -fnsv ../$nom/$nom.m4 "$CRSD"/usr/share/aclocal
 }
