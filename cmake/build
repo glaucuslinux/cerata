@@ -43,11 +43,6 @@ check() {
 }
 
 package() {
-  if [ $BOOTSTRAP = yes ]; then
-    samu \
-      install/strip
-  fi
-
   DESTDIR="$SACD" \
   samu \
     install/strip
