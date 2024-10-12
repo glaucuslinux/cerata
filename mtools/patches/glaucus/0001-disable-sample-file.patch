@@ -1,0 +1,11 @@
+--- mtools.conf
++++ mtools.conf
+@@ -16,7 +16,7 @@
+ 
+ # Example mtools.conf files.  Uncomment the lines which correspond to
+ # your architecture and comment out the "SAMPLE FILE" line below
+-SAMPLE FILE
++# SAMPLE FILE
+ 
+ # # Linux floppy drives
+ # drive a: file="/dev/fd0" exclusive
