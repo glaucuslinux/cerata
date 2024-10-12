@@ -35,5 +35,5 @@ package() {
     DESTDIR="$SACD" \
     install-shared
 
-  mv -fv $nom-helper "$CRSD"/usr/bin
+  mv -fv $nom-helper "$SACD"/usr/bin
 }
