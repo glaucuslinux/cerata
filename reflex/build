@@ -9,8 +9,7 @@ prepare() {
 
 configure() {
   glaucus-configure \
-    --without-man2html \
-    --without-manpage-format
+    --without-man2html
 }
 
 build() {
@@ -27,6 +26,7 @@ package() {
     DESTDIR="$SACD" \
     install
 
+  # Compatibility symlinks
   for i in flex flex++ lex; do
     ln -fnsv $nom "$SACD"/usr/bin/$i
   done
