@@ -29,7 +29,4 @@ package() {
   make \
     DESTDIR="$CRSD" \
     install-strip
-
-  # Remove libtool archive
-  rm -fv "$CRSD"/usr/lib/lib$nom.la
 }
