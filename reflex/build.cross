@@ -11,8 +11,7 @@ configure() {
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --without-man2html \
-    --without-manpage-format
+    --without-man2html
 }
 
 build() {
@@ -28,6 +27,7 @@ package() {
     DESTDIR="$CRSD" \
     install
 
+  # Compatibility symlinks
   for i in flex flex++ lex; do
     ln -fnsv $nom "$CRSD"/usr/bin/$i
   done
