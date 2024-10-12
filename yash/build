@@ -4,8 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-introduction.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-sample-profile-${nom}rc.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-configure-$nom.patch
 }
 
 configure() {
@@ -44,9 +43,6 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/${nom}rc "$SACD"/etc
 
   ln -fnsv $nom "$SACD"/usr/bin/sh
 }
