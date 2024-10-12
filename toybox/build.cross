@@ -29,7 +29,7 @@ package() {
   arping \
   base32 base64 basename \
   cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
-  date dd df dhcp dhcp6 dhcpd diff dirname du \
+  date dd df diff dirname du \
   echo egrep env expand expr \
   factor false fgrep file find fmt fold free \
   getconf grep groups \
