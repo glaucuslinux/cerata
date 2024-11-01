@@ -79,12 +79,12 @@ package() {
   mkdir -pv "$SACD"/usr/share
 
   mkdir -pv \
-    "$SACD"/var/cache/rad/local \
     "$SACD"/var/cache/rad/pkg \
     "$SACD"/var/cache/rad/src \
     "$SACD"/var/lib/hwclock \
     "$SACD"/var/lib/misc \
-    "$SACD"/var/lib/rad/clusters
+    "$SACD"/var/lib/rad/clusters \
+    "$SACD"/var/lib/rad/pkg
   ln -fnsv ../run/lock "$SACD"/var/lock
   mkdir -pv \
     "$SACD"/var/log/rad \
