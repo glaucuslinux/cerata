@@ -1,0 +1,11 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="pciutils"
+ver="3.13.0"
+url="https://mj.ucw.cz/download/linux/pci/pciutils-3.13.0.tar.gz"
+sum="c66be6ea0e147f4d754b3770812ec62478a66df5099542bfe01e7582bf6dff40"
+bld="kmod libressl libudev-zero linux-headers make xz zlib-ng zstd"
+run="hwdata kmod libressl libudev-zero xz zlib-ng zstd"

@@ -1,0 +1,62 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  :
+}
+
+configure() {
+  :
+}
+
+build() {
+  # Disable support for compressed ids
+  make \
+    ZLIB=no \
+    DNS=yes \
+    SHARED=yes \
+    LIBKMOD=yes \
+    HWDB=yes \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    SBINDIR=/usr/bin \
+    SHAREDIR=/usr/share/hwdata \
+    MANDIR=/usr/share/man \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    PCI_IDS=pci.ids \
+    PCI_COMPRESSED_IDS=0
+}
+
+check() {
+  :
+}
+
+package() {
+  make \
+    ZLIB=no \
+    DNS=yes \
+    SHARED=yes \
+    LIBKMOD=yes \
+    HWDB=yes \
+    PREFIX=/usr \
+    BINDIR=/usr/bin \
+    SBINDIR=/usr/bin \
+    SHAREDIR=/usr/share/hwdata \
+    MANDIR=/usr/share/man \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    PCI_IDS=pci.ids \
+    PCI_COMPRESSED_IDS=0 \
+    DESTDIR="$SACD" \
+    install \
+    install-lib
+
+  # Fix library permissions
+  chmod -v 755 "$SACD"/usr/lib/libpci.so.$ver
+
+  # ids are provided by the `hwdata` ceras
+  rm -frv "$SACD"/usr/share/hwdata
+}
