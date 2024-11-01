@@ -8,7 +8,6 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   ./configure \
     --prefix=/usr \
     --exec-prefix=/usr \
