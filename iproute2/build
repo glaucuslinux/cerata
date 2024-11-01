@@ -1,0 +1,30 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/alpine/0001-libnetlink-fix-build-with-musl-and-gcc-14.patch
+  patch -p1 -i "$CERD"/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
+
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-arpd.patch
+}
+
+configure() {
+  ./configure
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  make \
+    BINDIR=/usr/bin \
+    DESTDIR="$SACD" \
+    install
+}
