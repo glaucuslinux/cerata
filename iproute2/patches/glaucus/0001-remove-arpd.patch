@@ -1,0 +1,41 @@
+--- Makefile
++++ Makefile
+@@ -24,7 +24,6 @@
+ CONF_USR_DIR?=$(DATADIR)/iproute2
+ DOCDIR?=$(DATADIR)/doc/iproute2
+ MANDIR?=$(DATADIR)/man
+-ARPDDIR?=/var/lib/arpd
+ KERNEL_INCLUDE?=/usr/include
+ BASH_COMPDIR?=$(DATADIR)/bash-completion/completions
+ 
+@@ -42,7 +41,6 @@
+          -DCONF_ETC_DIR=\"$(CONF_ETC_DIR)\" \
+          -DNETNS_RUN_DIR=\"$(NETNS_RUN_DIR)\" \
+          -DNETNS_ETC_DIR=\"$(NETNS_ETC_DIR)\" \
+-         -DARPDDIR=\"$(ARPDDIR)\" \
+          -DCONF_COLOR=$(CONF_COLOR)
+ 
+ #options for AX.25
+--- misc/Makefile
++++ misc/Makefile
+@@ -6,10 +6,6 @@
+ 
+ include ../config.mk
+ 
+-ifeq ($(HAVE_BERKELEY_DB),y)
+-	TARGETS += arpd
+-endif
+-
+ all: $(TARGETS)
+ 
+ ss: $(SSOBJ)
+@@ -24,9 +20,6 @@
+ rtacct: rtacct.c
+ 	$(QUIET_CC)$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o rtacct rtacct.c $(LDLIBS) -lm
+ 
+-arpd: arpd.c
+-	$(QUIET_CC)$(CC) $(CFLAGS) -I$(DBM_INCLUDE) $(CPPFLAGS) $(LDFLAGS) -o arpd arpd.c $(LDLIBS) -ldb
+-
+ ssfilter.tab.c: ssfilter.y
+ 	$(QUIET_YACC)$(YACC) -b ssfilter ssfilter.y
+ 
