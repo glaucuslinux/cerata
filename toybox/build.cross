@@ -44,7 +44,7 @@ package() {
   readlink realpath rm rmdir \
   sed seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep \
   sort split stat stty su sync sysctl \
-  tac tail tee test time timeout top touch tr true truncate tsort tty \
+  tac tail tee test time timeout touch tr true truncate tsort tty \
   uname uniq unlink uptime \
   vmstat \
   w watch wc which who whoami \
