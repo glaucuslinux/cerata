@@ -8,8 +8,6 @@ prepare() {
 }
 
 configure() {
-  CFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
-  CXXFLAGS="$(echo $CFLAGS | sed 's/-flto=auto -flto-compression-level=19 -fuse-linker-plugin //')" \
   MAKE= \
   ./bootstrap \
     --prefix=/usr \
