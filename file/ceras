@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="file"
+ver="5.45"
+url="https://astron.com/pub/file/file-5.45.tar.gz"
+sum="8ca618a0a915ef1022d6f246707c43115dee59cd16fc57145f17e90b62908c01"
