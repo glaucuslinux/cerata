@@ -4,6 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
+  cd "$TMPD"/$nom/iwd-$ver
+
   autoreconf -vfis
 }
 
