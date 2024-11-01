@@ -30,13 +30,13 @@ package() {
   base32 base64 basename \
   cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
   date dd df diff dirname du \
-  echo egrep env expand expr \
-  factor false fgrep file find fmt fold free \
-  getconf grep groups \
+  echo env expand expr \
+  factor false file find fmt fold free \
+  getconf groups \
   head hostid hostname \
   iconv id install \
   killall \
-  link ln logname ls lsattr lspci lsusb \
+  link ln logname ls lsattr \
   md5sum mkdir mkfifo mknod mktemp mv \
   nice nl nohup nproc \
   od \
