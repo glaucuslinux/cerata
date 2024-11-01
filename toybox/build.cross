@@ -27,7 +27,6 @@ package() {
 
   for i in \
   [ \
-  arping \
   base32 base64 basename \
   cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
   date dd df diff dirname du \
@@ -35,13 +34,13 @@ package() {
   factor false fgrep file find fmt fold free \
   getconf grep groups \
   head hostid hostname \
-  iconv id install ip ipaddr iplink iproute iprule iptunnel \
+  iconv id install \
   killall \
   link ln logname ls lsattr lspci lsusb \
   md5sum mkdir mkfifo mknod mktemp mv \
   nice nl nohup nproc \
   od \
-  paste patch pgrep pidof ping ping6 pkill pmap printenv printf ps pwd pwdx \
+  paste patch pgrep pidof pkill pmap printenv printf ps pwd pwdx \
   readlink realpath rm rmdir \
   sed seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep \
   sort split stat stty su sync sysctl \
