@@ -1,0 +1,7 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="skel-iso"
+run="eiwd hwdata neatvi pciutils sdhcp skel wget2"
