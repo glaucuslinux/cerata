@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
 
 configure() {
@@ -19,8 +19,6 @@ configure() {
     --libdir=/usr/lib \
     --mandir=/usr/share/man \
     --disable-blacklist
-
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
 }
 
 build() {
