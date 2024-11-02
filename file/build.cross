@@ -8,7 +8,9 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
     --enable-zlib \
     --enable-bzlib \
     --enable-xzlib \
@@ -23,12 +25,14 @@ build() {
 }
 
 check() {
-  make \
-    check
+  :
 }
 
 package() {
   make \
-    DESTDIR="$SACD" \
+    DESTDIR="$CRSD" \
     install-strip
+
+  # Remove libtool archive
+  rm -fv "$CRSD"/usr/lib/libmagic.la
 }
