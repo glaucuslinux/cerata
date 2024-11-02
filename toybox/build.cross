@@ -31,7 +31,7 @@ package() {
   cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
   date dd df diff dirname du \
   echo env expand expr \
-  factor false file find fmt fold free \
+  factor false find fmt fold free \
   getconf groups \
   head hostid hostname \
   iconv id install \
