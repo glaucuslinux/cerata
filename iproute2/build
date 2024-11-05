@@ -5,13 +5,15 @@
 
 prepare() {
   patch -p1 -i "$CERD"/$nom/patches/alpine/0001-libnetlink-fix-build-with-musl-and-gcc-14.patch
-  patch -p1 -i "$CERD"/$nom/patches/arch/0001-make-$nom-fhs-compliant.patch
-
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-arpd.patch
 }
 
 configure() {
-  ./configure
+  ./configure \
+    --color always \
+    --include_dir /usr/include \
+    --libdir /usr/lib \
+    --prefix /usr
 }
 
 build() {
@@ -24,7 +26,7 @@ check() {
 
 package() {
   make \
-    BINDIR=/usr/bin \
+    SBINDIR=/usr/bin \
     DESTDIR="$SACD" \
     install
 }
