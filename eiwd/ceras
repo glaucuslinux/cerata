@@ -4,7 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="eiwd"
-ver="2.16"
-url="https://github.com/illiliti/eiwd/releases/download/2.16-1/iwd-2.16.tar.xz"
-sum="76c979524beaed639115fb90f9ce95ea7697b098d788f82ca80a618bea17871d"
+ver="2.22"
+url="https://github.com/illiliti/eiwd/releases/download/2.22-1/iwd-2.22.tar.xz"
+sum="84336a016d79ade6dae285a41fb08b3e27faa5ce41c96ac821a61e0038205705"
 bld="libedit"
+run="openresolv"
