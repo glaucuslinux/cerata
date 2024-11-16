@@ -1,0 +1,40 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  autoreconf -vfis
+}
+
+configure() {
+  glaucus-configure \
+    --disable-debug \
+    --enable-optimize \
+    --disable-static \
+    --enable-ipv6 \
+    --enable-threaded-resolver \
+    --enable-pthreads \
+    --enable-websockets \
+    --with-openssl \
+    --with-pic \
+    --with-zlib \
+    --with-zstd \
+    --with-ca-bundle=/etc/ssl/cert.pem \
+    --with-ca-path=/etc/ssl/certs \
+    --with-openssl-quic
+}
+
+build() {
+  make
+}
+
+check() {
+  :
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+}
