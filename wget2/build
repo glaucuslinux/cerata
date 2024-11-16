@@ -18,9 +18,11 @@ configure() {
     --disable-nls \
     --disable-doc \
     --with-linux-crypto \
+    --with-openssl \
     --without-included-regex \
     --with-pic \
     --with-ssl=openssl \
+    --without-libdane \
     --without-libpsl \
     --without-libhsts \
     --without-libnghttp2 \
@@ -28,8 +30,10 @@ configure() {
     --with-bzip2 \
     --with-lzma \
     --without-brotlidec \
+    --without-lzip \
     --without-libidn2 \
     --without-libidn \
+    --without-libpcre \
     --without-libmicrohttpd
 }
 
@@ -38,7 +42,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
