@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="curl"
+ver="8.11.0"
+url="https://curl.se/download/curl-8.11.0.tar.gz"
+sum="0cebf96bc136c876b92a3352711398fb667b13483accc227addb2780e8aa4643"
+bld="libressl libunistring zlib-ng zstd"
