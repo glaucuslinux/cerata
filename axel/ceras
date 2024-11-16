@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="axel"
+ver="2.17.14"
+url="https://github.com/axel-download-accelerator/axel/releases/download/v2.17.14/axel-2.17.14.tar.gz"
+sum="a156c2c20225575a9a1e0fd84ce05b82c0e9173b7da38a966be547709fd93fa4"
+bld="libressl"
