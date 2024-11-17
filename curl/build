@@ -11,10 +11,17 @@ configure() {
   glaucus-configure \
     --disable-debug \
     --enable-optimize \
+    --disable-ares \
     --disable-static \
+    --disable-ldap \
+    --disable-ldaps \
+    --disable-manual \
+    --disable-docs \
     --enable-ipv6 \
+    --disable-versioned-symbols \
     --enable-threaded-resolver \
     --enable-pthreads \
+    --enable-unix-sockets \
     --enable-websockets \
     --with-openssl \
     --with-pic \
@@ -22,7 +29,7 @@ configure() {
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
     --with-ca-path=/etc/ssl/certs \
-    --with-openssl-quic
+    --without-libpsl
 }
 
 build() {
