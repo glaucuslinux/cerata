@@ -5,6 +5,6 @@
 
 nom="muon"
 ver="git"
-cmt="3064efd"
+cmt="c2c4a04"
 url="https://git.sr.ht/~lattis/muon"
 bld='libarchive pkgconf samurai'
