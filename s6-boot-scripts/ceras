@@ -5,6 +5,6 @@
 
 nom="s6-boot-scripts"
 ver="git"
-cmt="6c6fcea"
+cmt="19b3c84"
 url="https://github.com/glaucuslinux/s6-boot-scripts"
 run="toybox util-linux"
