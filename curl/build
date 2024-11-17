@@ -40,7 +40,7 @@ configure() {
     --without-libidn2 \
     --without-nghttp2 \
     --without-ngtcp2 \
-    --with-openssl-quic \
+    --without-openssl-quic \
     --without-nghttp3 \
     --without-quiche \
     --without-msh3 \
