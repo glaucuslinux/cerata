@@ -5,6 +5,6 @@
 
 nom="rad"
 ver="git"
-cmt="d82605d"
+cmt="bc59069"
 url="https://github.com/glaucuslinux/rad"
 run="curl libarchive toybox zstd"
