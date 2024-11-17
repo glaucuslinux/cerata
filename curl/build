@@ -4,6 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/upstream/0001-duphandle-also-init-netrc.patch
+  patch -p1 -i "$CERD"/$nom/patches/upstream/0002-netrc-support-large-file-longer-lines-longer-tokens.patch
+
   autoreconf -vfis
 }
 
@@ -35,10 +38,15 @@ configure() {
     --without-winidn \
     --without-apple-idn \
     --without-libidn2 \
+    --without-nghttp2 \
     --without-ngtcp2 \
     --with-openssl-quic \
+    --without-nghttp3 \
     --without-quiche \
-    --without-msh3
+    --without-msh3 \
+    --without-libuv \
+    --without-zsh-functions-dir \
+    --without-fish-functions-dir
 }
 
 build() {
@@ -46,7 +54,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    test
 }
 
 package() {
