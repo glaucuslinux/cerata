@@ -26,10 +26,19 @@ configure() {
     --with-openssl \
     --with-pic \
     --with-zlib \
+    --without-brotli \
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
     --with-ca-path=/etc/ssl/certs \
-    --without-libpsl
+    --without-libpsl \
+    --without-librtmp \
+    --without-winidn \
+    --without-apple-idn \
+    --without-libidn2 \
+    --without-ngtcp2 \
+    --with-openssl-quic \
+    --without-quiche \
+    --without-msh3
 }
 
 build() {
