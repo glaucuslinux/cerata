@@ -1,0 +1,11 @@
+# Copyright (c) 2018-2024, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="labwc"
+ver="0.8.0"
+url="https://github.com/labwc/labwc/archive/0.8.0.tar.gz"
+sum="04ae0857e5f0e9a8c6d1832f63ff0d17c1fa923015f5c05d177083e8a6f9f283"
+bld="muon samurai wayland-protocols"
+run="cairo glib libinput libpng libxkbcommon libxml2 pango wayland wlroots"
