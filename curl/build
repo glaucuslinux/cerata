@@ -16,6 +16,7 @@ configure() {
     --enable-optimize \
     --disable-ares \
     --disable-static \
+    --enable-pic \
     --disable-ldap \
     --disable-ldaps \
     --disable-manual \
@@ -27,7 +28,6 @@ configure() {
     --enable-unix-sockets \
     --enable-websockets \
     --with-openssl \
-    --with-pic \
     --with-zlib \
     --without-brotli \
     --with-zstd \

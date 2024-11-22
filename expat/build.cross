@@ -12,7 +12,7 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --disable-static \
-    --with-pic \
+    --enable-pic \
     --without-xmlwf \
     --without-examples \
     --without-tests \

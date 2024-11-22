@@ -10,12 +10,12 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --disable-nls \
     --disable-rpath \
     --enable-optional-progs \
     --disable-vlock \
-    --disable-tests \
-    --with-pic
+    --disable-tests
 }
 
 build() {

@@ -10,8 +10,8 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
-    --disable-examples \
-    --with-pic
+    --enable-pic \
+    --disable-examples
 }
 
 build() {

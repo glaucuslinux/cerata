@@ -10,8 +10,8 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
-    --with-gcc-arch=$CARCH \
-    --with-pic
+    --enable-pic \
+    --with-gcc-arch=$CARCH
 }
 
 build() {

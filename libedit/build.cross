@@ -11,8 +11,9 @@ configure() {
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --disable-examples \
-    --with-pic
+    --disable-static \
+    --enable-pic \
+    --disable-examples
 }
 
 build() {

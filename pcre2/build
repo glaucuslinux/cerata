@@ -10,13 +10,13 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --enable-pcre2-16 \
     --enable-pcre2-32 \
     --enable-jit \
     --enable-pcre2grep-libz \
     --enable-pcre2grep-libbz2 \
-    --enable-pcre2test-libedit \
-    --with-pic
+    --enable-pcre2test-libedit
 }
 
 build() {

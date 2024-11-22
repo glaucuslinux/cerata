@@ -17,10 +17,10 @@ configure() {
     --enable-threads=posix \
     --disable-doc \
     --disable-static \
+    --enable-pic \
     --disable-symbol-versions \
     --disable-nls \
-    --disable-rpath \
-    --with-pic
+    --disable-rpath
 
   patch -p0 -i "$CERD"/$nom/patches/alpine/0001-disable-rpath.patch
 }

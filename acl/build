@@ -10,9 +10,9 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --disable-nls \
-    --disable-rpath \
-    --with-pic
+    --disable-rpath
 }
 
 build() {

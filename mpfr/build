@@ -13,7 +13,7 @@ configure() {
     --enable-shared-cache \
     --enable-float128 \
     --disable-static \
-    --with-pic
+    --enable-pic
 }
 
 build() {
