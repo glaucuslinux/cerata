@@ -11,10 +11,10 @@ configure() {
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
+    --enable-pic \
     --disable-static \
     --disable-tests \
     --enable-nc \
-    --with-pic \
     --with-openssldir=/etc/ssl
 }
 

@@ -15,7 +15,7 @@ configure() {
     --enable-zstdlib \
     --disable-libseccomp \
     --enable-fsect-man5 \
-    --with-pic
+    --enable-pic
 }
 
 build() {

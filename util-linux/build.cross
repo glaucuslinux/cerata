@@ -16,6 +16,7 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --disable-static \
+    --enable-pic \
     --disable-symvers \
     --disable-nls \
     --disable-rpath \
@@ -40,7 +41,6 @@ configure() {
     --enable-fs-paths-default=/usr/bin \
     --enable-usrdir-path \
     --disable-makeinstall-chown \
-    --with-pic \
     --without-cap-ng \
     --without-systemd \
     --without-econf \

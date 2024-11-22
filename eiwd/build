@@ -11,6 +11,7 @@ prepare() {
 
 configure() {
   glaucus-configure \
+    --enable-pic \
     --enable-pie \
     --disable-dbus \
     --disable-dbus-policy \
@@ -20,8 +21,7 @@ configure() {
     --enable-wired \
     --enable-hwsim \
     --enable-tools \
-    --enable-ofono \
-    --with-pic
+    --enable-ofono
 }
 
 build() {

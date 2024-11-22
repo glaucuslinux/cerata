@@ -10,8 +10,8 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --enable-multithreading \
-    --with-pic \
     --with-libzstd
 }
 

@@ -11,7 +11,7 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
-    --with-pic \
+    --enable-pic \
     --without-debug \
     --with-history \
     --with-zlib \

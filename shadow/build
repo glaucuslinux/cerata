@@ -12,11 +12,11 @@ configure() {
   shadow_cv_utmpdir=/run/utmps \
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --enable-lastlog \
     --disable-logind \
     --disable-nls \
     --disable-rpath \
-    --with-pic \
     --without-audit \
     --without-libpam \
     --without-selinux \

@@ -9,10 +9,10 @@ prepare() {
 
 configure() {
   glaucus-configure \
+    --enable-pic \
     --disable-static \
     --disable-tests \
     --enable-nc \
-    --with-pic \
     --with-openssldir=/etc/ssl
 }
 

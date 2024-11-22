@@ -12,9 +12,9 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-pic \
     --disable-tests \
-    --enable-intel-sse \
-    --with-pic
+    --enable-intel-sse
 }
 
 build() {

@@ -12,10 +12,10 @@ prepare() {
 
 configure() {
   glaucus-configure \
+    --enable-pic \
     --disable-manpages \
     --disable-test-modules \
     --disable-gtk-doc-html \
-    --with-pic \
     --with-rootlibdir=/usr/lib \
     --with-module-directory=/usr/lib/modules \
     --with-zstd \
