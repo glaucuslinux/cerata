@@ -5,7 +5,7 @@
  USE_GPERF ?= $(shell which gperf >/dev/null 2>/dev/null && echo yes)
  
 -LIBCAPLIB := -L$(topdir)/libcap -lcap
-+LIBCAPLIB := -L$(topdir)/libcap -lcap -lnsss -lskarnet
++LIBCAPLIB := -L$(topdir)/libcap -lcap -lnsss
  PSXLINKFLAGS :=  -lpthread -Wl,-wrap,pthread_create
  LIBPSXLIB := -L$(topdir)/libcap -lpsx $(PSXLINKFLAGS)
  
