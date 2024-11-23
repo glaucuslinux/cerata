@@ -13,7 +13,7 @@ configure() {
 }
 
 build() {
-  LDFLAGS="$LDFLAGS -lutmps -lskarnet" \
+  LDFLAGS="$LDFLAGS -lnsss -lutmps" \
   make
 }
 
