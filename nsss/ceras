@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="nsss"
-ver="0.2.0.4"
-url="https://skarnet.org/software/nsss/nsss-0.2.0.4.tar.gz"
-sum="b64020a336f78e2961f5a88aa12c28ffe09da3f3cdc81212e10756d9277e6c45"
+ver="0.2.0.5"
+url="https://skarnet.org/software/nsss/nsss-0.2.0.5.tar.gz"
+sum="9f678cb0a9287cb5e6fb20fbbcf402ad4c55263eb76e10c1739b214dd9beae73"
 bld="skalibs"
 run="s6 skalibs"

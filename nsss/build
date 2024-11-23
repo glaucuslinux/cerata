@@ -18,7 +18,8 @@ configure() {
     --includedir=/usr/include \
     --enable-shared \
     --disable-static \
-    --disable-allstatic
+    --disable-allstatic \
+    --enable-libc-includes
 }
 
 build() {
