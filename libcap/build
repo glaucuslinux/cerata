@@ -5,6 +5,7 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-enable-nsss.patch
 }
 
 configure() {
