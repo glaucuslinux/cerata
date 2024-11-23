@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  LIBS=-lterminfo \
+  LIBS=-lnsss \
   glaucus-configure \
     --enable-extended-glob \
     --enable-history \
