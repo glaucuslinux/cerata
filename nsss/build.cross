@@ -23,7 +23,8 @@ configure() {
     --with-dynlib="$CRSD"/usr/lib \
     --enable-shared \
     --disable-static \
-    --disable-allstatic
+    --disable-allstatic \
+    --enable-libc-includes
 }
 
 build() {
