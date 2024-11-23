@@ -8,6 +8,7 @@ prepare() {
 }
 
 configure() {
+  LIBS=-lnsss \
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
