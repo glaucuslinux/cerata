@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  LIBS='-lutmps -lskarnet' \
+  LIBS="-lnsss -lutmps" \
   shadow_cv_utmpdir=/run/utmps \
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
