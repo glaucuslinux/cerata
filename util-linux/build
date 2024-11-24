@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  LIBS='-lutmps -lskarnet' \
+  LDFLAGS="$LDFLAGS -lnsss -lutmps" \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   glaucus-configure \
     --disable-static \
