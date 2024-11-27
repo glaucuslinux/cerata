@@ -5,10 +5,13 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-customize-login-defaults.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-enable-nsss.patch
+
+  autoreconf -vfis
 }
 
 configure() {
-  LIBS="-lnsss -lutmps" \
+  LIBS='-lnsss -lutmps' \
   shadow_cv_utmpdir=/run/utmps \
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
