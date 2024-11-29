@@ -11,7 +11,7 @@ prepare() {
 }
 
 configure() {
-  LIBS=-lutmps \
+  LIBS='-lnsss -lutmps' \
   shadow_cv_utmpdir=/run/utmps \
   glaucus-configure \
     --disable-static \
