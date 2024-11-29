@@ -57,6 +57,4 @@ package() {
 
   ln -fnsv $nom "$SACD"/usr/bin/$nom$ver
   ln -fnsv ${nom}bug "$SACD"/usr/bin/${nom}thanks
-
-  ln -fnsv ${nom}bug.1 "$SACD"/usr/share/man/man1/${nom}thanks.1
 }
