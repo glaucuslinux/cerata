@@ -15,6 +15,7 @@ build() {
   touch \
     man/$nom.1.t \
     man/autoheader.1.t \
+    man/autom4te.1.t \
     man/autoreconf.1.t \
     man/autoupdate.1.t
 
