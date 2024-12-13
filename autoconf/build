@@ -18,7 +18,8 @@ build() {
     man/autom4te.1.t \
     man/autoreconf.1.t \
     man/autoscan.1.t \
-    man/autoupdate.1.t
+    man/autoupdate.1.t \
+    man/ifnames.1.t
 
   make
 }
