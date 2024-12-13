@@ -117,16 +117,14 @@ package() {
     "$CERD"/$nom/c99 \
     "$CRSD"/usr/bin
 
-  ln -fnsv $nom "$CRSD"/usr/bin/cc
-  ln -fnsv $nom "$CRSD"/usr/bin/$nom-$ver
+  for i in cc $nom-$ver $TGT-$nom; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
 
   ln -fnsv $TGT-g++ "$CRSD"/usr/bin/$TGT-c++
-
   ln -fnsv $TGT-$nom "$CRSD"/usr/bin/$TGT-cc
   ln -fnsv $TGT-$nom "$CRSD"/usr/bin/$TGT-$nom-$ver
-
   ln -fnsv g++ "$CRSD"/usr/bin/$TGT-g++
-  ln -fnsv $nom "$CRSD"/usr/bin/$TGT-$nom
 
   for i in ar nm ranlib; do
     ln -fnsv $nom-$i "$CRSD"/usr/bin/$TGT-$nom-$i
