@@ -1,11 +1,10 @@
-# Copyright (c) 2018-2024, Firas Khalil Khana
+# Copyright (c) 2018-2025, Firas Khalil Khana
 # Distributed under the terms of the ISC License
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-customize-login-defaults.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-enable-nsss.patch
 
   autoreconf -vfis
 }
