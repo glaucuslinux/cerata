@@ -33,7 +33,7 @@ package() {
   echo env expand expr \
   factor false find fmt fold free \
   getconf groups \
-  head hostid \
+  head hostid hostname \
   iconv id install \
   killall \
   link ln logname ls lsattr \
