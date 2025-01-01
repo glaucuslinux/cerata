@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="inetutils"
+ver="2.5"
+url="https://ftpmirror.gnu.org/inetutils/inetutils-2.5.tar.gz"
+sum="1911d910d10b463273c2c53aacdc7d3987e6e6cb549d720f12657b5cf6ef6e4e"
