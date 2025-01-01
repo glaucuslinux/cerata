@@ -13,6 +13,7 @@ configure() {
     --disable-libls \
     --disable-ftp \
     --disable-dnsdomainname \
+    --disable-hostname \
     --disable-rcp \
     --disable-rexec \
     --disable-rlogin \
