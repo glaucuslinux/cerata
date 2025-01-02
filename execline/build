@@ -20,7 +20,6 @@ configure() {
     --enable-shared \
     --disable-static \
     --disable-allstatic \
-    --enable-nsss \
     --enable-multicall
 }
 

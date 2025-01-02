@@ -18,8 +18,7 @@ configure() {
     --includedir=/usr/include \
     --enable-shared \
     --disable-static \
-    --disable-allstatic \
-    --enable-nsss
+    --disable-allstatic
 }
 
 build() {
