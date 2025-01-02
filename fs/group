@@ -15,7 +15,6 @@ dialout:x:18:
 log:x:19:
 utmp:x:20:
 locate:x:21:
-nsss:x:22:
 kvm:x:78:
 tape:x:89:
 cdrom:x:90:

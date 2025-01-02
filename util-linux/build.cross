@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  LDFLAGS="$LDFLAGS -lnsss -lutmps" \
+  LDFLAGS="$LDFLAGS -lutmps" \
   ADJTIME_PATH=/var/lib/hwclock/adjtime \
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \

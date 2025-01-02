@@ -1,7 +1,0 @@
-Name: nsss
-Description: A secure implementation of the nss mechanism.
-URL: https://skarnet.org/software/nsss/
-Version: 0.2.0.5
-Requires.private: skalibs
-Libs: -lnsss
-Cflags: -I/usr/include/nsss
