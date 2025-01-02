@@ -28,8 +28,11 @@ configure() {
     --disable-ifconfig \
     --enable-threads=posix \
     --disable-rpath \
+    --disable-systemd \
+    --disable-ipv4 \
     --without-wrap \
     --without-pam \
+    --without-idn \
     --without-included-regex \
     --with-packager="$PRETTY_NAME" \
     --with-packager-bug-reports=https://github.com/glaucuslinux/glaucus/issues
