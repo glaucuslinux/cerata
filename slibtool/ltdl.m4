@@ -1,6 +1,6 @@
 # ltdl.m4 - Configure ltdl for the target system. -*-Autoconf-*-
 #
-#   Copyright (C) 1999-2008, 2011-2019, 2021-2024 Free Software
+#   Copyright (C) 1999-2008, 2011-2019, 2021-2025 Free Software
 #   Foundation, Inc.
 #   Written by Thomas Tanner, 1999
 #
@@ -493,6 +493,9 @@ AC_CACHE_CHECK([whether deplibs are loaded by dlopen],
   irix*)
     # The case above catches anything before 6.2, and it's known that
     # at 6.2 and later dlopen does load deplibs.
+    lt_cv_sys_dlopen_deplibs=yes
+    ;;
+  *-mlibc)
     lt_cv_sys_dlopen_deplibs=yes
     ;;
   netbsd* | netbsdelf*-gnu)
