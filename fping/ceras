@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="fping"
+ver="5.3"
+url="https://fping.org/dist/fping-5.3.tar.gz"
+sum="dd17f0cd7da1a034f89ecbd4af7159661983f472f681c1fd59657218dc0ab31e"
