@@ -17,7 +17,6 @@ configure() {
     --enable-threads=posix \
     --disable-rpath \
     --without-bash-malloc \
-    --with-curses \
     --with-installed-readline \
     --without-included-gettext
 }
@@ -39,6 +38,13 @@ check() {
 }
 
 package() {
+  if [ $BOOTSTRAP = yes ]; then
+    make \
+      install-strip
+
+    ln -fnsv $nom /usr/bin/sh
+  fi
+
   make \
     DESTDIR="$SACD" \
     install-strip
