@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="ugrep"
+ver="7.1.2"
+url="https://github.com/Genivia/ugrep/archive/v7.1.2.tar.gz"
+sum="8907bfdcf8bad28b02f0d6311e4b343fcbcab93557896869fac9bbb283d3c7eb"
+bld="bzip2 gcc lz4 pcre2 xz zlib-ng zstd"
