@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2025, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="kbd"
-ver="2.6.4"
-url="https://cdn.kernel.org/pub/linux/utils/kbd/kbd-2.6.4.tar.gz"
-sum="557bfd62877749034c60eaacc79206ed399d90917b427d4b60a427c753f476b0"
