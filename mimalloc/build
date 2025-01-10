@@ -10,6 +10,7 @@ prepare() {
 configure() {
   glaucus-cmake \
     -B build \
+    -DMI_BUILD_OBJECT=OFF \
     -DMI_BUILD_STATIC=OFF \
     -DMI_BUILD_TESTS=OFF \
     -DMI_INSTALL_TOPLEVEL=ON \
