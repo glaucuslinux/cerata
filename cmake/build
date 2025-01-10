@@ -19,7 +19,7 @@ configure() {
     --generator=Ninja \
     --system-libs \
     --no-system-cppdap \
-    --no-system-curl \
+    --system-curl \
     --system-expat \
     --no-system-jsoncpp \
     --system-zlib \
