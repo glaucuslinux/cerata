@@ -14,6 +14,7 @@ configure() {
     --enable-pic \
     --enable-pie \
     --disable-dbus \
+    --enable-client \
     --disable-dbus-policy \
     --disable-systemd-service \
     --disable-manual-pages \
