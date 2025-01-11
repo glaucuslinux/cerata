@@ -34,6 +34,7 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/ug
-  ln -fnsv $nom+ "$SACD"/usr/bin/ug+
+  ln -fnsv $nom "$CRSD"/usr/bin/grep
+  ln -fnsv $nom "$CRSD"/usr/bin/ug
+  ln -fnsv $nom+ "$CRSD"/usr/bin/ug+
 }
