@@ -8,8 +8,12 @@ prepare() {
 }
 
 configure() {
-  glaucus-configure \
+  "$CERD"/autoconf/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
+    --without-pcre2 \
     --without-boost-regex \
+    --without-zlib \
     --without-brotli \
     --without-bzip3 \
     --without-bash-completion-dir \
@@ -22,13 +26,12 @@ build() {
 }
 
 check() {
-  make \
-    test
+  :
 }
 
 package() {
   make \
-    DESTDIR="$SACD" \
+    DESTDIR="$CRSD" \
     install-strip
 
   ln -fnsv $nom "$SACD"/usr/bin/ug
