@@ -31,7 +31,8 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/grep
-  ln -fnsv $nom "$SACD"/usr/bin/ug
+for i in egrep fgrep grep ug; do
+  ln -fnsv $nom "$SACD"/usr/bin/$i
+done
   ln -fnsv $nom+ "$SACD"/usr/bin/ug+
 }
