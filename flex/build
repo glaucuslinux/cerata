@@ -5,6 +5,8 @@
 
 prepare() {
   ./autogen.sh
+
+  touch doc/$nom.1
 }
 
 configure() {
@@ -25,8 +27,6 @@ check() {
 }
 
 package() {
-  touch doc/$nom.1
-
   make \
     DESTDIR="$SACD" \
     install-strip
