@@ -38,16 +38,10 @@ check() {
 }
 
 package() {
-  if [ $BOOTSTRAP = yes ]; then
-    make \
-      install-strip
-
-    ln -fnsv $nom /usr/bin/sh
-  fi
-
   make \
     DESTDIR="$SACD" \
     install-strip
 
   ln -fnsv $nom "$SACD"/usr/bin/r$nom
+  ln -fnsv $nom "$SACD"/usr/bin/sh
 }
