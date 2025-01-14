@@ -37,7 +37,7 @@ package() {
     "$CERD"/$nom/lsb-release \
     "$CRSD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
-    -e "s/^DISTRIB_DESCRIPTION=/&'$PRETTY_NAME'/" \
+    -e "s/^DISTRIB_DESCRIPTION=/&$PRETTY_NAME/" \
     -i "$CRSD"/etc/lsb-release
   ln -fnsv ../usr/lib/os-release "$CRSD"/etc
   cp -afv \
@@ -70,7 +70,7 @@ package() {
   cp -afv "$CERD"/$nom/os-release "$CRSD"/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
-    -e "s/^PRETTY_NAME=/&'$PRETTY_NAME'/" \
+    -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
     -i "$CRSD"/usr/lib/os-release
   mkdir -pv "$PKG_CONFIG_LIBDIR"
   ln -fnsv bin "$CRSD"/usr/sbin
