@@ -41,8 +41,6 @@ package() {
     "$TMPD"/$nom/etc/s6/current/scripts/runlevel \
     "$CRSD"/etc/s6/skel
 
-  cp -afv "$CERD"/$nom/modules-load "$CRSD"/usr/bin
-
   for i in btmp faillog lastlog wtmp; do
     ln -fnsv wtmpd/$i "$CRSD"/var/log/$i
   done
