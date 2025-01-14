@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  autoreconf -vfis
+
+  touch \
+    doc/$nom.1.tmp \
+    doc/$nom.info
+}
+
+configure() {
+  glaucus-configure \
+    --enable-threads=posix \
+    --disable-rpath \
+    --disable-nls
+}
+
+build() {
+  make
+}
+
+check() {
+  make \
+    check
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install-strip
+}
