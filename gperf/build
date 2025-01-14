@@ -38,11 +38,6 @@ check() {
 }
 
 package() {
-  if [ $BOOTSTRAP = yes ]; then
-    make \
-      install
-  fi
-
   make \
     DESTDIR="$SACD" \
     install

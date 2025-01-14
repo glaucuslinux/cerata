@@ -9,3 +9,4 @@ url="https://github.com/Duncaen/OpenDoas/releases/download/v6.8.2/opendoas-6.8.2
 sum="f79f0feebbe5e496a89511d2a25e2d2ddb1bd0d66f098a2574425fbb964dbe71"
 bld="libressl"
 run="shadow"
+opt="!check"

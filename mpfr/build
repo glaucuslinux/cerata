@@ -26,11 +26,6 @@ check() {
 }
 
 package() {
-  if [ $BOOTSTRAP = yes ]; then
-    make \
-      install-strip
-  fi
-
   make \
     DESTDIR="$SACD" \
     install-strip

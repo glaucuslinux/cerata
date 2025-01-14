@@ -6,16 +6,11 @@
 prepare() {
   mkdir -pv build
 
-  if [ $BOOTSTRAP = yes ]; then
-    ./bootstrap.sh build
-  fi
+  ./bootstrap.sh build
 }
 
 configure() {
-  if [ $BOOTSTRAP = yes ]; then
-    PATH="build:$PATH"
-  fi
-
+  PATH="./build:$PATH" \
   glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=enabled \

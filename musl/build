@@ -31,13 +31,6 @@ check() {
 }
 
 package() {
-  if [ $BOOTSTRAP = yes ]; then
-    make \
-      install-libs
-
-    ln -fnsv libc.so /usr/lib/ld-$nom-x86_64.so.1
-  fi
-
   make \
     DESTDIR="$SACD" \
     install
