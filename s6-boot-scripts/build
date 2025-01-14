@@ -44,8 +44,6 @@ package() {
   rm -frv "$SACD"/etc/s6/rc/compiled
   s6-rc-compile "$SACD"/etc/s6/rc/compiled "$SACD"/etc/s6/sv
 
-  cp -afv "$CERD"/$nom/modules-load "$SACD"/usr/bin
-
   mkdir -pv "$SACD"/var/log/wtmpd
   for i in btmp faillog lastlog wtmp; do
     ln -fnsv wtmpd/$i "$SACD"/var/log/$i
