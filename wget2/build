@@ -10,7 +10,6 @@ prepare() {
 }
 
 configure() {
-  # `--with-openssl` doesn't work with `libressl`
   glaucus-configure \
     --enable-threads=posix \
     --disable-rpath \
@@ -19,7 +18,6 @@ configure() {
     --disable-nls \
     --disable-doc \
     --with-linux-crypto \
-    --with-openssl \
     --without-included-regex \
     --with-ssl=openssl \
     --without-libdane \
