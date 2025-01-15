@@ -19,7 +19,8 @@ configure() {
     --enable-pic \
     --disable-nls \
     --disable-rpath \
-    --disable-libfl
+    --disable-libfl \
+    --disable-bootstrap
 }
 
 build() {
