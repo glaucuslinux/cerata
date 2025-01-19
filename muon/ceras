@@ -4,8 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="muon"
-ver="git"
-cmt="c2c4a04"
+ver="c2c4a04"
 url="https://git.sr.ht/~lattis/muon"
 bld="libarchive pkgconf samurai"
 opt="bootstrap"

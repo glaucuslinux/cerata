@@ -4,7 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="gettext-tiny"
-ver="git"
-cmt="55a8ae9"
+ver="55a8ae9"
 url="https://github.com/sabotage-linux/gettext-tiny"
 opt="!check"

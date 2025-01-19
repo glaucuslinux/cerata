@@ -4,7 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libudev-zero"
-ver="git"
-cmt="bbeb7ad"
+ver="bbeb7ad"
 url="https://github.com/illiliti/libudev-zero"
 opt="!check"
