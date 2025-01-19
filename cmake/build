@@ -8,7 +8,6 @@ prepare() {
 }
 
 configure() {
-  MAKE= \
   ./bootstrap \
     --prefix=/usr \
     --bindir=/bin \
