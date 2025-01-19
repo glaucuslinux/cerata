@@ -4,7 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="s6-boot-scripts"
-ver="git"
-cmt="19b3c84"
+ver="19b3c84"
 url="https://github.com/glaucuslinux/s6-boot-scripts"
 run="toybox util-linux"

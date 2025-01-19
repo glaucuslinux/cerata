@@ -4,7 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="slibtool"
-ver="git"
-cmt="71d0639"
+ver="71d0639"
 url="https://git.foss21.org/slibtool"
 bld="m4"
