@@ -1,0 +1,10 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="tmux"
+ver="3.5a"
+url="https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz"
+sum="bf7ef2fa4cc8a061bedcd13067cfcb5c2c3578031fd6d28bce4db7be5dcf1b06"
+bld="libevent netbsd-curses"
