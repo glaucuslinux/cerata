@@ -4,7 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  :
+  for i in \
+  0001-Fix-space-breaking-macros \
+  0001-Revert-build-system-ccenv_set_cc_underscore-rewrite- \
+  0001-Work-if-invoked-as-libtoolize; do
+    patch -p1 -i "$CERD"/$nom/patches/serpent/$i.patch
+  done
 }
 
 configure() {
@@ -44,8 +49,7 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -fnsv $nom "$CRSD"/usr/bin/libtool
-  # ln -fnsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
+  ln -fnsv "$CRSD"/usr/share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
   cp -afv "$CERD"/$nom/libtoolize "$CRSD"/usr/bin
 
   # `"$CRSD"/usr/share/aclocal` was already created by cross `gettext-tiny`
