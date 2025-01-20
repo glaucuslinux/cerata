@@ -6,4 +6,4 @@
 nom="libudev-zero"
 ver="bbeb7ad"
 url="https://github.com/illiliti/libudev-zero"
-opt="!check"
+nop="check"
