@@ -12,8 +12,6 @@ configure() {
 }
 
 build() {
-  # `libcap` does not support parallel build!
-  MAKEFLAGS=-j1 \
   make \
     DESTDIR="$SACD" \
     lib=lib \
