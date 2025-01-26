@@ -6,5 +6,5 @@
 nom="libpng"
 ver="1.6.43"
 url="https://github.com/pnggroup/libpng/archive/v1.6.43.tar.gz"
-sum="0dea43749579a69fcc15438f98d49f8222e75cb83020bbdfefabcbee3e0df13e"
+sum="42a3b763308a7aed91908d158e37b51c"
 bld="zlib-ng"

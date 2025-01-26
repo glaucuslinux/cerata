@@ -6,5 +6,5 @@
 nom="seatd"
 ver="0.8.0"
 url="https://git.sr.ht/~kennylevinsen/seatd/archive/0.8.0.tar.gz"
-sum="655c683ca63008594c5551603e4480c2ffb675285e4d0136303a4f03bbec7d96"
+sum="a821f67feeb82a47627d84df879e2bc0"
 bld="muon samurai"

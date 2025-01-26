@@ -6,5 +6,5 @@
 nom="tmux"
 ver="3.5a"
 url="https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz"
-sum="bf7ef2fa4cc8a061bedcd13067cfcb5c2c3578031fd6d28bce4db7be5dcf1b06"
+sum="75438968f6bbdf8f99658b5d154aa1ac"
 bld="libevent netbsd-curses"
