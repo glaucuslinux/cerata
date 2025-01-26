@@ -6,5 +6,5 @@
 nom="pcre2"
 ver="10.44"
 url="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.44/pcre2-10.44.tar.gz"
-sum="e7d4df8cd77e139e9f6b6284c2b13cdc90805c5345c81bb2137ff5279921eae5"
+sum="735677b37cb0f9f0b41ce0cd4bce4b19"
 bld="bzip2 libedit zlib-ng"

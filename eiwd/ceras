@@ -6,6 +6,6 @@
 nom="eiwd"
 ver="2.22"
 url="https://github.com/illiliti/eiwd/releases/download/2.22-1/iwd-2.22.tar.xz"
-sum="84336a016d79ade6dae285a41fb08b3e27faa5ce41c96ac821a61e0038205705"
+sum="22d6677f0c3f49387b0812bfe5ffa0c9"
 bld="libedit"
 run="openresolv"

@@ -6,5 +6,5 @@
 nom="file"
 ver="5.46"
 url="https://astron.com/pub/file/file-5.46.tar.gz"
-sum="b90f74a21efef2d49572add801a2dd450c61e886f9d56af76f9dcb656268edbc"
+sum="6fa7305c7d4ecb09713ac4fa46cf9f92"
 bld="bzip2 xz zlib-ng zstd"

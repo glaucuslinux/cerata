@@ -6,5 +6,5 @@
 nom="binutils"
 ver="2.43.1"
 url="https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.zst"
-sum="eb1b233548abeb028691dec5b107731cb51a659156b7d988bf7e8f28b6c2fca5"
+sum="99824efdb0fb9b530441aa9f6be10861"
 bld="zstd"

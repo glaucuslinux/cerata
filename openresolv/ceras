@@ -6,5 +6,5 @@
 nom="openresolv"
 ver="3.13.2"
 url="https://github.com/NetworkConfiguration/openresolv/archive/v3.13.2.tar.gz"
-sum="d81d17de985d5eb8f9e175d47d9af9f0a0122ab9547ac8ee969da795f616a8af"
+sum="3f267f3f5f2afc1a69e890d996a4c49a"
 nop="check"

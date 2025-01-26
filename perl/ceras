@@ -6,6 +6,6 @@
 nom="perl"
 ver="5.40.0"
 url="https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz"
-sum="8bfcbb999e0795a64ca90e1ba7308f49c30ab2619ffa25fa425527c4bfca5e0f"
+sum="3e8e36d7f75ab243e82ce23ff1b50442"
 bld="bzip2 zlib-ng"
 nop="bootstrap"

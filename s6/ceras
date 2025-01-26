@@ -6,6 +6,6 @@
 nom="s6"
 ver="2.13.0.0"
 url="https://skarnet.org/software/s6/s6-2.13.0.0.tar.gz"
-sum="f90451ec3f7f2be36e620ae6105a3d48f26b9316f2990860d6f953a68fefbccb"
+sum="5066d56bb036ec0dd65bd62342cac3c2"
 bld="execline skalibs"
 run="execline skalibs"

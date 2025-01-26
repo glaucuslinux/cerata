@@ -6,5 +6,5 @@
 nom="sway"
 ver="1.9"
 url="https://github.com/swaywm/sway/releases/download/1.9/sway-1.9.tar.gz"
-sum="6ae892f82daedef76d26e32c64ebd09cc454ae71f416d2179a512f7764138268"
+sum="5a26c23546d662bc49451cc57ac665f0"
 bld="cairo json-c muon pango pcre2 samurai wayland wayland-protocols wlroots"

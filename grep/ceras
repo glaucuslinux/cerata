@@ -6,5 +6,5 @@
 nom="grep"
 ver="3.11"
 url="https://ftpmirror.gnu.org/grep/grep-3.11.tar.gz"
-sum="3f89442f3f593ad02e5a392d56d531196d43154dba716a001010b458c6f428e6"
+sum="2a03d9531392c07a0c8d5f1fb9fa454f"
 bld="pcre2"

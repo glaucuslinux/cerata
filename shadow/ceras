@@ -6,6 +6,6 @@
 nom="shadow"
 ver="4.16.0"
 url="https://github.com/shadow-maint/shadow/releases/download/4.16.0/shadow-4.16.0.tar.gz"
-sum="5b7f53022bc471232e7befed73d1fdb26366821f2494e491b37fdd54e1e0c245"
+sum="a89540720d34dd032c73e359401669bf"
 bld="acl attr libcap utmps"
 run="utmps"

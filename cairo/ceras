@@ -6,5 +6,5 @@
 nom="cairo"
 ver="1.18.0"
 url="https://cairographics.org/releases/cairo-1.18.0.tar.xz"
-sum="55b4b6406668e08dd6b816beba82c86df8e9a5468352c66597badb4f6583930e"
+sum="e19990ccba670bc06cd0d6091cd7bc87"
 bld="fontconfig freetype glib libpng muon pixman samurai zlib-ng"
