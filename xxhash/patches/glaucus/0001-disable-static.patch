@@ -1,0 +1,57 @@
+--- Makefile
++++ Makefile
+@@ -143,10 +143,6 @@
+ 
+ # library
+ 
+-libxxhash.a: ARFLAGS = rcs
+-libxxhash.a: xxhash.o
+-	$(AR) $(ARFLAGS) $@ $^
+-
+ $(LIBXXH): LDFLAGS += -shared
+ ifeq (,$(filter Windows%,$(OS)))
+ $(LIBXXH): CFLAGS += -fPIC
+@@ -165,7 +161,7 @@
+ 
+ .PHONY: lib
+ lib:  ## generate static and dynamic xxhash libraries
+-lib: libxxhash.a libxxhash
++lib: libxxhash
+ 
+ # helper targets
+ 
+@@ -332,7 +328,7 @@
+ LIB_FUZZING_ENGINE?="-fsanitize=fuzzer"
+ CC_VERSION := $(shell $(CC) --version)
+ ifneq (,$(findstring clang,$(CC_VERSION)))
+-fuzzer: libxxhash.a fuzz/fuzzer.c
++fuzzer: fuzz/fuzzer.c
+ 	$(CC) $(CFLAGS) $(LIB_FUZZING_ENGINE) -I. -o fuzzer fuzz/fuzzer.c -L. -Wl,-Bstatic -lxxhash -Wl,-Bdynamic
+ endif
+ 
+@@ -616,11 +612,6 @@
+           $< > $@
+ 
+ 
+-install_libxxhash.a: libxxhash.a
+-	@echo Installing libxxhash.a
+-	$(Q)$(MAKE_DIR) $(DESTDIR)$(LIBDIR)
+-	$(Q)$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
+-
+ install_libxxhash: libxxhash
+ 	@echo Installing libxxhash
+ 	$(Q)$(MAKE_DIR) $(DESTDIR)$(LIBDIR)
+@@ -661,12 +652,11 @@
+ 
+ .PHONY: install
+ ## install libraries, CLI, links and man pages
+-install: install_libxxhash.a install_libxxhash install_libxxhash.includes install_libxxhash.pc install_xxhsum install_man
++install: install_libxxhash install_libxxhash.includes install_libxxhash.pc install_xxhsum install_man
+ 	@echo xxhash installation completed
+ 
+ .PHONY: uninstall
+ uninstall:  ## uninstall libraries, CLI, links and man page
+-	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.a
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+ 	$(Q)$(RM) $(DESTDIR)$(LIBDIR)/$(LIBXXH)
