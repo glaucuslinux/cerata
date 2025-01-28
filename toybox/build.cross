@@ -13,9 +13,9 @@ configure() {
 }
 
 build() {
-  CROSS_COMPILE= \
-  LDFLAGS="$LDFLAGS -lutmps" \
-  make
+  make \
+    CROSS_COMPILE= \
+    LDFLAGS="$LDFLAGS -lutmps"
 }
 
 check() {

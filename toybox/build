@@ -13,8 +13,8 @@ configure() {
 }
 
 build() {
-  LDFLAGS="$LDFLAGS -lutmps" \
-  make
+  make \
+    LDFLAGS="$LDFLAGS -lutmps"
 }
 
 check() {
