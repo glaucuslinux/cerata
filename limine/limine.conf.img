@@ -3,6 +3,6 @@ quiet: yes
 
 /glaucus
     protocol: linux
-    cmdline: init=/usr/bin/init quiet ro root=/dev/sda2 rootfstype=ext4
+    cmdline: init=/usr/bin/init quiet root=/dev/sda2 rootfstype=ext4
     kernel_path: boot():/vmlinuz
     module_path: boot():/initramfs
