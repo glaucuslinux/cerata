@@ -98,8 +98,8 @@ build() {
   make \
     all-$nom
 
-  CFLAGS='-pipe -g0 -O0' \
-  CXXFLAGS='-pipe -g0 -O0' \
+  CFLAGS='-pipe -O0' \
+  CXXFLAGS='-pipe -O0' \
   LDFLAGS=-Wl,-s \
   make \
     enable_shared=no \
