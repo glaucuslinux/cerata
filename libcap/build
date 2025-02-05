@@ -26,7 +26,6 @@ build() {
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     KERNEL_HEADERS=/usr/include \
-    DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -53,7 +52,6 @@ package() {
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     KERNEL_HEADERS=/usr/include \
-    DEBUG=-g0 \
     SYSTEM_HEADERS=/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
