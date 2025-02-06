@@ -79,6 +79,7 @@ package() {
   mkdir -pv \
     "$CRSD"/var/cache/rad/pkg \
     "$CRSD"/var/cache/rad/src \
+    "$CRSD"/var/empty \
     "$CRSD"/var/lib/hwclock \
     "$CRSD"/var/lib/misc \
     "$CRSD"/var/lib/rad/clusters \
