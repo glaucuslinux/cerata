@@ -55,5 +55,5 @@ package() {
     "$SACD"/var/log/wtmpd/lastlog \
     "$SACD"/var/log/wtmpd/wtmp
 
-  chown -Rv 20:20 "$SACD"/var/log/wtmpd
+  chown -Rv utmp:utmp "$SACD"/var/log/wtmpd
 }
