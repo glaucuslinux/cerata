@@ -38,5 +38,6 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
+  # Compatibility symlink
   ln -fnsv bsdtar "$SACD"/usr/bin/tar
 }
