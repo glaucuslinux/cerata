@@ -14,8 +14,7 @@ configure() {
     --datadir=/share/$nom \
     --docdir=/share/doc/$nom \
     --mandir=/share/man \
-    --parallel=2 \
-    --generator=Ninja \
+    --parallel=4 \
     --system-libs \
     --no-system-cppdap \
     --system-curl \
@@ -32,7 +31,7 @@ configure() {
 }
 
 build() {
-  samu
+  make
 }
 
 check() {
@@ -40,9 +39,9 @@ check() {
 }
 
 package() {
-  DESTDIR="$SACD" \
-  samu \
-    install/strip
+  make \
+    DESTDIR="$SACD" \
+    install
 
   cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
 }
