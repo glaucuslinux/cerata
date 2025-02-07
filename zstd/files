@@ -1,0 +1,12 @@
+usr/bin/pzstd
+usr/bin/zstd
+usr/bin/zstdgrep
+usr/bin/zstdless
+usr/include/zdict.h
+usr/include/zstd.h
+usr/include/zstd_errors.h
+usr/lib/libzstd.so.1.5.6
+usr/lib/pkgconfig/libzstd.pc
+usr/share/man/man1/zstd.1
+usr/share/man/man1/zstdgrep.1
+usr/share/man/man1/zstdless.1

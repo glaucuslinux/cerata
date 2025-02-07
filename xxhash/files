@@ -1,0 +1,7 @@
+usr/bin/xxhsum
+usr/include/xxh3.h
+usr/include/xxh_x86dispatch.h
+usr/include/xxhash.h
+usr/lib/libxxhash.so.0.8.3
+usr/lib/pkgconfig/libxxhash.pc
+usr/share/man/man1/xxhsum.1

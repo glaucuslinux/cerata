@@ -1,0 +1,6 @@
+usr/include/gmp.h
+usr/include/gmpxx.h
+usr/lib/libgmp.so.10.5.0
+usr/lib/libgmpxx.so.4.7.0
+usr/lib/pkgconfig/gmp.pc
+usr/lib/pkgconfig/gmpxx.pc

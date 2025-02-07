@@ -1,0 +1,17 @@
+usr/bin/s6-rc
+usr/bin/s6-rc-bundle
+usr/bin/s6-rc-compile
+usr/bin/s6-rc-db
+usr/bin/s6-rc-dryrun
+usr/bin/s6-rc-format-upgrade
+usr/bin/s6-rc-init
+usr/bin/s6-rc-update
+usr/include/s6-rc/config.h
+usr/include/s6-rc/s6rc-constants.h
+usr/include/s6-rc/s6rc-db.h
+usr/include/s6-rc/s6rc-servicedir.h
+usr/include/s6-rc/s6rc-utils.h
+usr/include/s6-rc/s6rc.h
+usr/lib/libs6rc.so.0.5.4.3
+usr/lib/s6-rc/s6-rc-fdholder-filler
+usr/lib/s6-rc/s6-rc-oneshot-run

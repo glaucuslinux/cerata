@@ -1,0 +1,12 @@
+etc/resolvconf.conf
+usr/bin/resolvconf
+usr/lib/resolvconf/dnsmasq
+usr/lib/resolvconf/libc
+usr/lib/resolvconf/libc.d/avahi-daemon
+usr/lib/resolvconf/libc.d/mdnsd
+usr/lib/resolvconf/named
+usr/lib/resolvconf/pdns_recursor
+usr/lib/resolvconf/pdnsd
+usr/lib/resolvconf/unbound
+usr/share/man/man5/resolvconf.conf.5
+usr/share/man/man8/resolvconf.8

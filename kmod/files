@@ -1,0 +1,8 @@
+usr/bin/kmod
+usr/include/libkmod.h
+usr/lib/depmod.d/search.conf
+usr/lib/libkmod.la
+usr/lib/libkmod.so.2.5.0
+usr/lib/pkgconfig/libkmod.pc
+usr/share/bash-completion/completions/kmod
+usr/share/pkgconfig/kmod.pc

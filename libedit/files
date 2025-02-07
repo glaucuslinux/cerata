@@ -1,0 +1,12 @@
+etc/editrc
+etc/inputrc
+usr/include/editline/readline.h
+usr/include/histedit.h
+usr/include/readline/history.h
+usr/include/readline/tilde.h
+usr/lib/libedit.la
+usr/lib/libedit.so.0.0.74
+usr/lib/pkgconfig/libedit.pc
+usr/share/man/man3/editline.3
+usr/share/man/man5/editrc.5
+usr/share/man/man7/editline.7

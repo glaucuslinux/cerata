@@ -1,0 +1,9 @@
+usr/bin/utmps-utmpd
+usr/bin/utmps-write
+usr/bin/utmps-wtmpd
+usr/include/utmps/config.h
+usr/include/utmps/utmps.h
+usr/include/utmps/utmpx.h
+usr/include/utmpx.h
+usr/lib/libutmps.so.0.1.2.2
+usr/lib/pkgconfig/utmps.pc

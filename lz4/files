@@ -1,0 +1,7 @@
+usr/bin/lz4
+usr/include/lz4.h
+usr/include/lz4frame.h
+usr/include/lz4hc.h
+usr/lib/liblz4.so.1.10.0
+usr/lib/pkgconfig/liblz4.pc
+usr/share/man/man1/lz4.1
