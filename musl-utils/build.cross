@@ -27,7 +27,7 @@ package() {
     getent \
     "$CRSD"/usr/bin
 
-  for i in gtkdocize help2man ldconfig makeinfo po4a texi2dvi; do
+  for i in a2x asciidoc gtkdocize help2man ldconfig makeinfo po4a texi2dvi; do
     cp -afv "$CERD"/musl/true "$CRSD"/usr/bin/$i
   done
 }
