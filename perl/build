@@ -8,8 +8,11 @@ prepare() {
 }
 
 configure() {
-  BUILD_ZLIB=False \
   BUILD_BZIP2=0 \
+  BZIP2_LIB=/usr/lib \
+  BZIP2_INCLUDE=/usr/include \
+  BUILD_ZLIB=0 \
+  USE_ZLIB_NG=1 \
   ./Configure \
     -des \
     -Darchlib=/usr/lib/${nom}5/core_$nom \
@@ -18,11 +21,11 @@ configure() {
     -Dinc_version_list=none \
     -Dinstallusrbinperl \
     -Dman1dir=/usr/share/man/man1 \
+    -Dman1ext=1p \
     -Dman3dir=/usr/share/man/man3 \
-    -Dman1ext=1pm \
     -Dman3ext=3pm \
     -Doptimize="$CFLAGS" \
-    -Dpager='/usr/bin/less -I' \
+    -Dpager='/usr/bin/less -is' \
     -Dprefix=/usr \
     -Dprivlib=/usr/share/${nom}5/core_$nom \
     -Dscriptdir=/usr/bin \
@@ -42,7 +45,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    test_harness
 }
 
 package() {
