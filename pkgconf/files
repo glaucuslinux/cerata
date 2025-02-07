@@ -1,0 +1,17 @@
+usr/bin/bomtool
+usr/bin/pkgconf
+usr/include/pkgconf/libpkgconf/bsdstubs.h
+usr/include/pkgconf/libpkgconf/iter.h
+usr/include/pkgconf/libpkgconf/libpkgconf-api.h
+usr/include/pkgconf/libpkgconf/libpkgconf.h
+usr/include/pkgconf/libpkgconf/stdinc.h
+usr/lib/libpkgconf.la
+usr/lib/libpkgconf.so.5.0.0
+usr/lib/pkgconfig/libpkgconf.pc
+usr/share/aclocal/pkg.m4
+usr/share/doc/pkgconf/AUTHORS
+usr/share/doc/pkgconf/README.md
+usr/share/man/man1/pkgconf.1
+usr/share/man/man5/pc.5
+usr/share/man/man5/pkgconf-personality.5
+usr/share/man/man7/pkg.m4.7

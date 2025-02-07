@@ -1,0 +1,12 @@
+etc/fstab
+etc/group
+etc/hostname
+etc/hosts
+etc/issue
+etc/lsb-release
+etc/passwd
+etc/profile
+etc/resolv.conf
+etc/shadow
+etc/shells
+usr/lib/os-release

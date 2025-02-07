@@ -1,0 +1,4 @@
+usr/bin/libudev-zero-helper
+usr/include/libudev.h
+usr/lib/libudev.so.1
+usr/lib/pkgconfig/libudev.pc

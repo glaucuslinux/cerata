@@ -1,0 +1,6 @@
+usr/bin/wget2
+usr/include/wget.h
+usr/include/wgetver.h
+usr/lib/libwget.la
+usr/lib/libwget.so.2.0.0
+usr/lib/pkgconfig/libwget.pc
