@@ -74,7 +74,7 @@ package() {
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
     -i "$SACD"/usr/lib/os-release
-  mkdir -pv "$PKG_CONFIG_LIBDIR"
+  mkdir -pv "$SACD"/usr/lib/pkgconfig
   ln -fnsv bin "$SACD"/usr/sbin
   mkdir -pv "$SACD"/usr/share
 
