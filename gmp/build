@@ -12,7 +12,7 @@ configure() {
     --enable-cxx \
     --enable-fat \
     --disable-static \
-    --enable-pic
+    --with-pic
 }
 
 build() {
