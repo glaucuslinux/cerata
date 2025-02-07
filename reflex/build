@@ -1,0 +1,33 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  autoreconf -vfis
+}
+
+configure() {
+  glaucus-configure \
+    --without-man2html
+}
+
+build() {
+  make
+}
+
+check() {
+  make \
+    check
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install
+
+  # Compatibility symlinks
+  for i in flex flex++ lex; do
+    ln -fnsv $nom "$SACD"/usr/bin/$i
+  done
+}
