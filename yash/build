@@ -43,6 +43,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  ln -fnsv $nom "$SACD"/usr/bin/sh
 }
