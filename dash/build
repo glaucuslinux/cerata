@@ -8,7 +8,6 @@ prepare() {
 }
 
 configure() {
-  LIBS=-lnsss \
   glaucus-configure \
     --with-libedit
 }
