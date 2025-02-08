@@ -1,3 +1,6 @@
+usr/
+usr/include/
+usr/include/skalibs/
 usr/include/skalibs/alarm.h
 usr/include/skalibs/alloc.h
 usr/include/skalibs/allreadwrite.h
@@ -82,8 +85,14 @@ usr/include/skalibs/unix-transactional.h
 usr/include/skalibs/unixconnection.h
 usr/include/skalibs/unixmessage.h
 usr/include/skalibs/unixonacid.h
+usr/lib/
+usr/lib/libskarnet.so
+usr/lib/libskarnet.so.2.14
 usr/lib/libskarnet.so.2.14.2.0
+usr/lib/pkgconfig/
 usr/lib/pkgconfig/skalibs.pc
+usr/lib/skalibs/
+usr/lib/skalibs/sysdeps/
 usr/lib/skalibs/sysdeps/pthread.lib
 usr/lib/skalibs/sysdeps/socket.lib
 usr/lib/skalibs/sysdeps/spawn.lib

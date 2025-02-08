@@ -1,1 +1,5 @@
+usr/
+usr/bin/
+usr/bin/gzip
 usr/bin/pigz
+usr/bin/unpigz

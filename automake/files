@@ -1,5 +1,11 @@
+usr/
+usr/bin/
 usr/bin/aclocal
+usr/bin/aclocal-1.17
 usr/bin/automake
+usr/bin/automake-1.17
+usr/share/
+usr/share/aclocal-1.17/
 usr/share/aclocal-1.17/amversion.m4
 usr/share/aclocal-1.17/ar-lib.m4
 usr/share/aclocal-1.17/as.m4
@@ -13,6 +19,7 @@ usr/share/aclocal-1.17/extra-recurs.m4
 usr/share/aclocal-1.17/gcj.m4
 usr/share/aclocal-1.17/init.m4
 usr/share/aclocal-1.17/install-sh.m4
+usr/share/aclocal-1.17/internal/
 usr/share/aclocal-1.17/internal/ac-config-macro-dirs.m4
 usr/share/aclocal-1.17/lead-dot.m4
 usr/share/aclocal-1.17/lex.m4
@@ -35,7 +42,10 @@ usr/share/aclocal-1.17/tar.m4
 usr/share/aclocal-1.17/upc.m4
 usr/share/aclocal-1.17/vala.m4
 usr/share/aclocal-1.17/xargsn.m4
+usr/share/aclocal/
 usr/share/aclocal/README
+usr/share/automake-1.17/
+usr/share/automake-1.17/Automake/
 usr/share/automake-1.17/Automake/ChannelDefs.pm
 usr/share/automake-1.17/Automake/Channels.pm
 usr/share/automake-1.17/Automake/Condition.pm
@@ -59,6 +69,7 @@ usr/share/automake-1.17/Automake/Wrap.pm
 usr/share/automake-1.17/Automake/XFile.pm
 usr/share/automake-1.17/COPYING
 usr/share/automake-1.17/INSTALL
+usr/share/automake-1.17/am/
 usr/share/automake-1.17/am/check.am
 usr/share/automake-1.17/am/check2.am
 usr/share/automake-1.17/am/clean-hdr.am
@@ -112,8 +123,13 @@ usr/share/automake-1.17/tap-driver.sh
 usr/share/automake-1.17/test-driver
 usr/share/automake-1.17/texinfo.tex
 usr/share/automake-1.17/ylwrap
-usr/share/doc/amhello-1.0.tar.gz
+usr/share/doc/
+usr/share/doc/automake/
+usr/share/doc/automake/amhello-1.0.tar.gz
+usr/share/info/
 usr/share/info/automake-history.info
+usr/share/man/
+usr/share/man/man1/
 usr/share/man/man1/aclocal-1.17.1
 usr/share/man/man1/aclocal.1
 usr/share/man/man1/automake-1.17.1
