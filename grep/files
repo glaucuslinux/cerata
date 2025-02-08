@@ -1,4 +1,10 @@
+usr/
+usr/bin/
 usr/bin/egrep
 usr/bin/fgrep
 usr/bin/grep
+usr/share/
+usr/share/info/
+usr/share/man/
+usr/share/man/man1/
 usr/share/man/man1/grep.1

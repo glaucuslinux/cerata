@@ -1,4 +1,15 @@
+usr/
+usr/bin/
 usr/bin/yash
+usr/share/
+usr/share/man/
+usr/share/man/ja/
+usr/share/man/ja/man1/
+usr/share/man/ja/man1/yash.1
+usr/share/man/man1/
+usr/share/man/man1/yash.1
+usr/share/yash/
+usr/share/yash/completion/
 usr/share/yash/completion/INIT
 usr/share/yash/completion/[
 usr/share/yash/completion/_backup
@@ -223,6 +234,7 @@ usr/share/yash/completion/who
 usr/share/yash/completion/xargs
 usr/share/yash/completion/yash
 usr/share/yash/config
+usr/share/yash/initialization/
 usr/share/yash/initialization/common
 usr/share/yash/initialization/default
 usr/share/yash/initialization/sample

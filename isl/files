@@ -1,3 +1,6 @@
+usr/
+usr/include/
+usr/include/isl/
 usr/include/isl/aff.h
 usr/include/isl/aff_type.h
 usr/include/isl/arg.h
@@ -60,7 +63,11 @@ usr/include/isl/val_type.h
 usr/include/isl/vec.h
 usr/include/isl/version.h
 usr/include/isl/vertices.h
+usr/lib/
 usr/lib/libisl.la
+usr/lib/libisl.so
+usr/lib/libisl.so.23
 usr/lib/libisl.so.23.4.0
 usr/lib/libisl.so.23.4.0-gdb.py
+usr/lib/pkgconfig/
 usr/lib/pkgconfig/isl.pc

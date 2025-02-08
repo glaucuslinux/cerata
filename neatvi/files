@@ -1,2 +1,7 @@
+usr/
+usr/bin/
+usr/bin/ex
 usr/bin/vi
+usr/share/
+usr/share/neatvi/
 usr/share/neatvi/ecmd.sh

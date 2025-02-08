@@ -1,9 +1,12 @@
+usr/
+usr/bin/
 usr/bin/addr2line
 usr/bin/ar
 usr/bin/as
 usr/bin/c++filt
 usr/bin/elfedit
 usr/bin/gprof
+usr/bin/ld
 usr/bin/ld.bfd
 usr/bin/nm
 usr/bin/objcopy
@@ -13,6 +16,7 @@ usr/bin/readelf
 usr/bin/size
 usr/bin/strings
 usr/bin/strip
+usr/include/
 usr/include/ansidecl.h
 usr/include/bfd.h
 usr/include/bfdlink.h
@@ -20,6 +24,7 @@ usr/include/ctf-api.h
 usr/include/ctf.h
 usr/include/diagnostics.h
 usr/include/dis-asm.h
+usr/include/libiberty/
 usr/include/libiberty/ansidecl.h
 usr/include/libiberty/demangle.h
 usr/include/libiberty/dyn-string.h
@@ -37,7 +42,10 @@ usr/include/plugin-api.h
 usr/include/sframe-api.h
 usr/include/sframe.h
 usr/include/symcat.h
+usr/lib/
+usr/lib/bfd-plugins/
 usr/lib/bfd-plugins/libdep.so
+usr/lib/ldscripts/
 usr/lib/ldscripts/elf32_x86_64.x
 usr/lib/ldscripts/elf32_x86_64.xbn
 usr/lib/ldscripts/elf32_x86_64.xc
@@ -185,6 +193,8 @@ usr/lib/libctf.la
 usr/lib/libiberty.a
 usr/lib/libopcodes.la
 usr/lib/libsframe.la
+usr/share/
+usr/share/info/
 usr/share/info/as.info
 usr/share/info/bfd.info
 usr/share/info/binutils.info
@@ -193,6 +203,8 @@ usr/share/info/gprof.info
 usr/share/info/ld.info
 usr/share/info/ldint.info
 usr/share/info/sframe-spec.info
+usr/share/man/
+usr/share/man/man1/
 usr/share/man/man1/addr2line.1
 usr/share/man/man1/ar.1
 usr/share/man/man1/as.1

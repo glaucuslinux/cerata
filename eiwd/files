@@ -1,3 +1,12 @@
+etc/
+etc/eiwd/
 etc/eiwd/main.conf
+usr/
+usr/bin/
 usr/bin/iwmon
+usr/lib/
+usr/lib/eiwd/
 usr/lib/eiwd/iwd
+var/
+var/lib/
+var/lib/iwd/

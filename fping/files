@@ -1,2 +1,8 @@
+usr/
+usr/bin/
 usr/bin/fping
+usr/bin/ping
+usr/share/
+usr/share/man/
+usr/share/man/man8/
 usr/share/man/man8/fping.8

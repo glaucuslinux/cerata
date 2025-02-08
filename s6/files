@@ -1,3 +1,5 @@
+usr/
+usr/bin/
 usr/bin/s6-accessrules-cdb-from-fs
 usr/bin/s6-accessrules-fs-from-cdb
 usr/bin/s6-applyuidgid
@@ -62,6 +64,8 @@ usr/bin/s6-tai64n
 usr/bin/s6-tai64nlocal
 usr/bin/s6-usertree-maker
 usr/bin/ucspilogd
+usr/include/
+usr/include/s6/
 usr/include/s6/accessrules.h
 usr/include/s6/auto.h
 usr/include/s6/compat.h
@@ -73,5 +77,10 @@ usr/include/s6/lock.h
 usr/include/s6/s6.h
 usr/include/s6/servicedir.h
 usr/include/s6/supervise.h
+usr/lib/
+usr/lib/libs6.so
+usr/lib/libs6.so.2.13
 usr/lib/libs6.so.2.13.0.0
+usr/lib/libs6auto.so
+usr/lib/libs6auto.so.2.13
 usr/lib/libs6auto.so.2.13.0.0
