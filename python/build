@@ -4,9 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/clear/0001-Fix-$nom-path-for-linux.patch
+  cd "$TMPD"/$nom/Python-$ver
 
-  # Force use the system copy of various libraries
+  patch -p0 -i "$CERD"/$nom/patches/openbsd/Modules__hashopenssl_c.patch
+  patch -p0 -i "$CERD"/$nom/patches/openbsd/Modules__ssl_c.patch
+
   rm -frv \
     Modules/_decimal/libmpdec \
     Modules/expat
@@ -19,14 +21,14 @@ configure() {
     --enable-optimizations \
     --enable-loadable-sqlite-extensions \
     --enable-ipv6 \
+    --disable-test-modules \
     --without-static-libpython \
     --with-lto \
-    --with-tzpath=/usr/share/zoneinfo \
     --with-system-expat \
-    --with-system-ffi \
     --with-system-libmpdec \
     --with-dbmliborder=gdbm:ndbm \
     --without-doc-strings \
+    --with-mimalloc \
     --with-pymalloc \
     --with-computed-gotos \
     --without-ensurepip

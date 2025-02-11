@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="python"
-ver="3.12.5"
-url="https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz"
-sum="e07f260b149e0d4f3d786b807ea3d436"
-bld="expat gcc libffi mpdecimal"
+ver="3.13.2"
+url="https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz"
+sum="9e963724d025c9fdb6a1fefebace4705"
+bld="expat libffi mpdecimal"
