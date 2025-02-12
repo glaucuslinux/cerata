@@ -15,10 +15,8 @@ prepare() {
 }
 
 configure() {
-  ax_cv_c_float_words_bigendian=no \
   glaucus-configure \
     --enable-shared \
-    --enable-optimizations \
     --enable-loadable-sqlite-extensions \
     --enable-ipv6 \
     --disable-test-modules \
@@ -30,6 +28,7 @@ configure() {
     --without-doc-strings \
     --with-mimalloc \
     --with-pymalloc \
+    --with-readline=editline \
     --with-computed-gotos \
     --without-ensurepip
 }
