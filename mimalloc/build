@@ -14,7 +14,8 @@ configure() {
     -DMI_BUILD_STATIC=OFF \
     -DMI_BUILD_TESTS=OFF \
     -DMI_INSTALL_TOPLEVEL=ON \
-    -DMI_LIBC_MUSL=ON
+    -DMI_LIBC_MUSL=ON \
+    -DMI_OPT_SIMD=ON
 }
 
 build() {
