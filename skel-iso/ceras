@@ -4,4 +4,4 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="skel-iso"
-run="curl eiwd hwdata neatvi openresolv pciutils sdhcp skel tmux wget2"
+run="bkeymaps busybox curl eiwd hwdata neatvi openresolv pciutils sdhcp skel tmux wget2"
