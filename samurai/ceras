@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2025, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="samurai"
-ver="1.2"
-url="https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz"
-sum="1bf900b9e682a0aa309cfe6a425789b2"
