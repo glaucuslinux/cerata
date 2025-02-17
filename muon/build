@@ -4,26 +4,38 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv build
+  mkdir -pv build-bootstrap
 
-  ./bootstrap.sh build
+  ./bootstrap.sh build-bootstrap
+
+  build-bootstrap/$nom-bootstrap setup \
+    -Dwrap_mode=nodownload \
+    -Dlibcurl=disabled \
+    -Dlibarchive=disabled \
+    -Dlibpkgconf=enabled \
+    -Ddocs=disabled \
+    -Dtracy=disabled \
+    build-bootstrap
+
+  build-bootstrap/$nom-bootstrap \
+    -C build-bootstrap samu
+
+  mkdir -pv build
 }
 
 configure() {
-  PATH="./build:$PATH" \
-  glaucus-$nom \
+  PATH="$TMPD/$nom/build-bootstrap:$PATH" \
+  "$CERD"/$nom/glaucus-$nom \
     -Dlibcurl=disabled \
-    -Dlibarchive=enabled \
+    -Dlibarchive=disabled \
     -Dlibpkgconf=enabled \
-    -Dsamurai=disabled \
-    -Dbestline=enabled \
     -Ddocs=disabled \
     -Dtracy=disabled \
     build
 }
 
 build() {
-  samu \
+  build-bootstrap/$nom samu \
     -C build
 }
 
@@ -33,9 +45,13 @@ check() {
 
 package() {
   DESTDIR="$SACD" \
-  $nom \
+  build/$nom \
     -C build \
     install
 
   cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/samu "$SACD"/usr/bin
+
+  # Compatibility symlink
+  ln -fnsv samu "$SACD"/usr/bin/ninja
 }
