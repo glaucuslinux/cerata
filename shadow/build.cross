@@ -5,6 +5,7 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-customize-login-defaults.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-customize-useradd-defaults.patch
 
   autoreconf -vfis
 }
