@@ -1,0 +1,32 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-fix-ids-path.patch
+}
+
+configure() {
+  cp -afv "$CERD"/$nom/glaucus.config .config
+}
+
+build() {
+  make \
+    LDFLAGS="$LDFLAGS -lutmps"
+}
+
+check() {
+  :
+}
+
+package() {
+  mkdir -pv "$SACD"/usr/bin
+
+  for i in $(./$nom); do
+    ln -fnsv $nom "$SACD"/usr/bin/$i
+  done
+
+  mv -fv $nom "$SACD"/usr/bin
+}
