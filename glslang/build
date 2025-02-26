@@ -12,7 +12,7 @@ configure() {
     -B build \
     -DALLOW_EXTERNAL_SPIRV_TOOLS=ON \
     -DBUILD_EXTERNAL=OFF \
-    -DBUILD_SHARED_LIBS=OFF \
+    -DBUILD_SHARED_LIBS=ON \
     -DGLSLANG_TESTS=OFF
 }
 
