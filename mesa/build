@@ -1,0 +1,77 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -pv build
+}
+
+configure() {
+  glaucus-muon \
+    -Dplatforms=wayland \
+    -Degl-native-platform=wayland \
+    -Dandroid-strict=false \
+    -Dandroid-libbacktrace=disabled \
+    -Dexpat=enabled \
+    -Dgallium-drivers=radeonsi,r300,r600,nouveau,i915,svga,virgl,iris,zink,crocus \
+    -Dgallium-extra-hud=true \
+    -Dgallium-vdpau=enabled \
+    -Dgallium-va=enabled \
+    -Dgallium-xa=enabled \
+    -Dvulkan-drivers=amd,intel,intel_hasvk,virtio,nouveau \
+    -Dshader-cache=enabled \
+    -Dvulkan-layers=device-select,intel-nullhw,overlay,screenshot \
+    -Dshared-glapi=enabled \
+    -Dgles1=enabled \
+    -Dgles2=enabled \
+    -Dgbm=enabled \
+    -Dglx=disabled \
+    -Degl=enabled \
+    -Dglvnd=enabled \
+    -Dmicrosoft-clc=disabled \
+    -Dllvm=disabled \
+    -Ddraw-use-llvm=false \
+    -Damd-use-llvm=false \
+    -Dvalgrind=disabled \
+    -Dlibunwind=disabled \
+    -Dlmsensors=enabled \
+    -Denable-glcpp-tests=disabled \
+    -Dselinux=disabled \
+    -Dexecmem=disabled \
+    -Dtools= \
+    -Dpower8=disabled \
+    -Dxlib-lease=disabled \
+    -Dglx-direct=false \
+    -Dallow-kcmp=disabled \
+    -Dzstd=enabled \
+    -Dzlib=disabled \
+    -Dintel-clc=enabled \
+    -Dintel-rt=enabled \
+    -Dvideo-codecs=all \
+    -Dgallium-d3d12-video=disabled \
+    -Dgallium-d3d12-graphics=disabled \
+    -Dxmlconfig=enabled \
+    -Dmesa-clc=enabled \
+    -Dprecomp-compiler=enabled \
+    build
+}
+
+build() {
+  samu \
+    -C build
+}
+
+check() {
+  muon \
+    test \
+    -R \
+    -C build
+}
+
+package() {
+  DESTDIR="$SACD" \
+  muon \
+    -C build \
+    install
+}
