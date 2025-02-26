@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="spirv-tools"
+ver="2024.3"
+url="https://github.com/KhronosGroup/SPIRV-Tools/archive/v2024.3.tar.gz"
+sum="7c6fd1f4e3e3666eb5f6a50bbefab98a"

@@ -1,0 +1,36 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -pv build
+}
+
+configure() {
+  glaucus-cmake \
+    -B build \
+    -DSPIRV-Headers_SOURCE_DIR=/usr \
+    -DSPIRV_SKIP_TESTS=ON \
+    -DSPIRV_TOOLS_BUILD_STATIC=OFF \
+    -DSPIRV_WERROR=OFF
+}
+
+build() {
+  samu \
+    -C build
+}
+
+check() {
+  muon \
+    test \
+    -R \
+    -C build
+}
+
+package() {
+  DESTDIR="$SACD" \
+  samu \
+    -C build \
+    install/strip
+}
