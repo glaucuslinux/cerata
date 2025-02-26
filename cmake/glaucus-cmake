@@ -4,6 +4,7 @@
 # Distributed under the terms of the ISC License
 
 exec cmake \
+  -DBUILD_SHARED_LIBS=ON \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_BINDIR=/usr/bin \
   -DCMAKE_INSTALL_DATADIR=/usr/share \
