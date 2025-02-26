@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="glslang"
+ver="15.1.0"
+url="https://github.com/KhronosGroup/glslang/archive/15.1.0.tar.gz"
+sum="10a77b44ced9d6eb15d12e35deffbe52"
