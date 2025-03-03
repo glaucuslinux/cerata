@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/serpent/0001-Revert-build-system-ccenv_set_cc_underscore-rewrite-.patch
-  patch -p1 -i "$CERD"/$nom/patches/serpent/0001-Work-if-invoked-as-libtoolize.patch
+  patch -p1 -i "$CERD"/$nom/patches/aeryn/0001-Revert-build-system-ccenv_set_cc_underscore-rewrite-.patch
+  patch -p1 -i "$CERD"/$nom/patches/aeryn/0001-Work-if-invoked-as-libtoolize.patch
 }
 
 configure() {
