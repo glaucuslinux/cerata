@@ -25,5 +25,5 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/ping
+  cp -afv "$CERD"/$nom/ping "$SACD"/usr/bin
 }
