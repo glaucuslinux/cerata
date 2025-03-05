@@ -1,4 +1,4 @@
-bin/
+bin
 boot/
 dev/
 etc/
@@ -16,14 +16,12 @@ etc/resolv.conf
 etc/shadow
 etc/shells
 home/
-lib/
-lib/os-release
-lib/pkgconfig/
+lib
 mnt/
 proc/
 root/
 run/
-sbin/
+sbin
 sys/
 tmp/
 usr/
@@ -31,7 +29,7 @@ usr/bin/
 usr/lib/
 usr/lib/os-release
 usr/lib/pkgconfig/
-usr/sbin/
+usr/sbin
 usr/share/
 var/
 var/cache/
@@ -49,8 +47,8 @@ var/lock
 var/log/
 var/log/rad/
 var/mail/
-var/run/
+var/run
 var/spool/
-var/spool/mail/
+var/spool/mail
 var/tmp/
 var/tmp/rad/
