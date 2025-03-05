@@ -4,7 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="basu"
-ver="0.2.1"
-url="https://git.sr.ht/~emersion/basu/archive/v0.2.1.tar.gz"
-sum="d184926a4389f4eef5e2b2f12d36b3e8"
+ver="315664a"
+url="https://git.sr.ht/~emersion/basu"
 bld="gperf libcap muon"
