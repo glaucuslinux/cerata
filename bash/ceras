@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="bash"
-ver="5.2.32"
-url="https://ftpmirror.gnu.org/bash/bash-5.2.32.tar.gz"
-sum="729c5b722f5ce8634f34a6008f226d4d"
+ver="5.2.37"
+url="https://ftpmirror.gnu.org/bash/bash-5.2.37.tar.gz"
+sum="1057778a9db2d945c79d676a48b9fb63"
 bld="libedit netbsd-curses"
 nop="bootstrap"
