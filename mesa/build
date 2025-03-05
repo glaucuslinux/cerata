@@ -36,9 +36,7 @@ configure() {
     -Dvalgrind=disabled \
     -Dlibunwind=disabled \
     -Dlmsensors=enabled \
-    -Denable-glcpp-tests=disabled \
-    -Dselinux=disabled \
-    -Dexecmem=disabled \
+    -Denable-glcpp-tests=false \
     -Dtools= \
     -Dpower8=disabled \
     -Dxlib-lease=disabled \
