@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="bubble"
-ver="0edf564"
+ver="c7e4a25"
 url="https://github.com/glaucuslinux/bubble"
-run="booster erofs-utils kmod libarchive libisoburn limine parted toybox util-linux zstd"
+run="booster dash erofs-utils kmod libarchive libisoburn limine mdevd parted qemu toybox util-linux zstd"
