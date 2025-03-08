@@ -5,7 +5,7 @@
 
 nom="perl"
 ver="5.40.0"
-url="https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz"
+url="https://cpan.org/src/5.0/perl-5.40.0.tar.gz"
 sum="3e8e36d7f75ab243e82ce23ff1b50442"
 bld="bzip2 zlib-ng"
 nop="bootstrap"
