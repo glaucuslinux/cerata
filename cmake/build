@@ -27,7 +27,8 @@ configure() {
     --system-zstd \
     --system-libarchive \
     --no-system-librhash \
-    --no-system-libuv
+    --no-system-libuv \
+    --no-debugger
 }
 
 build() {
