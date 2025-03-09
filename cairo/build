@@ -5,7 +5,6 @@
 
 prepare() {
   patch -p1 -i "$CERD"/$nom/patches/alpine/musl-stacksize.patch
-  patch -p1 -i "$CERD"/$nom/patches/buildroot/0001-$nom-ft-private.h-fix-missing-FT_Color-error.patch
 
   mkdir -pv build
 }
@@ -22,6 +21,7 @@ configure() {
     -Dxlib=disabled \
     -Dzlib=enabled \
     -Dtests=disabled \
+    -Dlzo=disabled \
     -Dglib=enabled \
     -Dspectre=disabled \
     -Dsymbol-lookup=disabled \
