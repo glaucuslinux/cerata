@@ -4,9 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/upstream/0001-duphandle-also-init-netrc.patch
-  patch -p1 -i "$CERD"/$nom/patches/upstream/0002-netrc-support-large-file-longer-lines-longer-tokens.patch
-
   autoreconf -vfis
 }
 
@@ -14,6 +11,7 @@ configure() {
   glaucus-configure \
     --disable-debug \
     --enable-optimize \
+    --disable-curldebug \
     --disable-ares \
     --disable-static \
     --enable-pic \
@@ -24,7 +22,6 @@ configure() {
     --enable-ipv6 \
     --disable-versioned-symbols \
     --enable-threaded-resolver \
-    --enable-pthreads \
     --enable-unix-sockets \
     --enable-websockets \
     --with-openssl \
@@ -33,7 +30,9 @@ configure() {
     --with-zstd \
     --with-ca-bundle=/etc/ssl/cert.pem \
     --with-ca-path=/etc/ssl/certs \
+    --with-ca-embed=/etc/ssl/cert.pem \
     --without-libpsl \
+    --without-libgsasl \
     --without-librtmp \
     --without-winidn \
     --without-apple-idn \
