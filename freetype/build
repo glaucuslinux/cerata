@@ -1,0 +1,43 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  for i in pcf-family-names subpixel table-validation-modules; do
+    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+  done
+
+  mkdir -pv build
+}
+
+configure() {
+  glaucus-muon \
+    -Dbrotli=disabled \
+    -Dbzip2=enabled \
+    -Dharfbuzz=disabled \
+    -Dmmap=enabled \
+    -Dpng=enabled \
+    -Dtests=disabled \
+    -Dzlib=enabled \
+    build
+}
+
+build() {
+  samu \
+    -C build
+}
+
+check() {
+  muon \
+    test \
+    -R \
+    -C build
+}
+
+package() {
+  DESTDIR="$SACD" \
+  muon \
+    -C build \
+    install
+}
