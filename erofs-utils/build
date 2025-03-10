@@ -12,7 +12,11 @@ configure() {
     --disable-static \
     --enable-pic \
     --enable-multithreading \
-    --with-libzstd
+    --enable-lz4 \
+    --enable-lzma \
+    --with-zlib \
+    --with-libzstd \
+    --with-xxhash
 }
 
 build() {

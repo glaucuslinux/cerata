@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="erofs-utils"
-ver="1.8.1"
-url="https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.1.tar.gz"
-sum="88aba699b9e1f6a0a8412c0d4a2ee3d0"
-bld="lz4 util-linux xz zlib-ng zstd"
+ver="1.8.5"
+url="https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.5.tar.gz"
+sum="12dde99ce9a2a47d0c2b165a13645fd9"
+bld="lz4 util-linux xxhash xz zlib-ng zstd"
