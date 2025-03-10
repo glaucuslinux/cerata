@@ -1,0 +1,6 @@
+Name: execline
+Description: the execline library for argv and envp manipulation
+URL: https://skarnet.org/software/execline/
+Version: 2.9.6.1
+Requires.private: skalibs >= 2.14.3.0
+Libs: -lexecline
