@@ -11,6 +11,7 @@ configure() {
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
+    --enable-glob \
     --with-libedit
 }
 
