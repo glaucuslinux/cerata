@@ -9,7 +9,6 @@ prepare() {
 
 configure() {
   glaucus-configure \
-    --enable-glob \
     --with-libedit
 }
 
