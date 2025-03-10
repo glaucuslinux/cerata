@@ -6,6 +6,8 @@
 prepare() {
   cd "$TMPD"/$nom/iwd-$ver
 
+  patch -p1 -i "$CERD"/$nom/patches/alpine/fix-crash-in-the-RSSI-polling-fallback-workaround.patch
+
   autoreconf -vfis
 }
 
@@ -39,6 +41,8 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  mkdir -pv "$SACD"/etc/$nom
-  cp -afv "$CERD"/$nom/main.conf "$SACD"/etc/$nom
+  mkdir -pv "$SACD"/etc/iwd
+  cp -afv "$CERD"/$nom/main.conf "$SACD"/etc/iwd
+
+  cp -afv "$CERD"/$nom/iwd_passphrase "$SACD"/usr/bin
 }
