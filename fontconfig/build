@@ -4,39 +4,28 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  mkdir -pv build
+  autoreconf -vfis
 }
 
 configure() {
-  glaucus-muon \
-    -Ddoc=disabled \
-    -Ddoc-txt=disabled \
-    -Ddoc-man=disabled \
-    -Ddoc-pdf=disabled \
-    -Ddoc-html=disabled \
-    -Dnls=disabled \
-    -Dtests=disabled \
-    -Dtools=enabled \
-    -Dxml-backend=expat \
-    -Ddefault-sub-pixel-rendering=rgb \
-    build
+  glaucus-configure \
+    --enable-pic \
+    --disable-nls \
+    --disable-rpath \
+    --disable-docs
 }
 
 build() {
-  samu \
-    -C build
+  make
 }
 
 check() {
-  muon \
-    test \
-    -R \
-    -C build
+  make \
+    check
 }
 
 package() {
-  DESTDIR="$SACD" \
-  muon \
-    -C build \
-    install
+  make \
+    DESTDIR="$SACD" \
+    install-strip
 }
