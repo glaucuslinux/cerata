@@ -7,14 +7,12 @@ prepare() {
   for i in pcf-family-names subpixel table-validation-modules; do
     patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
   done
-
-  ./autogen.sh
 }
 
 configure() {
   glaucus-configure \
     --disable-static \
-    --enable-pic \
+    --with-pic \
     --with-zlib \
     --with-bzip2 \
     --with-png \
@@ -41,5 +39,5 @@ check() {
 package() {
   make \
     DESTDIR="$SACD" \
-    install-strip
+    install
 }
