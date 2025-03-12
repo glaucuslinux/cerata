@@ -25,5 +25,8 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
+  # Compatibility symlink
+  ln -fnsv $nom "$SACD"/usr/bin/${nom}6
+
   cp -afv "$CERD"/$nom/ping "$SACD"/usr/bin
 }
