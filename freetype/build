@@ -12,6 +12,7 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
+    --enable-freetype-config \
     --with-pic \
     --with-zlib \
     --with-bzip2 \

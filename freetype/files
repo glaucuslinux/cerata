@@ -1,4 +1,6 @@
 usr/
+usr/bin/
+usr/bin/freetype-config
 usr/include/
 usr/include/freetype2/
 usr/include/freetype2/freetype/
@@ -68,3 +70,6 @@ usr/lib/pkgconfig/freetype2.pc
 usr/share/
 usr/share/aclocal/
 usr/share/aclocal/freetype2.m4
+usr/share/man/
+usr/share/man/man1/
+usr/share/man/man1/freetype-config.1
