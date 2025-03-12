@@ -8,36 +8,38 @@ prepare() {
     patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
   done
 
-  mkdir -pv build
+  ./autogen.sh
 }
 
 configure() {
-  glaucus-muon \
-    -Dbrotli=disabled \
-    -Dbzip2=enabled \
-    -Dharfbuzz=disabled \
-    -Dmmap=enabled \
-    -Dpng=enabled \
-    -Dtests=disabled \
-    -Dzlib=enabled \
-    build
+  glaucus-configure \
+    --disable-static \
+    --enable-pic \
+    --with-zlib \
+    --with-bzip2 \
+    --with-png \
+    --without-harfbuzz \
+    --without-brotli \
+    --without-librsvg \
+    --without-old-mac-fonts \
+    --without-fsspec \
+    --without-fsref \
+    --without-quickdraw-toolbox \
+    --without-quickdraw-carbon \
+    --without-ats
 }
 
 build() {
-  samu \
-    -C build
+  make
 }
 
 check() {
-  muon \
-    test \
-    -R \
-    -C build
+  make \
+    check
 }
 
 package() {
-  DESTDIR="$SACD" \
-  muon \
-    -C build \
-    install
+  make \
+    DESTDIR="$SACD" \
+    install-strip
 }
