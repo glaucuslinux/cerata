@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="glib"
-ver="2.81.2"
-url="https://download.gnome.org/sources/glib/2.81/glib-2.81.2.tar.xz"
-sum="c9f7491067caa02fb0f24902e559c1da"
-bld="muon"
+ver="2.84.0"
+url="https://download.gnome.org/sources/glib/2.84/glib-2.84.0.tar.xz"
+sum="681a705a60571037a072d440a294f025"
+bld="libffi muon pcre2 util-linux"
