@@ -132,5 +132,5 @@ package() {
     "$SACD"/usr/lib/libsupc++.a
 
   # Compatibility symlink
-  ln -fnsv ../bin/cpp "$SACD"/usr/lib/cpp
+  ln -fnsv ../bin/cpp "$SACD"/usr/lib
 }

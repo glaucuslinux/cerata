@@ -155,5 +155,5 @@ package() {
     "$CRSD"/usr/lib/libsupc++.la
 
   # Compatibility symlink
-  ln -fnsv ../bin/cpp "$CRSD"/usr/lib/cpp
+  ln -fnsv ../bin/cpp "$CRSD"/usr/lib
 }

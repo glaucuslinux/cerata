@@ -139,5 +139,5 @@ package() {
     "$TLCD"/usr/$TGT/lib/libsupc++.la
 
   # Compatibility symlink
-  ln -fnsv ../bin/$TGT-cpp "$TLCD"/usr/lib/$TGT-cpp
+  ln -fnsv ../bin/$TGT-cpp "$TLCD"/usr/lib
 }
