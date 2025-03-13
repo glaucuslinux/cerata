@@ -8,7 +8,7 @@
 # unlimited permission to copy and/or distribute it, with or without
 # modifications, as long as this notice is preserved.
 
-# serial 10 ltoptions.m4
+# serial 11 ltoptions.m4
 
 # This is to help aclocal find these macros, as it can't see m4_define.
 AC_DEFUN([LTOPTIONS_VERSION], [m4_if([1])])
@@ -370,8 +370,16 @@ power*-*-aix[[5-9]]*,yes)
     fi
   fi
   ;;
-*)
+power*-*-aix[[5-9]]*,'')
+  AC_MSG_WARN([for $host, specify if building shared libraries for versioning (svr4|both)])
+  AC_MSG_CHECKING([which variant of shared library versioning to provide])
   with_aix_soname=aix
+  AC_MSG_RESULT([(default) $with_aix_soname])
+  ;;
+*)
+  AC_MSG_CHECKING([which variant of shared library versioning to provide])
+  with_aix_soname=aix
+  AC_MSG_RESULT([(default) $with_aix_soname])
   ;;
 esac
 
