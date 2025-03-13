@@ -4,16 +4,26 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
+  rm -fv subprojects/gvdb.wrap
+
   mkdir -pv build
 }
 
 configure() {
   glaucus-muon \
     -Dselinux=disabled \
+    -Dlibmount=enabled \
     -Dman-pages=disabled \
+    -Ddtrace=disabled \
+    -Dsystemtap=disabled \
+    -Dsysprof=disabled \
     -Dtests=false \
     -Dnls=disabled \
     -Dglib_debug=disabled \
+    -Dglib_assert=false \
+    -Dglib_checks=false \
+    -Dlibelf=disabled \
+    -Dintrospection=disabled \
     build
 }
 
