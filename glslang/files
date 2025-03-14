@@ -32,13 +32,13 @@ usr/lib/cmake/glslang/glslang-targets-release.cmake
 usr/lib/cmake/glslang/glslang-targets.cmake
 usr/lib/libSPIRV.so
 usr/lib/libSPIRV.so.15
-usr/lib/libSPIRV.so.15.1.0
+usr/lib/libSPIRV.so.15.2.0
 usr/lib/libSPVRemapper.so
 usr/lib/libSPVRemapper.so.15
-usr/lib/libSPVRemapper.so.15.1.0
+usr/lib/libSPVRemapper.so.15.2.0
 usr/lib/libglslang-default-resource-limits.so
 usr/lib/libglslang-default-resource-limits.so.15
-usr/lib/libglslang-default-resource-limits.so.15.1.0
+usr/lib/libglslang-default-resource-limits.so.15.2.0
 usr/lib/libglslang.so
 usr/lib/libglslang.so.15
-usr/lib/libglslang.so.15.1.0
+usr/lib/libglslang.so.15.2.0
