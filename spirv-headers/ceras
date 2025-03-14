@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="spirv-headers"
-ver="1.4.304.1"
-url="https://github.com/KhronosGroup/SPIRV-Headers/archive/vulkan-sdk-1.4.304.1.tar.gz"
-sum="b91441e030ac7d0b20a62819a4b65eb6"
+ver="1.4.309.0"
+url="https://github.com/KhronosGroup/SPIRV-Headers/archive/vulkan-sdk-1.4.309.0.tar.gz"
+sum="2021ed5955fd47706f100b905c4ee4ca"
 bld="cmake muon"
