@@ -1,6 +1,6 @@
 --- Makefile
 +++ Makefile
-@@ -52,8 +52,8 @@
+@@ -49,8 +49,8 @@
  		mkdir -p -m 755 $(DESTDIR)$(libdir)/modprobe.d ;\
  		install -m 644 -T blacklist.conf $(DESTDIR)$(libdir)/modprobe.d/dist-blacklist.conf ;\
  	fi;
