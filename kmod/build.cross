@@ -4,10 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/strndupa.patch
-  patch -p1 -i "$CERD"/$nom/patches/void/stdout.patch
-
-  autoreconf -vfis
+  :
 }
 
 configure() {
@@ -16,9 +13,7 @@ configure() {
     --host=$TGT \
     --enable-pic \
     --disable-manpages \
-    --disable-test-modules \
     --disable-gtk-doc-html \
-    --with-rootlibdir=/usr/lib \
     --with-module-directory=/usr/lib/modules \
     --with-zstd \
     --with-xz \
