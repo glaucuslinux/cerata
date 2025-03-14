@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="json-c"
-ver="0.17"
-url="https://s3.amazonaws.com/json-c_releases/releases/json-c-0.17.tar.gz"
-sum="12a8f5ddb63fd31af7857124542228c8"
+ver="0.18"
+url="https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz"
+sum="f9a0c782e70fb40f8a360e913fccf534"
 bld="cmake muon"
