@@ -27,6 +27,4 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
-
-  rm -fv "$SACD"/usr/lib/lib$nom.so.23.3.0-gdb.py
 }
