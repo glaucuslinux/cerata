@@ -21,6 +21,7 @@ configure() {
     -Dman-pages=disabled \
     -Dvalgrind=disabled \
     -Dudev=true \
+    -Dtests=false \
     build
 }
 
