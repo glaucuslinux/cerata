@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="labwc"
-ver="0.8.0"
-url="https://github.com/labwc/labwc/archive/0.8.0.tar.gz"
-sum="16a02c7ea214ccbd64030366c6cd671a"
-bld="muon wayland-protocols"
+ver="0.8.3"
+url="https://github.com/labwc/labwc/archive/0.8.3.tar.gz"
+sum="9b0677c9e31511862b3aaef2a551b4ca"
+bld="muon wayland-protocols wlroots"
 run="cairo glib libinput libpng libxkbcommon libxml2 pango wayland wlroots"
