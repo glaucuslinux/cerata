@@ -15,6 +15,7 @@ usr/lib/libedit.la
 usr/lib/libedit.so
 usr/lib/libedit.so.0
 usr/lib/libedit.so.0.0.75
+usr/lib/libhistory.so
 usr/lib/libreadline.so
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libedit.pc
