@@ -18,6 +18,7 @@ configure() {
     --enable-pic \
     --disable-bsdcpio \
     --disable-rpath \
+    --enable-posix-regex-lib=libpcre2posix \
     --enable-xattr \
     --enable-acl \
     --without-libb2 \
