@@ -35,4 +35,6 @@ package() {
   samu \
     -C build \
     install/strip
+
+  ln -fnsv $nom "$SACD"/usr/bin/${nom}Validator
 }
