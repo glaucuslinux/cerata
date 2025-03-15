@@ -11,6 +11,7 @@ configure() {
   glaucus-muon \
     -Dman-pages=disabled \
     -Dxwayland=disabled \
+    -Dsvg=disabled \
     -Dnls=disabled \
     build
 }
