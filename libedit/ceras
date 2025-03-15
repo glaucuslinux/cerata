@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libedit"
-ver="20240808-3.1"
-url="https://thrysoee.dk/editline/libedit-20240808-3.1.tar.gz"
-sum="1cb09a05f2095257aeb8bd0722b17b4b"
+ver="20250104-3.1"
+url="https://thrysoee.dk/editline/libedit-20250104-3.1.tar.gz"
+sum="d088be93fcd324dbe0756ac602700e40"
 bld="netbsd-curses"
