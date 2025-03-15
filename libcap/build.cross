@@ -16,13 +16,15 @@ build() {
   make \
     DESTDIR="$CRSD" \
     lib=lib \
+    sbin=bin \
+    sbindir=bin \
     prefix=/usr \
     exec_prefix=/usr \
     lib_prefix=/usr \
     inc_prefix=/usr \
     man_prefix=/usr/share \
     MANDIR=/usr/share/man \
-    BINDIR=/usr/bin \
+    SBINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
@@ -41,13 +43,15 @@ package() {
   make \
     DESTDIR="$CRSD" \
     lib=lib \
+    sbin=bin \
+    sbindir=bin \
     prefix=/usr \
     exec_prefix=/usr \
     lib_prefix=/usr \
     inc_prefix=/usr \
     man_prefix=/usr/share \
     MANDIR=/usr/share/man \
-    BINDIR=/usr/bin \
+    SBINDIR=/usr/bin \
     INCDIR=/usr/include \
     LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
