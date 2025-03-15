@@ -10,9 +10,9 @@
  PSXLIBNAME=$(PSXTITLE).so
 -STAPSXLIBNAME=$(PSXTITLE).a
  
- CAPFILES=cap_alloc cap_proc cap_extint cap_flag cap_text cap_file
+ CAPFILES=cap_alloc cap_proc cap_extint cap_flag cap_text cap_file cap_syscalls
  CAPMAGICOBJ=cap_magic.o
-@@ -36,16 +34,13 @@
+@@ -40,16 +38,13 @@
  MAJPSXLIBNAME=$(PSXLIBNAME).$(VERSION)
  MINPSXLIBNAME=$(MAJPSXLIBNAME).$(MINOR)
  
@@ -30,7 +30,7 @@
  
  pcs: $(LIBTITLE).pc
  ifeq ($(PTHREADS),yes)
-@@ -98,14 +93,6 @@
+@@ -102,14 +97,6 @@
  	@echo "=> making $@ from $(UAPI_HEADER)"
  	$(BUILD_EGREP) '^#define\s+CAP_([^\s]+)\s+[0-9]+\s*$$' include/uapi/linux/capability.h | $(BUILD_SED) -e 's/^#define\s\+/{"/' -e 's/\s*$$/},/' -e 's/\s\+/",/' -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/' > $@
  
@@ -45,7 +45,7 @@
  ifeq ($(SHARED),yes)
  
  empty: empty.c
-@@ -161,34 +148,26 @@
+@@ -165,34 +152,26 @@
  sudotest:
  	@echo no sudotests for libcap
  
@@ -83,7 +83,7 @@
  install-shared-cap: install-common-cap $(MINCAPLIBNAME)
  	install -m 0755 $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MINCAPLIBNAME)
  	ln -sf $(MINCAPLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJCAPLIBNAME)
-@@ -197,9 +176,6 @@
+@@ -201,9 +180,6 @@
  	-/sbin/ldconfig
  endif
  
@@ -93,7 +93,7 @@
  install-shared-psx: install-common-psx $(MINPSXLIBNAME)
  	install -m 0755 $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MINPSXLIBNAME)
  	ln -sf $(MINPSXLIBNAME) $(FAKEROOT)$(LIBDIR)/$(MAJPSXLIBNAME)
-@@ -227,8 +203,8 @@
+@@ -231,8 +207,8 @@
  
  clean:
  	$(LOCALCLEAN)
