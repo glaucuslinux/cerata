@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libinput"
-ver="1.26.2"
-url="https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.26.2/libinput-1.26.2.tar.gz"
-sum="91e29a8817da477deeb1dd980c168975"
+ver="1.27.1"
+url="https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.27.1/libinput-1.27.1.tar.gz"
+sum="44a8dc4ebf56a4d8e7ae021af4126d07"
 bld="libevdev libudev-zero mtdev muon"
