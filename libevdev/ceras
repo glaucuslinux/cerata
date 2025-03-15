@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libevdev"
-ver="1.13.2"
-url="https://freedesktop.org/software/libevdev/libevdev-1.13.2.tar.xz"
-sum="8b9a4f0a316cfe951da7b6f699c1444c"
+ver="1.13.3"
+url="https://freedesktop.org/software/libevdev/libevdev-1.13.3.tar.xz"
+sum="e4d3b5fa34fb3bdd5cf2875cd6c8b4c4"
 bld="python"
