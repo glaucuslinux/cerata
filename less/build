@@ -9,6 +9,7 @@ prepare() {
 
 configure() {
   glaucus-configure \
+    --with-secure \
     --with-regex=pcre2
 }
 
