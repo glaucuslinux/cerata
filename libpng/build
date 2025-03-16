@@ -19,13 +19,6 @@ configure() {
 
 build() {
   make
-
-  make \
-    CFLAGS="$CFLAGS" \
-    LDFLAGS="$LDFLAGS" \
-    -C contrib/pngminus \
-    png2pnm \
-    pnm2png
 }
 
 check() {
@@ -37,6 +30,14 @@ package() {
   make \
     DESTDIR="$SACD" \
     install-strip
+
+  make \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
+    PNGLIB_SHARED="-L$SACD/usr/lib -lpng" \
+    -C contrib/pngminus \
+    png2pnm \
+    pnm2png
 
   mv -fv \
     contrib/pngminus/png2pnm \
