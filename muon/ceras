@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="muon"
-ver="6328c3d"
+ver="c9f7ed5"
 url="https://git.sr.ht/~lattis/muon"
 bld="pkgconf"
 nop="bootstrap"

@@ -10,7 +10,7 @@ exec muon setup \
   -Dincludedir=/usr/include \
   -Dinfodir=/usr/share/info \
   -Dlibdir=/usr/lib \
-  -Dlibexecdir=/usr/lib/$nom \
+  -Dlibexecdir=/usr/bin \
   -Dlocaledir=/usr/share/locale \
   -Dlocalstatedir=/var \
   -Dmandir=/usr/share/man \
