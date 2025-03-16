@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libpng"
-ver="1.6.43"
-url="https://github.com/pnggroup/libpng/archive/v1.6.43.tar.gz"
-sum="42a3b763308a7aed91908d158e37b51c"
+ver="1.6.47"
+url="https://github.com/pnggroup/libpng/archive/v1.6.47.tar.gz"
+sum="099b8cf464436a3949b0d286f9d2a9a8"
 bld="zlib-ng"
