@@ -14,8 +14,14 @@ configure() {
     --enable-pic \
     --without-debug \
     --with-history \
-    --with-zlib \
+    --with-readline \
+    --with-http \
     --with-lzma \
+    --without-sax1 \
+    --without-xinclude \
+    --without-xpath \
+    --without-xptr \
+    --with-zlib \
     --with-tls
 }
 
@@ -24,7 +30,8 @@ build() {
 }
 
 check() {
-  :
+  make \
+    check
 }
 
 package() {
