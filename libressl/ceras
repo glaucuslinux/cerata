@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libressl"
-ver="3.9.2"
-url="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.9.2.tar.gz"
-sum="74ff3193993911a397a1e8df1d4a332b"
+ver="4.0.0"
+url="https://cdn.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.0.0.tar.gz"
+sum="7fc7db8cab3b61de4ceb46dda1bf652f"
