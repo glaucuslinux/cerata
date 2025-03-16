@@ -31,9 +31,4 @@ package() {
     install-strip
 
   ln -fnsv ../../cert.pem "$SACD"/etc/ssl/certs/ca-certificates.crt
-
-  chmod -v 755 \
-    "$SACD"/usr/lib/libcrypto.so.53.0.0 \
-    "$SACD"/usr/lib/libssl.so.56.0.0 \
-    "$SACD"/usr/lib/libtls.so.29.0.0
 }
