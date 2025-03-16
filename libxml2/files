@@ -59,7 +59,7 @@ usr/lib/cmake/libxml2/libxml2-config.cmake
 usr/lib/libxml2.la
 usr/lib/libxml2.so
 usr/lib/libxml2.so.2
-usr/lib/libxml2.so.2.13.3
+usr/lib/libxml2.so.2.13.6
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libxml-2.0.pc
 usr/lib/python3.13/
