@@ -4,6 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
+  cd "$TMPD"/$nom/$nom-xkbcommon-$ver
+
   mkdir -pv build
 }
 
