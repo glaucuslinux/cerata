@@ -17,10 +17,6 @@ build() {
     all-dynamic
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     PREFIX=/usr \

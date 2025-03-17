@@ -20,10 +20,6 @@ build() {
   $nom
 }
 
-check() {
-  :
-}
-
 package() {
   $nom \
     DESTDIR="$CRSD" \

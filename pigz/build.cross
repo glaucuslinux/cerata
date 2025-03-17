@@ -18,10 +18,6 @@ build() {
     LDFLAGS="$LDFLAGS"
 }
 
-check() {
-  :
-}
-
 package() {
   mv -fv $nom "$CRSD"/usr/bin
   ln -fnsv $nom "$CRSD"/usr/bin/gzip

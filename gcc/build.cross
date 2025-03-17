@@ -101,10 +101,6 @@ build() {
     STAGE1_LDFLAGS="$LDFLAGS"
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$CRSD" \

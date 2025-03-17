@@ -35,10 +35,6 @@ build() {
     GOLANG=no
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$CRSD" \

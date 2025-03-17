@@ -63,10 +63,6 @@ build() {
     tooldir=/usr
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     tooldir=/usr \
