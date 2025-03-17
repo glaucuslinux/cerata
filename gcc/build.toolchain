@@ -106,10 +106,6 @@ build() {
     all-target-lib$nom
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     install-strip-$nom \
