@@ -17,10 +17,6 @@ build() {
   :
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     exec_prefix=/usr \

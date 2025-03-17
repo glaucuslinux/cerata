@@ -16,10 +16,6 @@ build() {
     all-target-$nom
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     install-strip-target-$nom

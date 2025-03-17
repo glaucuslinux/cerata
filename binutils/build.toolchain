@@ -64,10 +64,6 @@ build() {
     all-ld
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     install-strip-$nom \
