@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="linux-headers"
-ver="6.10.6"
-url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.10.6.tar.gz"
-sum="5b57fb62cf2c91d545273dc0ddf632ab"
+ver="6.13.7"
+url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.7.tar.gz"
+sum="ad18133afd2b9261cab2f777f9acf6b0"
