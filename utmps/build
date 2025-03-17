@@ -13,7 +13,7 @@ configure() {
     --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
     --bindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/bin \
     --libdir=/usr/lib \
     --includedir=/usr/include \
     --enable-shared \

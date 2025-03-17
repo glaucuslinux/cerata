@@ -12,7 +12,7 @@ configure() {
     --prefix=/usr \
     --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/bin \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --sysconfdir=/etc \

@@ -16,7 +16,7 @@ configure() {
     --exec-prefix="$TLCD"/usr \
     --bindir="$TLCD"/usr/bin \
     --sbindir="$TLCD"/usr/bin \
-    --libexecdir="$TLCD"/usr/lib/$nom \
+    --libexecdir="$TLCD"/usr/bin \
     --sysconfdir="$TLCD"/etc \
     --sharedstatedir="$TLCD"/var/lib \
     --localstatedir="$TLCD"/var \

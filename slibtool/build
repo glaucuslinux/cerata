@@ -18,7 +18,7 @@ configure() {
     --includedir=/usr/include \
     --oldincludedir=/usr/include \
     --mandir=/usr/share/man \
-    --libexecdir=/usr/lib/$nom \
+    --libexecdir=/usr/bin \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
