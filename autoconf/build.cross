@@ -26,10 +26,6 @@ build() {
   make
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$CRSD" \

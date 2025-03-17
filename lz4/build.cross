@@ -23,10 +23,6 @@ build() {
     MAN1DIR=/usr/share/man/man1
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     BUILD_STATIC=no \

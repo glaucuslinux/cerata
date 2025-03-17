@@ -16,10 +16,6 @@ build() {
     -f Makefile-libbz2_so
 }
 
-check() {
-  :
-}
-
 package() {
   mv -fv bzlib.h "$CRSD"/usr/include
 

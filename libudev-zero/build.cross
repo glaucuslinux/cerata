@@ -22,10 +22,6 @@ build() {
   $CC $CFLAGS $LDFLAGS contrib/helper.c -o $nom-helper
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     PREFIX=/usr \

@@ -21,10 +21,6 @@ build() {
     headers
 }
 
-check() {
-  :
-}
-
 package() {
   find usr/include ! -name '*.h' -type f -delete
 

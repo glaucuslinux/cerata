@@ -28,10 +28,6 @@ build() {
     -C contrib/p$nom
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$CRSD" \

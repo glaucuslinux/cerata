@@ -15,10 +15,6 @@ build() {
   :
 }
 
-check() {
-  :
-}
-
 package() {
   cp -afv "$CERD" "$CRSD"/var/lib/rad/clusters
 }

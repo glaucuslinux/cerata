@@ -15,10 +15,6 @@ build() {
   :
 }
 
-check() {
-  :
-}
-
 package() {
   ln -fnsv usr/bin "$CRSD"/bin
 

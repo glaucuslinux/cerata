@@ -17,10 +17,6 @@ build() {
   $CC $CFLAGS $LDFLAGS "$CERD"/musl/getent.c -o getent
 }
 
-check() {
-  :
-}
-
 package() {
   mv -fv \
     gencat \

@@ -15,10 +15,6 @@ build() {
   :
 }
 
-check() {
-  :
-}
-
 package() {
   cp -afv "$TMPD"/$nom/usr "$CRSD"
   mv -fv "$CRSD"/usr/lib/modules/$ver-cachyos/vmlinuz "$CRSD"/boot

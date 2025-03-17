@@ -19,10 +19,6 @@ build() {
     LIBXXH_DISPATCH=1
 }
 
-check() {
-  :
-}
-
 package() {
     make \
     LIBXXH_DISPATCH=1 \

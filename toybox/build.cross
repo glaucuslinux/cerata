@@ -18,10 +18,6 @@ build() {
     LDFLAGS="$LDFLAGS -lutmps"
 }
 
-check() {
-  :
-}
-
 package() {
   mv -fv $nom "$CRSD"/usr/bin
 
