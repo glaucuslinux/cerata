@@ -59,6 +59,7 @@ configure() {
     --enable-checking=release \
     --disable-multilib \
     --enable-__cxa_atexit \
+    --enable-decimal-float=bid \
     --disable-fixed-point \
     --enable-threads=posix \
     --enable-tls \
