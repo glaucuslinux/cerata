@@ -11,6 +11,7 @@ configure() {
   glaucus-configure \
     --enable-thread-safe \
     --enable-shared-cache \
+    --enable-decimal-float \
     --enable-float128 \
     --disable-static \
     --enable-pic
