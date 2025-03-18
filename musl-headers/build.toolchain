@@ -7,6 +7,7 @@ prepare() {
   cd "$TMPD"/musl/musl-$ver
 
   patch -p0 -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p1 -i "$CERD"/$nom/patches/upstream/CVE-2025-26519.patch
 }
 
 configure() {
