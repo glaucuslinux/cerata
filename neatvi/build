@@ -26,8 +26,9 @@ package() {
     "$SACD"/usr/bin \
     "$SACD"/usr/share/$nom
 
-  mv -fv vi "$SACD"/usr/bin
-  ln -fnsv vi "$SACD"/usr/bin/ex
+  mv -fv vi "$SACD"/usr/bin/$nom
+  ln -fnsv $nom "$SACD"/usr/bin/ex
+  ln -fnsv $nom "$SACD"/usr/bin/vi
 
   mv -fv ecmd.sh "$SACD"/usr/share/$nom
 }
