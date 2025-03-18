@@ -15,10 +15,6 @@ build() {
   make
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$SACD" \

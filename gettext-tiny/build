@@ -20,10 +20,6 @@ build() {
     LDFLAGS="$LDFLAGS"
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     prefix=/usr \

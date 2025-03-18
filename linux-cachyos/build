@@ -15,10 +15,6 @@ build() {
   :
 }
 
-check() {
-  :
-}
-
 package() {
   mkdir -pv "$SACD"/boot
   mv -fv "$TMPD"/$nom/usr "$SACD"
