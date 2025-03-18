@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="mtools"
-ver="4.0.44"
-url="https://ftpmirror.gnu.org/mtools/mtools-4.0.44.tar.gz"
-sum="aaa198def3346b4be529f09aca7aee9b"
+ver="4.0.48"
+url="https://ftpmirror.gnu.org/mtools/mtools-4.0.48.tar.gz"
+sum="67ff2478dc2c69d9b2600dc14cb4485e"

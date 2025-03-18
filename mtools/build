@@ -28,4 +28,7 @@ package() {
   make \
     DESTDIR="$SACD" \
     install
+
+  mkdir -pv "$SACD"/etc
+  mv $nom.conf "$SACD"/etc
 }
