@@ -5,6 +5,7 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p1 -i "$CERD"/$nom/patches/upstream/CVE-2025-26519.patch
 }
 
 configure() {
@@ -46,7 +47,7 @@ package() {
     getent \
     "$SACD"/usr/bin
   cp -afv "$CERD"/$nom/true "$SACD"/usr/bin/ldconfig
-  ln -fnsv ../lib/libc.so "$SACD"/usr/bin/ldd
+  cp -afv "$CERD"/$nom/ldd "$SACD"/usr/bin
 
   # BSD compatibility header
   cp -afv "$CERD"/$nom/queue.h "$SACD"/usr/include/sys

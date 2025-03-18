@@ -39,7 +39,7 @@ package() {
 
   cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$CRSD"/etc
 
-  ln -fnsv ../lib/libc.so "$CRSD"/usr/bin/ldd
+  cp -afv "$CERD"/$nom/ldd "$CRSD"/usr/bin
 
   ln -fnsv libc.so "$CRSD"/usr/lib/ld-$nom-x86_64.so.1
 }
