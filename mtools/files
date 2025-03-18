@@ -1,3 +1,5 @@
+etc/
+etc/mtools.conf
 usr/
 usr/bin/
 usr/bin/amuFormat.sh
@@ -12,6 +14,7 @@ usr/bin/mcopy
 usr/bin/mdel
 usr/bin/mdeltree
 usr/bin/mdir
+usr/bin/mdoctorfat
 usr/bin/mdu
 usr/bin/mformat
 usr/bin/minfo
@@ -47,6 +50,7 @@ usr/share/man/man1/mcopy.1
 usr/share/man/man1/mdel.1
 usr/share/man/man1/mdeltree.1
 usr/share/man/man1/mdir.1
+usr/share/man/man1/mdoctorfat.1
 usr/share/man/man1/mdu.1
 usr/share/man/man1/mformat.1
 usr/share/man/man1/minfo.1
