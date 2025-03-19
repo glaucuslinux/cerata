@@ -12,8 +12,8 @@ configure() {
 }
 
 build() {
-  # Disable support for compressed ids
   make \
+    OPT="$CFLAGS" \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \
@@ -30,12 +30,9 @@ build() {
     PCI_COMPRESSED_IDS=0
 }
 
-check() {
-  :
-}
-
 package() {
   make \
+    OPT="$CFLAGS" \
     ZLIB=no \
     DNS=yes \
     SHARED=yes \
