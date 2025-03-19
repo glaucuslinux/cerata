@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pcre2"
-ver="10.44"
-url="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.44/pcre2-10.44.tar.gz"
-sum="735677b37cb0f9f0b41ce0cd4bce4b19"
+ver="10.45"
+url="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.gz"
+sum="06b671a7a22a68ea077da5961e0762c0"
 bld="bzip2 libedit zlib-ng"
