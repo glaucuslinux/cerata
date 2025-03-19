@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="pango"
-ver="1.54.0"
-url="https://download.gnome.org/sources/pango/1.54/pango-1.54.0.tar.xz"
-sum="cd111e40437b95479c92f74f099f3bac"
-bld="cairo glib muon"
+ver="1.56.3"
+url="https://download.gnome.org/sources/pango/1.56/pango-1.56.3.tar.xz"
+sum="04057112893d311e156b09c68bf111c0"
+bld="cairo fontconfig freetype glib muon"
