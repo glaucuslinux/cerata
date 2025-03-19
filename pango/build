@@ -9,10 +9,13 @@ prepare() {
 
 configure() {
   glaucus-muon \
+    -Dintrospection=disabled \
     -Dbuild-testsuite=false \
     -Dbuild-examples=false \
+    -Dfontconfig=enabled \
     -Dlibthai=disabled \
     -Dxft=disabled \
+    -Dfreetype=enabled \
     build
 }
 
