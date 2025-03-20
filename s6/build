@@ -26,12 +26,11 @@ build() {
     strip
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$SACD" \
     install
+
+  mkdir -pv "$SACD"/usr/lib/pkgconfig
+  cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
 }
