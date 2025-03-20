@@ -17,9 +17,8 @@ configure() {
     -Darm-simd=disabled \
     -Dneon=disabled \
     -Da64-neon=disabled \
-    -Diwmmxt=disabled \
-    -Diwmmxt2=false \
     -Dmips-dspr2=disabled \
+    -Drvv=disabled \
     -Dgnu-inline-asm=enabled \
     -Dtls=enabled \
     -Dopenmp=disabled \
