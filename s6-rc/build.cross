@@ -36,4 +36,6 @@ package() {
   make \
     DESTDIR="$CRSD" \
     install
+
+  cp -afv "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
 }
