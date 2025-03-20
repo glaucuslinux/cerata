@@ -4,8 +4,8 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="perl"
-ver="5.40.0"
-url="https://cpan.org/src/5.0/perl-5.40.0.tar.gz"
-sum="3e8e36d7f75ab243e82ce23ff1b50442"
+ver="5.40.1"
+url="https://cpan.org/src/5.0/perl-5.40.1.tar.gz"
+sum="03fe1e9664944a430e4691fc0bdf3ac6"
 bld="bzip2 zlib-ng"
 nop="bootstrap"
