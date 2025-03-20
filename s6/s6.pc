@@ -1,0 +1,6 @@
+Name: s6
+Description: The C interface to the s6 supervision suite
+URL: https://skarnet.org/software/s6/
+Version: 2.13.1.0
+Requires.private: execline >= 2.9.6.1, skalibs >= 2.14.2.0
+Libs: -ls6
