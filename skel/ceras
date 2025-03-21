@@ -4,4 +4,4 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="skel"
-run="acl attr bzip2 cerata dash execline expat file fping fs grep iproute2 kmod less libarchive libcap libedit libressl libudev-zero linux-cachyos lz4 mdevd musl netbsd-curses pcre2 rad s6 s6-boot-scripts s6-linux-init s6-rc shadow skalibs toybox util-linux utmps xz yash zlib-ng zstd"
+run="acl attr bzip2 cerata dash execline expat file fping fs grep iproute2 kmod less libarchive libcap libedit libressl libudev-zero linux-cachyos lz4 mdevd musl netbsd-curses pcre2 rad s6 s6-boot-scripts s6-linux-init s6-rc shadow skalibs toybox util-linux utmps xxhash xz yash zlib-ng zstd"
