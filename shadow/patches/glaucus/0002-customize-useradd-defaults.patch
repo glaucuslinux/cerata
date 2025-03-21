@@ -1,6 +1,6 @@
 --- src/useradd.c
 +++ src/useradd.c
-@@ -91,14 +91,14 @@
+@@ -97,14 +97,14 @@
  /*
   * These defaults are used if there is no defaults file.
   */
