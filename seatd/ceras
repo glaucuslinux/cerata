@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="seatd"
-ver="0.8.0"
-url="https://git.sr.ht/~kennylevinsen/seatd/archive/0.8.0.tar.gz"
-sum="a821f67feeb82a47627d84df879e2bc0"
+ver="0.9.1"
+url="https://git.sr.ht/~kennylevinsen/seatd/archive/0.9.1.tar.gz"
+sum="cfbca03300598fdb69c7dd5819ee67b8"
 bld="muon"
