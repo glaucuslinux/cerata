@@ -2,5 +2,5 @@ Name: s6-linux-init
 Description: Library to register a logout hook
 URL: https://skarnet.org/software/s6-linux-init/
 Version: 1.1.2.1
-Requires.private: skalibs >= 2.14.2.0
+Requires.private: skalibs >= 2.14.3.0
 Libs: -ls6_linux_init

@@ -2,5 +2,5 @@ Name: s6-rc
 Description: The C interface to the s6-rc service manager
 URL: https://skarnet.org/software/s6-rc/
 Version: 0.5.5.0
-Requires.private: s6 >= 2.13.1.0, skalibs >= 2.14.2.0
+Requires.private: s6 >= 2.13.1.0, skalibs >= 2.14.3.0
 Libs: -ls6rc
