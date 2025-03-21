@@ -9,6 +9,7 @@ prepare() {
 
 configure() {
   glaucus-configure \
+    --disable-maintainer-mode \
     --enable-thread-safe \
     --enable-shared-cache \
     --enable-decimal-float=bid \
