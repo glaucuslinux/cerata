@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="wlroots"
-ver="0.18.0"
-url="https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.18.0/downloads/wlroots-0.18.0.tar.gz"
-sum="31ecddf038e40bbb8e1388cfffb99daf"
+ver="0.18.2"
+url="https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.18.2/downloads/wlroots-0.18.2.tar.gz"
+sum="ebdb8cdbcd00f8e8545e86f93eee6af3"
 bld="hwdata libdrm libinput libudev-zero libxkbcommon mesa muon pixman seatd wayland"
