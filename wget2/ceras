@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="wget2"
-ver="2.1.0"
-url="https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz"
-sum="4966c9303c633d5e353f897ef67c1015"
+ver="2.2.0"
+url="https://ftpmirror.gnu.org/wget/wget2-2.2.0.tar.gz"
+sum="005058d10a6cd1833e6e527884ff79dd"
 bld="bzip2 libressl netbsd-curses pcre2 xz zlib-ng zstd"
