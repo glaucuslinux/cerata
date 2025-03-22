@@ -5,7 +5,6 @@
 
 prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-fix-ids-path.patch
 }
 
 configure() {

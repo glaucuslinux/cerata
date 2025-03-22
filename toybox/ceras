@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="toybox"
-ver="0.8.11"
-url="https://landley.net/toybox/downloads/toybox-0.8.11.tar.gz"
-sum="163fbf49df654c774e41797dd900bab0"
+ver="0.8.12"
+url="https://landley.net/toybox/downloads/toybox-0.8.12.tar.gz"
+sum="5686addfb9b94c37f108bc0cb641fa4f"
 bld="libressl utmps"
