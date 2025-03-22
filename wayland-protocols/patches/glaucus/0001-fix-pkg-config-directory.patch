@@ -1,6 +1,6 @@
 --- meson.build
 +++ meson.build
-@@ -114,7 +114,7 @@
+@@ -136,7 +136,7 @@
  pkgconfig_configuration.set('PACKAGE', 'wayland-protocols')
  pkgconfig_configuration.set('WAYLAND_PROTOCOLS_VERSION', wayland_protocols_version)
  
