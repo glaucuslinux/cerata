@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="xz"
-ver="5.6.2"
-url="https://github.com/tukaani-project/xz/releases/download/v5.6.2/xz-5.6.2.tar.gz"
-sum="9f477397bd10790401da231228c661b6"
+ver="5.6.4"
+url="https://github.com/tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.gz"
+sum="f8d1ba3644aca647424d46c0b9ed6714"
