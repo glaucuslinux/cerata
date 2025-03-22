@@ -22,7 +22,6 @@ configure() {
     --disable-rpath \
     --without-audit \
     --without-libpam \
-    --without-btrfs \
     --without-selinux \
     --with-acl \
     --with-attr \
