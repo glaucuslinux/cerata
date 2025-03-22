@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="util-linux"
-ver="2.40.2"
-url="https://cdn.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.2.tar.gz"
-sum="946b8a1e107867c8fb1f2cbef02371fc"
+ver="2.41"
+url="https://cdn.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.tar.gz"
+sum="35e26542ff60eadfec4ea8b7fe5ee187"
 bld="libedit libudev-zero netbsd-curses zlib-ng"
