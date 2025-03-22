@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="wayland-protocols"
-ver="1.36"
-url="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.36/wayland-protocols-1.36.tar.gz"
-sum="267dfab6dc013cd5768e25bd952f1031"
-bld="muon"
+ver="1.41"
+url="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/1.41/wayland-protocols-1.41.tar.gz"
+sum="ce1994ce4e468d11eaae524214aa7afc"
+bld="muon wayland"
