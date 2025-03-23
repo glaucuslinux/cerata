@@ -15,7 +15,6 @@ configure() {
     --sharedlibdir=/usr/lib \
     --includedir=/usr/include \
     --zlib-compat \
-    --without-unaligned \
     --force-sse2
 }
 
