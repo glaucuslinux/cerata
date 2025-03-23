@@ -1,7 +1,7 @@
 --- share/initialization/default
 +++ share/initialization/default
-@@ -3,24 +3,7 @@
- # initialization script cannot be read from ~/.yashrc.
+@@ -3,25 +3,7 @@
+ # initialization script cannot be read from $XDG_CONFIG_HOME/yash/rc or ~/.yashrc.
  # This file is in the public domain.
  
 -# print introduction
@@ -11,7 +11,8 @@
 -Welcome to yash!
 -
 -You are seeing this message because a user-specific initialization script is
--not found at ~/.yashrc. The current session has been loaded with common
+-not found at ${XDG_CONFIG_HOME:-$HOME/.config}/yash/rc or ~/.yashrc.
+-The current session has been loaded with common
 -settings that should be useful for many users. To suppress this message, copy
 -a sample initialization script from ${yashdatadir}/initialization/sample
 -to ~/.yashrc and make any customization in it if you want. For bare default
@@ -27,14 +28,7 @@
  . --autoload initialization/sample
 --- share/initialization/sample
 +++ share/initialization/sample
-@@ -2,22 +2,21 @@
- # This is a sample initialization script for yash. Copy this file to ~/.yashrc
- # and add your favorite customization to it.
- 
--
- # Firstly, load the common customization script.
- # If you don't like settings applied in this script, remove this line.
- . --autoload --no-alias initialization/common
+@@ -10,15 +10,15 @@
  
  # These are additional aliases that are not defined in the common script.
  # Uncomment to enable them.
@@ -55,13 +49,11 @@
  
  # Uncomment to enable direnv support. (jq required)
  #_update_direnv() {
-@@ -36,6 +35,12 @@
+@@ -37,6 +37,10 @@
  
  # And add your own customization below.
  
-+PATH=/usr/bin
-+
-+# Use "Ctrl + Rigt Arrow" to move the cursor to the next word
++# Use "Ctrl + Right Arrow" to move the cursor to the next word
 +bindkey --emacs '\^[[1;5C' forward-emacsword
  
 +# Use "Ctrl + Left Arrow" to move the cursor to the previous word
