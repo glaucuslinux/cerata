@@ -5,7 +5,7 @@
 
 prepare() {
   ln -fnsv ../../gmp/gmp-6.3.0 gmp
-  ln -fnsv ../../mpfr/mpfr-4.2.1 mpfr
+  ln -fnsv ../../mpfr/mpfr-4.2.2 mpfr
   ln -fnsv ../../mpc/mpc-1.3.1 mpc
   ln -fnsv ../../isl/isl-0.27 isl
 
