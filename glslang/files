@@ -1,6 +1,7 @@
 usr/
 usr/bin/
 usr/bin/glslang
+usr/bin/glslangValidator
 usr/bin/spirv-remap
 usr/include/
 usr/include/glslang/
