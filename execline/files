@@ -60,4 +60,6 @@ usr/include/execline/execline.h
 usr/lib/
 usr/lib/libexecline.so
 usr/lib/libexecline.so.2.9
-usr/lib/libexecline.so.2.9.6.0
+usr/lib/libexecline.so.2.9.6.1
+usr/lib/pkgconfig/
+usr/lib/pkgconfig/execline.pc
