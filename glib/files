@@ -7,6 +7,7 @@ usr/bin/gi-compile-repository
 usr/bin/gi-decompile-typelib
 usr/bin/gi-inspect-typelib
 usr/bin/gio
+usr/bin/gio-launch-desktop
 usr/bin/gio-querymodules
 usr/bin/glib-compile-resources
 usr/bin/glib-compile-schemas
@@ -334,7 +335,6 @@ usr/include/glib-2.0/gobject/gvaluearray.h
 usr/include/glib-2.0/gobject/gvaluecollector.h
 usr/include/glib-2.0/gobject/gvaluetypes.h
 usr/lib/
-usr/lib/gio-launch-desktop
 usr/lib/gio/
 usr/lib/gio/modules/
 usr/lib/glib-2.0/
