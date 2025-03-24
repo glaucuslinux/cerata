@@ -18,8 +18,6 @@ build() {
 }
 
 package() {
-  mv -fv $nom "$CRSD"/usr/bin
-
   for i in \
   [ \
   base32 base64 basename \
@@ -47,4 +45,6 @@ package() {
   yes; do
     ln -fnsv $nom "$CRSD"/usr/bin/$i
   done
+
+  mv -fv $nom "$CRSD"/usr/bin
 }

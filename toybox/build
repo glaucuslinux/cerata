@@ -22,9 +22,10 @@ check() {
 
 package() {
   mkdir -pv "$SACD"/usr/bin
-  mv -fv $nom "$SACD"/usr/bin
 
   for i in $(./$nom); do
     ln -fnsv $nom "$SACD"/usr/bin/$i
   done
+
+  mv -fv $nom "$SACD"/usr/bin
 }
