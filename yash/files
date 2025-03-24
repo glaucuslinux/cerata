@@ -69,6 +69,7 @@ usr/share/yash/completion/fgrep
 usr/share/yash/completion/file
 usr/share/yash/completion/find
 usr/share/yash/completion/fold
+usr/share/yash/completion/fzy
 usr/share/yash/completion/gawk
 usr/share/yash/completion/getconf
 usr/share/yash/completion/getopts
@@ -107,6 +108,7 @@ usr/share/yash/completion/git-reflog
 usr/share/yash/completion/git-remote
 usr/share/yash/completion/git-request-pull
 usr/share/yash/completion/git-reset
+usr/share/yash/completion/git-restore
 usr/share/yash/completion/git-rev-list
 usr/share/yash/completion/git-rev-parse
 usr/share/yash/completion/git-revert
