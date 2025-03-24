@@ -16,8 +16,8 @@ usr/include/pkgconf/libpkgconf/stdinc.h
 usr/lib/
 usr/lib/libpkgconf.la
 usr/lib/libpkgconf.so
-usr/lib/libpkgconf.so.5
-usr/lib/libpkgconf.so.5.0.0
+usr/lib/libpkgconf.so.6
+usr/lib/libpkgconf.so.6.0.0
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libpkgconf.pc
 usr/share/
