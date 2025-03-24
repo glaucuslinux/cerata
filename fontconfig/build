@@ -4,9 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  NOCONFIGURE=yes \
-  ./autogen.sh
-
+  autoreconf -vfis
 }
 
 configure() {
