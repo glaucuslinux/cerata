@@ -10,7 +10,7 @@ usr/bin/instmodsh
 usr/bin/json_pp
 usr/bin/libnetcfg
 usr/bin/perl
-usr/bin/perl5.40.0
+usr/bin/perl5.40.1
 usr/bin/perlbug
 usr/bin/perldoc
 usr/bin/perlivp
@@ -34,7 +34,6 @@ usr/bin/zipdetails
 usr/lib/
 usr/lib/perl5/
 usr/lib/perl5/core_perl/
-usr/lib/perl5/core_perl/.packlist
 usr/lib/perl5/core_perl/B.pm
 usr/lib/perl5/core_perl/B/
 usr/lib/perl5/core_perl/B/Concise.pm
@@ -458,6 +457,7 @@ usr/share/man/man1/perl5380delta.1p
 usr/share/man/man1/perl5381delta.1p
 usr/share/man/man1/perl5382delta.1p
 usr/share/man/man1/perl5400delta.1p
+usr/share/man/man1/perl5401delta.1p
 usr/share/man/man1/perl561delta.1p
 usr/share/man/man1/perl56delta.1p
 usr/share/man/man1/perl581delta.1p
@@ -2305,6 +2305,7 @@ usr/share/perl5/core_perl/pod/perl5380delta.pod
 usr/share/perl5/core_perl/pod/perl5381delta.pod
 usr/share/perl5/core_perl/pod/perl5382delta.pod
 usr/share/perl5/core_perl/pod/perl5400delta.pod
+usr/share/perl5/core_perl/pod/perl5401delta.pod
 usr/share/perl5/core_perl/pod/perl561delta.pod
 usr/share/perl5/core_perl/pod/perl56delta.pod
 usr/share/perl5/core_perl/pod/perl581delta.pod
