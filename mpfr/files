@@ -6,7 +6,7 @@ usr/lib/
 usr/lib/libmpfr.la
 usr/lib/libmpfr.so
 usr/lib/libmpfr.so.6
-usr/lib/libmpfr.so.6.2.1
+usr/lib/libmpfr.so.6.2.2
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/mpfr.pc
 usr/share/
