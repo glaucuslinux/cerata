@@ -14,7 +14,7 @@ usr/include/zstd_errors.h
 usr/lib/
 usr/lib/libzstd.so
 usr/lib/libzstd.so.1
-usr/lib/libzstd.so.1.5.6
+usr/lib/libzstd.so.1.5.7
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libzstd.pc
 usr/share/
