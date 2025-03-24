@@ -13,8 +13,11 @@ prepare() {
     -Dlibcurl=disabled \
     -Dlibarchive=disabled \
     -Dlibpkgconf=enabled \
-    -Ddocs=disabled \
     -Dtracy=disabled \
+    -Dman-pages=disabled \
+    -Dmeson-docs=disabled \
+    -Dmeson-tests=disabled \
+    -Dwebsite=disabled \
     build-bootstrap
 
   build-bootstrap/$nom-bootstrap \
@@ -29,8 +32,11 @@ configure() {
     -Dlibcurl=disabled \
     -Dlibarchive=disabled \
     -Dlibpkgconf=enabled \
-    -Ddocs=disabled \
     -Dtracy=disabled \
+    -Dman-pages=disabled \
+    -Dmeson-docs=disabled \
+    -Dmeson-tests=disabled \
+    -Dwebsite=disabled \
     build
 }
 
