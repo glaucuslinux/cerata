@@ -3,7 +3,6 @@ usr/bin/
 usr/bin/bash
 usr/bin/bashbug
 usr/bin/rbash
-usr/bin/sh
 usr/include/
 usr/include/bash/
 usr/include/bash/alias.h
