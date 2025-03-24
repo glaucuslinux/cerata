@@ -8,7 +8,7 @@ usr/include/wgetver.h
 usr/lib/
 usr/lib/libwget.la
 usr/lib/libwget.so
-usr/lib/libwget.so.2
-usr/lib/libwget.so.2.0.0
+usr/lib/libwget.so.3
+usr/lib/libwget.so.3.0.0
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libwget.pc
