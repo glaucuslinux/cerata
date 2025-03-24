@@ -44,7 +44,7 @@ usr/lib/
 usr/lib/liblzma.la
 usr/lib/liblzma.so
 usr/lib/liblzma.so.5
-usr/lib/liblzma.so.5.6.2
+usr/lib/liblzma.so.5.6.4
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/liblzma.pc
 usr/share/
