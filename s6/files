@@ -80,7 +80,9 @@ usr/include/s6/supervise.h
 usr/lib/
 usr/lib/libs6.so
 usr/lib/libs6.so.2.13
-usr/lib/libs6.so.2.13.0.0
+usr/lib/libs6.so.2.13.1.0
 usr/lib/libs6auto.so
 usr/lib/libs6auto.so.2.13
-usr/lib/libs6auto.so.2.13.0.0
+usr/lib/libs6auto.so.2.13.1.0
+usr/lib/pkgconfig/
+usr/lib/pkgconfig/s6.pc
