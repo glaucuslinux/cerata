@@ -1,3 +1,5 @@
+etc/
+etc/doas.conf
 usr/
 usr/bin/
 usr/bin/doas
