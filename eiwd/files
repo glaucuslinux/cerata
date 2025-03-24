@@ -3,10 +3,9 @@ etc/iwd/
 etc/iwd/main.conf
 usr/
 usr/bin/
+usr/bin/iwd
 usr/bin/iwd_passphrase
 usr/bin/iwmon
-usr/lib/
-usr/lib/iwd
 var/
 var/lib/
 var/lib/iwd/
