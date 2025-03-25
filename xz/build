@@ -13,7 +13,6 @@ prepare() {
 
 configure() {
   glaucus-configure \
-    --disable-lzip-decoder \
     --enable-threads=posix \
     --disable-doc \
     --disable-static \
