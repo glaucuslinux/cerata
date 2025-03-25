@@ -15,7 +15,6 @@ configure() {
   "$CERD"/autoconf/glaucus-configure \
     --build=$BLD \
     --host=$TGT \
-    --disable-lzip-decoder \
     --enable-threads=posix \
     --disable-doc \
     --disable-static \
