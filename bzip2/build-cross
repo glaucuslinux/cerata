@@ -1,0 +1,25 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/chimera/make.patch
+}
+
+build() {
+  make \
+    -f Makefile-libbz2_so
+}
+
+package() {
+  mv -fv bzlib.h "$CRSD"/usr/include
+
+  mv -fv libbz2.so.$ver "$CRSD"/usr/lib
+
+  for i in libbz2.so libbz2.so.1 libbz2.so.1.0; do
+    ln -fnsv libbz2.so.$ver "$CRSD"/usr/lib/$i
+  done
+
+  cp -afv "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
+}

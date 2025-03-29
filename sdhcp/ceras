@@ -1,8 +1,0 @@
-# Copyright (c) 2018-2025, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="sdhcp"
-ver="5f9956c"
-url="https://github.com/michaelforney/sdhcp"

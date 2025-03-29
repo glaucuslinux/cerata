@@ -55,8 +55,8 @@ package() {
     -C build \
     install
 
-  cp -afv "$CERD"/$nom/glaucus-$nom "$SACD"/usr/bin
-  cp -afv "$CERD"/$nom/samu "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/files/glaucus-$nom "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/files/samu "$SACD"/usr/bin
 
   # Compatibility symlink
   ln -fnsv samu "$SACD"/usr/bin/ninja

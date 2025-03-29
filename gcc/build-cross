@@ -1,0 +1,157 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  ln -fnsv ../../gmp/gmp-6.3.0 gmp
+  ln -fnsv ../../mpfr/mpfr-4.2.2 mpfr
+  ln -fnsv ../../mpc/mpc-1.3.1 mpc
+  ln -fnsv ../../isl/isl-0.27 isl
+
+  for i in gmp mpc mpfr isl; do
+    cd $i
+    autoreconf -vfis
+    cd ..
+  done
+
+  for i in \
+  0001-posix_memalign \
+  0003-specs-turn-on-Wl-z-now-by-default \
+  0005-On-linux-targets-pass-as-needed-by-default-to-the-li \
+  0006-Enable-Wformat-and-Wformat-security-by-default \
+  0007-Enable-Wtrampolines-by-default \
+  0012-lib${nom}_s \
+  0015-build-fix-CXXFLAGS_FOR_BUILD-passing \
+  0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on; do
+    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+  done
+
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+
+  mkdir -pv build
+  cd build
+}
+
+configure() {
+  ../configure \
+    --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
+    --includedir=/usr/include \
+    --oldincludedir=/usr/include \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/share/info \
+    --localedir=/usr/share/locale \
+    --mandir=/usr/share/man \
+    --docdir=/usr/share/doc/$nom \
+    --build=$BLD \
+    --host=$TGT \
+    --target=$TGT \
+    --disable-bootstrap \
+    --enable-checking=release \
+    --disable-multilib \
+    --enable-__cxa_atexit \
+    --enable-decimal-float=bid \
+    --disable-fixed-point \
+    --enable-threads=posix \
+    --enable-tls \
+    --enable-languages=c,c++ \
+    --disable-rpath \
+    --disable-nls \
+    --disable-gnu-indirect-function \
+    --disable-initfini-array \
+    --disable-gnu-unique-object \
+    --enable-linker-build-id \
+    --disable-libsanitizer \
+    --disable-libssp \
+    --enable-default-ssp \
+    --enable-link-serialization=1 \
+    --enable-host-shared \
+    --enable-host-pie \
+    --enable-host-bind-now \
+    --enable-default-pie \
+    --disable-cet \
+    --disable-werror \
+    --disable-symvers \
+    --disable-libstdcxx-pch \
+    --enable-clocale=generic \
+    --enable-libstdcxx-time=rt \
+    --enable-libstdcxx-threads \
+    --with-arch=$CARCH \
+    --with-stage1-ldflags="$LDFLAGS" \
+    --with-pkgversion="$PRETTY_NAME" \
+    --with-bugurl=https://github.com/glaucuslinux/glaucus/issues \
+    --with-zstd \
+    --with-pic \
+    --with-system-zlib \
+    --with-linker-hash-style=gnu
+}
+
+build() {
+  make \
+    LDFLAGS_FOR_TARGET="$LDFLAGS" \
+    STAGE1_CFLAGS="$CFLAGS" \
+    STAGE1_CXXFLAGS="$CXXFLAGS" \
+    STAGE1_LDFLAGS="$LDFLAGS"
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    install-strip
+
+  ln -fnsv g++ "$CRSD"/usr/bin/c++
+
+  cp -afv \
+    "$CERD"/$nom/files/c89 \
+    "$CERD"/$nom/files/c99 \
+    "$CRSD"/usr/bin
+
+  for i in cc $nom-$ver $TGT-$nom; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
+
+  ln -fnsv $TGT-g++ "$CRSD"/usr/bin/$TGT-c++
+  ln -fnsv $TGT-$nom "$CRSD"/usr/bin/$TGT-cc
+  ln -fnsv $TGT-$nom "$CRSD"/usr/bin/$TGT-$nom-$ver
+  ln -fnsv g++ "$CRSD"/usr/bin/$TGT-g++
+
+  for i in ar nm ranlib; do
+    ln -fnsv $nom-$i "$CRSD"/usr/bin/$TGT-$nom-$i
+  done
+
+  # `"$CRSD"/usr/lib/bfd-plugins` is already provided by `binutils`
+  ln -fnsv ../$nom/$TGT/$ver/liblto_plugin.so "$CRSD"/usr/lib/bfd-plugins
+
+  # Remove static libraries and libtool archives
+  rm -fv \
+    "$CRSD"/usr/lib/$nom/$TGT/$ver/lib${nom}_eh.a \
+    "$CRSD"/usr/lib/$nom/$TGT/$ver/liblto_plugin.la \
+    "$CRSD"/usr/lib/libatomic.a \
+    "$CRSD"/usr/lib/libatomic.la \
+    "$CRSD"/usr/lib/libgomp.a \
+    "$CRSD"/usr/lib/libgomp.la \
+    "$CRSD"/usr/lib/libitm.a \
+    "$CRSD"/usr/lib/libitm.la \
+    "$CRSD"/usr/lib/libquadmath.a \
+    "$CRSD"/usr/lib/libquadmath.la \
+    "$CRSD"/usr/lib/libstdc++.a \
+    "$CRSD"/usr/lib/libstdc++.la \
+    "$CRSD"/usr/lib/libstdc++exp.a \
+    "$CRSD"/usr/lib/libstdc++exp.la \
+    "$CRSD"/usr/lib/libstdc++fs.a \
+    "$CRSD"/usr/lib/libstdc++fs.la \
+    "$CRSD"/usr/lib/libsupc++.a \
+    "$CRSD"/usr/lib/libsupc++.la
+
+  # Compatibility symlink
+  ln -fnsv ../bin/cpp "$CRSD"/usr/lib
+}

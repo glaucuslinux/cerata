@@ -8,16 +8,12 @@ prepare() {
 }
 
 configure() {
-  cp -afv "$CERD"/$nom/glaucus.config .config
+  cp -afv "$CERD"/$nom/files/glaucus.config .config
 }
 
 build() {
   make \
     LDFLAGS="$LDFLAGS -lutmps"
-}
-
-check() {
-  :
 }
 
 package() {

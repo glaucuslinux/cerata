@@ -30,7 +30,7 @@ package() {
     install
 
   mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/doas.conf "$SACD"/etc
+  cp -afv "$CERD"/$nom/files/doas.conf "$SACD"/etc
   chmod -v 400 "$SACD"/etc/doas.conf
 
   mv -fv "$SACD"/usr/bin/doas "$SACD"/usr/bin/$nom

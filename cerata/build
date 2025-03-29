@@ -3,22 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
-configure() {
-  :
-}
-
-build() {
-  :
-}
-
-check() {
-  :
-}
-
 package() {
   mkdir -pv "$SACD"/var/lib/rad/clusters
   cp -afv "$CERD" "$SACD"/var/lib/rad/clusters

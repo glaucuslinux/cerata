@@ -1,0 +1,39 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/upstream/0001-PR-579-net147-Fix-stack-overrun.patch
+  patch -p1 -i "$CERD"/$nom/patches/upstream/0002-PR-571-jschleus-Some-zip-files-are-misclassified-as-data.patch
+
+  autoreconf -vfis
+}
+
+configure() {
+  "$CERD"/autoconf/files/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
+    --enable-zlib \
+    --enable-bzlib \
+    --enable-xzlib \
+    --enable-zstdlib \
+    --disable-lzlib \
+    --disable-lrziplib \
+    --disable-libseccomp \
+    --enable-fsect-man5 \
+    --enable-pic
+}
+
+build() {
+  make
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    install-strip
+
+  # Remove libtool archive
+  rm -fv "$CRSD"/usr/lib/libmagic.la
+}

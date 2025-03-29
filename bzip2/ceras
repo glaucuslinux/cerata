@@ -1,9 +1,0 @@
-# Copyright (c) 2018-2025, Firas Khalil Khana
-# Distributed under the terms of the ISC License
-
-# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
-
-nom="bzip2"
-ver="1.0.8"
-url="https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
-sum="212672e26785617097cbaab8250b0c0a"

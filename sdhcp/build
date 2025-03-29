@@ -10,18 +10,10 @@ prepare() {
   patch -p1 -i "$CERD"/$nom/patches/zeppe-lin/0002-remove-unused-enprintf-function.patch
 }
 
-configure() {
-  :
-}
-
 build() {
   make \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS"
-}
-
-check() {
-  :
 }
 
 package() {

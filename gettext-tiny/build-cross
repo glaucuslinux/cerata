@@ -1,0 +1,26 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+build() {
+  make \
+    prefix=/usr \
+    sysconfdir=/etc \
+    LIBINTL=MUSL \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS"
+}
+
+package() {
+  make \
+    prefix=/usr \
+    sysconfdir=/etc \
+    LIBINTL=MUSL \
+    DESTDIR="$CRSD" \
+    install
+
+  cp -afv "$CERD"/$nom/files/config.rpath "$CRSD"/usr/share/$nom
+
+  ln -fnsv $nom "$CRSD"/usr/share/gettext
+}

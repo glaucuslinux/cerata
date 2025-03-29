@@ -11,10 +11,6 @@ prepare() {
     mrproper
 }
 
-configure() {
-  :
-}
-
 build() {
   make \
     ARCH=x86_64 \

@@ -1,0 +1,16 @@
+usr/
+usr/bin/
+usr/bin/chacl
+usr/bin/getfacl
+usr/bin/setfacl
+usr/include/
+usr/include/acl/
+usr/include/acl/libacl.h
+usr/include/sys/
+usr/include/sys/acl.h
+usr/lib/
+usr/lib/libacl.so
+usr/lib/libacl.so.1
+usr/lib/libacl.so.1.1.2302
+usr/lib/pkgconfig/
+usr/lib/pkgconfig/libacl.pc

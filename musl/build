@@ -27,10 +27,6 @@ build() {
   $CC $CFLAGS $LDFLAGS "$CERD"/$nom/getent.c -o getent
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$SACD" \
@@ -40,17 +36,17 @@ package() {
     "$SACD"/etc \
     "$SACD"/usr/bin
 
-  cp -afv "$CERD"/$nom/ld-$nom-x86_64.path "$SACD"/etc
+  cp -afv "$CERD"/$nom/files/ld-$nom-x86_64.path "$SACD"/etc
 
   mv -fv \
     gencat \
     getent \
     "$SACD"/usr/bin
-  cp -afv "$CERD"/$nom/true "$SACD"/usr/bin/ldconfig
-  cp -afv "$CERD"/$nom/ldd "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/files/true "$SACD"/usr/bin/ldconfig
+  cp -afv "$CERD"/$nom/files/ldd "$SACD"/usr/bin
 
   # BSD compatibility header
-  cp -afv "$CERD"/$nom/queue.h "$SACD"/usr/include/sys
+  cp -afv "$CERD"/$nom/files/queue.h "$SACD"/usr/include/sys
 
   # `utmps` provides `utmpx.h`
   rm -fv "$SACD"/usr/include/utmpx.h

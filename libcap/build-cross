@@ -1,0 +1,56 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
+}
+
+build() {
+  BUILD_CC=$HOSTCC \
+  make \
+    DESTDIR="$CRSD" \
+    lib=lib \
+    sbin=bin \
+    sbindir=bin \
+    prefix=/usr \
+    exec_prefix=/usr \
+    lib_prefix=/usr \
+    inc_prefix=/usr \
+    man_prefix=/usr/share \
+    MANDIR=/usr/share/man \
+    SBINDIR=/usr/bin \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
+    KERNEL_HEADERS="$CRSD"/usr/include \
+    SYSTEM_HEADERS=/usr/include \
+    PAM_CAP=no \
+    DYNAMIC=yes \
+    GOLANG=no
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    lib=lib \
+    sbin=bin \
+    sbindir=bin \
+    prefix=/usr \
+    exec_prefix=/usr \
+    lib_prefix=/usr \
+    inc_prefix=/usr \
+    man_prefix=/usr/share \
+    MANDIR=/usr/share/man \
+    SBINDIR=/usr/bin \
+    INCDIR=/usr/include \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
+    KERNEL_HEADERS="$CRSD"/usr/include \
+    SYSTEM_HEADERS=/usr/include \
+    PAM_CAP=no \
+    DYNAMIC=yes \
+    GOLANG=no \
+    install
+}

@@ -1,0 +1,40 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch
+}
+
+build() {
+  make \
+    HAVE_PTHREAD=1 \
+    ZSTD_LEGACY_SUPPORT=0 \
+    HAVE_ZLIB=1 \
+    HAVE_LZMA=1 \
+    HAVE_LZ4=1 \
+    BACKTRACE=0
+
+  make \
+    lib-mt
+
+  make \
+    -C contrib/p$nom
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    PREFIX=/usr \
+    install
+
+  make \
+    DESTDIR="$CRSD" \
+    PREFIX=/usr \
+    -C contrib/p$nom \
+    install
+
+  # Remove static library
+  rm -fv "$CRSD"/usr/lib/lib$nom.a
+}

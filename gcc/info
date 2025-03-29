@@ -1,0 +1,11 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="gcc"
+ver="14.2.0"
+url="https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.gz"
+sum="15c6aceabdfdaaec919dca8bdced7e22"
+bld="binutils gmp isl libarchive mpc mpfr zstd"
+nop="check lto"

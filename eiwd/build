@@ -42,7 +42,7 @@ package() {
     install-strip
 
   mkdir -pv "$SACD"/etc/iwd
-  cp -afv "$CERD"/$nom/main.conf "$SACD"/etc/iwd
+  cp -afv "$CERD"/$nom/files/main.conf "$SACD"/etc/iwd
 
-  cp -afv "$CERD"/$nom/iwd_passphrase "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/files/iwd_passphrase "$SACD"/usr/bin
 }

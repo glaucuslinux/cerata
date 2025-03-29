@@ -3,22 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
-configure() {
-  :
-}
-
-build() {
-  :
-}
-
-check() {
-  :
-}
-
 package() {
   cp -afv \
     "$TMPD"/$nom/etc \

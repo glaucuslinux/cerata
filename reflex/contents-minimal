@@ -1,0 +1,11 @@
+usr/
+usr/bin/
+usr/bin/flex
+usr/bin/flex++
+usr/bin/lex
+usr/bin/reflex
+usr/bin/reflex++
+usr/include/
+usr/include/reFlexLexer.h
+usr/lib/
+usr/lib/librefl.a

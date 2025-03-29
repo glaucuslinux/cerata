@@ -1,0 +1,5 @@
+usr/
+usr/bin/
+usr/bin/dump.erofs
+usr/bin/fsck.erofs
+usr/bin/mkfs.erofs

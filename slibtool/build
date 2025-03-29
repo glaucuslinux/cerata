@@ -40,30 +40,30 @@ package() {
     install
 
   ln -fnsv ../share/$nom/$nom.sh "$SACD"/usr/bin/libtool
-  cp -afv "$CERD"/$nom/libtoolize "$SACD"/usr/bin
+  cp -afv "$CERD"/$nom/files/libtoolize "$SACD"/usr/bin
 
   mkdir -pv \
     "$SACD"/usr/share/aclocal \
     "$SACD"/usr/share/libtool/build-aux
 
   cp -afv \
-    "$CERD"/$nom/libtool.m4 \
-    "$CERD"/$nom/ltargz.m4 \
-    "$CERD"/$nom/ltdl.m4 \
-    "$CERD"/$nom/lt~obsolete.m4 \
-    "$CERD"/$nom/ltoptions.m4 \
-    "$CERD"/$nom/ltsugar.m4 \
-    "$CERD"/$nom/ltversion.m4 \
+    "$CERD"/$nom/files/libtool.m4 \
+    "$CERD"/$nom/files/ltargz.m4 \
+    "$CERD"/$nom/files/ltdl.m4 \
+    "$CERD"/$nom/files/lt~obsolete.m4 \
+    "$CERD"/$nom/files/ltoptions.m4 \
+    "$CERD"/$nom/files/ltsugar.m4 \
+    "$CERD"/$nom/files/ltversion.m4 \
     "$SACD"/usr/share/aclocal
 
   cp -afv \
-    "$CERD"/$nom/compile \
-    "$CERD"/$nom/config.guess \
-    "$CERD"/$nom/config.sub \
-    "$CERD"/$nom/depcomp \
-    "$CERD"/$nom/install-sh \
-    "$CERD"/$nom/ltmain.sh \
-    "$CERD"/$nom/missing \
+    "$CERD"/$nom/files/compile \
+    "$CERD"/$nom/files/config.guess \
+    "$CERD"/$nom/files/config.sub \
+    "$CERD"/$nom/files/depcomp \
+    "$CERD"/$nom/files/install-sh \
+    "$CERD"/$nom/files/ltmain.sh \
+    "$CERD"/$nom/files/missing \
     "$SACD"/usr/share/libtool/build-aux
 
   ln -fnsv ../$nom/$nom.m4 "$SACD"/usr/share/aclocal

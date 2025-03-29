@@ -1,0 +1,25 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -pv "$TMPD"/$nom
+  cd "$TMPD"/$nom
+}
+
+build() {
+  $CC $CFLAGS $LDFLAGS "$CERD"/musl/gencat.c -o gencat
+  $CC $CFLAGS $LDFLAGS "$CERD"/musl/getent.c -o getent
+}
+
+package() {
+  mv -fv \
+    gencat \
+    getent \
+    "$CRSD"/usr/bin
+
+  for i in a2x asciidoc gtkdocize help2man ldconfig makeinfo po4a texi2dvi; do
+    cp -afv "$CERD"/musl/true "$CRSD"/usr/bin/$i
+  done
+}

@@ -1,0 +1,29 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  cd "$TMPD"/gcc/gcc-$ver/build
+}
+
+build() {
+  make \
+    all-target-$nom
+}
+
+package() {
+  make \
+    install-strip-target-$nom
+
+  # Remove static libraries and libtool archives
+  rm -fv \
+    "$TLCD"/usr/$TGT/lib/libstdc++.a \
+    "$TLCD"/usr/$TGT/lib/libstdc++.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++exp.a \
+    "$TLCD"/usr/$TGT/lib/libstdc++exp.la \
+    "$TLCD"/usr/$TGT/lib/libstdc++fs.a \
+    "$TLCD"/usr/$TGT/lib/libstdc++fs.la \
+    "$TLCD"/usr/$TGT/lib/libsupc++.a \
+    "$TLCD"/usr/$TGT/lib/libsupc++.la
+}

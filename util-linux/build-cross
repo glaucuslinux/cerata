@@ -1,0 +1,68 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
+
+  autoreconf -vfis
+}
+
+configure() {
+  LDFLAGS="$LDFLAGS -lutmps" \
+  ADJTIME_PATH=/var/lib/hwclock/adjtime \
+  "$CERD"/autoconf/files/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
+    --disable-static \
+    --enable-pic \
+    --disable-symvers \
+    --disable-nls \
+    --disable-rpath \
+    --disable-asciidoc \
+    --disable-poman \
+    --disable-liblastlog2 \
+    --disable-pam-lastlog2 \
+    --disable-setpriv \
+    --enable-fdformat \
+    --enable-tunelp \
+    --enable-line \
+    --disable-raw \
+    --disable-chfn-chsh \
+    --disable-login \
+    --disable-nologin \
+    --disable-su \
+    --disable-runuser \
+    --disable-more \
+    --enable-write \
+    --disable-bash-completion \
+    --disable-pylibmount \
+    --enable-fs-paths-default=/usr/bin \
+    --enable-usrdir-path \
+    --disable-makeinstall-chown \
+    --without-cap-ng \
+    --without-systemd \
+    --without-econf \
+    --with-vendordir=/usr/lib \
+    --without-python
+}
+
+build() {
+  make
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    usrsbin_execdir=/usr/bin \
+    install-strip
+
+  # Remove libtool archives
+  rm -fv \
+    "$CRSD"/usr/lib/libblkid.la \
+    "$CRSD"/usr/lib/libfdisk.la \
+    "$CRSD"/usr/lib/libmount.la \
+    "$CRSD"/usr/lib/libsmartcols.la \
+    "$CRSD"/usr/lib/libuuid.la
+}

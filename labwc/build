@@ -21,10 +21,6 @@ build() {
     -C build
 }
 
-check() {
-  :
-}
-
 package() {
   DESTDIR="$SACD" \
   muon \
