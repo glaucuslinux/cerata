@@ -3,18 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
-configure() {
-  :
-}
-
-build() {
-  :
-}
-
 package() {
   mkdir -pv "$SACD"/boot
   mv -fv "$TMPD"/$nom/usr "$SACD"

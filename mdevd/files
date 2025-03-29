@@ -1,9 +1,0 @@
-etc/
-etc/mdev.conf
-usr/
-usr/bin/
-usr/bin/mdevd
-usr/bin/mdevd-coldplug
-usr/include/
-usr/include/mdevd/
-usr/include/mdevd/config.h

@@ -3,27 +3,11 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
-configure() {
-  :
-}
-
-build() {
-  :
-}
-
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$SACD" \
     install
 
   mkdir -pv "$SACD"/usr/share/$nom/colemak
-  cp -afv "$CERD"/$nom/en-latin9.bmap "$SACD"/usr/share/$nom/colemak
+  cp -afv "$CERD"/$nom/files/en-latin9.bmap "$SACD"/usr/share/$nom/colemak
 }

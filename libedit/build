@@ -30,8 +30,8 @@ package() {
 
   mkdir -pv "$SACD"/etc
   cp -afv \
-    "$CERD"/$nom/editrc \
-    "$CERD"/$nom/inputrc \
+    "$CERD"/$nom/files/editrc \
+    "$CERD"/$nom/files/inputrc \
     "$SACD"/etc
 
   # Replace `readline`

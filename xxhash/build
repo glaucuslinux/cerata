@@ -9,10 +9,6 @@ prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
 }
 
-configure() {
-  :
-}
-
 build() {
   make \
     DISPATCH=1 \

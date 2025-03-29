@@ -1,0 +1,40 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  for i in default-threading io-size minor-optimization speedup; do
+    patch -p1 -i "$CERD"/$nom/patches/clear/$i.patch
+  done
+
+  ./autogen.sh --no-po4a
+}
+
+configure() {
+  "$CERD"/autoconf/files/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
+    --enable-threads=posix \
+    --disable-doc \
+    --disable-static \
+    --enable-pic \
+    --disable-symbol-versions \
+    --disable-nls \
+    --disable-rpath
+
+  patch -p0 -i "$CERD"/$nom/patches/alpine/0001-disable-rpath.patch
+}
+
+build() {
+  make
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    install-strip
+
+  # Remove libtool archive
+  rm -fv "$CRSD"/usr/lib/liblzma.la
+}

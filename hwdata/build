@@ -21,10 +21,6 @@ configure() {
     --disable-blacklist
 }
 
-build() {
-  :
-}
-
 check() {
   make \
     check

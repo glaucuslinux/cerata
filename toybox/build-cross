@@ -1,0 +1,50 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch
+}
+
+configure() {
+  cp -afv "$CERD"/$nom/files/glaucus.config .config
+}
+
+build() {
+  make \
+    CROSS_COMPILE= \
+    LDFLAGS="$LDFLAGS -lutmps"
+}
+
+package() {
+  for i in \
+  [ \
+  base32 base64 basename \
+  cat chattr chgrp chmod chown chroot cksum cmp comm cp cpio cut \
+  date dd df diff dirname du \
+  echo env expand expr \
+  factor false find fmt fold free \
+  getconf groups \
+  head hostid hostname \
+  iconv id install \
+  killall \
+  link ln logname ls lsattr \
+  md5sum mkdir mkfifo mknod mktemp mv \
+  nice nl nohup nproc \
+  od \
+  paste patch pgrep pidof pkill pmap printenv printf ps pwd pwdx \
+  readlink realpath rm rmdir \
+  sed seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep \
+  sort split stat stty su sync sysctl \
+  tac tail tee test time timeout touch tr true truncate tsort tty \
+  uname uniq unlink uptime \
+  vmstat \
+  w watch wc which who whoami \
+  xargs \
+  yes; do
+    ln -fnsv $nom "$CRSD"/usr/bin/$i
+  done
+
+  mv -fv $nom "$CRSD"/usr/bin
+}

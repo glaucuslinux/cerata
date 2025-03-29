@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-optimize-more.patch
+}
+
+build() {
+  make \
+    PREFIX=/usr \
+    all-dynamic
+}
+
+package() {
+  make \
+    PREFIX=/usr \
+    DESTDIR="$CRSD" \
+    install-dynamic
+
+  ln -fnsv tic "$CRSD"/usr/bin/captoinfo
+  ln -fnsv tic "$CRSD"/usr/bin/infotocap
+
+  chmod -v 755 \
+    "$CRSD"/usr/lib/libcurses.so \
+    "$CRSD"/usr/lib/libform.so \
+    "$CRSD"/usr/lib/libmenu.so \
+    "$CRSD"/usr/lib/libpanel.so \
+    "$CRSD"/usr/lib/libterminfo.so
+
+  # Some cerata (e.g. `util-linux` and `yash`) link against this
+  ln -fnsv libterminfo.so "$CRSD"/usr/lib/libtinfo.so
+}

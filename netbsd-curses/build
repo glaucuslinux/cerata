@@ -7,18 +7,10 @@ prepare() {
   patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-optimize-more.patch
 }
 
-configure() {
-  :
-}
-
 build() {
   make \
     PREFIX=/usr \
     all-dynamic
-}
-
-check() {
-  :
 }
 
 package() {

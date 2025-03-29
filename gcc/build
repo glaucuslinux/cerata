@@ -89,10 +89,6 @@ build() {
     STAGE1_LDFLAGS="$LDFLAGS"
 }
 
-check() {
-  :
-}
-
 package() {
   make \
     DESTDIR="$SACD" \
@@ -101,8 +97,8 @@ package() {
   ln -fnsv g++ "$SACD"/usr/bin/c++
 
   cp -afv \
-    "$CERD"/$nom/c89 \
-    "$CERD"/$nom/c99 \
+    "$CERD"/$nom/files/c89 \
+    "$CERD"/$nom/files/c99 \
     "$SACD"/usr/bin
 
   for i in cc $nom-$ver $TGT-$nom; do

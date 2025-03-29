@@ -32,5 +32,5 @@ package() {
     install
 
   mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/mdev.conf "$SACD"/etc
+  cp -afv "$CERD"/$nom/files/mdev.conf "$SACD"/etc
 }

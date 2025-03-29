@@ -36,5 +36,5 @@ package() {
     install
 
   mkdir -pv "$SACD"/usr/lib/pkgconfig
-  cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
+  cp -afv "$CERD"/$nom/files/$nom.pc "$SACD"/usr/lib/pkgconfig
 }

@@ -7,17 +7,9 @@ prepare() {
   patch -p1 -i "$CERD"/$nom/patches/chimera/make.patch
 }
 
-configure() {
-  :
-}
-
 build() {
   make \
     -f Makefile-libbz2_so
-}
-
-check() {
-  :
 }
 
 package() {

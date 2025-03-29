@@ -1,0 +1,33 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-basename.patch
+
+  autoreconf -vfis
+}
+
+configure() {
+  "$CERD"/autoconf/files/glaucus-configure \
+    --build=$BLD \
+    --host=$TGT \
+    --disable-static \
+    --enable-pic \
+    --disable-nls \
+    --disable-rpath
+}
+
+build() {
+  make
+}
+
+package() {
+  make \
+    DESTDIR="$CRSD" \
+    install-strip
+
+  # Remove libtool archive
+  rm -fv "$CRSD"/usr/lib/lib$nom.la
+}

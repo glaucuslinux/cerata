@@ -1,0 +1,30 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  cd "$TMPD"/musl/musl-$ver
+
+  patch -p0 -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch
+  patch -p1 -i "$CERD"/musl/patches/upstream/CVE-2025-26519.patch
+}
+
+package() {
+  make \
+    exec_prefix=/usr \
+    bindir=/usr/bin \
+    prefix=/usr \
+    includedir=/usr/include \
+    libdir=/usr/lib \
+    syslibdir=/usr/lib \
+    ARCH=x86_64 \
+    DESTDIR="$CRSD" \
+    install-headers
+
+  # BSD compatibility header
+  cp -afv "$CERD"/musl/files/queue.h "$CRSD"/usr/include/sys
+
+  # `utmps` provides `utmpx.h`
+  rm -fv "$CRSD"/usr/include/utmpx.h
+}

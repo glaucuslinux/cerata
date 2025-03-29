@@ -3,10 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
 configure() {
   glaucus-configure \
     --enable-pic \
@@ -34,5 +30,5 @@ package() {
     "$SACD"/usr/lib/depmod.d \
     "$SACD"/usr/lib/modprobe.d
 
-  cp -afv "$CERD"/$nom/search.conf "$SACD"/usr/lib/depmod.d
+  cp -afv "$CERD"/$nom/files/search.conf "$SACD"/usr/lib/depmod.d
 }
