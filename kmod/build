@@ -3,32 +3,33 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
+prepare() {
+  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-muon.patch
+
+  mkdir -pv build
+}
+
 configure() {
-  glaucus-configure \
-    --enable-pic \
-    --disable-manpages \
-    --disable-gtk-doc-html \
-    --with-module-directory=/usr/lib/modules \
-    --with-zstd \
-    --with-xz \
-    --with-zlib \
-    --with-openssl
+  glaucus-muon \
+    -Ddistconfdir=/usr/lib \
+    -Dmoduledir=/usr/lib/modules \
+    -Dbashcompletiondir=no \
+    -Dfishcompletiondir=no \
+    -Dzshcompletiondir=no \
+    -Dmanpages=false \
+    build
 }
 
 build() {
-  make
+  samu \
+    -C build
 }
 
 package() {
-  make \
-    DESTDIR="$SACD" \
-    install-strip
-
-  mkdir -pv \
-    "$SACD"/etc/depmod.d \
-    "$SACD"/etc/modprobe.d \
-    "$SACD"/usr/lib/depmod.d \
-    "$SACD"/usr/lib/modprobe.d
+  DESTDIR="$SACD" \
+  muon \
+    -C build \
+    install
 
   cp -afv "$CERD"/$nom/files/search.conf "$SACD"/usr/lib/depmod.d
 }
