@@ -6,7 +6,9 @@
 prepare() {
   cd "$TMPD"/$nom/xxHash-$ver
 
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-disable-static.patch \
+    -p 0
 }
 
 build() {

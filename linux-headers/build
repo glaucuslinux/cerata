@@ -20,7 +20,7 @@ build() {
 package() {
   find usr/include ! -name '*.h' -type f -delete
 
-  mkdir -pv "$SACD"/usr
-  mv -afv usr/include "$SACD"/usr
-  rm -frv "$SACD"/usr/include/drm
+  mkdir -p "$SACD"/usr
+  mv -f usr/include "$SACD"/usr
+  rm -fRv "$SACD"/usr/include/drm
 }

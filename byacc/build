@@ -27,6 +27,6 @@ package() {
     install
 
   # Compatibility symlinks
-  ln -fnsv $nom "$SACD"/usr/bin/bison
-  ln -fnsv $nom "$SACD"/usr/bin/yacc
+  ln -fs $nom "$SACD"/usr/bin/bison
+  ln -fs $nom "$SACD"/usr/bin/yacc
 }

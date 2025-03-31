@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch
+  patch \
+    -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch \
+    -p 1
 }
 
 build() {

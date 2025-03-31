@@ -21,6 +21,6 @@ package() {
     install-strip
 
   # Replace hard links with symbolic links
-  ln -fnsv aclocal "$SACD"/usr/bin/aclocal-1.17
-  ln -fnsv $nom "$SACD"/usr/bin/$nom-1.17
+  ln -fs aclocal "$SACD"/usr/bin/aclocal-1.17
+  ln -fs $nom "$SACD"/usr/bin/$nom-1.17
 }

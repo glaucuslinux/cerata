@@ -5,7 +5,9 @@
 
 prepare() {
   for i in default-threading io-size minor-optimization speedup; do
-    patch -p1 -i "$CERD"/$nom/patches/clear/$i.patch
+    patch \
+      -i "$CERD"/$nom/patches/clear/$i.patch \
+      -p 1
   done
 
   ./autogen.sh --no-po4a
@@ -23,7 +25,9 @@ configure() {
     --disable-nls \
     --disable-rpath
 
-  patch -p0 -i "$CERD"/$nom/patches/alpine/0001-disable-rpath.patch
+  patch \
+    -i "$CERD"/$nom/patches/alpine/0001-disable-rpath.patch \
+    -p 0
 }
 
 build() {

@@ -6,10 +6,14 @@
 prepare() {
   cd "$TMPD"/$nom/Python-$ver
 
-  patch -p0 -i "$CERD"/$nom/patches/openbsd/Modules__hashopenssl_c.patch
-  patch -p0 -i "$CERD"/$nom/patches/openbsd/Modules__ssl_c.patch
+  patch \
+    -i "$CERD"/$nom/patches/openbsd/Modules__hashopenssl_c.patch \
+    -p 0
+  patch \
+    -i "$CERD"/$nom/patches/openbsd/Modules__ssl_c.patch \
+    -p 0
 
-  rm -frv \
+  rm -fRv \
     Modules/_decimal/libmpdec \
     Modules/expat
 }
@@ -42,6 +46,6 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  ln -fnsv ${nom}3 "$SACD"/usr/bin/$nom
-  ln -fnsv ${nom}3-config "$SACD"/usr/bin/$nom-config
+  ln -fs ${nom}3 "$SACD"/usr/bin/$nom
+  ln -fs ${nom}3-config "$SACD"/usr/bin/$nom-config
 }

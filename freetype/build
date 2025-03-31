@@ -5,7 +5,9 @@
 
 prepare() {
   for i in pcf-family-names subpixel table-validation-modules; do
-    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+    patch \
+      -i "$CERD"/$nom/patches/alpine/$i.patch \
+      -p 1
   done
 
   ./autogen.sh

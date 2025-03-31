@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/fix-uninitialized.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-disable-sample-file.patch
+  patch \
+    -i "$CERD"/$nom/patches/alpine/fix-uninitialized.patch \
+    -p 1
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-disable-sample-file.patch \
+    -p 0
 
   autoreconf -vfis
 }
@@ -29,6 +33,6 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  mkdir -pv "$SACD"/etc
+  mkdir -p "$SACD"/etc
   mv $nom.conf "$SACD"/etc
 }

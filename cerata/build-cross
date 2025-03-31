@@ -4,5 +4,5 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  cp -afv "$CERD" "$CRSD"/var/lib/rad/clusters
+  cp -fPpR "$CERD" "$CRSD"/var/lib/rad/clusters
 }

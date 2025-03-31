@@ -30,5 +30,5 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv ../../cert.pem "$SACD"/etc/ssl/certs/ca-certificates.crt
+  ln -fs ../../cert.pem "$SACD"/etc/ssl/certs/ca-certificates.crt
 }

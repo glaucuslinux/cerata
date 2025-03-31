@@ -4,10 +4,10 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  ln -fnsv ../../gmp/gmp-6.3.0 gmp
-  ln -fnsv ../../mpfr/mpfr-4.2.2 mpfr
-  ln -fnsv ../../mpc/mpc-1.3.1 mpc
-  ln -fnsv ../../isl/isl-0.27 isl
+  ln -fs ../../gmp/gmp-6.3.0 gmp
+  ln -fs ../../mpfr/mpfr-4.2.2 mpfr
+  ln -fs ../../mpc/mpc-1.3.1 mpc
+  ln -fs ../../isl/isl-0.27 isl
 
   for i in gmp mpc mpfr isl; do
     cd $i
@@ -24,12 +24,16 @@ prepare() {
   0012-lib${nom}_s \
   0015-build-fix-CXXFLAGS_FOR_BUILD-passing \
   0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on; do
-    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+    patch \
+      -i "$CERD"/$nom/patches/alpine/$i.patch \
+      -p 1
   done
 
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch \
+    -p 0
 
-  mkdir -pv build
+  mkdir -p build
   cd build
 }
 
@@ -112,21 +116,20 @@ package() {
     install-strip-$nom \
     install-strip-target-lib$nom
 
-  ln -fnsv $TGT-g++ "$TLCD"/usr/bin/$TGT-c++
+  ln -fs $TGT-g++ "$TLCD"/usr/bin/$TGT-c++
 
-  cp -afv "$CERD"/$nom/files/c89 "$TLCD"/usr/bin/$TGT-c89
-  cp -afv "$CERD"/$nom/files/c99 "$TLCD"/usr/bin/$TGT-c99
+  sed "s/$nom/$TGT-&/" "$CERD"/$nom/files/c89 > "$TLCD"/usr/bin/$TGT-c89
+  sed "s/$nom/$TGT-&/" "$CERD"/$nom/files/c99 > "$TLCD"/usr/bin/$TGT-c99
 
-  sed "s/$nom/$TGT-&/" \
-    -i "$TLCD"/usr/bin/$TGT-c89
-  sed "s/$nom/$TGT-&/" \
-    -i "$TLCD"/usr/bin/$TGT-c99
+  chmod 755 \
+    "$TLCD"/usr/bin/$TGT-c89 \
+    "$TLCD"/usr/bin/$TGT-c99
 
-  ln -fnsv $TGT-$nom "$TLCD"/usr/bin/$TGT-cc
-  ln -fnsv $TGT-$nom "$TLCD"/usr/bin/$TGT-$nom-$ver
+  ln -fs $TGT-$nom "$TLCD"/usr/bin/$TGT-cc
+  ln -fs $TGT-$nom "$TLCD"/usr/bin/$TGT-$nom-$ver
 
   # `$TLCD/usr/lib/bfd-plugins` is already provided by `binutils`
-  ln -fnsv ../$nom/$TGT/$ver/liblto_plugin.so "$TLCD"/usr/lib/bfd-plugins
+  ln -fs ../$nom/$TGT/$ver/liblto_plugin.so "$TLCD"/usr/lib/bfd-plugins
 
   # Remove libtool archives
   rm -fv \
@@ -136,5 +139,5 @@ package() {
     "$TLCD"/usr/$TGT/lib/libsupc++.la
 
   # Compatibility symlink
-  ln -fnsv ../bin/$TGT-cpp "$TLCD"/usr/lib
+  ln -fs ../bin/$TGT-cpp "$TLCD"/usr/lib
 }

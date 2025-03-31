@@ -4,9 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch \
+    -p 0
 
-  mkdir -pv build
+  mkdir -p build
 }
 
 configure() {

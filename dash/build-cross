@@ -23,6 +23,6 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -fnsv $nom "$CRSD"/usr/bin/sh
-  ln -fnsv $nom "$CRSD"/usr/bin/yash
+  ln -fs $nom "$CRSD"/usr/bin/sh
+  ln -fs $nom "$CRSD"/usr/bin/yash
 }

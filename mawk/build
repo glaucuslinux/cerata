@@ -40,6 +40,6 @@ package() {
     install
 
   # Compatibility symlinks
-  ln -fnsv $nom "$SACD"/usr/bin/awk
-  ln -fnsv $nom "$SACD"/usr/bin/gawk
+  ln -fs $nom "$SACD"/usr/bin/awk
+  ln -fs $nom "$SACD"/usr/bin/gawk
 }

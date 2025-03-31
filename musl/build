@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch
-  patch -p1 -i "$CERD"/$nom/patches/upstream/CVE-2025-26519.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-fix-utmp-file-path.patch \
+    -p 0
+  patch \
+    -i "$CERD"/$nom/patches/upstream/CVE-2025-26519.patch \
+    -p 1
 }
 
 configure() {
@@ -32,24 +36,24 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  mkdir -pv \
+  mkdir -p \
     "$SACD"/etc \
     "$SACD"/usr/bin
 
-  cp -afv "$CERD"/$nom/files/ld-$nom-x86_64.path "$SACD"/etc
+  cp -fPp "$CERD"/$nom/files/ld-$nom-x86_64.path "$SACD"/etc
 
-  mv -fv \
+  mv -f \
     gencat \
     getent \
     "$SACD"/usr/bin
-  cp -afv "$CERD"/$nom/files/true "$SACD"/usr/bin/ldconfig
-  cp -afv "$CERD"/$nom/files/ldd "$SACD"/usr/bin
+  cp -fPp "$CERD"/$nom/files/true "$SACD"/usr/bin/ldconfig
+  cp -fPp "$CERD"/$nom/files/ldd "$SACD"/usr/bin
 
   # BSD compatibility header
-  cp -afv "$CERD"/$nom/files/queue.h "$SACD"/usr/include/sys
+  cp -fPp "$CERD"/$nom/files/queue.h "$SACD"/usr/include/sys
 
   # `utmps` provides `utmpx.h`
   rm -fv "$SACD"/usr/include/utmpx.h
 
-  ln -fnsv libc.so "$SACD"/usr/lib/ld-$nom-x86_64.so.1
+  ln -fs libc.so "$SACD"/usr/lib/ld-$nom-x86_64.so.1
 }

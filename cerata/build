@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  mkdir -pv "$SACD"/var/lib/rad/clusters
-  cp -afv "$CERD" "$SACD"/var/lib/rad/clusters
+  mkdir -p "$SACD"/var/lib/rad/clusters
+  cp -fPpR "$CERD" "$SACD"/var/lib/rad/clusters
 }

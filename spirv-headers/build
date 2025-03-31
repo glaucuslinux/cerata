@@ -6,7 +6,7 @@
 prepare() {
   cd "$TMPD"/$nom/SPIRV-Headers-vulkan-sdk-$ver
 
-  mkdir -pv build
+  mkdir -p build
 }
 
 configure() {

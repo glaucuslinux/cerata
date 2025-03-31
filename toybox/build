@@ -4,11 +4,13 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-extend-long-iso-format.patch \
+    -p 0
 }
 
 configure() {
-  cp -afv "$CERD"/$nom/files/glaucus.config .config
+  cp -fPp "$CERD"/$nom/files/glaucus.config .config
 }
 
 build() {
@@ -17,11 +19,11 @@ build() {
 }
 
 package() {
-  mkdir -pv "$SACD"/usr/bin
+  mkdir -p "$SACD"/usr/bin
 
   for i in $(./$nom); do
-    ln -fnsv $nom "$SACD"/usr/bin/$i
+    ln -fs $nom "$SACD"/usr/bin/$i
   done
 
-  mv -fv $nom "$SACD"/usr/bin
+  mv -f $nom "$SACD"/usr/bin
 }

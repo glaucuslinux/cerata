@@ -4,21 +4,21 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  cp -afv \
+  cp -fPpR \
     "$TMPD"/$nom/etc \
     "$TMPD"/$nom/usr \
     "$CRSD"
 
-  mkdir -pv "$CRSD"/etc/s6/current/env
+  mkdir -p "$CRSD"/etc/s6/current/env
 
   mkfifo -m 600 \
     "$CRSD"/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
     "$CRSD"/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  mkdir -pvm 2750 "$CRSD"/etc/s6/current/run-image/uncaught-logs
+  mkdir -m 2750 -p "$CRSD"/etc/s6/current/run-image/uncaught-logs
 
   # `"$CRSD"/etc/s6/skel` is already created by `s6-linux-init`
-  cp -afv \
+  cp -fPp \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.init \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.shutdown \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.shutdown.final \
@@ -26,10 +26,10 @@ package() {
     "$CRSD"/etc/s6/skel
 
   for i in btmp faillog lastlog wtmp; do
-    ln -fnsv wtmpd/$i "$CRSD"/var/log/$i
+    ln -fs wtmpd/$i "$CRSD"/var/log/$i
   done
 
-  mkdir -pv "$CRSD"/var/log/wtmpd
+  mkdir -p "$CRSD"/var/log/wtmpd
   touch \
     "$CRSD"/var/log/wtmpd/btmp \
     "$CRSD"/var/log/wtmpd/faillog \

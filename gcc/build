@@ -13,12 +13,16 @@ prepare() {
   0012-lib${nom}_s \
   0015-build-fix-CXXFLAGS_FOR_BUILD-passing \
   0029-libstdc-do-not-throw-exceptions-for-non-C-locales-on; do
-    patch -p1 -i "$CERD"/$nom/patches/alpine/$i.patch
+    patch \
+      -i "$CERD"/$nom/patches/alpine/$i.patch \
+      -p 1
   done
 
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-pure64-for-$ARCH.patch \
+    -p 0
 
-  mkdir -pv build
+  mkdir -p build
   cd build
 }
 
@@ -94,28 +98,28 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv g++ "$SACD"/usr/bin/c++
+  ln -fs g++ "$SACD"/usr/bin/c++
 
-  cp -afv \
+  cp -fPp \
     "$CERD"/$nom/files/c89 \
     "$CERD"/$nom/files/c99 \
     "$SACD"/usr/bin
 
   for i in cc $nom-$ver $TGT-$nom; do
-    ln -fnsv $nom "$SACD"/usr/bin/$i
+    ln -fs $nom "$SACD"/usr/bin/$i
   done
 
-  ln -fnsv $TGT-g++ "$SACD"/usr/bin/$TGT-c++
-  ln -fnsv $TGT-$nom "$SACD"/usr/bin/$TGT-cc
-  ln -fnsv $TGT-$nom "$SACD"/usr/bin/$TGT-$nom-$ver
-  ln -fnsv g++ "$SACD"/usr/bin/$TGT-g++
+  ln -fs $TGT-g++ "$SACD"/usr/bin/$TGT-c++
+  ln -fs $TGT-$nom "$SACD"/usr/bin/$TGT-cc
+  ln -fs $TGT-$nom "$SACD"/usr/bin/$TGT-$nom-$ver
+  ln -fs g++ "$SACD"/usr/bin/$TGT-g++
 
   for i in ar nm ranlib; do
-    ln -fnsv $nom-$i "$SACD"/usr/bin/$TGT-$nom-$i
+    ln -fs $nom-$i "$SACD"/usr/bin/$TGT-$nom-$i
   done
 
-  mkdir -pv "$SACD"/usr/lib/bfd-plugins
-  ln -fnsv ../$nom/$TGT/$ver/liblto_plugin.so "$SACD"/usr/lib/bfd-plugins
+  mkdir -p "$SACD"/usr/lib/bfd-plugins
+  ln -fs ../$nom/$TGT/$ver/liblto_plugin.so "$SACD"/usr/lib/bfd-plugins
 
   # Remove static libraries
   rm -fv \
@@ -130,5 +134,5 @@ package() {
     "$SACD"/usr/lib/libsupc++.a
 
   # Compatibility symlink
-  ln -fnsv ../bin/cpp "$SACD"/usr/lib
+  ln -fs ../bin/cpp "$SACD"/usr/lib
 }

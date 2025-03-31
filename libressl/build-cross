@@ -27,7 +27,7 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -fnsv ../../cert.pem "$CRSD"/etc/ssl/certs/ca-certificates.crt
+  ln -fs ../../cert.pem "$CRSD"/etc/ssl/certs/ca-certificates.crt
 
   # Remove libtool archives
   rm -fv \
