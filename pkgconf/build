@@ -32,6 +32,6 @@ package() {
 
   # Compatibility symlinks
   for i in pkg-config $TGT-$nom $TGT-pkg-config; do
-    ln -fnsv $nom "$SACD"/usr/bin/$i
+    ln -fs $nom "$SACD"/usr/bin/$i
   done
 }

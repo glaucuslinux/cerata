@@ -6,7 +6,7 @@
 prepare() {
   cd "$TMPD"/$nom/$nom-vulkan-sdk-$ver
 
-  mkdir -pv build
+  mkdir -p build
 }
 
 configure() {
@@ -36,5 +36,5 @@ package() {
     -C build \
     install/strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/${nom}Validator
+  ln -fs $nom "$SACD"/usr/bin/${nom}Validator
 }

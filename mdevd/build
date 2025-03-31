@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch \
+    -p 0
 }
 
 configure() {
@@ -31,6 +33,6 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/files/mdev.conf "$SACD"/etc
+  mkdir -p "$SACD"/etc
+  cp -fPp "$CERD"/$nom/files/mdev.conf "$SACD"/etc
 }

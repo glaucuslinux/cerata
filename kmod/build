@@ -4,9 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-muon.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-fix-muon.patch \
+    -p 0
 
-  mkdir -pv build
+  mkdir -p build
 }
 
 configure() {
@@ -31,5 +33,5 @@ package() {
     -C build \
     install
 
-  cp -afv "$CERD"/$nom/files/search.conf "$SACD"/usr/lib/depmod.d
+  cp -fPp "$CERD"/$nom/files/search.conf "$SACD"/usr/lib/depmod.d
 }

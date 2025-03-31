@@ -4,27 +4,26 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  ln -fnsv usr/bin "$SACD"/bin
+  ln -fs usr/bin "$SACD"/bin
 
-  mkdir -pv \
+  mkdir -p \
     "$SACD"/boot \
     "$SACD"/dev
 
-  mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/fstab "$SACD"/etc
-  ln -fnsv lsb-release "$SACD"/etc/glaucus-release
-  cp -afv \
+  mkdir -p "$SACD"/etc
+  cp -fPp "$CERD"/$nom/fstab "$SACD"/etc
+  ln -fs lsb-release "$SACD"/etc/glaucus-release
+  cp -fPp \
     "$CERD"/$nom/group \
     "$CERD"/$nom/hostname \
     "$CERD"/$nom/hosts \
     "$CERD"/$nom/issue \
-    "$CERD"/$nom/lsb-release \
     "$SACD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&$PRETTY_NAME/" \
-    -i "$SACD"/etc/lsb-release
-  ln -fnsv ../usr/lib/os-release "$SACD"/etc
-  cp -afv \
+    "$CERD"/$nom/lsb-release > "$SACD"/etc/lsb-release
+  ln -fs ../usr/lib/os-release "$SACD"/etc
+  cp -fPp \
     "$CERD"/$nom/passwd \
     "$CERD"/$nom/profile \
     "$CERD"/$nom/resolv.conf \
@@ -32,37 +31,36 @@ package() {
     "$CERD"/$nom/shells \
     "$SACD"/etc
 
-  mkdir -pv "$SACD"/home
+  mkdir -p "$SACD"/home
 
-  ln -fnsv usr/lib "$SACD"/lib
+  ln -fs usr/lib "$SACD"/lib
 
-  mkdir -pv "$SACD"/mnt
+  mkdir -p "$SACD"/mnt
 
-  mkdir -pvm 555 "$SACD"/proc
+  mkdir -m 555 -p "$SACD"/proc
 
-  mkdir -pvm 750 "$SACD"/root
+  mkdir -m 750 -p "$SACD"/root
 
-  mkdir -pv "$SACD"/run
+  mkdir -p "$SACD"/run
 
-  ln -fnsv usr/bin "$SACD"/sbin
+  ln -fs usr/bin "$SACD"/sbin
 
-  mkdir -pvm 555 "$SACD"/sys
+  mkdir -m 555 -p "$SACD"/sys
 
-  mkdir -pvm 1777 "$SACD"/tmp
+  mkdir -m 1777 -p "$SACD"/tmp
 
-  mkdir -pv \
+  mkdir -p \
     "$SACD"/usr/bin \
     "$SACD"/usr/lib
-  cp -afv "$CERD"/$nom/os-release "$SACD"/usr/lib
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
-    -i "$SACD"/usr/lib/os-release
-  mkdir -pv "$SACD"/usr/lib/pkgconfig
-  ln -fnsv bin "$SACD"/usr/sbin
-  mkdir -pv "$SACD"/usr/share
+    "$CERD"/$nom/os-release > "$SACD"/usr/lib/os-release
+  mkdir -p "$SACD"/usr/lib/pkgconfig
+  ln -fs bin "$SACD"/usr/sbin
+  mkdir -p "$SACD"/usr/share
 
-  mkdir -pv \
+  mkdir -p \
     "$SACD"/var/cache/rad/pkg \
     "$SACD"/var/cache/rad/src \
     "$SACD"/var/empty \
@@ -70,13 +68,13 @@ package() {
     "$SACD"/var/lib/misc \
     "$SACD"/var/lib/rad/clusters \
     "$SACD"/var/lib/rad/pkg
-  ln -fnsv ../run/lock "$SACD"/var/lock
-  mkdir -pv \
+  ln -fs ../run/lock "$SACD"/var/lock
+  mkdir -p \
     "$SACD"/var/log/rad \
     "$SACD"/var/mail
-  ln -fnsv ../run "$SACD"/var/run
-  mkdir -pv "$SACD"/var/spool
-  ln -fnsv ../mail "$SACD"/var/spool/mail
-  mkdir -pvm 1777 "$SACD"/var/tmp
-  mkdir -pv "$SACD"/var/tmp/rad
+  ln -fs ../run "$SACD"/var/run
+  mkdir -p "$SACD"/var/spool
+  ln -fs ../mail "$SACD"/var/spool/mail
+  mkdir -m 1777 -p "$SACD"/var/tmp
+  mkdir -p "$SACD"/var/tmp/rad
 }

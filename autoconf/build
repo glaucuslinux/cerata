@@ -29,5 +29,5 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  cp -afv "$CERD"/$nom/files/glaucus-configure "$SACD"/usr/bin
+  cp -fPp "$CERD"/$nom/files/glaucus-configure "$SACD"/usr/bin
 }

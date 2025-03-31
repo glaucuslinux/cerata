@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-optimize-more.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-optimize-more.patch \
+    -p 0
 }
 
 build() {
@@ -19,10 +21,10 @@ package() {
     DESTDIR="$CRSD" \
     install-dynamic
 
-  ln -fnsv tic "$CRSD"/usr/bin/captoinfo
-  ln -fnsv tic "$CRSD"/usr/bin/infotocap
+  ln -fs tic "$CRSD"/usr/bin/captoinfo
+  ln -fs tic "$CRSD"/usr/bin/infotocap
 
-  chmod -v 755 \
+  chmod 755 \
     "$CRSD"/usr/lib/libcurses.so \
     "$CRSD"/usr/lib/libform.so \
     "$CRSD"/usr/lib/libmenu.so \
@@ -30,5 +32,5 @@ package() {
     "$CRSD"/usr/lib/libterminfo.so
 
   # Some cerata (e.g. `util-linux` and `yash`) link against this
-  ln -fnsv libterminfo.so "$CRSD"/usr/lib/libtinfo.so
+  ln -fs libterminfo.so "$CRSD"/usr/lib/libtinfo.so
 }

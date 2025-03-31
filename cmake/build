@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-pure64.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-pure64.patch \
+    -p 0
 }
 
 configure() {
@@ -44,5 +46,5 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  cp -afv "$CERD"/$nom/files/glaucus-$nom "$SACD"/usr/bin
+  cp -fPp "$CERD"/$nom/files/glaucus-$nom "$SACD"/usr/bin
 }

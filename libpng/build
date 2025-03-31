@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/upstream/$nom-$ver-apng.patch
+  patch \
+    -i "$CERD"/$nom/patches/upstream/$nom-$ver-apng.patch \
+    -p 1
 
   autoreconf -vfis
 }
@@ -39,7 +41,7 @@ package() {
     png2pnm \
     pnm2png
 
-  mv -fv \
+  mv -f \
     contrib/pngminus/png2pnm \
     contrib/pngminus/pnm2png \
     "$SACD"/usr/bin

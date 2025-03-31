@@ -23,5 +23,5 @@ package() {
     DESTDIR="$CRSD" \
     install-shared
 
-  mv -fv $nom-helper "$CRSD"/usr/bin
+  mv -f $nom-helper "$CRSD"/usr/bin
 }

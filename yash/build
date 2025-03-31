@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-configure-$nom.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-configure-$nom.patch \
+    -p 0
 }
 
 configure() {

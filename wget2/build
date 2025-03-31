@@ -47,6 +47,6 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/wget
+  ln -fs $nom "$SACD"/usr/bin/wget
   rm -fv "$SACD"/usr/bin/${nom}_noinstall
 }

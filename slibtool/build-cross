@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/aeryn/0001-Revert-build-system-ccenv_set_cc_underscore-rewrite-.patch
-  patch -p1 -i "$CERD"/$nom/patches/aeryn/0001-Work-if-invoked-as-libtoolize.patch
+  patch \
+    -i "$CERD"/$nom/patches/aeryn/0001-Revert-build-system-ccenv_set_cc_underscore-rewrite-.patch \
+    -p 1
+  patch \
+    -i "$CERD"/$nom/patches/aeryn/0001-Work-if-invoked-as-libtoolize.patch \
+    -p 1
 }
 
 configure() {
@@ -41,13 +45,13 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  ln -fnsv ../share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
-  cp -afv "$CERD"/$nom/files/libtoolize "$CRSD"/usr/bin
+  ln -fs ../share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
+  cp -fPp "$CERD"/$nom/files/libtoolize "$CRSD"/usr/bin
 
   # `"$CRSD"/usr/share/aclocal` was already created by cross `gettext-tiny`
-  mkdir -pv "$CRSD"/usr/share/libtool/build-aux
+  mkdir -p "$CRSD"/usr/share/libtool/build-aux
 
-  cp -afv \
+  cp -fPp \
     "$CERD"/$nom/files/libtool.m4 \
     "$CERD"/$nom/files/ltargz.m4 \
     "$CERD"/$nom/files/ltdl.m4 \
@@ -57,7 +61,7 @@ package() {
     "$CERD"/$nom/files/ltversion.m4 \
     "$CRSD"/usr/share/aclocal
 
-  cp -afv \
+  cp -fPp \
     "$CERD"/$nom/files/compile \
     "$CERD"/$nom/files/config.guess \
     "$CERD"/$nom/files/config.sub \
@@ -67,5 +71,5 @@ package() {
     "$CERD"/$nom/files/missing \
     "$CRSD"/usr/share/libtool/build-aux
 
-  ln -fnsv ../$nom/$nom.m4 "$CRSD"/usr/share/aclocal
+  ln -fs ../$nom/$nom.m4 "$CRSD"/usr/share/aclocal
 }

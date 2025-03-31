@@ -37,6 +37,6 @@ package() {
     install
 
   # Compatibility symlinks
-  ln -fnsv $nom "$CRSD"/usr/bin/awk
-  ln -fnsv $nom "$CRSD"/usr/bin/gawk
+  ln -fs $nom "$CRSD"/usr/bin/awk
+  ln -fs $nom "$CRSD"/usr/bin/gawk
 }

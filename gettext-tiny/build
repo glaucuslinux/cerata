@@ -20,7 +20,7 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  cp -afv "$CERD"/$nom/files/config.rpath "$SACD"/usr/share/$nom
+  cp -fPp "$CERD"/$nom/files/config.rpath "$SACD"/usr/share/$nom
 
-  ln -fnsv $nom "$SACD"/usr/share/gettext
+  ln -fs $nom "$SACD"/usr/share/gettext
 }

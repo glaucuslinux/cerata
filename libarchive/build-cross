@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-file.patch
-  patch -p1 -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-file.patch \
+    -p 0
+  patch \
+    -i "$CERD"/$nom/patches/void/filter-xz-enable-threads.patch \
+    -p 1
 
   ./build/autogen.sh
 }
@@ -37,8 +41,8 @@ package() {
     install-strip
 
   # Compatibility symlinks
-  ln -fnsv bsdtar "$CRSD"/usr/bin/tar
-  ln -fnsv bsdunzip "$CRSD"/usr/bin/unzip
+  ln -fs bsdtar "$CRSD"/usr/bin/tar
+  ln -fs bsdunzip "$CRSD"/usr/bin/unzip
 
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/$nom.la

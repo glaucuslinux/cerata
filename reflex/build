@@ -28,6 +28,6 @@ package() {
 
   # Compatibility symlinks
   for i in flex flex++ lex; do
-    ln -fnsv $nom "$SACD"/usr/bin/$i
+    ln -fs $nom "$SACD"/usr/bin/$i
   done
 }

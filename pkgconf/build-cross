@@ -29,7 +29,7 @@ package() {
 
   # Compatibility symlinks
   for i in pkg-config $TGT-$nom $TGT-pkg-config; do
-    ln -fnsv $nom "$CRSD"/usr/bin/$i
+    ln -fs $nom "$CRSD"/usr/bin/$i
   done
 
   # Remove libtool archive

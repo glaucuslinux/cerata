@@ -25,22 +25,22 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  cp -afv \
+  cp -fPp \
     "$CERD"/$nom/files/editrc \
     "$CERD"/$nom/files/inputrc \
     "$CRSD"/etc
 
   # Replace `readline`
-  mkdir -pv "$CRSD"/usr/include/readline
+  mkdir -p "$CRSD"/usr/include/readline
   for i in history readline tilde; do
-    ln -fnsv ../editline/readline.h "$CRSD"/usr/include/readline/$i.h
+    ln -fs ../editline/readline.h "$CRSD"/usr/include/readline/$i.h
   done
 
   # Remove libtool archive
   rm -fv "$CRSD"/usr/lib/$nom.la
 
-  ln -fnsv $nom.so "$CRSD"/usr/lib/libhistory.so
-  ln -fnsv $nom.so "$CRSD"/usr/lib/libreadline.so
+  ln -fs $nom.so "$CRSD"/usr/lib/libhistory.so
+  ln -fs $nom.so "$CRSD"/usr/lib/libreadline.so
 
-  ln -fnsv $nom.pc "$PKG_CONFIG_LIBDIR"/readline.pc
+  ln -fs $nom.pc "$PKG_CONFIG_LIBDIR"/readline.pc
 }

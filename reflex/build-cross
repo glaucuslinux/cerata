@@ -25,6 +25,6 @@ package() {
 
   # Compatibility symlinks
   for i in flex flex++ lex; do
-    ln -fnsv $nom "$CRSD"/usr/bin/$i
+    ln -fs $nom "$CRSD"/usr/bin/$i
   done
 }

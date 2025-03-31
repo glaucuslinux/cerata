@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/chimera/make.patch
+  patch \
+    -i "$CERD"/$nom/patches/chimera/make.patch \
+    -p 1
 }
 
 build() {
@@ -13,17 +15,17 @@ build() {
 }
 
 package() {
-  mkdir -pv \
+  mkdir -p \
     "$SACD"/usr/include \
     "$SACD"/usr/lib/pkgconfig
 
-  mv -fv bzlib.h "$SACD"/usr/include
+  mv -f bzlib.h "$SACD"/usr/include
 
-  mv -fv libbz2.so.$ver "$SACD"/usr/lib
+  mv -f libbz2.so.$ver "$SACD"/usr/lib
 
   for i in libbz2.so libbz2.so.1 libbz2.so.1.0; do
-    ln -fnsv libbz2.so.$ver "$SACD"/usr/lib/$i
+    ln -fs libbz2.so.$ver "$SACD"/usr/lib/$i
   done
 
-  cp -afv "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
+  cp -fPp "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
 }

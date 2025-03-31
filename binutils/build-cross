@@ -4,9 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
+  patch \
+    -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch \
+    -p 1
 
-  mkdir -pv build
+  mkdir -p build
   cd build
 }
 
@@ -69,7 +71,7 @@ package() {
     DESTDIR="$CRSD" \
     install-strip
 
-  ln -fnsv ld.bfd "$CRSD"/usr/bin/ld
+  ln -fs ld.bfd "$CRSD"/usr/bin/ld
 
   # Remove static libraries
   rm -fv \

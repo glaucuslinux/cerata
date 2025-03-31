@@ -15,8 +15,8 @@ check() {
 }
 
 package() {
-  mkdir -pv "$SACD"/usr/bin
-  mv -fv $nom "$SACD"/usr/bin
-  ln -fnsv $nom "$SACD"/usr/bin/gzip
-  ln -fnsv $nom "$SACD"/usr/bin/un$nom
+  mkdir -p "$SACD"/usr/bin
+  mv -f $nom "$SACD"/usr/bin
+  ln -fs $nom "$SACD"/usr/bin/gzip
+  ln -fs $nom "$SACD"/usr/bin/un$nom
 }

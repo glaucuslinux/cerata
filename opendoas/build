@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/rowhammer.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-remove-chown.patch
+  patch \
+    -i "$CERD"/$nom/patches/alpine/rowhammer.patch \
+    -p 1
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-remove-chown.patch \
+    -p 0
 }
 
 configure() {
@@ -29,11 +33,11 @@ package() {
     DESTDIR="$SACD" \
     install
 
-  mkdir -pv "$SACD"/etc
-  cp -afv "$CERD"/$nom/files/doas.conf "$SACD"/etc
-  chmod -v 400 "$SACD"/etc/doas.conf
+  mkdir -p "$SACD"/etc
+  cp -fPp "$CERD"/$nom/files/doas.conf "$SACD"/etc
+  chmod 400 "$SACD"/etc/doas.conf
 
-  mv -fv "$SACD"/usr/bin/doas "$SACD"/usr/bin/$nom
-  ln -fnsv $nom "$SACD"/usr/bin/doas
-  ln -fnsv $nom "$SACD"/usr/bin/sudo
+  mv -f "$SACD"/usr/bin/doas "$SACD"/usr/bin/$nom
+  ln -fs $nom "$SACD"/usr/bin/doas
+  ln -fs $nom "$SACD"/usr/bin/sudo
 }

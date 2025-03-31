@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch
-  patch -p1 -i $CERD/$nom/patches/alpine/dont-write-packlist.patch
+  patch \
+    -i $CERD/$nom/patches/alpine/digest-sha-cflags.patch \
+    -p 1
+  patch \
+    -i $CERD/$nom/patches/alpine/dont-write-packlist.patch \
+    -p 1
 }
 
 configure() {
@@ -57,6 +61,6 @@ package() {
     DESTDIR="$SACD" \
     install-strip
 
-  ln -fnsv $nom "$SACD"/usr/bin/$nom$ver
-  ln -fnsv ${nom}bug "$SACD"/usr/bin/${nom}thanks
+  ln -fs $nom "$SACD"/usr/bin/$nom$ver
+  ln -fs ${nom}bug "$SACD"/usr/bin/${nom}thanks
 }

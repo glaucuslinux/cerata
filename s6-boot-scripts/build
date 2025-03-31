@@ -4,33 +4,33 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  cp -afv \
+  cp -fPpR \
     "$TMPD"/$nom/etc \
     "$TMPD"/$nom/usr \
     "$SACD"
 
-  mkdir -pv "$SACD"/etc/s6/current/env
+  mkdir -p "$SACD"/etc/s6/current/env
 
   mkfifo -m 600 \
     "$SACD"/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
     "$SACD"/etc/s6/current/run-image/service/s6-svscan-log/fifo
 
-  mkdir -pvm 2750 "$SACD"/etc/s6/current/run-image/uncaught-logs
+  mkdir -m 2750 -p "$SACD"/etc/s6/current/run-image/uncaught-logs
 
-  mkdir -pv "$SACD"/etc/s6/skel
-  cp -afv \
+  mkdir -p "$SACD"/etc/s6/skel
+  cp -fPp \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.init \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.shutdown \
     "$TMPD"/$nom/etc/s6/current/scripts/rc.shutdown.final \
     "$TMPD"/$nom/etc/s6/current/scripts/runlevel \
     "$SACD"/etc/s6/skel
 
-  rm -frv "$SACD"/etc/s6/rc/compiled
+  rm -fRv "$SACD"/etc/s6/rc/compiled
   s6-rc-compile "$SACD"/etc/s6/rc/compiled "$SACD"/etc/s6/sv
 
-  mkdir -pv "$SACD"/var/log/wtmpd
+  mkdir -p "$SACD"/var/log/wtmpd
   for i in btmp faillog lastlog wtmp; do
-    ln -fnsv wtmpd/$i "$SACD"/var/log/$i
+    ln -fs wtmpd/$i "$SACD"/var/log/$i
   done
 
   touch \
@@ -39,5 +39,5 @@ package() {
     "$SACD"/var/log/wtmpd/lastlog \
     "$SACD"/var/log/wtmpd/wtmp
 
-  chown -Rv utmp:utmp "$SACD"/var/log/wtmpd
+  chown -R utmp:utmp "$SACD"/var/log/wtmpd
 }

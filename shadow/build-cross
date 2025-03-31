@@ -4,8 +4,12 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-customize-login-defaults.patch
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0002-customize-useradd-defaults.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-customize-login-defaults.patch \
+    -p 0
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0002-customize-useradd-defaults.patch \
+    -p 0
 
   autoreconf -vfis
 }

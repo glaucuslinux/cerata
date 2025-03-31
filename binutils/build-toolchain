@@ -4,9 +4,11 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p1 -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch
+  patch \
+    -i "$CERD"/$nom/patches/alpine/$nom-ld-fix-static-linking.patch \
+    -p 1
 
-  mkdir -pv build
+  mkdir -p build
   cd build
 }
 
@@ -70,9 +72,9 @@ package() {
     install-strip-gas \
     install-strip-ld
 
-  ln -fnsv $TGT-ld.bfd "$TLCD"/usr/bin/$TGT-ld
+  ln -fs $TGT-ld.bfd "$TLCD"/usr/bin/$TGT-ld
 
   for i in ar as ld ld.bfd nm objcopy objdump ranlib readelf strip; do
-    ln -fnsv ../../bin/$TGT-$i "$TLCD"/usr/$TGT/bin/$i
+    ln -fs ../../bin/$TGT-$i "$TLCD"/usr/$TGT/bin/$i
   done
 }

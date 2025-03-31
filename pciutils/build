@@ -44,10 +44,10 @@ package() {
     install-lib
 
   # ids are provided by the `hwdata` ceras
-  rm -frv \
+  rm -fRv \
     "$SACD"/usr/bin/update-pciids \
     "$SACD"/usr/share/hwdata
 
   # Fix library permissions
-  chmod -v 755 "$SACD"/usr/lib/libpci.so.$ver
+  chmod 755 "$SACD"/usr/lib/libpci.so.$ver
 }

@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  cp -afv "$CERD"/$nom/glaucus.config .config
+  cp -fPp "$CERD"/$nom/glaucus.config .config
 }
 
 build() {
@@ -21,11 +21,11 @@ check() {
 }
 
 package() {
-  mkdir -pv "$SACD"/usr/bin
+  mkdir -p "$SACD"/usr/bin
 
   for i in $(./$nom); do
-    ln -fnsv $nom "$SACD"/usr/bin/$i
+    ln -fs $nom "$SACD"/usr/bin/$i
   done
 
-  mv -fv $nom "$SACD"/usr/bin
+  mv -f $nom "$SACD"/usr/bin
 }

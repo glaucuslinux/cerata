@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  cp -afv "$TMPD"/$nom/usr "$CRSD"
-  mv -fv "$CRSD"/usr/lib/modules/$ver-cachyos/vmlinuz "$CRSD"/boot
+  cp -fPpR "$TMPD"/$nom/usr "$CRSD"
+  mv -f "$CRSD"/usr/lib/modules/$ver-cachyos/vmlinuz "$CRSD"/boot
 }

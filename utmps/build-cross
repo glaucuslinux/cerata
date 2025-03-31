@@ -4,7 +4,9 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 prepare() {
-  patch -p0 -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch
+  patch \
+    -i "$CERD"/$nom/patches/glaucus/0001-use-gnu-hash-style.patch \
+    -p 0
 }
 
 configure() {
@@ -37,5 +39,5 @@ package() {
     DESTDIR="$CRSD" \
     install
 
-  cp -afv "$CERD"/$nom/files/$nom.pc "$PKG_CONFIG_LIBDIR"
+  cp -fPp "$CERD"/$nom/files/$nom.pc "$PKG_CONFIG_LIBDIR"
 }

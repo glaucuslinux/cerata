@@ -6,8 +6,12 @@
 prepare() {
   cd "$TMPD"/musl/musl-$ver
 
-  patch -p0 -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch
-  patch -p1 -i "$CERD"/musl/patches/upstream/CVE-2025-26519.patch
+  patch \
+    -i "$CERD"/musl/patches/glaucus/0001-fix-utmp-file-path.patch \
+    -p 0
+  patch \
+    -i "$CERD"/musl/patches/upstream/CVE-2025-26519.patch \
+    -p 1
 }
 
 package() {
@@ -23,7 +27,7 @@ package() {
     install-headers
 
   # BSD compatibility header
-  cp -afv "$CERD"/musl/files/queue.h "$CRSD"/usr/include/sys
+  cp -fPp "$CERD"/musl/files/queue.h "$CRSD"/usr/include/sys
 
   # `utmps` provides `utmpx.h`
   rm -fv "$CRSD"/usr/include/utmpx.h

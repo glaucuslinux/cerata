@@ -23,6 +23,6 @@ package() {
     DESTDIR="$SACD" \
     install-shared
 
-  mkdir -pv "$SACD"/usr/bin
-  mv -fv $nom-helper "$SACD"/usr/bin
+  mkdir -p "$SACD"/usr/bin
+  mv -f $nom-helper "$SACD"/usr/bin
 }

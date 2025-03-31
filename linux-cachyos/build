@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 package() {
-  mkdir -pv "$SACD"/boot
-  mv -fv "$TMPD"/$nom/usr "$SACD"
-  mv -fv "$SACD"/usr/lib/modules/$ver-cachyos/vmlinuz "$SACD"/boot
+  mkdir -p "$SACD"/boot
+  mv -f "$TMPD"/$nom/usr "$SACD"
+  mv -f "$SACD"/usr/lib/modules/$ver-cachyos/vmlinuz "$SACD"/boot
 }
