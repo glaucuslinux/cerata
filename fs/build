@@ -11,24 +11,24 @@ package() {
     "$SACD"/dev
 
   mkdir -p "$SACD"/etc
-  cp -fPp "$CERD"/$nom/fstab "$SACD"/etc
+  cp -fPp "$CERD"/$nom/files/fstab "$SACD"/etc
   ln -fs lsb-release "$SACD"/etc/glaucus-release
   cp -fPp \
-    "$CERD"/$nom/group \
-    "$CERD"/$nom/hostname \
-    "$CERD"/$nom/hosts \
-    "$CERD"/$nom/issue \
+    "$CERD"/$nom/files/group \
+    "$CERD"/$nom/files/hostname \
+    "$CERD"/$nom/files/hosts \
+    "$CERD"/$nom/files/issue \
     "$SACD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&$PRETTY_NAME/" \
-    "$CERD"/$nom/lsb-release > "$SACD"/etc/lsb-release
+    "$CERD"/$nom/files/lsb-release > "$SACD"/etc/lsb-release
   ln -fs ../usr/lib/os-release "$SACD"/etc
   cp -fPp \
-    "$CERD"/$nom/passwd \
-    "$CERD"/$nom/profile \
-    "$CERD"/$nom/resolv.conf \
-    "$CERD"/$nom/shadow \
-    "$CERD"/$nom/shells \
+    "$CERD"/$nom/files/passwd \
+    "$CERD"/$nom/files/profile \
+    "$CERD"/$nom/files/resolv.conf \
+    "$CERD"/$nom/files/shadow \
+    "$CERD"/$nom/files/shells \
     "$SACD"/etc
 
   mkdir -p "$SACD"/home
@@ -55,7 +55,7 @@ package() {
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
-    "$CERD"/$nom/os-release > "$SACD"/usr/lib/os-release
+    "$CERD"/$nom/files/os-release > "$SACD"/usr/lib/os-release
   mkdir -p "$SACD"/usr/lib/pkgconfig
   ln -fs bin "$SACD"/usr/sbin
   mkdir -p "$SACD"/usr/share
