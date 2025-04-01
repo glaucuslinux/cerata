@@ -23,5 +23,5 @@ package() {
     ln -fs libbz2.so.$ver "$CRSD"/usr/lib/$i
   done
 
-  cp -fPp "$CERD"/$nom/$nom.pc "$PKG_CONFIG_LIBDIR"
+  cp -fPp "$CERD"/$nom/files/$nom.pc "$PKG_CONFIG_LIBDIR"
 }
