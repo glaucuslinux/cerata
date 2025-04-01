@@ -27,8 +27,8 @@ configure() {
 build() {
   make
 
-  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/gencat.c -o gencat
-  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/getent.c -o getent
+  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/files/gencat.c -o gencat
+  $CC $CFLAGS $LDFLAGS "$CERD"/$nom/files/getent.c -o getent
 }
 
 package() {
