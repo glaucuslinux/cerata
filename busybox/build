@@ -8,7 +8,7 @@ prepare() {
 }
 
 configure() {
-  cp -fPp "$CERD"/$nom/glaucus.config .config
+  cp -fPp "$CERD"/$nom/files/glaucus.config .config
 }
 
 build() {
