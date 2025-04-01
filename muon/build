@@ -28,7 +28,7 @@ prepare() {
 
 configure() {
   PATH="$TMPD/$nom/build-bootstrap:$PATH" \
-  "$CERD"/$nom/glaucus-$nom \
+  "$CERD"/$nom/files/glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=disabled \
     -Dlibpkgconf=enabled \
