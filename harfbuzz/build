@@ -1,0 +1,41 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -p build
+}
+
+configure() {
+  glaucus-muon \
+    -Dglib=enabled \
+    -Dgobject=disabled \
+    -Dcairo=enabled \
+    -Dchafa=disabled \
+    -Dicu=disabled \
+    -Dfreetype=enabled \
+    -Dtests=disabled \
+    -Dintrospection=disabled \
+    -Ddocs=disabled \
+    build
+}
+
+build() {
+  samu \
+    -C build
+}
+
+check() {
+  muon \
+    test \
+    -R \
+    -C build
+}
+
+package() {
+  DESTDIR="$SACD" \
+  muon \
+    -C build \
+    install
+}
