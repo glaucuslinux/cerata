@@ -28,5 +28,5 @@ package() {
   # Compatibility symlink
   ln -fs $nom "$SACD"/usr/bin/${nom}6
 
-  cp -fPp "$CERD"/$nom/ping "$SACD"/usr/bin
+  cp -fPp "$CERD"/$nom/files/ping "$SACD"/usr/bin
 }
