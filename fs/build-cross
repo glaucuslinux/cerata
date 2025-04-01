@@ -11,24 +11,24 @@ package() {
     "$CRSD"/dev
 
   # `"$CRSD"/etc` was already created by toolchain `musl`
-  cp -fPp "$CERD"/$nom/fstab "$CRSD"/etc
+  cp -fPp "$CERD"/$nom/files/fstab "$CRSD"/etc
   ln -fs lsb-release "$CRSD"/etc/glaucus-release
   cp -fPp \
-    "$CERD"/$nom/group \
-    "$CERD"/$nom/hostname \
-    "$CERD"/$nom/hosts \
-    "$CERD"/$nom/issue \
+    "$CERD"/$nom/files/group \
+    "$CERD"/$nom/files/hostname \
+    "$CERD"/$nom/files/hosts \
+    "$CERD"/$nom/files/issue \
     "$CRSD"/etc
   sed -e "s/^DISTRIB_RELEASE=/&$(date +%Y%m%d)/" \
     -e "s/^DISTRIB_DESCRIPTION=/&$PRETTY_NAME/" \
-    "$CERD"/$nom/lsb-release > "$CRSD"/etc/lsb-release
+    "$CERD"/$nom/files/lsb-release > "$CRSD"/etc/lsb-release
   ln -fs ../usr/lib/os-release "$CRSD"/etc
   cp -fPp \
-    "$CERD"/$nom/passwd \
-    "$CERD"/$nom/profile \
-    "$CERD"/$nom/resolv.conf \
-    "$CERD"/$nom/shadow \
-    "$CERD"/$nom/shells \
+    "$CERD"/$nom/files/passwd \
+    "$CERD"/$nom/files/profile \
+    "$CERD"/$nom/files/resolv.conf \
+    "$CERD"/$nom/files/shadow \
+    "$CERD"/$nom/files/shells \
     "$CRSD"/etc
 
   mkdir -p "$CRSD"/home
@@ -53,7 +53,7 @@ package() {
   sed -e "s/^VERSION=/&$(date +%Y%m%d)/" \
     -e "s/^VERSION_ID=/&$(date +%Y%m%d)/" \
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
-    "$CERD"/$nom/os-release > "$CRSD"/usr/lib/os-release
+    "$CERD"/$nom/files/os-release > "$CRSD"/usr/lib/os-release
   mkdir -p "$PKG_CONFIG_LIBDIR"
   ln -fs bin "$CRSD"/usr/sbin
   mkdir -p "$CRSD"/usr/share
