@@ -27,5 +27,5 @@ package() {
     ln -fs libbz2.so.$ver "$SACD"/usr/lib/$i
   done
 
-  cp -fPp "$CERD"/$nom/$nom.pc "$SACD"/usr/lib/pkgconfig
+  cp -fPp "$CERD"/$nom/files/$nom.pc "$SACD"/usr/lib/pkgconfig
 }
