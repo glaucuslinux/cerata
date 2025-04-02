@@ -6,4 +6,4 @@
 nom="rad"
 ver="68abc95"
 url="https://github.com/glaucuslinux/rad"
-run="curl libarchive toybox xxhash zstd"
+run="git libarchive toybox wget2 xxhash zstd"
