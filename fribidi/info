@@ -1,0 +1,9 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+nom="fribidi"
+ver="1.0.16"
+url="https://github.com/fribidi/fribidi/releases/download/v1.0.16/fribidi-1.0.16.tar.xz"
+sum="c878437f2e111549cf46bd8738e941f3"
