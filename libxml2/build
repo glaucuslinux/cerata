@@ -10,13 +10,10 @@ prepare() {
 
 configure() {
   glaucus-configure \
-    --disable-static \
     --enable-pic \
     --without-debug \
     --with-history \
     --with-readline \
-    --with-http \
-    --with-lzma \
     --without-sax1 \
     --without-xinclude \
     --without-xpath \
