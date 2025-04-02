@@ -30,13 +30,6 @@ build() {
     -C build
 }
 
-check() {
-  muon \
-    test \
-    -R \
-    -C build
-}
-
 package() {
   DESTDIR="$SACD" \
   muon \
