@@ -1,0 +1,43 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  for i in pcf-family-names subpixel table-validation-modules; do
+    patch \
+      -i "$CERD"/freetype/patches/alpine/$i.patch \
+      -p 1
+  done
+
+  ./autogen.sh
+}
+
+configure() {
+  glaucus-configure \
+    --disable-static \
+    --enable-pic \
+    --enable-freetype-config \
+    --with-zlib \
+    --with-bzip2 \
+    --with-png \
+    --with-harfbuzz \
+    --without-brotli \
+    --without-librsvg \
+    --without-old-mac-fonts \
+    --without-fsspec \
+    --without-fsref \
+    --without-quickdraw-toolbox \
+    --without-quickdraw-carbon \
+    --without-ats
+}
+
+build() {
+  make
+}
+
+package() {
+  make \
+    DESTDIR="$SACD" \
+    install
+}
