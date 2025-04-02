@@ -10,7 +10,7 @@ prepare() {
       -p 1
   done
 
-  ./autogen.sh
+  autoreconf -vfis
 }
 
 configure() {
