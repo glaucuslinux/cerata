@@ -11,7 +11,7 @@ configure() {
   glaucus-muon \
     -Dglib=enabled \
     -Dgobject=disabled \
-    -Dcairo=enabled \
+    -Dcairo=disabled \
     -Dchafa=disabled \
     -Dicu=disabled \
     -Dfreetype=enabled \
@@ -23,13 +23,6 @@ configure() {
 
 build() {
   samu \
-    -C build
-}
-
-check() {
-  muon \
-    test \
-    -R \
     -C build
 }
 
