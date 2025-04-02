@@ -45,10 +45,6 @@ build() {
     -C build
 }
 
-check() {
-  :
-}
-
 package() {
   DESTDIR="$SACD" \
   build/$nom \
