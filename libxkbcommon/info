@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="libxkbcommon"
-ver="1.8.1"
-url="https://github.com/xkbcommon/libxkbcommon/archive/xkbcommon-1.8.1.tar.gz"
-sum="b646bea4967e7d0e086b6346cbe617ba"
+ver="1.8.0"
+url="https://github.com/xkbcommon/libxkbcommon/archive/xkbcommon-1.8.0.tar.gz"
+sum="eb5ccbd48f37667f50dcf291f913fe3e"
 bld="libxml2 muon wayland"
