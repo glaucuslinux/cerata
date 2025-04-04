@@ -54,15 +54,6 @@
  SYSLOG_SG_ENAB		yes
  
  #
-@@ -93,7 +93,7 @@
- #
- # If defined, this file will be output before each login(1) prompt.
- #
--#ISSUE_FILE	/etc/issue
-+ISSUE_FILE	/etc/issue
- 
- #
- # If defined, file which maps tty line to TERM environment parameter.
 @@ -120,14 +120,14 @@
  # command as "-su".  If not defined, then ps(1) will display the
  # name of the shell actually being run, e.g. something like "-sh".
