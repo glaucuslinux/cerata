@@ -64,7 +64,6 @@ package() {
   mkdir -p \
     "$SACD"/var/cache/rad/pkg \
     "$SACD"/var/cache/rad/src \
-    "$SACD"/var/empty \
     "$SACD"/var/lib/hwclock \
     "$SACD"/var/lib/misc \
     "$SACD"/var/lib/rad/clusters \
