@@ -1,6 +1,77 @@
 --- etc/login.defs
 +++ etc/login.defs
-@@ -127,7 +127,7 @@
+@@ -9,7 +9,7 @@
+ # Note: When PAM is used, some modules may enforce a minimum delay (e.g.
+ #       pam_unix(8) enforces a 2s delay)
+ #
+-FAIL_DELAY		3
++FAIL_DELAY		0
+ 
+ #
+ # Enable logging and display of /var/log/faillog login(1) failure info.
+@@ -19,12 +19,12 @@
+ #
+ # Enable display of unknown usernames when login(1) failures are recorded.
+ #
+-LOG_UNKFAIL_ENAB	no
++LOG_UNKFAIL_ENAB	yes
+ 
+ #
+ # Enable logging of successful logins
+ #
+-LOG_OK_LOGINS		no
++LOG_OK_LOGINS		yes
+ 
+ #
+ # Enable logging and display of /var/log/lastlog login(1) time info.
+@@ -46,17 +46,17 @@
+ # Disable if the shell startup files already check for mail
+ # ("mailx -e" or equivalent).
+ #
+-MAIL_CHECK_ENAB		yes
++MAIL_CHECK_ENAB		no
+ 
+ #
+ # Enable additional checks upon password changes.
+ #
+-OBSCURE_CHECKS_ENAB	yes
++OBSCURE_CHECKS_ENAB	no
+ 
+ #
+ # Enable checking of time restrictions specified in /etc/porttime.
+ #
+-PORTTIME_CHECKS_ENAB	yes
++PORTTIME_CHECKS_ENAB	no
+ 
+ #
+ # Enable setting of ulimit, umask, and niceness from passwd(5) gecos field.
+@@ -67,7 +67,7 @@
+ # Enable "syslog" logging of su(1) activity - in addition to sulog file logging.
+ # SYSLOG_SG_ENAB does the same for newgrp(1) and sg(1).
+ #
+-SYSLOG_SU_ENAB		yes
++SYSLOG_SU_ENAB		no
+ SYSLOG_SG_ENAB		yes
+ 
+ #
+@@ -93,7 +93,7 @@
+ #
+ # If defined, this file will be output before each login(1) prompt.
+ #
+-#ISSUE_FILE	/etc/issue
++ISSUE_FILE	/etc/issue
+ 
+ #
+ # If defined, file which maps tty line to TERM environment parameter.
+@@ -120,14 +120,14 @@
+ # command as "-su".  If not defined, then ps(1) will display the
+ # name of the shell actually being run, e.g. something like "-sh".
+ #
+-SU_NAME		su
++#SU_NAME		su
+ 
+ #
+ # *REQUIRED*
  #   Directory where mailboxes reside, _or_ name of file, relative to the
  #   home directory.  If you _do_ define both, MAIL_DIR takes precedence.
  #
@@ -9,6 +80,98 @@
  #MAIL_FILE	.mail
  
  #
+@@ -158,8 +158,8 @@
+ # *REQUIRED*  The default PATH settings, for superuser and normal users.
+ #
+ # (they are minimal, add the rest in the shell startup files)
+-ENV_SUPATH	PATH=/sbin:/bin:/usr/sbin:/usr/bin
+-ENV_PATH	PATH=/bin:/usr/bin
++ENV_SUPATH	PATH=/usr/bin
++ENV_PATH	PATH=/usr/bin
+ 
+ #
+ # Terminal permissions
+@@ -204,7 +204,7 @@
+ # HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new
+ # home directories.
+ # If HOME_MODE is not set, the value of UMASK is used to create the mode.
+-#HOME_MODE	0700
++HOME_MODE	0700
+ 
+ #
+ # Password aging controls:
+@@ -216,7 +216,7 @@
+ #
+ PASS_MAX_DAYS	99999
+ PASS_MIN_DAYS	0
+-PASS_MIN_LEN	5
++PASS_MIN_LEN	0
+ PASS_WARN_AGE	7
+ 
+ #
+@@ -225,7 +225,7 @@
+ # to uid 0 accounts.  If the group doesn't exist or is empty, no one
+ # will be able to "su" to uid 0.
+ #
+-SU_WHEEL_ONLY	no
++#SU_WHEEL_ONLY	no
+ 
+ #
+ # Min/max values for automatic uid selection in useradd(8)
+@@ -233,7 +233,7 @@
+ UID_MIN			 1000
+ UID_MAX			60000
+ # System accounts
+-SYS_UID_MIN		  101
++SYS_UID_MIN		  100
+ SYS_UID_MAX		  999
+ # Extra per user uids
+ SUB_UID_MIN		   100000
+@@ -246,7 +246,7 @@
+ GID_MIN			 1000
+ GID_MAX			60000
+ # System accounts
+-SYS_GID_MIN		  101
++SYS_GID_MIN		  100
+ SYS_GID_MAX		  999
+ # Extra per user group ids
+ SUB_GID_MIN		   100000
+@@ -256,22 +256,22 @@
+ #
+ # Max number of login(1) retries if password is bad
+ #
+-LOGIN_RETRIES		5
++LOGIN_RETRIES		3
+ 
+ #
+ # Max time in seconds for login(1)
+ #
+-LOGIN_TIMEOUT		60
++LOGIN_TIMEOUT		30
+ 
+ #
+ # Maximum number of attempts to change password if rejected (too easy)
+ #
+-PASS_CHANGE_TRIES	5
++PASS_CHANGE_TRIES	3
+ 
+ #
+ # Warn about weak passwords (but still allow them) if you are root.
+ #
+-PASS_ALWAYS_WARN	yes
++PASS_ALWAYS_WARN	no
+ 
+ #
+ # Number of significant characters in the password for crypt().
+@@ -291,7 +291,7 @@
+ # phone, home phone).  If not defined, no changes are allowed.
+ # For backward compatibility, "yes" = "rwh" and "no" = "frwh".
+ #
+-CHFN_RESTRICT		rwh
++CHFN_RESTRICT		frwh
+ 
+ #
+ # Password prompt (%s will be replaced by user name).
 @@ -329,7 +329,7 @@
  # Note: If you use PAM, it is recommended to use a value consistent with
  # the PAM modules configuration.
@@ -27,3 +190,28 @@
  
  #
  # List of groups to add to the user's supplementary group set
+@@ -412,7 +412,7 @@
+ # It should remove any at/cron/print jobs etc. owned by
+ # the user to be removed (passed as the first argument).
+ #
+-#USERDEL_CMD	/usr/sbin/userdel_local
++USERDEL_CMD	/usr/bin/userdel
+ 
+ #
+ # Enable setting of the umask group bits to be the same as owner bits
+@@ -440,13 +440,13 @@
+ # This option is overridden with the -M or -m flags on the useradd(8)
+ # command-line.
+ #
+-#CREATE_HOME     yes
++CREATE_HOME     yes
+ 
+ #
+ # Force use shadow, even if shadow passwd & shadow group files are
+ # missing.
+ #
+-#FORCE_SHADOW    yes
++FORCE_SHADOW    yes
+ 
+ #
+ # Allow newuidmap and newgidmap when running under an alternative
