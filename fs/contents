@@ -36,7 +36,6 @@ var/cache/
 var/cache/rad/
 var/cache/rad/pkg/
 var/cache/rad/src/
-var/empty/
 var/lib/
 var/lib/hwclock/
 var/lib/misc/
