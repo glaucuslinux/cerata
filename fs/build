@@ -27,6 +27,7 @@ package() {
     "$CERD"/$nom/files/passwd \
     "$CERD"/$nom/files/profile \
     "$CERD"/$nom/files/resolv.conf \
+    "$CERD"/$nom/files/securetty \
     "$CERD"/$nom/files/shadow \
     "$CERD"/$nom/files/shells \
     "$SACD"/etc
