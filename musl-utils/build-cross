@@ -9,8 +9,8 @@ prepare() {
 }
 
 build() {
-  $CC $CFLAGS $LDFLAGS "$CERD"/musl/gencat.c -o gencat
-  $CC $CFLAGS $LDFLAGS "$CERD"/musl/getent.c -o getent
+  $CC $CFLAGS $LDFLAGS "$CERD"/musl/files/gencat.c -o gencat
+  $CC $CFLAGS $LDFLAGS "$CERD"/musl/files/getent.c -o getent
 }
 
 package() {
@@ -20,6 +20,6 @@ package() {
     "$CRSD"/usr/bin
 
   for i in a2x asciidoc gtkdocize help2man ldconfig makeinfo po4a texi2dvi; do
-    cp -fPp "$CERD"/musl/true "$CRSD"/usr/bin/$i
+    cp -fPp "$CERD"/musl/files/true "$CRSD"/usr/bin/$i
   done
 }
