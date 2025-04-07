@@ -1,0 +1,34 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -p build
+}
+
+configure() {
+  glaucus-meson \
+    -Ddistconfdir=/usr/lib \
+    -Dmoduledir=/usr/lib/modules \
+    -Dbashcompletiondir=no \
+    -Dfishcompletiondir=no \
+    -Dzshcompletiondir=no \
+    -Dxz=disabled \
+    -Dzlib=disabled \
+    -Dmanpages=false \
+    build
+}
+
+build() {
+  meson compile \
+    -C build
+}
+
+package() {
+  DESTDIR="$CRSD" \
+  meson install \
+    -C build
+
+  cp -fPp "$CERD"/$nom/files/search.conf "$CRSD"/usr/lib/depmod.d
+}
