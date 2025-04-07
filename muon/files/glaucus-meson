@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+exec meson setup \
+  -Dprefix=/usr \
+  -Dbindir=/usr/bin \
+  -Ddatadir=/usr/share \
+  -Dincludedir=/usr/include \
+  -Dinfodir=/usr/share/info \
+  -Dlibdir=/usr/lib \
+  -Dlibexecdir=/usr/bin \
+  -Dlocaledir=/usr/share/locale \
+  -Dlocalstatedir=/var \
+  -Dmandir=/usr/share/man \
+  -Dsbindir=/usr/bin \
+  -Dsharedstatedir=/var/lib \
+  -Dsysconfdir=/etc \
+  -Dauto_features=enabled \
+  -Dbackend=ninja \
+  -Dbuildtype=release \
+  -Ddefault_library=shared \
+  -Dstdsplit=true \
+  -Dstrip=true \
+  -Dwrap_mode=nodownload \
+  -Db_lto=true \
+  -Db_lto_mode=thin \
+  -Db_pie=true \
+  "$@"
