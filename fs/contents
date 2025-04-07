@@ -13,6 +13,7 @@ etc/os-release
 etc/passwd
 etc/profile
 etc/resolv.conf
+etc/securetty
 etc/shadow
 etc/shells
 home/
