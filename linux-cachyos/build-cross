@@ -6,4 +6,6 @@
 package() {
   cp -fPpR "$TMPD"/$nom/usr "$CRSD"
   mv -f "$CRSD"/usr/lib/modules/$ver-cachyos/vmlinuz "$CRSD"/boot
+
+  depmod -b "$CRSD" $ver-cachyos
 }

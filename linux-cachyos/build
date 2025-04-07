@@ -7,4 +7,6 @@ package() {
   mkdir -p "$SACD"/boot
   mv -f "$TMPD"/$nom/usr "$SACD"
   mv -f "$SACD"/usr/lib/modules/$ver-cachyos/vmlinuz "$SACD"/boot
+
+  depmod -b "$SACD" $ver-cachyos
 }
