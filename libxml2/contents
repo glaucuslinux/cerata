@@ -58,8 +58,8 @@ usr/lib/cmake/libxml2/
 usr/lib/cmake/libxml2/libxml2-config.cmake
 usr/lib/libxml2.la
 usr/lib/libxml2.so
-usr/lib/libxml2.so.16
-usr/lib/libxml2.so.16.0.0
+usr/lib/libxml2.so.2
+usr/lib/libxml2.so.2.13.7
 usr/lib/pkgconfig/
 usr/lib/pkgconfig/libxml-2.0.pc
 usr/lib/python3.13/
@@ -76,6 +76,8 @@ usr/lib/python3.13/site-packages/libxml2.py
 usr/lib/python3.13/site-packages/libxml2mod.la
 usr/lib/python3.13/site-packages/libxml2mod.so
 usr/share/
+usr/share/aclocal/
+usr/share/aclocal/libxml.m4
 usr/share/doc/
 usr/share/doc/libxml2/
 usr/share/doc/libxml2/xmlcatalog.html
