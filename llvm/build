@@ -13,7 +13,7 @@ configure() {
   glaucus-cmake \
     -B build \
     -DBENCHMARK_INSTALL_DOCS=OFF \
-    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_SHARED_LIBS=OFF \
     -DCLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang \
     -DCLANG_DEFAULT_CXX_STDLIB=libc++ \
     -DCLANG_DEFAULT_LINKER=mold \
