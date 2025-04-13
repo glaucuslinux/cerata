@@ -13,8 +13,6 @@ configure() {
   glaucus-cmake \
     -B build \
     -DCLANG_DEFAULT_CXX_STDLIB=libc++ \
-    -DCLANG_DEFAULT_LINKER=mold \
-    -DCLANG_DEFAULT_OBJCOPY=$nom-objcopy \
     -DCLANG_DEFAULT_RTLIB=compiler-rt \
     -DCLANG_DEFAULT_UNWINDLIB=libunwind \
     -DCLANG_ENABLE_ARCMT=OFF \
@@ -23,13 +21,8 @@ configure() {
     -DCLANG_INCLUDE_TESTS=OFF \
     -DCLANG_LINK_CLANG_DYLIB=ON \
     -DCLANG_VENDOR=glaucus \
-    -DCMAKE_AR=$nom-ar \
-    -DCMAKE_ASM_COMPILER=clang \
-    -DCMAKE_C_COMPILER=clang \
     -DCMAKE_C_FLAGS_RELEASE='-pipe -O0' \
-    -DCMAKE_CXX_COMPILER=clang++ \
     -DCMAKE_CXX_FLAGS_RELEASE='-pipe -O0' \
-    -DCMAKE_RANLIB=$nom-ranlib \
     -DCOMPILER_RT_BUILD_CTX_PROFILE=OFF \
     -DCOMPILER_RT_BUILD_GWP_ASAN=OFF \
     -DCOMPILER_RT_BUILD_LIBFUZZER=OFF \
@@ -78,7 +71,7 @@ configure() {
     -DLLVM_ENABLE_OCAMLDOC=OFF \
     -DLLVM_ENABLE_PROJECTS=clang \
     -DLLVM_ENABLE_RTTI=ON \
-    -DLLVM_ENABLE_RUNTIMES='compiler-rt;libcxx;libcxxabi;libunwind' \
+    -DLLVM_ENABLE_RUNTIMES=compiler-rt \
     -DLLVM_ENABLE_UNWIND_TABLES=OFF \
     -DLLVM_ENABLE_ZLIB=FORCE_ON \
     -DLLVM_ENABLE_ZSTD=FORCE_ON \
@@ -94,7 +87,6 @@ configure() {
     -DLLVM_PARALLEL_LINK_JOBS=1 \
     -DLLVM_TARGET_ARCH=X86 \
     -DLLVM_TARGETS_TO_BUILD=X86 \
-    -DLLVM_USE_LINKER=mold \
     -DLLVM_USE_SANITIZER=OFF \
     -DLLVM_USE_SPLIT_DWARF=ON \
     -S $nom
@@ -110,7 +102,4 @@ package() {
   samu \
     -C build \
     install/strip
-
-  ln -fs clang++ "$SACD"/usr/bin/c++
-  ln -fs clang "$SACD"/usr/bin/cc
 }
