@@ -12,7 +12,10 @@ prepare() {
 configure() {
   glaucus-cmake \
     -B build \
+    -DCLANG_BUILD_TOOLS=OFF \
     -DCLANG_DEFAULT_CXX_STDLIB=libstdc++ \
+    -DCLANG_DEFAULT_LINKER=bfd \
+    -DCLANG_DEFAULT_OPENMP_RUNTIME=libgomp \
     -DCLANG_DEFAULT_RTLIB=libgcc \
     -DCLANG_DEFAULT_UNWINDLIB=libgcc \
     -DCLANG_ENABLE_ARCMT=OFF \
