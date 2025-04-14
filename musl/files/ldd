@@ -3,6 +3,13 @@
 # Copyright (c) 2018-2025, Firas Khalil Khana
 # Distributed under the terms of the ISC License
 
-for i in "$@"; do
-  /usr/lib/libc.so --list "$i"
-done
+[ $# -eq 0 ] && /usr/lib/libc.so
+
+if [ $# -eq 1 ]; then
+  /usr/lib/libc.so --list "$1"
+else
+  for i in "$@"; do
+    echo "$i:"
+    /usr/lib/libc.so --list "$i"
+  done
+fi
