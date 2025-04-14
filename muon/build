@@ -51,9 +51,12 @@ package() {
     -C build \
     install
 
-  cp -fPp "$CERD"/$nom/files/glaucus-$nom "$SACD"/usr/bin
-  cp -fPp "$CERD"/$nom/files/samu "$SACD"/usr/bin
+  cp -fPp \
+    "$CERD"/$nom/files/glaucus-$nom \
+    "$CERD"/$nom/files/samu \
+    "$SACD"/usr/bin
 
-  # Compatibility symlink
+  # Compatibility symlinks
+  ln -fs $nom "$SACD"/usr/bin/meson
   ln -fs samu "$SACD"/usr/bin/ninja
 }
