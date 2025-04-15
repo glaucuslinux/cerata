@@ -4,7 +4,7 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="linux-cachyos"
-ver="6.13.7-2"
-url="https://mirror.cachyos.org/repo/x86_64_v3/cachyos-v3/linux-cachyos-6.13.7-2-x86_64_v3.pkg.tar.zst"
-sum="987abbd17d79d34861fb191de91027b9"
+ver="6.14.2-2"
+url="https://mirror.cachyos.org/repo/x86_64_v3/cachyos-v3/linux-cachyos-6.14.2-2-x86_64_v3.pkg.tar.zst"
+sum="a0fef8bacd4aca973afde0f108209dc9"
 nop="check"
