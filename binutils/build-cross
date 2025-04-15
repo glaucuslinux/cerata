@@ -46,7 +46,7 @@ configure() {
     --enable-relro \
     --disable-default-execstack \
     --enable-default-hash-style=gnu \
-    --disable-initfini-array \
+    --enable-initfini-array \
     --disable-werror \
     --disable-nls \
     --disable-rpath \
