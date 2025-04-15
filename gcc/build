@@ -57,7 +57,7 @@ configure() {
     --disable-rpath \
     --disable-nls \
     --disable-gnu-indirect-function \
-    --disable-initfini-array \
+    --enable-initfini-array \
     --disable-gnu-unique-object \
     --enable-linker-build-id \
     --disable-libsanitizer \
