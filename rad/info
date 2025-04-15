@@ -4,6 +4,6 @@
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
 nom="rad"
-ver="68abc95"
+ver="677a15d"
 url="https://github.com/glaucuslinux/rad"
 run="git libarchive toybox wget2 xxhash zstd"
