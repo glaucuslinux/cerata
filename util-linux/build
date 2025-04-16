@@ -60,6 +60,5 @@ check() {
 package() {
   make \
     DESTDIR="$SACD" \
-    usrsbin_execdir=/usr/bin \
     install-strip
 }
