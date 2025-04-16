@@ -13,14 +13,7 @@ configure() {
   ./configure \
     --disable-debug \
     --prefix=/usr \
-    --sysconfdir=/etc \
-    --bindir=/usr/bin \
-    --libexecdir=/usr/lib/resolvconf \
-    --statedir=/var \
-    --rundir=/run \
-    --mandir=/usr/share/man \
-    --libdir=/usr/lib \
-    --includedir=/usr/include
+    --sysconfdir=/etc
 }
 
 build() {
