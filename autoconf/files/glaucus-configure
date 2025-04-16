@@ -5,9 +5,7 @@
 
 exec ./configure \
   --prefix=/usr \
-  --sbindir=/usr/bin \
   --sysconfdir=/etc \
   --sharedstatedir=/var/lib \
   --localstatedir=/var \
-  --runstatedir=/run \
   "$@"
