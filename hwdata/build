@@ -12,14 +12,8 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/bin \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
     --sysconfdir=/etc \
-    --libdir=/usr/lib \
-    --mandir=/usr/share/man \
     --disable-blacklist
 }
 
