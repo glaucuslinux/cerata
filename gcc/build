@@ -29,22 +29,10 @@ prepare() {
 configure() {
   ../configure \
     --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
     --sbindir=/usr/bin \
-    --libexecdir=/usr/lib \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
-    --oldincludedir=/usr/include \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --mandir=/usr/share/man \
-    --docdir=/usr/share/doc/$nom \
     --disable-bootstrap \
     --enable-checking=release \
     --disable-multilib \
