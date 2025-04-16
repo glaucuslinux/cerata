@@ -58,6 +58,7 @@ package() {
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
     "$CERD"/$nom/files/os-release > "$SACD"/usr/lib/os-release
   mkdir -p "$SACD"/usr/lib/pkgconfig
+  ln -fs lib "$SACD"/usr/libexec
   ln -fs bin "$SACD"/usr/sbin
   mkdir -p "$SACD"/usr/share
 

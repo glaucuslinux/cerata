@@ -56,6 +56,7 @@ package() {
     -e "s/^PRETTY_NAME=/&$PRETTY_NAME/" \
     "$CERD"/$nom/files/os-release > "$CRSD"/usr/lib/os-release
   mkdir -p "$PKG_CONFIG_LIBDIR"
+  ln -fs lib "$CRSD"/usr/libexec
   ln -fs bin "$CRSD"/usr/sbin
   mkdir -p "$CRSD"/usr/share
 
