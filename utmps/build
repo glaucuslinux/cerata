@@ -12,12 +12,6 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --exec-prefix=/usr \
-    --dynlibdir=/usr/lib \
-    --bindir=/usr/bin \
-    --libexecdir=/usr/bin \
-    --libdir=/usr/lib \
-    --includedir=/usr/include \
     --enable-shared \
     --disable-static \
     --disable-allstatic \
