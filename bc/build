@@ -9,15 +9,7 @@ configure() {
     --disable-generated-tests \
     --disable-man-pages \
     --disable-nls \
-    --prefix=/usr \
-    --bindir=/usr/bin \
-    --includedir=/usr/include \
-    --libdir=/usr/lib \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --mandir=/usr/share/man \
-    --man1dir=/usr/share/man/man1 \
-    --man3dir=/usr/share/man/man3
+    --prefix=/usr
 }
 
 build() {
