@@ -15,7 +15,6 @@ prepare() {
 configure() {
   ../configure \
     --prefix=/usr \
-    --sbindir=/usr/bin \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \

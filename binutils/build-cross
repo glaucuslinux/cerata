@@ -60,19 +60,16 @@ package() {
 
   ln -fs ld.bfd "$CRSD"/usr/bin/ld
 
-  # Remove static libraries
+  # Remove static libraries and libtool archives
   rm -fv \
     "$CRSD"/usr/lib/libbfd.a \
-    "$CRSD"/usr/lib/libctf.a \
-    "$CRSD"/usr/lib/libctf-nobfd.a \
-    "$CRSD"/usr/lib/libopcodes.a \
-    "$CRSD"/usr/lib/libsframe.a
-
-  # Remove libtool archives
-  rm -fv \
     "$CRSD"/usr/lib/libbfd.la \
+    "$CRSD"/usr/lib/libctf.a \
     "$CRSD"/usr/lib/libctf.la \
+    "$CRSD"/usr/lib/libctf-nobfd.a \
     "$CRSD"/usr/lib/libctf-nobfd.la \
+    "$CRSD"/usr/lib/libopcodes.a \
     "$CRSD"/usr/lib/libopcodes.la \
+    "$CRSD"/usr/lib/libsframe.a \
     "$CRSD"/usr/lib/libsframe.la
 }
