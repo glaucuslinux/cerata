@@ -15,7 +15,6 @@ prepare() {
 configure() {
   ../configure \
     --prefix="$TLCD"/usr \
-    --sbindir="$TLCD"/usr/bin \
     --sysconfdir="$TLCD"/etc \
     --sharedstatedir="$TLCD"/var/lib \
     --localstatedir="$TLCD"/var \
