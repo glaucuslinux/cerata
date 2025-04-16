@@ -61,6 +61,7 @@ package() {
   ln -fs lib "$SACD"/usr/libexec
   ln -fs bin "$SACD"/usr/sbin
   mkdir -p "$SACD"/usr/share
+  ln -fs ../lib/pkgconfig "$SACD"/usr/share
 
   mkdir -p \
     "$SACD"/var/cache/rad/pkg \
