@@ -12,10 +12,6 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --eprefix=/usr \
-    --libdir=/usr/lib \
-    --sharedlibdir=/usr/lib \
-    --includedir=/usr/include \
     --zlib-compat \
     --force-sse2
 }
