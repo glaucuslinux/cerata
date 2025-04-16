@@ -27,12 +27,5 @@ package() {
     LIBXXH_DISPATCH=1 \
     DESTDIR="$SACD" \
     prefix=/usr \
-    exec_prefix=/usr \
-    libdir=/usr/lib \
-    includedir=/usr/include \
-    bindir=/usr/bin \
-    datarootdir=/usr/share \
-    mandir=/usr/share/man \
-    man1dir=/usr/share/man/man1 \
     install
 }
