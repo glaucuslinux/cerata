@@ -12,9 +12,7 @@ prepare() {
 configure() {
   ./configure \
     --color always \
-    --include_dir /usr/include \
-    --libdir /usr/lib \
-    --prefix /usr
+    --include_dir /usr/include
 }
 
 build() {
