@@ -10,8 +10,6 @@ prepare() {
 configure() {
   "$CERD"/muon/files/glaucus-meson \
     --cross-file="$CERD"/muon/files/meson.cross \
-    -Ddistconfdir=/usr/lib \
-    -Dmoduledir=/usr/lib/modules \
     -Dbashcompletiondir=no \
     -Dfishcompletiondir=no \
     -Dzshcompletiondir=no \
