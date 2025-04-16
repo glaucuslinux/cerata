@@ -19,7 +19,6 @@ configure() {
     --sysconfdir="$TLCD"/etc \
     --sharedstatedir="$TLCD"/var/lib \
     --localstatedir="$TLCD"/var \
-    --oldincludedir="$TLCD"/usr/include \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
