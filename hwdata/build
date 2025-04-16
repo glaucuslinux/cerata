@@ -3,12 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  patch \
-    -i "$CERD"/$nom/patches/glaucus/0001-fix-pkg-config-directory.patch \
-    -p 0
-}
-
 configure() {
   ./configure \
     --prefix=/usr \
