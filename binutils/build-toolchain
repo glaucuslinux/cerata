@@ -15,22 +15,11 @@ prepare() {
 configure() {
   ../configure \
     --prefix="$TLCD"/usr \
-    --exec-prefix="$TLCD"/usr \
-    --bindir="$TLCD"/usr/bin \
     --sbindir="$TLCD"/usr/bin \
-    --libexecdir="$TLCD"/usr/bin \
     --sysconfdir="$TLCD"/etc \
     --sharedstatedir="$TLCD"/var/lib \
     --localstatedir="$TLCD"/var \
-    --libdir="$TLCD"/usr/lib \
-    --includedir="$TLCD"/usr/include \
     --oldincludedir="$TLCD"/usr/include \
-    --datarootdir="$TLCD"/usr/share \
-    --datadir="$TLCD"/usr/share \
-    --infodir="$TLCD"/usr/share/info \
-    --localedir="$TLCD"/usr/share/locale \
-    --mandir="$TLCD"/usr/share/man \
-    --docdir="$TLCD"/usr/share/doc/$nom \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
