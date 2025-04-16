@@ -15,11 +15,6 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
-    --exec-prefix=/usr \
-    --bindir=/usr/bin \
-    --datadir=/usr/share \
-    --mandir=/usr/share/man \
-    --sysconfdir=/etc \
     --without-pam \
     --with-timestamp
 }
