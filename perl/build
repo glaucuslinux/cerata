@@ -34,17 +34,13 @@ configure() {
     -Dpager='/usr/bin/less -is' \
     -Dprefix=/usr \
     -Dprivlib=/usr/share/${nom}5/core_$nom \
-    -Dscriptdir=/usr/bin \
     -Dsitearch=/usr/lib/${nom}5/site_$nom \
     -Dsitelib=/usr/share/${nom}5/site_$nom \
-    -Dsiteprefix=/usr \
-    -Dsitescript=/usr/bin \
     -Duseshrplib \
     -Dusethreads \
     -Dvendorarch=/usr/lib/${nom}5/vendor_$nom \
     -Dvendorlib=/usr/share/${nom}5/vendor_$nom \
-    -Dvendorprefix=/usr \
-    -Dvendorscript=/usr/bin
+    -Dvendorprefix=/usr
 }
 
 build() {
