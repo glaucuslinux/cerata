@@ -3,10 +3,6 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  :
-}
-
 configure() {
   cp -fPp "$CERD"/$nom/files/glaucus.config .config
 }
@@ -14,10 +10,6 @@ configure() {
 build() {
   make \
     LDFLAGS="$LDFLAGS -lutmps"
-}
-
-check() {
-  :
 }
 
 package() {
