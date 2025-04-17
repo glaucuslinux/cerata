@@ -52,6 +52,7 @@ package() {
     install
 
   cp -fPp \
+    "$CERD"/$nom/files/glaucus-meson \
     "$CERD"/$nom/files/glaucus-$nom \
     "$CERD"/$nom/files/samu \
     "$SACD"/usr/bin
