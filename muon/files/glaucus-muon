@@ -6,8 +6,8 @@
 exec muon setup \
   -Dprefix=/usr \
   -Dsharedstatedir=/var/lib \
-  -Dauto_features=enabled \
-  -Dbuildtype=release \
+  -Dauto_features=disabled \
+  -Ddebug=false \
   -Doptimization=2 \
   -Dstrip=true \
   -Dwrap_mode=nodownload \
