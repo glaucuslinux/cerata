@@ -12,8 +12,8 @@ prepare() {
 configure() {
   ./bootstrap \
     --prefix=/usr \
-    --datadir=/share/$nom \
-    --docdir=/share/doc/$nom \
+    --datadir=share/$nom \
+    --docdir=share/doc/$nom \
     --parallel=4 \
     --system-libs \
     --no-system-cppdap \
