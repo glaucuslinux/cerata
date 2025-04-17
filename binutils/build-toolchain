@@ -22,6 +22,7 @@ configure() {
     --host=$BLD \
     --target=$TGT \
     --disable-multilib \
+    --enable-install-libiberty \
     --enable-plugins \
     --enable-targets=x86_64-pep \
     --enable-deterministic-archives \
