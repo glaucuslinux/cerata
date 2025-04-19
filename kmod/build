@@ -9,6 +9,8 @@ prepare() {
 
 configure() {
   glaucus-muon \
+    -Ddistconfdir=/usr/lib \
+    -Dmoduledir=/usr/lib/modules \
     -Dbashcompletiondir=no \
     -Dfishcompletiondir=no \
     -Dzshcompletiondir=no \
