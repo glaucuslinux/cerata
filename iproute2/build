@@ -11,7 +11,9 @@ prepare() {
 
 configure() {
   ./configure \
-    --color always
+    --color=always \
+    --libdir=/usr/lib \
+    --prefix=/usr
 }
 
 build() {
@@ -20,6 +22,7 @@ build() {
 
 package() {
   make \
+    SBINDIR=/usr/bin \
     DESTDIR="$SACD" \
     install
 }
