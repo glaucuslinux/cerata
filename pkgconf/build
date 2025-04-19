@@ -10,7 +10,9 @@ prepare() {
 configure() {
   glaucus-configure \
     --disable-static \
-    --enable-pic
+    --enable-pic \
+    --with-pkg-config-dir=/usr/lib/${nom}ig \
+    --with-system-libdir=/usr/lib
 }
 
 build() {
