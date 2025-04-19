@@ -40,9 +40,12 @@ prepare() {
 configure() {
   ../configure \
     --prefix="$TLCD"/usr \
+    --sbindir="$TLCD"/usr/bin \
+    --libexecdir="$TLCD"/usr/lib \
     --sysconfdir="$TLCD"/etc \
     --sharedstatedir="$TLCD"/var/lib \
     --localstatedir="$TLCD"/var \
+    --libdir="$TLCD"/usr/lib \
     --build=$BLD \
     --host=$BLD \
     --target=$TGT \
@@ -99,8 +102,6 @@ build() {
 }
 
 package() {
-  ln -fs lib "$TLCD"/usr/libexec
-
   make \
     install-strip-$nom \
     install-strip-target-lib$nom

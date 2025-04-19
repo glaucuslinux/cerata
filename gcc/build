@@ -29,9 +29,12 @@ prepare() {
 configure() {
   ../configure \
     --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib \
     --sysconfdir=/etc \
     --sharedstatedir=/var/lib \
     --localstatedir=/var \
+    --libdir=/usr/lib \
     --disable-bootstrap \
     --enable-checking=release \
     --disable-multilib \
