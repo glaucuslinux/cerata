@@ -6,6 +6,8 @@
 build() {
   make \
     PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     libudev.so.1
 
   $CC $CFLAGS $LDFLAGS contrib/helper.c -o $nom-helper
@@ -14,6 +16,8 @@ build() {
 package() {
   make \
     PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     DESTDIR="$SACD" \
     install-shared
 
