@@ -13,6 +13,8 @@ configure() {
   CHOST="$TGT" \
   ./configure \
     --prefix=/usr \
+    --libdir=/usr/lib \
+    --sharedlibdir=/usr/lib \
     --zlib-compat \
     --force-sse2
 }
