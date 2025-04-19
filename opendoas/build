@@ -15,6 +15,7 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --sysconfdir=/etc \
     --without-pam \
     --with-timestamp
 }
