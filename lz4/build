@@ -8,7 +8,6 @@ build() {
     BUILD_STATIC=no \
     DESTDIR="$SACD" \
     PREFIX=/usr \
-    LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig
 }
 
