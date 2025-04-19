@@ -9,7 +9,8 @@ configure() {
     --disable-generated-tests \
     --disable-man-pages \
     --disable-nls \
-    --prefix=/usr
+    --prefix=/usr \
+    --libdir=/usr/lib
 }
 
 build() {
