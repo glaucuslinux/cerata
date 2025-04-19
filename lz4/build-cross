@@ -7,7 +7,9 @@ build() {
   make \
     BUILD_STATIC=no \
     DESTDIR="$CRSD" \
-    PREFIX=/usr
+    PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig
 }
 
 package() {
@@ -15,5 +17,7 @@ package() {
     BUILD_STATIC=no \
     DESTDIR="$CRSD" \
     PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }

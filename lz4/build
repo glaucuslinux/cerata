@@ -7,7 +7,9 @@ build() {
   make \
     BUILD_STATIC=no \
     DESTDIR="$SACD" \
-    PREFIX=/usr
+    PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig
 }
 
 check() {
@@ -20,5 +22,7 @@ package() {
     BUILD_STATIC=no \
     DESTDIR="$SACD" \
     PREFIX=/usr \
+    LIBDIR=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }
