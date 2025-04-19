@@ -27,5 +27,7 @@ package() {
     LIBXXH_DISPATCH=1 \
     DESTDIR="$SACD" \
     prefix=/usr \
+    libdir=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }
