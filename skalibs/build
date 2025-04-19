@@ -12,7 +12,10 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --libdir=/usr/lib \
     --sysconfdir=/etc \
+    --sysdepdir=/usr/lib/$nom/sysdeps \
     --disable-static
 }
 

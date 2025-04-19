@@ -13,7 +13,10 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --libdir=/usr/lib \
     --sysconfdir=/etc \
+    --sysdepdir=/usr/lib/$nom/sysdeps \
     --with-include="$CRSD"/usr/include \
     --with-lib="$CRSD"/usr/lib \
     --with-dynlib="$CRSD"/usr/lib \
