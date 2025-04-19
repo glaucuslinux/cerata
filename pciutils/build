@@ -12,7 +12,10 @@ build() {
     LIBKMOD=yes \
     HWDB=yes \
     PREFIX=/usr \
+    SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
+    LIBDIR=/usr/lib \
+    PKGCFDIR=/usr/lib/pkgconfig \
     PCI_IDS=pci.ids \
     PCI_COMPRESSED_IDS=0
 }
@@ -26,7 +29,10 @@ package() {
     LIBKMOD=yes \
     HWDB=yes \
     PREFIX=/usr \
+    SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
+    LIBDIR=/usr/lib \
+    PKGCFDIR=/usr/lib/pkgconfig \
     PCI_IDS=pci.ids \
     PCI_COMPRESSED_IDS=0 \
     DESTDIR="$SACD" \
