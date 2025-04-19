@@ -5,9 +5,15 @@
 
 exec muon setup \
   -Dprefix=/usr \
+  -Dlibdir=/usr/lib \
+  -Dlibexecdir=/usr/lib \
+  -Dlocalstatedir=/var \
+  -Dsbindir=/usr/bin \
   -Dsharedstatedir=/var/lib \
+  -Dsysconfdir=/etc \
   -Dauto_features=disabled \
   -Ddebug=false \
+  -Ddefault_library=shared \
   -Doptimization=2 \
   -Dstrip=true \
   -Dwrap_mode=nodownload \
