@@ -11,6 +11,7 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --libdir=/usr/lib \
     --syslibdir=/usr/lib \
     --disable-wrapper \
     --disable-static
