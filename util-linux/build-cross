@@ -57,6 +57,7 @@ build() {
 package() {
   make \
     DESTDIR="$CRSD" \
+    usrsbin_execdir=/usr/bin \
     install-strip
 
   # Remove libtool archives
