@@ -12,6 +12,10 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --dynlibdir=/usr/lib \
+    --libexecdir=/usr/lib \
+    --libdir=/usr/lib \
+    --livedir=/run/$nom \
     --enable-shared \
     --disable-static \
     --disable-allstatic
