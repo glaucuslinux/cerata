@@ -6,4 +6,4 @@
 nom="basu"
 ver="315664a"
 url="https://git.sr.ht/~emersion/basu"
-bld="gperf libcap muon"
+bld="gperf libcap muon python"
