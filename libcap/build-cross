@@ -14,6 +14,8 @@ build() {
   make \
     DESTDIR="$CRSD" \
     lib=lib \
+    sbin=bin \
+    prefix=/usr \
     KERNEL_HEADERS="$CRSD"/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -24,6 +26,8 @@ package() {
   make \
     DESTDIR="$CRSD" \
     lib=lib \
+    sbin=bin \
+    prefix=/usr \
     KERNEL_HEADERS="$CRSD"/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
