@@ -19,12 +19,12 @@ configure() {
     --build=$BLD \
     --host=$TGT \
     --disable-static \
-    --enable-pic \
     --disable-bsdcpio \
     --disable-rpath \
     --enable-posix-regex-lib=libpcre2posix \
     --enable-xattr \
     --enable-acl \
+    --with-pic \
     --without-libb2 \
     --without-iconv \
     --without-cng \
