@@ -3,14 +3,17 @@
 
 # Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
 
-prepare() {
-  autoreconf -vfis
-}
-
 configure() {
-  glaucus-configure \
+  ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib \
+    --sysconfdir=/etc \
+    --sharedstatedir=/var/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
     --disable-static \
-    --enable-pic
+    --with-pic
 }
 
 build() {
