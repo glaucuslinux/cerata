@@ -42,7 +42,4 @@ package() {
     "$SACD"/usr/lib/libe2p.a \
     "$SACD"/usr/lib/libext2fs.a \
     "$SACD"/usr/lib/libss.a
-
-  mv -f "$SACD"/usr/lib/e2initrd_helper "$SACD"/usr/bin
-  ln -fs ../bin/e2initrd_helper "$SACD"/usr/lib
 }
