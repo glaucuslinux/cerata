@@ -9,7 +9,7 @@ prepare() {
   ln -fs ../../mpc/mpc-1.3.1 mpc
   ln -fs ../../mpfr/mpfr-4.2.2 mpfr
 
-  for i in gmp isl mpc mpfr; do
+  for i in gmp isl mpfr; do
     cd $i
     autoreconf -vfis
     cd ..
