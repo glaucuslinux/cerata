@@ -16,7 +16,6 @@ package() {
     BUILD_STATIC=no \
     DESTDIR="$CRSD" \
     PREFIX=/usr \
-    LIBDIR=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }
