@@ -5,12 +5,13 @@
 
 exec muon setup \
   -Dprefix=/usr \
-  -Dlibdir=/usr/lib \
-  -Dlibexecdir=/usr/lib \
-  -Dlocalstatedir=/var \
+  -Dbindir=/usr/bin \
   -Dsbindir=/usr/bin \
-  -Dsharedstatedir=/var/lib \
+  -Dlibexecdir=/usr/lib \
   -Dsysconfdir=/etc \
+  -Dsharedstatedir=/var/lib \
+  -Dlocalstatedir=/var \
+  -Dlibdir=/usr/lib \
   -Dauto_features=disabled \
   -Ddebug=false \
   -Ddefault_library=shared \
