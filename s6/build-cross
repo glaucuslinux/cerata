@@ -13,7 +13,9 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
     --with-sysdeps="$CRSD"/usr/lib/skalibs/sysdeps \

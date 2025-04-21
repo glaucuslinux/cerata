@@ -12,7 +12,9 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
     --enable-shared \
