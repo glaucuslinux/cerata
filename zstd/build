@@ -33,12 +33,17 @@ check() {
 package() {
   make \
     DESTDIR="$SACD" \
-    PREFIX=/usr \
+    prefix=/usr \
+    exec_prefix=/usr \
+    bindir=/usr/bin \
+    libdir=/usr/lib \
+    PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 
   make \
     DESTDIR="$SACD" \
     PREFIX=/usr \
+    BINDIR=/usr/bin \
     -C contrib/p$nom \
     install
 
