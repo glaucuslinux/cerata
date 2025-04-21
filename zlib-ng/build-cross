@@ -13,6 +13,7 @@ configure() {
   CHOST="$TGT" \
   ./configure \
     --prefix=/usr \
+    --eprefix=/usr \
     --libdir=/usr/lib \
     --sharedlibdir=/usr/lib \
     --zlib-compat \
