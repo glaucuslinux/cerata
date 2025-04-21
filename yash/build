@@ -12,6 +12,8 @@ prepare() {
 configure() {
   ./configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --enable-array \
     --enable-dirstack \
     --enable-double-bracket \
