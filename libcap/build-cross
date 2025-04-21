@@ -16,6 +16,7 @@ build() {
     lib=lib \
     sbin=bin \
     prefix=/usr \
+    exec_prefix=/usr \
     KERNEL_HEADERS="$CRSD"/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
@@ -28,6 +29,7 @@ package() {
     lib=lib \
     sbin=bin \
     prefix=/usr \
+    exec_prefix=/usr \
     KERNEL_HEADERS="$CRSD"/usr/include \
     PAM_CAP=no \
     DYNAMIC=yes \
