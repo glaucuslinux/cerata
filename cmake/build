@@ -12,6 +12,7 @@ prepare() {
 configure() {
   ./bootstrap \
     --prefix=/usr \
+    --bindir=bin \
     --datadir=share/$nom \
     --docdir=share/doc/$nom \
     --parallel=4 \
