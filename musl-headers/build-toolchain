@@ -17,6 +17,7 @@ prepare() {
 package() {
   make \
     exec_prefix=/usr \
+    bindir=/usr/bin \
     prefix=/usr \
     libdir=/usr/lib \
     syslibdir=/usr/lib \
