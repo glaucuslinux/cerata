@@ -11,6 +11,8 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --libdir=/usr/lib \
     --syslibdir=/usr/lib \
     --disable-wrapper \
