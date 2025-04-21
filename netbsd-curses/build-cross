@@ -12,12 +12,16 @@ prepare() {
 build() {
   make \
     PREFIX=/usr \
+    BINDIR=/usr/bin \
+    LIBDIR=/usr/lib \
     all-dynamic
 }
 
 package() {
   make \
     PREFIX=/usr \
+    BINDIR=/usr/bin \
+    LIBDIR=/usr/lib \
     DESTDIR="$CRSD" \
     install-dynamic
 
