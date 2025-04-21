@@ -12,6 +12,7 @@ build() {
     LIBKMOD=yes \
     HWDB=yes \
     PREFIX=/usr \
+    BINDIR=/usr/bin \
     SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
     LIBDIR=/usr/lib \
@@ -29,6 +30,7 @@ package() {
     LIBKMOD=yes \
     HWDB=yes \
     PREFIX=/usr \
+    BINDIR=/usr/bin \
     SBINDIR=/usr/bin \
     SHAREDIR=/usr/share/hwdata \
     LIBDIR=/usr/lib \
