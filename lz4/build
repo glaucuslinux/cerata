@@ -8,6 +8,8 @@ build() {
     BUILD_STATIC=no \
     DESTDIR="$SACD" \
     PREFIX=/usr \
+    EXEC_PREFIX=/usr \
+    BINDIR=/usr/bin \
     PKGCONFIGDIR=/usr/lib/pkgconfig
 }
 
@@ -21,6 +23,8 @@ package() {
     BUILD_STATIC=no \
     DESTDIR="$SACD" \
     PREFIX=/usr \
+    EXEC_PREFIX=/usr \
+    BINDIR=/usr/bin \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }
