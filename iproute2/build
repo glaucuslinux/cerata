@@ -13,6 +13,7 @@ configure() {
   ./configure \
     --color=always \
     --libdir=/usr/lib \
+    --libbpf_force=off \
     --prefix=/usr
 }
 
