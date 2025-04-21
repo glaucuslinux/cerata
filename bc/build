@@ -10,6 +10,7 @@ configure() {
     --disable-man-pages \
     --disable-nls \
     --prefix=/usr \
+    --bindir=/usr/bin \
     --libdir=/usr/lib
 }
 
