@@ -22,7 +22,9 @@ package() {
     LIBXXH_DISPATCH=1 \
     DESTDIR="$CRSD" \
     prefix=/usr \
+    exec_prefix=/usr \
     libdir=/usr/lib \
+    bindir=/usr/bin \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
     install
 }
