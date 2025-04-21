@@ -20,6 +20,8 @@ prepare() {
 
 build() {
   make \
+    PREFIX=/usr \
+    DESTDIR="$SACD" \
     CFLAGS="$CFLAGS" \
     LDFLAGS="$LDFLAGS"
 }
