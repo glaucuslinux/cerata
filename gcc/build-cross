@@ -40,6 +40,8 @@ prepare() {
 configure() {
   ../configure \
     --prefix=/usr \
+    --exec-prefix=/usr \
+    --bindir=/usr/bin \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
     --sysconfdir=/etc \

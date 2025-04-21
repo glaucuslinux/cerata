@@ -40,6 +40,8 @@ prepare() {
 configure() {
   ../configure \
     --prefix="$TLCD"/usr \
+    --exec-prefix="$TLCD"/usr \
+    --bindir="$TLCD"/usr/bin \
     --sbindir="$TLCD"/usr/bin \
     --libexecdir="$TLCD"/usr/lib \
     --sysconfdir="$TLCD"/etc \
