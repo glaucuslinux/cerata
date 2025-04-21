@@ -6,6 +6,8 @@
 build() {
   make \
     prefix=/usr \
+    bindir=/usr/bin \
+    libdir=/usr/lib \
     sysconfdir=/etc \
     LIBINTL=MUSL \
     CFLAGS="$CFLAGS" \
@@ -15,6 +17,8 @@ build() {
 package() {
   make \
     prefix=/usr \
+    bindir=/usr/bin \
+    libdir=/usr/lib \
     sysconfdir=/etc \
     LIBINTL=MUSL \
     DESTDIR="$CRSD" \
