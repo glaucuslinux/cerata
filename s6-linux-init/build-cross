@@ -13,11 +13,14 @@ configure() {
   ./configure \
     --host=$TGT \
     --prefix=/usr \
+    --exec-prefix=/usr \
     --dynlibdir=/usr/lib \
+    --bindir=/usr/bin \
     --libexecdir=/usr/lib \
     --libdir=/usr/lib \
     --skeldir=/etc/s6/skel \
     --tmpfsdir=/run \
+    --scandir=sv \
     --with-sysdeps="$CRSD"/usr/lib/skalibs/sysdeps \
     --with-include="$CRSD"/usr/include \
     --with-lib="$CRSD"/usr/lib \
