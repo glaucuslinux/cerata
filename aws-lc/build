@@ -1,0 +1,28 @@
+# Copyright (c) 2018-2025, Firas Khalil Khana
+# Distributed under the terms of the ISC License
+
+# Voyager: Firas Khalil Khana (firasuke) <firasuke@glaucuslinux.org>
+
+prepare() {
+  mkdir -p build
+}
+
+configure() {
+  glaucus-cmake \
+    -B build \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_TESTING=OFF \
+    -DDISABLE_GO=ON
+}
+
+build() {
+  make \
+    -C build
+}
+
+package() {
+  DESTDIR="$SACD" \
+  make \
+    -C build \
+    install/strip
+}
