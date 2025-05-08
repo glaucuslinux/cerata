@@ -19,13 +19,13 @@ configure() {
 }
 
 build() {
-  samu \
+  make \
     -C build
 }
 
 package() {
   DESTDIR="$SACD" \
-  samu \
+  make \
     -C build \
-    install/strip
+    install-strip
 }
