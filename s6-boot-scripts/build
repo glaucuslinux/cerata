@@ -12,8 +12,8 @@ package() {
   mkdir -p "$SACD"/etc/s6/current/env
 
   mkfifo -m 600 \
-    "$SACD"/etc/s6/current/run-image/service/s6-linux-init-shutdownd/fifo \
-    "$SACD"/etc/s6/current/run-image/service/s6-svscan-log/fifo
+    "$SACD"/etc/s6/current/run-image/sv/s6-linux-init-shutdownd/fifo \
+    "$SACD"/etc/s6/current/run-image/sv/s6-svscan-log/fifo
 
   mkdir -m 2750 -p "$SACD"/etc/s6/current/run-image/uncaught-logs
 
