@@ -21,7 +21,7 @@ build() {
 }
 
 package() {
-  DESTDIR="$SACD" \
+  DESTDIR="$CRSD" \
   make \
     -C build \
     install/strip
