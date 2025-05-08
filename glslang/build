@@ -27,7 +27,7 @@ package() {
   DESTDIR="$SACD" \
   make \
     -C build \
-    install-strip
+    install/strip
 
   ln -fs $nom "$SACD"/usr/bin/${nom}Validator
 }
