@@ -19,22 +19,15 @@ configure() {
 }
 
 build() {
-  samu \
-    -C build
-}
-
-check() {
-  muon \
-    test \
-    -R \
+  make \
     -C build
 }
 
 package() {
   DESTDIR="$SACD" \
-  samu \
+  make \
     -C build \
-    install/strip
+    install-strip
 
   ln -fs $nom "$SACD"/usr/bin/${nom}Validator
 }
