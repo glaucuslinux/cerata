@@ -14,5 +14,4 @@ exec cmake \
   -DCMAKE_INSTALL_LOCALSTATEDIR=/var \
   -DCMAKE_INSTALL_RUNSTATEDIR=/run \
   -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-  -G Ninja \
   "$@"
