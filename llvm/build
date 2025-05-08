@@ -52,5 +52,5 @@ package() {
   DESTDIR="$SACD" \
   make \
     -C build \
-    install-strip
+    install/strip
 }
