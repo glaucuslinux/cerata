@@ -1,6 +1,27 @@
 --- libwget/ssl_openssl.c
 +++ libwget/ssl_openssl.c
-@@ -129,10 +129,6 @@
+@@ -43,14 +43,12 @@
+ #  define SOCKET_TO_FD(x) (x)
+ #endif
+ 
+-#ifdef LIBRESSL_VERSION_NUMBER
+-  #ifndef TLS_MAX_VERSION
+-    #ifndef TLS1_3_VERSION
+-      #define TLS1_3_VERSION TLS1_2_VERSION
+-      #define TLS_MAX_VERSION TLS1_2_VERSION
+-    #else
+-      #define TLS_MAX_VERSION TLS1_3_VERSION
+-    #endif
++#ifndef TLS_MAX_VERSION
++  #ifndef TLS1_3_VERSION
++    #define TLS1_3_VERSION TLS1_2_VERSION
++    #define TLS_MAX_VERSION TLS1_2_VERSION
++  #else
++    #define TLS_MAX_VERSION TLS1_3_VERSION
+   #endif
+ #endif
+ 
+@@ -129,10 +127,6 @@
  {
  	if (mutex) {
  		wget_thread_mutex_destroy(&mutex);
@@ -11,3 +32,18 @@
  	}
  }
  
+@@ -145,13 +139,7 @@
+ 		wget_ssl_default_cert_dir();
+ 		wget_ssl_default_ca_bundle_path();
+ 
+-		ssl_userdata_idx = CRYPTO_get_ex_new_index(
+-			CRYPTO_EX_INDEX_APP,
+-			0, NULL,  /* argl, argp */
+-			NULL,     /* new_func, dup_func, free_func */
+-			NULL,     /* dup_func */
+-			NULL      /* free_func */
+-		);
++		ssl_userdata_idx = 0;
+ 
+ 		atexit(tls_exit);
+ 	}
