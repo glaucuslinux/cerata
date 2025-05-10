@@ -6,10 +6,6 @@
 prepare() {
   cd "$TMPD"/$nom/$nom-$ver-stable
 
-  patch \
-    -i "$CERD"/$nom/patches/upstream/0001-libressl-compatibility.patch \
-    -p 1
-
   ./autogen.sh
 }
 
