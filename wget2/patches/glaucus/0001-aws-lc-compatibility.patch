@@ -32,18 +32,13 @@
  	}
  }
  
-@@ -145,13 +139,7 @@
+@@ -145,8 +139,7 @@
  		wget_ssl_default_cert_dir();
  		wget_ssl_default_ca_bundle_path();
  
 -		ssl_userdata_idx = CRYPTO_get_ex_new_index(
 -			CRYPTO_EX_INDEX_APP,
--			0, NULL,  /* argl, argp */
--			NULL,     /* new_func, dup_func, free_func */
--			NULL,     /* dup_func */
--			NULL      /* free_func */
--		);
-+		ssl_userdata_idx = 0;
- 
- 		atexit(tls_exit);
- 	}
++		ssl_userdata_idx = SSL_CTX_get_ex_new_index(
+ 			0, NULL,  /* argl, argp */
+ 			NULL,     /* new_func, dup_func, free_func */
+ 			NULL,     /* dup_func */
