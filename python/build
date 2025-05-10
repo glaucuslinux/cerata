@@ -9,9 +9,6 @@ prepare() {
   patch \
     -i "$CERD"/$nom/patches/openbsd/Modules__hashopenssl_c.patch \
     -p 0
-  patch \
-    -i "$CERD"/$nom/patches/openbsd/Modules__ssl_c.patch \
-    -p 0
 
   rm -fRv \
     Modules/_decimal/libmpdec \
