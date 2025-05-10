@@ -10,7 +10,7 @@ prepare() {
 }
 
 configure() {
-  CHOST="$TGT" \
+  CHOST=$TGT \
   ./configure \
     --prefix=/usr \
     --eprefix=/usr \
