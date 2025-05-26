@@ -9,8 +9,6 @@ prepare() {
   patch \
     -i "$CERD"/$nom/patches/alpine/musl-stacksize.patch \
     -p 1
-
-  mkdir -p build
 }
 
 configure() {
