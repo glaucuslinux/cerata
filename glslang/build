@@ -7,8 +7,6 @@
 
 prepare() {
   cd "$TMPD"/$nom/$nom-vulkan-sdk-$ver
-
-  mkdir -p build
 }
 
 configure() {
