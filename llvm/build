@@ -7,8 +7,6 @@
 
 prepare() {
   cd "$TMPD"/$nom/$nom-project-$ver.src
-
-  mkdir -p build
 }
 
 configure() {
