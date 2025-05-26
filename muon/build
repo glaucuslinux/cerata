@@ -6,8 +6,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 prepare() {
-  mkdir -p build-bootstrap
-
   ./bootstrap.sh build-bootstrap
 
   build-bootstrap/$nom-bootstrap setup \
@@ -24,8 +22,6 @@ prepare() {
 
   build-bootstrap/$nom-bootstrap \
     -C build-bootstrap samu
-
-  mkdir -p build
 }
 
 configure() {
