@@ -11,8 +11,6 @@ prepare() {
     -p 1
 
   rm -fv subprojects/gvdb.wrap
-
-  mkdir -p build
 }
 
 configure() {
