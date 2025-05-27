@@ -6,6 +6,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="sdhcp"
-ver="5f9956c"
+ver="head"
 url="https://github.com/michaelforney/sdhcp"
 opt="noCheck"
