@@ -6,6 +6,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="cerata"
-ver="6396bb5"
+ver="head"
 url="https://github.com/glaucuslinux/cerata"
 opt="noCheck"
