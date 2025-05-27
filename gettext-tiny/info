@@ -8,4 +8,4 @@
 nom="gettext-tiny"
 ver="55a8ae9"
 url="https://github.com/sabotage-linux/gettext-tiny"
-nop="check"
+opt="noCheck"

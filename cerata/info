@@ -8,4 +8,4 @@
 nom="cerata"
 ver="6396bb5"
 url="https://github.com/glaucuslinux/cerata"
-nop="check"
+opt="noCheck"

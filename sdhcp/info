@@ -8,4 +8,4 @@
 nom="sdhcp"
 ver="5f9956c"
 url="https://github.com/michaelforney/sdhcp"
-nop="check"
+opt="noCheck"
