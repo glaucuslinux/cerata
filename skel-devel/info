@@ -6,4 +6,4 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="skel-devel"
-run="autoconf automake bash binutils byacc cmake curl gcc gettext-tiny gmp gperf isl linux-headers m4 make mawk mpc mpfr muon perl pigz pkgconf reflex skel slibtool"
+run="autoconf automake bash binutils byacc cmake curl gcc gettext-tiny gmp gperf isl linux-headers m4 make mawk mpc mpfr muon perl pigz reflex skel slibtool u-config"
