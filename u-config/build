@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MPL-2.0
+# Copyright © 2018-2025 Firas Khana
+
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+build() {
+  $CC $CFLAGS $LDFLAGS main_posix.c -o $nom
+}
+
+package() {
+  mkdir -p "$SACD"/usr/bin
+  mv -f $nom "$SACD"/usr/bin
+
+  # Compatibility symlinks
+  for i in pkg-config $TGT-pkg-config; do
+    ln -fs $nom "$SACD"/usr/bin/$i
+  done
+}
