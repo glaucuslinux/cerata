@@ -6,4 +6,4 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="skel-iso"
-run="bkeymaps busybox curl eiwd hwdata neatvi openresolv pciutils sdhcp skel tmux wget2"
+run="bkeymaps busybox curl eiwd hwdata neatvi openresolv pciutils sdhcp skel tmux"
