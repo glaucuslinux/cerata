@@ -6,6 +6,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="netbsd-curses"
-ver="51d179d"
+ver="head"
 url="https://github.com/sabotage-linux/netbsd-curses"
 opt="noCheck"
