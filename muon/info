@@ -8,5 +8,5 @@
 nom="muon"
 ver="3a4e673"
 url="https://git.sr.ht/~lattis/muon"
-bld="pkgconf"
+run="u-config"
 opt="bootstrap noCheck"

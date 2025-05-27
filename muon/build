@@ -12,7 +12,8 @@ prepare() {
     -Dwrap_mode=nodownload \
     -Dlibcurl=disabled \
     -Dlibarchive=disabled \
-    -Dlibpkgconf=enabled \
+    -Dpkgconfig=exec \
+    -Dlibpkgconf=disabled \
     -Dtracy=disabled \
     -Dman-pages=disabled \
     -Dmeson-docs=disabled \
@@ -29,7 +30,8 @@ configure() {
   "$CERD"/$nom/files/glaucus-$nom \
     -Dlibcurl=disabled \
     -Dlibarchive=disabled \
-    -Dlibpkgconf=enabled \
+    -Dpkgconfig=exec \
+    -Dlibpkgconf=disabled \
     -Dtracy=disabled \
     -Dman-pages=disabled \
     -Dmeson-docs=disabled \
