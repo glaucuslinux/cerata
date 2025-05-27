@@ -6,6 +6,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="bubble"
-ver="c7e4a25"
+ver="head"
 url="https://github.com/glaucuslinux/bubble"
 run="booster dash erofs-utils kmod libarchive libisoburn limine mdevd parted qemu toybox util-linux zstd"
