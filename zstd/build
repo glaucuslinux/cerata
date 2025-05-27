@@ -5,26 +5,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-prepare() {
-  patch \
-    -i "$CERD"/$nom/patches/void/dynamic-p$nom.patch \
-    -p 1
-}
-
 build() {
   make \
     HAVE_PTHREAD=1 \
     ZSTD_LEGACY_SUPPORT=0 \
-    HAVE_ZLIB=1 \
-    HAVE_LZMA=1 \
-    HAVE_LZ4=1 \
+    HAVE_ZLIB=0 \
+    HAVE_LZMA=0 \
+    HAVE_LZ4=0 \
     BACKTRACE=0
 
   make \
     lib-mt
-
-  make \
-    -C contrib/p$nom
 }
 
 check() {
@@ -40,13 +31,6 @@ package() {
     bindir=/usr/bin \
     libdir=/usr/lib \
     PKGCONFIGDIR=/usr/lib/pkgconfig \
-    install
-
-  make \
-    DESTDIR="$SACD" \
-    PREFIX=/usr \
-    BINDIR=/usr/bin \
-    -C contrib/p$nom \
     install
 
   # Remove static library
