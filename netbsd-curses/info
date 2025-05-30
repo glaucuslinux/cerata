@@ -9,4 +9,4 @@
 nom="netbsd-curses"
 ver="head"
 url="https://github.com/sabotage-linux/netbsd-curses"
-opt="noCheck"
+opt="no-check"

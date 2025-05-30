@@ -9,4 +9,4 @@
 nom="libudev-zero"
 ver="head"
 url="https://github.com/illiliti/libudev-zero"
-opt="noCheck"
+opt="no-check"

@@ -9,4 +9,4 @@
 nom="sdhcp"
 ver="head"
 url="https://github.com/michaelforney/sdhcp"
-opt="noCheck"
+opt="no-check"

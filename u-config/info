@@ -9,4 +9,4 @@
 nom="u-config"
 ver="ed37452"
 url="https://github.com/skeeto/u-config"
-opt="noCheck"
+opt="no-check"

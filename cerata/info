@@ -9,4 +9,4 @@
 nom="cerata"
 ver="head"
 url="https://github.com/glaucuslinux/cerata"
-opt="noCheck"
+opt="no-check"
