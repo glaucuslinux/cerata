@@ -17,4 +17,7 @@ package() {
   for i in pkg-config $TGT-pkg-config; do
     ln -fs $nom "$CRSD"/usr/bin/$i
   done
+
+  mkdir -p "$CRSD"/usr/share/aclocal
+  cp -fPp "$CERD"/$nom/files/pkg.m4 "$CRSD"/usr/share/aclocal
 }
