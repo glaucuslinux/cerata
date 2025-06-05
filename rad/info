@@ -7,6 +7,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="rad"
-ver="head"
+ver="latest"
 url="https://github.com/glaucuslinux/rad"
 run="curl git libarchive toybox xxhash zstd"

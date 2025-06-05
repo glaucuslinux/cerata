@@ -7,6 +7,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="gettext-tiny"
-ver="head"
+ver="latest"
 url="https://github.com/sabotage-linux/gettext-tiny"
 opt="no-check"

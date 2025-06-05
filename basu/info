@@ -7,6 +7,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="basu"
-ver="head"
+ver="latest"
 url="https://git.sr.ht/~emersion/basu"
 bld="gperf libcap muon python"

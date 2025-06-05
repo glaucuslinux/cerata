@@ -7,6 +7,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="libudev-zero"
-ver="head"
+ver="latest"
 url="https://github.com/illiliti/libudev-zero"
 opt="no-check"

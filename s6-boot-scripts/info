@@ -7,7 +7,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 nom="s6-boot-scripts"
-ver="head"
+ver="latest"
 url="https://github.com/glaucuslinux/s6-boot-scripts"
 run="toybox util-linux"
 opt="no-check"
