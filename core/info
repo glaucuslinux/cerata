@@ -6,7 +6,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-nom="cerata"
+nom="core"
 ver="latest"
-url="https://github.com/glaucuslinux/cerata"
+url="https://github.com/glaucuslinux/core"
 opt="no-check"

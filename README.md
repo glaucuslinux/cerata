@@ -1,8 +1,8 @@
-# cerata
+# core
 [![Repository status](https://repology.org/badge/repository-big/glaucus.svg)](
 https://repology.org/repository/glaucus)
 
-glaucus packages
+glaucus core packages
 
 ## Community
 - [Discord](https://discord.gg/nDKNmNc)
@@ -12,6 +12,6 @@ glaucus packages
 - [YouTube](https://youtube.com/@glaucuslinux)
 
 ## Mirrors
-- [Codeberg](https://codeberg.org/glaucuslinux/cerata)
-- [GitHub](https://github.com/glaucuslinux/cerata)
-- [SourceHut](https://git.sr.ht/~glaucuslinux/cerata)
+- [Codeberg](https://codeberg.org/glaucuslinux/core)
+- [GitHub](https://github.com/glaucuslinux/core)
+- [SourceHut](https://git.sr.ht/~glaucuslinux/core)
