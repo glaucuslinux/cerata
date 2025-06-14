@@ -34,7 +34,7 @@ package() {
   ln -fs ../share/$nom/$nom.sh "$CRSD"/usr/bin/libtool
   cp -fPp "$CERD"/$nom/files/libtoolize "$CRSD"/usr/bin
 
-  # `"$CRSD"/usr/share/aclocal` was already created by cross `gettext-tiny`
+  # `"$CRSD"/usr/share/aclocal` was already created by cross `u-config`
   mkdir -p "$CRSD"/usr/share/libtool/build-aux
 
   cp -fPp \
