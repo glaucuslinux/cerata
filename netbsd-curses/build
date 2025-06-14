@@ -38,6 +38,6 @@ package() {
     "$SACD"/usr/lib/libpanel.so \
     "$SACD"/usr/lib/libterminfo.so
 
-  # Some cerata (e.g. `util-linux` and `yash`) link against this
+  # `util-linux` and `yash` link against this
   ln -fs libterminfo.so "$SACD"/usr/lib/libtinfo.so
 }

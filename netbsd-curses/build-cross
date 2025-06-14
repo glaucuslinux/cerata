@@ -38,6 +38,6 @@ package() {
     "$CRSD"/usr/lib/libpanel.so \
     "$CRSD"/usr/lib/libterminfo.so
 
-  # Some cerata (e.g. `util-linux` and `yash`) link against this
+  # `util-linux` and `yash` link against this
   ln -fs libterminfo.so "$CRSD"/usr/lib/libtinfo.so
 }
