@@ -44,7 +44,7 @@ package() {
     install \
     install-lib
 
-  # ids are provided by the `hwdata` ceras
+  # ids are provided by `hwdata`
   rm -fRv \
     "$SACD"/usr/bin/update-pciids \
     "$SACD"/usr/share/hwdata
