@@ -9,7 +9,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 case $# in
-  0) /usr/lib/libc.so ;;
-  1) /usr/lib/libc.so --list "$1" ;;
+  0) exec /usr/lib/libc.so ;;
+  1) exec /usr/lib/libc.so --list "$1" ;;
   *) for i in "$@"; do echo "$i:"; /usr/lib/libc.so --list "$i"; done ;;
 esac
